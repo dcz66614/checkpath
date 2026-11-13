@@ -1,0 +1,7 @@
+x: &a {b: c}
+name: t6-56-collection-alias-key
+on:
+  *a : 1
+jobs:
+  test:
+    runs-on: ubuntu-latest

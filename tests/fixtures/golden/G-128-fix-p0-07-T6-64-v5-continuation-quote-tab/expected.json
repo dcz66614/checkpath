@@ -1,0 +1,64 @@
+{
+  "diff_boundary": null,
+  "fixture_id": "G-128",
+  "input_sha256": "35ebc36e9b6b74d22d61316871b64d3daa5b5998702678a879143367db27cfae",
+  "jobs": [],
+  "required_checks": [
+    {
+      "context": "test",
+      "provider_count": 0,
+      "provider_job_id": null,
+      "reason": "no_provider",
+      "status": "PENDING_NOT_REPORTED"
+    }
+  ],
+  "scenario_id": "G-128",
+  "schema": "checkpath.e2e-report/v1",
+  "summary": {
+    "check_status_counts": {
+      "AMBIGUOUS": 0,
+      "INVALID": 0,
+      "PENDING_NOT_REPORTED": 1,
+      "REPORTABLE_PENDING": 0,
+      "SKIPPED_SUCCESS": 0,
+      "UNKNOWN": 0
+    },
+    "job_status_counts": {
+      "CONDITIONAL_AFTER_NEEDS": 0,
+      "ELIGIBLE": 0,
+      "INVALID": 0,
+      "SKIPPED": 0,
+      "UNKNOWN": 0
+    },
+    "triggered_workflow_count": 0,
+    "workflow_count": 1
+  },
+  "unsupported_features": [],
+  "workflows": [
+    {
+      "path": "workflow.yml",
+      "trigger": {
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "evaluation": {
+          "activity_type_match": null,
+          "branch_match": null,
+          "branch_value": null,
+          "commit_skip": false,
+          "event_match": null,
+          "path_file_results": [],
+          "path_match": null,
+          "reason": "invalid",
+          "triggered": null,
+          "unsupported": []
+        },
+        "events": [],
+        "fixture_id": "G-128",
+        "on_key_is_string": false,
+        "schema": "checkpath.trigger-ir/v1",
+        "status": "INVALID"
+      }
+    }
+  ]
+}

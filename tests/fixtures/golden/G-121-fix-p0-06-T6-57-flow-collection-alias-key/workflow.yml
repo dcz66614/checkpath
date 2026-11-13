@@ -1,0 +1,6 @@
+x: &a {b: c}
+name: t6-57-flow-collection-alias-key
+on: {*a : 1}
+jobs:
+  test:
+    runs-on: ubuntu-latest

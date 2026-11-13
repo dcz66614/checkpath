@@ -1,0 +1,5 @@
+name: t6-55-jobs-flow-alias-key
+x: &a foo
+on:
+  push: {}
+jobs: {test: {*a: 1}}
