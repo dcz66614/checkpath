@@ -1,0 +1,9 @@
+name: t6-28-branches-true
+on:
+  push:
+    branches: [True]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo hi

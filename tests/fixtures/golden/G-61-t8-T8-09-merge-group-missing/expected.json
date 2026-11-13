@@ -1,0 +1,79 @@
+{
+  "diff_boundary": null,
+  "fixture_id": "G-61",
+  "input_sha256": "d017b1e246551fbb8c3aa6b14a741f6312e74519da5330c9ef8a4334a2d831c1",
+  "jobs": [
+    {
+      "context": "unit-tests",
+      "job_id": "test",
+      "reason": "workflow_not_triggered",
+      "status": "SKIPPED",
+      "workflow": "workflow.yml"
+    }
+  ],
+  "required_checks": [
+    {
+      "context": "unit-tests",
+      "provider_count": 1,
+      "provider_job_id": "test",
+      "reason": "workflow_not_triggered",
+      "status": "PENDING_NOT_REPORTED"
+    }
+  ],
+  "scenario_id": "G-61",
+  "schema": "checkpath.e2e-report/v1",
+  "summary": {
+    "check_status_counts": {
+      "AMBIGUOUS": 0,
+      "INVALID": 0,
+      "PENDING_NOT_REPORTED": 1,
+      "REPORTABLE_PENDING": 0,
+      "SKIPPED_SUCCESS": 0,
+      "UNKNOWN": 0
+    },
+    "job_status_counts": {
+      "CONDITIONAL_AFTER_NEEDS": 0,
+      "ELIGIBLE": 0,
+      "INVALID": 0,
+      "SKIPPED": 1,
+      "UNKNOWN": 0
+    },
+    "triggered_workflow_count": 0,
+    "workflow_count": 1
+  },
+  "unsupported_features": [],
+  "workflows": [
+    {
+      "path": "workflow.yml",
+      "trigger": {
+        "errors": [],
+        "evaluation": {
+          "activity_type_match": null,
+          "branch_match": null,
+          "branch_value": null,
+          "commit_skip": false,
+          "event_match": false,
+          "path_file_results": [],
+          "path_match": null,
+          "reason": "event_mismatch",
+          "triggered": false,
+          "unsupported": []
+        },
+        "events": [
+          {
+            "branches": null,
+            "branches_ignore": null,
+            "name": "pull_request",
+            "paths": null,
+            "paths_ignore": null,
+            "types": null
+          }
+        ],
+        "fixture_id": "G-61",
+        "on_key_is_string": true,
+        "schema": "checkpath.trigger-ir/v1",
+        "status": "VALID"
+      }
+    }
+  ]
+}

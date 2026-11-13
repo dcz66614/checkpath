@@ -1,0 +1,9 @@
+name: dup-name
+name: dup-name-again
+on:
+  push:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo hi

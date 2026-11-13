@@ -1,0 +1,15 @@
+{
+  "required_checks": [
+    {
+      "context": "unit-tests"
+    },
+    {
+      "context": "unit-tests"
+    },
+    {
+      "context": "unit-tests",
+      "source": "github-actions"
+    }
+  ],
+  "schema": "checkpath.required-checks/v1"
+}

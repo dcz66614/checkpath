@@ -1,0 +1,9 @@
+name: t6-26-filter-key-true
+on:
+  push:
+    True: [main]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo hi
