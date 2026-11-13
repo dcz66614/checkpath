@@ -1,0 +1,4 @@
+name: probe
+on: push
+jobs: {"test
+ x": {runs-on: ubuntu-latest}}

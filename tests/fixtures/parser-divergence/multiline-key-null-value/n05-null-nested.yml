@@ -1,0 +1,9 @@
+m: {n: {a
+ b}}
+name: probe
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo hi

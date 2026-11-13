@@ -1,0 +1,318 @@
+{
+ "schema": "checkpath.parser-divergence/v1",
+ "note": "FIX-P0-12 P0-B multi-line-key parity fixtures: S1 (hasMultilineFlowKey) now fires only on multi-line keys bearing a ':' separator. Null-value multi-line keys with no colon are accepted by both parsers and must be left alone (n01-n05, n12); valued multi-line keys — including null-valued keys WITH a colon (n08-n09) — are still rejected by both sides. The discriminator is 'colon present', not 'value non-null'. See ADR FIX-P0-12 in handoff/P020-FIX-P0-12/TASK_REPORT.md.",
+ "cases": [
+  {
+   "file": "n01-null-plain.yml",
+   "id": "n01-null-plain",
+   "note": "P0-B core: null-value multi-line plain key, no colon — VALID on both sides (S1 must not fire).",
+   "typescript": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "name": "push",
+      "types": null,
+      "branches": null,
+      "branches_ignore": null,
+      "paths": null,
+      "paths_ignore": null
+     }
+    ]
+   },
+   "oracle": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "branches": null,
+      "branches_ignore": null,
+      "name": "push",
+      "paths": null,
+      "paths_ignore": null,
+      "types": null
+     }
+    ]
+   }
+  },
+  {
+   "file": "n02-null-dq.yml",
+   "id": "n02-null-dq",
+   "note": "P0-B core: null-value multi-line double-quoted key — VALID on both sides.",
+   "typescript": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "name": "push",
+      "types": null,
+      "branches": null,
+      "branches_ignore": null,
+      "paths": null,
+      "paths_ignore": null
+     }
+    ]
+   },
+   "oracle": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "branches": null,
+      "branches_ignore": null,
+      "name": "push",
+      "paths": null,
+      "paths_ignore": null,
+      "types": null
+     }
+    ]
+   }
+  },
+  {
+   "file": "n03-null-sq.yml",
+   "id": "n03-null-sq",
+   "note": "P0-B core: null-value multi-line single-quoted key — VALID on both sides.",
+   "typescript": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "name": "push",
+      "types": null,
+      "branches": null,
+      "branches_ignore": null,
+      "paths": null,
+      "paths_ignore": null
+     }
+    ]
+   },
+   "oracle": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "branches": null,
+      "branches_ignore": null,
+      "name": "push",
+      "paths": null,
+      "paths_ignore": null,
+      "types": null
+     }
+    ]
+   }
+  },
+  {
+   "file": "n04-null-after-pair.yml",
+   "id": "n04-null-after-pair",
+   "note": "P0-B core: null-value multi-line key followed by a pair — VALID on both sides.",
+   "typescript": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "name": "push",
+      "types": null,
+      "branches": null,
+      "branches_ignore": null,
+      "paths": null,
+      "paths_ignore": null
+     }
+    ]
+   },
+   "oracle": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "branches": null,
+      "branches_ignore": null,
+      "name": "push",
+      "paths": null,
+      "paths_ignore": null,
+      "types": null
+     }
+    ]
+   }
+  },
+  {
+   "file": "n05-null-nested.yml",
+   "id": "n05-null-nested",
+   "note": "P0-B core: null-value multi-line key, nested — VALID on both sides.",
+   "typescript": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "name": "push",
+      "types": null,
+      "branches": null,
+      "branches_ignore": null,
+      "paths": null,
+      "paths_ignore": null
+     }
+    ]
+   },
+   "oracle": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "branches": null,
+      "branches_ignore": null,
+      "name": "push",
+      "paths": null,
+      "paths_ignore": null,
+      "types": null
+     }
+    ]
+   }
+  },
+  {
+   "file": "n06-valued-plain.yml",
+   "id": "n06-valued-plain",
+   "note": "P0-B control: valued multi-line key — INVALID on both sides (S1's target stays closed).",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   }
+  },
+  {
+   "file": "n07-valued-after-pair.yml",
+   "id": "n07-valued-after-pair",
+   "note": "P0-B control: valued multi-line key after a pair — INVALID on both sides.",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   }
+  },
+  {
+   "file": "n08-colon-null.yml",
+   "id": "n08-colon-null",
+   "note": "P0-B: multi-line key WITH a colon but a null value — INVALID on both sides (the discriminator is 'colon present', not 'value non-null').",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   }
+  },
+  {
+   "file": "n09-colon-laterline-null.yml",
+   "id": "n09-colon-laterline-null",
+   "note": "P0-B: colon on a later line, null value — INVALID on both sides.",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   }
+  },
+  {
+   "file": "n10-valued-comment.yml",
+   "id": "n10-valued-comment",
+   "note": "P0-B control: valued multi-line key, comment after the colon — INVALID on both sides (the colon scan skips comments).",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   }
+  },
+  {
+   "file": "n11-valued-crlf.yml",
+   "id": "n11-valued-crlf",
+   "note": "P0-B control: valued multi-line key, CRLF — INVALID on both sides.",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   }
+  },
+  {
+   "file": "n12-null-crlf.yml",
+   "id": "n12-null-crlf",
+   "note": "P0-B: null-value multi-line key, CRLF — VALID on both sides.",
+   "typescript": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "name": "push",
+      "types": null,
+      "branches": null,
+      "branches_ignore": null,
+      "paths": null,
+      "paths_ignore": null
+     }
+    ]
+   },
+   "oracle": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "branches": null,
+      "branches_ignore": null,
+      "name": "push",
+      "paths": null,
+      "paths_ignore": null,
+      "types": null
+     }
+    ]
+   }
+  }
+ ]
+}

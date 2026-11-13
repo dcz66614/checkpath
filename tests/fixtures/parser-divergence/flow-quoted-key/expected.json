@@ -1,0 +1,1153 @@
+{
+  "cases": [
+    {
+      "file": "f01-r3-extra-ind1.yml",
+      "id": "f01-r3-extra-ind1",
+      "note": "FIX-P0-09: f01 R8 R3-EXTRA-IND1, double-quoted key, continuation indent 1",
+      "oracle": {
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": [],
+        "jobs": [],
+        "status": "INVALID"
+      },
+      "typescript": {
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": [],
+        "jobs": [],
+        "status": "INVALID"
+      }
+    },
+    {
+      "file": "f02-r3-on-ind1.yml",
+      "id": "f02-r3-on-ind1",
+      "note": "FIX-P0-09: f02 R8 R3-ON-IND1, double-quoted key as on: value, continuation indent 1",
+      "oracle": {
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": [],
+        "jobs": [],
+        "status": "INVALID"
+      },
+      "typescript": {
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": [],
+        "jobs": [],
+        "status": "INVALID"
+      }
+    },
+    {
+      "file": "f03-r3-extra-ind0.yml",
+      "id": "f03-r3-extra-ind0",
+      "note": "FIX-P0-09: f03 R8 R3-EXTRA-IND0, continuation indent 0 \u2014 both reject already (boundary)",
+      "oracle": {
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": [],
+        "jobs": [],
+        "status": "INVALID"
+      },
+      "typescript": {
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": [],
+        "jobs": [],
+        "status": "INVALID"
+      }
+    },
+    {
+      "file": "f04-r3-on-ind0.yml",
+      "id": "f04-r3-on-ind0",
+      "note": "FIX-P0-09: f04 R8 R3-ON-IND0, continuation indent 0 \u2014 both reject already (boundary)",
+      "oracle": {
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": [],
+        "jobs": [],
+        "status": "INVALID"
+      },
+      "typescript": {
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": [],
+        "jobs": [],
+        "status": "INVALID"
+      }
+    },
+    {
+      "file": "f05-r3-extra-sq.yml",
+      "id": "f05-r3-extra-sq",
+      "note": "FIX-P0-09: f05 R8 R3-EXTRA-SQ, single-quoted key, continuation indent 1",
+      "oracle": {
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": [],
+        "jobs": [],
+        "status": "INVALID"
+      },
+      "typescript": {
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": [],
+        "jobs": [],
+        "status": "INVALID"
+      }
+    },
+    {
+      "file": "f06-r3-on-sq.yml",
+      "id": "f06-r3-on-sq",
+      "note": "FIX-P0-09: f06 R8 R3-ON-SQ, single-quoted key as on: value, continuation indent 1",
+      "oracle": {
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": [],
+        "jobs": [],
+        "status": "INVALID"
+      },
+      "typescript": {
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": [],
+        "jobs": [],
+        "status": "INVALID"
+      }
+    },
+    {
+      "file": "f07-r3-extra-ind2.yml",
+      "id": "f07-r3-extra-ind2",
+      "note": "FIX-P0-09: f07 R8 R3-EXTRA-IND2, continuation indent 2",
+      "oracle": {
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": [],
+        "jobs": [],
+        "status": "INVALID"
+      },
+      "typescript": {
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": [],
+        "jobs": [],
+        "status": "INVALID"
+      }
+    },
+    {
+      "file": "f08-r3-nested.yml",
+      "id": "f08-r3-nested",
+      "note": "FIX-P0-09: f08 R8 R3-NESTED, nested flow map",
+      "oracle": {
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": [],
+        "jobs": [],
+        "status": "INVALID"
+      },
+      "typescript": {
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": [],
+        "jobs": [],
+        "status": "INVALID"
+      }
+    },
+    {
+      "file": "f09-r3-blockkey.yml",
+      "id": "f09-r3-blockkey",
+      "note": "FIX-P0-09: f09 R8 R3-BLOCKKEY, block mapping key \u2014 both reject already (boundary)",
+      "oracle": {
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": [],
+        "jobs": [],
+        "status": "INVALID"
+      },
+      "typescript": {
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": [],
+        "jobs": [],
+        "status": "INVALID"
+      }
+    },
+    {
+      "file": "f10-r3-on-ind9.yml",
+      "id": "f10-r3-on-ind9",
+      "note": "FIX-P0-09: f10 R8 R3-ON-IND9, continuation indent 9",
+      "oracle": {
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": [],
+        "jobs": [],
+        "status": "INVALID"
+      },
+      "typescript": {
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": [],
+        "jobs": [],
+        "status": "INVALID"
+      }
+    },
+    {
+      "file": "f11-plain-key-fold.yml",
+      "id": "f11-plain-key-fold",
+      "note": "FIX-P0-09: f11 plain key spanning lines (folds to 'a b')",
+      "oracle": {
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": [],
+        "jobs": [],
+        "status": "INVALID"
+      },
+      "typescript": {
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": [],
+        "jobs": [],
+        "status": "INVALID"
+      }
+    },
+    {
+      "file": "f12-plain-key-on.yml",
+      "id": "f12-plain-key-on",
+      "note": "FIX-P0-09: f12 plain key spanning lines as on: value",
+      "oracle": {
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": [],
+        "jobs": [],
+        "status": "INVALID"
+      },
+      "typescript": {
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": [],
+        "jobs": [],
+        "status": "INVALID"
+      }
+    },
+    {
+      "file": "f13-plain-key-ind2.yml",
+      "id": "f13-plain-key-ind2",
+      "note": "FIX-P0-09: f13 plain key, continuation indent 2",
+      "oracle": {
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": [],
+        "jobs": [],
+        "status": "INVALID"
+      },
+      "typescript": {
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": [],
+        "jobs": [],
+        "status": "INVALID"
+      }
+    },
+    {
+      "file": "f14-flow-key-escaped.yml",
+      "id": "f14-flow-key-escaped",
+      "note": "FIX-P0-09: f14 double-quoted key with an escaped quote before the newline",
+      "oracle": {
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": [],
+        "jobs": [],
+        "status": "INVALID"
+      },
+      "typescript": {
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": [],
+        "jobs": [],
+        "status": "INVALID"
+      }
+    },
+    {
+      "file": "f15-anchored-mlq-key.yml",
+      "id": "f15-anchored-mlq-key",
+      "note": "FIX-P0-09: f15 anchored multi-line quoted key",
+      "oracle": {
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": [],
+        "jobs": [],
+        "status": "INVALID"
+      },
+      "typescript": {
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": [],
+        "jobs": [],
+        "status": "INVALID"
+      }
+    },
+    {
+      "file": "f16-flow-map-in-seq.yml",
+      "id": "f16-flow-map-in-seq",
+      "note": "FIX-P0-09: f16 flow map inside a sequence item",
+      "oracle": {
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": [],
+        "jobs": [],
+        "status": "INVALID"
+      },
+      "typescript": {
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": [],
+        "jobs": [],
+        "status": "INVALID"
+      }
+    },
+    {
+      "file": "f17-flow-key-jobs.yml",
+      "id": "f17-flow-key-jobs",
+      "note": "FIX-P0-09: f17 multi-line quoted key inside the jobs: mapping",
+      "oracle": {
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": [],
+        "jobs": [],
+        "status": "INVALID"
+      },
+      "typescript": {
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": [],
+        "jobs": [],
+        "status": "INVALID"
+      }
+    },
+    {
+      "file": "f18-flow-key-on-nested.yml",
+      "id": "f18-flow-key-on-nested",
+      "note": "FIX-P0-09: f18 multi-line quoted key nested under the push: event",
+      "oracle": {
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": [],
+        "jobs": [],
+        "status": "INVALID"
+      },
+      "typescript": {
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": [],
+        "jobs": [],
+        "status": "INVALID"
+      }
+    },
+    {
+      "file": "f19-flow-key-root.yml",
+      "id": "f19-flow-key-root",
+      "note": "FIX-P0-09: f19 flow map as the whole document \u2014 both reject already (boundary)",
+      "oracle": {
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": [],
+        "jobs": [],
+        "status": "INVALID"
+      },
+      "typescript": {
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": [],
+        "jobs": [],
+        "status": "INVALID"
+      }
+    },
+    {
+      "file": "f20-flow-value-mlq.yml",
+      "id": "f20-flow-value-mlq",
+      "note": "FIX-P0-09: f20 multi-line quoted VALUE \u2014 must NOT be rejected (boundary, both accept)",
+      "oracle": {
+        "errors": [],
+        "events": [
+          {
+            "branches": null,
+            "branches_ignore": null,
+            "name": "push",
+            "paths": null,
+            "paths_ignore": null,
+            "types": null
+          }
+        ],
+        "jobs": [
+          {
+            "id": "test",
+            "if": null,
+            "name": null,
+            "needs": [],
+            "unsupported_job": null
+          }
+        ],
+        "status": "VALID"
+      },
+      "typescript": {
+        "errors": [],
+        "events": [
+          {
+            "branches": null,
+            "branches_ignore": null,
+            "name": "push",
+            "paths": null,
+            "paths_ignore": null,
+            "types": null
+          }
+        ],
+        "jobs": [
+          {
+            "id": "test",
+            "if": null,
+            "name": null,
+            "needs": [],
+            "unsupported_job": null
+          }
+        ],
+        "status": "VALID"
+      }
+    },
+    {
+      "file": "f21-v8-key-tab.yml",
+      "id": "f21-v8-key-tab",
+      "note": "FIX-P0-09: f21 R8 V8, single-line quoted key with a tab inside \u2014 both accept (boundary)",
+      "oracle": {
+        "errors": [],
+        "events": [
+          {
+            "branches": null,
+            "branches_ignore": null,
+            "name": "push",
+            "paths": null,
+            "paths_ignore": null,
+            "types": null
+          }
+        ],
+        "jobs": [
+          {
+            "id": "test",
+            "if": null,
+            "name": null,
+            "needs": [],
+            "unsupported_job": null
+          }
+        ],
+        "status": "VALID"
+      },
+      "typescript": {
+        "errors": [],
+        "events": [
+          {
+            "branches": null,
+            "branches_ignore": null,
+            "name": "push",
+            "paths": null,
+            "paths_ignore": null,
+            "types": null
+          }
+        ],
+        "jobs": [
+          {
+            "id": "test",
+            "if": null,
+            "name": null,
+            "needs": [],
+            "unsupported_job": null
+          }
+        ],
+        "status": "VALID"
+      }
+    },
+    {
+      "file": "f22-explicit-quoted.yml",
+      "id": "f22-explicit-quoted",
+      "note": "FIX-P0-09: f22 explicit ? key, double-quoted \u2014 both accept (boundary)",
+      "oracle": {
+        "errors": [],
+        "events": [
+          {
+            "branches": null,
+            "branches_ignore": null,
+            "name": "push",
+            "paths": null,
+            "paths_ignore": null,
+            "types": null
+          }
+        ],
+        "jobs": [
+          {
+            "id": "test",
+            "if": null,
+            "name": null,
+            "needs": [],
+            "unsupported_job": null
+          }
+        ],
+        "status": "VALID"
+      },
+      "typescript": {
+        "errors": [],
+        "events": [
+          {
+            "branches": null,
+            "branches_ignore": null,
+            "name": "push",
+            "paths": null,
+            "paths_ignore": null,
+            "types": null
+          }
+        ],
+        "jobs": [
+          {
+            "id": "test",
+            "if": null,
+            "name": null,
+            "needs": [],
+            "unsupported_job": null
+          }
+        ],
+        "status": "VALID"
+      }
+    },
+    {
+      "file": "f23-explicit-plain.yml",
+      "id": "f23-explicit-plain",
+      "note": "FIX-P0-09: f23 explicit ? key, plain \u2014 both accept (boundary)",
+      "oracle": {
+        "errors": [],
+        "events": [
+          {
+            "branches": null,
+            "branches_ignore": null,
+            "name": "push",
+            "paths": null,
+            "paths_ignore": null,
+            "types": null
+          }
+        ],
+        "jobs": [
+          {
+            "id": "test",
+            "if": null,
+            "name": null,
+            "needs": [],
+            "unsupported_job": null
+          }
+        ],
+        "status": "VALID"
+      },
+      "typescript": {
+        "errors": [],
+        "events": [
+          {
+            "branches": null,
+            "branches_ignore": null,
+            "name": "push",
+            "paths": null,
+            "paths_ignore": null,
+            "types": null
+          }
+        ],
+        "jobs": [
+          {
+            "id": "test",
+            "if": null,
+            "name": null,
+            "needs": [],
+            "unsupported_job": null
+          }
+        ],
+        "status": "VALID"
+      }
+    },
+    {
+      "file": "f24-explicit-on.yml",
+      "id": "f24-explicit-on",
+      "note": "FIX-P0-09: f24 explicit ? key as on: value \u2014 both INVALID / event_config_not_mapping (boundary)",
+      "oracle": {
+        "errors": [
+          "event_config_not_mapping"
+        ],
+        "events": [],
+        "jobs": [
+          {
+            "id": "test",
+            "if": null,
+            "name": null,
+            "needs": [],
+            "unsupported_job": null
+          }
+        ],
+        "status": "INVALID"
+      },
+      "typescript": {
+        "errors": [
+          "event_config_not_mapping"
+        ],
+        "events": [],
+        "jobs": [
+          {
+            "id": "test",
+            "if": null,
+            "name": null,
+            "needs": [],
+            "unsupported_job": null
+          }
+        ],
+        "status": "INVALID"
+      }
+    },
+    {
+      "file": "f25-explicit-comment.yml",
+      "id": "f25-explicit-comment",
+      "note": "FIX-P0-09: f25 explicit ? key with a comment between ? and the key \u2014 both accept (boundary; the ? must survive the comment scan)",
+      "oracle": {
+        "errors": [],
+        "events": [
+          {
+            "branches": null,
+            "branches_ignore": null,
+            "name": "push",
+            "paths": null,
+            "paths_ignore": null,
+            "types": null
+          }
+        ],
+        "jobs": [
+          {
+            "id": "test",
+            "if": null,
+            "name": null,
+            "needs": [],
+            "unsupported_job": null
+          }
+        ],
+        "status": "VALID"
+      },
+      "typescript": {
+        "errors": [],
+        "events": [
+          {
+            "branches": null,
+            "branches_ignore": null,
+            "name": "push",
+            "paths": null,
+            "paths_ignore": null,
+            "types": null
+          }
+        ],
+        "jobs": [
+          {
+            "id": "test",
+            "if": null,
+            "name": null,
+            "needs": [],
+            "unsupported_job": null
+          }
+        ],
+        "status": "VALID"
+      }
+    },
+    {
+      "file": "f26-explicit-q-in-value.yml",
+      "id": "f26-explicit-q-in-value",
+      "note": "FIX-P0-09: f26 explicit ? key with a # inside a quoted value before it \u2014 both accept (boundary)",
+      "oracle": {
+        "errors": [],
+        "events": [
+          {
+            "branches": null,
+            "branches_ignore": null,
+            "name": "push",
+            "paths": null,
+            "paths_ignore": null,
+            "types": null
+          }
+        ],
+        "jobs": [
+          {
+            "id": "test",
+            "if": null,
+            "name": null,
+            "needs": [],
+            "unsupported_job": null
+          }
+        ],
+        "status": "VALID"
+      },
+      "typescript": {
+        "errors": [],
+        "events": [
+          {
+            "branches": null,
+            "branches_ignore": null,
+            "name": "push",
+            "paths": null,
+            "paths_ignore": null,
+            "types": null
+          }
+        ],
+        "jobs": [
+          {
+            "id": "test",
+            "if": null,
+            "name": null,
+            "needs": [],
+            "unsupported_job": null
+          }
+        ],
+        "status": "VALID"
+      }
+    },
+    {
+      "file": "f27-block-explicit.yml",
+      "id": "f27-block-explicit",
+      "note": "FIX-P0-09: f27 explicit ? key in a block mapping \u2014 both accept (boundary)",
+      "oracle": {
+        "errors": [],
+        "events": [
+          {
+            "branches": null,
+            "branches_ignore": null,
+            "name": "push",
+            "paths": null,
+            "paths_ignore": null,
+            "types": null
+          }
+        ],
+        "jobs": [
+          {
+            "id": "test",
+            "if": null,
+            "name": null,
+            "needs": [],
+            "unsupported_job": null
+          }
+        ],
+        "status": "VALID"
+      },
+      "typescript": {
+        "errors": [],
+        "events": [
+          {
+            "branches": null,
+            "branches_ignore": null,
+            "name": "push",
+            "paths": null,
+            "paths_ignore": null,
+            "types": null
+          }
+        ],
+        "jobs": [
+          {
+            "id": "test",
+            "if": null,
+            "name": null,
+            "needs": [],
+            "unsupported_job": null
+          }
+        ],
+        "status": "VALID"
+      }
+    },
+    {
+      "file": "f28-normal-flow-on.yml",
+      "id": "f28-normal-flow-on",
+      "note": "FIX-P0-09: f28 normal flow on: \u2014 both accept (baseline)",
+      "oracle": {
+        "errors": [],
+        "events": [
+          {
+            "branches": [
+              "main"
+            ],
+            "branches_ignore": null,
+            "name": "push",
+            "paths": null,
+            "paths_ignore": null,
+            "types": null
+          }
+        ],
+        "jobs": [
+          {
+            "id": "test",
+            "if": null,
+            "name": null,
+            "needs": [],
+            "unsupported_job": null
+          }
+        ],
+        "status": "VALID"
+      },
+      "typescript": {
+        "errors": [],
+        "events": [
+          {
+            "branches": [
+              "main"
+            ],
+            "branches_ignore": null,
+            "name": "push",
+            "paths": null,
+            "paths_ignore": null,
+            "types": null
+          }
+        ],
+        "jobs": [
+          {
+            "id": "test",
+            "if": null,
+            "name": null,
+            "needs": [],
+            "unsupported_job": null
+          }
+        ],
+        "status": "VALID"
+      }
+    },
+    {
+      "file": "f29-s2-plain-ind1.yml",
+      "id": "f29-s2-plain-ind1",
+      "note": "FIX-P0-09: f29 S2, plain key with the colon on the next line, indent 1",
+      "oracle": {
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": [],
+        "jobs": [],
+        "status": "INVALID"
+      },
+      "typescript": {
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": [],
+        "jobs": [],
+        "status": "INVALID"
+      }
+    },
+    {
+      "file": "f30-s2-plain-ind2.yml",
+      "id": "f30-s2-plain-ind2",
+      "note": "FIX-P0-09: f30 S2, plain key with the colon on the next line, indent 2",
+      "oracle": {
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": [],
+        "jobs": [],
+        "status": "INVALID"
+      },
+      "typescript": {
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": [],
+        "jobs": [],
+        "status": "INVALID"
+      }
+    },
+    {
+      "file": "f31-s2-quoted-ind1.yml",
+      "id": "f31-s2-quoted-ind1",
+      "note": "FIX-P0-09: f31 S2, quoted key with the colon on the next line, indent 1",
+      "oracle": {
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": [],
+        "jobs": [],
+        "status": "INVALID"
+      },
+      "typescript": {
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": [],
+        "jobs": [],
+        "status": "INVALID"
+      }
+    },
+    {
+      "file": "f32-s2-on-quoted.yml",
+      "id": "f32-s2-on-quoted",
+      "note": "FIX-P0-09: f32 S2, quoted key with the colon on the next line as on: value",
+      "oracle": {
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": [],
+        "jobs": [],
+        "status": "INVALID"
+      },
+      "typescript": {
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": [],
+        "jobs": [],
+        "status": "INVALID"
+      }
+    },
+    {
+      "file": "f33-s2-comment-ind1.yml",
+      "id": "f33-s2-comment-ind1",
+      "note": "FIX-P0-09: f33 S2, comment between the key and the colon on the next line",
+      "oracle": {
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": [],
+        "jobs": [],
+        "status": "INVALID"
+      },
+      "typescript": {
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": [],
+        "jobs": [],
+        "status": "INVALID"
+      }
+    },
+    {
+      "file": "f34-s2-comment-own-line.yml",
+      "id": "f34-s2-comment-own-line",
+      "note": "FIX-P0-09: f34 S2, comment on its own line between the key and the colon",
+      "oracle": {
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": [],
+        "jobs": [],
+        "status": "INVALID"
+      },
+      "typescript": {
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": [],
+        "jobs": [],
+        "status": "INVALID"
+      }
+    },
+    {
+      "file": "f35-s2-multi-pair.yml",
+      "id": "f35-s2-multi-pair",
+      "note": "FIX-P0-09: f35 S2, colon on the next line at indent 0 \u2014 both reject already (boundary)",
+      "oracle": {
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": [],
+        "jobs": [],
+        "status": "INVALID"
+      },
+      "typescript": {
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": [],
+        "jobs": [],
+        "status": "INVALID"
+      }
+    },
+    {
+      "file": "f36-s2-explicit-comment.yml",
+      "id": "f36-s2-explicit-comment",
+      "note": "FIX-P0-09: f36 S2, explicit ? key with a comment before the colon on the next line \u2014 both accept (boundary)",
+      "oracle": {
+        "errors": [],
+        "events": [
+          {
+            "branches": null,
+            "branches_ignore": null,
+            "name": "push",
+            "paths": null,
+            "paths_ignore": null,
+            "types": null
+          }
+        ],
+        "jobs": [
+          {
+            "id": "test",
+            "if": null,
+            "name": null,
+            "needs": [],
+            "unsupported_job": null
+          }
+        ],
+        "status": "VALID"
+      },
+      "typescript": {
+        "errors": [],
+        "events": [
+          {
+            "branches": null,
+            "branches_ignore": null,
+            "name": "push",
+            "paths": null,
+            "paths_ignore": null,
+            "types": null
+          }
+        ],
+        "jobs": [
+          {
+            "id": "test",
+            "if": null,
+            "name": null,
+            "needs": [],
+            "unsupported_job": null
+          }
+        ],
+        "status": "VALID"
+      }
+    },
+    {
+      "file": "f37-value-next-line.yml",
+      "id": "f37-value-next-line",
+      "note": "FIX-P0-09: f37 value written on the next line after the colon \u2014 both accept (boundary)",
+      "oracle": {
+        "errors": [],
+        "events": [
+          {
+            "branches": null,
+            "branches_ignore": null,
+            "name": "push",
+            "paths": null,
+            "paths_ignore": null,
+            "types": null
+          }
+        ],
+        "jobs": [
+          {
+            "id": "test",
+            "if": null,
+            "name": null,
+            "needs": [],
+            "unsupported_job": null
+          }
+        ],
+        "status": "VALID"
+      },
+      "typescript": {
+        "errors": [],
+        "events": [
+          {
+            "branches": null,
+            "branches_ignore": null,
+            "name": "push",
+            "paths": null,
+            "paths_ignore": null,
+            "types": null
+          }
+        ],
+        "jobs": [
+          {
+            "id": "test",
+            "if": null,
+            "name": null,
+            "needs": [],
+            "unsupported_job": null
+          }
+        ],
+        "status": "VALID"
+      }
+    },
+    {
+      "file": "f38-key-next-line-after-brace.yml",
+      "id": "f38-key-next-line-after-brace",
+      "note": "FIX-P0-09: f38 key on the next line after { \u2014 both accept (boundary)",
+      "oracle": {
+        "errors": [],
+        "events": [
+          {
+            "branches": null,
+            "branches_ignore": null,
+            "name": "push",
+            "paths": null,
+            "paths_ignore": null,
+            "types": null
+          }
+        ],
+        "jobs": [
+          {
+            "id": "test",
+            "if": null,
+            "name": null,
+            "needs": [],
+            "unsupported_job": null
+          }
+        ],
+        "status": "VALID"
+      },
+      "typescript": {
+        "errors": [],
+        "events": [
+          {
+            "branches": null,
+            "branches_ignore": null,
+            "name": "push",
+            "paths": null,
+            "paths_ignore": null,
+            "types": null
+          }
+        ],
+        "jobs": [
+          {
+            "id": "test",
+            "if": null,
+            "name": null,
+            "needs": [],
+            "unsupported_job": null
+          }
+        ],
+        "status": "VALID"
+      }
+    }
+  ],
+  "schema": "checkpath.parser-divergence/v1"
+}

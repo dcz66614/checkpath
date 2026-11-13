@@ -1,0 +1,455 @@
+{
+ "schema": "checkpath.parser-divergence/v1",
+ "cases": [
+  {
+   "id": "p01-flowmap-on",
+   "file": "p01-flowmap-on.yml",
+   "note": "(a) unwrap: flow-map value WITH on",
+   "typescript": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "name": "push",
+      "types": null,
+      "branches": null,
+      "branches_ignore": null,
+      "paths": null,
+      "paths_ignore": null
+     }
+    ]
+   },
+   "oracle": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "branches": null,
+      "branches_ignore": null,
+      "name": "push",
+      "paths": null,
+      "paths_ignore": null,
+      "types": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "p02-blockmap-on",
+   "file": "p02-blockmap-on.yml",
+   "note": "(a) unwrap: block-map value WITH on",
+   "typescript": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "name": "push",
+      "types": null,
+      "branches": null,
+      "branches_ignore": null,
+      "paths": null,
+      "paths_ignore": null
+     }
+    ]
+   },
+   "oracle": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "branches": null,
+      "branches_ignore": null,
+      "name": "push",
+      "paths": null,
+      "paths_ignore": null,
+      "types": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "p03-flow-full",
+   "file": "p03-flow-full.yml",
+   "note": "(a) unwrap: full workflow in flow-map value",
+   "typescript": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "name": "push",
+      "types": null,
+      "branches": null,
+      "branches_ignore": null,
+      "paths": null,
+      "paths_ignore": null
+     }
+    ]
+   },
+   "oracle": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "branches": null,
+      "branches_ignore": null,
+      "name": "push",
+      "paths": null,
+      "paths_ignore": null,
+      "types": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "p04-tag-map-on",
+   "file": "p04-tag-map-on.yml",
+   "note": "(a) unwrap: tagged flow-map value WITH on",
+   "typescript": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "name": "push",
+      "types": null,
+      "branches": null,
+      "branches_ignore": null,
+      "paths": null,
+      "paths_ignore": null
+     }
+    ]
+   },
+   "oracle": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "branches": null,
+      "branches_ignore": null,
+      "name": "push",
+      "paths": null,
+      "paths_ignore": null,
+      "types": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "p05-jobs-only",
+   "file": "p05-jobs-only.yml",
+   "note": "(a) unwrap: jobs but no on (trigger stays missing_on_key)",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "missing_on_key"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "missing_on_key"
+    ],
+    "events": []
+   }
+  },
+  {
+   "id": "p06-anchor-val",
+   "file": "p06-anchor-val.yml",
+   "note": "(b) second anchor, scalar value",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   }
+  },
+  {
+   "id": "p07-anchor-seq",
+   "file": "p07-anchor-seq.yml",
+   "note": "(b) second anchor, flow-seq value",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   }
+  },
+  {
+   "id": "p08-self-alias-val",
+   "file": "p08-self-alias-val.yml",
+   "note": "(b) alias to the outer anchor as the value",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   }
+  },
+  {
+   "id": "p09-tag-key",
+   "file": "p09-tag-key.yml",
+   "note": "(c) tag on the key",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   }
+  },
+  {
+   "id": "p10-handle-key",
+   "file": "p10-handle-key.yml",
+   "note": "(c) handle tag on the key",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   }
+  },
+  {
+   "id": "p11-docmark-tagkey",
+   "file": "p11-docmark-tagkey.yml",
+   "note": "(c) docmark + tag on the key",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   }
+  },
+  {
+   "id": "p12-unglued",
+   "file": "p12-unglued.yml",
+   "note": "(d) unglued anchor-colon",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   }
+  },
+  {
+   "id": "p13-unglued-nested",
+   "file": "p13-unglued-nested.yml",
+   "note": "(d) unglued, nested single pair",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   }
+  },
+  {
+   "id": "p14-nested-block",
+   "file": "p14-nested-block.yml",
+   "note": "(e) nested block-map value, anchored key",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   }
+  },
+  {
+   "id": "p15-nested-blockmap",
+   "file": "p15-nested-blockmap.yml",
+   "note": "(e) nested, block-map value",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   }
+  },
+  {
+   "id": "p16-nested-flow-twin",
+   "file": "p16-nested-flow-twin.yml",
+   "note": "control: flow twin (both missing_on_key)",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "missing_on_key"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "missing_on_key"
+    ],
+    "events": []
+   }
+  },
+  {
+   "id": "p17-quoted-empty",
+   "file": "p17-quoted-empty.yml",
+   "note": "control: quoted empty key (both missing_on_key)",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "missing_on_key"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "missing_on_key"
+    ],
+    "events": []
+   }
+  },
+  {
+   "id": "p18-lone-scalar",
+   "file": "p18-lone-scalar.yml",
+   "note": "control: R13 lone-doc core (both workflow_root_not_mapping)",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "workflow_root_not_mapping"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "workflow_root_not_mapping"
+    ],
+    "events": []
+   }
+  },
+  {
+   "id": "p19-nonempty-2anchor",
+   "file": "p19-nonempty-2anchor.yml",
+   "note": "control: anchor on non-empty key + 2nd anchor on value",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "missing_on_key"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "missing_on_key"
+    ],
+    "events": []
+   }
+  },
+  {
+   "id": "p20-str-blockmap-on",
+   "file": "p20-str-blockmap-on.yml",
+   "note": "(a) unwrap: !!str on block-map value WITH on (span re-parse)",
+   "typescript": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "name": "push",
+      "types": null,
+      "branches": null,
+      "branches_ignore": null,
+      "paths": null,
+      "paths_ignore": null
+     }
+    ]
+   },
+   "oracle": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "branches": null,
+      "branches_ignore": null,
+      "name": "push",
+      "paths": null,
+      "paths_ignore": null,
+      "types": null
+     }
+    ]
+   }
+  }
+ ]
+}

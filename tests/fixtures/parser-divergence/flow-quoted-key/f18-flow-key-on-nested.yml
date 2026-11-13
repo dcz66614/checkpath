@@ -1,0 +1,8 @@
+on: {push: {"a
+ b": 1}}
+name: probe
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo hi

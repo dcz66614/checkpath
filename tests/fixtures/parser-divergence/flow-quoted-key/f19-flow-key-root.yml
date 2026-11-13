@@ -1,0 +1,6 @@
+{"a
+ b": 1}
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest

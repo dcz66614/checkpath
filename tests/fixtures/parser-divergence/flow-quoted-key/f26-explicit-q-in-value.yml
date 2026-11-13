@@ -1,0 +1,10 @@
+m: {"x": "a
+ b # not a comment", ? "c
+ d": 1}
+name: probe
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo hi

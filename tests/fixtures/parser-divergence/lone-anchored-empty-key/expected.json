@@ -1,0 +1,285 @@
+{
+ "schema": "checkpath.parser-divergence/v1",
+ "cases": [
+  {
+   "id": "l01-lone-scalar",
+   "file": "l01-lone-scalar.yml",
+   "note": "P0 core: lone &x: 1",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "workflow_root_not_mapping"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "workflow_root_not_mapping"
+    ],
+    "events": []
+   }
+  },
+  {
+   "id": "l02-lone-null",
+   "file": "l02-lone-null.yml",
+   "note": "P0 core: lone &x:",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "workflow_root_not_mapping"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "workflow_root_not_mapping"
+    ],
+    "events": []
+   }
+  },
+  {
+   "id": "l03-lone-str",
+   "file": "l03-lone-str.yml",
+   "note": "string value",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "workflow_root_not_mapping"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "workflow_root_not_mapping"
+    ],
+    "events": []
+   }
+  },
+  {
+   "id": "l04-lone-flowseq",
+   "file": "l04-lone-flowseq.yml",
+   "note": "flow-seq value",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "workflow_root_not_mapping"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "workflow_root_not_mapping"
+    ],
+    "events": []
+   }
+  },
+  {
+   "id": "l05-lone-blockseq",
+   "file": "l05-lone-blockseq.yml",
+   "note": "block-seq value",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "workflow_root_not_mapping"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "workflow_root_not_mapping"
+    ],
+    "events": []
+   }
+  },
+  {
+   "id": "l06-lone-tagged-value",
+   "file": "l06-lone-tagged-value.yml",
+   "note": "tagged scalar value",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "workflow_root_not_mapping"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "workflow_root_not_mapping"
+    ],
+    "events": []
+   }
+  },
+  {
+   "id": "l07-lone-docmark",
+   "file": "l07-lone-docmark.yml",
+   "note": "explicit doc start",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "workflow_root_not_mapping"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "workflow_root_not_mapping"
+    ],
+    "events": []
+   }
+  },
+  {
+   "id": "l08-lone-comment",
+   "file": "l08-lone-comment.yml",
+   "note": "trailing comment",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "workflow_root_not_mapping"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "workflow_root_not_mapping"
+    ],
+    "events": []
+   }
+  },
+  {
+   "id": "l09-quoted-empty",
+   "file": "l09-quoted-empty.yml",
+   "note": "CONTROL: quoted empty key must stay missing_on_key",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "missing_on_key"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "missing_on_key"
+    ],
+    "events": []
+   }
+  },
+  {
+   "id": "l10-flowmap-value",
+   "file": "l10-flowmap-value.yml",
+   "note": "CONTROL: flow-map value stays missing_on_key",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "missing_on_key"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "missing_on_key"
+    ],
+    "events": []
+   }
+  },
+  {
+   "id": "l11-blockmap-value",
+   "file": "l11-blockmap-value.yml",
+   "note": "CONTROL: block-map value stays missing_on_key",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "missing_on_key"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "missing_on_key"
+    ],
+    "events": []
+   }
+  },
+  {
+   "id": "l12-c3-exempt",
+   "file": "l12-c3-exempt.yml",
+   "note": "CONTROL: first-pair null exempt, both VALID",
+   "typescript": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "name": "push",
+      "types": null,
+      "branches": null,
+      "branches_ignore": null,
+      "paths": null,
+      "paths_ignore": null
+     }
+    ]
+   },
+   "oracle": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "branches": null,
+      "branches_ignore": null,
+      "name": "push",
+      "paths": null,
+      "paths_ignore": null,
+      "types": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "l13-c3-reject",
+   "file": "l13-c3-reject.yml",
+   "note": "CONTROL: C3 domain, both yaml_parse_error",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   }
+  },
+  {
+   "id": "l14-lone-plain",
+   "file": "l14-lone-plain.yml",
+   "note": "CONTROL: lone plain scalar",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "workflow_root_not_mapping"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "workflow_root_not_mapping"
+    ],
+    "events": []
+   }
+  }
+ ]
+}
