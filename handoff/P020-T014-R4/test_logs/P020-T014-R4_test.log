@@ -1,0 +1,1813 @@
+
+> checkpath@0.0.0-t001-skeleton test
+> vitest run
+
+
+[1m[30m[46m RUN [49m[39m[22m [36mv5.1.0 [39m[90m/home/hatch/workspace/p020-checkpath[39m
+
+(node:28927) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:28927) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:28927) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 3, column 8:
+
+on: {*a: 1}
+       ^
+
+(node:28927) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 3, column 8:
+
+on: {*a: 1}
+       ^
+
+ [32m✓[39m tests/unit/diff-boundaries/tab-rejected.test.ts [2m([22m[2m50 tests[22m[2m)[22m[33m 19664[2mms[22m[39m
+   [32m✓[39m tab YAML parity (FIX-P0-06, R2 P0 residual H6) [2m(50)[22m
+     [33m[2m✓[22m[39m f01-h6-flow-alias-tab-before-colon: TS and Oracle agree (status / errors / events / jobs)[33m 563[2mms[22m[39m
+     [33m[2m✓[22m[39m f02-h6-block-alias-tab-before-colon: TS and Oracle agree (status / errors / events / jobs)[33m 600[2mms[22m[39m
+     [33m[2m✓[22m[39m f03-h6-flow-alias-tab-space-before-colon: TS and Oracle agree (status / errors / events / jobs)[33m 498[2mms[22m[39m
+     [33m[2m✓[22m[39m f04-h6-flow-alias-tab-after-colon: TS and Oracle agree (status / errors / events / jobs)[33m 398[2mms[22m[39m
+     [33m[2m✓[22m[39m f05-h6-flow-scalar-key-tab-before-colon: TS and Oracle agree (status / errors / events / jobs)[33m 401[2mms[22m[39m
+     [33m[2m✓[22m[39m f06-h6-block-scalar-key-tab-before-colon: TS and Oracle agree (status / errors / events / jobs)[33m 389[2mms[22m[39m
+     [33m[2m✓[22m[39m f07-h6-flow-alias-value-tab: TS and Oracle agree (status / errors / events / jobs)[33m 423[2mms[22m[39m
+     [33m[2m✓[22m[39m f08-h6-quoted-string-tab: TS and Oracle agree (status / errors / events / jobs)[33m 345[2mms[22m[39m
+     [33m[2m✓[22m[39m f09-h6-tab-indentation: TS and Oracle agree (status / errors / events / jobs)[33m 453[2mms[22m[39m
+     [33m[2m✓[22m[39m f10-h6-explicit-key-alias-tab: TS and Oracle agree (status / errors / events / jobs)[33m 338[2mms[22m[39m
+     [33m[2m✓[22m[39m f11-h6-map-anchor-alias-tab: TS and Oracle agree (status / errors / events / jobs)[33m 400[2mms[22m[39m
+     [33m[2m✓[22m[39m f12-h6-adjacent-colon-alias-key: TS and Oracle agree (status / errors / events / jobs)[33m 372[2mms[22m[39m
+     [33m[2m✓[22m[39m f13-h6-flow-seq-value-alias-tab: TS and Oracle agree (status / errors / events / jobs)[33m 388[2mms[22m[39m
+     [33m[2m✓[22m[39m f14-h6-flow-alias-double-tab-before-colon: TS and Oracle agree (status / errors / events / jobs)[33m 405[2mms[22m[39m
+     [33m[2m✓[22m[39m f15-t01-flow-scalar-key-tab-before-colon: TS and Oracle agree (status / errors / events / jobs)[33m 413[2mms[22m[39m
+     [33m[2m✓[22m[39m f16-t02-block-scalar-key-tab-before-colon: TS and Oracle agree (status / errors / events / jobs)[33m 390[2mms[22m[39m
+     [33m[2m✓[22m[39m f17-t03-flow-tab-after-colon: TS and Oracle agree (status / errors / events / jobs)[33m 322[2mms[22m[39m
+     [33m[2m✓[22m[39m f18-t04-block-tab-after-colon: TS and Oracle agree (status / errors / events / jobs)[33m 397[2mms[22m[39m
+     [33m[2m✓[22m[39m f19-t05-flow-tab-after-plain-value: TS and Oracle agree (status / errors / events / jobs)[33m 378[2mms[22m[39m
+     [33m[2m✓[22m[39m f20-t07-flow-tab-space-before-colon: TS and Oracle agree (status / errors / events / jobs)[33m 326[2mms[22m[39m
+     [33m[2m✓[22m[39m f21-t08-tab-inside-plain-scalar: TS and Oracle agree (status / errors / events / jobs)[33m 378[2mms[22m[39m
+     [33m[2m✓[22m[39m f22-t09-tab-inside-single-quoted-scalar: TS and Oracle agree (status / errors / events / jobs)[33m 334[2mms[22m[39m
+     [33m[2m✓[22m[39m f23-t10-tab-inside-block-scalar: TS and Oracle agree (status / errors / events / jobs)[33m 388[2mms[22m[39m
+     [33m[2m✓[22m[39m f24-t11-tab-after-explicit-key-marker: TS and Oracle agree (status / errors / events / jobs)[33m 481[2mms[22m[39m
+     [33m[2m✓[22m[39m f25-t12-tab-after-dash: TS and Oracle agree (status / errors / events / jobs)[33m 324[2mms[22m[39m
+     [33m[2m✓[22m[39m f26-t13-tab-inside-comment: TS and Oracle agree (status / errors / events / jobs)[33m 391[2mms[22m[39m
+     [33m[2m✓[22m[39m f27-t14-trailing-tab: TS and Oracle agree (status / errors / events / jobs)[33m 394[2mms[22m[39m
+     [33m[2m✓[22m[39m f28-t15-tab-between-key-and-value: TS and Oracle agree (status / errors / events / jobs)[33m 388[2mms[22m[39m
+     [33m[2m✓[22m[39m f29-t18-flow-tab-after-comma: TS and Oracle agree (status / errors / events / jobs)[33m 401[2mms[22m[39m
+     [33m[2m✓[22m[39m f30-t19-flow-tab-after-open-brace: TS and Oracle agree (status / errors / events / jobs)[33m 401[2mms[22m[39m
+     [33m[2m✓[22m[39m f31-t20-block-tab-before-colon-in-jobs: TS and Oracle agree (status / errors / events / jobs)[33m 403[2mms[22m[39m
+     [33m[2m✓[22m[39m f32-t21-tab-inside-double-quoted-key: TS and Oracle agree (status / errors / events / jobs)[33m 398[2mms[22m[39m
+     [33m[2m✓[22m[39m f33-t22-tab-inside-flow-plain-scalar-value: TS and Oracle agree (status / errors / events / jobs)[33m 411[2mms[22m[39m
+     [33m[2m✓[22m[39m f34-t23-tab-after-anchor: TS and Oracle agree (status / errors / events / jobs)[33m 408[2mms[22m[39m
+     [33m[2m✓[22m[39m f35-t24-tab-after-tag: TS and Oracle agree (status / errors / events / jobs)[33m 388[2mms[22m[39m
+     [33m[2m✓[22m[39m f36-t25-flow-nested-tab-in-list: TS and Oracle agree (status / errors / events / jobs)[33m 481[2mms[22m[39m
+     [33m[2m✓[22m[39m f37-b1-tab-at-start-of-block-content-line: TS and Oracle agree (status / errors / events / jobs)[33m 333[2mms[22m[39m
+     [33m[2m✓[22m[39m f38-b3-block-scalar-first-line-tab-indented: TS and Oracle agree (status / errors / events / jobs)[33m 333[2mms[22m[39m
+     [33m[2m✓[22m[39m f39-b4-tab-in-multiline-plain-scalar: TS and Oracle agree (status / errors / events / jobs)[33m 318[2mms[22m[39m
+     [33m[2m✓[22m[39m f40-b5-apostrophe-plain-scalar-tab: TS and Oracle agree (status / errors / events / jobs)[33m 368[2mms[22m[39m
+     [33m[2m✓[22m[39m f41-b6-tab-before-comment: TS and Oracle agree (status / errors / events / jobs)[33m 408[2mms[22m[39m
+     [33m[2m✓[22m[39m f42-q1-quote-at-plain-scalar-continuation: TS and Oracle agree (status / errors / events / jobs)[33m 401[2mms[22m[39m
+     [33m[2m✓[22m[39m f43-q2-misindented-block-content-with-tab: TS and Oracle agree (status / errors / events / jobs)[33m 400[2mms[22m[39m
+     [33m[2m✓[22m[39m f44-q3-bare-seq-item-block-scalar-tab: TS and Oracle agree (status / errors / events / jobs)[33m 394[2mms[22m[39m
+     [33m[2m✓[22m[39m f45-q4-folded-block-scalar-tab: TS and Oracle agree (status / errors / events / jobs)[33m 485[2mms[22m[39m
+     [33m[2m✓[22m[39m f46-q5-chomping-block-scalar-tab: TS and Oracle agree (status / errors / events / jobs)[33m 404[2mms[22m[39m
+     [33m[2m✓[22m[39m f47-q6-explicit-indent-block-scalar-tab: TS and Oracle agree (status / errors / events / jobs)[33m 387[2mms[22m[39m
+     [33m[2m✓[22m[39m f48-q7-tab-in-comment-after-block-header: TS and Oracle agree (status / errors / events / jobs)[33m 336[2mms[22m[39m
+     [33m[2m✓[22m[39m f49-q8-apostrophe-in-run-value-tab: TS and Oracle agree (status / errors / events / jobs)[33m 389[2mms[22m[39m
+ [32m✓[39m tests/unit/witness/witness-determinism.test.ts [2m([22m[2m1 test[22m[2m)[22m[33m 19691[2mms[22m[39m
+   [32m✓[39m T009 witness determinism [2m(1)[22m
+     [33m[2m✓[22m[39m 100 repetitions over all 44 suite cases yield exactly one canonical SHA-256[33m 19688[2mms[22m[39m
+ [32m✓[39m tests/unit/diff-boundaries/flow-continuation.test.ts [2m([22m[2m49 tests[22m[2m)[22m[33m 20761[2mms[22m[39m
+   [32m✓[39m flow-continuation parity (FIX-P0-10, R9 R4/R5) [2m(49)[22m
+     [33m[2m✓[22m[39m f01-r4-m-comma-ind0: TS and Oracle agree (status / errors / events / jobs)[33m 560[2mms[22m[39m
+     [33m[2m✓[22m[39m f02-r4-m-comma-ind1: TS and Oracle agree (status / errors / events / jobs)[33m 582[2mms[22m[39m
+     [33m[2m✓[22m[39m f03-r4-m-comma-ind2: TS and Oracle agree (status / errors / events / jobs)[33m 493[2mms[22m[39m
+     [33m[2m✓[22m[39m f04-r4-m-nested-ind0: TS and Oracle agree (status / errors / events / jobs)[33m 328[2mms[22m[39m
+     [33m[2m✓[22m[39m f05-r4-m-nested-ind1: TS and Oracle agree (status / errors / events / jobs)[33m 486[2mms[22m[39m
+     [33m[2m✓[22m[39m f06-r4-on-ind0: TS and Oracle agree (status / errors / events / jobs)[33m 325[2mms[22m[39m
+     [33m[2m✓[22m[39m f07-r4-on-ind1: TS and Oracle agree (status / errors / events / jobs)[33m 336[2mms[22m[39m
+     [33m[2m✓[22m[39m f08-r4-jobs-ind0: TS and Oracle agree (status / errors / events / jobs)[33m 387[2mms[22m[39m
+     [33m[2m✓[22m[39m f09-r4-jobs-ind4: TS and Oracle agree (status / errors / events / jobs)[33m 391[2mms[22m[39m
+     [33m[2m✓[22m[39m f10-r4-jobs-ind5: TS and Oracle agree (status / errors / events / jobs)[33m 401[2mms[22m[39m
+     [33m[2m✓[22m[39m f11-r4-deep-ind0: TS and Oracle agree (status / errors / events / jobs)[33m 492[2mms[22m[39m
+     [33m[2m✓[22m[39m f12-r4-deep-ind10: TS and Oracle agree (status / errors / events / jobs)[33m 407[2mms[22m[39m
+     [33m[2m✓[22m[39m f13-r4-deep-ind11: TS and Oracle agree (status / errors / events / jobs)[33m 425[2mms[22m[39m
+     [33m[2m✓[22m[39m f14-r4-seqitem-ind0: TS and Oracle agree (status / errors / events / jobs)[33m 484[2mms[22m[39m
+     [33m[2m✓[22m[39m f15-r4-seqitem-ind6: TS and Oracle agree (status / errors / events / jobs)[33m 472[2mms[22m[39m
+     [33m[2m✓[22m[39m f16-r4-seqitem-ind7: TS and Oracle agree (status / errors / events / jobs)[33m 334[2mms[22m[39m
+     [33m[2m✓[22m[39m f17-r4-outer-ind0: TS and Oracle agree (status / errors / events / jobs)[33m 379[2mms[22m[39m
+     [33m[2m✓[22m[39m f18-r4-outer-ind1: TS and Oracle agree (status / errors / events / jobs)[33m 406[2mms[22m[39m
+     [33m[2m✓[22m[39m f19-r4-comma-alone: TS and Oracle agree (status / errors / events / jobs)[33m 395[2mms[22m[39m
+     [33m[2m✓[22m[39m f20-r4-trailing-ind0: TS and Oracle agree (status / errors / events / jobs)[33m 323[2mms[22m[39m
+     [33m[2m✓[22m[39m f21-r4-trailing-ind1: TS and Oracle agree (status / errors / events / jobs)[33m 395[2mms[22m[39m
+     [33m[2m✓[22m[39m f22-r5-plain-ind0: TS and Oracle agree (status / errors / events / jobs)[33m 372[2mms[22m[39m
+     [33m[2m✓[22m[39m f23-r5-plain-ind1: TS and Oracle agree (status / errors / events / jobs)[33m 402[2mms[22m[39m
+     [33m[2m✓[22m[39m f24-r5-quoted-ind0: TS and Oracle agree (status / errors / events / jobs)[33m 329[2mms[22m[39m
+     [33m[2m✓[22m[39m f25-r5-quoted-ind1: TS and Oracle agree (status / errors / events / jobs)[33m 510[2mms[22m[39m
+     [33m[2m✓[22m[39m f26-r5-sq-ind0: TS and Oracle agree (status / errors / events / jobs)[33m 465[2mms[22m[39m
+     [33m[2m✓[22m[39m f27-r5-nested-ind0: TS and Oracle agree (status / errors / events / jobs)[33m 404[2mms[22m[39m
+     [33m[2m✓[22m[39m f28-r5-nested-ind1: TS and Oracle agree (status / errors / events / jobs)[33m 491[2mms[22m[39m
+     [33m[2m✓[22m[39m f29-r5-on-ind0: TS and Oracle agree (status / errors / events / jobs)[33m 422[2mms[22m[39m
+     [33m[2m✓[22m[39m f30-r5-on-ind1: TS and Oracle agree (status / errors / events / jobs)[33m 472[2mms[22m[39m
+     [33m[2m✓[22m[39m f31-r5-jobs-ind0: TS and Oracle agree (status / errors / events / jobs)[33m 417[2mms[22m[39m
+     [33m[2m✓[22m[39m f32-r5-jobs-ind4: TS and Oracle agree (status / errors / events / jobs)[33m 383[2mms[22m[39m
+     [33m[2m✓[22m[39m f33-r5-jobs-ind5: TS and Oracle agree (status / errors / events / jobs)[33m 409[2mms[22m[39m
+     [33m[2m✓[22m[39m f34-r5-qkey-next-ind0: TS and Oracle agree (status / errors / events / jobs)[33m 591[2mms[22m[39m
+     [33m[2m✓[22m[39m f35-r5-qkey-next-ind1: TS and Oracle agree (status / errors / events / jobs)[33m 404[2mms[22m[39m
+     [33m[2m✓[22m[39m f36-r5-val-next-ind0: TS and Oracle agree (status / errors / events / jobs)[33m 326[2mms[22m[39m
+     [33m[2m✓[22m[39m f37-r5-val-next-ind1: TS and Oracle agree (status / errors / events / jobs)[33m 400[2mms[22m[39m
+     [33m[2m✓[22m[39m f38-r5-colon-alone: TS and Oracle agree (status / errors / events / jobs)[33m 372[2mms[22m[39m
+     [33m[2m✓[22m[39m f39-adj-keynext-ind0: TS and Oracle agree (status / errors / events / jobs)[33m 317[2mms[22m[39m
+     [33m[2m✓[22m[39m f40-adj-keynext-ind1: TS and Oracle agree (status / errors / events / jobs)[33m 682[2mms[22m[39m
+     [33m[2m✓[22m[39m f41-adj-valnext-ind0: TS and Oracle agree (status / errors / events / jobs)[33m 401[2mms[22m[39m
+     [33m[2m✓[22m[39m f42-adj-close-ind0: TS and Oracle agree (status / errors / events / jobs)[33m 419[2mms[22m[39m
+     [33m[2m✓[22m[39m f43-adj-first-ind0: TS and Oracle agree (status / errors / events / jobs)[33m 404[2mms[22m[39m
+     [33m[2m✓[22m[39m f44-adj-plaincont-ind0: TS and Oracle agree (status / errors / events / jobs)[33m 409[2mms[22m[39m
+     [33m[2m✓[22m[39m f45-adj-plaincont-ind1: TS and Oracle agree (status / errors / events / jobs)[33m 564[2mms[22m[39m
+     [33m[2m✓[22m[39m f46-adj-seq-comma-ind0: TS and Oracle agree (status / errors / events / jobs)[33m 497[2mms[22m[39m
+     [33m[2m✓[22m[39m f47-adj-seq-comma-ind1: TS and Oracle agree (status / errors / events / jobs)[33m 541[2mms[22m[39m
+     [33m[2m✓[22m[39m f48-adj-seq-first-ind0: TS and Oracle agree (status / errors / events / jobs)[33m 478[2mms[22m[39m
+ [32m✓[39m tests/unit/diff-boundaries/multiline-quoted-unindented.test.ts [2m([22m[2m22 tests[22m[2m)[22m[33m 8310[2mms[22m[39m
+   [32m✓[39m multiline-quoted-unindented parity (FIX-P0-08, R7 RESID) [2m(22)[22m
+     [33m[2m✓[22m[39m f01-resid-dq: TS and Oracle agree (status / errors / events / jobs)[33m 391[2mms[22m[39m
+     [33m[2m✓[22m[39m f02-resid-sq: TS and Oracle agree (status / errors / events / jobs)[33m 406[2mms[22m[39m
+     [33m[2m✓[22m[39m f03-resid-dq-notab: TS and Oracle agree (status / errors / events / jobs)[33m 385[2mms[22m[39m
+     [33m[2m✓[22m[39m f04-resid-dq-ind2: TS and Oracle agree (status / errors / events / jobs)[33m 388[2mms[22m[39m
+     [33m[2m✓[22m[39m f05-resid-dq-ind8: TS and Oracle agree (status / errors / events / jobs)[33m 322[2mms[22m[39m
+     [33m[2m✓[22m[39m f06-resid-dq-ind9: TS and Oracle agree (status / errors / events / jobs)[33m 397[2mms[22m[39m
+     [33m[2m✓[22m[39m f07-name-k0-ind0: TS and Oracle agree (status / errors / events / jobs)[33m 369[2mms[22m[39m
+     [33m[2m✓[22m[39m f08-name-k0-ind1: TS and Oracle agree (status / errors / events / jobs)[33m 345[2mms[22m[39m
+     [33m[2m✓[22m[39m f09-nested-k2-ind2: TS and Oracle agree (status / errors / events / jobs)[33m 400[2mms[22m[39m
+     [33m[2m✓[22m[39m f10-nested-k2-ind3: TS and Oracle agree (status / errors / events / jobs)[33m 403[2mms[22m[39m
+     [33m[2m✓[22m[39m f11-flow-value-ind0: TS and Oracle agree (status / errors / events / jobs)[33m 466[2mms[22m[39m
+     [33m[2m✓[22m[39m f12-flow-value-ind1: TS and Oracle agree (status / errors / events / jobs)[33m 408[2mms[22m[39m
+     [33m[2m✓[22m[39m f13-seq-item-ind2: TS and Oracle agree (status / errors / events / jobs)[33m 389[2mms[22m[39m
+     [33m[2m✓[22m[39m f14-seq-item-ind3: TS and Oracle agree (status / errors / events / jobs)[33m 401[2mms[22m[39m
+     [33m[2m✓[22m[39m f15-blank-line-mid: TS and Oracle agree (status / errors / events / jobs)[33m 496[2mms[22m[39m
+     [33m[2m✓[22m[39m f16-tabonly-line-mid: TS and Oracle agree (status / errors / events / jobs)[33m 391[2mms[22m[39m
+     [33m[2m✓[22m[39m f17-close-quote-ind0: TS and Oracle agree (status / errors / events / jobs)[33m 325[2mms[22m[39m
+     [33m[2m✓[22m[39m f18-close-quote-ind9: TS and Oracle agree (status / errors / events / jobs)[33m 397[2mms[22m[39m
+     [33m[2m✓[22m[39m f19-multi-9-then-0: TS and Oracle agree (status / errors / events / jobs)[33m 390[2mms[22m[39m
+     [33m[2m✓[22m[39m f20-ownline-ind0: TS and Oracle agree (status / errors / events / jobs)[33m 330[2mms[22m[39m
+     [33m[2m✓[22m[39m f21-ownline-ind9: TS and Oracle agree (status / errors / events / jobs)[33m 495[2mms[22m[39m
+(node:29177) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 2, column 7:
+
+m: {*w: 1, a: 1}
+      ^
+
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:29177) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 2, column 7:
+
+m: {*w: 1, a: 1}
+      ^
+
+(node:29177) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 2, column 7:
+
+m: {*w: 1, *w: 2}
+      ^
+
+(node:29177) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 2, column 14:
+
+m: {*w: 1, *w: 2}
+             ^
+
+(node:29177) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 2, column 7:
+
+m: {*w: 1, *w: 2}
+      ^
+
+(node:29177) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 2, column 14:
+
+m: {*w: 1, *w: 2}
+             ^
+
+(node:29177) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 4, column 5:
+
+  *w: 1
+    ^
+
+(node:29177) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 4, column 5:
+
+  *w: 1
+    ^
+
+(node:29177) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29177) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+ [32m✓[39m tests/unit/diff-boundaries/duplicate-alias-key-p0-19.test.ts [2m([22m[2m36 tests[22m[2m)[22m[33m 14994[2mms[22m[39m
+   [32m✓[39m duplicate alias key YAML parity (FIX-P0-19, R18 P0 family) [2m(36)[22m
+     [33m[2m✓[22m[39m a-alias-after-absorbed: TS and Oracle agree (status / errors / events / jobs)[33m 508[2mms[22m[39m
+     [33m[2m✓[22m[39m a-alias-after-plain: TS and Oracle agree (status / errors / events / jobs)[33m 474[2mms[22m[39m
+     [33m[2m✓[22m[39m a-alias-first: TS and Oracle agree (status / errors / events / jobs)[33m 410[2mms[22m[39m
+     [33m[2m✓[22m[39m a-alias-twice: TS and Oracle agree (status / errors / events / jobs)[33m 406[2mms[22m[39m
+     [33m[2m✓[22m[39m a-nested-flow: TS and Oracle agree (status / errors / events / jobs)[33m 398[2mms[22m[39m
+     [33m[2m✓[22m[39m a-absorbed-first: TS and Oracle agree (status / errors / events / jobs)[33m 398[2mms[22m[39m
+     [33m[2m✓[22m[39m a-triple-colon: TS and Oracle agree (status / errors / events / jobs)[33m 393[2mms[22m[39m
+     [33m[2m✓[22m[39m a-trailing-comment: TS and Oracle agree (status / errors / events / jobs)[33m 394[2mms[22m[39m
+     [33m[2m✓[22m[39m b-valued-first: TS and Oracle agree (status / errors / events / jobs)[33m 388[2mms[22m[39m
+     [33m[2m✓[22m[39m b-valued-twice: TS and Oracle agree (status / errors / events / jobs)[33m 332[2mms[22m[39m
+     [33m[2m✓[22m[39m b-block-valued: TS and Oracle agree (status / errors / events / jobs)[33m 384[2mms[22m[39m
+     [33m[2m✓[22m[39m b-plain-dup: TS and Oracle agree (status / errors / events / jobs)[33m 418[2mms[22m[39m
+     [33m[2m✓[22m[39m b-alias-alone: TS and Oracle agree (status / errors / events / jobs)[33m 578[2mms[22m[39m
+     [33m[2m✓[22m[39m b-diff-scalar: TS and Oracle agree (status / errors / events / jobs)[33m 414[2mms[22m[39m
+     [33m[2m✓[22m[39m b-alias-value: TS and Oracle agree (status / errors / events / jobs)[33m 402[2mms[22m[39m
+     [33m[2m✓[22m[39m b-block-null-after: TS and Oracle agree (status / errors / events / jobs)[33m 393[2mms[22m[39m
+     [33m[2m✓[22m[39m b-block-null-absorbed: TS and Oracle agree (status / errors / events / jobs)[33m 376[2mms[22m[39m
+     [33m[2m✓[22m[39m c-int-anchor: TS and Oracle agree (status / errors / events / jobs)[33m 338[2mms[22m[39m
+     [33m[2m✓[22m[39m c-int-vs-quoted: TS and Oracle agree (status / errors / events / jobs)[33m 488[2mms[22m[39m
+     [33m[2m✓[22m[39m c-bool-anchor: TS and Oracle agree (status / errors / events / jobs)[33m 569[2mms[22m[39m
+     [33m[2m✓[22m[39m c-bool-vs-int: TS and Oracle agree (status / errors / events / jobs)[33m 417[2mms[22m[39m
+     [33m[2m✓[22m[39m c-null-anchor: TS and Oracle agree (status / errors / events / jobs)[33m 400[2mms[22m[39m
+     [33m[2m✓[22m[39m c-quoted-anchor: TS and Oracle agree (status / errors / events / jobs)[33m 410[2mms[22m[39m
+     [33m[2m✓[22m[39m c-tagged-anchor: TS and Oracle agree (status / errors / events / jobs)[33m 467[2mms[22m[39m
+     [33m[2m✓[22m[39m c-nan-anchor: TS and Oracle agree (status / errors / events / jobs)[33m 435[2mms[22m[39m
+     [33m[2m✓[22m[39m c-alias-twice-spread: TS and Oracle agree (status / errors / events / jobs)[33m 488[2mms[22m[39m
+     [33m[2m✓[22m[39m c-flow-in-seq: TS and Oracle agree (status / errors / events / jobs)[33m 402[2mms[22m[39m
+     [33m[2m✓[22m[39m c-on-alias-dup: TS and Oracle agree (status / errors / events / jobs)[33m 398[2mms[22m[39m
+     [33m[2m✓[22m[39m c-anchor-in-flow: TS and Oracle agree (status / errors / events / jobs)[33m 413[2mms[22m[39m
+     [33m[2m✓[22m[39m c-deep-nested: TS and Oracle agree (status / errors / events / jobs)[33m 403[2mms[22m[39m
+     [33m[2m✓[22m[39m c-two-anchors-same: TS and Oracle agree (status / errors / events / jobs)[33m 475[2mms[22m[39m
+     [33m[2m✓[22m[39m c-jobs-alias-dup: TS and Oracle agree (status / errors / events / jobs)[33m 398[2mms[22m[39m
+     [33m[2m✓[22m[39m c-forward-ref: TS and Oracle agree (status / errors / events / jobs)[33m 501[2mms[22m[39m
+     [33m[2m✓[22m[39m c-to-collection: TS and Oracle agree (status / errors / events / jobs)[33m 503[2mms[22m[39m
+     [33m[2m✓[22m[39m c-chained-alias: TS and Oracle agree (status / errors / events / jobs)[33m 392[2mms[22m[39m
+ [32m✓[39m tests/unit/diff-boundaries/flow-quoted-key.test.ts [2m([22m[2m39 tests[22m[2m)[22m[33m 16207[2mms[22m[39m
+   [32m✓[39m flow-quoted-key parity (FIX-P0-09, R8 R3) [2m(39)[22m
+     [33m[2m✓[22m[39m f01-r3-extra-ind1: TS and Oracle agree (status / errors / events / jobs)[33m 582[2mms[22m[39m
+     [33m[2m✓[22m[39m f02-r3-on-ind1: TS and Oracle agree (status / errors / events / jobs)[33m 410[2mms[22m[39m
+     [33m[2m✓[22m[39m f03-r3-extra-ind0: TS and Oracle agree (status / errors / events / jobs)[33m 481[2mms[22m[39m
+     [33m[2m✓[22m[39m f04-r3-on-ind0: TS and Oracle agree (status / errors / events / jobs)[33m 420[2mms[22m[39m
+     [33m[2m✓[22m[39m f05-r3-extra-sq: TS and Oracle agree (status / errors / events / jobs)[33m 393[2mms[22m[39m
+     [33m[2m✓[22m[39m f06-r3-on-sq: TS and Oracle agree (status / errors / events / jobs)[33m 397[2mms[22m[39m
+     [33m[2m✓[22m[39m f07-r3-extra-ind2: TS and Oracle agree (status / errors / events / jobs)[33m 393[2mms[22m[39m
+     [33m[2m✓[22m[39m f08-r3-nested: TS and Oracle agree (status / errors / events / jobs)[33m 388[2mms[22m[39m
+     [33m[2m✓[22m[39m f09-r3-blockkey: TS and Oracle agree (status / errors / events / jobs)[33m 328[2mms[22m[39m
+     [33m[2m✓[22m[39m f10-r3-on-ind9: TS and Oracle agree (status / errors / events / jobs)[33m 407[2mms[22m[39m
+     [33m[2m✓[22m[39m f11-plain-key-fold: TS and Oracle agree (status / errors / events / jobs)[33m 386[2mms[22m[39m
+     [33m[2m✓[22m[39m f12-plain-key-on: TS and Oracle agree (status / errors / events / jobs)[33m 608[2mms[22m[39m
+     [33m[2m✓[22m[39m f13-plain-key-ind2: TS and Oracle agree (status / errors / events / jobs)[33m 403[2mms[22m[39m
+     [33m[2m✓[22m[39m f14-flow-key-escaped: TS and Oracle agree (status / errors / events / jobs)[33m 573[2mms[22m[39m
+     [33m[2m✓[22m[39m f15-anchored-mlq-key: TS and Oracle agree (status / errors / events / jobs)[33m 410[2mms[22m[39m
+     [33m[2m✓[22m[39m f16-flow-map-in-seq: TS and Oracle agree (status / errors / events / jobs)[33m 481[2mms[22m[39m
+     [33m[2m✓[22m[39m f17-flow-key-jobs: TS and Oracle agree (status / errors / events / jobs)[33m 337[2mms[22m[39m
+     [33m[2m✓[22m[39m f18-flow-key-on-nested: TS and Oracle agree (status / errors / events / jobs)[33m 397[2mms[22m[39m
+     [33m[2m✓[22m[39m f19-flow-key-root: TS and Oracle agree (status / errors / events / jobs)[33m 472[2mms[22m[39m
+     [33m[2m✓[22m[39m f20-flow-value-mlq: TS and Oracle agree (status / errors / events / jobs)[33m 398[2mms[22m[39m
+     [33m[2m✓[22m[39m f21-v8-key-tab: TS and Oracle agree (status / errors / events / jobs)[33m 499[2mms[22m[39m
+     [33m[2m✓[22m[39m f22-explicit-quoted: TS and Oracle agree (status / errors / events / jobs)[33m 414[2mms[22m[39m
+     [33m[2m✓[22m[39m f23-explicit-plain: TS and Oracle agree (status / errors / events / jobs)[33m 413[2mms[22m[39m
+     [33m[2m✓[22m[39m f24-explicit-on: TS and Oracle agree (status / errors / events / jobs)[33m 389[2mms[22m[39m
+     [33m[2m✓[22m[39m f25-explicit-comment: TS and Oracle agree (status / errors / events / jobs)[33m 393[2mms[22m[39m
+     [33m[2m✓[22m[39m f26-explicit-q-in-value: TS and Oracle agree (status / errors / events / jobs)[33m 491[2mms[22m[39m
+     [33m[2m✓[22m[39m f27-block-explicit: TS and Oracle agree (status / errors / events / jobs)[33m 412[2mms[22m[39m
+     [33m[2m✓[22m[39m f28-normal-flow-on: TS and Oracle agree (status / errors / events / jobs)[33m 479[2mms[22m[39m
+     [33m[2m✓[22m[39m f29-s2-plain-ind1: TS and Oracle agree (status / errors / events / jobs)[33m 410[2mms[22m[39m
+     [33m[2m✓[22m[39m f30-s2-plain-ind2: TS and Oracle agree (status / errors / events / jobs)[33m 390[2mms[22m[39m
+     [33m[2m✓[22m[39m f31-s2-quoted-ind1: TS and Oracle agree (status / errors / events / jobs)[33m 399[2mms[22m[39m
+     [33m[2m✓[22m[39m f32-s2-on-quoted: TS and Oracle agree (status / errors / events / jobs)[33m 341[2mms[22m[39m
+     [33m[2m✓[22m[39m f33-s2-comment-ind1: TS and Oracle agree (status / errors / events / jobs)[33m 486[2mms[22m[39m
+     [33m[2m✓[22m[39m f34-s2-comment-own-line: TS and Oracle agree (status / errors / events / jobs)[33m 418[2mms[22m[39m
+     [33m[2m✓[22m[39m f35-s2-multi-pair: TS and Oracle agree (status / errors / events / jobs)[33m 386[2mms[22m[39m
+     [33m[2m✓[22m[39m f36-s2-explicit-comment: TS and Oracle agree (status / errors / events / jobs)[33m 388[2mms[22m[39m
+     [33m[2m✓[22m[39m f37-value-next-line: TS and Oracle agree (status / errors / events / jobs)[33m 414[2mms[22m[39m
+     [33m[2m✓[22m[39m f38-key-next-line-after-brace: TS and Oracle agree (status / errors / events / jobs)[33m 399[2mms[22m[39m
+(node:29346) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 2, column 12:
+
+&r:!!str *s: 5
+           ^
+
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:29346) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 2, column 12:
+
+&r:!!str *s: 5
+           ^
+
+(node:29346) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 2, column 12:
+
+&r:!!str *s: 5
+           ^
+
+(node:29346) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 2, column 12:
+
+&r:!!int *s: 5
+           ^
+
+(node:29346) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 2, column 11:
+
+&r:!zap *s: 5
+          ^
+
+(node:29346) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 2, column 12:
+
+&r:!!str *s: 5
+           ^
+
+(node:29346) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 1, column 12:
+
+&r:!!str *s: 5
+on: schedule
+           ^
+
+(node:29346) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 1, column 14:
+
+? &r:!!str *s: 5
+             ^
+
+(node:29346) [BAD_ALIAS] YAMLWarning: Anchor ending in : is ambiguous at line 2, column 3:
+
+&r: !!str *s: 5
+  ^
+
+(node:29346) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 2, column 13:
+
+&r: !!str *s: 5
+            ^
+
+(node:29346) [BAD_ALIAS] YAMLWarning: Anchor ending in : is ambiguous at line 1, column 3:
+
+&x:,
+  ^
+
+(node:29346) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 2, column 13:
+
+&r:!!bool *s: 5
+            ^
+
+(node:29346) [BAD_ALIAS] YAMLWarning: Anchor ending in : is ambiguous at line 1, column 9:
+
+m: {&r:5: 1}
+        ^
+
+(node:29346) [BAD_ALIAS] YAMLWarning: Anchor ending in : is ambiguous at line 1, column 9:
+
+m: {&r:5: !zap 1}
+        ^
+
+(node:29346) [TAG_RESOLVE_FAILED] YAMLWarning: Unresolved tag: !zap at line 1, column 11:
+
+m: {&r:5: !zap 1}
+          ^^^^
+
+(node:29346) [BAD_ALIAS] YAMLWarning: Anchor ending in : is ambiguous at line 2, column 9:
+
+m: {&r:5: *s}
+        ^
+
+(node:29346) [BAD_ALIAS] YAMLWarning: Anchor ending in : is ambiguous at line 1, column 7:
+
+m: {&r: }
+      ^
+
+(node:29346) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 2, column 3:
+
+*s: 5
+  ^
+
+(node:29346) [BAD_ALIAS] YAMLWarning: Anchor ending in : is ambiguous at line 1, column 5:
+
+&r:5: 1
+    ^
+
+(node:29346) [BAD_ALIAS] YAMLWarning: Anchor ending in : is ambiguous at line 1, column 5:
+
+&r:5: {on: push}
+    ^
+
+(node:29346) [BAD_ALIAS] YAMLWarning: Anchor ending in : is ambiguous at line 1, column 5:
+
+&r:5: {on: push}
+    ^
+
+ [32m✓[39m tests/unit/diff-boundaries/absorbed-anchor-colon-p0-17.test.ts [2m([22m[2m38 tests[22m[2m)[22m[33m 7898[2mms[22m[39m
+(node:29457) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 3, column 8:
+
+on: {*a: 1}
+       ^
+
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:29457) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 3, column 8:
+
+on: {*a: 1}
+       ^
+
+(node:29457) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 4, column 5:
+
+  *a: 1
+    ^
+
+(node:29457) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 4, column 5:
+
+  *a: 1
+    ^
+
+(node:29457) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 3, column 10:
+
+on: {? *a: 1}
+         ^
+
+(node:29457) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 3, column 10:
+
+on: {? *a: 1}
+         ^
+
+(node:29457) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 3, column 8:
+
+on: {*a: {b: 1}}
+       ^
+
+(node:29457) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 3, column 8:
+
+on: {*a: {b: 1}}
+       ^
+
+(node:29457) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 4, column 8:
+
+on: {*a: 1, *b: 2}
+       ^
+
+(node:29457) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 4, column 15:
+
+on: {*a: 1, *b: 2}
+              ^
+
+(node:29457) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 4, column 8:
+
+on: {*a: 1, *b: 2}
+       ^
+
+(node:29457) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 4, column 15:
+
+on: {*a: 1, *b: 2}
+              ^
+
+(node:29457) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 5, column 17:
+
+jobs: {test: {*a: 1}}
+                ^
+
+(node:29457) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 5, column 17:
+
+jobs: {test: {*a: 1}}
+                ^
+
+(node:29457) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 3, column 15:
+
+on: {push: {*a: 1}}
+              ^
+
+(node:29457) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 3, column 15:
+
+on: {push: {*a: 1}}
+              ^
+
+(node:29457) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 6, column 36:
+
+  test: {runs-on: ubuntu-latest, *a: 1}
+                                   ^
+
+(node:29457) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 6, column 36:
+
+  test: {runs-on: ubuntu-latest, *a: 1}
+                                   ^
+
+(node:29457) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 4, column 8:
+
+  - {*a: 1}
+       ^
+
+(node:29457) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 4, column 8:
+
+  - {*a: 1}
+       ^
+
+(node:29457) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 3, column 11:
+
+on: {?  *a: 1}
+          ^
+
+(node:29457) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 3, column 11:
+
+on: {?  *a: 1}
+          ^
+
+ [32m✓[39m tests/unit/diff-boundaries/flow-alias-key.test.ts [2m([22m[2m17 tests[22m[2m)[22m[33m 6404[2mms[22m[39m
+   [32m✓[39m flow-alias-key YAML parity (FIX-P0-05, R2 P0 residual D2) [2m(17)[22m
+     [33m[2m✓[22m[39m f01-flow-alias-event-key: TS and Oracle agree (status / errors / events / jobs)[33m 335[2mms[22m[39m
+     [33m[2m✓[22m[39m f02-block-alias-no-space: TS and Oracle agree (status / errors / events / jobs)[33m 460[2mms[22m[39m
+     [33m[2m✓[22m[39m f03-explicit-alias-no-space: TS and Oracle agree (status / errors / events / jobs)[33m 400[2mms[22m[39m
+     [33m[2m✓[22m[39m f04-flow-alias-key-map-value: TS and Oracle agree (status / errors / events / jobs)[33m 333[2mms[22m[39m
+     [33m[2m✓[22m[39m f05-two-flow-alias-keys: TS and Oracle agree (status / errors / events / jobs)[33m 381[2mms[22m[39m
+     [33m[2m✓[22m[39m f06-flow-alias-colon-glued: TS and Oracle agree (status / errors / events / jobs)[33m 401[2mms[22m[39m
+     [33m[2m✓[22m[39m f07-flow-alias-key-in-jobs: TS and Oracle agree (status / errors / events / jobs)[33m 376[2mms[22m[39m
+     [33m[2m✓[22m[39m f08-flow-alias-key-in-filter: TS and Oracle agree (status / errors / events / jobs)[33m 403[2mms[22m[39m
+     [33m[2m✓[22m[39m f09-flow-alias-key-in-job-def: TS and Oracle agree (status / errors / events / jobs)[33m 325[2mms[22m[39m
+     [33m[2m✓[22m[39m f10-flow-alias-key-in-list-item: TS and Oracle agree (status / errors / events / jobs)[33m 373[2mms[22m[39m
+     [33m[2m✓[22m[39m f11-flow-alias-key-space: TS and Oracle agree (status / errors / events / jobs)[33m 533[2mms[22m[39m
+     [33m[2m✓[22m[39m f12-glued-qmark-alias-key: TS and Oracle agree (status / errors / events / jobs)[33m 491[2mms[22m[39m
+     [33m[2m✓[22m[39m f13-explicit-alias-space: TS and Oracle agree (status / errors / events / jobs)[33m 402[2mms[22m[39m
+     [33m[2m✓[22m[39m f14-alias-flow-seq-value: TS and Oracle agree (status / errors / events / jobs)[33m 387[2mms[22m[39m
+     [33m[2m✓[22m[39m f15-alias-flow-map-value: TS and Oracle agree (status / errors / events / jobs)[33m 408[2mms[22m[39m
+     [33m[2m✓[22m[39m f16-explicit-alias-two-spaces: TS and Oracle agree (status / errors / events / jobs)[33m 381[2mms[22m[39m
+(node:29444) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:29444) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29444) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29444) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29444) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29444) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29444) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29444) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29444) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29444) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29444) Warning: Keys with collection values will be stringified due to JS Object restrictions: "{ a: b }". Set mapAsMap: true to use object keys.
+(node:29444) Warning: Keys with collection values will be stringified due to JS Object restrictions: "{ a: b }". Set mapAsMap: true to use object keys.
+(node:29444) Warning: Keys with collection values will be stringified due to JS Object restrictions: "[ a, b ]". Set mapAsMap: true to use object keys.
+(node:29444) Warning: Keys with collection values will be stringified due to JS Object restrictions: "[ a, b ]". Set mapAsMap: true to use object keys.
+(node:29444) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29444) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29444) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29444) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29444) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29444) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29444) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29444) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29444) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29444) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+ [32m✓[39m tests/unit/diff-boundaries/collection-alias-key.test.ts [2m([22m[2m19 tests[22m[2m)[22m[33m 7507[2mms[22m[39m
+   [32m✓[39m collection-alias-key YAML parity (FIX-P0-06, R2 P0 residual N5) [2m(19)[22m
+     [33m[2m✓[22m[39m f01-n5-block-alias-key-map-anchor: TS and Oracle agree (status / errors / events / jobs)[33m 497[2mms[22m[39m
+     [33m[2m✓[22m[39m f02-n5-block-alias-key-seq-anchor: TS and Oracle agree (status / errors / events / jobs)[33m 499[2mms[22m[39m
+     [33m[2m✓[22m[39m f03-n5-block-alias-key-scalar-anchor: TS and Oracle agree (status / errors / events / jobs)[33m 334[2mms[22m[39m
+     [33m[2m✓[22m[39m f04-n5-block-alias-key-null-anchor: TS and Oracle agree (status / errors / events / jobs)[33m 468[2mms[22m[39m
+     [33m[2m✓[22m[39m f05-n5-block-alias-key-int-anchor: TS and Oracle agree (status / errors / events / jobs)[33m 417[2mms[22m[39m
+     [33m[2m✓[22m[39m f06-n5-flow-alias-key-map-anchor: TS and Oracle agree (status / errors / events / jobs)[33m 394[2mms[22m[39m
+     [33m[2m✓[22m[39m f07-n5-flow-alias-key-seq-anchor: TS and Oracle agree (status / errors / events / jobs)[33m 476[2mms[22m[39m
+     [33m[2m✓[22m[39m f08-n5-filter-alias-key-map-anchor: TS and Oracle agree (status / errors / events / jobs)[33m 421[2mms[22m[39m
+     [33m[2m✓[22m[39m f09-n5-explicit-map-key: TS and Oracle agree (status / errors / events / jobs)[33m 384[2mms[22m[39m
+     [33m[2m✓[22m[39m f10-n5-explicit-seq-key: TS and Oracle agree (status / errors / events / jobs)[33m 337[2mms[22m[39m
+     [33m[2m✓[22m[39m f11-n5-jobs-alias-key-map-anchor: TS and Oracle agree (status / errors / events / jobs)[33m 472[2mms[22m[39m
+     [33m[2m✓[22m[39m f12-n5-jobs-alias-key-scalar-anchor: TS and Oracle agree (status / errors / events / jobs)[33m 408[2mms[22m[39m
+     [33m[2m✓[22m[39m f13-n5-block-alias-key-empty-map-anchor: TS and Oracle agree (status / errors / events / jobs)[33m 405[2mms[22m[39m
+     [33m[2m✓[22m[39m f14-n5-block-alias-key-empty-seq-anchor: TS and Oracle agree (status / errors / events / jobs)[33m 401[2mms[22m[39m
+     [33m[2m✓[22m[39m f15-n5-forward-ref-map-anchor: TS and Oracle agree (status / errors / events / jobs)[33m 384[2mms[22m[39m
+     [33m[2m✓[22m[39m f16-n5-chained-alias-key: TS and Oracle agree (status / errors / events / jobs)[33m 392[2mms[22m[39m
+     [33m[2m✓[22m[39m f17-n5-matrix-alias-key-map-anchor: TS and Oracle agree (status / errors / events / jobs)[33m 400[2mms[22m[39m
+     [33m[2m✓[22m[39m f18-n5-map-anchor-with-steps: TS and Oracle agree (status / errors / events / jobs)[33m 404[2mms[22m[39m
+(node:29487) [TAG_RESOLVE_FAILED] YAMLWarning: Unresolved tag: !bar at line 1, column 1:
+
+!bar &b : 2
+^^^^
+
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:29487) [TAG_RESOLVE_FAILED] YAMLWarning: Unresolved tag: !bar at line 2, column 1:
+
+a: 1
+!bar &b : 2
+^^^^
+
+(node:29487) [TAG_RESOLVE_FAILED] YAMLWarning: Unresolved tag: !bar at line 3, column 3:
+
+  a: 1
+  !bar &b : 2
+  ^^^^
+
+(node:29487) [TAG_RESOLVE_FAILED] YAMLWarning: Unresolved tag: !bar at line 2, column 3:
+
+m:
+  !bar : 2
+  ^^^^
+
+(node:29487) [TAG_RESOLVE_FAILED] YAMLWarning: Unresolved tag: !bar at line 2, column 3:
+
+m:
+  !bar :
+  ^^^^
+
+(node:29487) [TAG_RESOLVE_FAILED] YAMLWarning: Unresolved tag: !bar at line 3, column 5:
+
+  b:
+    !bar : 2
+    ^^^^
+
+(node:29487) [TAG_RESOLVE_FAILED] YAMLWarning: Unresolved tag: !bar at line 2, column 3:
+
+m:
+  !bar &b : 2
+  ^^^^
+
+(node:29487) [BAD_ALIAS] YAMLWarning: Anchor ending in : is ambiguous at line 2, column 8:
+
+!bar &b: 2
+       ^
+
+(node:29487) [TAG_RESOLVE_FAILED] YAMLWarning: Unresolved tag: !bar at line 2, column 1:
+
+a: 1
+!bar &b: 2
+^^^^
+
+(node:29487) [TAG_RESOLVE_FAILED] YAMLWarning: Unresolved tag: !foo at line 1, column 1:
+
+!foo &b:!!str {on: push}
+^^^^
+
+(node:29487) [TAG_RESOLVE_FAILED] YAMLWarning: Unresolved tag: !foo at line 2, column 1:
+
+a: 1
+!foo &b:!!str {c: 3}
+^^^^
+
+(node:29487) [BAD_ALIAS] YAMLWarning: Anchor ending in : is ambiguous at line 1, column 3:
+
+&b: !!int {on: pull_request}
+  ^
+
+(node:29487) [TAG_RESOLVE_FAILED] YAMLWarning: Unresolved tag: tag:yaml.org,2002:int at line 1, column 5:
+
+&b: !!int {on: pull_request}
+    ^^^^^
+
+(node:29487) [BAD_ALIAS] YAMLWarning: Anchor ending in : is ambiguous at line 1, column 3:
+
+&b: !!bool {on: pull_request}
+  ^
+
+(node:29487) [TAG_RESOLVE_FAILED] YAMLWarning: Unresolved tag: tag:yaml.org,2002:bool at line 1, column 5:
+
+&b: !!bool {on: pull_request}
+    ^^^^^^
+
+(node:29487) [TAG_RESOLVE_FAILED] YAMLWarning: Unresolved tag: tag:yaml.org,2002:int at line 1, column 4:
+
+m: !!int {a: 1}
+   ^^^^^
+
+(node:29487) [TAG_RESOLVE_FAILED] YAMLWarning: Unresolved tag: tag:yaml.org,2002:float at line 1, column 4:
+
+m: !!float {a: 1}
+   ^^^^^^^
+
+(node:29487) [TAG_RESOLVE_FAILED] YAMLWarning: Unresolved tag: tag:yaml.org,2002:int at line 1, column 5:
+
+on: !!int {push: {}}
+    ^^^^^
+
+(node:29487) [TAG_RESOLVE_FAILED] YAMLWarning: Unresolved tag: tag:yaml.org,2002:bool at line 1, column 5:
+
+on: !!bool {push: {}}
+    ^^^^^^
+
+(node:29487) [TAG_RESOLVE_FAILED] YAMLWarning: Unresolved tag: tag:yaml.org,2002:float at line 1, column 5:
+
+on: !!float {push: {}}
+    ^^^^^^^
+
+(node:29487) [TAG_RESOLVE_FAILED] YAMLWarning: Unresolved tag: tag:yaml.org,2002:str at line 1, column 5:
+
+on: !!str {push: {}}
+    ^^^^^
+
+(node:29487) [TAG_RESOLVE_FAILED] YAMLWarning: Unresolved tag: tag:yaml.org,2002:int at line 1, column 4:
+
+m: !!int [1, 2]
+   ^^^^^
+
+(node:29487) Warning: Keys with collection values will be stringified due to JS Object restrictions: "{ a: 1 }". Set mapAsMap: true to use object keys.
+(node:29487) [BAD_ALIAS] YAMLWarning: Anchor ending in : is ambiguous at line 1, column 7:
+
+m: {&b: {a: 1}}
+      ^
+
+(node:29487) Warning: Keys with collection values will be stringified due to JS Object restrictions: "{ a: 1 }". Set mapAsMap: true to use object keys.
+(node:29487) Warning: Keys with collection values will be stringified due to JS Object restrictions: "[ 1, 2 ]". Set mapAsMap: true to use object keys.
+(node:29487) [BAD_ALIAS] YAMLWarning: Anchor ending in : is ambiguous at line 1, column 7:
+
+m: {&b: !!str {a: 1}}
+      ^
+
+(node:29487) [TAG_RESOLVE_FAILED] YAMLWarning: Unresolved tag: tag:yaml.org,2002:str at line 1, column 9:
+
+m: {&b: !!str {a: 1}}
+        ^^^^^
+
+(node:29487) Warning: Keys with collection values will be stringified due to JS Object restrictions: "{ a: 1 }". Set mapAsMap: true to use object keys.
+(node:29487) [BAD_ALIAS] YAMLWarning: Anchor ending in : is ambiguous at line 2, column 5:
+
+  &b: {a: 1}
+    ^
+
+ [32m✓[39m tests/unit/diff-boundaries/anchored-empty-key-p0-16.test.ts [2m([22m[2m33 tests[22m[2m)[22m[33m 6512[2mms[22m[39m
+(node:29578) [TAG_RESOLVE_FAILED] YAMLWarning: Unresolved tag: tag:yaml.org,2002:str#c at line 1, column 8:
+
+m: {a: !!str#c
+       ^^^^^^^
+
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:29578) [TAG_RESOLVE_FAILED] YAMLWarning: Unresolved tag: !foo#c at line 1, column 8:
+
+m: {a: !foo#c
+       ^^^^^^
+
+(node:29578) [TAG_RESOLVE_FAILED] YAMLWarning: Unresolved tag: tag:example.com,2026:x at line 1, column 8:
+
+m: {a: !<tag:example.com,2026:x>#c
+       ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+(node:29578) [BAD_ALIAS] YAMLWarning: Anchor ending in : is ambiguous at line 1, column 6:
+
+a: &x: 1
+     ^
+
+(node:29578) [TAG_RESOLVE_FAILED] YAMLWarning: Unresolved tag: !foo at line 1, column 8:
+
+m: {a: !foo}
+       ^^^^
+
+(node:29578) [BAD_ALIAS] YAMLWarning: Anchor ending in : is ambiguous at line 1, column 7:
+
+m: {&x: 1}
+      ^
+
+(node:29578) [BAD_ALIAS] YAMLWarning: Anchor ending in : is ambiguous at line 2, column 7:
+
+  - &x: 1
+      ^
+
+(node:29578) [TAG_RESOLVE_FAILED] YAMLWarning: Unresolved tag: !foo at line 1, column 8:
+
+m: {a: !foo 1}
+       ^^^^
+
+(node:29578) [BAD_ALIAS] YAMLWarning: Anchor ending in : is ambiguous at line 1, column 16:
+
+m: {a: !!str &x: 1}
+               ^
+
+(node:29578) [TAG_RESOLVE_FAILED] YAMLWarning: Unresolved tag: !foo%41 at line 1, column 8:
+
+m: {a: !foo%41 1}
+       ^^^^^^^
+
+ [32m✓[39m tests/unit/diff-boundaries/anchor-tag-nospace.test.ts [2m([22m[2m25 tests[22m[2m)[22m[33m 4660[2mms[22m[39m
+ [32m✓[39m tests/unit/diff-boundaries/quoted-mid-plain-scalar.test.ts [2m([22m[2m13 tests[22m[2m)[22m[33m 4803[2mms[22m[39m
+   [32m✓[39m quoted-mid-plain-scalar parity (FIX-P0-07, R6 P0) [2m(13)[22m
+     [33m[2m✓[22m[39m f01-v1-double-quote-tab: TS and Oracle agree (status / errors / events / jobs)[33m 501[2mms[22m[39m
+     [33m[2m✓[22m[39m f02-v2-single-quote-tab: TS and Oracle agree (status / errors / events / jobs)[33m 502[2mms[22m[39m
+     [33m[2m✓[22m[39m f03-v5-continuation-quote-tab: TS and Oracle agree (status / errors / events / jobs)[33m 400[2mms[22m[39m
+     [33m[2m✓[22m[39m f04-v9-trailing-comment-tab: TS and Oracle agree (status / errors / events / jobs)[33m 395[2mms[22m[39m
+     [33m[2m✓[22m[39m f05-v1b-anchor-plain-quote-tab: TS and Oracle agree (status / errors / events / jobs)[33m 387[2mms[22m[39m
+     [33m[2m✓[22m[39m f06-v1c-flow-plain-quote-tab: TS and Oracle agree (status / errors / events / jobs)[33m 331[2mms[22m[39m
+     [33m[2m✓[22m[39m f07-v1d-plain-key-quote-tab: TS and Oracle agree (status / errors / events / jobs)[33m 381[2mms[22m[39m
+     [33m[2m✓[22m[39m f08-v1e-value-next-line-quote-tab: TS and Oracle agree (status / errors / events / jobs)[33m 325[2mms[22m[39m
+     [33m[2m✓[22m[39m f09-v1f-continuation-mid-quote-tab: TS and Oracle agree (status / errors / events / jobs)[33m 372[2mms[22m[39m
+     [33m[2m✓[22m[39m f10-blank-line-then-cont-quote-tab: TS and Oracle agree (status / errors / events / jobs)[33m 323[2mms[22m[39m
+     [33m[2m✓[22m[39m f11-flow-plain-quote-tab: TS and Oracle agree (status / errors / events / jobs)[33m 394[2mms[22m[39m
+     [33m[2m✓[22m[39m f12-multiline-quoted-tab-indented: TS and Oracle agree (status / errors / events / jobs)[33m 479[2mms[22m[39m
+ [32m✓[39m tests/unit/diff-boundaries/scalar-rendering-yaml.test.ts [2m([22m[2m22 tests[22m[2m)[22m[33m 4295[2mms[22m[39m
+(node:29709) [TAG_RESOLVE_FAILED] YAMLWarning: Unresolved tag: !foo at line 1, column 8:
+
+m: {a: !foo, b: 1}
+       ^^^^
+
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:29709) [TAG_RESOLVE_FAILED] YAMLWarning: Unresolved tag: !foo at line 1, column 8:
+
+m: {a: !foo, b: 1, c: 2}
+       ^^^^
+
+(node:29709) [TAG_RESOLVE_FAILED] YAMLWarning: Unresolved tag: !foo at line 1, column 8:
+
+m: {a: !foo, "b": 1}
+       ^^^^
+
+(node:29709) [TAG_RESOLVE_FAILED] YAMLWarning: Unresolved tag: !foo at line 1, column 8:
+
+m: {a: !foo,
+       ^^^^
+
+(node:29709) [TAG_RESOLVE_FAILED] YAMLWarning: Unresolved tag: !foo at line 1, column 8:
+
+m: {a: !foo, &x 1: 2}
+       ^^^^
+
+(node:29709) [TAG_RESOLVE_FAILED] YAMLWarning: Unresolved tag: !foo at line 1, column 8:
+
+m: {a: !foo, 1: 2}
+       ^^^^
+
+(node:29709) [TAG_RESOLVE_FAILED] YAMLWarning: Unresolved tag: !foo at line 1, column 8:
+
+m: {a: !foo, b:}
+       ^^^^
+
+(node:29709) [TAG_RESOLVE_FAILED] YAMLWarning: Unresolved tag: !foo at line 1, column 4:
+
+a: !foo,
+   ^^^^
+
+(node:29709) [TAG_RESOLVE_FAILED] YAMLWarning: Unresolved tag: !foo at line 1, column 8:
+
+m: {a: !foo, 1}
+       ^^^^
+
+(node:29709) [TAG_RESOLVE_FAILED] YAMLWarning: Unresolved tag: !foo at line 1, column 9:
+
+m: {a: [!foo, b: 1]}
+        ^^^^
+
+(node:29709) [TAG_RESOLVE_FAILED] YAMLWarning: Unresolved tag: !foo at line 1, column 5:
+
+m: [!foo, a: 1]
+    ^^^^
+
+(node:29709) [TAG_RESOLVE_FAILED] YAMLWarning: Unresolved tag: !foo at line 1, column 8:
+
+m: {a: !foo,bar 1}
+       ^^^^
+
+(node:29709) [TAG_RESOLVE_FAILED] YAMLWarning: Unresolved tag: !foo at line 1, column 8:
+
+m: {a: !foo , b: 1}
+       ^^^^
+
+(node:29709) [TAG_RESOLVE_FAILED] YAMLWarning: Unresolved tag: !foo at line 1, column 12:
+
+m: {a: {b: !foo, c: 1}}
+           ^^^^
+
+(node:29709) [TAG_RESOLVE_FAILED] YAMLWarning: Unresolved tag: !foo%2C at line 1, column 8:
+
+m: {a: !foo%2C, b: 1}
+       ^^^^^^^
+
+ [32m✓[39m tests/unit/diff-boundaries/tag-suffix-comma.test.ts [2m([22m[2m17 tests[22m[2m)[22m[33m 3224[2mms[22m[39m
+(node:29678) Warning: Keys with collection values will be stringified due to JS Object restrictions: "{ :, branches: [ main ] }". Set mapAsMap: true to use object keys.
+(Use `node --trace-warnings ...` to show where the warning was created)
+ [32m✓[39m tests/unit/diff-boundaries/bare-empty-key.test.ts [2m([22m[2m23 tests[22m[2m)[22m[33m 4497[2mms[22m[39m
+(node:29696) [BAD_ALIAS] YAMLWarning: Anchor ending in : is ambiguous at line 1, column 3:
+
+&x: {on: push}
+  ^
+
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:29696) [BAD_ALIAS] YAMLWarning: Anchor ending in : is ambiguous at line 1, column 3:
+
+&x:
+  ^
+
+(node:29696) [BAD_ALIAS] YAMLWarning: Anchor ending in : is ambiguous at line 1, column 3:
+
+&x: {on: push, jobs: {test: {runs-on: ubuntu-latest, steps: [{run: echo hi}]}}}
+  ^
+
+(node:29696) [BAD_ALIAS] YAMLWarning: Anchor ending in : is ambiguous at line 1, column 3:
+
+&x: !foo {on: push}
+  ^
+
+(node:29696) [TAG_RESOLVE_FAILED] YAMLWarning: Unresolved tag: !foo at line 1, column 5:
+
+&x: !foo {on: push}
+    ^^^^
+
+(node:29696) [BAD_ALIAS] YAMLWarning: Anchor ending in : is ambiguous at line 1, column 3:
+
+&x: {jobs: {test: {runs-on: ubuntu-latest, steps: [{run: echo hi}]}}}
+  ^
+
+(node:29696) [BAD_ALIAS] YAMLWarning: Anchor ending in : is ambiguous at line 1, column 3:
+
+&x: &y 1
+  ^
+
+(node:29696) [BAD_ALIAS] YAMLWarning: Anchor ending in : is ambiguous at line 1, column 3:
+
+&x: &y [1]
+  ^
+
+(node:29696) [BAD_ALIAS] YAMLWarning: Anchor ending in : is ambiguous at line 1, column 3:
+
+&x: *x
+  ^
+
+(node:29696) [BAD_ALIAS] YAMLWarning: Anchor ending in : is ambiguous at line 1, column 8:
+
+!foo &x: 1
+       ^
+
+(node:29696) [TAG_RESOLVE_FAILED] YAMLWarning: Unresolved tag: !foo at line 1, column 1:
+
+!foo &x: 1
+^^^^
+
+(node:29696) [BAD_ALIAS] YAMLWarning: Anchor ending in : is ambiguous at line 1, column 9:
+
+!!str &x: 1
+        ^
+
+(node:29696) [BAD_ALIAS] YAMLWarning: Anchor ending in : is ambiguous at line 2, column 8:
+
+!foo &x: 1
+       ^
+
+(node:29696) [TAG_RESOLVE_FAILED] YAMLWarning: Unresolved tag: !foo at line 2, column 1:
+
+---
+!foo &x: 1
+^^^^
+
+(node:29696) [BAD_ALIAS] YAMLWarning: Anchor ending in : is ambiguous at line 1, column 3:
+
+&x:
+  ^
+
+(node:29696) [BAD_ALIAS] YAMLWarning: Anchor ending in : is ambiguous at line 2, column 5:
+
+  &y: 1
+    ^
+
+(node:29696) [BAD_ALIAS] YAMLWarning: Anchor ending in : is ambiguous at line 1, column 3:
+
+&x:
+  ^
+
+(node:29696) [BAD_ALIAS] YAMLWarning: Anchor ending in : is ambiguous at line 2, column 5:
+
+  &y:
+    ^
+
+(node:29696) [BAD_ALIAS] YAMLWarning: Anchor ending in : is ambiguous at line 1, column 3:
+
+&x: {&y: 1}
+  ^
+
+(node:29696) [BAD_ALIAS] YAMLWarning: Anchor ending in : is ambiguous at line 1, column 8:
+
+&x: {&y: 1}
+       ^
+
+(node:29696) [BAD_ALIAS] YAMLWarning: Anchor ending in : is ambiguous at line 1, column 3:
+
+&x: 1
+  ^
+
+(node:29696) [BAD_ALIAS] YAMLWarning: Anchor ending in : is ambiguous at line 1, column 3:
+
+&x: !!str
+  ^
+
+(node:29696) [TAG_RESOLVE_FAILED] YAMLWarning: Unresolved tag: tag:yaml.org,2002:str at line 1, column 5:
+
+&x: !!str
+    ^^^^^
+
+ [32m✓[39m tests/unit/diff-boundaries/lone-anchored-empty-key-p0-15.test.ts [2m([22m[2m21 tests[22m[2m)[22m[33m 3992[2mms[22m[39m
+(node:29786) [BAD_ALIAS] YAMLWarning: Anchor ending in : is ambiguous at line 1, column 3:
+
+&x: 1
+  ^
+
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:29786) [BAD_ALIAS] YAMLWarning: Anchor ending in : is ambiguous at line 1, column 3:
+
+&x:
+  ^
+
+(node:29786) [BAD_ALIAS] YAMLWarning: Anchor ending in : is ambiguous at line 1, column 3:
+
+&x: hello
+  ^
+
+(node:29786) [BAD_ALIAS] YAMLWarning: Anchor ending in : is ambiguous at line 1, column 3:
+
+&x: [1]
+  ^
+
+(node:29786) [BAD_ALIAS] YAMLWarning: Anchor ending in : is ambiguous at line 1, column 3:
+
+&x:
+  ^
+
+(node:29786) [BAD_ALIAS] YAMLWarning: Anchor ending in : is ambiguous at line 1, column 3:
+
+&x: !foo 1
+  ^
+
+(node:29786) [TAG_RESOLVE_FAILED] YAMLWarning: Unresolved tag: !foo at line 1, column 5:
+
+&x: !foo 1
+    ^^^^
+
+(node:29786) [BAD_ALIAS] YAMLWarning: Anchor ending in : is ambiguous at line 2, column 3:
+
+&x: 1
+  ^
+
+(node:29786) [BAD_ALIAS] YAMLWarning: Anchor ending in : is ambiguous at line 1, column 3:
+
+&x: 1 # note
+  ^
+
+(node:29786) [BAD_ALIAS] YAMLWarning: Anchor ending in : is ambiguous at line 1, column 3:
+
+&x: {a: 1}
+  ^
+
+(node:29786) [BAD_ALIAS] YAMLWarning: Anchor ending in : is ambiguous at line 1, column 3:
+
+&x:
+  ^
+
+(node:29786) [BAD_ALIAS] YAMLWarning: Anchor ending in : is ambiguous at line 1, column 3:
+
+&x:
+  ^
+
+(node:29786) [BAD_ALIAS] YAMLWarning: Anchor ending in : is ambiguous at line 1, column 3:
+
+&x: 1
+  ^
+
+ [32m✓[39m tests/unit/diff-boundaries/lone-anchored-empty-key.test.ts [2m([22m[2m15 tests[22m[2m)[22m[33m 2908[2mms[22m[39m
+ [32m✓[39m tests/unit/job-dag/scalar-rendering-jobs.test.ts [2m([22m[2m16 tests[22m[2m)[22m[33m 3474[2mms[22m[39m
+(node:29772) [BAD_ALIAS] YAMLWarning: Anchor ending in : is ambiguous at line 1, column 3:
+
+&x: 1
+  ^
+
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:29772) [BAD_ALIAS] YAMLWarning: Anchor ending in : is ambiguous at line 8, column 3:
+
+&x: 1
+  ^
+
+(node:29772) [BAD_ALIAS] YAMLWarning: Anchor ending in : is ambiguous at line 2, column 5:
+
+  &x: 1
+    ^
+
+(node:29772) [BAD_ALIAS] YAMLWarning: Anchor ending in : is ambiguous at line 1, column 3:
+
+&x:
+  ^
+
+(node:29772) [BAD_ALIAS] YAMLWarning: Anchor ending in : is ambiguous at line 2, column 3:
+
+&x:
+  ^
+
+(node:29772) [BAD_ALIAS] YAMLWarning: Anchor ending in : is ambiguous at line 8, column 3:
+
+&x:
+  ^
+
+(node:29772) [BAD_ALIAS] YAMLWarning: Anchor ending in : is ambiguous at line 1, column 3:
+
+&x: {a: 1}
+  ^
+
+(node:29772) [BAD_ALIAS] YAMLWarning: Anchor ending in : is ambiguous at line 1, column 8:
+
+!foo &x: 1
+       ^
+
+(node:29772) [TAG_RESOLVE_FAILED] YAMLWarning: Unresolved tag: !foo at line 1, column 1:
+
+!foo &x: 1
+^^^^
+
+(node:29772) [BAD_ALIAS] YAMLWarning: Anchor ending in : is ambiguous at line 2, column 7:
+
+  - &x: 1
+      ^
+
+(node:29772) [BAD_ALIAS] YAMLWarning: Anchor ending in : is ambiguous at line 1, column 7:
+
+m: {&x: 1}
+      ^
+
+(node:29772) [BAD_ALIAS] YAMLWarning: Anchor ending in : is ambiguous at line 7, column 11:
+
+      - &x: 1
+          ^
+
+(node:29772) [BAD_ALIAS] YAMLWarning: Anchor ending in : is ambiguous at line 1, column 3:
+
+&x:
+  ^
+
+(node:29772) [BAD_ALIAS] YAMLWarning: Anchor ending in : is ambiguous at line 2, column 5:
+
+  &x: 1
+    ^
+
+(node:29772) [BAD_ALIAS] YAMLWarning: Anchor ending in : is ambiguous at line 2, column 5:
+
+  &x:
+    ^
+
+(node:29772) [TAG_RESOLVE_FAILED] YAMLWarning: Unresolved tag: !foo: at line 1, column 4:
+
+&x !foo: 1
+   ^^^^^
+
+ [32m✓[39m tests/unit/diff-boundaries/anchored-empty-key.test.ts [2m([22m[2m17 tests[22m[2m)[22m[33m 3698[2mms[22m[39m
+   [32m✓[39m anchored empty key YAML parity (FIX-P0-13 P0-C3, R12 grouped P0) [2m(17)[22m
+     [33m[2m✓[22m[39m k07-anchored-null-last: TS and Oracle agree (status / errors / events)[33m 362[2mms[22m[39m
+ [32m✓[39m tests/unit/job-dag/scalar-job.test.ts [2m([22m[2m7 tests[22m[2m)[22m[33m 1217[2mms[22m[39m
+ [32m✓[39m tests/unit/diff-boundaries/multiline-key-null-value.test.ts [2m([22m[2m13 tests[22m[2m)[22m[33m 2892[2mms[22m[39m
+   [32m✓[39m multiline-key-null-value YAML parity (FIX-P0-12 P0-B, R11 grouped P0) [2m(13)[22m
+     [33m[2m✓[22m[39m n01-null-plain: TS and Oracle agree (status / errors / events)[33m 301[2mms[22m[39m
+     [33m[2m✓[22m[39m n02-null-dq: TS and Oracle agree (status / errors / events)[33m 320[2mms[22m[39m
+(node:29855) [TAG_RESOLVE_FAILED] YAMLWarning: Unresolved tag: !foo at line 1, column 8:
+
+m: {a: !foo[bar] 1}
+       ^^^^
+
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:29855) [TAG_RESOLVE_FAILED] YAMLWarning: Unresolved tag: !foo at line 1, column 5:
+
+m: [!foo] 1]
+    ^^^^
+
+(node:29855) [TAG_RESOLVE_FAILED] YAMLWarning: Unresolved tag: !foo at line 1, column 5:
+
+m: [!foo], 1]
+    ^^^^
+
+(node:29855) [TAG_RESOLVE_FAILED] YAMLWarning: Unresolved tag: !foo at line 1, column 8:
+
+m: {a: !foo[bar]baz 1}
+       ^^^^
+
+(node:29855) [TAG_RESOLVE_FAILED] YAMLWarning: Unresolved tag: !foo at line 1, column 8:
+
+m: {a: !foo] 1}
+       ^^^^
+
+(node:29855) [TAG_RESOLVE_FAILED] YAMLWarning: Unresolved tag: !foo at line 1, column 8:
+
+m: {a: !foo[ 1}
+       ^^^^
+
+(node:29855) [TAG_RESOLVE_FAILED] YAMLWarning: Unresolved tag: !foo at line 1, column 8:
+
+m: {a: !foo[] 1}
+       ^^^^
+
+(node:29855) [TAG_RESOLVE_FAILED] YAMLWarning: Unresolved tag: !foo at line 1, column 8:
+
+m: {a: !foo[[x]] 1}
+       ^^^^
+
+(node:29855) [TAG_RESOLVE_FAILED] YAMLWarning: Unresolved tag: !foo at line 1, column 5:
+
+m: {!foo[bar]: 1}
+    ^^^^
+
+(node:29855) [TAG_RESOLVE_FAILED] YAMLWarning: Unresolved tag: !foo at line 1, column 4:
+
+a: !foo[bar] 1
+   ^^^^
+
+(node:29855) [TAG_RESOLVE_FAILED] YAMLWarning: Unresolved tag: foo[bar] at line 1, column 8:
+
+m: {a: !<foo[bar]> 1}
+       ^^^^^^^^^^^
+
+ [32m✓[39m tests/unit/diff-boundaries/tag-suffix-brackets.test.ts [2m([22m[2m13 tests[22m[2m)[22m[33m 2709[2mms[22m[39m
+   [32m✓[39m tag-suffix brackets YAML parity (FIX-P0-13 P0-C2, R12 grouped P0) [2m(13)[22m
+     [33m[2m✓[22m[39m b01-bracket: TS and Oracle agree (status / errors / events)[33m 325[2mms[22m[39m
+(node:29897) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 3, column 8:
+
+on: {*a: 1}
+       ^
+
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:29897) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 3, column 8:
+
+on: {*a: 1}
+       ^
+
+(node:29897) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 4, column 5:
+
+  *a: 1
+    ^
+
+(node:29897) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 4, column 5:
+
+  *a: 1
+    ^
+
+(node:29897) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 3, column 15:
+
+on: {push: {*a: 1}}
+              ^
+
+(node:29897) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 3, column 15:
+
+on: {push: {*a: 1}}
+              ^
+
+(node:29897) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 5, column 17:
+
+jobs: {test: {*a: 1}}
+                ^
+
+(node:29897) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 5, column 17:
+
+jobs: {test: {*a: 1}}
+                ^
+
+(node:29897) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29897) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29897) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29897) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29897) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29897) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+ [32m✓[39m tests/unit/golden/golden.test.ts [2m([22m[2m169 tests[22m[2m)[22m[33m 2392[2mms[22m[39m
+(node:29924) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 3, column 8:
+
+on: {*a: 1}
+       ^
+
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:29924) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 4, column 5:
+
+  *a: 1
+    ^
+
+(node:29924) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 3, column 15:
+
+on: {push: {*a: 1}}
+              ^
+
+(node:29924) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 5, column 17:
+
+jobs: {test: {*a: 1}}
+                ^
+
+(node:29924) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29924) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29924) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+ [32m✓[39m tests/unit/diff-boundaries/duplicate-key-yaml.test.ts [2m([22m[2m5 tests[22m[2m)[22m[33m 1585[2mms[22m[39m
+   [32m✓[39m duplicate-key YAML parity (FIX-P1-01 + FIX-P0-02, ex T013 P2-4 / R1 P1-1 / R2 P0) [2m(5)[22m
+     [33m[2m✓[22m[39m dup-branches: TS and Oracle both reject (INVALID / yaml_parse_error)[33m 333[2mms[22m[39m
+     [33m[2m✓[22m[39m dup-name: TS and Oracle both reject (INVALID / yaml_parse_error)[33m 388[2mms[22m[39m
+     [33m[2m✓[22m[39m dup-bool-true: TS and Oracle both reject (INVALID / yaml_parse_error)[33m 520[2mms[22m[39m
+(node:29924) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 3, column 8:
+
+on: {*a: 1}
+       ^
+
+(node:29924) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 4, column 5:
+
+  *a: 1
+    ^
+
+(node:29924) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 3, column 15:
+
+on: {push: {*a: 1}}
+              ^
+
+(node:29924) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 5, column 17:
+
+jobs: {test: {*a: 1}}
+                ^
+
+(node:29924) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29924) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29924) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+ [32m✓[39m tests/unit/event/trigger-oracle-dump.test.ts [2m([22m[2m129 tests[22m[2m)[22m[33m 590[2mms[22m[39m
+[90mstdout[2m | tests/unit/cli/cli-commands.test.ts[2m > [22m[2mCLI entry[2m > [22m[2mhelp and version exit 0; unknown command exits 3
+[22m[39mCheckPath — deterministic GitHub Actions required-check coverage simulator (local, offline).
+
+Usage:
+  checkpath demo [--out <dir>] [--strict-skipped]
+  checkpath analyze --repo <dir> --scenario <scenario.json> --required-checks <required-checks.yml> [--out <dir>] [--strict-skipped]
+  checkpath matrix --repo <dir> --suite <suite.json> --required-checks <required-checks.yml> [--out <dir>] [--strict-skipped]
+  checkpath --help | --version
+
+Exit codes: 0 all required checks reportable, 2 pending/ambiguous/unknown (or skipped with --strict-skipped), 3 invalid or input/usage error.
+
+[90mstdout[2m | tests/unit/cli/cli-commands.test.ts[2m > [22m[2mCLI entry[2m > [22m[2mhelp and version exit 0; unknown command exits 3
+[22m[39mcheckpath 0.1.0
+
+[90mstderr[2m | tests/unit/cli/cli-commands.test.ts[2m > [22m[2mCLI entry[2m > [22m[2mhelp and version exit 0; unknown command exits 3
+[22m[39munknown command: bogus-command
+
+CheckPath — deterministic GitHub Actions required-check coverage simulator (local, offline).
+
+Usage:
+  checkpath demo [--out <dir>] [--strict-skipped]
+  checkpath analyze --repo <dir> --scenario <scenario.json> --required-checks <required-checks.yml> [--out <dir>] [--strict-skipped]
+  checkpath matrix --repo <dir> --suite <suite.json> --required-checks <required-checks.yml> [--out <dir>] [--strict-skipped]
+  checkpath --help | --version
+
+Exit codes: 0 all required checks reportable, 2 pending/ambiguous/unknown (or skipped with --strict-skipped), 3 invalid or input/usage error.
+
+[90mstdout[2m | tests/unit/cli/cli-commands.test.ts[2m > [22m[2mCLI entry[2m > [22m[2manalyze docs-only PR exits 2 and writes JSON + HTML
+[22m[39mscenario: PR-DOCS-ONLY
+event: pull_request/synchronize
+workflows: 1 (0 triggered)
+jobs: 2
+required checks: 2 (PENDING_NOT_REPORTED=2)
+witnesses: 2
+report_sha256: 9dc3af313677f795b3a836d9074833c9cfd2bf190d5e2201b7a99b08a23375b7
+json: /tmp/checkpath-t010-7Sksit/pr-docs-only/report.json
+html: /tmp/checkpath-t010-7Sksit/pr-docs-only/report.html
+exit code: 2
+
+[90mstdout[2m | tests/unit/cli/cli-commands.test.ts[2m > [22m[2mCLI entry[2m > [22m[2manalyze src-only PR exits 0
+[22m[39mscenario: PR-SRC-ONLY
+event: pull_request/synchronize
+workflows: 1 (1 triggered)
+jobs: 2
+required checks: 2 (REPORTABLE_PENDING=2)
+witnesses: 0
+report_sha256: 32d20af3b7249163806d0b662b9da77497d367f94387a962b5b3fd46c9d64dcd
+json: /tmp/checkpath-t010-8AWAIA/pr-src-only/report.json
+html: /tmp/checkpath-t010-8AWAIA/pr-src-only/report.html
+exit code: 0
+
+[90mstdout[2m | tests/unit/cli/cli-commands.test.ts[2m > [22m[2mCLI entry[2m > [22m[2mdemo report equals analyze report on the example files
+[22m[39mscenario: PR-DOCS-ONLY
+event: pull_request/synchronize
+workflows: 1 (0 triggered)
+jobs: 2
+required checks: 2 (PENDING_NOT_REPORTED=2)
+witnesses: 2
+report_sha256: 9dc3af313677f795b3a836d9074833c9cfd2bf190d5e2201b7a99b08a23375b7
+json: /tmp/checkpath-t010-t37vif/demo/report.json
+html: /tmp/checkpath-t010-t37vif/demo/report.html
+exit code: 2
+demo gate: exit 2 is the §4.7 gate outcome for this synthetic scenario (required checks are PENDING_NOT_REPORTED), not a demo failure.
+
+[90mstdout[2m | tests/unit/cli/cli-commands.test.ts[2m > [22m[2mCLI entry[2m > [22m[2mdemo report equals analyze report on the example files
+[22m[39mscenario: PR-DOCS-ONLY
+event: pull_request/synchronize
+workflows: 1 (0 triggered)
+jobs: 2
+required checks: 2 (PENDING_NOT_REPORTED=2)
+witnesses: 2
+report_sha256: 9dc3af313677f795b3a836d9074833c9cfd2bf190d5e2201b7a99b08a23375b7
+json: /tmp/checkpath-t010-WWb6ns/analyze/report.json
+html: /tmp/checkpath-t010-WWb6ns/analyze/report.html
+exit code: 2
+
+ [32m✓[39m tests/unit/cli/report-html.test.ts [2m([22m[2m8 tests[22m[2m)[22m[33m 532[2mms[22m[39m
+[90mstdout[2m | tests/unit/cli/cli-commands.test.ts[2m > [22m[2mCLI entry[2m > [22m[2mmatrix runs all suite scenarios and exits with the worst code
+[22m[39mscenario: PR-DOCS-ONLY
+event: pull_request/synchronize
+workflows: 1 (0 triggered)
+jobs: 2
+required checks: 2 (PENDING_NOT_REPORTED=2)
+witnesses: 2
+report_sha256: 9dc3af313677f795b3a836d9074833c9cfd2bf190d5e2201b7a99b08a23375b7
+json: /tmp/checkpath-t010-SPRthY/merge-queue/PR-DOCS-ONLY/report.json
+html: /tmp/checkpath-t010-SPRthY/merge-queue/PR-DOCS-ONLY/report.html
+exit code: 2
+---
+scenario: PR-SRC-ONLY
+event: pull_request/synchronize
+workflows: 1 (1 triggered)
+jobs: 2
+required checks: 2 (REPORTABLE_PENDING=2)
+witnesses: 0
+report_sha256: 32d20af3b7249163806d0b662b9da77497d367f94387a962b5b3fd46c9d64dcd
+json: /tmp/checkpath-t010-SPRthY/merge-queue/PR-SRC-ONLY/report.json
+html: /tmp/checkpath-t010-SPRthY/merge-queue/PR-SRC-ONLY/report.html
+exit code: 0
+---
+scenario: MERGE-GROUP-01
+event: merge_group/checks_requested
+workflows: 1 (0 triggered)
+jobs: 2
+required checks: 2 (PENDING_NOT_REPORTED=2)
+witnesses: 2
+report_sha256: efc6a6d452eebafdb7cd8a57a492a7aaf54baea4bb2df6fd149c3c784e05f977
+json: /tmp/checkpath-t010-SPRthY/merge-queue/MERGE-GROUP-01/report.json
+html: /tmp/checkpath-t010-SPRthY/merge-queue/MERGE-GROUP-01/report.html
+exit code: 2
+---
+suite: merge-queue (3 scenarios)
+matrix json: /tmp/checkpath-t010-SPRthY/merge-queue/matrix.json
+matrix html: /tmp/checkpath-t010-SPRthY/merge-queue/matrix.html
+exit code: 2
+
+[90mstderr[2m | tests/unit/cli/cli-commands.test.ts[2m > [22m[2mCLI entry[2m > [22m[2minput errors exit 3 and write no report
+[22m[39merror: scenario file not found: /home/hatch/workspace/p020-checkpath/examples/scenarios/does-not-exist.json
+
+[90mstderr[2m | tests/unit/cli/cli-commands.test.ts[2m > [22m[2mCLI entry[2m > [22m[2minput errors exit 3 and write no report
+[22m[39merror: scenario file failed validation (/tmp/checkpath-t010-w2vQWW/bad-scenario.json):
+$.scenario_id: missing_field: missing required field "scenario_id",$.event: missing_field: missing required field "event",$.diff: missing_field: missing required field "diff"
+
+[90mstderr[2m | tests/unit/cli/cli-commands.test.ts[2m > [22m[2mCLI entry[2m > [22m[2mmissing required flags exit 3
+[22m[39merror: missing required flag --scenario
+
+[90mstderr[2m | tests/unit/cli/cli-commands.test.ts[2m > [22m[2mCLI entry[2m > [22m[2mmissing required flags exit 3
+[22m[39merror: unknown flag --bogus
+
+ [32m✓[39m tests/unit/cli/cli-commands.test.ts [2m([22m[2m7 tests[22m[2m)[22m[33m 613[2mms[22m[39m
+ [32m✓[39m tests/unit/mutations/mutations.test.ts [2m([22m[2m13 tests[22m[2m)[22m[33m 588[2mms[22m[39m
+ [32m✓[39m tests/unit/witness/witness.test.ts [2m([22m[2m6 tests[22m[2m)[22m[33m 683[2mms[22m[39m
+   [32m✓[39m T009 witness reducer properties [2m(6)[22m
+     [33m[2m✓[22m[39m a reduced witness scenario re-runs and reproduces the same witness (idempotent reduction)[33m 523[2mms[22m[39m
+ [32m✓[39m tests/unit/diff-boundaries/diff-boundaries.test.ts [2m([22m[2m18 tests[22m[2m)[22m[33m 317[2mms[22m[39m
+ [32m✓[39m tests/unit/cli/report-builder.test.ts [2m([22m[2m8 tests[22m[2m)[22m[33m 501[2mms[22m[39m
+ [32m✓[39m tests/unit/cli/ui-worker.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[33m 483[2mms[22m[39m
+   [32m✓[39m App (report viewer) [2m(2)[22m
+     [33m[2m✓[22m[39m renders all §5.2 sections for a report[33m 371[2mms[22m[39m
+ [32m✓[39m tests/unit/cli/required-check-table.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 206[2mms[22m[39m
+ [32m✓[39m tests/unit/event/workflow-ir.test.ts [2m([22m[2m15 tests[22m[2m)[22m[32m 290[2mms[22m[39m
+ [32m✓[39m tests/unit/s0-e2e/e2e.test.ts [2m([22m[2m25 tests[22m[2m)[22m[33m 420[2mms[22m[39m
+ [32m✓[39m tests/unit/check-resolver/checks-oracle-dump.test.ts [2m([22m[2m50 tests[22m[2m)[22m[32m 80[2mms[22m[39m
+(node:29957) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 3, column 8:
+
+on: {*a: 1}
+       ^
+
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:29957) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 3, column 8:
+
+on: {*a: 1}
+       ^
+
+(node:29957) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 3, column 8:
+
+on: {*a: 1}
+       ^
+
+(node:29957) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 3, column 8:
+
+on: {*a: 1}
+       ^
+
+(node:29957) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 3, column 8:
+
+on: {*a: 1}
+       ^
+
+(node:29957) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 3, column 8:
+
+on: {*a: 1}
+       ^
+
+(node:29957) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 3, column 8:
+
+on: {*a: 1}
+       ^
+
+(node:29957) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 3, column 8:
+
+on: {*a: 1}
+       ^
+
+(node:29957) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 3, column 8:
+
+on: {*a: 1}
+       ^
+
+(node:29957) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 3, column 8:
+
+on: {*a: 1}
+       ^
+
+(node:29957) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 3, column 8:
+
+on: {*a: 1}
+       ^
+
+(node:29957) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 3, column 8:
+
+on: {*a: 1}
+       ^
+
+(node:29957) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 3, column 8:
+
+on: {*a: 1}
+       ^
+
+(node:29957) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 3, column 8:
+
+on: {*a: 1}
+       ^
+
+(node:29957) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 3, column 8:
+
+on: {*a: 1}
+       ^
+
+(node:29957) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 3, column 8:
+
+on: {*a: 1}
+       ^
+
+(node:29957) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 4, column 5:
+
+  *a: 1
+    ^
+
+(node:29957) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 4, column 5:
+
+  *a: 1
+    ^
+
+(node:29957) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 4, column 5:
+
+  *a: 1
+    ^
+
+(node:29957) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 4, column 5:
+
+  *a: 1
+    ^
+
+(node:29957) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 4, column 5:
+
+  *a: 1
+    ^
+
+(node:29957) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 4, column 5:
+
+  *a: 1
+    ^
+
+(node:29957) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 4, column 5:
+
+  *a: 1
+    ^
+
+(node:29957) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 4, column 5:
+
+  *a: 1
+    ^
+
+(node:29957) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 4, column 5:
+
+  *a: 1
+    ^
+
+(node:29957) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 4, column 5:
+
+  *a: 1
+    ^
+
+(node:29957) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 4, column 5:
+
+  *a: 1
+    ^
+
+(node:29957) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 4, column 5:
+
+  *a: 1
+    ^
+
+(node:29957) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 4, column 5:
+
+  *a: 1
+    ^
+
+(node:29957) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 4, column 5:
+
+  *a: 1
+    ^
+
+(node:29957) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 4, column 5:
+
+  *a: 1
+    ^
+
+(node:29957) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 4, column 5:
+
+  *a: 1
+    ^
+
+(node:29957) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 3, column 15:
+
+on: {push: {*a: 1}}
+              ^
+
+(node:29957) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 3, column 15:
+
+on: {push: {*a: 1}}
+              ^
+
+(node:29957) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 3, column 15:
+
+on: {push: {*a: 1}}
+              ^
+
+(node:29957) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 3, column 15:
+
+on: {push: {*a: 1}}
+              ^
+
+(node:29957) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 3, column 15:
+
+on: {push: {*a: 1}}
+              ^
+
+(node:29957) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 3, column 15:
+
+on: {push: {*a: 1}}
+              ^
+
+(node:29957) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 3, column 15:
+
+on: {push: {*a: 1}}
+              ^
+
+(node:29957) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 3, column 15:
+
+on: {push: {*a: 1}}
+              ^
+
+(node:29957) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 3, column 15:
+
+on: {push: {*a: 1}}
+              ^
+
+(node:29957) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 3, column 15:
+
+on: {push: {*a: 1}}
+              ^
+
+(node:29957) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 3, column 15:
+
+on: {push: {*a: 1}}
+              ^
+
+(node:29957) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 3, column 15:
+
+on: {push: {*a: 1}}
+              ^
+
+(node:29957) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 3, column 15:
+
+on: {push: {*a: 1}}
+              ^
+
+(node:29957) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 3, column 15:
+
+on: {push: {*a: 1}}
+              ^
+
+(node:29957) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 3, column 15:
+
+on: {push: {*a: 1}}
+              ^
+
+(node:29957) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 3, column 15:
+
+on: {push: {*a: 1}}
+              ^
+
+(node:29957) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 5, column 17:
+
+jobs: {test: {*a: 1}}
+                ^
+
+(node:29957) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 5, column 17:
+
+jobs: {test: {*a: 1}}
+                ^
+
+(node:29957) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 5, column 17:
+
+jobs: {test: {*a: 1}}
+                ^
+
+(node:29957) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 5, column 17:
+
+jobs: {test: {*a: 1}}
+                ^
+
+(node:29957) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 5, column 17:
+
+jobs: {test: {*a: 1}}
+                ^
+
+(node:29957) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 5, column 17:
+
+jobs: {test: {*a: 1}}
+                ^
+
+(node:29957) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 5, column 17:
+
+jobs: {test: {*a: 1}}
+                ^
+
+(node:29957) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 5, column 17:
+
+jobs: {test: {*a: 1}}
+                ^
+
+(node:29957) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 5, column 17:
+
+jobs: {test: {*a: 1}}
+                ^
+
+(node:29957) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 5, column 17:
+
+jobs: {test: {*a: 1}}
+                ^
+
+(node:29957) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 5, column 17:
+
+jobs: {test: {*a: 1}}
+                ^
+
+(node:29957) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 5, column 17:
+
+jobs: {test: {*a: 1}}
+                ^
+
+(node:29957) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 5, column 17:
+
+jobs: {test: {*a: 1}}
+                ^
+
+(node:29957) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 5, column 17:
+
+jobs: {test: {*a: 1}}
+                ^
+
+(node:29957) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 5, column 17:
+
+jobs: {test: {*a: 1}}
+                ^
+
+(node:29957) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 5, column 17:
+
+jobs: {test: {*a: 1}}
+                ^
+
+(node:29957) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29957) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29957) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29957) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29957) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29957) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29957) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29957) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29957) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29957) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29957) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29957) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29957) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29957) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29957) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29957) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29957) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29957) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29957) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29957) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29957) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29957) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29957) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29957) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29957) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29957) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29957) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29957) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29957) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29957) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29957) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29957) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29957) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29957) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29957) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29957) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29957) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29957) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29957) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29957) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29957) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29957) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29957) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29957) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29957) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29957) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29957) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+(node:29957) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.
+ [32m✓[39m tests/unit/cli/formal-pipeline-unsupported.test.ts [2m([22m[2m337 tests[22m[2m)[22m[33m 7869[2mms[22m[39m
+ [32m✓[39m tests/unit/filters/filters.test.ts [2m([22m[2m17 tests[22m[2m)[22m[32m 91[2mms[22m[39m
+ [32m✓[39m tests/unit/event/event.test.ts [2m([22m[2m20 tests[22m[2m)[22m[32m 16[2mms[22m[39m
+ [32m✓[39m tests/unit/job-dag/jobs-oracle-dump.test.ts [2m([22m[2m50 tests[22m[2m)[22m[32m 73[2mms[22m[39m
+ [32m✓[39m tests/unit/if-subset/if-subset.test.ts [2m([22m[2m80 tests[22m[2m)[22m[32m 98[2mms[22m[39m
+ [32m✓[39m tests/unit/schema/schema.test.ts [2m([22m[2m26 tests[22m[2m)[22m[32m 91[2mms[22m[39m
+ [32m✓[39m tests/unit/validation/scenario.test.ts [2m([22m[2m15 tests[22m[2m)[22m[32m 109[2mms[22m[39m
+ [32m✓[39m tests/unit/validation/workflow-ir.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 12[2mms[22m[39m
+ [32m✓[39m tests/unit/s0-parser/parser-trigger.test.ts [2m([22m[2m9 tests[22m[2m)[22m[32m 192[2mms[22m[39m
+ [32m✓[39m tests/unit/check-resolver/check-resolver.test.ts [2m([22m[2m36 tests[22m[2m)[22m[32m 104[2mms[22m[39m
+ [32m✓[39m tests/unit/witness/witness-oracle-dump.test.ts [2m([22m[2m52 tests[22m[2m)[22m[32m 189[2mms[22m[39m
+ [32m✓[39m tests/unit/job-dag/job-dag.test.ts [2m([22m[2m33 tests[22m[2m)[22m[32m 99[2mms[22m[39m
+ [32m✓[39m tests/unit/validation/report.test.ts [2m([22m[2m12 tests[22m[2m)[22m[32m 14[2mms[22m[39m
+ [32m✓[39m tests/unit/validation/required-checks.test.ts [2m([22m[2m11 tests[22m[2m)[22m[32m 16[2mms[22m[39m
+ [32m✓[39m tests/unit/s0-semantics/job-check.test.ts [2m([22m[2m13 tests[22m[2m)[22m[32m 15[2mms[22m[39m
+ [32m✓[39m tests/unit/schema/canonical-json.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 8[2mms[22m[39m
+ [32m✓[39m tests/unit/job-dag/unsupported-job.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 8[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m53 passed[39m[22m[90m (53)[39m
+[2m      Tests [22m [1m[32m1697 passed[39m[22m[90m (1697)[39m
+[2m   Start at [22m 02:14:28
+[2m   Duration [22m 78.43s[2m (tests 92%, import 7%, transform 1%)[22m
+
+[2m    Isolate [22m [33m53 workers spawned[39m[2m · ~504ms startup each (spawn + environment, per file)[22m
+[2m            [22m [2mat least ~8.39s faster with [22m[33misolate: false[39m[2m — reuses workers across files instead of one per file[22m
+

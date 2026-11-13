@@ -1,0 +1,10 @@
+typecheck exit=0
+lint exit=0
+test exit=0
+test-oracle exit=0
+test-e2e exit=0
+test-offline exit=0
+release-verify exit=0
+s0-oracle exit=0
+s0-gate exit=0
+DONE

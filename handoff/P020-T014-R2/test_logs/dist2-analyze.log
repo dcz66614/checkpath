@@ -1,0 +1,11 @@
+scenario: PR-DOCS-ONLY
+event: pull_request/synchronize
+workflows: 1 (0 triggered)
+jobs: 2
+required checks: 2 (PENDING_NOT_REPORTED=2)
+witnesses: 2
+report_sha256: 9dc3af313677f795b3a836d9074833c9cfd2bf190d5e2201b7a99b08a23375b7
+json: reports/pr-docs-only/report.json
+html: reports/pr-docs-only/report.html
+exit code: 2
+analyze=2

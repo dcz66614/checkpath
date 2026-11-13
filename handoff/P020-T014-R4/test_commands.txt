@@ -1,0 +1,25 @@
+# P020 T014-R4 — Test Commands (all personally run at source commit 2ddc2ad, exit codes as logged)
+
+## Regression (before freezing)
+
+- `npm run typecheck` — exit 0 — log: test_logs/P020-T014-R4_typecheck.log
+- `npm run lint` — exit 0 — log: test_logs/P020-T014-R4_lint.log
+- `npm test` — exit 0 — 53 files, 1697/1697 — log: test_logs/P020-T014-R4_test.log
+- `npm run test:oracle` — exit 0 — 167/167, 0 mismatches, 0 false PASS, unsupported UNKNOWN 34/34 — log: test_logs/P020-T014-R4_test-oracle.log
+- `npm run s0:gate` — exit 0 — PASS, oracle 24/24, 100 runs, 1 hash, gate_report_sha256 f511a847… unchanged — log: test_logs/P020-T014-R4_s0-gate.log
+- `python3 evidence/probes/r14/r14-probe.py` — exit 0 — 78/78 MATCH, 0 DIFF, 0 stale flag — log: test_logs/P020-T014-R4_r14.log
+- `python3 evidence/probes/r15/r15-probe.py` — exit 0 — 122/122 MATCH, 0 DIFF, 0 stale flag — log: test_logs/P020-T014-R4_r15.log
+
+## Acceptance (freeze)
+
+- `npm run release:freeze -- --trial` — exit 0 — source.zip ab23e4a7… (2,734 files), dist.zip b8e2aa77… (114 files), manifest 231047b0… — log: test_logs/P020-T014-R4_release-freeze-trial1.log (run twice; trial2 identical — log: test_logs/P020-T014-R4_release-freeze-trial2.log)
+- `npm run release:freeze` — exit 0 — source.zip ab23e4a7… (2,734 files), dist.zip b8e2aa77… (114 files), manifest 2076f087… — log: test_logs/P020-T014-R4_release-freeze-formal.log
+- `npm run release:verify` — exit 0 — PASS — log: test_logs/P020-T014-R4_release-verify.log
+- `sha256sum -c SHA256SUMS.txt` (in release/) — exit 0 — 3/3 OK (run inline after the formal freeze)
+
+## Independent verification (not acceptance commands, run for the freeze evidence)
+
+- `USER=root python3 scripts/deterministic-zip.py --verify release/source.zip` — exit 1 EXPECTED (P2-6 final-review R4: 5 'username in entry name' FAILs on 'root' fixture filenames; tool defect, ZIPs unaffected)
+- `USER= python3 scripts/deterministic-zip.py --verify release/source.zip` — exit 0 — verify OK
+- Trial `source.zip` contents check — all R3-FINAL artifacts present (R3 report, R3 notes, R19 matrix/pack/sums, updated index, git check, R4 notes) — run inline, see TASK_REPORT §4 / T014_FREEZE_REPORT_R4.md §4
+- `git rev-parse` / `git log` / `git diff` chain checks — see evidence/release/GIT_FINAL_CHECK_R4.md (verbatim outputs)

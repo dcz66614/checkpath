@@ -1,0 +1,10 @@
+scenario: PR-SRC-ONLY
+event: pull_request/synchronize
+workflows: 1 (1 triggered)
+jobs: 2
+required checks: 2 (REPORTABLE_PENDING=2)
+witnesses: 0
+report_sha256: 32d20af3b7249163806d0b662b9da77497d367f94387a962b5b3fd46c9d64dcd
+json: /tmp/t014/dist2-src-only/report.json
+html: /tmp/t014/dist2-src-only/report.html
+exit code: 0

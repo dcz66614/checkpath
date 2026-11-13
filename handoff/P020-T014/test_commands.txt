@@ -1,0 +1,35 @@
+# P020 T014 — Test Commands (all personally run, exit codes as logged)
+
+## Regression (before freezing)
+
+- `npm run typecheck` — exit 0 — log: test_logs/typecheck.log
+- `npm run lint` — exit 0 — log: test_logs/lint.log
+- `npm test` — exit 0 — 32 files, 842/842 — log: test_logs/test.log
+- `npm run test:oracle` — exit 0 — Golden 80/80, 0 mismatches, false PASS 0, TS formal false PASS 0, UNKNOWN 19/19 — log: test_logs/test-oracle.log
+- `npm run s0:oracle` — exit 0 — S0 24/24, 0 mismatches, false PASS 0, TS formal false PASS 0, UNKNOWN 2/2 — log: test_logs/s0-oracle.log
+- `npm run s0:gate` — exit 0 — PASS, 100 runs, 1 hash, gate_report_sha256 f511a847… unchanged — log: test_logs/s0-gate.log
+
+## Acceptance
+
+- `npm run release:freeze` — exit 0 — log: test_logs/release-freeze.log
+- `npm run release:verify` — exit 0 — PASS, dist tree 14cd8492… — log: test_logs/release-verify.log
+- `python3 scripts/deterministic-zip.py --verify release/source.zip` — exit 0 — log: test_logs/verify-source-zip.log
+- `python3 scripts/deterministic-zip.py --verify release/dist.zip` — exit 0 — log: test_logs/verify-dist-zip.log
+
+## Independent verification (not acceptance commands, run for the freeze evidence)
+
+- `npm run release:freeze` (re-run) — exit 0, byte-identical hashes — log: test_logs/release-freeze-determinism.log (final determinism proof); earlier re-run log: test_logs/release-freeze-rerun.log
+- `sha256sum -c SHA256SUMS.txt` (in `release/`) — all three OK
+- `python3 scripts/deterministic-zip.py --verify` — see acceptance rows above
+- source.zip extraction vs `git ls-files -z` + `diff -r` vs `git archive HEAD` extraction — identical (see evidence/release/T014_FREEZE_REPORT.md §4)
+- dist.zip extraction in /tmp (no node_modules visible):
+  - `node checkpath.mjs demo --out /tmp/t014/dist2-demo` — exit 2 (expected gate outcome), report_sha256 9dc3af31… — log: test_logs/dist2-demo.log
+  - `node checkpath.mjs analyze --repo examples/repo-basic --scenario examples/scenarios/pr-docs-only.json --required-checks examples/required-checks.yml --out /tmp/t014/dist2-analyze` — exit 2 — log: test_logs/dist2-analyze.log
+  - `node checkpath.mjs matrix --repo examples/repo-basic --suite examples/suites/merge-queue.json --required-checks examples/required-checks.yml --out /tmp/t014/dist2-matrix` — exit 2 — log: test_logs/dist2-matrix.log
+  - `node checkpath.mjs analyze --repo examples/repo-basic --scenario examples/scenarios/pr-src-only.json --required-checks examples/required-checks.yml --out /tmp/t014/dist2-src-only` — exit 0 — log: test_logs/dist2-src-only.log
+
+## Intermediate (failed) runs during the freeze — documented, not hidden
+
+- `npm run release:freeze` — exit 1 (first run: dirty-check flagged the untracked freezer script itself; checker fixed, see freeze report §3.2)
+- `python3 scripts/deterministic-zip.py --verify release/source.zip` / `--verify release/dist.zip` — exit 1 (second freeze: writer ordering + `.git` prefix checker bugs; both fixed, see freeze report §3.3)
+- `node checkpath.mjs demo` from the first extracted dist.zip — exit 1, ERR_MODULE_NOT_FOUND for `yaml` (F-T014-01; fixed by vendoring yaml 2.9.1 into dist.zip, see freeze report §3.5)

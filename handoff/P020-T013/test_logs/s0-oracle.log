@@ -1,0 +1,10 @@
+
+> checkpath@0.0.0-t001-skeleton s0:oracle
+> node scripts/oracle-diff.mjs --suite tests/fixtures/s0/all.json
+
+suite: tests/fixtures/s0/all.json
+fixtures: 24, TS==expected exit=0, Oracle==expected exit=0
+TS vs Oracle mismatches: 0
+false PASS: 0
+unsupported surfaced as UNKNOWN: 2/2 fixtures
+report: evidence/s0/S0_ORACLE_REPORT.json

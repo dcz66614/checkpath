@@ -1,0 +1,63 @@
+{
+  "dependencies": {
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "yaml": "^2.9.1"
+  },
+  "description": "CheckPath — deterministic GitHub Actions required-check coverage simulator (local CLI + offline HTML report). T001 skeleton only; no business logic implemented.",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.65.0",
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^5.2.0",
+    "eslint": "^10.14.0",
+    "globals": "^17.14.0",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.72.1",
+    "vite": "^7.3.7",
+    "vitest": "^5.1.0"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "name": "checkpath",
+  "private": true,
+  "scripts": {
+    "build": "vite build && node scripts/build-cli.mjs",
+    "env:check": "node scripts/env-check.mjs",
+    "lint": "eslint src tests scripts",
+    "oracle:diff:trigger": "node scripts/oracle-diff-trigger.mjs",
+    "oracle:diff:jobs": "node scripts/oracle-diff-jobs.mjs",
+    "oracle:diff:checks": "node scripts/oracle-diff-checks.mjs",
+    "oracle:diff:witness": "node scripts/oracle-diff-witness.mjs",
+    "release:freeze": "python3 scripts/deterministic-zip.py --freeze",
+    "release:verify": "node scripts/release-verify.mjs",
+    "s0:determinism": "node scripts/oracle-diff.mjs --repeat 100",
+    "s0:gate": "node scripts/oracle-diff.mjs --gate",
+    "s0:oracle": "node scripts/oracle-diff.mjs --suite tests/fixtures/s0/all.json",
+    "s0:parse": "vitest run tests/unit/s0-parser",
+    "s0:semantics": "vitest run tests/unit/s0-semantics",
+    "test": "vitest run",
+    "test:check-resolver": "vitest run tests/unit/check-resolver",
+    "test:diff-boundaries": "vitest run tests/unit/diff-boundaries",
+    "test:e2e": "playwright test",
+    "test:event": "vitest run tests/unit/event",
+    "test:filters": "vitest run tests/unit/filters",
+    "test:if-subset": "vitest run tests/unit/if-subset",
+    "test:job-dag": "vitest run tests/unit/job-dag",
+    "test:mutation": "vitest run tests/unit/mutations",
+    "test:offline": "node scripts/release-verify.mjs --offline",
+    "test:oracle": "node scripts/oracle-diff.mjs --suite tests/fixtures/golden/suite.json",
+    "test:performance": "node scripts/release-verify.mjs --performance",
+    "test:property": "node scripts/make-fixtures.mjs --verify",
+    "test:schemas": "vitest run tests/unit/schema",
+    "test:validation": "vitest run tests/unit/validation",
+    "test:witness": "vitest run tests/unit/witness",
+    "test:witness:determinism": "vitest run tests/unit/witness/witness-determinism.test.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "type": "module",
+  "version": "0.0.0-t001-skeleton"
+}

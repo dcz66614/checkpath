@@ -1,0 +1,4 @@
+# CheckPath Reference Oracle — pinned dependencies (T001).
+# Public PyPI only. PyYAML 6.x is required by the spec (BaseLoader keeps the
+# `on` key as a string). Installed with: python3 -m pip install -r oracle/requirements.lock.txt
+PyYAML==6.0.3

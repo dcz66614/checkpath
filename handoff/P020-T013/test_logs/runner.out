@@ -1,0 +1,27 @@
+=== typecheck ===
+CMD: npm run typecheck
+typecheck exit=0
+=== lint ===
+CMD: npm run lint
+lint exit=0
+=== test ===
+CMD: npm run test
+test exit=0
+=== test-oracle ===
+CMD: npm run test:oracle
+test-oracle exit=0
+=== test-e2e ===
+CMD: npm run test:e2e
+test-e2e exit=0
+=== test-offline ===
+CMD: npm run test:offline
+test-offline exit=0
+=== release-verify ===
+CMD: npm run release:verify
+release-verify exit=0
+=== s0-oracle ===
+CMD: npm run s0:oracle
+s0-oracle exit=0
+=== s0-gate ===
+CMD: npm run s0:gate
+s0-gate exit=0

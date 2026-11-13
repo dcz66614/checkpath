@@ -1,0 +1,18 @@
+npm ci
+npm run typecheck
+npm run lint
+npm run test
+npm run test:oracle
+npm run test:e2e
+npm run test:offline
+npm run release:verify
+npm run test:property -- --seed 20261108 --count 1000
+npm run test:mutation
+npm run test:performance
+npm run build
+npm run s0:oracle
+npm run s0:gate
+node dist/checkpath.mjs analyze --repo /tmp/t013r2/probe/u07/repo --scenario /tmp/t013r2/probe/u07/scenario.json --required-checks /tmp/t013r2/probe/u07/required-checks.yml --out /tmp/t013r2/probe/u07/out
+node dist/checkpath.mjs analyze --repo /tmp/t013r2/probe/u08/repo --scenario /tmp/t013r2/probe/u08/scenario.json --required-checks /tmp/t013r2/probe/u08/required-checks.yml --out /tmp/t013r2/probe/u08/out
+node dist/checkpath.mjs analyze --repo /tmp/t013r2/probe/t805/repo --scenario /tmp/t013r2/probe/t805/scenario.json --required-checks /tmp/t013r2/probe/t805/required-checks.yml --out /tmp/t013r2/probe/t805/out
+python3 scripts/oracle-parse-probe.py --yaml /tmp/t013r2/dup-name.yml --fixture-id dup-name

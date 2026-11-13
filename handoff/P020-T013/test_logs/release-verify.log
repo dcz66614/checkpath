@@ -1,0 +1,22 @@
+
+> checkpath@0.0.0-t001-skeleton release:verify
+> node scripts/release-verify.mjs
+
+[1/5] build + determinism (two independent builds, dist hash must match)
+  PASS build determinism: dist tree sha256 f4464038fabbd92a… (29 files, identical across 2 builds)
+[2/5] CLI smoke (demo/analyze/matrix, §4.7 exit codes)
+  PASS demo: exit 2 (expected 2)
+  PASS analyze pr-docs-only: exit 2 (expected 2)
+  PASS analyze pr-src-only: exit 0 (expected 0)
+  PASS matrix merge-queue: exit 2 (expected 2)
+  PASS cli smoke: demo 2 / analyze docs-only 2 / analyze src-only 0 / matrix 2
+[3/5] report_sha256 recomputation (shipped dist modules)
+  PASS report_sha256 recompute: pr-docs-only 9dc3af313677f795… == demo report, both recompute OK
+[4/5] offline static scan (dist + generated reports)
+  note: dist/assets/index-EBeRcM8p.js: 20x bare URL string(s), e.g. https://react.dev/errors/, http://www.w3.org/2000/svg, http://www.w3.org/1998/Math/MathML, http://www.w3.org/1999/xlink, http://www.w3.org/XML/1998/namespace — string constant, not a fetched resource
+  note: dist/assets/index-EBeRcM8p.js: contains fetch( from Vite's modulepreload polyfill; it only fetches in-document <link rel="modulepreload"> entries, and dist/index.html contains none — no request is issued
+  note: dist/report/html.js: 2x bare URL string(s), e.g. http://`,, https://`, — string constant, not a fetched resource
+  PASS offline static scan: 34 files scanned, 0 remote resource references
+[5/5] license guard
+  PASS license guard: no LICENSE file; LICENSE_STATUS.md still PENDING_SAM_DECISION
+release:verify PASS

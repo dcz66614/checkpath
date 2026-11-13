@@ -1,0 +1,249 @@
+{
+  "artifacts": {
+    "dist.zip": {
+      "contents": "fresh build CLI bundle + vendored yaml 2.9.1 runtime (node_modules/yaml: package.json, LICENSE, dist/*.js; F-T014-01) + synthetic examples + offline HTML assets + Quick Start",
+      "file_count": 114,
+      "sha256": "b8e2aa77074cd2f62a518c1c7969cfdaa7cff202c6d87239080c3dfe2c6d335c",
+      "vendored_runtime_dependency": {
+        "files": 76,
+        "package": "yaml",
+        "reason": "F-T014-01: dist/core imports 'yaml'; without it the standalone bundle cannot run (ERR_MODULE_NOT_FOUND). Packaging-only fix; no product code changed.",
+        "version": "2.9.1"
+      }
+    },
+    "source.zip": {
+      "contents": "exact HEAD tree (git ls-files at the source commit) + the freezer script itself (scripts/deterministic-zip.py, included even when untracked — FIX-P1-02)",
+      "file_count": 2734,
+      "sha256": "ab23e4a70bef6e462e47875ccbecce4d3a6167a4d9cd3a3b204d9cd0e39a41ba"
+    }
+  },
+  "freeze_commit": "TRIAL — not a formal T014 freeze; trial-validation artifacts only, see handoff/P020-FIX-P1-02/TASK_REPORT.md",
+  "freeze_history": [
+    {
+      "freeze_commit": "3e5e14556f37e78ed411369d3e2324dcad199e20",
+      "source_commit": "933dd354e109436551ba40b96d5b4a2d83b839a6",
+      "status": "FORMAL"
+    },
+    {
+      "freeze_commit": "TRIAL — not a formal T014 freeze; trial-validation artifacts only, see handoff/P020-FIX-P1-02/TASK_REPORT.md",
+      "source_commit": "36476cf19264b3a2f3d0b907bb61f92df47ec91e",
+      "status": "TRIAL"
+    },
+    {
+      "freeze_commit": "03c2f168a40b114ff1a0f408fa783f5d5389e15d",
+      "source_commit": "538c669e11a383aa0554d05239e298cf34aadd4d",
+      "status": "FORMAL"
+    },
+    {
+      "freeze_commit": "d8ffdebb775e5b3241936ec86c11689c51f29bf1",
+      "source_commit": "3a8337151461b80e4ae50e75ab2edf417f4f9165",
+      "status": "FORMAL"
+    }
+  ],
+  "freeze_status": "TRIAL — FIX-P1-02 trial-freeze validation only; NOT the formal T014 re-freeze",
+  "freezer": {
+    "compression": "ZIP_DEFLATED level 9",
+    "dir_mode": "0755",
+    "file_mode": "0644",
+    "fixed_timestamp": "1980-01-01T00:00:00Z",
+    "script": "scripts/deterministic-zip.py",
+    "sha256": "c2a1c9e82209b0f2e45830cc9830a183de02a3f6204ea431f87020b2ddaff196"
+  },
+  "git_commit": "2ddc2ad0a7afd34bc2d5fe989f7d2e2bdb4e0b98",
+  "git_commit_short": "2ddc2ad",
+  "inputs": {
+    "golden_suite_sha256": "62a8b519b5af1f0831e336e33d47f789ef9ad057ef796f1acdb1af47c825be28",
+    "oracle_parity_report": {
+      "false_pass_count": 0,
+      "fixture_count": 167,
+      "oracle_mismatch_count": 0,
+      "path": "evidence/tests/ORACLE_PARITY_REPORT.json",
+      "sha256": "db20127f4b135e65b52f950358fffe9e177a89c9eaaed7304208180ce2b1c8ac"
+    },
+    "s0_gate": {
+      "gate_report_sha256": "f511a84709a6ebf64af94cb788ad3e15cef85af5862b5334fca4288b6ff38386",
+      "path": "evidence/S0_GATE.json",
+      "sha256": "e651ce73524ae60d705d6f94ce50914f7696ff649bf3ca6fb870e76e08c80401",
+      "status": "PASS"
+    },
+    "s0_input_fixture_sha256": "afce74c909298f4537e9e86d95c8521476e2efca9cfbd0f417229321df2279d2",
+    "t013_review_r1": {
+      "path": "evidence/review/INDEPENDENT_REVIEW.md",
+      "sha256": "8cf3033ac3d63ca00fb55ebd587f07a67c4fafc5d0e1184cf8274c3888ed1823"
+    },
+    "t013_review_r10": {
+      "p0": 1,
+      "p1": 0,
+      "p2": 10,
+      "path": "evidence/review/INDEPENDENT_REVIEW_R10.md",
+      "sha256": "e159387e60d9a4ce327609125674683b44875ed9ad1b43672ac5cf07fb302d3c",
+      "verdict": "NOT PASS"
+    },
+    "t013_review_r11": {
+      "p0": 2,
+      "p1": 0,
+      "p2": 8,
+      "path": "evidence/review/INDEPENDENT_REVIEW_R11.md",
+      "sha256": "1cc23c974281f4c3882ada5e561b8f9d075d784ad2dc743c8cb6f87e83d5c9f1",
+      "verdict": "NOT PASS"
+    },
+    "t013_review_r12": {
+      "p0": 3,
+      "p1": 0,
+      "p2": 9,
+      "path": "evidence/review/INDEPENDENT_REVIEW_R12.md",
+      "sha256": "d28e8a349dd1bedd48249519671fefe679348674944535ee8c2294d630a2f454",
+      "verdict": "NOT PASS"
+    },
+    "t013_review_r13": {
+      "p0": 1,
+      "p1": 0,
+      "p2": 9,
+      "path": "evidence/review/INDEPENDENT_REVIEW_R13.md",
+      "sha256": "4206873e3a0ef2b061c80e22647a7b1e25dd62e62642d65342f7933b002698c3",
+      "verdict": "NOT PASS"
+    },
+    "t013_review_r14": {
+      "p0": 5,
+      "p1": 0,
+      "p2": 8,
+      "path": "evidence/review/INDEPENDENT_REVIEW_R14.md",
+      "sha256": "3814dc3e5e47b0f60b1d39910838b4597288fa552c4564715781b8c1c3dbf145",
+      "verdict": "NOT PASS"
+    },
+    "t013_review_r15": {
+      "p0": 3,
+      "p1": 0,
+      "p2": 9,
+      "path": "evidence/review/INDEPENDENT_REVIEW_R15.md",
+      "sha256": "74ef2e5ded0a3b8b8a5152c505ea7908ce09d137c394c4cea3de22c0636977cc",
+      "verdict": "NOT PASS"
+    },
+    "t013_review_r16": {
+      "p0": 2,
+      "p1": 0,
+      "p2": 9,
+      "path": "evidence/review/INDEPENDENT_REVIEW_R16.md",
+      "sha256": "8a969fbec1e2827017206a0e2cb672395349727fe02ac3388f8d0559ea3c78fa",
+      "verdict": "NOT PASS"
+    },
+    "t013_review_r17": {
+      "p0": 1,
+      "p1": 0,
+      "p2": 8,
+      "path": "evidence/review/INDEPENDENT_REVIEW_R17.md",
+      "sha256": "34d42f18ca4e46728e7bc162c8e2007b005be2c5a3148ba89eb4eda41e12f22b",
+      "verdict": "NOT PASS"
+    },
+    "t013_review_r18": {
+      "p0": 1,
+      "p1": 0,
+      "p2": 8,
+      "path": "evidence/review/INDEPENDENT_REVIEW_R18.md",
+      "sha256": "bc42eede06cfdd8f8592178dcdb068adcff1742b6fd9d18a1564a8af774a5956",
+      "verdict": "NOT PASS"
+    },
+    "t013_review_r19": {
+      "p0": 0,
+      "p1": 0,
+      "p2": 8,
+      "path": "evidence/review/INDEPENDENT_REVIEW_R19.md",
+      "sha256": "c6ec2c2415baedeab47914f34f1fe7238ca910ff1cc158e7ba417cbed2750470",
+      "verdict": "PASS"
+    },
+    "t013_review_r2": {
+      "p0": 0,
+      "p1": 0,
+      "p2": 3,
+      "path": "evidence/review/INDEPENDENT_REVIEW_R2.md",
+      "sha256": "58485c294bb77f06432510a2a2446cd29ed2f5b04535f1f31b446d2214355e99",
+      "verdict": "PASS"
+    },
+    "t013_review_r3": {
+      "p0": 0,
+      "p1": 0,
+      "p2": 3,
+      "path": "evidence/review/INDEPENDENT_REVIEW_R3.md",
+      "sha256": "1e55294d04174fab2e0a68136f23fce5038ba957027156b899018c945e8116dd",
+      "verdict": "PASS"
+    },
+    "t013_review_r4": {
+      "p0": 1,
+      "p1": 0,
+      "p2": 6,
+      "path": "evidence/review/INDEPENDENT_REVIEW_R4.md",
+      "sha256": "3be14a499e6154d5cd4d2aef0d1f8ba2e6c94a4ddd30ad373eb9bfbd7756dc48",
+      "verdict": "NOT PASS"
+    },
+    "t013_review_r5": {
+      "p0": 1,
+      "p1": 0,
+      "p2": 7,
+      "path": "evidence/review/INDEPENDENT_REVIEW_R5.md",
+      "sha256": "5e8f8f0b151bdc4993aef2af884187b899e7f26a696a36878e6d09ad79c5fd4c",
+      "verdict": "NOT PASS"
+    },
+    "t013_review_r6": {
+      "p0": 1,
+      "p1": 0,
+      "p2": 8,
+      "path": "evidence/review/INDEPENDENT_REVIEW_R6.md",
+      "sha256": "f4ced18a671ed77cb25f53a583dfc224c7ad6f7ff1319d90389dfbbf61d0c97c",
+      "verdict": "NOT PASS"
+    },
+    "t013_review_r7": {
+      "p0": 1,
+      "p1": 0,
+      "p2": 8,
+      "path": "evidence/review/INDEPENDENT_REVIEW_R7.md",
+      "sha256": "484a8cc7ea0c2aec39122e8fcf6ac20b498abede5a5834819dd2678d2c4ea29e",
+      "verdict": "NOT PASS"
+    },
+    "t013_review_r8": {
+      "p0": 1,
+      "p1": 0,
+      "p2": 8,
+      "path": "evidence/review/INDEPENDENT_REVIEW_R8.md",
+      "sha256": "fabb3aa739cb12ae4f6534978c8174a24e61607af19a28a0d4d3e232b0c8a93f",
+      "verdict": "NOT PASS"
+    },
+    "t013_review_r9": {
+      "p0": 1,
+      "p1": 0,
+      "p2": 9,
+      "path": "evidence/review/INDEPENDENT_REVIEW_R9.md",
+      "sha256": "d1f91c6dd3ed481d19ed78c899961e1a5d289d3df732816d9ea393a41b1734bf",
+      "verdict": "NOT PASS"
+    }
+  },
+  "known_limitations": [
+    "P2-R2-1: FIXED in final-review R1 FIX-P1-01 (commit 11f2fc0): expanded static network check now covers the 10 src/core files + oracle/witness.py (45 files, 0 matches).",
+    "P2-R2-2: FIXED in final-review R1 FIX-P1-01 (commit 11f2fc0): dup-name fixture added (tests/fixtures/parser-divergence/duplicate-key/dup-name.yml; trigger T6-19 / golden G-83).",
+    "P2-R2-3: README performance figures are single-run snapshots (see RELEASE_NOTES.md).",
+    "Duplicate-key YAML divergence (ADR FIX-P2/01): FIXED in final-review R1 FIX-P1-01 (commit 11f2fc0): Oracle now also rejects duplicate mapping keys (INVALID / yaml_parse_error), TS and Oracle agree; the ADR FIX-P2/01 known-limitation waiver was superseded by the R1 verdict.",
+    "P2-R3-1: RESOLVED by FIX-P0-02 (Oracle _StrictBaseLoader folds True: / true: to one bool key), verified by T013 R4 section 1 (the R2 input now returns INVALID / yaml_parse_error on both sides, MATCH; fixture-locked by tests/fixtures/trigger/T6-20-dup-bool-true, tests/fixtures/parser-divergence/duplicate-key/dup-bool-true.yml case 4, golden G-84). Note: R4 does not cite the label 'P2-R3-1' literally; the closure is of the exact underlying divergence R3 recorded.",
+    "P2-R3-2: FIXED by this freezer change (T014 re-freeze): the manifest now records t013_review_r3 alongside t013_review_r2; the R3 review (PASS, P0 0 / P1 0 / P2 3) is hashed in inputs.",
+    "P2-R3-3: a literal clean-directory re-run of release:freeze without .git still fails at git rev-parse HEAD — by design (the freeze identifies the frozen tree by commit); the accepted substitute is a fresh-clone re-run, verified byte-identical for the trial freeze (see T014_FREEZE_REPORT_R2.md).",
+    "P2-R6-1: FIXED by this freezer change (T014 R3 re-freeze): the manifest now records t013_review_r4..r19 alongside r1/r2/r3 (verdict + p0/p1/p2, hashed from HEAD); the R4–R19 review rounds are no longer unrecorded.",
+    "P2-R6-2: PARTIALLY MITIGATED, still open as a historical residual (R3-FINAL-04, 2026-11-10): the R7/R8 self-written review probes lived only in /tmp and were lost in a VM restart (reconstructible only from report text); R9–R19 probes are archived in evidence/probes/r9/–r19/. Non-blocking.",
+    "P2-6 (final-review R4): USER=root ZIP-validator false positive — tool defect, NOT a product defect (R3-FINAL-04, 2026-11-10). scripts/deterministic-zip.py do_verify flags any entry name containing the $USER substring; run as root it fails release/source.zip with 5 'username in entry name' FAILs on fixture filenames containing 'root' (e.g. tests/fixtures/parser-divergence/anchored-empty-key/k01-anchored-root.yml). Verified live 2026-11-10: USER=root exits 1 (5 FAILs); USER unset verifies OK. The ZIPs are unaffected. (Not to be confused with final-review R3's P2-6, the false 'hashes unchanged' claim, which GPT revoked in R4.)",
+    "Windows PowerShell Quick Start NOT_TESTED (no Windows machine)."
+  ],
+  "license_status": "PENDING_SAM_DECISION",
+  "project_id": "P020",
+  "source_commit": "2ddc2ad0a7afd34bc2d5fe989f7d2e2bdb4e0b98",
+  "source_commit_short": "2ddc2ad",
+  "spec_version": "1.0.0",
+  "toolchain": {
+    "node": "v24.22.1",
+    "npm": "10.9.4",
+    "python": "Python 3.12.3",
+    "pyyaml": "6.0.1",
+    "react": "19.3.1",
+    "typescript": "5.9.3",
+    "vite": "7.3.7",
+    "vitest": "5.1.0",
+    "yaml": "2.9.1"
+  },
+  "version": "0.0.0-t001-skeleton"
+}

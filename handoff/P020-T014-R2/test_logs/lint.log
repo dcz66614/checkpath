@@ -1,0 +1,5 @@
+
+> checkpath@0.0.0-t001-skeleton lint
+> eslint src tests scripts
+
+lint=0

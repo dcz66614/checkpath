@@ -1,0 +1,10 @@
+scenario: G-79
+event: pull_request/synchronize
+workflows: 1 (1 triggered)
+jobs: 1
+required checks: 1 (UNKNOWN=1)
+witnesses: 1
+report_sha256: 59fb7bf4ddea3b5391ccc46a81e2a5c29e08469cef1271c0ab31ffc7386f5016
+json: /tmp/t013r2/probe/u07/out/report.json
+html: /tmp/t013r2/probe/u07/out/report.html
+exit code: 2

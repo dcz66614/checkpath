@@ -1,0 +1,15 @@
+
+> checkpath@0.0.0-t001-skeleton release:freeze
+> python3 scripts/deterministic-zip.py --freeze
+
+HEAD commit: 933dd354e109436551ba40b96d5b4a2d83b839a6 (release candidate)
+build inputs clean vs HEAD
+source tree: 1144 tracked files at HEAD
+running npm run build ...
+dist tree: 29 files
+dist.zip entries: 38 (29 built + 6 examples + 2 docs + QUICKSTART.md)
+source.zip: 5e84c787c73cb1430d022537f3ae9982c574921de93bf60a2cb06684881aefb8 (1144 files)
+dist.zip:   2c09d6aae752eb2028d60a587aefda3ddeffdd0b5f8099ddee49f9d1e68e9b6d (38 files)
+RELEASE_MANIFEST.json: ae7a98a1a27fd976063c31c0575005ef30945d6f278cecd84478de42eab1d136
+freeze OK
+refreeze EXIT:0

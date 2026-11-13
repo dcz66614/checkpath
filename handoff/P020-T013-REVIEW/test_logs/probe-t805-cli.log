@@ -1,0 +1,10 @@
+scenario: T8-05
+event: pull_request/synchronize
+workflows: 1 (1 triggered)
+jobs: 1
+required checks: 5 (PENDING_NOT_REPORTED=1 REPORTABLE_PENDING=1 UNKNOWN=3)
+witnesses: 4
+report_sha256: 781098456ca6399183a89def05646893cd085165405219b7a26e3031f9674fbb
+json: /tmp/t013r2/probe/t805/out/report.json
+html: /tmp/t013r2/probe/t805/out/report.html
+exit code: 2

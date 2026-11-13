@@ -1,0 +1,26 @@
+# P020 T014-R2 — Test Commands (all personally run, exit codes as logged)
+
+## Regression (before freezing)
+
+- `npm run typecheck` — exit 0 — log: test_logs/typecheck.log
+- `npm run lint` — exit 0 — log: test_logs/lint.log
+- `npm test` — exit 0 — 32 files, 855/855 — log: test_logs/test.log
+- `npm run test:oracle` — exit 0 — Golden 83/83, 0 mismatches, false PASS 0, TS formal false PASS 0, UNKNOWN 19/19 — log: test_logs/test-oracle.log
+- `npm run s0:oracle` — exit 0 — S0 24/24, 0 mismatches, false PASS 0, TS formal false PASS 0, UNKNOWN 2/2 — log: test_logs/s0-oracle.log
+- `npm run s0:gate` — exit 0 — PASS, 100 runs, 1 hash, gate_report_sha256 f511a847… unchanged — log: test_logs/s0-gate.log
+
+## Acceptance
+
+- `npm run release:freeze` — exit 0 — source.zip 3a778b93… (1,209 files), dist.zip da130ad2…, manifest 04a07733… — log: test_logs/release-freeze-rerun.log (re-run; original run output identical, see TASK_REPORT)
+- `npm run release:verify` — exit 0 — PASS — log: test_logs/release-verify.log
+- `python3 scripts/deterministic-zip.py --verify release/source.zip` — exit 0 — log: test_logs/verify-source-zip.log
+- `python3 scripts/deterministic-zip.py --verify release/dist.zip` — exit 0 — log: test_logs/verify-dist-zip.log
+
+## Independent verification (not acceptance commands, run for the freeze evidence)
+
+- Clean-dir `dist.zip` demo — exit 2 (gate code), report_sha256 9dc3af31… — log: test_logs/dist2-demo.log
+- Clean-dir `dist.zip` analyze pr-docs-only — exit 2, same report hash — log: test_logs/dist2-analyze.log
+- Fresh clone at 538c669 + `npm ci` + formal `release:freeze` — exit 0, all three hashes byte-identical — log: test_logs/fresh-clone-freeze.log
+- Clean-dir `source.zip` extraction (no `.git`) + `npm run release:freeze` — exit 1 EXPECTED: FAIL at `git rev-parse HEAD` (P2-R3-3, by design); script file IS present — log: test_logs/clean-dir-nogit-freeze.log
+- `source.zip` vs `git archive 538c669` — `diff -r` zero differences (run inline, no separate log file)
+- `sha256sum -c release/SHA256SUMS.txt` — 3/3 OK (run inline)

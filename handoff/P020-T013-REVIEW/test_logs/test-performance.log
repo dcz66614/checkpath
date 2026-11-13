@@ -1,0 +1,15 @@
+
+> checkpath@0.0.0-t001-skeleton test:performance
+> node scripts/release-verify.mjs --performance
+
+[1/4] fresh build
+  PASS build: npm run build exit 0
+[2/4] deterministic perf input (20 workflows / 200 jobs / 100 changed files / 50 required checks)
+  PASS perf input determinism: input_sha256 82d175d794a47a20… identical across 2 generations
+[3/4] timed runs (1 warmup + 31 measured analyze runs)
+  warmup: 572.1 ms, peak RSS 88.8 MiB, exit 0
+  P50 541.8 ms, P95 697.9 ms, max 713.2 ms, mean 557.6 ms
+  peak RSS (max over runs): 100.2 MiB
+  PASS P95 <= 1000 ms: P95 697.9 ms over 31 runs
+  PASS peak RSS <= 256 MiB: max peak RSS 100.2 MiB
+performance PASS

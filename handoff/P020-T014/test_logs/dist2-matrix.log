@@ -1,0 +1,37 @@
+scenario: PR-DOCS-ONLY
+event: pull_request/synchronize
+workflows: 1 (0 triggered)
+jobs: 2
+required checks: 2 (PENDING_NOT_REPORTED=2)
+witnesses: 2
+report_sha256: 9dc3af313677f795b3a836d9074833c9cfd2bf190d5e2201b7a99b08a23375b7
+json: /tmp/t014/dist2-matrix/PR-DOCS-ONLY/report.json
+html: /tmp/t014/dist2-matrix/PR-DOCS-ONLY/report.html
+exit code: 2
+---
+scenario: PR-SRC-ONLY
+event: pull_request/synchronize
+workflows: 1 (1 triggered)
+jobs: 2
+required checks: 2 (REPORTABLE_PENDING=2)
+witnesses: 0
+report_sha256: 32d20af3b7249163806d0b662b9da77497d367f94387a962b5b3fd46c9d64dcd
+json: /tmp/t014/dist2-matrix/PR-SRC-ONLY/report.json
+html: /tmp/t014/dist2-matrix/PR-SRC-ONLY/report.html
+exit code: 0
+---
+scenario: MERGE-GROUP-01
+event: merge_group/checks_requested
+workflows: 1 (0 triggered)
+jobs: 2
+required checks: 2 (PENDING_NOT_REPORTED=2)
+witnesses: 2
+report_sha256: efc6a6d452eebafdb7cd8a57a492a7aaf54baea4bb2df6fd149c3c784e05f977
+json: /tmp/t014/dist2-matrix/MERGE-GROUP-01/report.json
+html: /tmp/t014/dist2-matrix/MERGE-GROUP-01/report.html
+exit code: 2
+---
+suite: merge-queue (3 scenarios)
+matrix json: /tmp/t014/dist2-matrix/matrix.json
+matrix html: /tmp/t014/dist2-matrix/matrix.html
+exit code: 2
