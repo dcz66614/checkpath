@@ -1,0 +1,25 @@
+{
+  "required_checks": [
+    {
+      "context": "unit-tests",
+      "source": "github-actions"
+    },
+    {
+      "context": "deploy",
+      "source": "github-actions"
+    },
+    {
+      "context": "job-a",
+      "source": "github-actions"
+    },
+    {
+      "context": "ok-check",
+      "source": "github-actions"
+    },
+    {
+      "context": "external-check",
+      "source": "third-party-app"
+    }
+  ],
+  "schema": "checkpath.required-checks/v1"
+}

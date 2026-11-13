@@ -1,0 +1,35 @@
+name: ci
+on:
+  pull_request:
+    branches:
+      - main
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: unit-tests
+    if: "contains(github.event_name, 'push')"
+    steps:
+      - run: echo hi
+  deploy:
+    runs-on: ubuntu-latest
+    name: deploy
+    needs: [nonexistent]
+    steps:
+      - run: echo deploy
+  cyc-a:
+    runs-on: ubuntu-latest
+    name: job-a
+    needs: [cyc-b]
+    steps:
+      - run: echo a
+  cyc-b:
+    runs-on: ubuntu-latest
+    name: job-b
+    needs: [cyc-a]
+    steps:
+      - run: echo b
+  ok:
+    runs-on: ubuntu-latest
+    name: ok-check
+    steps:
+      - run: echo ok

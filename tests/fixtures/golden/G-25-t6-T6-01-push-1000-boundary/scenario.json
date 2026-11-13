@@ -1,0 +1,26 @@
+{
+  "diff": {
+    "algorithm": "two-dot",
+    "changed_files": [
+      "README.md"
+    ],
+    "changed_files_total": 1,
+    "complete": true,
+    "diff_timed_out": false,
+    "first_3000_confirmed": true,
+    "push_commit_count": 1000,
+    "returned_files": 1
+  },
+  "event": {
+    "action": null,
+    "base_branch": null,
+    "branch": "main",
+    "commit_message": "feat: add",
+    "head_branch": null,
+    "name": "push",
+    "ref": "refs/heads/main",
+    "target_branch": null
+  },
+  "scenario_id": "G-25",
+  "schema": "checkpath.scenario/v1"
+}

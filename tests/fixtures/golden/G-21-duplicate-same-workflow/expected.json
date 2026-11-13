@@ -1,0 +1,93 @@
+{
+  "diff_boundary": null,
+  "fixture_id": "G-21",
+  "input_sha256": "60b642920de59090bc4acb424db4434ad4c9622dddd625412216fbe4fbad1347",
+  "jobs": [
+    {
+      "context": "tests",
+      "job_id": "test-a",
+      "reason": "eligible",
+      "status": "ELIGIBLE",
+      "workflow": "workflow.yml"
+    },
+    {
+      "context": "tests",
+      "job_id": "test-b",
+      "reason": "eligible",
+      "status": "ELIGIBLE",
+      "workflow": "workflow.yml"
+    }
+  ],
+  "required_checks": [
+    {
+      "context": "tests",
+      "provider_count": 2,
+      "provider_job_id": null,
+      "reason": "duplicate_context",
+      "status": "AMBIGUOUS"
+    }
+  ],
+  "scenario_id": "G-21",
+  "schema": "checkpath.e2e-report/v1",
+  "summary": {
+    "check_status_counts": {
+      "AMBIGUOUS": 1,
+      "INVALID": 0,
+      "PENDING_NOT_REPORTED": 0,
+      "REPORTABLE_PENDING": 0,
+      "SKIPPED_SUCCESS": 0,
+      "UNKNOWN": 0
+    },
+    "job_status_counts": {
+      "CONDITIONAL_AFTER_NEEDS": 0,
+      "ELIGIBLE": 2,
+      "INVALID": 0,
+      "SKIPPED": 0,
+      "UNKNOWN": 0
+    },
+    "triggered_workflow_count": 1,
+    "workflow_count": 1
+  },
+  "unsupported_features": [],
+  "workflows": [
+    {
+      "path": "workflow.yml",
+      "trigger": {
+        "errors": [],
+        "evaluation": {
+          "activity_type_match": true,
+          "branch_match": true,
+          "branch_value": "main",
+          "commit_skip": false,
+          "event_match": true,
+          "path_file_results": [
+            {
+              "file": "src/app.ts",
+              "matched": true
+            }
+          ],
+          "path_match": true,
+          "reason": "triggered",
+          "triggered": true,
+          "unsupported": []
+        },
+        "events": [
+          {
+            "branches": [
+              "main"
+            ],
+            "branches_ignore": null,
+            "name": "pull_request",
+            "paths": null,
+            "paths_ignore": null,
+            "types": null
+          }
+        ],
+        "fixture_id": "G-21",
+        "on_key_is_string": true,
+        "schema": "checkpath.trigger-ir/v1",
+        "status": "VALID"
+      }
+    }
+  ]
+}
