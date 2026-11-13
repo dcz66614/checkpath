@@ -1,0 +1,8 @@
+{
+  "required_checks": [
+    {
+      "context": "test"
+    }
+  ],
+  "schema": "checkpath.required-checks/v1"
+}
