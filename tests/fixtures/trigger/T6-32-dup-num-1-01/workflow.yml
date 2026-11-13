@@ -1,0 +1,11 @@
+name: t6-32-dup-num-1-01
+on:
+  1:
+    branches: [main]
+  01:
+    branches: [dev]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo hi

@@ -1,0 +1,11 @@
+name: t6-23-bool-true-false-events
+on:
+  True:
+    branches: [main]
+  FALSE:
+    branches: [dev]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo hi

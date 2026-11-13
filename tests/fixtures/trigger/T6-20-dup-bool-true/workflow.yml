@@ -1,0 +1,11 @@
+name: dup-bool-true
+on:
+  True:
+    branches: [main]
+  true:
+    branches: [dev]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo hi

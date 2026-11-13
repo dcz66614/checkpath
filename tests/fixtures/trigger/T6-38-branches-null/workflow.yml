@@ -1,0 +1,9 @@
+name: t6-38-branches-null
+on:
+  push:
+    branches: null
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo hi

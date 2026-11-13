@@ -1,0 +1,7 @@
+name: t6-37-on-scalar-true
+on: True
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo hi

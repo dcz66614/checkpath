@@ -1,0 +1,26 @@
+{
+  "diff": {
+    "algorithm": "three-dot",
+    "changed_files": [
+      "src/app.ts"
+    ],
+    "changed_files_total": 1,
+    "complete": true,
+    "diff_timed_out": false,
+    "first_3000_confirmed": true,
+    "push_commit_count": null,
+    "returned_files": 1
+  },
+  "event": {
+    "action": "checks_requested",
+    "base_branch": null,
+    "branch": null,
+    "commit_message": "merge queue",
+    "head_branch": "feature/x",
+    "name": "merge_group",
+    "ref": "refs/heads/gh-readonly-queue/main/pr-42",
+    "target_branch": "main"
+  },
+  "scenario_id": "T6-09",
+  "schema": "checkpath.scenario/v1"
+}

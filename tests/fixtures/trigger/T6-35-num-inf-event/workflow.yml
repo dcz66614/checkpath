@@ -1,0 +1,9 @@
+name: t6-35-num-inf-event
+on:
+  .inf:
+    branches: [main]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo hi
