@@ -1,0 +1,990 @@
+{
+  "fixtures": [
+    {
+      "dir": "../s0/E2E-01-cp-a-pr-docs-only",
+      "id": "E2E-01",
+      "scenario": "scenario.json",
+      "source": "s0-e2e",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "../s0/E2E-02-cp-b-merge-group-present",
+      "id": "E2E-02",
+      "scenario": "scenario.json",
+      "source": "s0-e2e",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "../s0/E2E-03-cp-c-merge-group-missing",
+      "id": "E2E-03",
+      "scenario": "scenario.json",
+      "source": "s0-e2e",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "../s0/E2E-04-push-baseline",
+      "id": "E2E-04",
+      "scenario": "scenario.json",
+      "source": "s0-e2e",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "../s0/E2E-05-pr-types-mismatch",
+      "id": "E2E-05",
+      "scenario": "scenario.json",
+      "source": "s0-e2e",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "../s0/E2E-06-pr-types-match",
+      "id": "E2E-06",
+      "scenario": "scenario.json",
+      "source": "s0-e2e",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "../s0/E2E-07-merge-group-types-mismatch",
+      "id": "E2E-07",
+      "scenario": "scenario.json",
+      "source": "s0-e2e",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "../s0/E2E-08-on-list-form",
+      "id": "E2E-08",
+      "scenario": "scenario.json",
+      "source": "s0-e2e",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "../s0/E2E-09-cp-f-branch-only-match",
+      "id": "E2E-09",
+      "scenario": "scenario.json",
+      "source": "s0-e2e",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "../s0/E2E-10-cp-f-path-only-match",
+      "id": "E2E-10",
+      "scenario": "scenario.json",
+      "source": "s0-e2e",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "../s0/E2E-11-cp-g-ordered-negation",
+      "id": "E2E-11",
+      "scenario": "scenario.json",
+      "source": "s0-e2e",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "../s0/E2E-12-cp-h-commit-skip",
+      "id": "E2E-12",
+      "scenario": "scenario.json",
+      "source": "s0-e2e",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "../s0/E2E-13-branches-ignore",
+      "id": "E2E-13",
+      "scenario": "scenario.json",
+      "source": "s0-e2e",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "../s0/E2E-14-paths-ignore",
+      "id": "E2E-14",
+      "scenario": "scenario.json",
+      "source": "s0-e2e",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "../s0/E2E-15-cp-k-push-over-1000",
+      "id": "E2E-15",
+      "scenario": "scenario.json",
+      "source": "s0-e2e",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "../s0/E2E-16-cp-l-diff-unconfirmed",
+      "id": "E2E-16",
+      "scenario": "scenario.json",
+      "source": "s0-e2e",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "../s0/E2E-17-cp-d-if-false",
+      "id": "E2E-17",
+      "scenario": "scenario.json",
+      "source": "s0-e2e",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "../s0/E2E-18-cp-e-always-aggregator",
+      "id": "E2E-18",
+      "scenario": "scenario.json",
+      "source": "s0-e2e",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "../s0/E2E-19-cp-i-duplicate-cross-workflow",
+      "id": "E2E-19a",
+      "scenario": "scenario.json",
+      "source": "s0-e2e",
+      "workflow": "workflow-a.yml"
+    },
+    {
+      "dir": "../s0/E2E-19-cp-i-duplicate-cross-workflow",
+      "id": "E2E-19b",
+      "scenario": "scenario.json",
+      "source": "s0-e2e",
+      "workflow": "workflow-b.yml"
+    },
+    {
+      "dir": "../s0/E2E-20-cp-j-no-provider",
+      "id": "E2E-20",
+      "scenario": "scenario.json",
+      "source": "s0-e2e",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "../s0/E2E-21-duplicate-same-workflow",
+      "id": "E2E-21",
+      "scenario": "scenario.json",
+      "source": "s0-e2e",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "../s0/E2E-22-needs-skipped",
+      "id": "E2E-22",
+      "scenario": "scenario.json",
+      "source": "s0-e2e",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "../s0/E2E-23-conditional-after-needs",
+      "id": "E2E-23",
+      "scenario": "scenario.json",
+      "source": "s0-e2e",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "../s0/E2E-24-fail-closed-bundle",
+      "id": "E2E-24",
+      "scenario": "scenario.json",
+      "source": "s0-e2e",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-01-push-1000-boundary",
+      "id": "T6-01",
+      "scenario": "scenario.json",
+      "source": "t006",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-02-push-1001-always-run",
+      "id": "T6-02",
+      "scenario": "scenario.json",
+      "source": "t006",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-03-diff-timeout-pr",
+      "id": "T6-03",
+      "scenario": "scenario.json",
+      "source": "t006",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-04-diff-timeout-paths-ignore",
+      "id": "T6-04",
+      "scenario": "scenario.json",
+      "source": "t006",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-05-first3000-confirmed-no-match",
+      "id": "T6-05",
+      "scenario": "scenario.json",
+      "source": "t006",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-06-first3000-confirmed-match-inside",
+      "id": "T6-06",
+      "scenario": "scenario.json",
+      "source": "t006",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-07-commit-skip-actions",
+      "id": "T6-07",
+      "scenario": "scenario.json",
+      "source": "t006",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-08-commit-skip-checks-space",
+      "id": "T6-08",
+      "scenario": "scenario.json",
+      "source": "t006",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-09-merge-group-target-branch",
+      "id": "T6-09",
+      "scenario": "scenario.json",
+      "source": "t006",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-10-pr-base-not-head",
+      "id": "T6-10",
+      "scenario": "scenario.json",
+      "source": "t006",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-11-types-missing-action",
+      "id": "T6-11",
+      "scenario": "scenario.json",
+      "source": "t006",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-12-missing-base-branch",
+      "id": "T6-12",
+      "scenario": "scenario.json",
+      "source": "t006",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-13-total-exactly-3000",
+      "id": "T6-13",
+      "scenario": "scenario.json",
+      "source": "t006",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-14-complete-false-ignored",
+      "id": "T6-14",
+      "scenario": "scenario.json",
+      "source": "t006",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-15-returned-files-subset",
+      "id": "T6-15",
+      "scenario": "scenario.json",
+      "source": "t006",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-16-empty-event-value",
+      "id": "T6-16",
+      "scenario": "scenario.json",
+      "source": "t006",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-17-dup-branches",
+      "id": "T6-17",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p1-01",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-18-dup-event",
+      "id": "T6-18",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p1-01",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-19-dup-name",
+      "id": "T6-19",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p1-01",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-20-dup-bool-true",
+      "id": "T6-20",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-02",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-21-bool-true-event",
+      "id": "T6-21",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-03",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-22-bool-false-event",
+      "id": "T6-22",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-03",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-23-bool-true-false-events",
+      "id": "T6-23",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-03",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-24-null-event",
+      "id": "T6-24",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-03",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-25-tilde-event",
+      "id": "T6-25",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-03",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-26-filter-key-true",
+      "id": "T6-26",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-03",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-27-on-list-true",
+      "id": "T6-27",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-03",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-28-branches-true",
+      "id": "T6-28",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-03",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-29-types-true",
+      "id": "T6-29",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-03",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-30-bool-TRUE-event",
+      "id": "T6-30",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-03",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-31-num-01-event",
+      "id": "T6-31",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-03",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-32-dup-num-1-01",
+      "id": "T6-32",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-03",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-33-branches-1",
+      "id": "T6-33",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-03",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-34-num-1e3-event",
+      "id": "T6-34",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-03",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-35-num-inf-event",
+      "id": "T6-35",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-03",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-36-order-num-keys",
+      "id": "T6-36",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-03",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-37-on-scalar-true",
+      "id": "T6-37",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-03",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-38-branches-null",
+      "id": "T6-38",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-03",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-39-branches-empty",
+      "id": "T6-39",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-03",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-40-quoted-true-event",
+      "id": "T6-40",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-03",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-41-dup-nan-nan",
+      "id": "T6-41",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-03",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-42-bare-empty-event",
+      "id": "T6-42",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-04",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-43-bare-empty-filter",
+      "id": "T6-43",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-04",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-44-bare-empty-jobs",
+      "id": "T6-44",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-04",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-45-bare-empty-top",
+      "id": "T6-45",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-04",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-46-bare-empty-nested-job",
+      "id": "T6-46",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-04",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-47-bare-empty-steps-item",
+      "id": "T6-47",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-04",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-48-two-bare-keys",
+      "id": "T6-48",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-04",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-49-bare-plus-null",
+      "id": "T6-49",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-04",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-50-scalar-job-true",
+      "id": "T6-50",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-04",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-51-scalar-job-null",
+      "id": "T6-51",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-04",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-52-flow-alias-key",
+      "id": "T6-52",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-05",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-53-block-alias-no-space",
+      "id": "T6-53",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-05",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-54-filter-flow-alias-key",
+      "id": "T6-54",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-05",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-55-jobs-flow-alias-key",
+      "id": "T6-55",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-05",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-56-collection-alias-key",
+      "id": "T6-56",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-06",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-57-flow-collection-alias-key",
+      "id": "T6-57",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-06",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-58-seq-collection-alias-key",
+      "id": "T6-58",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-06",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-59-flow-alias-tab",
+      "id": "T6-59",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-06",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-60-block-alias-tab",
+      "id": "T6-60",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-06",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-61-flow-scalar-key-tab",
+      "id": "T6-61",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-06",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-62-v1-double-quote-tab",
+      "id": "T6-62",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-07",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-63-v2-single-quote-tab",
+      "id": "T6-63",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-07",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-64-v5-continuation-quote-tab",
+      "id": "T6-64",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-07",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-65-v9-trailing-comment-tab",
+      "id": "T6-65",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-07",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-66-v1e-value-next-line-quote-tab",
+      "id": "T6-66",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-07",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-67-v1f-continuation-mid-quote-tab",
+      "id": "T6-67",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-07",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-68-resid-dq",
+      "id": "T6-68",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-08",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-69-resid-sq",
+      "id": "T6-69",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-08",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-70-resid-dq-notab",
+      "id": "T6-70",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-08",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-71-resid-dq-ind2",
+      "id": "T6-71",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-08",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-72-resid-dq-ind8",
+      "id": "T6-72",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-08",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-73-resid-dq-ind9",
+      "id": "T6-73",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-08",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-74-name-k0-ind0",
+      "id": "T6-74",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-08",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-75-name-k0-ind1",
+      "id": "T6-75",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-08",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-76-flow-value-ind0",
+      "id": "T6-76",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-08",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-77-flow-value-ind1",
+      "id": "T6-77",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-08",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-78-seq-item-ind2",
+      "id": "T6-78",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-08",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-79-seq-item-ind3",
+      "id": "T6-79",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-08",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-80-r3-extra-ind1",
+      "id": "T6-80",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-09",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-81-r3-on-ind1",
+      "id": "T6-81",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-09",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-82-r3-extra-sq",
+      "id": "T6-82",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-09",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-83-r3-plain-fold",
+      "id": "T6-83",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-09",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-84-r3-nested",
+      "id": "T6-84",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-09",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-85-r3-on-ind9",
+      "id": "T6-85",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-09",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-86-r3-flow-value-mlq",
+      "id": "T6-86",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-09",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-87-r3-explicit-quoted",
+      "id": "T6-87",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-09",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-88-r3-explicit-comment",
+      "id": "T6-88",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-09",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-89-s2-plain-ind1",
+      "id": "T6-89",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-09",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-90-s2-quoted-ind1",
+      "id": "T6-90",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-09",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-91-s2-comment-ind1",
+      "id": "T6-91",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-09",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-92-r4-comma-ind0",
+      "id": "T6-92",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-10",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-93-r4-comma-nested",
+      "id": "T6-93",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-10",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-94-r4-comma-on",
+      "id": "T6-94",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-10",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-95-r4-comma-jobs",
+      "id": "T6-95",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-10",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-96-r5-plain-ind0",
+      "id": "T6-96",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-10",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-97-r5-quoted-ind0",
+      "id": "T6-97",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-10",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-98-r5-sq-ind0",
+      "id": "T6-98",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-10",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-99-r5-nested",
+      "id": "T6-99",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-10",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-100-r5-on",
+      "id": "T6-100",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-10",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-101-r4-comma-ind1",
+      "id": "T6-101",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-10",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-102-r5-colon-ind1",
+      "id": "T6-102",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-10",
+      "workflow": "workflow.yml"
+    },
+    {
+      "dir": "T6-103-close-ind0",
+      "id": "T6-103",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "fix-p0-10",
+      "workflow": "workflow.yml"
+    }
+  ],
+  "schema": "checkpath.trigger-suite/v1",
+  "seed": 20261108,
+  "suite_id": "trigger"
+}

@@ -1,0 +1,83 @@
+{
+  "diff_boundary": null,
+  "fixture_id": "G-75",
+  "input_sha256": "5dc30f9f1ccb9e7e2f8a71ee54ba8a13f66fe825e57b6bcb387b7a2beb18d030",
+  "jobs": [
+    {
+      "context": "unit-tests",
+      "job_id": "test",
+      "reason": "trigger_unknown",
+      "status": "UNKNOWN",
+      "workflow": "workflow.yml"
+    }
+  ],
+  "required_checks": [
+    {
+      "context": "unit-tests",
+      "provider_count": 1,
+      "provider_job_id": "test",
+      "reason": "trigger_unknown",
+      "status": "UNKNOWN"
+    }
+  ],
+  "scenario_id": "G-75",
+  "schema": "checkpath.e2e-report/v1",
+  "summary": {
+    "check_status_counts": {
+      "AMBIGUOUS": 0,
+      "INVALID": 0,
+      "PENDING_NOT_REPORTED": 0,
+      "REPORTABLE_PENDING": 0,
+      "SKIPPED_SUCCESS": 0,
+      "UNKNOWN": 1
+    },
+    "job_status_counts": {
+      "CONDITIONAL_AFTER_NEEDS": 0,
+      "ELIGIBLE": 0,
+      "INVALID": 0,
+      "SKIPPED": 0,
+      "UNKNOWN": 1
+    },
+    "triggered_workflow_count": 0,
+    "workflow_count": 1
+  },
+  "unsupported_features": [
+    "unsupported_event:pull_request_target"
+  ],
+  "workflows": [
+    {
+      "path": "workflow.yml",
+      "trigger": {
+        "errors": [],
+        "evaluation": {
+          "activity_type_match": null,
+          "branch_match": null,
+          "branch_value": null,
+          "commit_skip": false,
+          "event_match": null,
+          "path_file_results": [],
+          "path_match": null,
+          "reason": "unknown",
+          "triggered": null,
+          "unsupported": [
+            "unsupported_event:pull_request_target"
+          ]
+        },
+        "events": [
+          {
+            "branches": null,
+            "branches_ignore": null,
+            "name": "pull_request_target",
+            "paths": null,
+            "paths_ignore": null,
+            "types": null
+          }
+        ],
+        "fixture_id": "G-75",
+        "on_key_is_string": true,
+        "schema": "checkpath.trigger-ir/v1",
+        "status": "UNKNOWN"
+      }
+    }
+  ]
+}

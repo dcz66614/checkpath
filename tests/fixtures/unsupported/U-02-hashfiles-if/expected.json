@@ -1,0 +1,86 @@
+{
+  "diff_boundary": null,
+  "fixture_id": "G-74",
+  "input_sha256": "78d91fe8f0a8b7ed1e66d333cab2ac6ca9aac74a42c86299f134658fc99c9d30",
+  "jobs": [
+    {
+      "context": "unit-tests",
+      "job_id": "test",
+      "reason": "unsupported_if",
+      "status": "UNKNOWN",
+      "workflow": "workflow.yml"
+    }
+  ],
+  "required_checks": [
+    {
+      "context": "unit-tests",
+      "provider_count": 1,
+      "provider_job_id": "test",
+      "reason": "provider_unknown",
+      "status": "UNKNOWN"
+    }
+  ],
+  "scenario_id": "G-74",
+  "schema": "checkpath.e2e-report/v1",
+  "summary": {
+    "check_status_counts": {
+      "AMBIGUOUS": 0,
+      "INVALID": 0,
+      "PENDING_NOT_REPORTED": 0,
+      "REPORTABLE_PENDING": 0,
+      "SKIPPED_SUCCESS": 0,
+      "UNKNOWN": 1
+    },
+    "job_status_counts": {
+      "CONDITIONAL_AFTER_NEEDS": 0,
+      "ELIGIBLE": 0,
+      "INVALID": 0,
+      "SKIPPED": 0,
+      "UNKNOWN": 1
+    },
+    "triggered_workflow_count": 1,
+    "workflow_count": 1
+  },
+  "unsupported_features": [
+    "unsupported_if:test"
+  ],
+  "workflows": [
+    {
+      "path": "workflow.yml",
+      "trigger": {
+        "errors": [],
+        "evaluation": {
+          "activity_type_match": true,
+          "branch_match": true,
+          "branch_value": "main",
+          "commit_skip": false,
+          "event_match": true,
+          "path_file_results": [
+            {
+              "file": "src/app.ts",
+              "matched": true
+            }
+          ],
+          "path_match": true,
+          "reason": "triggered",
+          "triggered": true,
+          "unsupported": []
+        },
+        "events": [
+          {
+            "branches": null,
+            "branches_ignore": null,
+            "name": "pull_request",
+            "paths": null,
+            "paths_ignore": null,
+            "types": null
+          }
+        ],
+        "fixture_id": "G-74",
+        "on_key_is_string": true,
+        "schema": "checkpath.trigger-ir/v1",
+        "status": "VALID"
+      }
+    }
+  ]
+}
