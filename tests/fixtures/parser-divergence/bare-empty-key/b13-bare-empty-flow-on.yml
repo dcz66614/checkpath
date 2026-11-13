@@ -1,0 +1,7 @@
+name: b13-bare-empty-flow-on
+on: {push: {}, : 1}
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo hi

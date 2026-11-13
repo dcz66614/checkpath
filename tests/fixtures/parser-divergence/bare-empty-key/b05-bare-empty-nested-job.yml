@@ -1,0 +1,10 @@
+name: b05-bare-empty-nested-job
+on:
+  push: {}
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    :
+      foo: bar
+    steps:
+      - run: echo hi

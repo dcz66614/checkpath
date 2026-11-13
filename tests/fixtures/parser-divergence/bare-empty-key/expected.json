@@ -1,0 +1,488 @@
+{
+  "schema": "checkpath.parser-divergence/v1",
+  "note": "FIX-P0-04 bare-empty-key parity fixtures: a bare empty key (a line containing only `:`) and a collection key are rejected by PyYAML at parse time, so the Oracle can only return INVALID / yaml_parse_error; the TypeScript side now rejects the same keys through hasUnrepresentableKey (src/core/workflow-parser.ts) with the identical error, in both parseWorkflowYaml and extractJobs. Each case also lives in the automated Oracle对照 — the trigger suite (tests/fixtures/trigger/T6-42..T6-51, `npm run oracle:diff:trigger`) and the golden suite (tests/fixtures/golden/G-106..G-115, via `npm run test:oracle`) — so parity is checked by the diff runners, not only by this unit test. See README.md in this directory and ADR FIX-P0-04 in handoff/P020-FIX-P0-04/TASK_REPORT.md.",
+  "cases": [
+    {
+      "file": "b01-bare-empty-event.yml",
+      "id": "b01-bare-empty-event",
+      "note": "FIX-P0-04: single bare empty event key (R5 X-empty-1) — INVALID / yaml_parse_error on both sides.",
+      "typescript": {
+        "status": "INVALID",
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": []
+      },
+      "oracle": {
+        "status": "INVALID",
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": []
+      }
+    },
+    {
+      "file": "b02-bare-empty-filter.yml",
+      "id": "b02-bare-empty-filter",
+      "note": "FIX-P0-04: bare empty filter key in a flow mapping (R5 X-filter-empty) — INVALID / yaml_parse_error on both sides.",
+      "typescript": {
+        "status": "INVALID",
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": []
+      },
+      "oracle": {
+        "status": "INVALID",
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": []
+      }
+    },
+    {
+      "file": "b03-bare-empty-jobs.yml",
+      "id": "b03-bare-empty-jobs",
+      "note": "FIX-P0-04: bare empty key in the jobs: mapping — PyYAML fails the whole document, TS now rejects it too.",
+      "typescript": {
+        "status": "INVALID",
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": []
+      },
+      "oracle": {
+        "status": "INVALID",
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": []
+      }
+    },
+    {
+      "file": "b04-bare-empty-top.yml",
+      "id": "b04-bare-empty-top",
+      "note": "FIX-P0-04: bare empty key at the top level — whole-document rejection on both sides.",
+      "typescript": {
+        "status": "INVALID",
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": []
+      },
+      "oracle": {
+        "status": "INVALID",
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": []
+      }
+    },
+    {
+      "file": "b05-bare-empty-nested-job.yml",
+      "id": "b05-bare-empty-nested-job",
+      "note": "FIX-P0-04: bare empty key nested inside a job definition.",
+      "typescript": {
+        "status": "INVALID",
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": []
+      },
+      "oracle": {
+        "status": "INVALID",
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": []
+      }
+    },
+    {
+      "file": "b06-bare-empty-steps-item.yml",
+      "id": "b06-bare-empty-steps-item",
+      "note": "FIX-P0-04: bare empty key in a steps list-item mapping.",
+      "typescript": {
+        "status": "INVALID",
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": []
+      },
+      "oracle": {
+        "status": "INVALID",
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": []
+      }
+    },
+    {
+      "file": "b07-bare-empty-branches-value.yml",
+      "id": "b07-bare-empty-branches-value",
+      "note": "FIX-P0-04: bare empty key as a filter-value mapping key (was INVALID on both sides, but with different error codes).",
+      "typescript": {
+        "status": "INVALID",
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": []
+      },
+      "oracle": {
+        "status": "INVALID",
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": []
+      }
+    },
+    {
+      "file": "b08-bare-empty-flow-jobs.yml",
+      "id": "b08-bare-empty-flow-jobs",
+      "note": "FIX-P0-04: bare empty key in a flow-style jobs mapping.",
+      "typescript": {
+        "status": "INVALID",
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": []
+      },
+      "oracle": {
+        "status": "INVALID",
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": []
+      }
+    },
+    {
+      "file": "b09-bare-empty-seq-item.yml",
+      "id": "b09-bare-empty-seq-item",
+      "note": "FIX-P0-04: bare empty key as the sole key of a sequence-item mapping.",
+      "typescript": {
+        "status": "INVALID",
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": []
+      },
+      "oracle": {
+        "status": "INVALID",
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": []
+      }
+    },
+    {
+      "file": "b10-explicit-q-empty.yml",
+      "id": "b10-explicit-q-empty",
+      "note": "FIX-P0-04: explicit `?` with an empty key — a collection key to the TS parser, rejected by PyYAML; now INVALID on both sides.",
+      "typescript": {
+        "status": "INVALID",
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": []
+      },
+      "oracle": {
+        "status": "INVALID",
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": []
+      }
+    },
+    {
+      "file": "b11-bare-empty-trailing-spaces.yml",
+      "id": "b11-bare-empty-trailing-spaces",
+      "note": "FIX-P0-04: bare empty key followed by trailing spaces — still an empty source range.",
+      "typescript": {
+        "status": "INVALID",
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": []
+      },
+      "oracle": {
+        "status": "INVALID",
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": []
+      }
+    },
+    {
+      "file": "b12-bare-empty-on-list-item.yml",
+      "id": "b12-bare-empty-on-list-item",
+      "note": "FIX-P0-04: bare empty key in an on-list item mapping (was INVALID on both sides, but with different error codes).",
+      "typescript": {
+        "status": "INVALID",
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": []
+      },
+      "oracle": {
+        "status": "INVALID",
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": []
+      }
+    },
+    {
+      "file": "b13-bare-empty-flow-on.yml",
+      "id": "b13-bare-empty-flow-on",
+      "note": "FIX-P0-04: bare empty key in a flow-style on mapping (was INVALID on both sides, but with different error codes).",
+      "typescript": {
+        "status": "INVALID",
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": []
+      },
+      "oracle": {
+        "status": "INVALID",
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": []
+      }
+    },
+    {
+      "file": "b14-two-bare-keys.yml",
+      "id": "b14-two-bare-keys",
+      "note": "FIX-P0-04 no-regression: two bare keys were already INVALID on both sides (R4 Q4 / R5 X-empty-2).",
+      "typescript": {
+        "status": "INVALID",
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": []
+      },
+      "oracle": {
+        "status": "INVALID",
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": []
+      }
+    },
+    {
+      "file": "b15-bare-plus-null.yml",
+      "id": "b15-bare-plus-null",
+      "note": "FIX-P0-04 no-regression: bare key + null: were already INVALID on both sides (R4 E1 / R5 X-empty-3).",
+      "typescript": {
+        "status": "INVALID",
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": []
+      },
+      "oracle": {
+        "status": "INVALID",
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": []
+      }
+    },
+    {
+      "file": "b16-bare-plus-tilde.yml",
+      "id": "b16-bare-plus-tilde",
+      "note": "FIX-P0-04 no-regression: bare key + ~: were already INVALID on both sides (R4 E2 / R5 X-empty-4).",
+      "typescript": {
+        "status": "INVALID",
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": []
+      },
+      "oracle": {
+        "status": "INVALID",
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": []
+      }
+    },
+    {
+      "file": "b17-quoted-empty-plus-null.yml",
+      "id": "b17-quoted-empty-plus-null",
+      "note": "FIX-P0-04 no-regression: quoted empty key + null: (R5 X-empty-6) — a quoted key is never a bare key.",
+      "typescript": {
+        "status": "UNKNOWN",
+        "errors": [],
+        "events": [
+          {
+            "name": "",
+            "types": null,
+            "branches": null,
+            "branches_ignore": null,
+            "paths": null,
+            "paths_ignore": null
+          }
+        ]
+      },
+      "oracle": {
+        "status": "UNKNOWN",
+        "errors": [],
+        "events": [
+          {
+            "branches": null,
+            "branches_ignore": null,
+            "name": "",
+            "paths": null,
+            "paths_ignore": null,
+            "types": null
+          }
+        ]
+      }
+    },
+    {
+      "file": "b18-two-quoted-empty.yml",
+      "id": "b18-two-quoted-empty",
+      "note": "FIX-P0-04 no-regression: two quoted empty keys (R5 X-empty-5) — duplicate quoted keys, INVALID on both sides.",
+      "typescript": {
+        "status": "INVALID",
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": []
+      },
+      "oracle": {
+        "status": "INVALID",
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": []
+      }
+    },
+    {
+      "file": "b19-null-event.yml",
+      "id": "b19-null-event",
+      "note": "FIX-P0-04 no-regression: explicit `null:` key must stay UNKNOWN with event name \"\" (FIX-P0-03 ADR) — the bare-key rule must not touch it.",
+      "typescript": {
+        "status": "UNKNOWN",
+        "errors": [],
+        "events": [
+          {
+            "name": "",
+            "types": null,
+            "branches": [
+              "main"
+            ],
+            "branches_ignore": null,
+            "paths": null,
+            "paths_ignore": null
+          }
+        ]
+      },
+      "oracle": {
+        "status": "UNKNOWN",
+        "errors": [],
+        "events": [
+          {
+            "branches": [
+              "main"
+            ],
+            "branches_ignore": null,
+            "name": "",
+            "paths": null,
+            "paths_ignore": null,
+            "types": null
+          }
+        ]
+      }
+    },
+    {
+      "file": "b20-tilde-event.yml",
+      "id": "b20-tilde-event",
+      "note": "FIX-P0-04 no-regression: explicit `~:` key must stay UNKNOWN with event name \"\" — the bare-key rule must not touch it.",
+      "typescript": {
+        "status": "UNKNOWN",
+        "errors": [],
+        "events": [
+          {
+            "name": "",
+            "types": null,
+            "branches": [
+              "main"
+            ],
+            "branches_ignore": null,
+            "paths": null,
+            "paths_ignore": null
+          }
+        ]
+      },
+      "oracle": {
+        "status": "UNKNOWN",
+        "errors": [],
+        "events": [
+          {
+            "branches": [
+              "main"
+            ],
+            "branches_ignore": null,
+            "name": "",
+            "paths": null,
+            "paths_ignore": null,
+            "types": null
+          }
+        ]
+      }
+    },
+    {
+      "file": "b21-explicit-key-two-line.yml",
+      "id": "b21-explicit-key-two-line",
+      "note": "FIX-P0-04 no-regression: standard two-line explicit key (`? push` / `: {}`) is a normal scalar key — VALID on both sides.",
+      "typescript": {
+        "status": "VALID",
+        "errors": [],
+        "events": [
+          {
+            "name": "push",
+            "types": null,
+            "branches": null,
+            "branches_ignore": null,
+            "paths": null,
+            "paths_ignore": null
+          }
+        ]
+      },
+      "oracle": {
+        "status": "VALID",
+        "errors": [],
+        "events": [
+          {
+            "branches": null,
+            "branches_ignore": null,
+            "name": "push",
+            "paths": null,
+            "paths_ignore": null,
+            "types": null
+          }
+        ]
+      }
+    },
+    {
+      "file": "b22-alias-key.yml",
+      "id": "b22-alias-key",
+      "note": "FIX-P0-04 no-regression: block-style alias key resolves to its scalar on both sides — INVALID / event_config_not_mapping on both sides.",
+      "typescript": {
+        "status": "INVALID",
+        "errors": [
+          "event_config_not_mapping"
+        ],
+        "events": []
+      },
+      "oracle": {
+        "status": "INVALID",
+        "errors": [
+          "event_config_not_mapping"
+        ],
+        "events": []
+      }
+    }
+  ]
+}

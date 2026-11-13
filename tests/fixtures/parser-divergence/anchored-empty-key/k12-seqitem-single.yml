@@ -1,0 +1,7 @@
+name: probe
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - &x: 1

@@ -1,0 +1,6 @@
+x: &a [1, 2]
+name: probe
+on: {*a : 1}
+jobs:
+  test:
+    runs-on: ubuntu-latest

@@ -1,0 +1,7 @@
+name: b02-bare-empty-filter
+on: {push: {: [main]}}
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo hi

@@ -1,0 +1,8 @@
+name: b09-bare-empty-seq-item
+on:
+  push: {}
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - :

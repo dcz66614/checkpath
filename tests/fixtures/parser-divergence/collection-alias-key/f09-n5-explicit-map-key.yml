@@ -1,0 +1,6 @@
+name: probe
+on:
+  ? {a: b} : 1
+jobs:
+  test:
+    runs-on: ubuntu-latest

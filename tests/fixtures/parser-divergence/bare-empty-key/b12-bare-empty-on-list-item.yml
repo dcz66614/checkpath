@@ -1,0 +1,8 @@
+name: b12-bare-empty-on-list-item
+on:
+  - :
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo hi

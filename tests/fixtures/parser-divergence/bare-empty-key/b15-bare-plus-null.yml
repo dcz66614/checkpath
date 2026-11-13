@@ -1,0 +1,9 @@
+name: b15-bare-plus-null
+on:
+  :
+  null:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo hi

@@ -1,0 +1,8 @@
+name: b11-bare-empty-trailing-spaces
+on:
+  :   
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo hi

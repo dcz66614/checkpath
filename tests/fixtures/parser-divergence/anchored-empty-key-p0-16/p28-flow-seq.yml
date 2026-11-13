@@ -1,0 +1,7 @@
+m: {&b:!!str [1, 2]}
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo hi

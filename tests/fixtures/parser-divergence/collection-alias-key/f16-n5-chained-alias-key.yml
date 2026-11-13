@@ -1,0 +1,8 @@
+x: &a {b: c}
+y: &b *a
+name: probe
+on:
+  *b : 1
+jobs:
+  test:
+    runs-on: ubuntu-latest

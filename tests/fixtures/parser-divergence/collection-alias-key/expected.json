@@ -1,0 +1,462 @@
+{
+ "schema": "checkpath.parser-divergence/v1",
+ "note": "FIX-P0-06 collection-alias-key parity fixtures: an alias used as a mapping key whose anchor resolves to a mapping or sequence (`x: &a {b: c}` then `*a : 1`) is an unhashable dict key for PyYAML (INVALID / yaml_parse_error), but the TypeScript `yaml` package resolved the alias and stringified the collection into an event name. The TypeScript side now rejects the same shape through hasUnrepresentableKey (src/core/workflow-parser.ts) with the identical yaml_parse_error, in both parseWorkflowYaml and extractJobs. Scalar anchors (string / number / null), unresolvable and forward-reference aliases, and chained aliases are deliberately NOT rejected — both sides already agree on them. See README.md in this directory and ADR FIX-P0-06 in handoff/P020-FIX-P0-06/TASK_REPORT.md.",
+ "cases": [
+  {
+   "file": "f01-n5-block-alias-key-map-anchor.yml",
+   "id": "f01-n5-block-alias-key-map-anchor",
+   "note": "FIX-P0-06: N5 itself: block alias key, mapping anchor",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f02-n5-block-alias-key-seq-anchor.yml",
+   "id": "f02-n5-block-alias-key-seq-anchor",
+   "note": "FIX-P0-06: block alias key, sequence anchor",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f03-n5-block-alias-key-scalar-anchor.yml",
+   "id": "f03-n5-block-alias-key-scalar-anchor",
+   "note": "FIX-P0-06: control: block alias key, scalar anchor (agreed?)",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "event_config_not_mapping"
+    ],
+    "events": [],
+    "jobs": [
+     {
+      "id": "test",
+      "name": null,
+      "needs": [],
+      "if": null,
+      "unsupported_job": null
+     }
+    ]
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "event_config_not_mapping"
+    ],
+    "events": [],
+    "jobs": [
+     {
+      "id": "test",
+      "if": null,
+      "name": null,
+      "needs": [],
+      "unsupported_job": null
+     }
+    ]
+   }
+  },
+  {
+   "file": "f04-n5-block-alias-key-null-anchor.yml",
+   "id": "f04-n5-block-alias-key-null-anchor",
+   "note": "FIX-P0-06: block alias key, null anchor",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "event_config_not_mapping"
+    ],
+    "events": [],
+    "jobs": [
+     {
+      "id": "test",
+      "name": null,
+      "needs": [],
+      "if": null,
+      "unsupported_job": null
+     }
+    ]
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "event_config_not_mapping"
+    ],
+    "events": [],
+    "jobs": [
+     {
+      "id": "test",
+      "if": null,
+      "name": null,
+      "needs": [],
+      "unsupported_job": null
+     }
+    ]
+   }
+  },
+  {
+   "file": "f05-n5-block-alias-key-int-anchor.yml",
+   "id": "f05-n5-block-alias-key-int-anchor",
+   "note": "FIX-P0-06: block alias key, int anchor",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "event_config_not_mapping"
+    ],
+    "events": [],
+    "jobs": [
+     {
+      "id": "test",
+      "name": null,
+      "needs": [],
+      "if": null,
+      "unsupported_job": null
+     }
+    ]
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "event_config_not_mapping"
+    ],
+    "events": [],
+    "jobs": [
+     {
+      "id": "test",
+      "if": null,
+      "name": null,
+      "needs": [],
+      "unsupported_job": null
+     }
+    ]
+   }
+  },
+  {
+   "file": "f06-n5-flow-alias-key-map-anchor.yml",
+   "id": "f06-n5-flow-alias-key-map-anchor",
+   "note": "FIX-P0-06: flow alias key, mapping anchor",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f07-n5-flow-alias-key-seq-anchor.yml",
+   "id": "f07-n5-flow-alias-key-seq-anchor",
+   "note": "FIX-P0-06: flow alias key, sequence anchor",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f08-n5-filter-alias-key-map-anchor.yml",
+   "id": "f08-n5-filter-alias-key-map-anchor",
+   "note": "FIX-P0-06: alias key (map anchor) in filter position",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f09-n5-explicit-map-key.yml",
+   "id": "f09-n5-explicit-map-key",
+   "note": "FIX-P0-06: control: explicit collection key (agreed)",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f10-n5-explicit-seq-key.yml",
+   "id": "f10-n5-explicit-seq-key",
+   "note": "FIX-P0-06: control: explicit sequence key (agreed)",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f11-n5-jobs-alias-key-map-anchor.yml",
+   "id": "f11-n5-jobs-alias-key-map-anchor",
+   "note": "FIX-P0-06: alias key (map anchor) in jobs position",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f12-n5-jobs-alias-key-scalar-anchor.yml",
+   "id": "f12-n5-jobs-alias-key-scalar-anchor",
+   "note": "FIX-P0-06: control: alias key (scalar anchor) in jobs position",
+   "typescript": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "name": "push",
+      "types": null,
+      "branches": null,
+      "branches_ignore": null,
+      "paths": null,
+      "paths_ignore": null
+     }
+    ],
+    "jobs": [
+     {
+      "id": "foo",
+      "name": null,
+      "needs": [],
+      "if": null,
+      "unsupported_job": null
+     }
+    ]
+   },
+   "oracle": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "branches": null,
+      "branches_ignore": null,
+      "name": "push",
+      "paths": null,
+      "paths_ignore": null,
+      "types": null
+     }
+    ],
+    "jobs": [
+     {
+      "id": "foo",
+      "if": null,
+      "name": null,
+      "needs": [],
+      "unsupported_job": null
+     }
+    ]
+   }
+  },
+  {
+   "file": "f13-n5-block-alias-key-empty-map-anchor.yml",
+   "id": "f13-n5-block-alias-key-empty-map-anchor",
+   "note": "FIX-P0-06: block alias key, empty-mapping anchor",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f14-n5-block-alias-key-empty-seq-anchor.yml",
+   "id": "f14-n5-block-alias-key-empty-seq-anchor",
+   "note": "FIX-P0-06: block alias key, empty-seq anchor",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f15-n5-forward-ref-map-anchor.yml",
+   "id": "f15-n5-forward-ref-map-anchor",
+   "note": "FIX-P0-06: forward ref to mapping anchor (control)",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f16-n5-chained-alias-key.yml",
+   "id": "f16-n5-chained-alias-key",
+   "note": "FIX-P0-06: chained alias key (*b -> *a -> map)",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f17-n5-matrix-alias-key-map-anchor.yml",
+   "id": "f17-n5-matrix-alias-key-map-anchor",
+   "note": "FIX-P0-06: alias key (map anchor) nested in matrix",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f18-n5-map-anchor-with-steps.yml",
+   "id": "f18-n5-map-anchor-with-steps",
+   "note": "FIX-P0-06: N5 with steps present (same as N5a + steps)",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  }
+ ]
+}

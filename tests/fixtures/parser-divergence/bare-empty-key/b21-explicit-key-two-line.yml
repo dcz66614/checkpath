@@ -1,0 +1,9 @@
+name: b21-explicit-key-two-line
+on:
+  ? push
+  : {}
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo hi

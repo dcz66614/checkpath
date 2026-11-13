@@ -1,0 +1,9 @@
+name: b19-null-event
+on:
+  null:
+    branches: [main]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo hi

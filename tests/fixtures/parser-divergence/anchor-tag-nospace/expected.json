@@ -1,0 +1,588 @@
+{
+ "schema": "checkpath.parser-divergence/v1",
+ "note": "FIX-P0-12 P0-A anchor/tag-nospace parity fixtures: an anchor or tag PyYAML's scanner rejects (nospace '#' after the name, name-extending characters, empty names, stray ':'/'?' in value position, a tag with no node) is now rejected by the TypeScript side through hasRejectedAnchorOrTag (src/core/workflow-parser.ts) with the Oracle's exact error, in both parseWorkflowYaml and extractJobs. Controls lock what must NOT fire: anchors on implicit keys, space-separated comments, '#' inside quoted/plain scalars, well-formed unknown/core tags. The known divergences (anchored empty key at the document root, '!foo[bar]', the ','-suffix family) are NOT locked here — they live in evidence/probes/fix-p0-12/ as flagged known-divergence rows. See ADR FIX-P0-12 in handoff/P020-FIX-P0-12/TASK_REPORT.md.",
+ "cases": [
+  {
+   "file": "a01-anchor-hash-flow.yml",
+   "id": "a01-anchor-hash-flow",
+   "note": "P0-A core: &x#c in a flow map value — INVALID on both sides.",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   }
+  },
+  {
+   "file": "a02-tag-hash-flow.yml",
+   "id": "a02-tag-hash-flow",
+   "note": "P0-A core: !!str#c in a flow map value — INVALID on both sides.",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   }
+  },
+  {
+   "file": "a03-anchor-hash-on.yml",
+   "id": "a03-anchor-hash-on",
+   "note": "P0-A core: &x#c in the on: slot — INVALID on both sides (R3-ON precedent: both-invalid does not auto-pass).",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   }
+  },
+  {
+   "file": "a04-anchor-hash-flowseq.yml",
+   "id": "a04-anchor-hash-flowseq",
+   "note": "P0-A core: &x#c in a flow sequence — INVALID on both sides.",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   }
+  },
+  {
+   "file": "a05-anchor-hash-block.yml",
+   "id": "a05-anchor-hash-block",
+   "note": "P0-A: &x#c as a block value — INVALID on both sides.",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   }
+  },
+  {
+   "file": "a06-anchor-hash-eol.yml",
+   "id": "a06-anchor-hash-eol",
+   "note": "P0-A: &x# at the end of the flow map — INVALID on both sides.",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   }
+  },
+  {
+   "file": "a07-tag-local-hash.yml",
+   "id": "a07-tag-local-hash",
+   "note": "P0-A: local tag !foo#c — INVALID on both sides.",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   }
+  },
+  {
+   "file": "a08-tag-verbatim-hash.yml",
+   "id": "a08-tag-verbatim-hash",
+   "note": "P0-A: verbatim tag followed by #c — INVALID on both sides.",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   }
+  },
+  {
+   "file": "a09-alias-hash.yml",
+   "id": "a09-alias-hash",
+   "note": "P0-A: alias *x#c — INVALID on both sides (npm reads the # into the alias name and fails to resolve it).",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   }
+  },
+  {
+   "file": "a10-anchor-dot.yml",
+   "id": "a10-anchor-dot",
+   "note": "P0-A: '.' after an anchor name — INVALID on both sides (npm swallows it into the name, PyYAML does not).",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   }
+  },
+  {
+   "file": "a11-anchor-colon-value.yml",
+   "id": "a11-anchor-colon-value",
+   "note": "P0-A: stray ':' after an anchor in value position — INVALID on both sides.",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   }
+  },
+  {
+   "file": "a12-anchor-q-value.yml",
+   "id": "a12-anchor-q-value",
+   "note": "P0-A: '?' after an anchor — INVALID on both sides (rejected unconditionally).",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   }
+  },
+  {
+   "file": "a13-tag-then-rbrace.yml",
+   "id": "a13-tag-then-rbrace",
+   "note": "P0-A: tag followed by '}' with no node — INVALID on both sides.",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   }
+  },
+  {
+   "file": "a14-anchor-key-flow.yml",
+   "id": "a14-anchor-key-flow",
+   "note": "P0-A control: anchor on an implicit flow key followed by ':' — VALID on both sides (anchored empty key, do NOT fire).",
+   "typescript": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "name": "push",
+      "types": null,
+      "branches": null,
+      "branches_ignore": null,
+      "paths": null,
+      "paths_ignore": null
+     }
+    ]
+   },
+   "oracle": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "branches": null,
+      "branches_ignore": null,
+      "name": "push",
+      "paths": null,
+      "paths_ignore": null,
+      "types": null
+     }
+    ]
+   }
+  },
+  {
+   "file": "a15-anchor-key-blockseq.yml",
+   "id": "a15-anchor-key-blockseq",
+   "note": "P0-A control: anchor on a block-sequence key followed by ':' — VALID on both sides.",
+   "typescript": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "name": "push",
+      "types": null,
+      "branches": null,
+      "branches_ignore": null,
+      "paths": null,
+      "paths_ignore": null
+     }
+    ]
+   },
+   "oracle": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "branches": null,
+      "branches_ignore": null,
+      "name": "push",
+      "paths": null,
+      "paths_ignore": null,
+      "types": null
+     }
+    ]
+   }
+  },
+  {
+   "file": "a16-anchor-space-comment.yml",
+   "id": "a16-anchor-space-comment",
+   "note": "P0-A control: anchor, space, then a comment — VALID on both sides.",
+   "typescript": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "name": "push",
+      "types": null,
+      "branches": null,
+      "branches_ignore": null,
+      "paths": null,
+      "paths_ignore": null
+     }
+    ]
+   },
+   "oracle": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "branches": null,
+      "branches_ignore": null,
+      "name": "push",
+      "paths": null,
+      "paths_ignore": null,
+      "types": null
+     }
+    ]
+   }
+  },
+  {
+   "file": "a17-quoted-hash.yml",
+   "id": "a17-quoted-hash",
+   "note": "P0-A control: '#c' inside a quoted scalar — VALID on both sides.",
+   "typescript": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "name": "push",
+      "types": null,
+      "branches": null,
+      "branches_ignore": null,
+      "paths": null,
+      "paths_ignore": null
+     }
+    ]
+   },
+   "oracle": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "branches": null,
+      "branches_ignore": null,
+      "name": "push",
+      "paths": null,
+      "paths_ignore": null,
+      "types": null
+     }
+    ]
+   }
+  },
+  {
+   "file": "a18-mid-scalar.yml",
+   "id": "a18-mid-scalar",
+   "note": "P0-A control: '&' inside a plain scalar — VALID on both sides.",
+   "typescript": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "name": "push",
+      "types": null,
+      "branches": null,
+      "branches_ignore": null,
+      "paths": null,
+      "paths_ignore": null
+     }
+    ]
+   },
+   "oracle": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "branches": null,
+      "branches_ignore": null,
+      "name": "push",
+      "paths": null,
+      "paths_ignore": null,
+      "types": null
+     }
+    ]
+   }
+  },
+  {
+   "file": "a19-anchor-comma.yml",
+   "id": "a19-anchor-comma",
+   "note": "P0-A control: anchor followed by ',' — VALID on both sides.",
+   "typescript": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "name": "push",
+      "types": null,
+      "branches": null,
+      "branches_ignore": null,
+      "paths": null,
+      "paths_ignore": null
+     }
+    ]
+   },
+   "oracle": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "branches": null,
+      "branches_ignore": null,
+      "name": "push",
+      "paths": null,
+      "paths_ignore": null,
+      "types": null
+     }
+    ]
+   }
+  },
+  {
+   "file": "a20-unknown-tag.yml",
+   "id": "a20-unknown-tag",
+   "note": "P0-A control: unknown tag, well-formed — VALID on both sides (no unknown-tag rule).",
+   "typescript": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "name": "push",
+      "types": null,
+      "branches": null,
+      "branches_ignore": null,
+      "paths": null,
+      "paths_ignore": null
+     }
+    ]
+   },
+   "oracle": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "branches": null,
+      "branches_ignore": null,
+      "name": "push",
+      "paths": null,
+      "paths_ignore": null,
+      "types": null
+     }
+    ]
+   }
+  },
+  {
+   "file": "a21-tag-str.yml",
+   "id": "a21-tag-str",
+   "note": "P0-A control: core tag, well-formed — VALID on both sides.",
+   "typescript": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "name": "push",
+      "types": null,
+      "branches": null,
+      "branches_ignore": null,
+      "paths": null,
+      "paths_ignore": null
+     }
+    ]
+   },
+   "oracle": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "branches": null,
+      "branches_ignore": null,
+      "name": "push",
+      "paths": null,
+      "paths_ignore": null,
+      "types": null
+     }
+    ]
+   }
+  },
+  {
+   "file": "a22-tag-anchor-colon.yml",
+   "id": "a22-tag-anchor-colon",
+   "note": "P0-A: tag-then-anchor-colon — INVALID on both sides (the anchor after a property is in value position).",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   }
+  },
+  {
+   "file": "a23-anchor-empty.yml",
+   "id": "a23-anchor-empty",
+   "note": "P0-A: empty anchor name — INVALID on both sides.",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   }
+  },
+  {
+   "file": "a24-tag-pct-valid.yml",
+   "id": "a24-tag-pct-valid",
+   "note": "P0-A control: valid %41 escape in a tag suffix — VALID on both sides.",
+   "typescript": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "name": "push",
+      "types": null,
+      "branches": null,
+      "branches_ignore": null,
+      "paths": null,
+      "paths_ignore": null
+     }
+    ]
+   },
+   "oracle": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "branches": null,
+      "branches_ignore": null,
+      "name": "push",
+      "paths": null,
+      "paths_ignore": null,
+      "types": null
+     }
+    ]
+   }
+  }
+ ]
+}

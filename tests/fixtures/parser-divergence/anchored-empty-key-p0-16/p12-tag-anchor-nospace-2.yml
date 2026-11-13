@@ -1,0 +1,8 @@
+a: 1
+!foo &b:!!str {c: 3}
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo hi

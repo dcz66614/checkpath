@@ -1,0 +1,8 @@
+name: b03-bare-empty-jobs
+on:
+  push: {}
+jobs:
+  :
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo hi

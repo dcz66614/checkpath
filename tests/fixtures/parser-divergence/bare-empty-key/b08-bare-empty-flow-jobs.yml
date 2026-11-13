@@ -1,0 +1,4 @@
+name: b08-bare-empty-flow-jobs
+on:
+  push: {}
+jobs: {test: True, : 1}

@@ -1,0 +1,9 @@
+name: b17-quoted-empty-plus-null
+on:
+  '':
+  null:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo hi
