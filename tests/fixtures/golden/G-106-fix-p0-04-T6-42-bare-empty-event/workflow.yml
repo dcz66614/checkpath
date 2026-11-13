@@ -1,0 +1,8 @@
+name: t6-42-bare-empty-event
+on:
+  :
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo hi

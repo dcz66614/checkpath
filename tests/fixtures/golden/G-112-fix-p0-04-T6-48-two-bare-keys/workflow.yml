@@ -1,0 +1,9 @@
+name: t6-48-two-bare-keys
+on:
+  :
+  :
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo hi

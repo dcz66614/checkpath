@@ -1,0 +1,4 @@
+name: t6-51-scalar-job-null
+on:
+  push: {}
+jobs: {test:}

@@ -1,0 +1,9 @@
+name: t6-53-block-alias-no-space
+x: &a foo
+on:
+  *a: 1
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo hi

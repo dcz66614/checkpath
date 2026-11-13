@@ -1,0 +1,4 @@
+name: t6-50-scalar-job-true
+on:
+  push: {}
+jobs: {test: True}

@@ -1,0 +1,26 @@
+{
+  "diff": {
+    "algorithm": "two-dot",
+    "changed_files": [
+      "src/app.ts"
+    ],
+    "changed_files_total": 1,
+    "complete": true,
+    "diff_timed_out": false,
+    "first_3000_confirmed": true,
+    "push_commit_count": null,
+    "returned_files": 1
+  },
+  "event": {
+    "action": null,
+    "base_branch": null,
+    "branch": "main",
+    "commit_message": "feat: change",
+    "head_branch": null,
+    "name": "push",
+    "ref": "refs/heads/main",
+    "target_branch": null
+  },
+  "scenario_id": "G-114",
+  "schema": "checkpath.scenario/v1"
+}

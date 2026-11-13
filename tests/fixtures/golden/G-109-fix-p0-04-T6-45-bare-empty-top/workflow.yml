@@ -1,0 +1,10 @@
+name: t6-45-bare-empty-top
+:
+  foo: bar
+on:
+  push: {}
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo hi

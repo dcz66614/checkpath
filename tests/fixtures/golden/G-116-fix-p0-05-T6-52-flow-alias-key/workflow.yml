@@ -1,0 +1,8 @@
+name: t6-52-flow-alias-key
+x: &a foo
+on: {*a: 1}
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo hi
