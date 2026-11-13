@@ -1,0 +1,1119 @@
+{
+ "checks": 98,
+ "diff": 0,
+ "match": 98,
+ "rows": [
+  {
+   "diff": [],
+   "id": "r13-c1-a60",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "id": "r13-c1-a60",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "id": "r13-c1-x04",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "id": "r13-c1-x04",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "id": "r13-c1-y03",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "id": "r13-c1-y03",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "id": "r13-c1-y05",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "id": "r13-c1-y05",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "id": "r13-c1-y08",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "id": "r13-c1-y08",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "id": "r13-c1-y09",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "id": "r13-c1-y09",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "id": "r13-c1-y10",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "id": "r13-c1-y10",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "id": "r13-c1-x11",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "id": "r13-c1-x11",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "id": "r13-c1-both-1",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "id": "r13-c1-both-1",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "id": "r13-c1-both-2",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "id": "r13-c1-both-2",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "id": "r13-c1-x02",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "VALID",
+   "ts_errors": [],
+   "ts_status": "VALID"
+  },
+  {
+   "diff": [],
+   "id": "r13-c1-x02",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "id": "r13-c1-y01",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "VALID",
+   "ts_errors": [],
+   "ts_status": "VALID"
+  },
+  {
+   "diff": [],
+   "id": "r13-c1-y01",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "id": "r13-c1-x13",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "VALID",
+   "ts_errors": [],
+   "ts_status": "VALID"
+  },
+  {
+   "diff": [],
+   "id": "r13-c1-x13",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "id": "r13-c1-x05",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "VALID",
+   "ts_errors": [],
+   "ts_status": "VALID"
+  },
+  {
+   "diff": [],
+   "id": "r13-c1-x05",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "id": "r13-c1-nested-map-in-seq",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "VALID",
+   "ts_errors": [],
+   "ts_status": "VALID"
+  },
+  {
+   "diff": [],
+   "id": "r13-c1-nested-map-in-seq",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "id": "r13-c1-pure-seq",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "VALID",
+   "ts_errors": [],
+   "ts_status": "VALID"
+  },
+  {
+   "diff": [],
+   "id": "r13-c1-pure-seq",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "id": "r13-c1-seq-in-map",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "VALID",
+   "ts_errors": [],
+   "ts_status": "VALID"
+  },
+  {
+   "diff": [],
+   "id": "r13-c1-seq-in-map",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "id": "r13-c1-verbatim-comma",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "VALID",
+   "ts_errors": [],
+   "ts_status": "VALID"
+  },
+  {
+   "diff": [],
+   "id": "r13-c1-verbatim-comma",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "id": "r13-c1-escaped-comma",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "VALID",
+   "ts_errors": [],
+   "ts_status": "VALID"
+  },
+  {
+   "diff": [],
+   "id": "r13-c1-escaped-comma",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "id": "r13-c2-a70",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "id": "r13-c2-a70",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "id": "r13-c2-x08",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "id": "r13-c2-x08",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "id": "r13-c2-x09",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "id": "r13-c2-x09",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "id": "r13-c2-esc-5b",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "VALID",
+   "ts_errors": [],
+   "ts_status": "VALID"
+  },
+  {
+   "diff": [],
+   "id": "r13-c2-esc-5b",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "id": "r13-c2-verbatim",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "VALID",
+   "ts_errors": [],
+   "ts_status": "VALID"
+  },
+  {
+   "diff": [],
+   "id": "r13-c2-verbatim",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "id": "r13-c2-lbrack-mid",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "id": "r13-c2-lbrack-mid",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "id": "r13-c2-rbrack-only",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "id": "r13-c2-rbrack-only",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "id": "r13-c2-key-pos",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "id": "r13-c2-key-pos",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "id": "r13-c3-a45",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "id": "r13-c3-a45",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "id": "r13-c3-flow",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "VALID",
+   "ts_errors": [],
+   "ts_status": "VALID"
+  },
+  {
+   "diff": [],
+   "id": "r13-c3-flow",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "id": "r13-c3-flow2",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "VALID",
+   "ts_errors": [],
+   "ts_status": "VALID"
+  },
+  {
+   "diff": [],
+   "id": "r13-c3-flow2",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "id": "r13-c3-single-nested",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "VALID",
+   "ts_errors": [],
+   "ts_status": "VALID"
+  },
+  {
+   "diff": [],
+   "id": "r13-c3-single-nested",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "id": "r13-c3-first-null",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "VALID",
+   "ts_errors": [],
+   "ts_status": "VALID"
+  },
+  {
+   "diff": [],
+   "id": "r13-c3-first-null",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "id": "r13-c3-first-null-space",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "id": "r13-c3-first-null-space",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "id": "r13-c3-nonfirst-null",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "id": "r13-c3-nonfirst-null",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "id": "r13-c3-first-valued",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "id": "r13-c3-first-valued",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "id": "r13-c3-double-prop",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "id": "r13-c3-double-prop",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "id": "r13-c3-blockseq",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "VALID",
+   "ts_errors": [],
+   "ts_status": "VALID"
+  },
+  {
+   "diff": [],
+   "id": "r13-c3-blockseq",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "id": "r13-lone-scalar",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "workflow_root_not_mapping"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "workflow_root_not_mapping"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "id": "r13-lone-scalar",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "id": "r13-lone-null",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "workflow_root_not_mapping"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "workflow_root_not_mapping"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "id": "r13-lone-null",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "id": "r13-lone-plain",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "workflow_root_not_mapping"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "workflow_root_not_mapping"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "id": "r13-lone-plain",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "id": "r13-lone-string",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "workflow_root_not_mapping"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "workflow_root_not_mapping"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "id": "r13-lone-string",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "id": "r13-lone-seq",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "workflow_root_not_mapping"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "workflow_root_not_mapping"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "id": "r13-lone-seq",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "id": "r13-lone-anchored-scalar",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "workflow_root_not_mapping"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "workflow_root_not_mapping"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "id": "r13-lone-anchored-scalar",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "id": "r13-lone-tagged",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "workflow_root_not_mapping"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "workflow_root_not_mapping"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "id": "r13-lone-tagged",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "id": "r13-r6-extra",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "id": "r13-r6-extra",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "id": "r13-r6-on",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "id": "r13-r6-on",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "id": "r13-r6-on-unsupported",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "id": "r13-r6-on-unsupported",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "id": "r13-r6-close",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "id": "r13-r6-close",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "id": "r13-r6-nestedblock",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "id": "r13-r6-nestedblock",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  }
+ ]
+}

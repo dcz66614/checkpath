@@ -1,0 +1,576 @@
+[
+ {
+  "id": "resid-dq",
+  "mode": "both",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: \"a\nb\tc\"\n",
+  "note": "R7 RESID-DQ",
+  "known_divergence": false
+ },
+ {
+  "id": "resid-sq",
+  "mode": "both",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: 'a\nb\tc'\n",
+  "note": "R7 RESID-SQ",
+  "known_divergence": false
+ },
+ {
+  "id": "resid-dq-notab",
+  "mode": "both",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: \"a\nb c\"\n",
+  "note": "R7 RESID-DQ-NOTAB",
+  "known_divergence": false
+ },
+ {
+  "id": "resid-dq-ind2",
+  "mode": "both",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: \"a\n  b\tc\"\n",
+  "note": "R7 RESID-DQ-IND2",
+  "known_divergence": false
+ },
+ {
+  "id": "resid-dq-ind8",
+  "mode": "both",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: \"a\n        b\tc\"\n",
+  "note": "R7 RESID-DQ-IND8",
+  "known_divergence": false
+ },
+ {
+  "id": "resid-dq-ind9",
+  "mode": "both",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: \"a\n         b\tc\"\n",
+  "note": "R7 RESID-DQ-IND9 (VALID)",
+  "known_divergence": false
+ },
+ {
+  "id": "k0-ind0",
+  "mode": "both",
+  "yaml": "name: \"a\nb\"\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "mapping value key indent 0, continuation 0",
+  "known_divergence": false
+ },
+ {
+  "id": "k0-ind1",
+  "mode": "both",
+  "yaml": "name: \"a\n b\"\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "mapping value key indent 0, continuation 1",
+  "known_divergence": false
+ },
+ {
+  "id": "k0-ind2",
+  "mode": "both",
+  "yaml": "name: \"a\n  b\"\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "mapping value key indent 0, continuation 2",
+  "known_divergence": false
+ },
+ {
+  "id": "k2-ind0",
+  "mode": "both",
+  "yaml": "a:\n  b: \"x\ny\"\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "mapping value key indent 2, continuation 0",
+  "known_divergence": false
+ },
+ {
+  "id": "k2-ind1",
+  "mode": "both",
+  "yaml": "a:\n  b: \"x\n y\"\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "mapping value key indent 2, continuation 1",
+  "known_divergence": false
+ },
+ {
+  "id": "k2-ind2",
+  "mode": "both",
+  "yaml": "a:\n  b: \"x\n  y\"\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "mapping value key indent 2, continuation 2",
+  "known_divergence": false
+ },
+ {
+  "id": "k2-ind3",
+  "mode": "both",
+  "yaml": "a:\n  b: \"x\n   y\"\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "mapping value key indent 2, continuation 3",
+  "known_divergence": false
+ },
+ {
+  "id": "k4-ind0",
+  "mode": "both",
+  "yaml": "a:\n  b:\n    c: \"x\ny\"\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "mapping value key indent 4, continuation 0",
+  "known_divergence": false
+ },
+ {
+  "id": "k4-ind4",
+  "mode": "both",
+  "yaml": "a:\n  b:\n    c: \"x\n    y\"\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "mapping value key indent 4, continuation 4",
+  "known_divergence": false
+ },
+ {
+  "id": "k4-ind5",
+  "mode": "both",
+  "yaml": "a:\n  b:\n    c: \"x\n     y\"\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "mapping value key indent 4, continuation 5",
+  "known_divergence": false
+ },
+ {
+  "id": "k6-ind0",
+  "mode": "both",
+  "yaml": "a:\n  b:\n    c:\n      d: \"x\ny\"\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "mapping value key indent 6, continuation 0",
+  "known_divergence": false
+ },
+ {
+  "id": "k6-ind6",
+  "mode": "both",
+  "yaml": "a:\n  b:\n    c:\n      d: \"x\n      y\"\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "mapping value key indent 6, continuation 6",
+  "known_divergence": false
+ },
+ {
+  "id": "k6-ind7",
+  "mode": "both",
+  "yaml": "a:\n  b:\n    c:\n      d: \"x\n       y\"\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "mapping value key indent 6, continuation 7",
+  "known_divergence": false
+ },
+ {
+  "id": "k8-run-ind0",
+  "mode": "both",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: \"a\nb\tc\"\n",
+  "note": "run value key indent 8, continuation 0",
+  "known_divergence": false
+ },
+ {
+  "id": "k8-run-ind2",
+  "mode": "both",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: \"a\n  b\tc\"\n",
+  "note": "run value key indent 8, continuation 2",
+  "known_divergence": false
+ },
+ {
+  "id": "k8-run-ind7",
+  "mode": "both",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: \"a\n       b\tc\"\n",
+  "note": "run value key indent 8, continuation 7",
+  "known_divergence": false
+ },
+ {
+  "id": "k8-run-ind8",
+  "mode": "both",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: \"a\n        b\tc\"\n",
+  "note": "run value key indent 8, continuation 8",
+  "known_divergence": false
+ },
+ {
+  "id": "k8-run-ind9",
+  "mode": "both",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: \"a\n         b\tc\"\n",
+  "note": "run value key indent 8, continuation 9",
+  "known_divergence": false
+ },
+ {
+  "id": "k8-run-ind10",
+  "mode": "both",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: \"a\n          b\tc\"\n",
+  "note": "run value key indent 8, continuation 10",
+  "known_divergence": false
+ },
+ {
+  "id": "seq-dash2-ind0",
+  "mode": "both",
+  "yaml": "s:\n  - \"a\nb\"\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "sequence item scalar, dash indent 2, continuation 0",
+  "known_divergence": false
+ },
+ {
+  "id": "seq-dash2-ind2",
+  "mode": "both",
+  "yaml": "s:\n  - \"a\n  b\"\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "sequence item scalar, dash indent 2, continuation 2",
+  "known_divergence": false
+ },
+ {
+  "id": "seq-dash2-ind3",
+  "mode": "both",
+  "yaml": "s:\n  - \"a\n   b\"\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "sequence item scalar, dash indent 2, continuation 3",
+  "known_divergence": false
+ },
+ {
+  "id": "seq-dash0-ind0",
+  "mode": "both",
+  "yaml": "- \"a\nb\"\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "sequence item scalar, dash indent 0, continuation 0",
+  "known_divergence": false
+ },
+ {
+  "id": "seq-dash0-ind1",
+  "mode": "both",
+  "yaml": "- \"a\n b\"\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "sequence item scalar, dash indent 0, continuation 1",
+  "known_divergence": false
+ },
+ {
+  "id": "flowmap-ind0",
+  "mode": "both",
+  "yaml": "m: {k: \"a\nb\"}}\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "flow mapping value, continuation 0",
+  "known_divergence": false
+ },
+ {
+  "id": "flowseq-ind0",
+  "mode": "both",
+  "yaml": "m: [\"a\nb\"]\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "flow sequence item, continuation 0",
+  "known_divergence": false
+ },
+ {
+  "id": "flowflow-ind0",
+  "mode": "both",
+  "yaml": "m: {a: {b: \"x\ny\"}}}}\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "flow-in-flow value, continuation 0",
+  "known_divergence": false
+ },
+ {
+  "id": "flowmap-ind1",
+  "mode": "both",
+  "yaml": "m: {k: \"a\n b\"}}\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "flow mapping value, continuation 1",
+  "known_divergence": false
+ },
+ {
+  "id": "flowseq-ind1",
+  "mode": "both",
+  "yaml": "m: [\"a\n b\"]\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "flow sequence item, continuation 1",
+  "known_divergence": false
+ },
+ {
+  "id": "flowflow-ind1",
+  "mode": "both",
+  "yaml": "m: {a: {b: \"x\n y\"}}}}\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "flow-in-flow value, continuation 1",
+  "known_divergence": false
+ },
+ {
+  "id": "flowseq-block-ind0",
+  "mode": "both",
+  "yaml": "on:\n  push:\n    branches: [\"a\nb\"]\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "flow seq inside on/branches (key indent 4), continuation 0",
+  "known_divergence": false
+ },
+ {
+  "id": "flowseq-block-ind4",
+  "mode": "both",
+  "yaml": "on:\n  push:\n    branches: [\"a\n    b\"]\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "flow seq inside on/branches (key indent 4), continuation 4",
+  "known_divergence": false
+ },
+ {
+  "id": "flowseq-block-ind5",
+  "mode": "both",
+  "yaml": "on:\n  push:\n    branches: [\"a\n     b\"]\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "flow seq inside on/branches (key indent 4), continuation 5",
+  "known_divergence": false
+ },
+ {
+  "id": "flowseq-block-ind6",
+  "mode": "both",
+  "yaml": "on:\n  push:\n    branches: [\"a\n      b\"]\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "flow seq inside on/branches (key indent 4), continuation 6",
+  "known_divergence": false
+ },
+ {
+  "id": "ownline-ind0",
+  "mode": "both",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run:\n          \"a\nb\"\n",
+  "note": "value on own line (scalar at indent 10), run key indent 8, continuation 0",
+  "known_divergence": false
+ },
+ {
+  "id": "ownline-ind8",
+  "mode": "both",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run:\n          \"a\n        b\"\n",
+  "note": "value on own line (scalar at indent 10), run key indent 8, continuation 8",
+  "known_divergence": false
+ },
+ {
+  "id": "ownline-ind9",
+  "mode": "both",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run:\n          \"a\n         b\"\n",
+  "note": "value on own line (scalar at indent 10), run key indent 8, continuation 9",
+  "known_divergence": false
+ },
+ {
+  "id": "multi-0-0",
+  "mode": "both",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: \"a\nb\nc\"\n",
+  "note": "two continuations 0 then 0",
+  "known_divergence": false
+ },
+ {
+  "id": "multi-0-9",
+  "mode": "both",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: \"a\nb\n         c\"\n",
+  "note": "two continuations 0 then 9",
+  "known_divergence": false
+ },
+ {
+  "id": "multi-9-0",
+  "mode": "both",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: \"a\n         b\nc\"\n",
+  "note": "two continuations 9 then 0",
+  "known_divergence": false
+ },
+ {
+  "id": "multi-9-9",
+  "mode": "both",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: \"a\n         b\n         c\"\n",
+  "note": "two continuations 9 then 9",
+  "known_divergence": false
+ },
+ {
+  "id": "blank-mid-K8",
+  "mode": "both",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: \"a\n         b\n\n         c\"\n",
+  "note": "M1 blank line between proper continuations",
+  "known_divergence": false
+ },
+ {
+  "id": "blank-mid-K0",
+  "mode": "both",
+  "yaml": "name: \"a\n         b\n\n         c\"\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "M2 blank line, K=0",
+  "known_divergence": false
+ },
+ {
+  "id": "wsonly3-mid-K8",
+  "mode": "both",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: \"a\n         b\n   \n         c\"\n",
+  "note": "M3 spaces-only line (3) between proper continuations",
+  "known_divergence": false
+ },
+ {
+  "id": "wsonly10-mid-K8",
+  "mode": "both",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: \"a\n         b\n          \n         c\"\n",
+  "note": "M4 spaces-only line (10)",
+  "known_divergence": false
+ },
+ {
+  "id": "tabonly-mid-K8",
+  "mode": "both",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: \"a\n         b\n\t\n         c\"\n",
+  "note": "M11 tab-only line between proper continuations — REJECT",
+  "known_divergence": false
+ },
+ {
+  "id": "blank-first-K8",
+  "mode": "both",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: \"a\n\n         b\"\n",
+  "note": "M12 blank line right after opening quote",
+  "known_divergence": false
+ },
+ {
+  "id": "tabindent-K8",
+  "mode": "both",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: \"a\n\tb\"\n",
+  "note": "R7 tab at column 0, K=8 — REJECT",
+  "known_divergence": false
+ },
+ {
+  "id": "tabindent-K0",
+  "mode": "both",
+  "yaml": "name: \"a\n\tb\"\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "R7 tab at column 0, K=0 — REJECT",
+  "known_divergence": false
+ },
+ {
+  "id": "spaces-tab-K8",
+  "mode": "both",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: \"a\n  \tb\"\n",
+  "note": "spaces then tab, K=8 — REJECT (indent 2)",
+  "known_divergence": false
+ },
+ {
+  "id": "spaces9-tab-K8",
+  "mode": "both",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: \"a\n         \tb\"\n",
+  "note": "M5 9 spaces + tab — ACCEPT (indent 9)",
+  "known_divergence": false
+ },
+ {
+  "id": "close0-K8",
+  "mode": "both",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: \"a\n         b\n\"\n",
+  "note": "H-close0 closing quote at indent 0 — REJECT",
+  "known_divergence": false
+ },
+ {
+  "id": "close9-K8",
+  "mode": "both",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: \"a\n         b\n         \"\n",
+  "note": "H-close9 closing quote at indent 9 — ACCEPT",
+  "known_divergence": false
+ },
+ {
+  "id": "close0-K0",
+  "mode": "both",
+  "yaml": "name: \"a\nb\n\"\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "R13 closing quote at indent 0, K=0 — REJECT",
+  "known_divergence": false
+ },
+ {
+  "id": "close1-K0",
+  "mode": "both",
+  "yaml": "name: \"a\nb\n \"\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "R13 closing quote at indent 1, K=0 — REJECT (b line at 0)",
+  "known_divergence": false
+ },
+ {
+  "id": "close-comment",
+  "mode": "both",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: \"a\n         b\" # c\n",
+  "note": "R9 closing quote + trailing comment at indent 9 — ACCEPT",
+  "known_divergence": false
+ },
+ {
+  "id": "hash-ind2",
+  "mode": "both",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: \"a\n  #b\"\n",
+  "note": "R8 #-starting continuation at indent 2 — REJECT",
+  "known_divergence": false
+ },
+ {
+  "id": "hash-ind9",
+  "mode": "both",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: \"a\n         #b\"\n",
+  "note": "R8 #-starting continuation at indent 9 — ACCEPT",
+  "known_divergence": false
+ },
+ {
+  "id": "anchor-ind0",
+  "mode": "both",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: &a \"x\nb\"\n",
+  "note": "M9 anchored, continuation 0 — REJECT",
+  "known_divergence": false
+ },
+ {
+  "id": "anchor-ind9",
+  "mode": "both",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: &a \"x\n         b\"\n",
+  "note": "M10 anchored, continuation 9 — ACCEPT",
+  "known_divergence": false
+ },
+ {
+  "id": "sq-escaped",
+  "mode": "both",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: 'a\n         b''c'\n",
+  "note": "M7 single-quoted with '' escape, indent 9",
+  "known_divergence": false
+ },
+ {
+  "id": "dq-escaped",
+  "mode": "both",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: \"a\n         b\\\"c\"\n",
+  "note": "M8 double-quoted with \\\" escape, indent 9",
+  "known_divergence": false
+ },
+ {
+  "id": "corner-spaces-tab-only",
+  "mode": "both",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: \"a\n         b\n   \t \n         c\"\n",
+  "note": "corner: line of spaces+tab only between proper continuations",
+  "known_divergence": false
+ },
+ {
+  "id": "flowkey-ind0",
+  "mode": "both",
+  "yaml": "on: {\"a\nb\": push}\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "R3 flow mapping key spanning lines (TS ACC / PyYAML REJ)",
+  "known_divergence": false
+ },
+ {
+  "id": "flowkey-nested-ind0",
+  "mode": "both",
+  "yaml": "m:\n  {\"a\nb\": 1}\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "R3 nested flow mapping key spanning lines",
+  "known_divergence": false
+ },
+ {
+  "id": "flowkey-ind1",
+  "mode": "both",
+  "yaml": "on: {\"a\n b\": push}\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "R3 flow mapping key spanning lines (TS ACC / PyYAML REJ)",
+  "known_divergence": false
+ },
+ {
+  "id": "flowkey-nested-ind1",
+  "mode": "both",
+  "yaml": "m:\n  {\"a\n b\": 1}\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "R3 nested flow mapping key spanning lines",
+  "known_divergence": false
+ },
+ {
+  "id": "flowkey-ind2",
+  "mode": "both",
+  "yaml": "on: {\"a\n  b\": push}\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "R3 flow mapping key spanning lines (TS ACC / PyYAML REJ)",
+  "known_divergence": false
+ },
+ {
+  "id": "flowkey-nested-ind2",
+  "mode": "both",
+  "yaml": "m:\n  {\"a\n  b\": 1}\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "R3 nested flow mapping key spanning lines",
+  "known_divergence": false
+ },
+ {
+  "id": "blockkey-ind0",
+  "mode": "both",
+  "yaml": "\"a\nb\": 1\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "D block mapping key spanning lines (both REJ)",
+  "known_divergence": false
+ },
+ {
+  "id": "blockkey-ind1",
+  "mode": "both",
+  "yaml": "\"a\n b\": 1\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "D block mapping key spanning lines (both REJ)",
+  "known_divergence": false
+ },
+ {
+  "id": "blockkey-ind2",
+  "mode": "both",
+  "yaml": "\"a\n  b\": 1\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "D block mapping key spanning lines (both REJ)",
+  "known_divergence": false
+ },
+ {
+  "id": "blockkey-nested-ind3",
+  "mode": "both",
+  "yaml": "m:\n  \"a\n   b\": 1\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "R4 nested block key, continuation 3 (both REJ)",
+  "known_divergence": false
+ },
+ {
+  "id": "root-ind0",
+  "mode": "both",
+  "yaml": "\"a\nb\"\n",
+  "note": "R5 root scalar, continuation indent 0",
+  "known_divergence": false
+ },
+ {
+  "id": "root-ind1",
+  "mode": "both",
+  "yaml": "\"a\n b\"\n",
+  "note": "R5 root scalar, continuation indent 1",
+  "known_divergence": false
+ },
+ {
+  "id": "crlf-blank-mid",
+  "mode": "both",
+  "yaml": "name: probe\r\non: push\r\njobs:\r\n  test:\r\n    runs-on: ubuntu-latest\r\n    steps:\r\n      - run: \"a\r\n         b\r\n\r\n         c\"\r\n",
+  "note": "CRLF document, blank continuation line, indent 9",
+  "known_divergence": false
+ }
+]

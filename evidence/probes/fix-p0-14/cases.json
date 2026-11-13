@@ -1,0 +1,401 @@
+[
+  {
+    "id": "a-scalar",
+    "mode": "both",
+    "note": "P0 core: lone &x: 1",
+    "yaml": "&x: 1\n",
+    "known_divergence": false
+  },
+  {
+    "id": "a-null",
+    "mode": "both",
+    "note": "P0 core: lone &x:",
+    "yaml": "&x:\n",
+    "known_divergence": false
+  },
+  {
+    "id": "a-null-space",
+    "mode": "both",
+    "note": "null value, trailing space",
+    "yaml": "&x: \n",
+    "known_divergence": false
+  },
+  {
+    "id": "a-str",
+    "mode": "both",
+    "note": "string value",
+    "yaml": "&x: hello\n",
+    "known_divergence": false
+  },
+  {
+    "id": "a-dq",
+    "mode": "both",
+    "note": "double-quoted value",
+    "yaml": "&x: \"1\"\n",
+    "known_divergence": false
+  },
+  {
+    "id": "a-sq",
+    "mode": "both",
+    "note": "single-quoted value",
+    "yaml": "&x: 'a'\n",
+    "known_divergence": false
+  },
+  {
+    "id": "a-bool",
+    "mode": "both",
+    "note": "bool value",
+    "yaml": "&x: true\n",
+    "known_divergence": false
+  },
+  {
+    "id": "a-float",
+    "mode": "both",
+    "note": "float value",
+    "yaml": "&x: 1.5\n",
+    "known_divergence": false
+  },
+  {
+    "id": "a-flowseq",
+    "mode": "both",
+    "note": "flow-seq value",
+    "yaml": "&x: [1]\n",
+    "known_divergence": false
+  },
+  {
+    "id": "a-flowmap",
+    "mode": "both",
+    "note": "flow-map value (no on)",
+    "yaml": "&x: {a: 1}\n",
+    "known_divergence": false
+  },
+  {
+    "id": "a-flowmap-on",
+    "mode": "both",
+    "note": "flow-map value WITH on",
+    "yaml": "&x: {on: push}\n",
+    "known_divergence": false
+  },
+  {
+    "id": "a-blockseq",
+    "mode": "both",
+    "note": "block-seq value",
+    "yaml": "&x:\n  - a\n",
+    "known_divergence": false
+  },
+  {
+    "id": "a-blockmap",
+    "mode": "both",
+    "note": "block-map value (no on)",
+    "yaml": "&x:\n  a: 1\n",
+    "known_divergence": false
+  },
+  {
+    "id": "a-blockmap-on",
+    "mode": "both",
+    "note": "block-map value WITH on",
+    "yaml": "&x:\n  on: push\n",
+    "known_divergence": false
+  },
+  {
+    "id": "a-anchor-val",
+    "mode": "both",
+    "note": "anchored scalar value",
+    "yaml": "&x: &y 1\n",
+    "known_divergence": false
+  },
+  {
+    "id": "a-alias-val",
+    "mode": "both",
+    "note": "alias value (undefined anchor)",
+    "yaml": "&x: *y\n",
+    "known_divergence": false
+  },
+  {
+    "id": "a-tag-val",
+    "mode": "both",
+    "note": "tagged scalar value",
+    "yaml": "&x: !foo 1\n",
+    "known_divergence": false
+  },
+  {
+    "id": "a-handle-val",
+    "mode": "both",
+    "note": "handle-tagged value",
+    "yaml": "&x: !!str 1\n",
+    "known_divergence": false
+  },
+  {
+    "id": "a-comment",
+    "mode": "both",
+    "note": "trailing comment",
+    "yaml": "&x: 1 # note\n",
+    "known_divergence": false
+  },
+  {
+    "id": "a-docmark",
+    "mode": "both",
+    "note": "explicit doc start",
+    "yaml": "---\n&x: 1\n",
+    "known_divergence": false
+  },
+  {
+    "id": "a-docend",
+    "mode": "both",
+    "note": "explicit doc end",
+    "yaml": "&x: 1\n...\n",
+    "known_divergence": false
+  },
+  {
+    "id": "a-tag-key",
+    "mode": "both",
+    "note": "tag on the key",
+    "yaml": "!foo &x: 1\n",
+    "known_divergence": false
+  },
+  {
+    "id": "a-handle-key",
+    "mode": "both",
+    "note": "handle tag on the key",
+    "yaml": "!!str &x: 1\n",
+    "known_divergence": false
+  },
+  {
+    "id": "a-double-anchor",
+    "mode": "both",
+    "note": "two anchors on key",
+    "yaml": "&x &y: 1\n",
+    "known_divergence": false
+  },
+  {
+    "id": "a-unglued",
+    "mode": "both",
+    "note": "space between anchor and colon",
+    "yaml": "&x : 1\n",
+    "known_divergence": false
+  },
+  {
+    "id": "a-two-scalar",
+    "mode": "both",
+    "note": "two pairs, scalar values",
+    "yaml": "&x: 1\n&y: 2\n",
+    "known_divergence": false
+  },
+  {
+    "id": "a-two-null",
+    "mode": "both",
+    "note": "two pairs, null values",
+    "yaml": "&x:\n&y:\n",
+    "known_divergence": false
+  },
+  {
+    "id": "a-null-scalar",
+    "mode": "both",
+    "note": "first null, second scalar",
+    "yaml": "&x:\n&y: 2\n",
+    "known_divergence": false
+  },
+  {
+    "id": "a-scalar-null",
+    "mode": "both",
+    "note": "first scalar, second null",
+    "yaml": "&x: 1\n&y:\n",
+    "known_divergence": false
+  },
+  {
+    "id": "a-list-on",
+    "mode": "both",
+    "note": "flow-seq value containing on",
+    "yaml": "&x: [{on: push}]\n",
+    "known_divergence": false
+  },
+  {
+    "id": "b-quoted",
+    "mode": "both",
+    "note": "CONTROL: quoted empty key, must stay MATCH",
+    "yaml": "\"\": 1\n",
+    "known_divergence": false
+  },
+  {
+    "id": "b-squoted",
+    "mode": "both",
+    "note": "CONTROL: single-quoted empty key",
+    "yaml": "'': 1\n",
+    "known_divergence": false
+  },
+  {
+    "id": "b-explicit",
+    "mode": "both",
+    "note": "CONTROL: explicit empty key",
+    "yaml": "? : 1\n",
+    "known_divergence": false
+  },
+  {
+    "id": "b-bare-colon",
+    "mode": "both",
+    "note": "CONTROL: bare colon",
+    "yaml": ": 1\n",
+    "known_divergence": false
+  },
+  {
+    "id": "b-c3-reject",
+    "mode": "both",
+    "note": "CONTROL: C3 domain, both reject",
+    "yaml": "&x: 1\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+    "known_divergence": false
+  },
+  {
+    "id": "b-c3-exempt",
+    "mode": "both",
+    "note": "CONTROL: first-pair null exempt, both VALID",
+    "yaml": "&x:\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+    "known_divergence": false
+  },
+  {
+    "id": "b-plain",
+    "mode": "both",
+    "note": "CONTROL: lone scalar",
+    "yaml": "1\n",
+    "known_divergence": false
+  },
+  {
+    "id": "b-string",
+    "mode": "both",
+    "note": "CONTROL: lone string",
+    "yaml": "hello\n",
+    "known_divergence": false
+  },
+  {
+    "id": "b-seq",
+    "mode": "both",
+    "note": "CONTROL: lone sequence",
+    "yaml": "- a\n- b\n",
+    "known_divergence": false
+  },
+  {
+    "id": "b-anchored-scalar",
+    "mode": "both",
+    "note": "CONTROL: lone anchored scalar",
+    "yaml": "&x hello\n",
+    "known_divergence": false
+  },
+  {
+    "id": "b-tagged",
+    "mode": "both",
+    "note": "CONTROL: lone tagged scalar",
+    "yaml": "!foo 1\n",
+    "known_divergence": false
+  },
+  {
+    "id": "b-flow-exempt",
+    "mode": "both",
+    "note": "CONTROL: flow exempt",
+    "yaml": "m: {&x: 1}\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+    "known_divergence": false
+  },
+  {
+    "id": "b-nested-single",
+    "mode": "both",
+    "note": "CONTROL: nested single pair",
+    "yaml": "m:\n  &x: 1\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+    "known_divergence": false
+  },
+  {
+    "id": "b-quoted-wf",
+    "mode": "both",
+    "note": "CONTROL: quoted empty key + full workflow",
+    "yaml": "\"\": 1\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+    "known_divergence": false
+  },
+  {
+    "id": "b-two-doc",
+    "mode": "both",
+    "note": "CONTROL: two documents",
+    "yaml": "&x: 1\n---\n&y: 2\n",
+    "known_divergence": false
+  },
+  {
+    "id": "x-nested-block",
+    "mode": "both",
+    "note": "RESIDUAL: block-map value, single anchored-empty-key pair (TS yaml_parse_error)",
+    "yaml": "&x:\n  &y: 1\n",
+    "known_divergence": false
+  },
+  {
+    "id": "x-nested-flow",
+    "mode": "both",
+    "note": "control: flow-map value, single anchored-empty-key pair",
+    "yaml": "&x: {&y: 1}\n",
+    "known_divergence": false
+  },
+  {
+    "id": "x-nested-mixed",
+    "mode": "both",
+    "note": "control: block-map value, anchored key + real key",
+    "yaml": "&x:\n  &y: 1\n  a: 2\n",
+    "known_divergence": false
+  },
+  {
+    "id": "x-nested-flow-mixed",
+    "mode": "both",
+    "note": "control: flow-map value, anchored key + real key",
+    "yaml": "&x: {&y: 1, a: 2}\n",
+    "known_divergence": false
+  },
+  {
+    "id": "x-tag-noval",
+    "mode": "both",
+    "note": "tag value with no node (null)",
+    "yaml": "&x: !foo\n",
+    "known_divergence": false
+  },
+  {
+    "id": "x-anchor-seq",
+    "mode": "both",
+    "note": "RESIDUAL: anchored seq value (TS yaml_parse_error, second anchor)",
+    "yaml": "&x: &y [1]\n",
+    "known_divergence": false
+  },
+  {
+    "id": "x-anchor-null",
+    "mode": "both",
+    "note": "RESIDUAL: anchored null value (TS yaml_parse_error, second anchor)",
+    "yaml": "&x: &y\n",
+    "known_divergence": false
+  },
+  {
+    "id": "x-tag-seq",
+    "mode": "both",
+    "note": "tagged seq value",
+    "yaml": "&x: !foo [1]\n",
+    "known_divergence": false
+  },
+  {
+    "id": "x-tag-map",
+    "mode": "both",
+    "note": "control: tagged flow-map value",
+    "yaml": "&x: !foo {a: 1}\n",
+    "known_divergence": false
+  },
+  {
+    "id": "x-tag-map-on",
+    "mode": "both",
+    "note": "RESIDUAL: tagged flow-map value WITH on (TS VALID)",
+    "yaml": "&x: !foo {on: push}\n",
+    "known_divergence": false
+  },
+  {
+    "id": "x-seq-anchor-item",
+    "mode": "both",
+    "note": "block-seq value, anchored-empty-key item",
+    "yaml": "&x:\n  - &y: 1\n",
+    "known_divergence": false
+  },
+  {
+    "id": "x-docmark-tagkey",
+    "mode": "both",
+    "note": "RESIDUAL: docmark + tag on key (TS yaml_parse_error)",
+    "yaml": "---\n!foo &x: 1\n",
+    "known_divergence": false
+  }
+]

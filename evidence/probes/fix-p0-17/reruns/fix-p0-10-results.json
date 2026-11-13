@@ -1,0 +1,2828 @@
+[
+ {
+  "id": "r4-m-comma-i0",
+  "mode": "both",
+  "note": "R4: flow-map comma continuation, indent 0 (block 0)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r4-m-comma-i1",
+  "mode": "both",
+  "note": "R4: flow-map comma continuation, indent 1 (block 0)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r4-m-comma-i2",
+  "mode": "both",
+  "note": "R4: flow-map comma continuation, indent 2 (block 0)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r4-m-comma-i3",
+  "mode": "both",
+  "note": "R4: flow-map comma continuation, indent 3 (block 0)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r4-m-comma-i4",
+  "mode": "both",
+  "note": "R4: flow-map comma continuation, indent 4 (block 0)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r4-m-comma-i5",
+  "mode": "both",
+  "note": "R4: flow-map comma continuation, indent 5 (block 0)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r4-m-nested-comma-i0",
+  "mode": "both",
+  "note": "R4 nested: comma indent 0",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r4-m-nested-comma-i1",
+  "mode": "both",
+  "note": "R4 nested: comma indent 1",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r4-m-nested-comma-i2",
+  "mode": "both",
+  "note": "R4 nested: comma indent 2",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r4-on-comma-i0",
+  "mode": "both",
+  "note": "R4 on: slot: comma indent 0",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r4-on-comma-i1",
+  "mode": "both",
+  "note": "R4 on: slot: comma indent 1",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r4-on-comma-i2",
+  "mode": "both",
+  "note": "R4 on: slot: comma indent 2",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r4-jobs-comma-i0",
+  "mode": "both",
+  "note": "R4 jobs env: comma indent 0 (block 4)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r4-jobs-comma-i1",
+  "mode": "both",
+  "note": "R4 jobs env: comma indent 1 (block 4)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r4-jobs-comma-i2",
+  "mode": "both",
+  "note": "R4 jobs env: comma indent 2 (block 4)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r4-jobs-comma-i3",
+  "mode": "both",
+  "note": "R4 jobs env: comma indent 3 (block 4)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r4-jobs-comma-i4",
+  "mode": "both",
+  "note": "R4 jobs env: comma indent 4 (block 4)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r4-jobs-comma-i5",
+  "mode": "both",
+  "note": "R4 jobs env: comma indent 5 (block 4)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r4-jobs-comma-i6",
+  "mode": "both",
+  "note": "R4 jobs env: comma indent 6 (block 4)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r4-deep-comma-i0",
+  "mode": "both",
+  "note": "R4 deep with: comma indent 0 (block 10)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r4-deep-comma-i1",
+  "mode": "both",
+  "note": "R4 deep with: comma indent 1 (block 10)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r4-deep-comma-i2",
+  "mode": "both",
+  "note": "R4 deep with: comma indent 2 (block 10)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r4-deep-comma-i5",
+  "mode": "both",
+  "note": "R4 deep with: comma indent 5 (block 10)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r4-deep-comma-i8",
+  "mode": "both",
+  "note": "R4 deep with: comma indent 8 (block 10)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r4-deep-comma-i9",
+  "mode": "both",
+  "note": "R4 deep with: comma indent 9 (block 10)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r4-deep-comma-i10",
+  "mode": "both",
+  "note": "R4 deep with: comma indent 10 (block 10)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r4-deep-comma-i11",
+  "mode": "both",
+  "note": "R4 deep with: comma indent 11 (block 10)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r4-stepenv-comma-i0",
+  "mode": "both",
+  "note": "R4 step env: comma indent 0 (block 8)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r4-stepenv-comma-i1",
+  "mode": "both",
+  "note": "R4 step env: comma indent 1 (block 8)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r4-stepenv-comma-i2",
+  "mode": "both",
+  "note": "R4 step env: comma indent 2 (block 8)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r4-stepenv-comma-i6",
+  "mode": "both",
+  "note": "R4 step env: comma indent 6 (block 8)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r4-stepenv-comma-i7",
+  "mode": "both",
+  "note": "R4 step env: comma indent 7 (block 8)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r4-stepenv-comma-i8",
+  "mode": "both",
+  "note": "R4 step env: comma indent 8 (block 8)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r4-stepenv-comma-i9",
+  "mode": "both",
+  "note": "R4 step env: comma indent 9 (block 8)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r4-seqitem-comma-i0",
+  "mode": "both",
+  "note": "R4 block-seq item: comma indent 0 (dash 6)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r4-seqitem-comma-i1",
+  "mode": "both",
+  "note": "R4 block-seq item: comma indent 1 (dash 6)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r4-seqitem-comma-i2",
+  "mode": "both",
+  "note": "R4 block-seq item: comma indent 2 (dash 6)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r4-seqitem-comma-i6",
+  "mode": "both",
+  "note": "R4 block-seq item: comma indent 6 (dash 6)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r4-seqitem-comma-i7",
+  "mode": "both",
+  "note": "R4 block-seq item: comma indent 7 (dash 6)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r4-m-outer-comma-i0",
+  "mode": "both",
+  "note": "R4 outer-map comma indent 0",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r4-m-outer-comma-i1",
+  "mode": "both",
+  "note": "R4 outer-map comma indent 1",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r4-m-outer-comma-i2",
+  "mode": "both",
+  "note": "R4 outer-map comma indent 2",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r4-m-comma-alone-line",
+  "mode": "both",
+  "note": "R4: comma alone on its line",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r4-m-trailing-comma-i0",
+  "mode": "both",
+  "note": "R4 trailing comma indent 0",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r4-m-trailing-comma-i1",
+  "mode": "both",
+  "note": "R4 trailing comma indent 1",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r5-m-colon-i0",
+  "mode": "both",
+  "note": "R5: explicit plain key colon indent 0",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r5-m-colon-i1",
+  "mode": "both",
+  "note": "R5: explicit plain key colon indent 1",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r5-m-colon-i2",
+  "mode": "both",
+  "note": "R5: explicit plain key colon indent 2",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r5-m-colon-i3",
+  "mode": "both",
+  "note": "R5: explicit plain key colon indent 3",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r5-m-colon-i4",
+  "mode": "both",
+  "note": "R5: explicit plain key colon indent 4",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r5-m-colonq-i0",
+  "mode": "both",
+  "note": "R5: explicit double-quoted key colon indent 0",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r5-m-colonq-i1",
+  "mode": "both",
+  "note": "R5: explicit double-quoted key colon indent 1",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r5-m-colonq-i2",
+  "mode": "both",
+  "note": "R5: explicit double-quoted key colon indent 2",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r5-m-colonsq-i0",
+  "mode": "both",
+  "note": "R5: explicit single-quoted key colon indent 0",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r5-m-colonsq-i1",
+  "mode": "both",
+  "note": "R5: explicit single-quoted key colon indent 1",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r5-m-colonsq-i2",
+  "mode": "both",
+  "note": "R5: explicit single-quoted key colon indent 2",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r5-m-colon-nested-i0",
+  "mode": "both",
+  "note": "R5 nested: colon indent 0",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r5-m-colon-nested-i1",
+  "mode": "both",
+  "note": "R5 nested: colon indent 1",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r5-m-colon-nested-i2",
+  "mode": "both",
+  "note": "R5 nested: colon indent 2",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r5-on-colon-i0",
+  "mode": "both",
+  "note": "R5 on: slot: colon indent 0",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r5-on-colon-i1",
+  "mode": "both",
+  "note": "R5 on: slot: colon indent 1",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r5-on-colon-i2",
+  "mode": "both",
+  "note": "R5 on: slot: colon indent 2",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r5-jobs-colon-i0",
+  "mode": "both",
+  "note": "R5 jobs env: colon indent 0 (block 4)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r5-jobs-colon-i1",
+  "mode": "both",
+  "note": "R5 jobs env: colon indent 1 (block 4)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r5-jobs-colon-i2",
+  "mode": "both",
+  "note": "R5 jobs env: colon indent 2 (block 4)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r5-jobs-colon-i3",
+  "mode": "both",
+  "note": "R5 jobs env: colon indent 3 (block 4)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r5-jobs-colon-i4",
+  "mode": "both",
+  "note": "R5 jobs env: colon indent 4 (block 4)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r5-jobs-colon-i5",
+  "mode": "both",
+  "note": "R5 jobs env: colon indent 5 (block 4)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r5-jobs-colon-i6",
+  "mode": "both",
+  "note": "R5 jobs env: colon indent 6 (block 4)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r5-deep-colon-i0",
+  "mode": "both",
+  "note": "R5 deep with: colon indent 0 (block 10)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r5-deep-colon-i1",
+  "mode": "both",
+  "note": "R5 deep with: colon indent 1 (block 10)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r5-deep-colon-i2",
+  "mode": "both",
+  "note": "R5 deep with: colon indent 2 (block 10)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r5-deep-colon-i5",
+  "mode": "both",
+  "note": "R5 deep with: colon indent 5 (block 10)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r5-deep-colon-i8",
+  "mode": "both",
+  "note": "R5 deep with: colon indent 8 (block 10)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r5-deep-colon-i9",
+  "mode": "both",
+  "note": "R5 deep with: colon indent 9 (block 10)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r5-deep-colon-i10",
+  "mode": "both",
+  "note": "R5 deep with: colon indent 10 (block 10)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r5-deep-colon-i11",
+  "mode": "both",
+  "note": "R5 deep with: colon indent 11 (block 10)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r5-qkey-next-i0",
+  "mode": "both",
+  "note": "R5: explicit key on next line, indent 0",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r5-qkey-next-i1",
+  "mode": "both",
+  "note": "R5: explicit key on next line, indent 1",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r5-qkey-next-i2",
+  "mode": "both",
+  "note": "R5: explicit key on next line, indent 2",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r5-expl-val-next-i0",
+  "mode": "both",
+  "note": "R5: explicit-key value on next line, indent 0",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r5-expl-val-next-i1",
+  "mode": "both",
+  "note": "R5: explicit-key value on next line, indent 1",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r5-expl-val-next-i2",
+  "mode": "both",
+  "note": "R5: explicit-key value on next line, indent 2",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r5-expl-val-next-q-i0",
+  "mode": "both",
+  "note": "R5: explicit quoted-key value on next line, indent 0",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r5-expl-val-next-q-i1",
+  "mode": "both",
+  "note": "R5: explicit quoted-key value on next line, indent 1",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r5-m-colon-alone-line",
+  "mode": "both",
+  "note": "R5: colon alone on its line",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "adj-m-keynext-i0",
+  "mode": "both",
+  "note": "adjacent: key on next line, indent 0",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "adj-m-keynext-i1",
+  "mode": "both",
+  "note": "adjacent: key on next line, indent 1",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "adj-m-keynext-i2",
+  "mode": "both",
+  "note": "adjacent: key on next line, indent 2",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "adj-m-valnext-i0",
+  "mode": "both",
+  "note": "adjacent: value on next line, indent 0",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "adj-m-valnext-i1",
+  "mode": "both",
+  "note": "adjacent: value on next line, indent 1",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "adj-m-valnext-i2",
+  "mode": "both",
+  "note": "adjacent: value on next line, indent 2",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "adj-m-close-i0",
+  "mode": "both",
+  "note": "adjacent: closing brace alone, indent 0 (exempt)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "adj-m-close-i1",
+  "mode": "both",
+  "note": "adjacent: closing brace alone, indent 1 (exempt)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "adj-m-close-i2",
+  "mode": "both",
+  "note": "adjacent: closing brace alone, indent 2 (exempt)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "adj-m-first-i0",
+  "mode": "both",
+  "note": "adjacent: first item on next line, indent 0",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "adj-m-first-i1",
+  "mode": "both",
+  "note": "adjacent: first item on next line, indent 1",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "adj-m-first-i2",
+  "mode": "both",
+  "note": "adjacent: first item on next line, indent 2",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "adj-m-plaincont-i0",
+  "mode": "both",
+  "note": "adjacent: plain-scalar continuation, indent 0",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "adj-m-plaincont-i1",
+  "mode": "both",
+  "note": "adjacent: plain-scalar continuation, indent 1",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "adj-m-plaincont-i2",
+  "mode": "both",
+  "note": "adjacent: plain-scalar continuation, indent 2",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "adj-m-plaincont-key-i0",
+  "mode": "both",
+  "note": "adjacent: plain scalar then key, indent 0 (both reject already)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "adj-m-plaincont-key-i1",
+  "mode": "both",
+  "note": "adjacent: plain scalar then key, indent 1 (both reject already)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "adj-m-seq-comma-i0",
+  "mode": "both",
+  "note": "adjacent: flow-seq comma, indent 0",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "adj-m-seq-comma-i1",
+  "mode": "both",
+  "note": "adjacent: flow-seq comma, indent 1",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "adj-m-seq-comma-i2",
+  "mode": "both",
+  "note": "adjacent: flow-seq comma, indent 2",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "adj-m-seq-item-i0",
+  "mode": "both",
+  "note": "adjacent: flow-seq item on next line, indent 0",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "adj-m-seq-item-i1",
+  "mode": "both",
+  "note": "adjacent: flow-seq item on next line, indent 1",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "adj-m-seq-item-i2",
+  "mode": "both",
+  "note": "adjacent: flow-seq item on next line, indent 2",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "adj-m-seq-close-i0",
+  "mode": "both",
+  "note": "adjacent: flow-seq closing bracket alone, indent 0 (exempt)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "adj-m-seq-close-i1",
+  "mode": "both",
+  "note": "adjacent: flow-seq closing bracket alone, indent 1 (exempt)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "adj-m-seq-close-i2",
+  "mode": "both",
+  "note": "adjacent: flow-seq closing bracket alone, indent 2 (exempt)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "adj-m-seq-first-i0",
+  "mode": "both",
+  "note": "adjacent: flow-seq first item on next line, indent 0",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "adj-m-seq-first-i1",
+  "mode": "both",
+  "note": "adjacent: flow-seq first item on next line, indent 1",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "adj-m-seq-first-i2",
+  "mode": "both",
+  "note": "adjacent: flow-seq first item on next line, indent 2",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "adj-m-seq-nested-i0",
+  "mode": "both",
+  "note": "adjacent: nested flow-seq comma, indent 0",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "adj-m-seq-nested-i1",
+  "mode": "both",
+  "note": "adjacent: nested flow-seq comma, indent 1",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "adj-m-blank-line-1",
+  "mode": "both",
+  "note": "adjacent: blank line, key indent 1",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "adj-m-blank-line-0",
+  "mode": "both",
+  "note": "adjacent: blank line, key indent 0",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "adj-m-comment-line-1",
+  "mode": "both",
+  "note": "adjacent: comment line, key indent 1",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "adj-m-comment-line-0",
+  "mode": "both",
+  "note": "adjacent: comment line, key indent 0",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "adj-m-qval-cont-0",
+  "mode": "both",
+  "note": "adjacent: quoted value continuation indent 0 (FIX-P0-08)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "adj-m-qval-cont-1",
+  "mode": "both",
+  "note": "adjacent: quoted value continuation indent 1",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "adj-m-barekey-flow-i2",
+  "mode": "both",
+  "note": "adjacent: flow on line after bare key, continuation indent 2 (block 0)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "adj-m-barekey-flow-i0",
+  "mode": "both",
+  "note": "adjacent: flow on line after bare key, continuation indent 0",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "adj-m-tab",
+  "mode": "both",
+  "note": "adjacent: tab continuation (both reject already)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "adj-root-flow-comma",
+  "mode": "both",
+  "note": "adjacent: document-root flow map comma (exempt)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "adj-root-flow-colon",
+  "mode": "both",
+  "note": "adjacent: document-root flow map colon (exempt)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "adj-root-flow-ok",
+  "mode": "both",
+  "note": "adjacent: document-root flow map, indent 1",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "adj-m-nested-close-i0",
+  "mode": "both",
+  "note": "adjacent: outer close brace alone indent 0 (exempt)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "adj-m-nested-close-i1",
+  "mode": "both",
+  "note": "adjacent: outer close brace alone indent 1 (exempt)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "ctl-block-explicit",
+  "mode": "both",
+  "note": "control: explicit block key, colon indent 0 (block, must stay VALID)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "e-inner-close-outer-i0",
+  "mode": "both",
+  "note": "edge: inner close then outer content, indent 0",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "e-inner-close-outer-sp",
+  "mode": "both",
+  "note": "edge: inner close then outer content with space, indent 0",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "e-inner-open-i0",
+  "mode": "both",
+  "note": "edge: nested flow start on next line, indent 0",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "e-inner-open-i1",
+  "mode": "both",
+  "note": "edge: nested flow start on next line, indent 1",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "e-inner-seqopen-i1",
+  "mode": "both",
+  "note": "edge: nested flow-seq start, indent 1",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "e-inner-seqopen-i0",
+  "mode": "both",
+  "note": "edge: nested flow-seq start, indent 0",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "e-seq-of-map-i0",
+  "mode": "both",
+  "note": "edge: flow-seq of flow-map, comma indent 0",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "e-seq-of-map-i1",
+  "mode": "both",
+  "note": "edge: flow-seq of flow-map, comma indent 1",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "e-on-seq-comma-i0",
+  "mode": "both",
+  "note": "edge: on: flow-seq comma indent 0",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "e-on-seq-comma-i1",
+  "mode": "both",
+  "note": "edge: on: flow-seq comma indent 1",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "e-branches-seq-i0",
+  "mode": "both",
+  "note": "edge: branches flow-seq comma indent 0",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "e-qval-start-i0",
+  "mode": "both",
+  "note": "edge: quoted scalar value starts on next line, indent 0",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "e-qval-start-i1",
+  "mode": "both",
+  "note": "edge: quoted scalar value starts on next line, indent 1",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "e-anchor-comma-i0",
+  "mode": "both",
+  "note": "edge: anchor value, comma indent 0",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "e-anchor-val-i0",
+  "mode": "both",
+  "note": "edge: anchor on next line, indent 0",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "e-root-seq-comma-i0",
+  "mode": "both",
+  "note": "edge: document-root block-seq flow map, comma indent 0",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "e-root-seq-comma-i1",
+  "mode": "both",
+  "note": "edge: document-root block-seq flow map, comma indent 1",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "e-blockkey-flow-i0",
+  "mode": "both",
+  "note": "edge: flow map as explicit block key, comma indent 0 (both reject already)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "e-qval-cont1-flowtok",
+  "mode": "both",
+  "note": "edge: quoted value continuation indent 1 plus flow tokens after",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "e-qval-cont0-flowtok",
+  "mode": "both",
+  "note": "edge: quoted value continuation indent 0 plus flow tokens after",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "e-outer-key-i1",
+  "mode": "both",
+  "note": "edge: outer key on next line, indent 1",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "e-outer-key-i0",
+  "mode": "both",
+  "note": "edge: outer key on next line, indent 0",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "e-inner-close-then-key-i1",
+  "mode": "both",
+  "note": "edge: inner close then key with space, indent 0",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "e-flow-in-flow-val-i0",
+  "mode": "both",
+  "note": "edge: flow map inside flow map value, comma indent 0",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "e-flow-in-flow-val-i1",
+  "mode": "both",
+  "note": "edge: flow map inside flow map value, comma indent 1",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ }
+]

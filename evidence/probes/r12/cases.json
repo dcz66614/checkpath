@@ -1,0 +1,356 @@
+[
+ {
+  "id": "r12-a1-anchor-nospace-flowmap",
+  "mode": "both",
+  "note": "P0-A rebuilt from R11 §2.1: anchor nospace in flow-map value",
+  "yaml": "m: {a: &x#c\n 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r12-a2-tag-nospace-flowmap",
+  "mode": "both",
+  "note": "P0-A rebuilt from R11 §2.1: tag nospace in flow-map value",
+  "yaml": "m: {a: !!str#c\n 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r12-a3-anchor-nospace-on",
+  "mode": "both",
+  "note": "P0-A rebuilt from R11 §2.1: anchor nospace in the on: slot (both INVALID, different codes in R11)",
+  "yaml": "on: {push: &x#c\n pull_request}\nname: probe\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r12-a4-anchor-nospace-flowseq",
+  "mode": "both",
+  "note": "P0-A rebuilt from R11 §2.1: anchor nospace in flow sequence",
+  "yaml": "m: [&x#c\n 1]\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r12-a5-anchor-space-comment",
+  "mode": "both",
+  "note": "Boundary: anchor + space + comment must still accept both sides",
+  "yaml": "m: {a: &x #c\n 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r12-a6-anchor-nospace-quoted",
+  "mode": "both",
+  "note": "Boundary: anchor-nospace inside double quotes is scalar content",
+  "yaml": "m: {a: \"&x#c\", b: 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r12-a7-anchor-mid-scalar",
+  "mode": "both",
+  "note": "Boundary: & mid-plain-scalar is literal content",
+  "yaml": "m: {a: b&x#c}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r12-a8-hash-in-scalar",
+  "mode": "both",
+  "note": "Boundary: # mid-plain-scalar is literal content",
+  "yaml": "m: {a: x#y}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r12-a9-anchor-colon-implicit-key",
+  "mode": "both",
+  "note": "Boundary (fixer C01): anchor-colon in flow-map implicit-key position must not trigger",
+  "yaml": "m: {&x: 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r12-a10-anchor-colon-implicit-key-pair",
+  "mode": "both",
+  "note": "Boundary (fixer C21): anchor-colon implicit key + following pair",
+  "yaml": "m: {&x: 1, b: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r12-a11-unknown-tag",
+  "mode": "both",
+  "note": "Boundary: well-formed unknown tag both sides accept",
+  "yaml": "m: {a: !foo}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r12-a12-unknown-tag-colon",
+  "mode": "both",
+  "note": "Boundary: unknown tag with colon suffix both sides accept",
+  "yaml": "m: {a: !foo:bar}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r12-a13-verbatim-tag",
+  "mode": "both",
+  "note": "Boundary: verbatim tag both sides accept",
+  "yaml": "m: {a: !<tag:x>}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r12-a14-anchor-then-comma",
+  "mode": "both",
+  "note": "Boundary: anchor followed by comma must accept",
+  "yaml": "m: {a: &x, b: 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r12-a15-anchor-flow-end",
+  "mode": "both",
+  "note": "Boundary: anchor at flow end must accept",
+  "yaml": "m: {a: &x}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r12-a16-anchor-colon-value-pos",
+  "mode": "both",
+  "note": "Boundary (fixer C02): anchor-colon in VALUE position must trigger (both INVALID)",
+  "yaml": "m: {a: &x: 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r12-a17-anchor-colon-block-seq",
+  "mode": "both",
+  "note": "Boundary (fixer C06): anchor-colon in block-seq item, implicit key",
+  "yaml": "m:\n  - &x: 1\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r12-a18-anchor-colon-flowseq-key",
+  "mode": "both",
+  "note": "Boundary (fixer D01): anchor-colon implicit key in flow seq",
+  "yaml": "m: [&x: 1]\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r12-a19-double-property-chain",
+  "mode": "both",
+  "note": "Boundary: double property chain both INVALID (MATCH)",
+  "yaml": "m: {a: &x &y: 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r12-a20-tag-nospace-unknown",
+  "mode": "both",
+  "note": "P0-A variant: unknown tag + nospace # in flow-map value",
+  "yaml": "m: {a: !foo#c\n 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r12-a21-tag-space-comment",
+  "mode": "both",
+  "note": "Boundary: tag + space + comment must still accept",
+  "yaml": "m: {a: !!str #c\n 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r12-b1-null-ml-plain",
+  "mode": "both",
+  "note": "P0-B rebuilt from R11 §3.1: null-value multi-line plain key",
+  "yaml": "m: {a\n b}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r12-b2-null-ml-dq",
+  "mode": "both",
+  "note": "P0-B rebuilt from R11 §3.1: null-value multi-line double-quoted key",
+  "yaml": "m: {\"a\n b\"}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r12-b3-null-ml-hash-key",
+  "mode": "both",
+  "note": "P0-B rebuilt from R11 §3.1: # inside plain-scalar key, not a comment",
+  "yaml": "m: {a:#c\n 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r12-b4-null-ml-then-pair",
+  "mode": "both",
+  "note": "P0-B rebuilt from R11 §3.1: null-ml key then a pair",
+  "yaml": "m: {a\n b, c: 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r12-b5-null-ml-nested",
+  "mode": "both",
+  "note": "P0-B rebuilt from R11 §3.1: nested null-ml key",
+  "yaml": "m: {n: {a\n b}}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r12-b6-null-ml-hash-value",
+  "mode": "both",
+  "note": "P0-B rebuilt from R11 §3.1: null-ml key with # in second pair",
+  "yaml": "m: {a: 1, b:#c\n 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r12-b7-null-ml-after-pair",
+  "mode": "both",
+  "note": "P0-B rebuilt from R11 §3.1 (R11-B7): null-ml key after a complete pair",
+  "yaml": "m: {a: 1, b\n c}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r12-b8-null-ml-sq",
+  "mode": "both",
+  "note": "P0-B rebuilt from R11 §3.1 (R11-B8): null-ml single-quoted key",
+  "yaml": "m: {'a\n b'}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r12-b9-valued-ml",
+  "mode": "both",
+  "note": "S1 target intact: valued multi-line key must still be rejected both sides",
+  "yaml": "m: {a\n b: 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r12-b10-valued-ml-after-pair",
+  "mode": "both",
+  "note": "S1 target intact: valued multi-line key after a pair",
+  "yaml": "m: {a: 1, b\n c: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r12-b11-valued-ml-null-value",
+  "mode": "both",
+  "note": "S1 discriminant edge: colon present but null value — PyYAML rejects",
+  "yaml": "m: {a\n b:}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r12-b12-valued-ml-null-value-dq",
+  "mode": "both",
+  "note": "S1 discriminant edge: quoted key, colon, null value",
+  "yaml": "m: {\"a\n b\":}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r12-b13-valued-ml-colon-nl",
+  "mode": "both",
+  "note": "S1 discriminant edge: colon then newline before close",
+  "yaml": "m: {a\n b:\n}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r12-b14-b41-comment-comma",
+  "mode": "both",
+  "note": "B41: null-ml key + inline comment + comma — both INVALID via other rules",
+  "yaml": "m: {a\n b # c\n, d: 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r12-b15-valued-ml-then-pair",
+  "mode": "both",
+  "note": "S1 target intact: valued multi-line key then a pair",
+  "yaml": "m: {a\n b: 1, c: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r12-b16-valued-ml-colon-after-comment",
+  "mode": "both",
+  "note": "S1 discriminant edge: colon on a later line after a comment",
+  "yaml": "m: {a\n b # note\n: 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r12-b17-mixed-null-and-valued",
+  "mode": "both",
+  "note": "Composite: null-ml key (accept) + valued-ml key (reject) — both INVALID overall",
+  "yaml": "m: {a\n b, c\n d: 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r12-r1-a45-anchored-empty-key",
+  "mode": "both",
+  "note": "Residual §7.1 A45: anchored empty key at document root",
+  "yaml": "&x: 1\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r12-r2-a70-tag-brackets",
+  "mode": "both",
+  "note": "Residual §7.2 A70: tag suffix containing [ ]",
+  "yaml": "m: {a: !foo[bar] 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r12-r3-a60-comma-suffix",
+  "mode": "both",
+  "note": "Residual §7.3 A60: tag suffix swallows flow comma",
+  "yaml": "m: {a: !foo, b: 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r12-r4-x04-comma-suffix-2pairs",
+  "mode": "both",
+  "note": "Residual §7.3 X04: comma-suffix family, another pair follows",
+  "yaml": "m: {a: !foo, b: 1, c: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r12-r5-x08-rbrack-seq",
+  "mode": "both",
+  "note": "Residual §7.4 X08 (reverse): tag suffix swallows ]",
+  "yaml": "m: [!foo] 1]\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r12-r6-x09-rbrack-seq2",
+  "mode": "both",
+  "note": "Residual §7.4 X09 (reverse): ]-suffix family, comma after swallowed ]",
+  "yaml": "m: [!foo], 1]\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r12-r7-x11-comma-block",
+  "mode": "both",
+  "note": "Residual §7.5 X11 (reverse): block variant, tag-comma then next pair",
+  "yaml": "a: !foo,\n  b: 1\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r12-r8-y03-comma-quoted",
+  "mode": "both",
+  "note": "Residual §7.3 Y03: comma-suffix family, quoted node after swallowed comma",
+  "yaml": "m: {a: !foo, \"b\": 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r12-r9-y05-comma-nl",
+  "mode": "both",
+  "note": "Residual §7.3 Y05: comma-suffix family, node on next line",
+  "yaml": "m: {a: !foo,\n b: 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r12-r10-y08-comma-anchor",
+  "mode": "both",
+  "note": "Residual §7.3 Y08: comma-suffix family, anchor-prefixed node",
+  "yaml": "m: {a: !foo, &x 1: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r12-r11-y09-comma-num",
+  "mode": "both",
+  "note": "Residual §7.3 Y09: comma-suffix family, numeric node",
+  "yaml": "m: {a: !foo, 1: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r12-r12-y10-comma-null",
+  "mode": "both",
+  "note": "Residual §7.3 Y10: comma-suffix family, null-value node",
+  "yaml": "m: {a: !foo, b:}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r12-c1-x02-comma-mid-suffix",
+  "mode": "both",
+  "note": "Control (fixer X02): comma in the middle of the suffix",
+  "yaml": "m: {a: !foo,bar 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r12-c2-y01-seq-pair",
+  "mode": "both",
+  "note": "Control (fixer Y01): flow seq with pair — PyYAML accepts",
+  "yaml": "m: [!foo, a: 1]\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r12-c3-x13-space-before-comma",
+  "mode": "both",
+  "note": "Control (fixer X13): space before comma, tag ends first",
+  "yaml": "m: {a: !foo , b: 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r12-c4-x05-seq-comma",
+  "mode": "both",
+  "note": "Control (fixer X05): flow seq, swallowed comma harmless",
+  "yaml": "m: [!foo, 1]\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r12-r6-1-extra",
+  "mode": "both",
+  "note": "R6 regression (R10 §2.1 R6-EXTRA): comment indent 0 after complete pair",
+  "yaml": "m: {a: 1\n# note\n, b: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r12-r6-2-on",
+  "mode": "both",
+  "note": "R6 regression (R10 §2.1 R6-ON): on: slot comment indent 0",
+  "yaml": "on: {push: {types: [opened]}\n# note\n, pull_request}\nname: probe\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r12-r6-3-on-unsupported",
+  "mode": "both",
+  "note": "R6 regression (R10 §2.1 R6-ON-UNSUPPORTED): on: slot, unsupported event pull",
+  "yaml": "on: {push: {types: [opened]}\n# note\n, pull}\nname: probe\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r12-r6-4-close",
+  "mode": "both",
+  "note": "R6 regression (R10 §2.1 R6-CLOSE): comment before closing brace",
+  "yaml": "m: {a: 1, b: 2\n# note\n}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r12-r6-5-nestedblock",
+  "mode": "both",
+  "note": "R6 regression (R10 §2.1 R6-NESTEDBLOCK): nested block, comment 0, comma 3",
+  "yaml": "x:\n  m: {a: 1\n# note\n   , b: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ }
+]

@@ -1,0 +1,758 @@
+[
+ {
+  "id": "p17-a-alias-key",
+  "yaml": "x: &s 5\n&r:!!str *s: 5\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-a-alias-key-push",
+  "yaml": "x: &s 5\n&r:!!str *s: 5\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-a-alias-key-lone",
+  "yaml": "x: &s 5\n&r:!!str *s: 5\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-a-alias-key-int",
+  "yaml": "x: &s 5\n&r:!!int *s: 5\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-a-alias-key-custom",
+  "yaml": "x: &s 5\n&r:!zap *s: 5\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-a-alias-seq-key",
+  "yaml": "x: &s [5]\n&r:!!str *s: 5\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-a-alias-undef-key",
+  "yaml": "&r:!!str *s: 5\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-a-ctrl-scalar-key",
+  "yaml": "&r:!!str hello: 5\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-a-ctrl-quoted-dq",
+  "yaml": "x: &s 5\n&r:!!str \"hello\": 5\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-a-ctrl-quoted-sq",
+  "yaml": "x: &s 5\n&r:!!str 'hello': 5\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-a-ctrl-qmark",
+  "yaml": "? &r:!!str *s: 5\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-a-ctrl-spaced",
+  "yaml": "x: &s 5\n&r: !!str *s: 5\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-a-ctrl-value-pos",
+  "yaml": "m: &r:!!str {a: 5}\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-a-ctrl-on-value",
+  "yaml": "on: &r:!!str {release: {}}\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-b-absorb-2",
+  "yaml": "&r:5\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-b-absorb-2-push",
+  "yaml": "&r:5\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-b-absorb-foo",
+  "yaml": "&r:foo\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-b-absorb-hyphen",
+  "yaml": "&r:bar-baz\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-b-absorb-num",
+  "yaml": "&r:123\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-b-absorb-2x",
+  "yaml": "&r:5x\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-b-absorb-value-pos",
+  "yaml": "m: &r:5\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-b-absorb-flow",
+  "yaml": "m: {&r:5}\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-b-absorb-lone",
+  "yaml": "&r:5\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-c-multi-colon",
+  "yaml": "&r:5:6\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-c-multi-colon-lone",
+  "yaml": "&r:5:6\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-c-double-colon",
+  "yaml": "&r::5\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-c-tag-after",
+  "yaml": "&r:5!zap {a: 1}\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-c-tag-after-spaced",
+  "yaml": "&r:5 !zap {a: 1}\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-c-scalar-val",
+  "yaml": "&r:5 1\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-c-colon-space",
+  "yaml": "&r:5: 1\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-c-seq-item",
+  "yaml": "m:\n  - &r:5\n    a: 1\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-c-nested-value",
+  "yaml": "m:\n  &r:5\n  a: 1\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-c-nested-map-val",
+  "yaml": "m: &r:5\n  a: 1\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-c-flow-val",
+  "yaml": "m: {a: &r:5}\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-c-flow-key-map",
+  "yaml": "m: {&r:5: {a: 1}}\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-c-comment",
+  "yaml": "&r:5 # comment\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-c-docmark",
+  "yaml": "&r:5\n---\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-c-anchor-only-colon",
+  "yaml": "&r:\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-c-space-after-colon",
+  "yaml": "&r: 5\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-c-tag-colon",
+  "yaml": "&r:!zap {on: schedule}\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-c-tag-colon-lone",
+  "yaml": "&r:!zap {on: schedule}\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-c-tag-root-block",
+  "yaml": "&x:!!tag\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-c-tag-root-block-1",
+  "yaml": "&x:!tag\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-c-tag-nobrace",
+  "yaml": "&b:!!str{on: pull_request}\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-c-qmark-colon",
+  "yaml": "&x:?\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-c-comma-colon",
+  "yaml": "&x:,\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-c-dot-direct",
+  "yaml": "&q.5\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-c-bang-direct",
+  "yaml": "&q!2\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-c-slash-direct",
+  "yaml": "&q/2\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-c-hyphen-num",
+  "yaml": "&r:bar-baz-9\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-c-underscore",
+  "yaml": "&r:foo_bar\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-c-flow-seq",
+  "yaml": "m: [&r:5]\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-c-two-anchors",
+  "yaml": "&r:5 &s:6\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-c-qmark",
+  "yaml": "? &r:5\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-c-dotted",
+  "yaml": "&r:5.5\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-c-slashed",
+  "yaml": "&r:5/6\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-c-comma",
+  "yaml": "&r:5,6\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-c-anchor-tag-prop",
+  "yaml": "!zap &r:5\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-c-anchor-after-alias",
+  "yaml": "x: &s 5\n*s &r:5\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-c-flow-second",
+  "yaml": "m: {a: 1, &r:5}\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-c-flow-key-scalar",
+  "yaml": "m: {&r:5 hello: 1}\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-c-nested-flow-key",
+  "yaml": "m:\n  n: {&r:5}\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-d-alias-key-bool-tag",
+  "yaml": "x: &s 5\n&r:!!bool *s: 5\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-d-alias-key-nested",
+  "yaml": "m:\n  x: &s 5\n  &r:!!str *s: 5\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-d-alias-key-second",
+  "yaml": "a: 1\nx: &s 5\n&r:!!str *s: 5\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-d-alias-key-anchor-then",
+  "yaml": "x: &s 5\n&r:!!str &t *s: 5\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-d-alias-key-two-props",
+  "yaml": "!zap &r:!!str *s: 5\nx: &s 5\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-d-alias-key-flow",
+  "yaml": "x: &s 5\nm: {&r:!!str *s: 5}\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-d-alias-key-flow-val",
+  "yaml": "m: {a: &r:!!str *s: 5}\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-d-alias-key-seq-item",
+  "yaml": "m:\n  - &r:!!str *s: 5\nx: &s 5\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-d-alias-key-tab",
+  "yaml": "x: &s 5\n&r:\t!!str *s: 5\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-d-ctrl-plain-key-tab",
+  "yaml": "&r:!!str hello\t: 5\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-e-flow-null-key",
+  "yaml": "m: {&r:5}\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-e-flow-null-key-2nd",
+  "yaml": "m: {&r:5, b: 1}\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-e-flow-colon-scalar",
+  "yaml": "m: {&r:5: 1}\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-e-flow-colon-null",
+  "yaml": "m: {&r:5: }\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-e-flow-colon-spaced",
+  "yaml": "m: {&r:5 : 1}\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-e-flow-colon-map",
+  "yaml": "m: {&r:5: {a: 1}}\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-e-flow-colon-tag",
+  "yaml": "m: {&r:5: !zap 1}\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-e-flow-colon-alias",
+  "yaml": "x: &s 5\nm: {&r:5: *s}\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-e-flow-colon-anchor",
+  "yaml": "m: {&r:5: &s 1}\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-e-flow-key-map",
+  "yaml": "m: {&r:5 {a: 1}}\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-e-flow-key-scalar",
+  "yaml": "m: {&r:5 hello: 1}\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-e-flow-ctrl-anchor-space",
+  "yaml": "m: {&r: 1}\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-e-flow-ctrl-anchor-space-2nd",
+  "yaml": "m: {&r: 1, b: 2}\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-e-flow-null-spaced",
+  "yaml": "m: {&r: }\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-e-flow-alias-val",
+  "yaml": "x: &s 5\nm: {&r: *s}\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-e-flow-anchor-val",
+  "yaml": "m: {&r: &s 1}\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-e-flow-colon-tag-spaced",
+  "yaml": "m: {&r:5 : !zap 1}\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-e-flow-colon-alias-spaced",
+  "yaml": "x: &s 5\nm: {&r:5 : *s}\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-e-flow-colon-anchor-spaced",
+  "yaml": "m: {&r:5 : &s 1}\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-e-flow-nested-key",
+  "yaml": "m:\n  n: {&r:5}\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-e-flow-val-null",
+  "yaml": "m: {a: &r:5}\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-f-alias-colon-key",
+  "yaml": "x: &s 5\n*s: 5\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-f-alias-colon-key-lone",
+  "yaml": "x: &s 5\n*s: 5\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-f-alias-colon-value",
+  "yaml": "x: *s: 5\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-f-alias-colon-flow",
+  "yaml": "x: &s 5\nm: {*s: 5}\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-f-alias-colon-undef",
+  "yaml": "*s: 5\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-f-alias-colon-spaced",
+  "yaml": "x: &s 5\n*s : 5\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-f-alias-colon-tag",
+  "yaml": "x: &s 5\n*s:!zap {a: 1}\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-f-alias-colon-dot",
+  "yaml": "x: &s 5\n*s.5: 6\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-g-lone-colon-scalar",
+  "yaml": "&r:5: 1\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-g-lone-colon-eol",
+  "yaml": "&r:5:\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-g-lone-colon-map",
+  "yaml": "&r:5: {on: push}\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-g-lone-absorb",
+  "yaml": "&r:5\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-g-lone-absorb-map",
+  "yaml": "&r:5: {on: push}\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-g-lone-tag",
+  "yaml": "&x:!!tag\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ },
+ {
+  "id": "p17-g-lone-bang",
+  "yaml": "&x:!tag\n",
+  "mode": "both",
+  "expected_diff": false,
+  "diff_modes": []
+ }
+]

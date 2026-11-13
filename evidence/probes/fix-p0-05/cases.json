@@ -1,0 +1,268 @@
+[
+ {
+  "id": "D2-alias-flow-key",
+  "mode": "both",
+  "yaml": "x: &a foo\nname: probe\non: {*a: 1}\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "D2 (FIX-P0-04 residual): flow alias event key `on: {*a: 1}` — pre-fix TS INVALID/yaml_parse_error vs Oracle INVALID/event_config_not_mapping; FIX-P0-05 closes it.",
+  "known_divergence": false
+ },
+ {
+  "id": "F2-jobs-flow-alias-key",
+  "mode": "both",
+  "yaml": "x: &a foo\nname: probe\non:\n  push: {}\njobs: {test: {*a: 1}}\n",
+  "note": "Flow alias key inside `jobs:` — pre-fix the Oracle returned VALID (push event) while TS returned INVALID/yaml_parse_error.",
+  "known_divergence": false
+ },
+ {
+  "id": "F3-filter-flow-alias-key",
+  "mode": "both",
+  "yaml": "x: &a foo\nname: probe\non: {push: {*a: 1}}\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "Flow alias key inside a filter mapping — pre-fix Oracle UNKNOWN (unsupported_filter:foo) vs TS INVALID/yaml_parse_error.",
+  "known_divergence": false
+ },
+ {
+  "id": "F4-flow-alias-key-and-value",
+  "mode": "both",
+  "yaml": "x: &a foo\nname: probe\non: {*a: *a}\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "Flow alias key with an alias value (`{*a: *a}`) — pre-fix Oracle event_config_not_mapping vs TS yaml_parse_error.",
+  "known_divergence": false
+ },
+ {
+  "id": "F5-flow-alias-key-among-normal",
+  "mode": "both",
+  "yaml": "x: &a foo\nname: probe\non: {push: {}, *a: 1}\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "Flow alias key among normal keys (`{push: {}, *a: 1}`) — pre-fix Oracle event_config_not_mapping vs TS yaml_parse_error.",
+  "known_divergence": false
+ },
+ {
+  "id": "F6-flow-map-in-list-item",
+  "mode": "both",
+  "yaml": "x: &a foo\nname: probe\non:\n  - {*a: 1}\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "Flow alias key in a flow mapping inside an `on:` list item — pre-fix Oracle on_list_item_not_string vs TS yaml_parse_error.",
+  "known_divergence": false
+ },
+ {
+  "id": "F7-anchor-and-alias-same-map",
+  "mode": "both",
+  "yaml": "name: probe\non: {&a foo: 1, *a: 2}\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "Anchor defined and aliased in the same flow map (`{&a foo: 1, *a: 2}`) — already agreed pre-fix (duplicate key -> yaml_parse_error on both sides).",
+  "known_divergence": false
+ },
+ {
+  "id": "F8-nested-flow-filter-alias-key",
+  "mode": "both",
+  "yaml": "x: &a foo\nname: probe\non:\n  push:\n    branches: {*a: 1}\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "Flow alias key nested in a filter value mapping — pre-fix Oracle filter_not_string_or_list:branches vs TS yaml_parse_error.",
+  "known_divergence": false
+ },
+ {
+  "id": "F9-undefined-alias-flow-key",
+  "mode": "both",
+  "yaml": "name: probe\non: {*zz: 1}\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "Undefined alias as a flow key (`{*zz: 1}`) — already agreed pre-fix (both yaml_parse_error).",
+  "known_divergence": false
+ },
+ {
+  "id": "F10-job-def-flow-alias-key",
+  "mode": "both",
+  "yaml": "x: &a foo\nname: probe\non:\n  push: {}\njobs:\n  test: {runs-on: ubuntu-latest, *a: 1}\n",
+  "note": "Flow alias key inside a job definition — pre-fix the Oracle returned VALID while TS returned INVALID/yaml_parse_error.",
+  "known_divergence": false
+ },
+ {
+  "id": "F11-root-flow-alias-key",
+  "mode": "both",
+  "yaml": "{x: &a foo, *a: 1}\n",
+  "note": "Flow alias key in a root flow mapping — pre-fix trigger DIFF (Oracle missing_on_key vs TS yaml_parse_error), jobs already MATCH.",
+  "known_divergence": false
+ },
+ {
+  "id": "F12-forward-ref-flow-alias-key",
+  "mode": "both",
+  "yaml": "name: probe\non: {*a: 1}\njobs:\n  test:\n    runs-on: ubuntu-latest\nx: &a foo\n",
+  "note": "Forward reference (`*a` used before `&a` is defined) — already agreed pre-fix (both yaml_parse_error).",
+  "known_divergence": false
+ },
+ {
+  "id": "F13-explicit-key-flow-alias",
+  "mode": "both",
+  "yaml": "x: &a foo\nname: probe\non: {? *a : 1}\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "Explicit `?` key with a space before the colon (`{? *a : 1}`) — no-regression: both sides accept, INVALID/event_config_not_mapping.",
+  "known_divergence": false
+ },
+ {
+  "id": "F14-flow-alias-key-in-seq-item-map",
+  "mode": "both",
+  "yaml": "x: &a foo\nname: probe\non: {push: [{*a: 1}]}\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "Flow alias key in a flow mapping inside a flow sequence value — pre-fix Oracle event_config_not_mapping vs TS yaml_parse_error.",
+  "known_divergence": false
+ },
+ {
+  "id": "F15-seq-anchor-flow-alias-key",
+  "mode": "both",
+  "yaml": "x: &a [1, 2]\nname: probe\non: {*a: 1}\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "Sequence anchor as a flow alias key — already agreed pre-fix (both yaml_parse_error: unhashable key on the Oracle side).",
+  "known_divergence": false
+ },
+ {
+  "id": "G1-block-alias-no-space",
+  "mode": "both",
+  "yaml": "x: &a foo\nname: probe\non:\n  *a: 1\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "Block alias key with no space before the colon (`*a: 1`) — same root as D2 (adjacency, not flow style); pre-fix Oracle event_config_not_mapping vs TS yaml_parse_error.",
+  "known_divergence": false
+ },
+ {
+  "id": "G2-flow-alias-space",
+  "mode": "both",
+  "yaml": "x: &a foo\nname: probe\non: {*a : 1}\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "No-regression: a space before the colon (`{*a : 1}`) parses on both sides.",
+  "known_divergence": false
+ },
+ {
+  "id": "G3-explicit-no-space",
+  "mode": "both",
+  "yaml": "x: &a foo\nname: probe\non: {? *a: 1}\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "Explicit `?` does not save an adjacent-colon alias key (`{? *a: 1}`) — pre-fix Oracle event_config_not_mapping vs TS yaml_parse_error.",
+  "known_divergence": false
+ },
+ {
+  "id": "G4-anchored-alias-flow-key",
+  "mode": "both",
+  "yaml": "x: &a foo\nname: probe\non: {&k *a: 1}\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "Anchored alias as a flow key (`{&k *a: 1}`) — already agreed pre-fix (both yaml_parse_error: alias must not specify properties).",
+  "known_divergence": false
+ },
+ {
+  "id": "G5-explicit-anchored-space",
+  "mode": "both",
+  "yaml": "x: &a foo\nname: probe\non: {? &k *a : 1}\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "Explicit anchored alias with a space (`{? &k *a : 1}`) — already agreed pre-fix (both yaml_parse_error).",
+  "known_divergence": false
+ },
+ {
+  "id": "G6-flow-alias-key-map-value",
+  "mode": "both",
+  "yaml": "x: &a foo\nname: probe\non: {*a: {b: 1}}\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "Flow alias key with a mapping value (`{*a: {b: 1}}`) — pre-fix the Oracle returned UNKNOWN while TS returned INVALID/yaml_parse_error.",
+  "known_divergence": false
+ },
+ {
+  "id": "G7-flow-alias-key-space-map-value",
+  "mode": "both",
+  "yaml": "x: &a foo\nname: probe\non: {*a : {b: 1}}\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "No-regression: space before the colon with a mapping value (`{*a : {b: 1}}`) — both sides accept.",
+  "known_divergence": false
+ },
+ {
+  "id": "G8-two-flow-alias-keys",
+  "mode": "both",
+  "yaml": "x: &a foo\ny: &b bar\nname: probe\non: {*a: 1, *b: 2}\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "Two flow alias keys (`{*a: 1, *b: 2}`) — pre-fix Oracle event_config_not_mapping vs TS yaml_parse_error.",
+  "known_divergence": false
+ },
+ {
+  "id": "G9-tagged-alias-flow-key",
+  "mode": "both",
+  "yaml": "x: &a foo\nname: probe\non: {!!str *a: 1}\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "Tagged alias as a flow key (`{!!str *a: 1}`) — already agreed pre-fix (both yaml_parse_error).",
+  "known_divergence": false
+ },
+ {
+  "id": "H1-block-explicit-no-space",
+  "mode": "both",
+  "yaml": "x: &a foo\nname: probe\non:\n  ? *a: 1\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "Block explicit key with no space (`? *a: 1`) — already agreed pre-fix (both yaml_parse_error).",
+  "known_divergence": false
+ },
+ {
+  "id": "H2-block-glued-qmark",
+  "mode": "both",
+  "yaml": "x: &a foo\nname: probe\non:\n  ?*a: 1\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "No-regression: `?` glued to the alias in block style (`?*a: 1`) is a plain scalar \"?*a\" to the TypeScript reader.",
+  "known_divergence": false
+ },
+ {
+  "id": "H3-flow-glued-qmark",
+  "mode": "both",
+  "yaml": "x: &a foo\nname: probe\non: {?*a: 1}\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "No-regression: `?` glued to the alias in flow style (`{?*a: 1}`) is a plain scalar \"?*a\" to the TypeScript reader.",
+  "known_divergence": false
+ },
+ {
+  "id": "H4-flow-alias-colon-glued",
+  "mode": "both",
+  "yaml": "x: &a foo\nname: probe\non: {*a:b}\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "Alias key with the colon glued to a bare value (`{*a:b}`) — pre-fix Oracle event_config_not_mapping vs TS yaml_parse_error.",
+  "known_divergence": false
+ },
+ {
+  "id": "H5-block-alias-colon-glued",
+  "mode": "both",
+  "yaml": "x: &a foo\nname: probe\non:\n  *a:b\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "Block alias key with a glued colon and no value (`*a:b`) — already agreed pre-fix (both yaml_parse_error).",
+  "known_divergence": false
+ },
+ {
+  "id": "H6-flow-alias-tab-before-colon",
+  "mode": "both",
+  "yaml": "x: &a foo\nname: probe\non: {*a\t: 1}\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "KNOWN DIVERGENCE (residual, out of scope): tab before the colon (`{*a\\t: 1}`) — TS accepts it as separation, PyYAML scanner rejects the tab after an alias in flow context.",
+  "known_divergence": false
+ },
+ {
+  "id": "H8-map-anchor-flow-alias-key",
+  "mode": "both",
+  "yaml": "x: &a {b: c}\nname: probe\non: {*a: 1}\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "Mapping anchor as a flow alias key — already agreed pre-fix (both yaml_parse_error: unhashable key on the Oracle side).",
+  "known_divergence": false
+ },
+ {
+  "id": "N2-alias-flow-seq-value",
+  "mode": "both",
+  "yaml": "x: &a foo\nname: probe\non: {push: [*a]}\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "No-regression: alias as a flow sequence value (`{push: [*a]}`) is not a key.",
+  "known_divergence": false
+ },
+ {
+  "id": "N3-alias-flow-map-value",
+  "mode": "both",
+  "yaml": "x: &a {branches: [main]}\nname: probe\non: {push: *a}\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "No-regression (VALID control): alias as a flow mapping value (`{push: *a}` with a mapping anchor).",
+  "known_divergence": false
+ },
+ {
+  "id": "N4-alias-block-map-value",
+  "mode": "both",
+  "yaml": "x: &a {branches: [main]}\nname: probe\non:\n  push: *a\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "No-regression: alias as a block mapping value.",
+  "known_divergence": false
+ },
+ {
+  "id": "N5-block-alias-key-map-anchor",
+  "mode": "both",
+  "yaml": "x: &a {b: c}\nname: probe\non:\n  *a : 1\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "KNOWN DIVERGENCE (residual, out of scope): block alias key with a mapping anchor — TS stringifies the collection key (event_config_not_mapping), PyYAML rejects the unhashable dict key (yaml_parse_error).",
+  "known_divergence": false
+ },
+ {
+  "id": "N7-quoted-star-key",
+  "mode": "both",
+  "yaml": "name: probe\non: {\"*a\": 1}\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "No-regression: quoted \"*a\" is a scalar key, not an alias.",
+  "known_divergence": false
+ },
+ {
+  "id": "N8-alias-block-value-empty-map",
+  "mode": "both",
+  "yaml": "x: &a {}\nname: probe\non:\n  push: *a\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "No-regression: alias as a block value (empty mapping anchor).",
+  "known_divergence": false
+ },
+ {
+  "id": "N9-alias-flow-seq-value-in-filter",
+  "mode": "both",
+  "yaml": "x: &a foo\nname: probe\non: {push: {branches: [*a]}}\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "No-regression: alias as a flow sequence value inside a filter mapping.",
+  "known_divergence": false
+ }
+]

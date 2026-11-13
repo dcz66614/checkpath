@@ -1,0 +1,26 @@
+p2-str-flow              trigger:DIFF(TS VALID/ / O INVALID/missing_on_key) jobs:MATCH(TS [0 jobs] / O [0 jobs])  # RESIDUAL: nospace !!str, flow-map lone doc
+p2-str-block             trigger:DIFF(TS VALID/ / O INVALID/yaml_parse_error) jobs:DIFF(TS [1 jobs] / O [0 jobs])  # RESIDUAL: nospace !!str, block-map lone doc
+p2-int-flow              trigger:DIFF(TS VALID/ / O INVALID/missing_on_key) jobs:MATCH(TS [0 jobs] / O [0 jobs])  # nospace !!int, flow-map lone doc
+p2-bool-block            trigger:DIFF(TS VALID/ / O INVALID/yaml_parse_error) jobs:DIFF(TS [1 jobs] / O [0 jobs])  # nospace !!bool, block-map lone doc
+p2-foo-flow              trigger:DIFF(TS VALID/ / O INVALID/missing_on_key) jobs:MATCH(TS [0 jobs] / O [0 jobs])  # nospace !foo, flow-map lone doc
+p2-foo-block             trigger:DIFF(TS VALID/ / O INVALID/yaml_parse_error) jobs:DIFF(TS [1 jobs] / O [0 jobs])  # nospace !foo, block-map lone doc
+p2-str-scalar            trigger:MATCH(TS INVALID/workflow_root_not_mapping / O INVALID/workflow_root_not_mapping) jobs:MATCH(TS [0 jobs] / O [0 jobs])  # nospace !!str, scalar lone-doc value
+p2-str-scalar-wf         trigger:MATCH(TS INVALID/yaml_parse_error / O INVALID/yaml_parse_error) jobs:MATCH(TS [0 jobs] / O [0 jobs])  # nospace !!str, scalar value + workflow pairs
+p2-str-seq               trigger:MATCH(TS INVALID/workflow_root_not_mapping / O INVALID/workflow_root_not_mapping) jobs:MATCH(TS [0 jobs] / O [0 jobs])  # nospace !!str, flow-seq lone-doc value
+p2-str-null              trigger:MATCH(TS INVALID/workflow_root_not_mapping / O INVALID/workflow_root_not_mapping) jobs:MATCH(TS [0 jobs] / O [0 jobs])  # nospace !!str, null lone-doc value
+p2-str-nobrace           trigger:DIFF(TS INVALID/yaml_parse_error / O INVALID/missing_on_key) jobs:MATCH(TS [0 jobs] / O [0 jobs])  # nospace !!str, no space before brace either
+p2-nested                trigger:MATCH(TS VALID/ / O VALID/) jobs:MATCH(TS [1 jobs] / O [1 jobs])  # nospace !!str, nested pair
+p2-root-second           trigger:DIFF(TS INVALID/yaml_parse_error / O VALID/) jobs:DIFF(TS [0 jobs] / O [1 jobs])  # nospace !!str, root 2nd pair
+p2-flow-map              trigger:DIFF(TS INVALID/yaml_parse_error / O VALID/) jobs:DIFF(TS [0 jobs] / O [1 jobs])  # nospace !!str inside a flow map
+p2-value-pos             trigger:MATCH(TS INVALID/yaml_parse_error / O INVALID/yaml_parse_error) jobs:MATCH(TS [0 jobs] / O [0 jobs])  # nospace anchor-colon in a value slot
+p2-on-value              trigger:MATCH(TS INVALID/yaml_parse_error / O INVALID/yaml_parse_error) jobs:MATCH(TS [0 jobs] / O [0 jobs])  # nospace anchor-colon on the on: value
+p2-str-flow-spaced       trigger:MATCH(TS VALID/ / O VALID/) jobs:MATCH(TS [0 jobs] / O [0 jobs])  # CONTROL: spaced !!str flow — already MATCH
+p2-str-block-spaced      trigger:MATCH(TS VALID/ / O VALID/) jobs:MATCH(TS [1 jobs] / O [1 jobs])  # CONTROL: spaced !!str block — already MATCH
+p2-quoted                trigger:MATCH(TS VALID/ / O VALID/) jobs:MATCH(TS [1 jobs] / O [1 jobs])  # CONTROL: pattern inside a double-quoted scalar — must NOT be mirrored
+p2-squoted               trigger:MATCH(TS VALID/ / O VALID/) jobs:MATCH(TS [1 jobs] / O [1 jobs])  # CONTROL: pattern inside a single-quoted scalar — must NOT be mirrored
+p2-comment               trigger:MATCH(TS VALID/ / O VALID/) jobs:MATCH(TS [1 jobs] / O [1 jobs])  # CONTROL: pattern inside a comment — must NOT be mirrored
+p2-plain-mid             trigger:MATCH(TS VALID/ / O VALID/) jobs:MATCH(TS [1 jobs] / O [1 jobs])  # CONTROL: pattern mid plain scalar — must NOT be mirrored
+p2-plain-key             trigger:MATCH(TS VALID/ / O VALID/) jobs:MATCH(TS [1 jobs] / O [1 jobs])  # nospace !!str as a plain-scalar key fragment?
+
+map2-p0-16 [p2]: 32/46 MATCH
+DIFFs: p2-str-flow [trigger], p2-str-block [trigger], p2-str-block [jobs], p2-int-flow [trigger], p2-bool-block [trigger], p2-bool-block [jobs], p2-foo-flow [trigger], p2-foo-block [trigger], p2-foo-block [jobs], p2-str-nobrace [trigger], p2-root-second [trigger], p2-root-second [jobs], p2-flow-map [trigger], p2-flow-map [jobs]

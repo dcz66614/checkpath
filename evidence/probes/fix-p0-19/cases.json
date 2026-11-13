@@ -1,0 +1,177 @@
+[
+ {
+  "id": "a-alias-after-absorbed",
+  "yaml": "&w:2 a: 1\nm: {a: 1, *w:2}\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "a-alias-after-plain",
+  "yaml": "&w a: 1\nm: {a: 1, *w}\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "a-alias-first",
+  "yaml": "&w a: 1\nm: {*w, a: 1}\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "a-alias-twice",
+  "yaml": "&w a: 1\nm: {*w, *w}\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "a-nested-flow",
+  "yaml": "&w:2 a: 1\nm: {x: {a: 1, *w:2}}\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "a-absorbed-first",
+  "yaml": "&w:2 a: 1\nm: {*w:2, a: 1}\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "a-triple-colon",
+  "yaml": "&w:2:3 a: 1\nm: {a: 1, *w:2:3}\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "a-trailing-comment",
+  "yaml": "&w:2 a: 1\nm: {a: 1, *w:2} # c\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "b-valued-first",
+  "yaml": "&w a: 1\nm: {*w: 1, a: 1}\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "b-valued-twice",
+  "yaml": "&w a: 1\nm: {*w: 1, *w: 2}\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "b-block-valued",
+  "yaml": "&w a: 1\nm:\n  a: 1\n  *w: 1\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "b-plain-dup",
+  "yaml": "m: {a: 1, a: 2}\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "b-alias-alone",
+  "yaml": "&w a: 1\nm: {*w}\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "b-diff-scalar",
+  "yaml": "&w a: 1\nm: {b: 2, *w}\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "b-alias-value",
+  "yaml": "&w a: 1\nb: *w\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "b-block-null-after",
+  "yaml": "&w a: 1\nm:\n  a: 1\n  *w\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "b-block-null-absorbed",
+  "yaml": "&w:2 a: 1\nm:\n  a: 1\n  *w:2\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "c-int-anchor",
+  "yaml": "x: &w 1\nm: {1: y, *w}\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "c-int-vs-quoted",
+  "yaml": "x: &w 1\nm: {'1': y, *w}\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "c-bool-anchor",
+  "yaml": "x: &w True\nm: {true: y, *w}\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "c-bool-vs-int",
+  "yaml": "x: &w True\nm: {1: y, *w}\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "c-null-anchor",
+  "yaml": "x: &w ~\nm: {null: y, *w}\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "c-quoted-anchor",
+  "yaml": "x: &w 'a'\nm: {a: y, *w}\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "c-tagged-anchor",
+  "yaml": "x: &w !!str 1\nm: {1: y, *w}\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "c-nan-anchor",
+  "yaml": "x: &w .nan\nm: {.nan: y, *w}\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "c-alias-twice-spread",
+  "yaml": "&w a: 1\nm: {*w, b: 2, *w}\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "c-flow-in-seq",
+  "yaml": "&w a: 1\nm: [{a: 1, *w}]\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "c-on-alias-dup",
+  "yaml": "x: &w push\non: {*w, push: {}}\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "c-anchor-in-flow",
+  "yaml": "m: {&w a: 1, *w}\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "c-deep-nested",
+  "yaml": "&w a: 1\nm: {x: {y: {a: 1, *w}}}\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "c-two-anchors-same",
+  "yaml": "x: &a foo\ny: &b foo\nm: {*a, *b}\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "c-jobs-alias-dup",
+  "yaml": "x: &w check\non: push\njobs: {check: {runs-on: ubuntu-latest, steps: [{run: echo hi}]}, *w}\n",
+  "mode": "both"
+ },
+ {
+  "id": "c-forward-ref",
+  "yaml": "m: {*w, a: 1}\n&w a: 1\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "c-to-collection",
+  "yaml": "x: &a {b: c}\nm: {a: 1, *a}\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "c-chained-alias",
+  "yaml": "x: &a foo\ny: &b *a\nm: {foo: 1, *b}\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ }
+]

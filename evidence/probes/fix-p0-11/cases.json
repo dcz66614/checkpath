@@ -1,0 +1,870 @@
+[
+ {
+  "id": "r6-extra",
+  "mode": "both",
+  "note": "R6 core: standalone comment line indent 0 after complete pair",
+  "known_divergence": false,
+  "yaml": "m: {a: 1\n# note\n , b: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r6-on",
+  "mode": "both",
+  "note": "R6 core: on: slot, complete pair then comment indent 0",
+  "known_divergence": false,
+  "yaml": "name: probe\non: {push: {types: [opened]}\n# note\n , pull_request}\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r6-on-unsupported",
+  "mode": "both",
+  "note": "R6 core: on: slot, unsupported second event (Oracle UNKNOWN)",
+  "known_divergence": false,
+  "yaml": "name: probe\non: {push: {types: [opened]}\n# note\n , pull}\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r6-close",
+  "mode": "both",
+  "note": "R6 core: comment indent 0 before closing brace only",
+  "known_divergence": false,
+  "yaml": "m: {a: 1, b: 2\n# note\n}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r6-nestedblock",
+  "mode": "both",
+  "note": "R6 core: flow map nested in block mapping (indent 2), comment 0, comma 3",
+  "known_divergence": false,
+  "yaml": "x:\n  m: {a: 1\n# note\n   , b: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "ind-top-c1",
+  "mode": "both",
+  "note": "comment indent 1, top level: accept",
+  "known_divergence": false,
+  "yaml": "m: {a: 1\n # note\n , b: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "ind-top-c2",
+  "mode": "both",
+  "note": "comment indent 2, top level: accept",
+  "known_divergence": false,
+  "yaml": "m: {a: 1\n  # note\n , b: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "ind-nest-c1",
+  "mode": "both",
+  "note": "comment indent 1, nested block 2: accept",
+  "known_divergence": false,
+  "yaml": "x:\n  m: {a: 1\n # note\n   , b: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "ind-nest-c2",
+  "mode": "both",
+  "note": "comment indent 2, nested block 2: accept",
+  "known_divergence": false,
+  "yaml": "x:\n  m: {a: 1\n  # note\n   , b: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "ind-nest-c3",
+  "mode": "both",
+  "note": "comment indent 3, nested block 2: accept",
+  "known_divergence": false,
+  "yaml": "x:\n  m: {a: 1\n   # note\n   , b: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "ind-env-c0",
+  "mode": "both",
+  "note": "comment indent 0, jobs env: block 4: reject",
+  "known_divergence": false,
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    env: {A: 1\n# note\n     , B: 2}\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "ind-env-c1",
+  "mode": "both",
+  "note": "comment indent 1, jobs env: block 4: accept",
+  "known_divergence": false,
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    env: {A: 1\n # note\n     , B: 2}\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "ind-env-c3",
+  "mode": "both",
+  "note": "comment indent 3, jobs env: block 4: accept",
+  "known_divergence": false,
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    env: {A: 1\n   # note\n     , B: 2}\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "ind-env-c4",
+  "mode": "both",
+  "note": "comment indent 4, jobs env: block 4: accept",
+  "known_divergence": false,
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    env: {A: 1\n    # note\n     , B: 2}\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "ind-env-c5",
+  "mode": "both",
+  "note": "comment indent 5, jobs env: block 4: accept",
+  "known_divergence": false,
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    env: {A: 1\n     # note\n     , B: 2}\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "ind-with-c0",
+  "mode": "both",
+  "note": "comment indent 0, deep with: block 10: reject",
+  "known_divergence": false,
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    steps:\n      - uses: a/b@v1\n        with:\n          m: {a: 1\n# note\n           , b: 2}\n"
+ },
+ {
+  "id": "ind-with-c1",
+  "mode": "both",
+  "note": "comment indent 1, deep with: block 10: accept",
+  "known_divergence": false,
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    steps:\n      - uses: a/b@v1\n        with:\n          m: {a: 1\n # note\n           , b: 2}\n"
+ },
+ {
+  "id": "ind-with-c9",
+  "mode": "both",
+  "note": "comment indent 9, deep with: block 10: accept",
+  "known_divergence": false,
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    steps:\n      - uses: a/b@v1\n        with:\n          m: {a: 1\n         # note\n           , b: 2}\n"
+ },
+ {
+  "id": "ind-with-c10",
+  "mode": "both",
+  "note": "comment indent 10, deep with: block 10: accept",
+  "known_divergence": false,
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    steps:\n      - uses: a/b@v1\n        with:\n          m: {a: 1\n          # note\n           , b: 2}\n"
+ },
+ {
+  "id": "ind-with-c11",
+  "mode": "both",
+  "note": "comment indent 11, deep with: block 10: accept",
+  "known_divergence": false,
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    steps:\n      - uses: a/b@v1\n        with:\n          m: {a: 1\n           # note\n           , b: 2}\n"
+ },
+ {
+  "id": "ind-seq-c0",
+  "mode": "both",
+  "note": "comment indent 0, block-sequence item dash 6: reject",
+  "known_divergence": false,
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    steps:\n      - {a: 1\n# note\n       , b: 2}\n"
+ },
+ {
+  "id": "ind-seq-c1",
+  "mode": "both",
+  "note": "comment indent 1, block-sequence item dash 6: accept",
+  "known_divergence": false,
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    steps:\n      - {a: 1\n # note\n       , b: 2}\n"
+ },
+ {
+  "id": "ind-seq-c5",
+  "mode": "both",
+  "note": "comment indent 5, block-sequence item dash 6: accept",
+  "known_divergence": false,
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    steps:\n      - {a: 1\n     # note\n       , b: 2}\n"
+ },
+ {
+  "id": "ind-seq-c6",
+  "mode": "both",
+  "note": "comment indent 6, block-sequence item dash 6: accept",
+  "known_divergence": false,
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    steps:\n      - {a: 1\n      # note\n       , b: 2}\n"
+ },
+ {
+  "id": "ind-seq-c7",
+  "mode": "both",
+  "note": "comment indent 7, block-sequence item dash 6: accept",
+  "known_divergence": false,
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    steps:\n      - {a: 1\n       # note\n       , b: 2}\n"
+ },
+ {
+  "id": "ind-root-c0",
+  "mode": "both",
+  "note": "comment indent 0, document-root flow map: reject (whole doc is the flow map)",
+  "known_divergence": false,
+  "yaml": "{a: 1\n# note\n, b: 2}\n"
+ },
+ {
+  "id": "ind-root-c1",
+  "mode": "both",
+  "note": "comment indent 1, document-root flow map: accept",
+  "known_divergence": false,
+  "yaml": "{a: 1\n # note\n, b: 2}\n"
+ },
+ {
+  "id": "prev-comma",
+  "mode": "both",
+  "note": "after trailing comma: accept",
+  "known_divergence": false,
+  "yaml": "m: {a: 1,\n# note\n b: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "prev-barekey",
+  "mode": "both",
+  "note": "after bare key: accept",
+  "known_divergence": false,
+  "yaml": "m: {a\n# note\n , b: 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "prev-flowstart",
+  "mode": "both",
+  "note": "right after flow start: accept",
+  "known_divergence": false,
+  "yaml": "m: {\n# note\n a: 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "prev-colon",
+  "mode": "both",
+  "note": "after ':' with value on next line: accept",
+  "known_divergence": false,
+  "yaml": "m: {a:\n# note\n 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "prev-nested-open",
+  "mode": "both",
+  "note": "after nested flow start: accept",
+  "known_divergence": false,
+  "yaml": "m: {n: {\n# note\n a: 1}}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "prev-nested-closed",
+  "mode": "both",
+  "note": "after nested flow closed: reject",
+  "known_divergence": false,
+  "yaml": "m: {n: {a: 1}\n# note\n , b: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "prev-seq-closed",
+  "mode": "both",
+  "note": "after flow sequence closed: reject",
+  "known_divergence": false,
+  "yaml": "m: {n: [1]\n# note\n , b: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "prev-quoted",
+  "mode": "both",
+  "note": "after double-quoted value: reject",
+  "known_divergence": false,
+  "yaml": "m: {a: \"x\"\n# note\n , b: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "prev-sq-quoted",
+  "mode": "both",
+  "note": "after single-quoted value: reject",
+  "known_divergence": false,
+  "yaml": "m: {a: 'x'\n# note\n , b: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "prev-ml-quoted",
+  "mode": "both",
+  "note": "after multi-line quoted value: reject",
+  "known_divergence": false,
+  "yaml": "m: {a: \"x\n y\"\n# note\n , b: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "prev-plain",
+  "mode": "both",
+  "note": "after plain scalar value: reject",
+  "known_divergence": false,
+  "yaml": "m: {a: foo\n# note\n , b: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "prev-anchor",
+  "mode": "both",
+  "note": "after anchored value: reject",
+  "known_divergence": false,
+  "yaml": "m: {a: &x 1\n# note\n , b: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "prev-explicit",
+  "mode": "both",
+  "note": "after explicit-key pair: reject",
+  "known_divergence": false,
+  "yaml": "m: {? a: 1\n# note\n , b: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "prev-explicit-bare",
+  "mode": "both",
+  "note": "after explicit bare key, ':' at indent 0: both reject (R5)",
+  "known_divergence": false,
+  "yaml": "m: {? a\n# note\n: 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "prev-two-comments",
+  "mode": "both",
+  "note": "two comment lines after pair: reject",
+  "known_divergence": false,
+  "yaml": "m: {a: 1\n# c1\n# c2\n , b: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "prev-two-after-comma",
+  "mode": "both",
+  "note": "two comment lines after comma: accept",
+  "known_divergence": false,
+  "yaml": "m: {a: 1,\n# c1\n# c2\n b: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "prev-close-nested-ownline",
+  "mode": "both",
+  "note": "inner close on own line, then comment: reject (close + comment)",
+  "known_divergence": false,
+  "yaml": "m: {n: {a: 1\n}\n# note\n , b: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "prev-blank-between",
+  "mode": "both",
+  "note": "blank line before comment: accept",
+  "known_divergence": false,
+  "yaml": "m: {a: 1\n\n# note\n , b: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "prev-blank-between-comments",
+  "mode": "both",
+  "note": "comment, blank, comment after pair: reject (first comment)",
+  "known_divergence": false,
+  "yaml": "m: {a: 1\n# c1\n\n# c2\n , b: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "prev-plain-cont",
+  "mode": "both",
+  "note": "after multi-line plain scalar value: reject",
+  "known_divergence": false,
+  "yaml": "m: {a: foo\n bar\n# note\n , b: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "prev-anchor-line",
+  "mode": "both",
+  "note": "after anchor with value pending: accept",
+  "known_divergence": false,
+  "yaml": "m: {a: &x\n# note\n 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "prev-close-two-pairs",
+  "mode": "both",
+  "note": "comment before close-only, after second pair: reject",
+  "known_divergence": false,
+  "yaml": "m: {a: 1,\n b: 2\n# note\n}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "prev-comment-then-close-comma",
+  "mode": "both",
+  "note": "comment after pair, comma at indent 0 next line: both reject",
+  "known_divergence": false,
+  "yaml": "m: {a: 1\n# note\n, b: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "prev-int-value-next",
+  "mode": "both",
+  "note": "after ':' (second pair, value next line): accept",
+  "known_divergence": false,
+  "yaml": "m: {a: 1, b:\n# note\n 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "prev-seq",
+  "mode": "both",
+  "note": "inside flow sequence (comma indent 1): accept",
+  "known_divergence": false,
+  "yaml": "m: [a\n# note\n , b]\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "prev-seq-in-map",
+  "mode": "both",
+  "note": "after flow sequence closed inside a flow map: reject",
+  "known_divergence": false,
+  "yaml": "m: {a: [1, 2]\n# note\n , b: 3}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "prev-on-barekey",
+  "mode": "both",
+  "note": "on: slot, comment after bare key: accept (UNKNOWN pull on both sides)",
+  "known_divergence": false,
+  "yaml": "name: probe\non: {push\n# note\n , pull}\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "prev-on-c1",
+  "mode": "both",
+  "note": "on: slot, comment indent 1: accept",
+  "known_divergence": false,
+  "yaml": "name: probe\non: {push: {types: [opened]}\n # note\n , pull_request}\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "prev-nextline",
+  "mode": "both",
+  "note": "flow on the line after a bare key, comment indent 0: reject",
+  "known_divergence": false,
+  "yaml": "m:\n  {a: 1\n# note\n , b: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "prev-nextline-c1",
+  "mode": "both",
+  "note": "flow on the line after a bare key, comment indent 1: accept",
+  "known_divergence": false,
+  "yaml": "m:\n  {a: 1\n # note\n , b: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "prev-trail-space1",
+  "mode": "both",
+  "note": "trailing space after the pair does NOT save the comment: reject",
+  "known_divergence": false,
+  "yaml": "m: {a: 1 \n# note\n , b: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "prev-trail-space2",
+  "mode": "both",
+  "note": "two trailing spaces after the pair: reject",
+  "known_divergence": false,
+  "yaml": "m: {a: 1  \n# note\n , b: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "prev-crlf",
+  "mode": "both",
+  "note": "CRLF line endings: reject (same as LF)",
+  "known_divergence": false,
+  "yaml": "m: {a: 1\r\n# note\r\n , b: 2}\r\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "prev-two-pairs-comma-first",
+  "mode": "both",
+  "note": "comment after second pair, comma at indent 0 next line: both reject",
+  "known_divergence": false,
+  "yaml": "m: {a: 1, b: 2\n# note\n, c: 3}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "prev-after-close-doc",
+  "mode": "both",
+  "note": "comment at document level after the flow closed: accept",
+  "known_divergence": false,
+  "yaml": "m: {a: 1, b: 2}\n# note\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "prev-before-key",
+  "mode": "both",
+  "note": "comment line before the flow map: accept",
+  "known_divergence": false,
+  "yaml": "# top\nm: {a: 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "prev-inline-space",
+  "mode": "both",
+  "note": "inline comment with space after comma: accept",
+  "known_divergence": false,
+  "yaml": "m: {a: 1, # c\n b: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "prev-inline-after-value",
+  "mode": "both",
+  "note": "inline comment after value with space: accept",
+  "known_divergence": false,
+  "yaml": "m: {a: 1 # c\n , b: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "prev-block-mapping",
+  "mode": "both",
+  "note": "comment inside a BLOCK mapping (not flow): accept",
+  "known_divergence": false,
+  "yaml": "m:\n  a: 1\n# note\n  b: 2\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "close-outer-eq2",
+  "mode": "both",
+  "note": "outer close == block indent 2: accept",
+  "known_divergence": false,
+  "yaml": "x:\n  m: {a: 1\n  }\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "close-outer-lt2",
+  "mode": "both",
+  "note": "outer close 0 < block indent 2: reject",
+  "known_divergence": false,
+  "yaml": "x:\n  m: {a: 1\n}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "close-outer-gt2",
+  "mode": "both",
+  "note": "outer close 3 > block indent 2: accept",
+  "known_divergence": false,
+  "yaml": "x:\n  m: {a: 1\n   }\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "close-outer-seq-lt2",
+  "mode": "both",
+  "note": "outer flow-seq close 0 < block indent 2: reject",
+  "known_divergence": false,
+  "yaml": "x:\n  m: [a\n]\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "close-outer-seq-eq2",
+  "mode": "both",
+  "note": "outer flow-seq close == block indent 2: accept",
+  "known_divergence": false,
+  "yaml": "x:\n  m: [a\n  ]\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "close-inner-eq2",
+  "mode": "both",
+  "note": "inner close == block indent 2: reject",
+  "known_divergence": false,
+  "yaml": "x:\n  m: {n: {a: 1\n  }\n   , b: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "close-inner-gt2",
+  "mode": "both",
+  "note": "inner close 3 > block indent 2: accept",
+  "known_divergence": false,
+  "yaml": "x:\n  m: {n: {a: 1\n   }\n   , b: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "close-inner-lt2",
+  "mode": "both",
+  "note": "inner close 0 < block indent 2: reject",
+  "known_divergence": false,
+  "yaml": "x:\n  m: {n: {a: 1\n}\n   , b: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "close-inner-c0-comma1",
+  "mode": "both",
+  "note": "inner close 0, comma indent 1: reject",
+  "known_divergence": false,
+  "yaml": "m: {n: {a: 1\n}\n , b: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "close-inner-c1-comma1",
+  "mode": "both",
+  "note": "inner close 1, comma indent 1: accept",
+  "known_divergence": false,
+  "yaml": "m: {n: {a: 1\n }\n , b: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "close-inner-seq-c0",
+  "mode": "both",
+  "note": "inner flow-seq close 0: reject",
+  "known_divergence": false,
+  "yaml": "m: {n: [1\n]\n , b: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "close-inner-seq-c1",
+  "mode": "both",
+  "note": "inner flow-seq close 1: accept",
+  "known_divergence": false,
+  "yaml": "m: {n: [1\n ]\n , b: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "close-inner-sameline",
+  "mode": "both",
+  "note": "inner close 0, outer content on same line: both reject (comma check)",
+  "known_divergence": false,
+  "yaml": "m: {n: {a: 1\n}, b: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "close-inner-sameline-i1",
+  "mode": "both",
+  "note": "inner close 1, outer content on same line: accept",
+  "known_divergence": false,
+  "yaml": "m: {n: {a: 1\n }, b: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "close-then-comment",
+  "mode": "both",
+  "note": "comment after nested flow closed on its own line: reject",
+  "known_divergence": false,
+  "yaml": "m: {n: {a: 1}\n# note\n , b: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "close-then-comment-c1",
+  "mode": "both",
+  "note": "comment indent 1 after nested flow closed: accept",
+  "known_divergence": false,
+  "yaml": "m: {n: {a: 1}\n # note\n , b: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "inl-map-key",
+  "mode": "both",
+  "note": "comment right after comma, then key: reject",
+  "known_divergence": false,
+  "yaml": "m: {a: 1,#c\n b: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "inl-map-close",
+  "mode": "both",
+  "note": "comment right after comma, then close: reject",
+  "known_divergence": false,
+  "yaml": "m: {a: 1,#c\n}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "inl-seq-close",
+  "mode": "both",
+  "note": "flow sequence, comment right after comma, then close: reject",
+  "known_divergence": false,
+  "yaml": "m: [a,#c\n]\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "inl-nested",
+  "mode": "both",
+  "note": "nested flow map, comment right after comma: reject",
+  "known_divergence": false,
+  "yaml": "m: {n: {a: 1,#c\n b: 2}}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "inl-map-space",
+  "mode": "both",
+  "note": "comment after comma with a space: accept",
+  "known_divergence": false,
+  "yaml": "m: {a: 1, #c\n b: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "inl-seq-comma-nospace",
+  "mode": "both",
+  "note": "flow sequence, comment after comma then comma line: both reject",
+  "known_divergence": false,
+  "yaml": "m: [a,#c\n , b]\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "inl-seq-comma-space",
+  "mode": "both",
+  "note": "flow sequence, comment after comma with space then comma line: both reject",
+  "known_divergence": false,
+  "yaml": "m: [a, #c\n , b]\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "inl-quoted-hash",
+  "mode": "both",
+  "note": "'#' inside a quoted scalar: accept",
+  "known_divergence": false,
+  "yaml": "m: {a: \"x,#y\", b: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "inl-plain-hash",
+  "mode": "both",
+  "note": "'#' inside a plain scalar: accept",
+  "known_divergence": false,
+  "yaml": "m: {a: 1, b: x#y}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "inl-key-comma-nospace",
+  "mode": "both",
+  "note": "RESIDUAL S1 over-reach: 'b:#c 2' is a null-value multi-line plain scalar key (the '#' is inside the key, not a comment) — TS rejects, PyYAML accepts",
+  "known_divergence": false,
+  "yaml": "m: {a: 1, b:#c\n 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "inl-open-nospace",
+  "mode": "both",
+  "note": "comment right after '{': reject",
+  "known_divergence": false,
+  "yaml": "m: {#c\n a: 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "inl-open-space",
+  "mode": "both",
+  "note": "comment after '{' with a space: accept",
+  "known_divergence": false,
+  "yaml": "m: { #c\n a: 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "inl-seq-open-nospace",
+  "mode": "both",
+  "note": "comment right after '[': reject",
+  "known_divergence": false,
+  "yaml": "m: [#c\n a]\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "inl-seq-open-space",
+  "mode": "both",
+  "note": "comment after '[' with a space: accept",
+  "known_divergence": false,
+  "yaml": "m: [ #c\n a]\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "inl-close-nospace",
+  "mode": "both",
+  "note": "comment right after '}': reject",
+  "known_divergence": false,
+  "yaml": "m: {a: 1}#c\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "inl-close-space",
+  "mode": "both",
+  "note": "comment after '}' with a space: accept",
+  "known_divergence": false,
+  "yaml": "m: {a: 1} #c\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "inl-seq-close-nospace",
+  "mode": "both",
+  "note": "comment right after ']': reject",
+  "known_divergence": false,
+  "yaml": "m: [a]#c\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "inl-nested-open-nospace",
+  "mode": "both",
+  "note": "comment right after nested '{': reject",
+  "known_divergence": false,
+  "yaml": "m: {n: {#c\n a: 1}}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "inl-comma-nospace-eol",
+  "mode": "both",
+  "note": "comment after comma, close on same line: both reject",
+  "known_divergence": false,
+  "yaml": "m: {a: 1,#c}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "inl-open-nospace-sameline",
+  "mode": "both",
+  "note": "comment after '{', key on same line: both reject",
+  "known_divergence": false,
+  "yaml": "m: {#c a: 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "inl-quoted-key-comma",
+  "mode": "both",
+  "note": "comment after comma following a quoted key: reject",
+  "known_divergence": false,
+  "yaml": "m: {\"a\",#c\n b: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "inl-flow-key-comma",
+  "mode": "both",
+  "note": "comment after second comma: reject",
+  "known_divergence": false,
+  "yaml": "m: {a: 1, b: 2,#c\n c: 3}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "inl-seq-item-comma",
+  "mode": "both",
+  "note": "flow sequence, comment after second comma: reject",
+  "known_divergence": false,
+  "yaml": "m: [a, b,#c\n c]\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "inl-block-comma-hash",
+  "mode": "both",
+  "note": "block level: ',' inside a plain scalar, '#' after it: accept",
+  "known_divergence": false,
+  "yaml": "a: b,#c\nc: 2\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "inl-block-brace-hash",
+  "mode": "both",
+  "note": "block level: '{' inside a plain scalar, '#' after it: accept",
+  "known_divergence": false,
+  "yaml": "a: b{#c\nc: 2\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "inl-anchor-space",
+  "mode": "both",
+  "note": "comment after anchor with a space: accept",
+  "known_divergence": false,
+  "yaml": "m: {a: &x #c\n 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "inl-tag-space",
+  "mode": "both",
+  "note": "comment after tag with a space: accept",
+  "known_divergence": false,
+  "yaml": "m: {a: !!str #c\n 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "res-anchor-nospace",
+  "mode": "both",
+  "note": "RESIDUAL reverse: TS accepts, PyYAML rejects '&x#' (anchor scan) — needs a TS-side rule",
+  "known_divergence": false,
+  "yaml": "m: {a: &x#c\n 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "res-tag-nospace",
+  "mode": "both",
+  "note": "RESIDUAL reverse: TS accepts, PyYAML rejects '!!str#' (tag scan) — needs a TS-side rule",
+  "known_divergence": false,
+  "yaml": "m: {a: !!str#c\n 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "res-null-ml-plain",
+  "mode": "both",
+  "note": "RESIDUAL S1 over-reach: null-value multi-line plain key — TS rejects, PyYAML accepts",
+  "known_divergence": false,
+  "yaml": "m: {a\n b}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "res-null-ml-quoted",
+  "mode": "both",
+  "note": "RESIDUAL S1 over-reach: null-value multi-line quoted key — TS rejects, PyYAML accepts",
+  "known_divergence": false,
+  "yaml": "m: {\"a\n b\"}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "res-null-ml-hash",
+  "mode": "both",
+  "note": "RESIDUAL S1 over-reach: '#c' is inside the plain scalar key 'a:#c 1' — TS rejects, PyYAML accepts",
+  "known_divergence": false,
+  "yaml": "m: {a:#c\n 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "res-null-ml-plain-comma",
+  "mode": "both",
+  "note": "RESIDUAL S1 over-reach: null-value multi-line plain key with following pair",
+  "known_divergence": false,
+  "yaml": "m: {a\n b, c: 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "res-null-ml-plain-nested",
+  "mode": "both",
+  "note": "RESIDUAL S1 over-reach: null-value multi-line plain key, nested",
+  "known_divergence": false,
+  "yaml": "m: {n: {a\n b}}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "root-flow-c0",
+  "mode": "both",
+  "note": "root flow map, comment right after '{' at indent 0: accept",
+  "known_divergence": false,
+  "yaml": "{\n# note\n name: probe,\n on: push,\n jobs: {test: {runs-on: ubuntu-latest, steps: [{run: echo hi}]}}\n}\n"
+ },
+ {
+  "id": "root-flow-c1",
+  "mode": "both",
+  "note": "root flow map, comment right after '{' at indent 1: accept",
+  "known_divergence": false,
+  "yaml": "{\n # note\n name: probe,\n on: push,\n jobs: {test: {runs-on: ubuntu-latest, steps: [{run: echo hi}]}}\n}\n"
+ },
+ {
+  "id": "root-pair-nocomma-c0",
+  "mode": "both",
+  "note": "root flow map, comment after complete pair, comma next line indent 0: reject",
+  "known_divergence": false,
+  "yaml": "{name: probe\n# note\n, on: push,\n jobs: {test: {runs-on: ubuntu-latest, steps: [{run: echo hi}]}}\n}\n"
+ },
+ {
+  "id": "root-pair-nocomma-c1",
+  "mode": "both",
+  "note": "root flow map, comment indent 1 after complete pair: accept",
+  "known_divergence": false,
+  "yaml": "{name: probe\n # note\n, on: push,\n jobs: {test: {runs-on: ubuntu-latest, steps: [{run: echo hi}]}}\n}\n"
+ },
+ {
+  "id": "dash6-flowstart-c0",
+  "mode": "both",
+  "note": "block-sequence item flow map, comment right after '{' at indent 0: accept",
+  "known_divergence": false,
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - {\n# note\n a: 1}\n"
+ },
+ {
+  "id": "dash6-flowstart-c1",
+  "mode": "both",
+  "note": "block-sequence item flow map, comment right after '{' at indent 1: accept",
+  "known_divergence": false,
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - {\n # note\n a: 1}\n"
+ },
+ {
+  "id": "tab-comment",
+  "mode": "both",
+  "note": "tab-indented comment line: both reject (tab)",
+  "known_divergence": false,
+  "yaml": "m: {a: 1\n\t# note\n , b: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "tab-trail",
+  "mode": "both",
+  "note": "trailing tab after the pair: both reject (tab)",
+  "known_divergence": false,
+  "yaml": "m: {a: 1\t\n# note\n , b: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ }
+]

@@ -1,0 +1,1028 @@
+[
+ {
+  "id": "a-scalar",
+  "mode": "both",
+  "note": "P0 core: lone &x: 1",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "a-null",
+  "mode": "both",
+  "note": "P0 core: lone &x:",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "a-null-space",
+  "mode": "both",
+  "note": "null value, trailing space",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "a-str",
+  "mode": "both",
+  "note": "string value",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "a-dq",
+  "mode": "both",
+  "note": "double-quoted value",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "a-sq",
+  "mode": "both",
+  "note": "single-quoted value",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "a-bool",
+  "mode": "both",
+  "note": "bool value",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "a-float",
+  "mode": "both",
+  "note": "float value",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "a-flowseq",
+  "mode": "both",
+  "note": "flow-seq value",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "a-flowmap",
+  "mode": "both",
+  "note": "flow-map value (no on)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "a-flowmap-on",
+  "mode": "both",
+  "note": "flow-map value WITH on",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "a-blockseq",
+  "mode": "both",
+  "note": "block-seq value",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "a-blockmap",
+  "mode": "both",
+  "note": "block-map value (no on)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "a-blockmap-on",
+  "mode": "both",
+  "note": "block-map value WITH on",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "a-anchor-val",
+  "mode": "both",
+  "note": "anchored scalar value",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "a-alias-val",
+  "mode": "both",
+  "note": "alias value (undefined anchor)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "a-tag-val",
+  "mode": "both",
+  "note": "tagged scalar value",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "a-handle-val",
+  "mode": "both",
+  "note": "handle-tagged value",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "a-comment",
+  "mode": "both",
+  "note": "trailing comment",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "a-docmark",
+  "mode": "both",
+  "note": "explicit doc start",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "a-docend",
+  "mode": "both",
+  "note": "explicit doc end",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "a-tag-key",
+  "mode": "both",
+  "note": "tag on the key",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "a-handle-key",
+  "mode": "both",
+  "note": "handle tag on the key",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "a-double-anchor",
+  "mode": "both",
+  "note": "two anchors on key",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "a-unglued",
+  "mode": "both",
+  "note": "space between anchor and colon",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "a-two-scalar",
+  "mode": "both",
+  "note": "two pairs, scalar values",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "a-two-null",
+  "mode": "both",
+  "note": "two pairs, null values",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "a-null-scalar",
+  "mode": "both",
+  "note": "first null, second scalar",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "a-scalar-null",
+  "mode": "both",
+  "note": "first scalar, second null",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "a-list-on",
+  "mode": "both",
+  "note": "flow-seq value containing on",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "b-quoted",
+  "mode": "both",
+  "note": "CONTROL: quoted empty key, must stay MATCH",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "b-squoted",
+  "mode": "both",
+  "note": "CONTROL: single-quoted empty key",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "b-explicit",
+  "mode": "both",
+  "note": "CONTROL: explicit empty key",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "b-bare-colon",
+  "mode": "both",
+  "note": "CONTROL: bare colon",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "b-c3-reject",
+  "mode": "both",
+  "note": "CONTROL: C3 domain, both reject",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "b-c3-exempt",
+  "mode": "both",
+  "note": "CONTROL: first-pair null exempt, both VALID",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "b-plain",
+  "mode": "both",
+  "note": "CONTROL: lone scalar",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "b-string",
+  "mode": "both",
+  "note": "CONTROL: lone string",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "b-seq",
+  "mode": "both",
+  "note": "CONTROL: lone sequence",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "b-anchored-scalar",
+  "mode": "both",
+  "note": "CONTROL: lone anchored scalar",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "b-tagged",
+  "mode": "both",
+  "note": "CONTROL: lone tagged scalar",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "b-flow-exempt",
+  "mode": "both",
+  "note": "CONTROL: flow exempt",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "b-nested-single",
+  "mode": "both",
+  "note": "CONTROL: nested single pair",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "b-quoted-wf",
+  "mode": "both",
+  "note": "CONTROL: quoted empty key + full workflow",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "b-two-doc",
+  "mode": "both",
+  "note": "CONTROL: two documents",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "x-nested-block",
+  "mode": "both",
+  "note": "RESIDUAL: block-map value, single anchored-empty-key pair (TS yaml_parse_error)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "x-nested-flow",
+  "mode": "both",
+  "note": "control: flow-map value, single anchored-empty-key pair",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "x-nested-mixed",
+  "mode": "both",
+  "note": "control: block-map value, anchored key + real key",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "x-nested-flow-mixed",
+  "mode": "both",
+  "note": "control: flow-map value, anchored key + real key",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "x-tag-noval",
+  "mode": "both",
+  "note": "tag value with no node (null)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "x-anchor-seq",
+  "mode": "both",
+  "note": "RESIDUAL: anchored seq value (TS yaml_parse_error, second anchor)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "x-anchor-null",
+  "mode": "both",
+  "note": "RESIDUAL: anchored null value (TS yaml_parse_error, second anchor)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "x-tag-seq",
+  "mode": "both",
+  "note": "tagged seq value",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "x-tag-map",
+  "mode": "both",
+  "note": "control: tagged flow-map value",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "x-tag-map-on",
+  "mode": "both",
+  "note": "RESIDUAL: tagged flow-map value WITH on (TS VALID)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "x-seq-anchor-item",
+  "mode": "both",
+  "note": "block-seq value, anchored-empty-key item",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "x-docmark-tagkey",
+  "mode": "both",
+  "note": "RESIDUAL: docmark + tag on key (TS yaml_parse_error)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ }
+]

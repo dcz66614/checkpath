@@ -1,0 +1,30 @@
+p1-root-first            trigger:MATCH(TS VALID/ / O VALID/) jobs:MATCH(TS [1 jobs] / O [1 jobs])  # RESIDUAL: tag+unglued, root 1st pair
+p1-root-first-str        trigger:MATCH(TS VALID/ / O VALID/) jobs:MATCH(TS [1 jobs] / O [1 jobs])  # RESIDUAL: !!str tag+unglued, root 1st pair
+p1-root-first-foo        trigger:MATCH(TS VALID/ / O VALID/) jobs:MATCH(TS [1 jobs] / O [1 jobs])  # RESIDUAL: !foo tag+unglued, root 1st pair
+p1-root-second           trigger:MATCH(TS VALID/ / O VALID/) jobs:MATCH(TS [1 jobs] / O [1 jobs])  # RESIDUAL: tag+unglued, root 2nd pair
+p1-root-third            trigger:MATCH(TS VALID/ / O VALID/) jobs:MATCH(TS [1 jobs] / O [1 jobs])  # tag+unglued, root 3rd pair
+p1-root-second-null      trigger:MATCH(TS VALID/ / O VALID/) jobs:MATCH(TS [1 jobs] / O [1 jobs])  # tag+unglued, root 2nd pair, null value
+p1-nested-second         trigger:MATCH(TS VALID/ / O VALID/) jobs:MATCH(TS [1 jobs] / O [1 jobs])  # RESIDUAL: tag+unglued, nested 2nd pair
+p1-nested-third          trigger:MATCH(TS VALID/ / O VALID/) jobs:MATCH(TS [1 jobs] / O [1 jobs])  # tag+unglued, nested 3rd pair
+p1-nested-first          trigger:MATCH(TS INVALID/yaml_parse_error / O INVALID/yaml_parse_error) jobs:MATCH(TS [0 jobs] / O [0 jobs])  # CONTROL: tag+unglued, nested 1st pair of value map — (d) must still reject
+p1-nested-first-2pair    trigger:MATCH(TS INVALID/yaml_parse_error / O INVALID/yaml_parse_error) jobs:MATCH(TS [0 jobs] / O [0 jobs])  # tag+unglued, nested 1st pair + 2nd pair — (d) must still reject
+p1-nested-first-3pair    trigger:MATCH(TS INVALID/yaml_parse_error / O INVALID/yaml_parse_error) jobs:MATCH(TS [0 jobs] / O [0 jobs])  # tag+unglued, nested 1st pair + 2 more pairs
+p1-deep-second           trigger:MATCH(TS VALID/ / O VALID/) jobs:MATCH(TS [1 jobs] / O [1 jobs])  # tag+unglued, deeply nested 2nd pair
+p1-flow-first            trigger:MATCH(TS VALID/ / O VALID/) jobs:MATCH(TS [1 jobs] / O [1 jobs])  # tag+unglued in flow map, 1st pair
+p1-flow-second           trigger:MATCH(TS VALID/ / O VALID/) jobs:MATCH(TS [1 jobs] / O [1 jobs])  # tag+unglued in flow map, 2nd pair
+p1-seq-item              trigger:MATCH(TS VALID/ / O VALID/) jobs:MATCH(TS [1 jobs] / O [1 jobs])  # tag+unglued in block-seq item map
+p1-lone                  trigger:MATCH(TS INVALID/missing_on_key / O INVALID/missing_on_key) jobs:MATCH(TS [0 jobs] / O [0 jobs])  # tag+unglued, lone doc (single pair)
+p1-docmark-first         trigger:MATCH(TS VALID/ / O VALID/) jobs:MATCH(TS [1 jobs] / O [1 jobs])  # tag+unglued, root 1st pair after docmark
+p1-glued-ctrl            trigger:MATCH(TS INVALID/yaml_parse_error / O INVALID/yaml_parse_error) jobs:MATCH(TS [0 jobs] / O [0 jobs])  # CONTROL: tag+GLUED — (c)/C3 must still reject
+p1-glued-root-first      trigger:MATCH(TS INVALID/yaml_parse_error / O INVALID/yaml_parse_error) jobs:MATCH(TS [0 jobs] / O [0 jobs])  # CONTROL: tag+glued, root 1st pair (single pair map, (c) fires)
+p1-untagged-unglued-ctrl trigger:MATCH(TS INVALID/yaml_parse_error / O INVALID/yaml_parse_error) jobs:MATCH(TS [0 jobs] / O [0 jobs])  # CONTROL: untagged unglued — (d) must still reject
+p1-untagged-glued-ctrl   trigger:MATCH(TS INVALID/yaml_parse_error / O INVALID/yaml_parse_error) jobs:MATCH(TS [0 jobs] / O [0 jobs])  # CONTROL: untagged glued — C3 must still reject
+p1-first-null-exempt     trigger:MATCH(TS VALID/ / O VALID/) jobs:MATCH(TS [1 jobs] / O [1 jobs])  # CONTROL R13 4.2: first-pair null glued — both VALID
+p1-first-null-unglued    trigger:MATCH(TS INVALID/yaml_parse_error / O INVALID/yaml_parse_error) jobs:MATCH(TS [0 jobs] / O [0 jobs])  # CONTROL R13 4.2: first-pair null unglued — both reject
+p1-tag-no-anchor         trigger:DIFF(TS INVALID/yaml_parse_error / O VALID/) jobs:DIFF(TS [0 jobs] / O [1 jobs])  # CONTROL: tag, no anchor — no rule fires
+p1-explicit-key          trigger:MATCH(TS INVALID/yaml_parse_error / O INVALID/yaml_parse_error) jobs:MATCH(TS [0 jobs] / O [0 jobs])  # tag+unglued, explicit key
+p1-verbatim-tag          trigger:MATCH(TS VALID/ / O VALID/) jobs:MATCH(TS [1 jobs] / O [1 jobs])  # verbatim tag+unglued, root 1st pair
+p1-handle-tag-second     trigger:MATCH(TS VALID/ / O VALID/) jobs:MATCH(TS [1 jobs] / O [1 jobs])  # handle tag+unglued, root 2nd pair
+
+map2-p0-16 [p1]: 52/54 MATCH
+DIFFs: p1-tag-no-anchor [trigger], p1-tag-no-anchor [jobs]

@@ -1,0 +1,1166 @@
+[
+ {
+  "id": "E3",
+  "mode": "trigger",
+  "note": "R4 A: dup scalar keys",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "N3",
+  "mode": "trigger",
+  "note": "R4 A: dup scalar keys",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "N4",
+  "mode": "trigger",
+  "note": "R4 A: dup scalar keys",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "N5",
+  "mode": "trigger",
+  "note": "R4 A: dup scalar keys",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "N6",
+  "mode": "trigger",
+  "note": "R4 A: dup scalar keys",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "N7",
+  "mode": "trigger",
+  "note": "R4 A: dup scalar keys",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "M1",
+  "mode": "trigger",
+  "note": "R4 A: dup scalar keys",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "M3",
+  "mode": "trigger",
+  "note": "R4 A: dup scalar keys",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "M4",
+  "mode": "trigger",
+  "note": "R4 A: dup scalar keys",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "M5",
+  "mode": "trigger",
+  "note": "R4 A: dup scalar keys",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "M6",
+  "mode": "trigger",
+  "note": "R4 A: dup scalar keys",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "K3",
+  "mode": "trigger",
+  "note": "R4 A: dup scalar keys",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "K4",
+  "mode": "trigger",
+  "note": "R4 A: dup scalar keys",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "P2c",
+  "mode": "trigger",
+  "note": "R4 B: bool rendering",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "N2",
+  "mode": "trigger",
+  "note": "R4 B: single 01",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "N8",
+  "mode": "trigger",
+  "note": "R4 B",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "M2",
+  "mode": "trigger",
+  "note": "R4 B",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "M7",
+  "mode": "trigger",
+  "note": "R4 B: nan collapse",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "M8",
+  "mode": "trigger",
+  "note": "R4 B",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "K1",
+  "mode": "trigger",
+  "note": "R4 B",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "K2",
+  "mode": "trigger",
+  "note": "R4 B",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "K6",
+  "mode": "trigger",
+  "note": "R4 B",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "R2",
+  "mode": "trigger",
+  "note": "R2 verdict input",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "P2a",
+  "mode": "trigger",
+  "note": "",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "P2b",
+  "mode": "trigger",
+  "note": "",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "P4a",
+  "mode": "trigger",
+  "note": "",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "P4b",
+  "mode": "trigger",
+  "note": "",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "P4c",
+  "mode": "trigger",
+  "note": "",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "P3a",
+  "mode": "trigger",
+  "note": "",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "P3b",
+  "mode": "trigger",
+  "note": "",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "P5",
+  "mode": "trigger",
+  "note": "",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "P6",
+  "mode": "trigger",
+  "note": "",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "Q1",
+  "mode": "trigger",
+  "note": "",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "Q2",
+  "mode": "trigger",
+  "note": "",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "Q3",
+  "mode": "trigger",
+  "note": "",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "Q4",
+  "mode": "trigger",
+  "note": "R4 Q4: two bare keys (=X-empty-2)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "Q5",
+  "mode": "trigger",
+  "note": "",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "E1",
+  "mode": "trigger",
+  "note": "R4 E1: bare+null (=X-empty-3)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "E2",
+  "mode": "trigger",
+  "note": "R4 E2: bare+tilde (=X-empty-4)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "E4",
+  "mode": "trigger",
+  "note": "",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "E5",
+  "mode": "jobs",
+  "note": "R4 E5: jobs-layer True:/true:",
+  "known_divergence": false,
+  "checks": {
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "E6",
+  "mode": "trigger",
+  "note": "",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "E7",
+  "mode": "trigger",
+  "note": "",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "E8",
+  "mode": "trigger",
+  "note": "",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "N1",
+  "mode": "trigger",
+  "note": "",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "K5",
+  "mode": "trigger",
+  "note": "",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "R1",
+  "mode": "trigger",
+  "note": "FIX-P0-03 R1-R10 (file resolved by runner from s01..s10)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "R2",
+  "mode": "trigger",
+  "note": "FIX-P0-03 R1-R10 (file resolved by runner from s01..s10)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "R3",
+  "mode": "trigger",
+  "note": "FIX-P0-03 R1-R10 (file resolved by runner from s01..s10)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "R4",
+  "mode": "trigger",
+  "note": "FIX-P0-03 R1-R10 (file resolved by runner from s01..s10)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "R5",
+  "mode": "trigger",
+  "note": "FIX-P0-03 R1-R10 (file resolved by runner from s01..s10)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "R6",
+  "mode": "trigger",
+  "note": "FIX-P0-03 R1-R10 (file resolved by runner from s01..s10)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "R7",
+  "mode": "trigger",
+  "note": "FIX-P0-03 R1-R10 (file resolved by runner from s01..s10)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "R8",
+  "mode": "trigger",
+  "note": "FIX-P0-03 R1-R10 (file resolved by runner from s01..s10)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "R9",
+  "mode": "trigger",
+  "note": "FIX-P0-03 R1-R10 (file resolved by runner from s01..s10)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "R10",
+  "mode": "trigger",
+  "note": "FIX-P0-03 R1-R10 (file resolved by runner from s01..s10)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "X-empty-1",
+  "mode": "trigger",
+  "note": "R5 2.1: single bare event key",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "X-filter-empty",
+  "mode": "trigger",
+  "note": "R5 2.2: bare filter key (flow)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "J20",
+  "mode": "jobs",
+  "note": "R5 2.3: scalar job def",
+  "known_divergence": false,
+  "checks": {
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "X-empty-5",
+  "mode": "trigger",
+  "note": "R5 2.4: two quoted empty keys",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "X-empty-6",
+  "mode": "trigger",
+  "note": "R5 2.4: quoted empty + null",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "X-huge-1",
+  "mode": "trigger",
+  "note": "R5 2.4",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "X-huge-2",
+  "mode": "trigger",
+  "note": "R5 2.4: 400-digit int key",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "X-nan-dup",
+  "mode": "trigger",
+  "note": "R5 2.4",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "X-inf-dup",
+  "mode": "trigger",
+  "note": "R5 2.4",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "X-neg0-dup",
+  "mode": "trigger",
+  "note": "R5 2.4: dup of N7 YAML",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "B1-bare-jobs",
+  "mode": "both",
+  "note": "boundary: bare key in jobs: mapping",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "B2-bare-top",
+  "mode": "both",
+  "note": "boundary: bare key at top level",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "B3-bare-nested-job",
+  "mode": "both",
+  "note": "boundary: bare key inside job def",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "B4-bare-steps-item",
+  "mode": "both",
+  "note": "boundary: bare key in steps item mapping",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "B5-bare-branches-value",
+  "mode": "both",
+  "note": "boundary: bare key as filter-value mapping key",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "B6-bare-flow-jobs",
+  "mode": "both",
+  "note": "boundary: bare key in flow jobs map",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "B7-bare-seq-item",
+  "mode": "both",
+  "note": "boundary: bare key as sole seq-item mapping key",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "B8-explicit-q-empty",
+  "mode": "both",
+  "note": "boundary: explicit ? with empty key",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "B9-bare-trailing-spaces",
+  "mode": "both",
+  "note": "boundary: bare key + trailing spaces",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "B10-bare-on-list-item",
+  "mode": "both",
+  "note": "boundary: bare key in on-list item mapping",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "B11-bare-flow-on",
+  "mode": "both",
+  "note": "boundary: bare key in flow on-map",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "D1-alias-block-key",
+  "mode": "both",
+  "note": "no-regression: alias key resolves to scalar on both sides",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "D3-merge-key",
+  "mode": "both",
+  "note": "no-regression: merge key is a scalar key",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "D4-anchor-key",
+  "mode": "both",
+  "note": "no-regression: anchored scalar key",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "E1-q-push-2line",
+  "mode": "both",
+  "note": "no-regression: standard two-line explicit key is a scalar key",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "E2-q-push-branches",
+  "mode": "both",
+  "note": "no-regression: two-line explicit key with mapping value",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "D2-alias-flow-key",
+  "mode": "both",
+  "note": "KNOWN DIVERGENCE (residual, out of scope): TS yaml lib rejects flow alias key, PyYAML accepts it",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ }
+]

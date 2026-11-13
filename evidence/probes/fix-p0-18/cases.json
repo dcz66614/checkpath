@@ -1,0 +1,202 @@
+[
+ {
+  "id": "a-value-block",
+  "yaml": "&w:2 a: 1\nb: *w:2\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "a-value-flow",
+  "yaml": "&w:2 a: 1\nm: {b: *w:2}\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "a-value-nested",
+  "yaml": "&w:2 a: 1\nm:\n  n: *w:2\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "a-on-value",
+  "yaml": "&w:2 a: 1\non: *w:2\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "a-jobs-value",
+  "yaml": "&w:2 a: 1\non: push\njobs: *w:2\n",
+  "mode": "trigger"
+ },
+ {
+  "id": "a-second-pair",
+  "yaml": "&w:2 a: 1\nb: 1\nc: *w:2\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "a-flow-value-2nd",
+  "yaml": "&w:2 a: 1\nm: {b: 1, c: *w:2}\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "a-nested-flow-value",
+  "yaml": "&w:2 a: 1\nm: {a: {b: *w:2}}\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "a-twice",
+  "yaml": "&w:2 a: 1\nb: *w:2\nc: *w:2\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "b-block-seq-item",
+  "yaml": "&w:2 a: 1\nm:\n  - *w:2\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "b-flow-seq-item",
+  "yaml": "&w:2 a: 1\nm: [*w:2]\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "b-after-tag",
+  "yaml": "&w:2 a: 1\nm: !zap *w:2\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "b-after-anchor",
+  "yaml": "&w:2 a: 1\nm: &s *w:2\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "b-explicit-key",
+  "yaml": "&w:2 a: 1\n? *w:2\n: 1\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "b-flow-key",
+  "yaml": "&w:2 a: 1\nm: {*w:2: 1}\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "b-anchor-def-only",
+  "yaml": "&w:2 a: 1\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "b-plain-alias",
+  "yaml": "&w a: 1\nb: *w\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "c-flow-key-null",
+  "yaml": "&w:2 a: 1\nm: {*w:2}\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "c-flow-key-null-2nd",
+  "yaml": "&w:2 a: 1\nm: {a: 1, *w:2}\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "c-flow-seq-2nd",
+  "yaml": "&w:2 a: 1\nm: [*w:2, *w:2]\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "c-flow-seq-2nd-scalar",
+  "yaml": "&w:2 a: 1\nm: [1, *w:2]\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "c-block-seq-2nd",
+  "yaml": "&w:2 a: 1\nm:\n  - 1\n  - *w:2\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "c-multi-colon",
+  "yaml": "&w:2:3 a: 1\nb: *w:2:3\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "c-multi-colon-seq",
+  "yaml": "&w:2:3 a: 1\nm:\n  - *w:2:3\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "c-tag-before-alias-block",
+  "yaml": "&w:2 a: 1\nb: !zap *w:2\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "c-anchor-before-alias-block",
+  "yaml": "&w:2 a: 1\nb: &s *w:2\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "c-alias-key-root",
+  "yaml": "&w:2 a: 1\n*w:2: 1\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "c-docmark",
+  "yaml": "&w:2 a: 1\n---\nb: *w:2\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "c-seq-defined-then-value",
+  "yaml": "m:\n  - &w:2 1\nb: *w:2\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "c-flow-defined-then-value",
+  "yaml": "m: {&w:2 a: 1, b: *w:2}\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "c-deep-nested",
+  "yaml": "&w:2 a: 1\nm: {a: {b: {c: *w:2}}}\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "c-comment-after",
+  "yaml": "&w:2 a: 1\nb: *w:2 # comment\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "c-alias-in-steps",
+  "yaml": "&w:2 a: 1\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - *w:2\n",
+  "mode": "both"
+ },
+ {
+  "id": "c-second-pair-absorbed",
+  "yaml": "&w:2 a: 1\n&v:3 d: 2\nb: *v:3\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "c-anchor-on-value-then-alias",
+  "yaml": "x: &w:2 1\ny: *w:2\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "c-nested-map-value",
+  "yaml": "&w:2 a: 1\nm:\n  n:\n    o: *w:2\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "c-flow-map-in-seq",
+  "yaml": "&w:2 a: 1\nm:\n  - {b: *w:2}\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "c-anchor-on-flow-key",
+  "yaml": "m: {&w:2 a: 1}\nb: *w:2\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "c-alias-value-then-anchor-def",
+  "yaml": "b: *w:2\n&w:2 a: 1\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "c-two-aliases-one-line",
+  "yaml": "&w:2 a: 1\nm: {b: *w:2, c: *w:2}\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ }
+]

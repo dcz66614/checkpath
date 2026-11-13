@@ -1,0 +1,471 @@
+[
+ {
+  "id": "N5-block-alias-key-map-anchor",
+  "mode": "both",
+  "yaml": "x: &a {b: c}\nname: probe\non:\n  *a : 1\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "N5 itself: block alias key, mapping anchor",
+  "known_divergence": false
+ },
+ {
+  "id": "N5-block-alias-key-seq-anchor",
+  "mode": "both",
+  "yaml": "x: &a [1, 2]\nname: probe\non:\n  *a : 1\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "block alias key, sequence anchor",
+  "known_divergence": false
+ },
+ {
+  "id": "N5-block-alias-key-scalar-anchor",
+  "mode": "both",
+  "yaml": "x: &a foo\nname: probe\non:\n  *a : 1\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "control: block alias key, scalar anchor (agreed?)",
+  "known_divergence": false
+ },
+ {
+  "id": "N5-block-alias-key-null-anchor",
+  "mode": "both",
+  "yaml": "x: &a ~\nname: probe\non:\n  *a : 1\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "block alias key, null anchor",
+  "known_divergence": false
+ },
+ {
+  "id": "N5-block-alias-key-int-anchor",
+  "mode": "both",
+  "yaml": "x: &a 1\nname: probe\non:\n  *a : 1\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "block alias key, int anchor",
+  "known_divergence": false
+ },
+ {
+  "id": "N5-flow-alias-key-map-anchor",
+  "mode": "both",
+  "yaml": "x: &a {b: c}\nname: probe\non: {*a : 1}\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "flow alias key, mapping anchor",
+  "known_divergence": false
+ },
+ {
+  "id": "N5-flow-alias-key-seq-anchor",
+  "mode": "both",
+  "yaml": "x: &a [1, 2]\nname: probe\non: {*a : 1}\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "flow alias key, sequence anchor",
+  "known_divergence": false
+ },
+ {
+  "id": "N5-filter-alias-key-map-anchor",
+  "mode": "both",
+  "yaml": "x: &a {b: c}\nname: probe\non:\n  push:\n    *a : [main]\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "alias key (map anchor) in filter position",
+  "known_divergence": false
+ },
+ {
+  "id": "N5-explicit-map-key",
+  "mode": "both",
+  "yaml": "name: probe\non:\n  ? {a: b} : 1\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "control: explicit collection key (agreed)",
+  "known_divergence": false
+ },
+ {
+  "id": "N5-explicit-seq-key",
+  "mode": "both",
+  "yaml": "name: probe\non:\n  ? [a, b] : 1\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "control: explicit sequence key (agreed)",
+  "known_divergence": false
+ },
+ {
+  "id": "N5-jobs-alias-key-map-anchor",
+  "mode": "both",
+  "yaml": "x: &a {b: c}\nname: probe\non: push\njobs:\n  *a :\n    runs-on: ubuntu-latest\n",
+  "note": "alias key (map anchor) in jobs position",
+  "known_divergence": false
+ },
+ {
+  "id": "N5-jobs-alias-key-scalar-anchor",
+  "mode": "both",
+  "yaml": "x: &a foo\nname: probe\non: push\njobs:\n  *a :\n    runs-on: ubuntu-latest\n",
+  "note": "control: alias key (scalar anchor) in jobs position",
+  "known_divergence": false
+ },
+ {
+  "id": "N5-block-alias-key-empty-map-anchor",
+  "mode": "both",
+  "yaml": "x: &a {}\nname: probe\non:\n  *a : 1\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "block alias key, empty-mapping anchor",
+  "known_divergence": false
+ },
+ {
+  "id": "N5-block-alias-key-empty-seq-anchor",
+  "mode": "both",
+  "yaml": "x: &a []\nname: probe\non:\n  *a : 1\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "block alias key, empty-seq anchor",
+  "known_divergence": false
+ },
+ {
+  "id": "N5-forward-ref-map-anchor",
+  "mode": "both",
+  "yaml": "name: probe\non:\n  *a : 1\nx: &a {b: c}\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "forward ref to mapping anchor (control)",
+  "known_divergence": false
+ },
+ {
+  "id": "H6-flow-alias-tab-before-colon",
+  "mode": "both",
+  "yaml": "x: &a foo\nname: probe\non: {*a\t: 1}\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "H6 itself: flow alias key, tab before colon",
+  "known_divergence": false
+ },
+ {
+  "id": "H6-block-alias-tab-before-colon",
+  "mode": "both",
+  "yaml": "x: &a foo\nname: probe\non:\n  *a\t: 1\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "block alias key, tab before colon",
+  "known_divergence": false
+ },
+ {
+  "id": "H6-flow-alias-tab-space-before-colon",
+  "mode": "both",
+  "yaml": "x: &a foo\nname: probe\non: {*a\t : 1}\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "flow alias key, tab+space before colon",
+  "known_divergence": false
+ },
+ {
+  "id": "H6-flow-alias-tab-after-colon",
+  "mode": "both",
+  "yaml": "x: &a foo\nname: probe\non: {*a :\t1}\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "flow alias key, tab AFTER colon",
+  "known_divergence": false
+ },
+ {
+  "id": "H6-flow-scalar-key-tab-before-colon",
+  "mode": "both",
+  "yaml": "name: probe\non: {push\t: {}}\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "flow scalar key, tab before colon",
+  "known_divergence": false
+ },
+ {
+  "id": "H6-block-scalar-key-tab-before-colon",
+  "mode": "both",
+  "yaml": "name: probe\non:\n  push\t: {}\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "block scalar key, tab before colon",
+  "known_divergence": false
+ },
+ {
+  "id": "H6-flow-alias-value-tab",
+  "mode": "both",
+  "yaml": "x: &a foo\nname: probe\non: {push: *a\t}\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "flow alias in VALUE position followed by tab",
+  "known_divergence": false
+ },
+ {
+  "id": "H6-quoted-string-tab",
+  "mode": "both",
+  "yaml": "name: probe\non: {push: \"a\tb\"}\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "control: tab inside quoted string value",
+  "known_divergence": false
+ },
+ {
+  "id": "H6-tab-indentation",
+  "mode": "both",
+  "yaml": "name: probe\non:\n\tpush: {}\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "tab indentation at line start",
+  "known_divergence": false
+ },
+ {
+  "id": "H6-explicit-key-alias-tab",
+  "mode": "both",
+  "yaml": "x: &a foo\nname: probe\non: {? *a\t: 1}\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "explicit ? key, alias, tab before colon",
+  "known_divergence": false
+ },
+ {
+  "id": "H6-map-anchor-alias-tab",
+  "mode": "both",
+  "yaml": "x: &a {b: c}\nname: probe\non: {*a\t: 1}\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "N5+H6 combined: map anchor + tab",
+  "known_divergence": false
+ },
+ {
+  "id": "H6-adjacent-colon-alias-key",
+  "mode": "both",
+  "yaml": "x: &a foo\nname: probe\non: {*a: 1}\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "control: adjacent colon (FIX-P0-05, agreed)",
+  "known_divergence": false
+ },
+ {
+  "id": "H6-flow-seq-value-alias-tab",
+  "mode": "both",
+  "yaml": "x: &a foo\nname: probe\non: {push: [*a\t]}\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "flow seq value alias followed by tab",
+  "known_divergence": false
+ },
+ {
+  "id": "H6-flow-alias-double-tab-before-colon",
+  "mode": "both",
+  "yaml": "x: &a foo\nname: probe\non: {*a\t\t: 1}\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "flow alias key, double tab before colon",
+  "known_divergence": false
+ },
+ {
+  "id": "N5-chained-alias-key",
+  "mode": "both",
+  "yaml": "x: &a {b: c}\ny: &b *a\nname: probe\non:\n  *b : 1\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "chained alias key (*b -> *a -> map)",
+  "known_divergence": false
+ },
+ {
+  "id": "N5-matrix-alias-key-map-anchor",
+  "mode": "both",
+  "yaml": "x: &a {b: c}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    strategy:\n      matrix:\n        *a : [1]\n",
+  "note": "alias key (map anchor) nested in matrix",
+  "known_divergence": false
+ },
+ {
+  "id": "N5-map-anchor-with-steps",
+  "mode": "both",
+  "yaml": "x: &a {b: c}\nname: probe\non:\n  *a : 1\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "N5 with steps present (same as N5a + steps)",
+  "known_divergence": false
+ },
+ {
+  "id": "T01-flow-scalar-key-tab-before-colon",
+  "mode": "both",
+  "yaml": "name: probe\non: {push\t: {}}\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "PyYAML REJECT: flow scalar key tab before colon",
+  "known_divergence": false
+ },
+ {
+  "id": "T02-block-scalar-key-tab-before-colon",
+  "mode": "both",
+  "yaml": "name: probe\non:\n  push\t: {}\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "PyYAML REJECT: block scalar key tab before colon",
+  "known_divergence": false
+ },
+ {
+  "id": "T03-flow-tab-after-colon",
+  "mode": "both",
+  "yaml": "name: probe\non: {push:\t{}}\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "PyYAML REJECT: flow tab after colon",
+  "known_divergence": false
+ },
+ {
+  "id": "T04-block-tab-after-colon",
+  "mode": "both",
+  "yaml": "name: probe\non:\n  push:\t{}\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "PyYAML REJECT: block tab after colon",
+  "known_divergence": false
+ },
+ {
+  "id": "T05-flow-tab-after-plain-value",
+  "mode": "both",
+  "yaml": "name: probe\non: {push: foo\t}\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "PyYAML REJECT: flow tab after plain value",
+  "known_divergence": false
+ },
+ {
+  "id": "T07-flow-tab-space-before-colon",
+  "mode": "both",
+  "yaml": "name: probe\non: {push\t : {}}\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "PyYAML REJECT: flow tab+space before colon",
+  "known_divergence": false
+ },
+ {
+  "id": "T08-tab-inside-plain-scalar",
+  "mode": "both",
+  "yaml": "name: a\tb\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "PyYAML REJECT: tab inside plain scalar",
+  "known_divergence": false
+ },
+ {
+  "id": "T09-tab-inside-single-quoted-scalar",
+  "mode": "both",
+  "yaml": "name: 'a\tb'\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "PyYAML ACCEPT: tab inside single-quoted scalar (control)",
+  "known_divergence": false
+ },
+ {
+  "id": "T10-tab-inside-block-scalar",
+  "mode": "both",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: |\n          a\tb\n",
+  "note": "PyYAML ACCEPT: tab inside block scalar content (control)",
+  "known_divergence": false
+ },
+ {
+  "id": "T11-tab-after-explicit-key-marker",
+  "mode": "both",
+  "yaml": "name: probe\non: {? push\t: {}}\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "PyYAML REJECT: tab after ? indicator",
+  "known_divergence": false
+ },
+ {
+  "id": "T12-tab-after-dash",
+  "mode": "both",
+  "yaml": "name: probe\non: [push]\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      -\trun: echo hi\n",
+  "note": "PyYAML REJECT: tab after dash",
+  "known_divergence": false
+ },
+ {
+  "id": "T13-tab-inside-comment",
+  "mode": "both",
+  "yaml": "name: probe # c\tomment\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "PyYAML ACCEPT: tab inside comment (control)",
+  "known_divergence": false
+ },
+ {
+  "id": "T14-trailing-tab",
+  "mode": "both",
+  "yaml": "name: probe\t\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "PyYAML REJECT: trailing tab at end of line",
+  "known_divergence": false
+ },
+ {
+  "id": "T15-tab-between-key-and-value",
+  "mode": "both",
+  "yaml": "name: probe\non:\tpush\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "PyYAML REJECT: tab between key and value",
+  "known_divergence": false
+ },
+ {
+  "id": "T18-flow-tab-after-comma",
+  "mode": "both",
+  "yaml": "name: probe\non: {push: {},\t pull_request: {}}\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "PyYAML REJECT: flow tab after comma",
+  "known_divergence": false
+ },
+ {
+  "id": "T19-flow-tab-after-open-brace",
+  "mode": "both",
+  "yaml": "name: probe\non: {\tpush: {}}\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "PyYAML REJECT: flow tab after open brace",
+  "known_divergence": false
+ },
+ {
+  "id": "T20-block-tab-before-colon-in-jobs",
+  "mode": "both",
+  "yaml": "name: probe\non: push\njobs:\n  test\t:\n    runs-on: ubuntu-latest\n",
+  "note": "PyYAML REJECT: block tab before colon in jobs",
+  "known_divergence": false
+ },
+ {
+  "id": "T21-tab-inside-double-quoted-key",
+  "mode": "both",
+  "yaml": "name: probe\non: {\"pu\tsh\": {}}\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "PyYAML ACCEPT: tab inside double-quoted key (control)",
+  "known_divergence": false
+ },
+ {
+  "id": "T22-tab-inside-flow-plain-scalar-value",
+  "mode": "both",
+  "yaml": "name: probe\non: {push: a\tb}\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "PyYAML REJECT: tab in flow plain scalar value",
+  "known_divergence": false
+ },
+ {
+  "id": "T23-tab-after-anchor",
+  "mode": "both",
+  "yaml": "x: &a\tfoo\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "PyYAML REJECT: tab after anchor",
+  "known_divergence": false
+ },
+ {
+  "id": "T24-tab-after-tag",
+  "mode": "both",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: !!str\tfoo\n",
+  "note": "PyYAML REJECT: tab after tag",
+  "known_divergence": false
+ },
+ {
+  "id": "T25-flow-nested-tab-in-list",
+  "mode": "both",
+  "yaml": "name: probe\non: {push: {branches: [ma\tin]}}\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "PyYAML REJECT: flow nested tab in list",
+  "known_divergence": false
+ },
+ {
+  "id": "B1-tab-at-start-of-block-content-line",
+  "mode": "both",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: |\n          echo a\n\t\t  echo b\n",
+  "note": "PyYAML REJECT: tab at start of block content line",
+  "known_divergence": false
+ },
+ {
+  "id": "B3-block-scalar-first-line-tab-indented",
+  "mode": "both",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: |\n\t\t  echo hi\n",
+  "note": "PyYAML REJECT: block scalar first content line tab-indented",
+  "known_divergence": false
+ },
+ {
+  "id": "B4-tab-in-multiline-plain-scalar",
+  "mode": "both",
+  "yaml": "name: a\n  b\tc\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "PyYAML REJECT: tab in multi-line plain scalar",
+  "known_divergence": false
+ },
+ {
+  "id": "B5-apostrophe-plain-scalar-tab",
+  "mode": "both",
+  "yaml": "name: it's\ton: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "PyYAML REJECT: apostrophe plain scalar then tab",
+  "known_divergence": false
+ },
+ {
+  "id": "B6-tab-before-comment",
+  "mode": "both",
+  "yaml": "name: probe\t# comment\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "PyYAML REJECT: tab before comment",
+  "known_divergence": false
+ },
+ {
+  "id": "Q1-quote-at-plain-scalar-continuation",
+  "mode": "both",
+  "yaml": "name: some long\n  \"quoted\" tail\twith tab\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "APPROXIMATION CHECK: quote at start of plain-scalar continuation line + tab",
+  "known_divergence": false
+ },
+ {
+  "id": "Q2-misindented-block-content-with-tab",
+  "mode": "both",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: |\n        echo a\tb\n",
+  "note": "APPROXIMATION CHECK: block content at key indent (8) with tab — misindented",
+  "known_divergence": false
+ },
+ {
+  "id": "Q3-bare-seq-item-block-scalar-tab",
+  "mode": "both",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - |\n        echo a\tb\n",
+  "note": "bare seq-item block scalar (- |) with tab in content",
+  "known_divergence": false
+ },
+ {
+  "id": "Q4-folded-block-scalar-tab",
+  "mode": "both",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: >\n          folded a\tb\n",
+  "note": "folded block scalar (>) with tab in content",
+  "known_divergence": false
+ },
+ {
+  "id": "Q5-chomping-block-scalar-tab",
+  "mode": "both",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: |-\n          stripped a\tb\n",
+  "note": "chomping block scalar (|-) with tab in content",
+  "known_divergence": false
+ },
+ {
+  "id": "Q6-explicit-indent-block-scalar-tab",
+  "mode": "both",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: |2\n          explicit indent with tab a\tb\n",
+  "note": "explicit-indent block scalar (|2) with tab in content",
+  "known_divergence": false
+ },
+ {
+  "id": "Q7-tab-in-comment-after-block-header",
+  "mode": "both",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: | # comment\twith tab\n          echo hi\n",
+  "note": "tab inside trailing comment after block header",
+  "known_divergence": false
+ },
+ {
+  "id": "Q8-apostrophe-in-run-value-tab",
+  "mode": "both",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo don't\tstop\n",
+  "note": "apostrophe in run value + tab (plain scalar)",
+  "known_divergence": false
+ }
+]

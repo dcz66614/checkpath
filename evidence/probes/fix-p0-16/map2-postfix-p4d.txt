@@ -1,0 +1,24 @@
+p4-flow-notag            trigger:DIFF(TS INVALID/yaml_parse_error / O VALID/) jobs:DIFF(TS [0 jobs] / O [1 jobs])  # nospace anchor-colon, no tag, flow-map value
+p4-flow-seq              trigger:DIFF(TS INVALID/yaml_parse_error / O VALID/) jobs:DIFF(TS [0 jobs] / O [1 jobs])  # nospace anchor-colon, flow-seq value
+p4-flow-second           trigger:DIFF(TS INVALID/yaml_parse_error / O VALID/) jobs:DIFF(TS [0 jobs] / O [1 jobs])  # nospace anchor-colon, flow 2nd pair
+p4-flow-scalar           trigger:MATCH(TS VALID/ / O VALID/) jobs:MATCH(TS [1 jobs] / O [1 jobs])  # CONTROL: nospace anchor-colon, scalar value — both VALID
+p4-flow-spaced           trigger:DIFF(TS INVALID/yaml_parse_error / O VALID/) jobs:DIFF(TS [0 jobs] / O [1 jobs])  # CONTROL: spaced anchor-colon, flow-map value — both VALID
+p4-flow-blockseq         trigger:DIFF(TS INVALID/yaml_parse_error / O VALID/) jobs:DIFF(TS [0 jobs] / O [1 jobs])  # nospace anchor-colon, flow-seq of flow-map
+p4-tag-noanchor-flow     trigger:MATCH(TS VALID/ / O VALID/) jobs:MATCH(TS [1 jobs] / O [1 jobs])  # tag, no anchor, flow map
+p4-tag-noanchor-root     trigger:MATCH(TS VALID/ / O VALID/) jobs:MATCH(TS [1 jobs] / O [1 jobs])  # tag, no anchor, root 1st pair
+p4-tag-noanchor-null     trigger:MATCH(TS INVALID/yaml_parse_error / O INVALID/yaml_parse_error) jobs:MATCH(TS [0 jobs] / O [0 jobs])  # tag, no anchor, null value
+p4-tag-noanchor-quoted   trigger:MATCH(TS VALID/ / O VALID/) jobs:MATCH(TS [1 jobs] / O [1 jobs])  # CONTROL: tag + QUOTED empty key — both VALID
+p4-tag-noanchor-plain    trigger:MATCH(TS VALID/ / O VALID/) jobs:MATCH(TS [1 jobs] / O [1 jobs])  # CONTROL: tag + scalar key — both VALID
+p4-tag-noanchor-second   trigger:MATCH(TS VALID/ / O VALID/) jobs:MATCH(TS [1 jobs] / O [1 jobs])  # tag, no anchor, 2nd pair of pair-value map
+p4-tag-noanchor-seq      trigger:MATCH(TS VALID/ / O VALID/) jobs:MATCH(TS [1 jobs] / O [1 jobs])  # tag, no anchor, block-seq item map
+p4-tag-noanchor-deep     trigger:MATCH(TS INVALID/yaml_parse_error / O INVALID/yaml_parse_error) jobs:MATCH(TS [0 jobs] / O [0 jobs])  # tag, no anchor, deeply nested 1st pair
+p4-tag-noanchor-root2    trigger:MATCH(TS VALID/ / O VALID/) jobs:MATCH(TS [1 jobs] / O [1 jobs])  # tag, no anchor, root 2nd pair
+p4-flow-valpos-map       trigger:MATCH(TS INVALID/yaml_parse_error / O INVALID/yaml_parse_error) jobs:MATCH(TS [0 jobs] / O [0 jobs])  # nospace anchor-colon, flow VALUE pos, map value
+p4-flow-valpos-scalar    trigger:MATCH(TS INVALID/yaml_parse_error / O INVALID/yaml_parse_error) jobs:MATCH(TS [0 jobs] / O [0 jobs])  # CONTROL: nospace anchor-colon, flow VALUE pos, scalar value
+p4-flow-valpos-notag     trigger:MATCH(TS INVALID/yaml_parse_error / O INVALID/yaml_parse_error) jobs:MATCH(TS [0 jobs] / O [0 jobs])  # nospace anchor-colon, flow VALUE pos, no tag, map value
+p4-flow-valpos-seq       trigger:MATCH(TS INVALID/yaml_parse_error / O INVALID/yaml_parse_error) jobs:MATCH(TS [0 jobs] / O [0 jobs])  # nospace anchor-colon, flow VALUE pos, seq value
+p4-tag-anchor-nospace    trigger:MATCH(TS INVALID/yaml_parse_error / O INVALID/yaml_parse_error) jobs:MATCH(TS [0 jobs] / O [0 jobs])  # tag + nospace anchor-colon, flow value
+p4-tag-anchor-nospace-2  trigger:MATCH(TS INVALID/yaml_parse_error / O INVALID/yaml_parse_error) jobs:MATCH(TS [0 jobs] / O [0 jobs])  # tag + nospace anchor-colon, root 2nd pair
+
+map2-p0-16 [p4]: 32/42 MATCH
+DIFFs: p4-flow-notag [trigger], p4-flow-notag [jobs], p4-flow-seq [trigger], p4-flow-seq [jobs], p4-flow-second [trigger], p4-flow-second [jobs], p4-flow-spaced [trigger], p4-flow-spaced [jobs], p4-flow-blockseq [trigger], p4-flow-blockseq [jobs]

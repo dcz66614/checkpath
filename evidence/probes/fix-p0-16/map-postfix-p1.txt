@@ -1,0 +1,135 @@
+== p1-root-first: RESIDUAL: tag+unglued, root 1st pair
+   yaml: '!bar &b : 2\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n'
+   npm : OK  {"": 2, "on": "push", "jobs": {"test": {"runs-on": "ubuntu-latest", "steps": [{"run": "echo hi"}]}}}
+   py  : OK  {'': '2', 'on': 'push', 'jobs': {'test': {'runs-on': 'ubuntu-latest', 'steps': [{'run': 'echo hi'}]}}}
+   toks: StreamStart BlockMappingStart Key Tag(('!', 'bar')) Anchor('b') Value Scalar('2') Key Scalar('on') Value Scalar('push') Key Scalar('jobs') Value BlockMappingStart Key Scalar('test') Value BlockMappingStart Key Scalar('runs-on') Value Scalar('ubuntu-latest') Key Scalar('steps') Value BlockSequenceStart BlockEntry BlockMappingStart Key Scalar('run') Value Scalar('echo hi') BlockEnd BlockEnd BlockEnd BlockEnd BlockEnd StreamEnd
+== p1-root-first-str: RESIDUAL: !!str tag+unglued, root 1st pair
+   yaml: '!!str &b : 2\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n'
+   npm : OK  {"": 2, "on": "push", "jobs": {"test": {"runs-on": "ubuntu-latest", "steps": [{"run": "echo hi"}]}}}
+   py  : OK  {'': '2', 'on': 'push', 'jobs': {'test': {'runs-on': 'ubuntu-latest', 'steps': [{'run': 'echo hi'}]}}}
+   toks: StreamStart BlockMappingStart Key Tag(('!!', 'str')) Anchor('b') Value Scalar('2') Key Scalar('on') Value Scalar('push') Key Scalar('jobs') Value BlockMappingStart Key Scalar('test') Value BlockMappingStart Key Scalar('runs-on') Value Scalar('ubuntu-latest') Key Scalar('steps') Value BlockSequenceStart BlockEntry BlockMappingStart Key Scalar('run') Value Scalar('echo hi') BlockEnd BlockEnd BlockEnd BlockEnd BlockEnd StreamEnd
+== p1-root-first-foo: RESIDUAL: !foo tag+unglued, root 1st pair
+   yaml: '!foo &x : 1\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n'
+   npm : OK  {"": 1, "on": "push", "jobs": {"test": {"runs-on": "ubuntu-latest", "steps": [{"run": "echo hi"}]}}}
+   py  : OK  {'': '1', 'on': 'push', 'jobs': {'test': {'runs-on': 'ubuntu-latest', 'steps': [{'run': 'echo hi'}]}}}
+   toks: StreamStart BlockMappingStart Key Tag(('!', 'foo')) Anchor('x') Value Scalar('1') Key Scalar('on') Value Scalar('push') Key Scalar('jobs') Value BlockMappingStart Key Scalar('test') Value BlockMappingStart Key Scalar('runs-on') Value Scalar('ubuntu-latest') Key Scalar('steps') Value BlockSequenceStart BlockEntry BlockMappingStart Key Scalar('run') Value Scalar('echo hi') BlockEnd BlockEnd BlockEnd BlockEnd BlockEnd StreamEnd
+== p1-root-second: RESIDUAL: tag+unglued, root 2nd pair
+   yaml: 'a: 1\n!bar &b : 2\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n'
+   npm : OK  {"a": 1, "": 2, "on": "push", "jobs": {"test": {"runs-on": "ubuntu-latest", "steps": [{"run": "echo hi"}]}}}
+   py  : OK  {'a': '1', '': '2', 'on': 'push', 'jobs': {'test': {'runs-on': 'ubuntu-latest', 'steps': [{'run': 'echo hi'}]}}}
+   toks: StreamStart BlockMappingStart Key Scalar('a') Value Scalar('1') Key Tag(('!', 'bar')) Anchor('b') Value Scalar('2') Key Scalar('on') Value Scalar('push') Key Scalar('jobs') Value BlockMappingStart Key Scalar('test') Value BlockMappingStart Key Scalar('runs-on') Value Scalar('ubuntu-latest') Key Scalar('steps') Value BlockSequenceStart BlockEntry BlockMappingStart Key Scalar('run') Value Scalar('echo hi') BlockEnd BlockEnd BlockEnd BlockEnd BlockEnd StreamEnd
+== p1-root-third: tag+unglued, root 3rd pair
+   yaml: 'a: 1\nb: 2\n!bar &b : 3\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n'
+   npm : OK  {"a": 1, "b": 2, "": 3, "on": "push", "jobs": {"test": {"runs-on": "ubuntu-latest", "steps": [{"run": "echo hi"}]}}}
+   py  : OK  {'a': '1', 'b': '2', '': '3', 'on': 'push', 'jobs': {'test': {'runs-on': 'ubuntu-latest', 'steps': [{'run': 'echo hi'}]}}}
+   toks: StreamStart BlockMappingStart Key Scalar('a') Value Scalar('1') Key Scalar('b') Value Scalar('2') Key Tag(('!', 'bar')) Anchor('b') Value Scalar('3') Key Scalar('on') Value Scalar('push') Key Scalar('jobs') Value BlockMappingStart Key Scalar('test') Value BlockMappingStart Key Scalar('runs-on') Value Scalar('ubuntu-latest') Key Scalar('steps') Value BlockSequenceStart BlockEntry BlockMappingStart Key Scalar('run') Value Scalar('echo hi') BlockEnd BlockEnd BlockEnd BlockEnd BlockEnd StreamEnd
+== p1-root-second-null: tag+unglued, root 2nd pair, null value
+   yaml: 'a: 1\n!bar &b :\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n'
+   npm : OK  {"a": 1, "": null, "on": "push", "jobs": {"test": {"runs-on": "ubuntu-latest", "steps": [{"run": "echo hi"}]}}}
+   py  : OK  {'a': '1', '': '', 'on': 'push', 'jobs': {'test': {'runs-on': 'ubuntu-latest', 'steps': [{'run': 'echo hi'}]}}}
+   toks: StreamStart BlockMappingStart Key Scalar('a') Value Scalar('1') Key Tag(('!', 'bar')) Anchor('b') Value Key Scalar('on') Value Scalar('push') Key Scalar('jobs') Value BlockMappingStart Key Scalar('test') Value BlockMappingStart Key Scalar('runs-on') Value Scalar('ubuntu-latest') Key Scalar('steps') Value BlockSequenceStart BlockEntry BlockMappingStart Key Scalar('run') Value Scalar('echo hi') BlockEnd BlockEnd BlockEnd BlockEnd BlockEnd StreamEnd
+== p1-nested-second: RESIDUAL: tag+unglued, nested 2nd pair
+   yaml: 'm:\n  a: 1\n  !bar &b : 2\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n'
+   npm : OK  {"m": {"a": 1, "": 2}, "on": "push", "jobs": {"test": {"runs-on": "ubuntu-latest", "steps": [{"run": "echo hi"}]}}}
+   py  : OK  {'m': {'a': '1', '': '2'}, 'on': 'push', 'jobs': {'test': {'runs-on': 'ubuntu-latest', 'steps': [{'run': 'echo hi'}]}}}
+   toks: StreamStart BlockMappingStart Key Scalar('m') Value BlockMappingStart Key Scalar('a') Value Scalar('1') Key Tag(('!', 'bar')) Anchor('b') Value Scalar('2') BlockEnd Key Scalar('on') Value Scalar('push') Key Scalar('jobs') Value BlockMappingStart Key Scalar('test') Value BlockMappingStart Key Scalar('runs-on') Value Scalar('ubuntu-latest') Key Scalar('steps') Value BlockSequenceStart BlockEntry BlockMappingStart Key Scalar('run') Value Scalar('echo hi') BlockEnd BlockEnd BlockEnd BlockEnd BlockEnd StreamEnd
+== p1-nested-third: tag+unglued, nested 3rd pair
+   yaml: 'm:\n  a: 1\n  b: 2\n  !bar &b : 3\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n'
+   npm : OK  {"m": {"a": 1, "b": 2, "": 3}, "on": "push", "jobs": {"test": {"runs-on": "ubuntu-latest", "steps": [{"run": "echo hi"}]}}}
+   py  : OK  {'m': {'a': '1', 'b': '2', '': '3'}, 'on': 'push', 'jobs': {'test': {'runs-on': 'ubuntu-latest', 'steps': [{'run': 'echo hi'}]}}}
+   toks: StreamStart BlockMappingStart Key Scalar('m') Value BlockMappingStart Key Scalar('a') Value Scalar('1') Key Scalar('b') Value Scalar('2') Key Tag(('!', 'bar')) Anchor('b') Value Scalar('3') BlockEnd Key Scalar('on') Value Scalar('push') Key Scalar('jobs') Value BlockMappingStart Key Scalar('test') Value BlockMappingStart Key Scalar('runs-on') Value Scalar('ubuntu-latest') Key Scalar('steps') Value BlockSequenceStart BlockEntry BlockMappingStart Key Scalar('run') Value Scalar('echo hi') BlockEnd BlockEnd BlockEnd BlockEnd BlockEnd StreamEnd
+== p1-nested-first: CONTROL: tag+unglued, nested 1st pair of value map — (d) must still reject
+   yaml: 'm:\n  !bar &b : 2\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n'
+   npm : OK  {"m": {"": 2}, "on": "push", "jobs": {"test": {"runs-on": "ubuntu-latest", "steps": [{"run": "echo hi"}]}}}
+   py  : OK  {'m': {'': '2'}, 'on': 'push', 'jobs': {'test': {'runs-on': 'ubuntu-latest', 'steps': [{'run': 'echo hi'}]}}}
+   toks: StreamStart BlockMappingStart Key Scalar('m') Value BlockMappingStart Key Tag(('!', 'bar')) Anchor('b') Value Scalar('2') BlockEnd Key Scalar('on') Value Scalar('push') Key Scalar('jobs') Value BlockMappingStart Key Scalar('test') Value BlockMappingStart Key Scalar('runs-on') Value Scalar('ubuntu-latest') Key Scalar('steps') Value BlockSequenceStart BlockEntry BlockMappingStart Key Scalar('run') Value Scalar('echo hi') BlockEnd BlockEnd BlockEnd BlockEnd BlockEnd StreamEnd
+== p1-nested-first-2pair: tag+unglued, nested 1st pair + 2nd pair — (d) must still reject
+   yaml: 'm:\n  !bar &b : 2\n  c: 3\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n'
+   npm : OK  {"m": {"": 2, "c": 3}, "on": "push", "jobs": {"test": {"runs-on": "ubuntu-latest", "steps": [{"run": "echo hi"}]}}}
+   py  : OK  {'m': {'': '2', 'c': '3'}, 'on': 'push', 'jobs': {'test': {'runs-on': 'ubuntu-latest', 'steps': [{'run': 'echo hi'}]}}}
+   toks: StreamStart BlockMappingStart Key Scalar('m') Value BlockMappingStart Key Tag(('!', 'bar')) Anchor('b') Value Scalar('2') Key Scalar('c') Value Scalar('3') BlockEnd Key Scalar('on') Value Scalar('push') Key Scalar('jobs') Value BlockMappingStart Key Scalar('test') Value BlockMappingStart Key Scalar('runs-on') Value Scalar('ubuntu-latest') Key Scalar('steps') Value BlockSequenceStart BlockEntry BlockMappingStart Key Scalar('run') Value Scalar('echo hi') BlockEnd BlockEnd BlockEnd BlockEnd BlockEnd StreamEnd
+== p1-nested-first-3pair: tag+unglued, nested 1st pair + 2 more pairs
+   yaml: 'm:\n  !bar &b : 2\n  c: 3\n  d: 4\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n'
+   npm : OK  {"m": {"": 2, "c": 3, "d": 4}, "on": "push", "jobs": {"test": {"runs-on": "ubuntu-latest", "steps": [{"run": "echo hi"}]}}}
+   py  : OK  {'m': {'': '2', 'c': '3', 'd': '4'}, 'on': 'push', 'jobs': {'test': {'runs-on': 'ubuntu-latest', 'steps': [{'run': 'echo hi'}]}}}
+   toks: StreamStart BlockMappingStart Key Scalar('m') Value BlockMappingStart Key Tag(('!', 'bar')) Anchor('b') Value Scalar('2') Key Scalar('c') Value Scalar('3') Key Scalar('d') Value Scalar('4') BlockEnd Key Scalar('on') Value Scalar('push') Key Scalar('jobs') Value BlockMappingStart Key Scalar('test') Value BlockMappingStart Key Scalar('runs-on') Value Scalar('ubuntu-latest') Key Scalar('steps') Value BlockSequenceStart BlockEntry BlockMappingStart Key Scalar('run') Value Scalar('echo hi') BlockEnd BlockEnd BlockEnd BlockEnd BlockEnd StreamEnd
+== p1-deep-second: tag+unglued, deeply nested 2nd pair
+   yaml: 'a:\n  b:\n    c: 1\n    !bar &x : 2\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n'
+   npm : OK  {"a": {"b": {"c": 1, "": 2}}, "on": "push", "jobs": {"test": {"runs-on": "ubuntu-latest", "steps": [{"run": "echo hi"}]}}}
+   py  : OK  {'a': {'b': {'c': '1', '': '2'}}, 'on': 'push', 'jobs': {'test': {'runs-on': 'ubuntu-latest', 'steps': [{'run': 'echo hi'}]}}}
+   toks: StreamStart BlockMappingStart Key Scalar('a') Value BlockMappingStart Key Scalar('b') Value BlockMappingStart Key Scalar('c') Value Scalar('1') Key Tag(('!', 'bar')) Anchor('x') Value Scalar('2') BlockEnd BlockEnd Key Scalar('on') Value Scalar('push') Key Scalar('jobs') Value BlockMappingStart Key Scalar('test') Value BlockMappingStart Key Scalar('runs-on') Value Scalar('ubuntu-latest') Key Scalar('steps') Value BlockSequenceStart BlockEntry BlockMappingStart Key Scalar('run') Value Scalar('echo hi') BlockEnd BlockEnd BlockEnd BlockEnd BlockEnd StreamEnd
+== p1-flow-first: tag+unglued in flow map, 1st pair
+   yaml: 'm: {!bar &b : 1}\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n'
+   npm : OK  {"m": {"": 1}, "on": "push", "jobs": {"test": {"runs-on": "ubuntu-latest", "steps": [{"run": "echo hi"}]}}}
+   py  : OK  {'m': {'': '1'}, 'on': 'push', 'jobs': {'test': {'runs-on': 'ubuntu-latest', 'steps': [{'run': 'echo hi'}]}}}
+   toks: StreamStart BlockMappingStart Key Scalar('m') Value FlowMappingStart Key Tag(('!', 'bar')) Anchor('b') Value Scalar('1') FlowMappingEnd Key Scalar('on') Value Scalar('push') Key Scalar('jobs') Value BlockMappingStart Key Scalar('test') Value BlockMappingStart Key Scalar('runs-on') Value Scalar('ubuntu-latest') Key Scalar('steps') Value BlockSequenceStart BlockEntry BlockMappingStart Key Scalar('run') Value Scalar('echo hi') BlockEnd BlockEnd BlockEnd BlockEnd BlockEnd StreamEnd
+== p1-flow-second: tag+unglued in flow map, 2nd pair
+   yaml: 'm: {a: 1, !bar &b : 2}\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n'
+   npm : OK  {"m": {"a": 1, "": 2}, "on": "push", "jobs": {"test": {"runs-on": "ubuntu-latest", "steps": [{"run": "echo hi"}]}}}
+   py  : OK  {'m': {'a': '1', '': '2'}, 'on': 'push', 'jobs': {'test': {'runs-on': 'ubuntu-latest', 'steps': [{'run': 'echo hi'}]}}}
+   toks: StreamStart BlockMappingStart Key Scalar('m') Value FlowMappingStart Key Scalar('a') Value Scalar('1') FlowEntry Key Tag(('!', 'bar')) Anchor('b') Value Scalar('2') FlowMappingEnd Key Scalar('on') Value Scalar('push') Key Scalar('jobs') Value BlockMappingStart Key Scalar('test') Value BlockMappingStart Key Scalar('runs-on') Value Scalar('ubuntu-latest') Key Scalar('steps') Value BlockSequenceStart BlockEntry BlockMappingStart Key Scalar('run') Value Scalar('echo hi') BlockEnd BlockEnd BlockEnd BlockEnd BlockEnd StreamEnd
+== p1-seq-item: tag+unglued in block-seq item map
+   yaml: 'm:\n  - !bar &b : 2\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n'
+   npm : OK  {"m": [{"": 2}], "on": "push", "jobs": {"test": {"runs-on": "ubuntu-latest", "steps": [{"run": "echo hi"}]}}}
+   py  : OK  {'m': [{'': '2'}], 'on': 'push', 'jobs': {'test': {'runs-on': 'ubuntu-latest', 'steps': [{'run': 'echo hi'}]}}}
+   toks: StreamStart BlockMappingStart Key Scalar('m') Value BlockSequenceStart BlockEntry BlockMappingStart Key Tag(('!', 'bar')) Anchor('b') Value Scalar('2') BlockEnd BlockEnd Key Scalar('on') Value Scalar('push') Key Scalar('jobs') Value BlockMappingStart Key Scalar('test') Value BlockMappingStart Key Scalar('runs-on') Value Scalar('ubuntu-latest') Key Scalar('steps') Value BlockSequenceStart BlockEntry BlockMappingStart Key Scalar('run') Value Scalar('echo hi') BlockEnd BlockEnd BlockEnd BlockEnd BlockEnd StreamEnd
+== p1-lone: tag+unglued, lone doc (single pair)
+   yaml: '!bar &b : 2\n'
+   npm : OK  {"": 2}
+   py  : OK  {'': '2'}
+   toks: StreamStart BlockMappingStart Key Tag(('!', 'bar')) Anchor('b') Value Scalar('2') BlockEnd StreamEnd
+== p1-docmark-first: tag+unglued, root 1st pair after docmark
+   yaml: '---\n!bar &b : 2\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n'
+   npm : OK  {"": 2, "on": "push", "jobs": {"test": {"runs-on": "ubuntu-latest", "steps": [{"run": "echo hi"}]}}}
+   py  : OK  {'': '2', 'on': 'push', 'jobs': {'test': {'runs-on': 'ubuntu-latest', 'steps': [{'run': 'echo hi'}]}}}
+   toks: StreamStart DocumentStart BlockMappingStart Key Tag(('!', 'bar')) Anchor('b') Value Scalar('2') Key Scalar('on') Value Scalar('push') Key Scalar('jobs') Value BlockMappingStart Key Scalar('test') Value BlockMappingStart Key Scalar('runs-on') Value Scalar('ubuntu-latest') Key Scalar('steps') Value BlockSequenceStart BlockEntry BlockMappingStart Key Scalar('run') Value Scalar('echo hi') BlockEnd BlockEnd BlockEnd BlockEnd BlockEnd StreamEnd
+== p1-glued-ctrl: CONTROL: tag+GLUED — (c)/C3 must still reject
+   yaml: 'a: 1\n!bar &b: 2\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n'
+   npm : ERR ERR: Implicit keys need to be on a single line at line 2, column 10:
+   py  : OK  {'a': '1', '': '2', 'on': 'push', 'jobs': {'test': {'runs-on': 'ubuntu-latest', 'steps': [{'run': 'echo hi'}]}}}
+   toks: StreamStart BlockMappingStart Key Scalar('a') Value Scalar('1') Key Tag(('!', 'bar')) Anchor('b') Value Scalar('2') Key Scalar('on') Value Scalar('push') Key Scalar('jobs') Value BlockMappingStart Key Scalar('test') Value BlockMappingStart Key Scalar('runs-on') Value Scalar('ubuntu-latest') Key Scalar('steps') Value BlockSequenceStart BlockEntry BlockMappingStart Key Scalar('run') Value Scalar('echo hi') BlockEnd BlockEnd BlockEnd BlockEnd BlockEnd StreamEnd
+== p1-glued-root-first: CONTROL: tag+glued, root 1st pair (single pair map, (c) fires)
+   yaml: '!bar &b: 2\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n'
+   npm : ERR ERR: Implicit keys need to be on a single line at line 1, column 10:
+   py  : OK  {'': '2', 'on': 'push', 'jobs': {'test': {'runs-on': 'ubuntu-latest', 'steps': [{'run': 'echo hi'}]}}}
+   toks: StreamStart BlockMappingStart Key Tag(('!', 'bar')) Anchor('b') Value Scalar('2') Key Scalar('on') Value Scalar('push') Key Scalar('jobs') Value BlockMappingStart Key Scalar('test') Value BlockMappingStart Key Scalar('runs-on') Value Scalar('ubuntu-latest') Key Scalar('steps') Value BlockSequenceStart BlockEntry BlockMappingStart Key Scalar('run') Value Scalar('echo hi') BlockEnd BlockEnd BlockEnd BlockEnd BlockEnd StreamEnd
+== p1-untagged-unglued-ctrl: CONTROL: untagged unglued — (d) must still reject
+   yaml: 'a: 1\n&b : 2\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n'
+   npm : OK  {"a": 1, "": 2, "on": "push", "jobs": {"test": {"runs-on": "ubuntu-latest", "steps": [{"run": "echo hi"}]}}}
+   py  : OK  {'a': '1', '': '2', 'on': 'push', 'jobs': {'test': {'runs-on': 'ubuntu-latest', 'steps': [{'run': 'echo hi'}]}}}
+   toks: StreamStart BlockMappingStart Key Scalar('a') Value Scalar('1') Key Anchor('b') Value Scalar('2') Key Scalar('on') Value Scalar('push') Key Scalar('jobs') Value BlockMappingStart Key Scalar('test') Value BlockMappingStart Key Scalar('runs-on') Value Scalar('ubuntu-latest') Key Scalar('steps') Value BlockSequenceStart BlockEntry BlockMappingStart Key Scalar('run') Value Scalar('echo hi') BlockEnd BlockEnd BlockEnd BlockEnd BlockEnd StreamEnd
+== p1-untagged-glued-ctrl: CONTROL: untagged glued — C3 must still reject
+   yaml: 'a: 1\n&b: 2\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n'
+   npm : ERR ERR: Implicit keys need to be on a single line at line 2, column 5:
+   py  : OK  {'a': '1', '': '2', 'on': 'push', 'jobs': {'test': {'runs-on': 'ubuntu-latest', 'steps': [{'run': 'echo hi'}]}}}
+   toks: StreamStart BlockMappingStart Key Scalar('a') Value Scalar('1') Key Anchor('b') Value Scalar('2') Key Scalar('on') Value Scalar('push') Key Scalar('jobs') Value BlockMappingStart Key Scalar('test') Value BlockMappingStart Key Scalar('runs-on') Value Scalar('ubuntu-latest') Key Scalar('steps') Value BlockSequenceStart BlockEntry BlockMappingStart Key Scalar('run') Value Scalar('echo hi') BlockEnd BlockEnd BlockEnd BlockEnd BlockEnd StreamEnd
+== p1-first-null-exempt: CONTROL R13 4.2: first-pair null glued — both VALID
+   yaml: '&b:\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n'
+   npm : OK  {"on": "push", "jobs": {"test": {"runs-on": "ubuntu-latest", "steps": [{"run": "echo hi"}]}}}
+   py  : OK  {'': '', 'on': 'push', 'jobs': {'test': {'runs-on': 'ubuntu-latest', 'steps': [{'run': 'echo hi'}]}}}
+   toks: StreamStart BlockMappingStart Key Anchor('b') Value Key Scalar('on') Value Scalar('push') Key Scalar('jobs') Value BlockMappingStart Key Scalar('test') Value BlockMappingStart Key Scalar('runs-on') Value Scalar('ubuntu-latest') Key Scalar('steps') Value BlockSequenceStart BlockEntry BlockMappingStart Key Scalar('run') Value Scalar('echo hi') BlockEnd BlockEnd BlockEnd BlockEnd BlockEnd StreamEnd
+== p1-first-null-unglued: CONTROL R13 4.2: first-pair null unglued — both reject
+   yaml: '&b :\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n'
+   npm : OK  {"": null, "on": "push", "jobs": {"test": {"runs-on": "ubuntu-latest", "steps": [{"run": "echo hi"}]}}}
+   py  : OK  {'': '', 'on': 'push', 'jobs': {'test': {'runs-on': 'ubuntu-latest', 'steps': [{'run': 'echo hi'}]}}}
+   toks: StreamStart BlockMappingStart Key Anchor('b') Value Key Scalar('on') Value Scalar('push') Key Scalar('jobs') Value BlockMappingStart Key Scalar('test') Value BlockMappingStart Key Scalar('runs-on') Value Scalar('ubuntu-latest') Key Scalar('steps') Value BlockSequenceStart BlockEntry BlockMappingStart Key Scalar('run') Value Scalar('echo hi') BlockEnd BlockEnd BlockEnd BlockEnd BlockEnd StreamEnd
+== p1-tag-no-anchor: CONTROL: tag, no anchor — no rule fires
+   yaml: 'm:\n  !bar : 2\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n'
+   npm : OK  {"m": {"": 2}, "on": "push", "jobs": {"test": {"runs-on": "ubuntu-latest", "steps": [{"run": "echo hi"}]}}}
+   py  : OK  {'m': {'': '2'}, 'on': 'push', 'jobs': {'test': {'runs-on': 'ubuntu-latest', 'steps': [{'run': 'echo hi'}]}}}
+   toks: StreamStart BlockMappingStart Key Scalar('m') Value BlockMappingStart Key Tag(('!', 'bar')) Value Scalar('2') BlockEnd Key Scalar('on') Value Scalar('push') Key Scalar('jobs') Value BlockMappingStart Key Scalar('test') Value BlockMappingStart Key Scalar('runs-on') Value Scalar('ubuntu-latest') Key Scalar('steps') Value BlockSequenceStart BlockEntry BlockMappingStart Key Scalar('run') Value Scalar('echo hi') BlockEnd BlockEnd BlockEnd BlockEnd BlockEnd StreamEnd
+== p1-explicit-key: tag+unglued, explicit key
+   yaml: 'm:\n  ? !bar &b : 2\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n'
+   npm : OK  {"m": {"{ &b !bar \"\": 2 }": null}, "on": "push", "jobs": {"test": {"runs-on": "ubuntu-latest", "steps": [{"run": "echo hi"}]}}}
+   py  : ERR ERR: while constructing a mapping
+   toks: StreamStart BlockMappingStart Key Scalar('m') Value BlockMappingStart Key BlockMappingStart Key Tag(('!', 'bar')) Anchor('b') Value Scalar('2') BlockEnd BlockEnd Key Scalar('on') Value Scalar('push') Key Scalar('jobs') Value BlockMappingStart Key Scalar('test') Value BlockMappingStart Key Scalar('runs-on') Value Scalar('ubuntu-latest') Key Scalar('steps') Value BlockSequenceStart BlockEntry BlockMappingStart Key Scalar('run') Value Scalar('echo hi') BlockEnd BlockEnd BlockEnd BlockEnd BlockEnd StreamEnd
+== p1-verbatim-tag: verbatim tag+unglued, root 1st pair
+   yaml: '!<foo> &b : 2\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n'
+   npm : OK  {"": 2, "on": "push", "jobs": {"test": {"runs-on": "ubuntu-latest", "steps": [{"run": "echo hi"}]}}}
+   py  : OK  {'': '2', 'on': 'push', 'jobs': {'test': {'runs-on': 'ubuntu-latest', 'steps': [{'run': 'echo hi'}]}}}
+   toks: StreamStart BlockMappingStart Key Tag((None, 'foo')) Anchor('b') Value Scalar('2') Key Scalar('on') Value Scalar('push') Key Scalar('jobs') Value BlockMappingStart Key Scalar('test') Value BlockMappingStart Key Scalar('runs-on') Value Scalar('ubuntu-latest') Key Scalar('steps') Value BlockSequenceStart BlockEntry BlockMappingStart Key Scalar('run') Value Scalar('echo hi') BlockEnd BlockEnd BlockEnd BlockEnd BlockEnd StreamEnd
+== p1-handle-tag-second: handle tag+unglued, root 2nd pair
+   yaml: 'a: 1\n!!str &b : 2\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n'
+   npm : OK  {"a": 1, "": 2, "on": "push", "jobs": {"test": {"runs-on": "ubuntu-latest", "steps": [{"run": "echo hi"}]}}}
+   py  : OK  {'a': '1', '': '2', 'on': 'push', 'jobs': {'test': {'runs-on': 'ubuntu-latest', 'steps': [{'run': 'echo hi'}]}}}
+   toks: StreamStart BlockMappingStart Key Scalar('a') Value Scalar('1') Key Tag(('!!', 'str')) Anchor('b') Value Scalar('2') Key Scalar('on') Value Scalar('push') Key Scalar('jobs') Value BlockMappingStart Key Scalar('test') Value BlockMappingStart Key Scalar('runs-on') Value Scalar('ubuntu-latest') Key Scalar('steps') Value BlockSequenceStart BlockEntry BlockMappingStart Key Scalar('run') Value Scalar('echo hi') BlockEnd BlockEnd BlockEnd BlockEnd BlockEnd StreamEnd

@@ -1,0 +1,99 @@
+{
+  "project_id": "P020",
+  "spec_version": "1.0.0",
+  "status": "PASS",
+  "task_results": {
+    "T001": {
+      "exit_code": 0,
+      "log": "evidence/s0/logs/env-check-t004.log",
+      "commands": [
+        {
+          "command": "node scripts/env-check.mjs",
+          "exit_code": 0,
+          "log": "evidence/s0/logs/env-check-t004.log"
+        }
+      ]
+    },
+    "T002": {
+      "exit_code": 0,
+      "log": "evidence/s0/logs/s0-parse-t004.log",
+      "commands": [
+        {
+          "command": "npm run s0:parse",
+          "exit_code": 0,
+          "log": "evidence/s0/logs/s0-parse-t004.log"
+        },
+        {
+          "command": "python3 -m oracle.checkpath_oracle.cli --suite tests/fixtures/s0/parser-trigger/suite.json",
+          "exit_code": 0,
+          "log": "evidence/s0/logs/oracle-parser-t004.log"
+        }
+      ]
+    },
+    "T003": {
+      "exit_code": 0,
+      "log": "evidence/s0/logs/s0-semantics-t004.log",
+      "commands": [
+        {
+          "command": "npm run s0:semantics",
+          "exit_code": 0,
+          "log": "evidence/s0/logs/s0-semantics-t004.log"
+        },
+        {
+          "command": "python3 -m oracle.checkpath_oracle.cli --suite tests/fixtures/s0/job-check/suite.json",
+          "exit_code": 0,
+          "log": "evidence/s0/logs/oracle-job-check-t004.log"
+        }
+      ]
+    },
+    "T004": {
+      "exit_code": 0,
+      "log": "evidence/s0/logs/s0-oracle-diff.log",
+      "commands": [
+        {
+          "command": "node scripts/oracle-diff.mjs --suite tests/fixtures/s0/all.json",
+          "exit_code": 0,
+          "log": "evidence/s0/logs/s0-oracle-diff.log"
+        },
+        {
+          "command": "node scripts/oracle-diff.mjs --repeat 100",
+          "exit_code": 0,
+          "log": "evidence/s0/logs/s0-determinism.log"
+        }
+      ]
+    }
+  },
+  "oracle_fixture_count": 24,
+  "oracle_mismatch_count": 0,
+  "false_pass_count": 0,
+  "determinism_repeat_count": 100,
+  "determinism_unique_hash_count": 1,
+  "unsupported_as_unknown_count": 2,
+  "runtime_network_call_count": 0,
+  "environment_fingerprint": "e1cfe76c50cb7383d15f11d1e43e804207ec5ce1c8922da86d97b5499627378e",
+  "input_fixture_sha256": "afce74c909298f4537e9e86d95c8521476e2efca9cfbd0f417229321df2279d2",
+  "conditions": {
+    "c1_t001_environment_available": true,
+    "c2_t002_parser_trigger_8_8": true,
+    "c3_t003_job_check_12_12": true,
+    "c4_t004_e2e_24_24_oracle_parity": true,
+    "c5_determinism_100_runs_one_hash": true,
+    "c6_false_pass_zero": true,
+    "c7_unsupported_all_unknown": true,
+    "c8_no_network_calls": true
+  },
+  "typecheck_exit_code": 0,
+  "typecheck_log": "evidence/s0/logs/typecheck-t004.log",
+  "network_check": {
+    "command": "grep -rnE 'fetch\\s*\\(|https?\\.request\\s*\\(|https?\\.get\\s*\\(|WebSocket\\s*\\(|XMLHttpRequest|axios|urllib|requests\\.|http\\.client|socket\\.|net\\.connect|from\\s+http|import\\s+http|from\\s+socket|import\\s+socket|\\bcurl\\b' src/core/e2e.ts src/core/workflow-parser.ts src/core/glob-subset.ts src/core/job-dag.ts src/core/check-resolver.ts oracle/checkpath_oracle/parser.py oracle/checkpath_oracle/evaluator.py oracle/checkpath_oracle/glob_subset.py oracle/checkpath_oracle/resolver.py oracle/checkpath_oracle/canonical.py oracle/checkpath_oracle/cli.py",
+    "match_count": 0,
+    "matches": []
+  },
+  "notes": [
+    "gate_report_sha256 is the SHA-256 of the canonical JSON of this file with the gate_report_sha256 field removed. Recompute with: python3 -c \"import json,hashlib; d=json.load(open('evidence/S0_GATE.json')); h=d.pop('gate_report_sha256'); print(hashlib.sha256(json.dumps(d,sort_keys=True,separators=(',',':'),ensure_ascii=False).encode()).hexdigest()); print('recorded:',h)\"",
+    "input_fixture_sha256 covers tests/fixtures/s0/all.json plus every fixture workflow/scenario/required-checks/expected file, sorted by path; see evidence/s0/T004_REPORT.md for the recompute command.",
+    "Runtime network calls are 0 by construction (local processes only) and by static check over the executed implementation files; the runner itself (scripts/oracle-diff.mjs) is excluded from the grep because it contains the pattern table as string literals, and it only spawns local vitest/python3/npm/node/grep processes.",
+    "PyYAML actually used by the Oracle is 6.0.1 (system); lockfile pins 6.0.3, pip install blocked by PEP 668 (T001 D2)."
+  ],
+  "gate_report_sha256": "f511a84709a6ebf64af94cb788ad3e15cef85af5862b5334fca4288b6ff38386"
+}

@@ -1,0 +1,764 @@
+[
+  {
+    "id": "c-flow-2nd",
+    "yaml": "m: {a: 1, !foo &x: 2}\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+    "trigger": {
+      "ts": {
+        "schema": "checkpath.trigger-ir/v1",
+        "fixture_id": "probe",
+        "on_key_is_string": false,
+        "status": "INVALID",
+        "events": [],
+        "evaluation": {
+          "event_match": null,
+          "activity_type_match": null,
+          "branch_match": null,
+          "branch_value": null,
+          "path_match": null,
+          "path_file_results": [],
+          "commit_skip": false,
+          "triggered": null,
+          "unsupported": [],
+          "reason": "invalid"
+        },
+        "errors": [
+          "yaml_parse_error"
+        ]
+      },
+      "oracle": {
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "evaluation": {
+          "activity_type_match": null,
+          "branch_match": null,
+          "branch_value": null,
+          "commit_skip": false,
+          "event_match": null,
+          "path_file_results": [],
+          "path_match": null,
+          "reason": "invalid",
+          "triggered": null,
+          "unsupported": []
+        },
+        "events": [],
+        "fixture_id": "probe",
+        "on_key_is_string": false,
+        "schema": "checkpath.trigger-ir/v1",
+        "status": "INVALID"
+      },
+      "match": true
+    },
+    "jobs": {
+      "ts": [],
+      "oracle": [],
+      "match": true
+    }
+  },
+  {
+    "id": "c-flow-1st-2pair",
+    "yaml": "m: {!foo &x: 1, b: 2}\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+    "trigger": {
+      "ts": {
+        "schema": "checkpath.trigger-ir/v1",
+        "fixture_id": "probe",
+        "on_key_is_string": false,
+        "status": "INVALID",
+        "events": [],
+        "evaluation": {
+          "event_match": null,
+          "activity_type_match": null,
+          "branch_match": null,
+          "branch_value": null,
+          "path_match": null,
+          "path_file_results": [],
+          "commit_skip": false,
+          "triggered": null,
+          "unsupported": [],
+          "reason": "invalid"
+        },
+        "errors": [
+          "yaml_parse_error"
+        ]
+      },
+      "oracle": {
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "evaluation": {
+          "activity_type_match": null,
+          "branch_match": null,
+          "branch_value": null,
+          "commit_skip": false,
+          "event_match": null,
+          "path_file_results": [],
+          "path_match": null,
+          "reason": "invalid",
+          "triggered": null,
+          "unsupported": []
+        },
+        "events": [],
+        "fixture_id": "probe",
+        "on_key_is_string": false,
+        "schema": "checkpath.trigger-ir/v1",
+        "status": "INVALID"
+      },
+      "match": true
+    },
+    "jobs": {
+      "ts": [],
+      "oracle": [],
+      "match": true
+    }
+  },
+  {
+    "id": "c-flow-seq-of-map",
+    "yaml": "m: [{!foo &x: 1}]\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+    "trigger": {
+      "ts": {
+        "schema": "checkpath.trigger-ir/v1",
+        "fixture_id": "probe",
+        "on_key_is_string": false,
+        "status": "INVALID",
+        "events": [],
+        "evaluation": {
+          "event_match": null,
+          "activity_type_match": null,
+          "branch_match": null,
+          "branch_value": null,
+          "path_match": null,
+          "path_file_results": [],
+          "commit_skip": false,
+          "triggered": null,
+          "unsupported": [],
+          "reason": "invalid"
+        },
+        "errors": [
+          "yaml_parse_error"
+        ]
+      },
+      "oracle": {
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "evaluation": {
+          "activity_type_match": null,
+          "branch_match": null,
+          "branch_value": null,
+          "commit_skip": false,
+          "event_match": null,
+          "path_file_results": [],
+          "path_match": null,
+          "reason": "invalid",
+          "triggered": null,
+          "unsupported": []
+        },
+        "events": [],
+        "fixture_id": "probe",
+        "on_key_is_string": false,
+        "schema": "checkpath.trigger-ir/v1",
+        "status": "INVALID"
+      },
+      "match": true
+    },
+    "jobs": {
+      "ts": [],
+      "oracle": [],
+      "match": true
+    }
+  },
+  {
+    "id": "d-blockseq-item-single",
+    "yaml": "m:\n  - !foo &x : 1\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+    "trigger": {
+      "ts": {
+        "schema": "checkpath.trigger-ir/v1",
+        "fixture_id": "probe",
+        "on_key_is_string": true,
+        "status": "VALID",
+        "events": [
+          {
+            "name": "push",
+            "types": null,
+            "branches": null,
+            "branches_ignore": null,
+            "paths": null,
+            "paths_ignore": null
+          }
+        ],
+        "evaluation": {
+          "event_match": null,
+          "activity_type_match": null,
+          "branch_match": null,
+          "branch_value": null,
+          "path_match": null,
+          "path_file_results": [],
+          "commit_skip": false,
+          "triggered": null,
+          "unsupported": [],
+          "reason": "triggered"
+        },
+        "errors": []
+      },
+      "oracle": {
+        "errors": [],
+        "evaluation": {
+          "activity_type_match": null,
+          "branch_match": null,
+          "branch_value": null,
+          "commit_skip": false,
+          "event_match": null,
+          "path_file_results": [],
+          "path_match": null,
+          "reason": "triggered",
+          "triggered": null,
+          "unsupported": []
+        },
+        "events": [
+          {
+            "branches": null,
+            "branches_ignore": null,
+            "name": "push",
+            "paths": null,
+            "paths_ignore": null,
+            "types": null
+          }
+        ],
+        "fixture_id": "probe",
+        "on_key_is_string": true,
+        "schema": "checkpath.trigger-ir/v1",
+        "status": "VALID"
+      },
+      "match": true
+    },
+    "jobs": {
+      "ts": [
+        {
+          "id": "test",
+          "name": null,
+          "needs": [],
+          "if": null,
+          "unsupported_job": null
+        }
+      ],
+      "oracle": [
+        {
+          "id": "test",
+          "if": null,
+          "name": null,
+          "needs": [],
+          "unsupported_job": null
+        }
+      ],
+      "match": true
+    }
+  },
+  {
+    "id": "d-rootseq-item",
+    "yaml": "- !foo &x : 1\n- b: 2\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+    "trigger": {
+      "ts": {
+        "schema": "checkpath.trigger-ir/v1",
+        "fixture_id": "probe",
+        "on_key_is_string": false,
+        "status": "INVALID",
+        "events": [],
+        "evaluation": {
+          "event_match": null,
+          "activity_type_match": null,
+          "branch_match": null,
+          "branch_value": null,
+          "path_match": null,
+          "path_file_results": [],
+          "commit_skip": false,
+          "triggered": null,
+          "unsupported": [],
+          "reason": "invalid"
+        },
+        "errors": [
+          "yaml_parse_error"
+        ]
+      },
+      "oracle": {
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "evaluation": {
+          "activity_type_match": null,
+          "branch_match": null,
+          "branch_value": null,
+          "commit_skip": false,
+          "event_match": null,
+          "path_file_results": [],
+          "path_match": null,
+          "reason": "invalid",
+          "triggered": null,
+          "unsupported": []
+        },
+        "events": [],
+        "fixture_id": "probe",
+        "on_key_is_string": false,
+        "schema": "checkpath.trigger-ir/v1",
+        "status": "INVALID"
+      },
+      "match": true
+    },
+    "jobs": {
+      "ts": [],
+      "oracle": [],
+      "match": true
+    }
+  },
+  {
+    "id": "d-blockseq-item-2pair",
+    "yaml": "m:\n  - !foo &x : 1\n  - b: 2\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+    "trigger": {
+      "ts": {
+        "schema": "checkpath.trigger-ir/v1",
+        "fixture_id": "probe",
+        "on_key_is_string": true,
+        "status": "VALID",
+        "events": [
+          {
+            "name": "push",
+            "types": null,
+            "branches": null,
+            "branches_ignore": null,
+            "paths": null,
+            "paths_ignore": null
+          }
+        ],
+        "evaluation": {
+          "event_match": null,
+          "activity_type_match": null,
+          "branch_match": null,
+          "branch_value": null,
+          "path_match": null,
+          "path_file_results": [],
+          "commit_skip": false,
+          "triggered": null,
+          "unsupported": [],
+          "reason": "triggered"
+        },
+        "errors": []
+      },
+      "oracle": {
+        "errors": [],
+        "evaluation": {
+          "activity_type_match": null,
+          "branch_match": null,
+          "branch_value": null,
+          "commit_skip": false,
+          "event_match": null,
+          "path_file_results": [],
+          "path_match": null,
+          "reason": "triggered",
+          "triggered": null,
+          "unsupported": []
+        },
+        "events": [
+          {
+            "branches": null,
+            "branches_ignore": null,
+            "name": "push",
+            "paths": null,
+            "paths_ignore": null,
+            "types": null
+          }
+        ],
+        "fixture_id": "probe",
+        "on_key_is_string": true,
+        "schema": "checkpath.trigger-ir/v1",
+        "status": "VALID"
+      },
+      "match": true
+    },
+    "jobs": {
+      "ts": [
+        {
+          "id": "test",
+          "name": null,
+          "needs": [],
+          "if": null,
+          "unsupported_job": null
+        }
+      ],
+      "oracle": [
+        {
+          "id": "test",
+          "if": null,
+          "name": null,
+          "needs": [],
+          "unsupported_job": null
+        }
+      ],
+      "match": true
+    }
+  },
+  {
+    "id": "d-epos-tag-unglued",
+    "yaml": "&x:\n  !foo &y : 1\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+    "trigger": {
+      "ts": {
+        "schema": "checkpath.trigger-ir/v1",
+        "fixture_id": "probe",
+        "on_key_is_string": false,
+        "status": "INVALID",
+        "events": [],
+        "evaluation": {
+          "event_match": null,
+          "activity_type_match": null,
+          "branch_match": null,
+          "branch_value": null,
+          "path_match": null,
+          "path_file_results": [],
+          "commit_skip": false,
+          "triggered": null,
+          "unsupported": [],
+          "reason": "invalid"
+        },
+        "errors": [
+          "yaml_parse_error"
+        ]
+      },
+      "oracle": {
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "evaluation": {
+          "activity_type_match": null,
+          "branch_match": null,
+          "branch_value": null,
+          "commit_skip": false,
+          "event_match": null,
+          "path_file_results": [],
+          "path_match": null,
+          "reason": "invalid",
+          "triggered": null,
+          "unsupported": []
+        },
+        "events": [],
+        "fixture_id": "probe",
+        "on_key_is_string": false,
+        "schema": "checkpath.trigger-ir/v1",
+        "status": "INVALID"
+      },
+      "match": true
+    },
+    "jobs": {
+      "ts": [],
+      "oracle": [],
+      "match": true
+    }
+  },
+  {
+    "id": "d-nested-single-tag-unglued",
+    "yaml": "m:\n  !foo &x : 1\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+    "trigger": {
+      "ts": {
+        "schema": "checkpath.trigger-ir/v1",
+        "fixture_id": "probe",
+        "on_key_is_string": false,
+        "status": "INVALID",
+        "events": [],
+        "evaluation": {
+          "event_match": null,
+          "activity_type_match": null,
+          "branch_match": null,
+          "branch_value": null,
+          "path_match": null,
+          "path_file_results": [],
+          "commit_skip": false,
+          "triggered": null,
+          "unsupported": [],
+          "reason": "invalid"
+        },
+        "errors": [
+          "yaml_parse_error"
+        ]
+      },
+      "oracle": {
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "evaluation": {
+          "activity_type_match": null,
+          "branch_match": null,
+          "branch_value": null,
+          "commit_skip": false,
+          "event_match": null,
+          "path_file_results": [],
+          "path_match": null,
+          "reason": "invalid",
+          "triggered": null,
+          "unsupported": []
+        },
+        "events": [],
+        "fixture_id": "probe",
+        "on_key_is_string": false,
+        "schema": "checkpath.trigger-ir/v1",
+        "status": "INVALID"
+      },
+      "match": true
+    },
+    "jobs": {
+      "ts": [],
+      "oracle": [],
+      "match": true
+    }
+  },
+  {
+    "id": "f-lone-tag-unglued",
+    "yaml": "!foo &x : 1\n",
+    "trigger": {
+      "ts": {
+        "schema": "checkpath.trigger-ir/v1",
+        "fixture_id": "probe",
+        "on_key_is_string": false,
+        "status": "INVALID",
+        "events": [],
+        "evaluation": {
+          "event_match": null,
+          "activity_type_match": null,
+          "branch_match": null,
+          "branch_value": null,
+          "path_match": null,
+          "path_file_results": [],
+          "commit_skip": false,
+          "triggered": null,
+          "unsupported": [],
+          "reason": "invalid"
+        },
+        "errors": [
+          "missing_on_key"
+        ]
+      },
+      "oracle": {
+        "errors": [
+          "missing_on_key"
+        ],
+        "evaluation": {
+          "activity_type_match": null,
+          "branch_match": null,
+          "branch_value": null,
+          "commit_skip": false,
+          "event_match": null,
+          "path_file_results": [],
+          "path_match": null,
+          "reason": "invalid",
+          "triggered": null,
+          "unsupported": []
+        },
+        "events": [],
+        "fixture_id": "probe",
+        "on_key_is_string": false,
+        "schema": "checkpath.trigger-ir/v1",
+        "status": "INVALID"
+      },
+      "match": true
+    },
+    "jobs": {
+      "ts": [],
+      "oracle": [],
+      "match": true
+    }
+  },
+  {
+    "id": "x-c3-overfire-tag-unglued-2nd",
+    "yaml": "a: 1\n!foo &x : 2\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+    "trigger": {
+      "ts": {
+        "schema": "checkpath.trigger-ir/v1",
+        "fixture_id": "probe",
+        "on_key_is_string": true,
+        "status": "VALID",
+        "events": [
+          {
+            "name": "push",
+            "types": null,
+            "branches": null,
+            "branches_ignore": null,
+            "paths": null,
+            "paths_ignore": null
+          }
+        ],
+        "evaluation": {
+          "event_match": null,
+          "activity_type_match": null,
+          "branch_match": null,
+          "branch_value": null,
+          "path_match": null,
+          "path_file_results": [],
+          "commit_skip": false,
+          "triggered": null,
+          "unsupported": [],
+          "reason": "triggered"
+        },
+        "errors": []
+      },
+      "oracle": {
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "evaluation": {
+          "activity_type_match": null,
+          "branch_match": null,
+          "branch_value": null,
+          "commit_skip": false,
+          "event_match": null,
+          "path_file_results": [],
+          "path_match": null,
+          "reason": "invalid",
+          "triggered": null,
+          "unsupported": []
+        },
+        "events": [],
+        "fixture_id": "probe",
+        "on_key_is_string": false,
+        "schema": "checkpath.trigger-ir/v1",
+        "status": "INVALID"
+      },
+      "match": false
+    },
+    "jobs": {
+      "ts": [
+        {
+          "id": "test",
+          "name": null,
+          "needs": [],
+          "if": null,
+          "unsupported_job": null
+        }
+      ],
+      "oracle": [],
+      "match": false
+    }
+  },
+  {
+    "id": "x-c3-overfire-tag-unglued-2nd-nested",
+    "yaml": "m:\n  a: 1\n  !foo &x : 2\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+    "trigger": {
+      "ts": {
+        "schema": "checkpath.trigger-ir/v1",
+        "fixture_id": "probe",
+        "on_key_is_string": true,
+        "status": "VALID",
+        "events": [
+          {
+            "name": "push",
+            "types": null,
+            "branches": null,
+            "branches_ignore": null,
+            "paths": null,
+            "paths_ignore": null
+          }
+        ],
+        "evaluation": {
+          "event_match": null,
+          "activity_type_match": null,
+          "branch_match": null,
+          "branch_value": null,
+          "path_match": null,
+          "path_file_results": [],
+          "commit_skip": false,
+          "triggered": null,
+          "unsupported": [],
+          "reason": "triggered"
+        },
+        "errors": []
+      },
+      "oracle": {
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "evaluation": {
+          "activity_type_match": null,
+          "branch_match": null,
+          "branch_value": null,
+          "commit_skip": false,
+          "event_match": null,
+          "path_file_results": [],
+          "path_match": null,
+          "reason": "invalid",
+          "triggered": null,
+          "unsupported": []
+        },
+        "events": [],
+        "fixture_id": "probe",
+        "on_key_is_string": false,
+        "schema": "checkpath.trigger-ir/v1",
+        "status": "INVALID"
+      },
+      "match": false
+    },
+    "jobs": {
+      "ts": [
+        {
+          "id": "test",
+          "name": null,
+          "needs": [],
+          "if": null,
+          "unsupported_job": null
+        }
+      ],
+      "oracle": [],
+      "match": false
+    }
+  },
+  {
+    "id": "d-rootseq-item-untagged",
+    "yaml": "- &x : 1\n- b: 2\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+    "trigger": {
+      "ts": {
+        "schema": "checkpath.trigger-ir/v1",
+        "fixture_id": "probe",
+        "on_key_is_string": false,
+        "status": "INVALID",
+        "events": [],
+        "evaluation": {
+          "event_match": null,
+          "activity_type_match": null,
+          "branch_match": null,
+          "branch_value": null,
+          "path_match": null,
+          "path_file_results": [],
+          "commit_skip": false,
+          "triggered": null,
+          "unsupported": [],
+          "reason": "invalid"
+        },
+        "errors": [
+          "yaml_parse_error"
+        ]
+      },
+      "oracle": {
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "evaluation": {
+          "activity_type_match": null,
+          "branch_match": null,
+          "branch_value": null,
+          "commit_skip": false,
+          "event_match": null,
+          "path_file_results": [],
+          "path_match": null,
+          "reason": "invalid",
+          "triggered": null,
+          "unsupported": []
+        },
+        "events": [],
+        "fixture_id": "probe",
+        "on_key_is_string": false,
+        "schema": "checkpath.trigger-ir/v1",
+        "status": "INVALID"
+      },
+      "match": true
+    },
+    "jobs": {
+      "ts": [],
+      "oracle": [],
+      "match": true
+    }
+  }
+]

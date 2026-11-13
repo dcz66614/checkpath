@@ -1,0 +1,282 @@
+=== F1-flow-alias-after ===
+  parse(): OK {"a":null}
+  parseDocument errors: []
+  root flow=false keys=[Scalar("a", type=PLAIN) | Scalar("m", type=PLAIN) | Scalar("on", type=PLAIN) | Scalar("jobs", type=PLAIN)]
+  root.v flow=true keys=[Scalar("a", type=PLAIN) | Alias(source="w:2") -> Scalar("a")]
+  root.v flow=false keys=[Scalar("check", type=PLAIN)]
+  root.v.v flow=false keys=[Scalar("runs-on", type=PLAIN) | Scalar("steps", type=PLAIN)]
+  root.v.v.v[0] flow=false keys=[Scalar("run", type=PLAIN)]
+=== F2-plain-alias-after ===
+  parse(): OK {"a":null}
+  parseDocument errors: []
+  root flow=false keys=[Scalar("a", type=PLAIN) | Scalar("m", type=PLAIN) | Scalar("on", type=PLAIN) | Scalar("jobs", type=PLAIN)]
+  root.v flow=true keys=[Scalar("a", type=PLAIN) | Alias(source="w") -> Scalar("a")]
+  root.v flow=false keys=[Scalar("check", type=PLAIN)]
+  root.v.v flow=false keys=[Scalar("runs-on", type=PLAIN) | Scalar("steps", type=PLAIN)]
+  root.v.v.v[0] flow=false keys=[Scalar("run", type=PLAIN)]
+=== F3-alias-first ===
+  parse(): OK {"a":1}
+  parseDocument errors: []
+  root flow=false keys=[Scalar("a", type=PLAIN) | Scalar("m", type=PLAIN) | Scalar("on", type=PLAIN) | Scalar("jobs", type=PLAIN)]
+  root.v flow=true keys=[Alias(source="w") -> Scalar("a") | Scalar("a", type=PLAIN)]
+  root.v flow=false keys=[Scalar("check", type=PLAIN)]
+  root.v.v flow=false keys=[Scalar("runs-on", type=PLAIN) | Scalar("steps", type=PLAIN)]
+  root.v.v.v[0] flow=false keys=[Scalar("run", type=PLAIN)]
+=== F4-alias-twice ===
+  parse(): OK {"a":null}
+  parseDocument errors: []
+  root flow=false keys=[Scalar("a", type=PLAIN) | Scalar("m", type=PLAIN) | Scalar("on", type=PLAIN) | Scalar("jobs", type=PLAIN)]
+  root.v flow=true keys=[Alias(source="w") -> Scalar("a") | Alias(source="w") -> Scalar("a")]
+  root.v flow=false keys=[Scalar("check", type=PLAIN)]
+  root.v.v flow=false keys=[Scalar("runs-on", type=PLAIN) | Scalar("steps", type=PLAIN)]
+  root.v.v.v[0] flow=false keys=[Scalar("run", type=PLAIN)]
+=== F5-nested-flow ===
+  parse(): OK {"x":{"a":null}}
+  parseDocument errors: []
+  root flow=false keys=[Scalar("a", type=PLAIN) | Scalar("m", type=PLAIN) | Scalar("on", type=PLAIN) | Scalar("jobs", type=PLAIN)]
+  root.v flow=true keys=[Scalar("x", type=PLAIN)]
+  root.v.v flow=true keys=[Scalar("a", type=PLAIN) | Alias(source="w:2") -> Scalar("a")]
+  root.v flow=false keys=[Scalar("check", type=PLAIN)]
+  root.v.v flow=false keys=[Scalar("runs-on", type=PLAIN) | Scalar("steps", type=PLAIN)]
+  root.v.v.v[0] flow=false keys=[Scalar("run", type=PLAIN)]
+=== F6-absorbed-first ===
+  parse(): OK {"a":1}
+  parseDocument errors: []
+  root flow=false keys=[Scalar("a", type=PLAIN) | Scalar("m", type=PLAIN) | Scalar("on", type=PLAIN) | Scalar("jobs", type=PLAIN)]
+  root.v flow=true keys=[Alias(source="w:2") -> Scalar("a") | Scalar("a", type=PLAIN)]
+  root.v flow=false keys=[Scalar("check", type=PLAIN)]
+  root.v.v flow=false keys=[Scalar("runs-on", type=PLAIN) | Scalar("steps", type=PLAIN)]
+  root.v.v.v[0] flow=false keys=[Scalar("run", type=PLAIN)]
+=== F7-triple-colon ===
+  parse(): OK {"a":null}
+  parseDocument errors: []
+  root flow=false keys=[Scalar("a", type=PLAIN) | Scalar("m", type=PLAIN) | Scalar("on", type=PLAIN) | Scalar("jobs", type=PLAIN)]
+  root.v flow=true keys=[Scalar("a", type=PLAIN) | Alias(source="w:2:3") -> Scalar("a")]
+  root.v flow=false keys=[Scalar("check", type=PLAIN)]
+  root.v.v flow=false keys=[Scalar("runs-on", type=PLAIN) | Scalar("steps", type=PLAIN)]
+  root.v.v.v[0] flow=false keys=[Scalar("run", type=PLAIN)]
+=== F8-trailing-comment ===
+  parse(): OK {"a":null}
+  parseDocument errors: []
+  root flow=false keys=[Scalar("a", type=PLAIN) | Scalar("m", type=PLAIN) | Scalar("on", type=PLAIN) | Scalar("jobs", type=PLAIN)]
+  root.v flow=true keys=[Scalar("a", type=PLAIN) | Alias(source="w:2") -> Scalar("a")]
+  root.v flow=false keys=[Scalar("check", type=PLAIN)]
+  root.v.v flow=false keys=[Scalar("runs-on", type=PLAIN) | Scalar("steps", type=PLAIN)]
+  root.v.v.v[0] flow=false keys=[Scalar("run", type=PLAIN)]
+=== B1-valued-first ===
+  parse(): THROW Missing , or : between flow map items at line 2, column 9:
+  parseDocument errors: ["MISSING_CHAR: Missing , or : between flow map items at line 2, column 9:"]
+  root flow=false keys=[Scalar("a", type=PLAIN) | Scalar("m", type=PLAIN) | Scalar("on", type=PLAIN) | Scalar("jobs", type=PLAIN)]
+  root.v flow=true keys=[Alias(source="w:") -> undefined | Scalar("a", type=PLAIN)]
+  root.v flow=false keys=[Scalar("check", type=PLAIN)]
+  root.v.v flow=false keys=[Scalar("runs-on", type=PLAIN) | Scalar("steps", type=PLAIN)]
+  root.v.v.v[0] flow=false keys=[Scalar("run", type=PLAIN)]
+=== B2-valued-twice ===
+  parse(): THROW Missing , or : between flow map items at line 2, column 9:
+  parseDocument errors: ["MISSING_CHAR: Missing , or : between flow map items at line 2, column 9:","MISSING_CHAR: Missing , or : between flow map items at line 2, column 16:"]
+  root flow=false keys=[Scalar("a", type=PLAIN) | Scalar("m", type=PLAIN) | Scalar("on", type=PLAIN) | Scalar("jobs", type=PLAIN)]
+  root.v flow=true keys=[Alias(source="w:") -> undefined | Alias(source="w:") -> undefined]
+  root.v flow=false keys=[Scalar("check", type=PLAIN)]
+  root.v.v flow=false keys=[Scalar("runs-on", type=PLAIN) | Scalar("steps", type=PLAIN)]
+  root.v.v.v[0] flow=false keys=[Scalar("run", type=PLAIN)]
+=== B3-block-valued ===
+  parse(): THROW Implicit map keys need to be followed by map values at line 4, column 3:
+  parseDocument errors: ["MISSING_CHAR: Implicit map keys need to be followed by map values at line 4, column 3:"]
+  root flow=false keys=[Scalar("a", type=PLAIN) | Scalar("m", type=PLAIN) | Scalar("on", type=PLAIN) | Scalar("jobs", type=PLAIN)]
+  root.v flow=false keys=[Scalar("a", type=PLAIN) | Alias(source="w:") -> undefined]
+  root.v flow=false keys=[Scalar("check", type=PLAIN)]
+  root.v.v flow=false keys=[Scalar("runs-on", type=PLAIN) | Scalar("steps", type=PLAIN)]
+  root.v.v.v[0] flow=false keys=[Scalar("run", type=PLAIN)]
+=== B4-other-scalar ===
+  parse(): OK {"b":2,"a":null}
+  parseDocument errors: []
+  root flow=false keys=[Scalar("a", type=PLAIN) | Scalar("m", type=PLAIN) | Scalar("on", type=PLAIN) | Scalar("jobs", type=PLAIN)]
+  root.v flow=true keys=[Scalar("b", type=PLAIN) | Alias(source="w") -> Scalar("a")]
+  root.v flow=false keys=[Scalar("check", type=PLAIN)]
+  root.v.v flow=false keys=[Scalar("runs-on", type=PLAIN) | Scalar("steps", type=PLAIN)]
+  root.v.v.v[0] flow=false keys=[Scalar("run", type=PLAIN)]
+=== B5-alias-alone ===
+  parse(): OK {"a":null}
+  parseDocument errors: []
+  root flow=false keys=[Scalar("a", type=PLAIN) | Scalar("m", type=PLAIN) | Scalar("on", type=PLAIN) | Scalar("jobs", type=PLAIN)]
+  root.v flow=true keys=[Alias(source="w") -> Scalar("a")]
+  root.v flow=false keys=[Scalar("check", type=PLAIN)]
+  root.v.v flow=false keys=[Scalar("runs-on", type=PLAIN) | Scalar("steps", type=PLAIN)]
+  root.v.v.v[0] flow=false keys=[Scalar("run", type=PLAIN)]
+=== B6-alias-value ===
+  parse(): OK "push"
+  parseDocument errors: []
+  root flow=false keys=[Scalar("a", type=PLAIN) | Scalar("b", type=PLAIN) | Scalar("on", type=PLAIN) | Scalar("jobs", type=PLAIN)]
+  root.v flow=false keys=[Scalar("check", type=PLAIN)]
+  root.v.v flow=false keys=[Scalar("runs-on", type=PLAIN) | Scalar("steps", type=PLAIN)]
+  root.v.v.v[0] flow=false keys=[Scalar("run", type=PLAIN)]
+=== B7-plain-dup ===
+  parse(): THROW Map keys must be unique at line 1, column 11:
+  parseDocument errors: ["DUPLICATE_KEY: Map keys must be unique at line 1, column 11:"]
+  root flow=false keys=[Scalar("m", type=PLAIN) | Scalar("on", type=PLAIN) | Scalar("jobs", type=PLAIN)]
+  root.v flow=true keys=[Scalar("a", type=PLAIN) | Scalar("a", type=PLAIN)]
+  root.v flow=false keys=[Scalar("check", type=PLAIN)]
+  root.v.v flow=false keys=[Scalar("runs-on", type=PLAIN) | Scalar("steps", type=PLAIN)]
+  root.v.v.v[0] flow=false keys=[Scalar("run", type=PLAIN)]
+=== B8-block-null-after ===
+  parse(): THROW Implicit map keys need to be followed by map values at line 4, column 3:
+  parseDocument errors: ["MISSING_CHAR: Implicit map keys need to be followed by map values at line 4, column 3:"]
+  root flow=false keys=[Scalar("a", type=PLAIN) | Scalar("m", type=PLAIN) | Scalar("on", type=PLAIN) | Scalar("jobs", type=PLAIN)]
+  root.v flow=false keys=[Scalar("a", type=PLAIN) | Alias(source="w") -> Scalar("a")]
+  root.v flow=false keys=[Scalar("check", type=PLAIN)]
+  root.v.v flow=false keys=[Scalar("runs-on", type=PLAIN) | Scalar("steps", type=PLAIN)]
+  root.v.v.v[0] flow=false keys=[Scalar("run", type=PLAIN)]
+=== B9-block-null-first ===
+  parse(): THROW All mapping items must start at the same column at line 4, column 1:
+  parseDocument errors: ["BAD_INDENT: All mapping items must start at the same column at line 4, column 1:","DUPLICATE_KEY: Map keys must be unique at line 4, column 3:"]
+  root flow=false keys=[Scalar("a", type=PLAIN) | Scalar("m", type=PLAIN) | Scalar("a", type=PLAIN) | Scalar("on", type=PLAIN) | Scalar("jobs", type=PLAIN)]
+  root.v flow=false keys=[Scalar("check", type=PLAIN)]
+  root.v.v flow=false keys=[Scalar("runs-on", type=PLAIN) | Scalar("steps", type=PLAIN)]
+  root.v.v.v[0] flow=false keys=[Scalar("run", type=PLAIN)]
+=== B10-block-null-absorbed ===
+  parse(): THROW Implicit map keys need to be followed by map values at line 4, column 3:
+  parseDocument errors: ["MISSING_CHAR: Implicit map keys need to be followed by map values at line 4, column 3:"]
+  root flow=false keys=[Scalar("a", type=PLAIN) | Scalar("m", type=PLAIN) | Scalar("on", type=PLAIN) | Scalar("jobs", type=PLAIN)]
+  root.v flow=false keys=[Scalar("a", type=PLAIN) | Alias(source="w:2") -> Scalar("a")]
+  root.v flow=false keys=[Scalar("check", type=PLAIN)]
+  root.v.v flow=false keys=[Scalar("runs-on", type=PLAIN) | Scalar("steps", type=PLAIN)]
+  root.v.v.v[0] flow=false keys=[Scalar("run", type=PLAIN)]
+=== B11-int-anchor ===
+  parse(): THROW Implicit keys need to be on a single line at line 1, column 4:
+  parseDocument errors: ["MULTILINE_IMPLICIT_KEY: Implicit keys need to be on a single line at line 1, column 4:"]
+  root flow=false keys=[Scalar("1 m", type=PLAIN) | Scalar("on", type=PLAIN) | Scalar("jobs", type=PLAIN)]
+  root.v flow=true keys=[Scalar(1, type=PLAIN) | Alias(source="w") -> Scalar("1 m")]
+  root.v flow=false keys=[Scalar("check", type=PLAIN)]
+  root.v.v flow=false keys=[Scalar("runs-on", type=PLAIN) | Scalar("steps", type=PLAIN)]
+  root.v.v.v[0] flow=false keys=[Scalar("run", type=PLAIN)]
+=== B12-int-vs-quoted ===
+  parse(): THROW Implicit keys need to be on a single line at line 1, column 4:
+  parseDocument errors: ["MULTILINE_IMPLICIT_KEY: Implicit keys need to be on a single line at line 1, column 4:"]
+  root flow=false keys=[Scalar("1 m", type=PLAIN) | Scalar("on", type=PLAIN) | Scalar("jobs", type=PLAIN)]
+  root.v flow=true keys=[Scalar("1", type=QUOTE_SINGLE) | Alias(source="w") -> Scalar("1 m")]
+  root.v flow=false keys=[Scalar("check", type=PLAIN)]
+  root.v.v flow=false keys=[Scalar("runs-on", type=PLAIN) | Scalar("steps", type=PLAIN)]
+  root.v.v.v[0] flow=false keys=[Scalar("run", type=PLAIN)]
+=== B13-bool-anchor ===
+  parse(): THROW Implicit keys need to be on a single line at line 1, column 4:
+  parseDocument errors: ["MULTILINE_IMPLICIT_KEY: Implicit keys need to be on a single line at line 1, column 4:"]
+  root flow=false keys=[Scalar("True m", type=PLAIN) | Scalar("on", type=PLAIN) | Scalar("jobs", type=PLAIN)]
+  root.v flow=true keys=[Scalar(true, type=PLAIN) | Alias(source="w") -> Scalar("True m")]
+  root.v flow=false keys=[Scalar("check", type=PLAIN)]
+  root.v.v flow=false keys=[Scalar("runs-on", type=PLAIN) | Scalar("steps", type=PLAIN)]
+  root.v.v.v[0] flow=false keys=[Scalar("run", type=PLAIN)]
+=== B14-bool-vs-int ===
+  parse(): THROW Implicit keys need to be on a single line at line 1, column 4:
+  parseDocument errors: ["MULTILINE_IMPLICIT_KEY: Implicit keys need to be on a single line at line 1, column 4:"]
+  root flow=false keys=[Scalar("True m", type=PLAIN) | Scalar("on", type=PLAIN) | Scalar("jobs", type=PLAIN)]
+  root.v flow=true keys=[Scalar(1, type=PLAIN) | Alias(source="w") -> Scalar("True m")]
+  root.v flow=false keys=[Scalar("check", type=PLAIN)]
+  root.v.v flow=false keys=[Scalar("runs-on", type=PLAIN) | Scalar("steps", type=PLAIN)]
+  root.v.v.v[0] flow=false keys=[Scalar("run", type=PLAIN)]
+=== B15-null-anchor ===
+  parse(): THROW Implicit keys need to be on a single line at line 1, column 4:
+  parseDocument errors: ["MULTILINE_IMPLICIT_KEY: Implicit keys need to be on a single line at line 1, column 4:"]
+  root flow=false keys=[Scalar("~ m", type=PLAIN) | Scalar("on", type=PLAIN) | Scalar("jobs", type=PLAIN)]
+  root.v flow=true keys=[Scalar(null, type=PLAIN) | Alias(source="w") -> Scalar("~ m")]
+  root.v flow=false keys=[Scalar("check", type=PLAIN)]
+  root.v.v flow=false keys=[Scalar("runs-on", type=PLAIN) | Scalar("steps", type=PLAIN)]
+  root.v.v.v[0] flow=false keys=[Scalar("run", type=PLAIN)]
+=== B16-quoted-anchor ===
+  parse(): THROW Unexpected scalar at node end at line 2, column 1:
+  parseDocument errors: ["UNEXPECTED_TOKEN: Unexpected scalar at node end at line 2, column 1:","UNEXPECTED_TOKEN: Unexpected map-value-ind token in YAML stream: \":\" at line 2, column 2:","UNEXPECTED_TOKEN: Unexpected flow-map-start token in YAML stream: \"{\" at line 2, column 4:","UNEXPECTED_TOKEN: Unexpected scalar token in YAML stream: \"a\" at line 2, column 5:","UNEXPECTED_TOKEN: Unexpected map-value-ind token in YAML stream: \":\" at line 2, column 6:","UNEXPECTED_TOKEN: Unexpected scalar token in YAML stream: \"x\" at line 2, column 8:","UNEXPECTED_TOKEN: Unexpected comma token in YAML stream: \",\" at line 2, column 9:","UNEXPECTED_TOKEN: Unexpected alias token in YAML stream: \"*w\" at line 2, column 11:","UNEXPECTED_TOKEN: Unexpected flow-map-end token in YAML stream: \"}\" at line 2, column 13:","UNEXPECTED_TOKEN: Unexpected scalar token in YAML stream: \"on\" at line 3, column 1:","UNEXPECTED_TOKEN: Unexpected map-value-ind token in YAML stream: \":\" at line 3, column 3:","UNEXPECTED_TOKEN: Unexpected scalar token in YAML stream: \"push\" at line 3, column 5:","UNEXPECTED_TOKEN: Unexpected scalar token in YAML stream: \"jobs\" at line 4, column 1:","UNEXPECTED_TOKEN: Unexpected map-value-ind token in YAML stream: \":\" at line 4, column 5:","UNEXPECTED_TOKEN: Unexpected scalar token in YAML stream: \"check\" at line 5, column 3:","UNEXPECTED_TOKEN: Unexpected map-value-ind token in YAML stream: \":\" at line 5, column 8:","UNEXPECTED_TOKEN: Unexpected scalar token in YAML stream: \"runs-on\" at line 6, column 5:","UNEXPECTED_TOKEN: Unexpected map-value-ind token in YAML stream: \":\" at line 6, column 12:","UNEXPECTED_TOKEN: Unexpected scalar token in YAML stream: \"ubuntu-latest\" at line 6, column 14:","UNEXPECTED_TOKEN: Unexpected scalar token in YAML stream: \"steps\" at line 7, column 5:","UNEXPECTED_TOKEN: Unexpected map-value-ind token in YAML stream: \":\" at line 7, column 10:","UNEXPECTED_TOKEN: Unexpected seq-item-ind token in YAML stream: \"-\" at line 8, column 7:","UNEXPECTED_TOKEN: Unexpected scalar token in YAML stream: \"run\" at line 8, column 9:","UNEXPECTED_TOKEN: Unexpected map-value-ind token in YAML stream: \":\" at line 8, column 12:","UNEXPECTED_TOKEN: Unexpected scalar token in YAML stream: \"echo hi\" at line 8, column 14:"]
+=== B17-tagged-anchor ===
+  parse(): THROW Implicit keys need to be on a single line at line 1, column 10:
+  parseDocument errors: ["MULTILINE_IMPLICIT_KEY: Implicit keys need to be on a single line at line 1, column 10:"]
+  root flow=false keys=[Scalar("1 m", type=PLAIN) | Scalar("on", type=PLAIN) | Scalar("jobs", type=PLAIN)]
+  root.v flow=true keys=[Scalar(1, type=PLAIN) | Alias(source="w") -> Scalar("1 m")]
+  root.v flow=false keys=[Scalar("check", type=PLAIN)]
+  root.v.v flow=false keys=[Scalar("runs-on", type=PLAIN) | Scalar("steps", type=PLAIN)]
+  root.v.v.v[0] flow=false keys=[Scalar("run", type=PLAIN)]
+=== B18-nan-anchor ===
+  parse(): THROW Implicit keys need to be on a single line at line 1, column 4:
+  parseDocument errors: ["MULTILINE_IMPLICIT_KEY: Implicit keys need to be on a single line at line 1, column 4:"]
+  root flow=false keys=[Scalar(".nan m", type=PLAIN) | Scalar("on", type=PLAIN) | Scalar("jobs", type=PLAIN)]
+  root.v flow=true keys=[Scalar(null, type=PLAIN) | Alias(source="w") -> Scalar(".nan m")]
+  root.v flow=false keys=[Scalar("check", type=PLAIN)]
+  root.v.v flow=false keys=[Scalar("runs-on", type=PLAIN) | Scalar("steps", type=PLAIN)]
+  root.v.v.v[0] flow=false keys=[Scalar("run", type=PLAIN)]
+=== B19-alias-twice-spread ===
+  parse(): OK {"a":null,"b":2}
+  parseDocument errors: []
+  root flow=false keys=[Scalar("a", type=PLAIN) | Scalar("m", type=PLAIN) | Scalar("on", type=PLAIN) | Scalar("jobs", type=PLAIN)]
+  root.v flow=true keys=[Alias(source="w") -> Scalar("a") | Scalar("b", type=PLAIN) | Alias(source="w") -> Scalar("a")]
+  root.v flow=false keys=[Scalar("check", type=PLAIN)]
+  root.v.v flow=false keys=[Scalar("runs-on", type=PLAIN) | Scalar("steps", type=PLAIN)]
+  root.v.v.v[0] flow=false keys=[Scalar("run", type=PLAIN)]
+=== B20-flow-in-seq ===
+  parse(): OK [{"a":null}]
+  parseDocument errors: []
+  root flow=false keys=[Scalar("a", type=PLAIN) | Scalar("m", type=PLAIN) | Scalar("on", type=PLAIN) | Scalar("jobs", type=PLAIN)]
+  root.v[0] flow=true keys=[Scalar("a", type=PLAIN) | Alias(source="w") -> Scalar("a")]
+  root.v flow=false keys=[Scalar("check", type=PLAIN)]
+  root.v.v flow=false keys=[Scalar("runs-on", type=PLAIN) | Scalar("steps", type=PLAIN)]
+  root.v.v.v[0] flow=false keys=[Scalar("run", type=PLAIN)]
+=== B21-on-alias-dup ===
+  parse(): THROW Implicit keys need to be on a single line at line 1, column 4:
+  parseDocument errors: ["MULTILINE_IMPLICIT_KEY: Implicit keys need to be on a single line at line 1, column 4:"]
+  root flow=false keys=[Scalar("push on", type=PLAIN) | Scalar("jobs", type=PLAIN)]
+  root.v flow=true keys=[Alias(source="w") -> Scalar("push on") | Scalar("push", type=PLAIN)]
+  root.v.v flow=true keys=[]
+  root.v flow=false keys=[Scalar("check", type=PLAIN)]
+  root.v.v flow=false keys=[Scalar("runs-on", type=PLAIN) | Scalar("steps", type=PLAIN)]
+  root.v.v.v[0] flow=false keys=[Scalar("run", type=PLAIN)]
+=== B22-anchor-in-flow ===
+  parse(): OK {"a":null}
+  parseDocument errors: []
+  root flow=false keys=[Scalar("m", type=PLAIN) | Scalar("on", type=PLAIN) | Scalar("jobs", type=PLAIN)]
+  root.v flow=true keys=[Scalar("a", type=PLAIN) | Alias(source="w") -> Scalar("a")]
+  root.v flow=false keys=[Scalar("check", type=PLAIN)]
+  root.v.v flow=false keys=[Scalar("runs-on", type=PLAIN) | Scalar("steps", type=PLAIN)]
+  root.v.v.v[0] flow=false keys=[Scalar("run", type=PLAIN)]
+=== B23-forward-ref ===
+  parse(): THROW Unresolved alias (the anchor must be set before the alias): w
+  parseDocument errors: []
+  root flow=false keys=[Scalar("m", type=PLAIN) | Scalar("a", type=PLAIN) | Scalar("on", type=PLAIN) | Scalar("jobs", type=PLAIN)]
+  root.v flow=true keys=[Alias(source="w") -> undefined | Scalar("a", type=PLAIN)]
+  root.v flow=false keys=[Scalar("check", type=PLAIN)]
+  root.v.v flow=false keys=[Scalar("runs-on", type=PLAIN) | Scalar("steps", type=PLAIN)]
+  root.v.v.v[0] flow=false keys=[Scalar("run", type=PLAIN)]
+=== B24-alias-to-collection ===
+  parse(): OK {"a":1,"*a":null}
+  parseDocument errors: []
+  root flow=false keys=[Scalar("x", type=PLAIN) | Scalar("m", type=PLAIN) | Scalar("on", type=PLAIN) | Scalar("jobs", type=PLAIN)]
+  root.v flow=true keys=[Scalar("b", type=PLAIN)]
+  root.v flow=true keys=[Scalar("a", type=PLAIN) | Alias(source="a") -> Map]
+  root.v flow=false keys=[Scalar("check", type=PLAIN)]
+  root.v.v flow=false keys=[Scalar("runs-on", type=PLAIN) | Scalar("steps", type=PLAIN)]
+  root.v.v.v[0] flow=false keys=[Scalar("run", type=PLAIN)]
+=== B25-chained-alias ===
+  parse(): THROW Implicit keys need to be on a single line at line 1, column 4:
+  parseDocument errors: ["MULTILINE_IMPLICIT_KEY: Implicit keys need to be on a single line at line 1, column 4:"]
+  root flow=false keys=[Scalar("x &b *a m", type=PLAIN) | Scalar("on", type=PLAIN) | Scalar("jobs", type=PLAIN)]
+  root.v flow=true keys=[Scalar("x", type=PLAIN) | Alias(source="b") -> undefined]
+  root.v flow=false keys=[Scalar("check", type=PLAIN)]
+  root.v.v flow=false keys=[Scalar("runs-on", type=PLAIN) | Scalar("steps", type=PLAIN)]
+  root.v.v.v[0] flow=false keys=[Scalar("run", type=PLAIN)]
+(node:5531) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 2, column 7:
+
+m: {*w: 1, a: 1}
+      ^
+
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:5531) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 2, column 7:
+
+m: {*w: 1, *w: 2}
+      ^
+
+(node:5531) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 2, column 14:
+
+m: {*w: 1, *w: 2}
+             ^
+
+(node:5531) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 4, column 5:
+
+  *w: 1
+    ^
+
+(node:5531) Warning: Keys with collection values will be stringified due to JS Object restrictions: "*a". Set mapAsMap: true to use object keys.

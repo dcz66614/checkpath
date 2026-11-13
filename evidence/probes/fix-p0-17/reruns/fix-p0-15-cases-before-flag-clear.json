@@ -1,0 +1,912 @@
+[
+  {
+    "id": "a-flowmap-on",
+    "mode": "both",
+    "note": "RESIDUAL (a): flow-map value WITH on",
+    "yaml": "&x: {on: push}\n",
+    "known_divergence": false
+  },
+  {
+    "id": "a-blockmap-on",
+    "mode": "both",
+    "note": "RESIDUAL (a): block-map value WITH on",
+    "yaml": "&x:\n  on: push\n",
+    "known_divergence": false
+  },
+  {
+    "id": "a-tag-map-on",
+    "mode": "both",
+    "note": "RESIDUAL (a): tagged flow-map value WITH on",
+    "yaml": "&x: !foo {on: push}\n",
+    "known_divergence": false
+  },
+  {
+    "id": "a-flow-full",
+    "mode": "both",
+    "note": "(a): full workflow in flow map",
+    "yaml": "&x: {on: push, jobs: {test: {runs-on: ubuntu-latest, steps: [{run: echo hi}]}}}\n",
+    "known_divergence": false
+  },
+  {
+    "id": "a-block-full",
+    "mode": "both",
+    "note": "(a): full workflow in block map",
+    "yaml": "&x:\n  on: push\n  jobs:\n    test:\n      runs-on: ubuntu-latest\n      steps:\n        - run: echo hi\n",
+    "known_divergence": false
+  },
+  {
+    "id": "a-on-list",
+    "mode": "both",
+    "note": "(a): on as list",
+    "yaml": "&x: {on: [push, pull_request]}\n",
+    "known_divergence": false
+  },
+  {
+    "id": "a-on-config",
+    "mode": "both",
+    "note": "(a): on with config",
+    "yaml": "&x: {on: {push: {branches: [main]}}}\n",
+    "known_divergence": false
+  },
+  {
+    "id": "a-on-bad",
+    "mode": "both",
+    "note": "(a): on unsupported event",
+    "yaml": "&x: {on: bad_event}\n",
+    "known_divergence": false
+  },
+  {
+    "id": "a-on-name",
+    "mode": "both",
+    "note": "(a): on + other key",
+    "yaml": "&x: {on: push, name: probe}\n",
+    "known_divergence": false
+  },
+  {
+    "id": "a-jobs-only",
+    "mode": "both",
+    "note": "(a): jobs but no on",
+    "yaml": "&x: {jobs: {test: {runs-on: ubuntu-latest, steps: [{run: echo hi}]}}}\n",
+    "known_divergence": false
+  },
+  {
+    "id": "a-name-only",
+    "mode": "both",
+    "note": "(a): no on, no jobs",
+    "yaml": "&x: {name: probe}\n",
+    "known_divergence": false
+  },
+  {
+    "id": "a-on-anchored-2nd",
+    "mode": "both",
+    "note": "(a): value map has anchored key as 2nd pair (flow)",
+    "yaml": "&x: {on: push, &y: 1}\n",
+    "known_divergence": false
+  },
+  {
+    "id": "a-on-anchored-2nd-block",
+    "mode": "both",
+    "note": "(a): value map has anchored key as 2nd pair (block)",
+    "yaml": "&x:\n  on: push\n  &y: 1\n",
+    "known_divergence": false
+  },
+  {
+    "id": "a-docmark-on",
+    "mode": "both",
+    "note": "(a): docmark + flow-map on",
+    "yaml": "---\n&x: {on: push}\n",
+    "known_divergence": false
+  },
+  {
+    "id": "a-comment-on",
+    "mode": "both",
+    "note": "(a): trailing comment + flow-map on",
+    "yaml": "&x: {on: push}  # note\n",
+    "known_divergence": false
+  },
+  {
+    "id": "a-handle-map-on",
+    "mode": "both",
+    "note": "(a): handle tag on map value WITH on",
+    "yaml": "&x: !!str {on: push}\n",
+    "known_divergence": false
+  },
+  {
+    "id": "a-on-jobs-empty",
+    "mode": "both",
+    "note": "(a): on + empty jobs map",
+    "yaml": "&x: {on: push, jobs: {}}\n",
+    "known_divergence": false
+  },
+  {
+    "id": "a-on-bool-key",
+    "mode": "both",
+    "note": "(a): non-on key, bool spelling",
+    "yaml": "&x: {True: push}\n",
+    "known_divergence": false
+  },
+  {
+    "id": "a-on-nested-anchor",
+    "mode": "both",
+    "note": "(a): two events with configs",
+    "yaml": "&x: {on: {push: {branches: [main]}, pull_request: {}}}\n",
+    "known_divergence": false
+  },
+  {
+    "id": "b-anchor-val",
+    "mode": "both",
+    "note": "RESIDUAL (b): second anchor, scalar value",
+    "yaml": "&x: &y 1\n",
+    "known_divergence": false
+  },
+  {
+    "id": "b-anchor-seq",
+    "mode": "both",
+    "note": "RESIDUAL (b): second anchor, flow-seq value",
+    "yaml": "&x: &y [1]\n",
+    "known_divergence": false
+  },
+  {
+    "id": "b-anchor-null",
+    "mode": "both",
+    "note": "RESIDUAL (b): second anchor, null value",
+    "yaml": "&x: &y\n",
+    "known_divergence": false
+  },
+  {
+    "id": "b-anchor-flowmap",
+    "mode": "both",
+    "note": "(b): second anchor, flow-map value",
+    "yaml": "&x: &y {a: 1}\n",
+    "known_divergence": false
+  },
+  {
+    "id": "b-anchor-blockmap",
+    "mode": "both",
+    "note": "(b): second anchor, block-map value",
+    "yaml": "&x: &y\n  a: 1\n",
+    "known_divergence": false
+  },
+  {
+    "id": "b-anchor-blockseq",
+    "mode": "both",
+    "note": "(b): second anchor, block-seq value",
+    "yaml": "&x: &y\n  - a\n",
+    "known_divergence": false
+  },
+  {
+    "id": "b-anchor-tagval",
+    "mode": "both",
+    "note": "(b): second anchor + tag on value",
+    "yaml": "&x: &y !foo 1\n",
+    "known_divergence": false
+  },
+  {
+    "id": "b-anchor-tagmid",
+    "mode": "both",
+    "note": "(b): tag between the two anchors",
+    "yaml": "&x: !foo &y 1\n",
+    "known_divergence": false
+  },
+  {
+    "id": "b-anchor-tagfirst",
+    "mode": "both",
+    "note": "(b): tag, then two anchors",
+    "yaml": "!foo &x &y 1\n",
+    "known_divergence": false
+  },
+  {
+    "id": "b-double-key",
+    "mode": "both",
+    "note": "(b): two anchors on the key",
+    "yaml": "&x &y: 1\n",
+    "known_divergence": false
+  },
+  {
+    "id": "b-double-key-null",
+    "mode": "both",
+    "note": "(b): two anchors on the key, null value",
+    "yaml": "&x &y:\n",
+    "known_divergence": false
+  },
+  {
+    "id": "b-anchor-colon-anchor",
+    "mode": "both",
+    "note": "(b): second anchor followed by colon",
+    "yaml": "&x: &y: 1\n",
+    "known_divergence": false
+  },
+  {
+    "id": "b-wf-value",
+    "mode": "both",
+    "note": "(b): second anchor in workflow value slot",
+    "yaml": "m: &x &y 1\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+    "known_divergence": false
+  },
+  {
+    "id": "b-wf-flow",
+    "mode": "both",
+    "note": "(b): second anchor in workflow flow map (R14 2.5b)",
+    "yaml": "m: {a: &x &y 1}\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+    "known_divergence": false
+  },
+  {
+    "id": "b-wf-on",
+    "mode": "both",
+    "note": "(b): second anchor on the on: value",
+    "yaml": "on: &x &y push\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+    "known_divergence": false
+  },
+  {
+    "id": "b-wf-seq",
+    "mode": "both",
+    "note": "(b): second anchor in workflow flow seq",
+    "yaml": "m: [&x &y 1]\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+    "known_divergence": false
+  },
+  {
+    "id": "b-wf-nested-key",
+    "mode": "both",
+    "note": "(b): two anchors on nested key",
+    "yaml": "m:\n  &x &y: 1\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+    "known_divergence": false
+  },
+  {
+    "id": "b-wf-explicit",
+    "mode": "both",
+    "note": "(b): two anchors on explicit key",
+    "yaml": "m:\n  ? &x &y: 1\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+    "known_divergence": false
+  },
+  {
+    "id": "b-alias-ctrl",
+    "mode": "both",
+    "note": "CONTROL: anchor on alias node (defined), must stay MATCH",
+    "yaml": "a: &y 1\n&x: *y\n",
+    "known_divergence": false
+  },
+  {
+    "id": "b-alias-ctrl-wf",
+    "mode": "both",
+    "note": "CONTROL: anchor on alias in workflow (defined alias)",
+    "yaml": "m: &x *y\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\na: &y 1\n",
+    "known_divergence": false
+  },
+  {
+    "id": "b-docmark-2anchor",
+    "mode": "both",
+    "note": "(b): two anchors after doc marker",
+    "yaml": "--- &x &y 1\n",
+    "known_divergence": false
+  },
+  {
+    "id": "b-anchor-own-line",
+    "mode": "both",
+    "note": "(b): anchor on own line, then anchored key",
+    "yaml": "&x\n&y: 1\n",
+    "known_divergence": false
+  },
+  {
+    "id": "b-anchor-tag-key",
+    "mode": "both",
+    "note": "(b): anchor, tag, anchor on key",
+    "yaml": "&x !foo &y: 1\n",
+    "known_divergence": false
+  },
+  {
+    "id": "c-tag-key",
+    "mode": "both",
+    "note": "RESIDUAL (c): tag on the key",
+    "yaml": "!foo &x: 1\n",
+    "known_divergence": false
+  },
+  {
+    "id": "c-handle-key",
+    "mode": "both",
+    "note": "RESIDUAL (c): handle tag on the key",
+    "yaml": "!!str &x: 1\n",
+    "known_divergence": false
+  },
+  {
+    "id": "c-docmark-tagkey",
+    "mode": "both",
+    "note": "RESIDUAL (c): docmark + tag on key",
+    "yaml": "---\n!foo &x: 1\n",
+    "known_divergence": false
+  },
+  {
+    "id": "c-tag-key-null",
+    "mode": "both",
+    "note": "(c): tag on key, null value",
+    "yaml": "!foo &x:\n",
+    "known_divergence": false
+  },
+  {
+    "id": "c-tag-key-mapval",
+    "mode": "both",
+    "note": "(c): tag on key, map value",
+    "yaml": "!foo &x: {a: 1}\n",
+    "known_divergence": false
+  },
+  {
+    "id": "c-verbatim-tagkey",
+    "mode": "both",
+    "note": "(c): verbatim tag on key",
+    "yaml": "!<foo> &x: 1\n",
+    "known_divergence": false
+  },
+  {
+    "id": "c-tagkey-nested",
+    "mode": "both",
+    "note": "(c): tag on key, nested single pair",
+    "yaml": "m:\n  !foo &x: 1\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+    "known_divergence": false
+  },
+  {
+    "id": "c-tagkey-nested-2pair",
+    "mode": "both",
+    "note": "(c): tag on key, nested 2-pair map",
+    "yaml": "m:\n  !foo &x: 1\n  b: 2\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+    "known_divergence": false
+  },
+  {
+    "id": "c-tagkey-2nd-root",
+    "mode": "both",
+    "note": "(c): tag on key as 2nd root pair",
+    "yaml": "a: 1\n!foo &x: 2\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+    "known_divergence": false
+  },
+  {
+    "id": "c-tagkey-explicit",
+    "mode": "both",
+    "note": "(c): explicit key, tag + anchor",
+    "yaml": "m:\n  ? !foo &x: 1\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+    "known_divergence": false
+  },
+  {
+    "id": "c-tagkey-unglued",
+    "mode": "both",
+    "note": "(c): tag on key + unglued",
+    "yaml": "!foo &x : 1\n",
+    "known_divergence": false
+  },
+  {
+    "id": "c-anchor-tag-val",
+    "mode": "both",
+    "note": "CONTROL: anchor then tag (both reject per FIX-P0-13)",
+    "yaml": "&x !foo: 1\n",
+    "known_divergence": false
+  },
+  {
+    "id": "d-unglued",
+    "mode": "both",
+    "note": "RESIDUAL (d): space between anchor and colon",
+    "yaml": "&x : 1\n",
+    "known_divergence": false
+  },
+  {
+    "id": "d-unglued-null",
+    "mode": "both",
+    "note": "(d): unglued, null value",
+    "yaml": "&x :\n",
+    "known_divergence": false
+  },
+  {
+    "id": "d-unglued-mapval",
+    "mode": "both",
+    "note": "(d): unglued, map value",
+    "yaml": "&x : {a: 1}\n",
+    "known_divergence": false
+  },
+  {
+    "id": "d-unglued-2sp",
+    "mode": "both",
+    "note": "(d): two spaces",
+    "yaml": "&x  : 1\n",
+    "known_divergence": false
+  },
+  {
+    "id": "d-unglued-seqval",
+    "mode": "both",
+    "note": "(d): unglued, seq value",
+    "yaml": "&x : [1]\n",
+    "known_divergence": false
+  },
+  {
+    "id": "d-unglued-nested",
+    "mode": "both",
+    "note": "(d): unglued, nested single pair",
+    "yaml": "m:\n  &x : 1\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+    "known_divergence": false
+  },
+  {
+    "id": "d-unglued-2nd-root",
+    "mode": "both",
+    "note": "(d): unglued as 2nd root pair",
+    "yaml": "a: 1\n&x : 2\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+    "known_divergence": false
+  },
+  {
+    "id": "d-unglued-flow",
+    "mode": "both",
+    "note": "(d): unglued in flow map",
+    "yaml": "m: {&x : 1}\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+    "known_divergence": false
+  },
+  {
+    "id": "d-unglued-null-2pair",
+    "mode": "both",
+    "note": "(d): unglued null + subsequent pairs (R13 4.2: both reject)",
+    "yaml": "&x :\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+    "known_divergence": false
+  },
+  {
+    "id": "e-nested-block",
+    "mode": "both",
+    "note": "RESIDUAL (e): nested block-map value, anchored key",
+    "yaml": "&x:\n  &y: 1\n",
+    "known_divergence": false
+  },
+  {
+    "id": "e-nested-null",
+    "mode": "both",
+    "note": "(e): nested, null value",
+    "yaml": "&x:\n  &y:\n",
+    "known_divergence": false
+  },
+  {
+    "id": "e-nested-seq",
+    "mode": "both",
+    "note": "(e): nested, flow-seq value",
+    "yaml": "&x:\n  &y: [1]\n",
+    "known_divergence": false
+  },
+  {
+    "id": "e-nested-flowmap",
+    "mode": "both",
+    "note": "(e): nested, flow-map value",
+    "yaml": "&x:\n  &y: {a: 1}\n",
+    "known_divergence": false
+  },
+  {
+    "id": "e-nested-blockmap",
+    "mode": "both",
+    "note": "(e): nested, block-map value",
+    "yaml": "&x:\n  &y:\n    b: 2\n",
+    "known_divergence": false
+  },
+  {
+    "id": "e-nested-tagkey",
+    "mode": "both",
+    "note": "(e): nested, tag on nested key",
+    "yaml": "&x:\n  !foo &y: 1\n",
+    "known_divergence": false
+  },
+  {
+    "id": "e-nested-unglued",
+    "mode": "both",
+    "note": "(e): nested, unglued nested key",
+    "yaml": "&x:\n  &y : 1\n",
+    "known_divergence": false
+  },
+  {
+    "id": "e-nested-flow",
+    "mode": "both",
+    "note": "CONTROL twin: flow-map value, anchored key; must MATCH",
+    "yaml": "&x: {&y: 1}\n",
+    "known_divergence": false
+  },
+  {
+    "id": "e-nested-2pair",
+    "mode": "both",
+    "note": "CONTROL: nested 2-pair variant (both reject per R14)",
+    "yaml": "&x:\n  &y: 1\n  z: 2\n",
+    "known_divergence": false
+  },
+  {
+    "id": "e-nested-2nd",
+    "mode": "both",
+    "note": "(e): anchored key as 2nd pair of nested map",
+    "yaml": "&x:\n  z: 2\n  &y: 1\n",
+    "known_divergence": false
+  },
+  {
+    "id": "e-deeper",
+    "mode": "both",
+    "note": "(e): deeper nesting under a normal key",
+    "yaml": "a:\n  &x:\n    &y: 1\n",
+    "known_divergence": false
+  },
+  {
+    "id": "e-deeper-wf",
+    "mode": "both",
+    "note": "(e): deeper nesting in workflow",
+    "yaml": "m:\n  &x:\n    &y: 1\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+    "known_divergence": false
+  },
+  {
+    "id": "e-nested-nonempty-key",
+    "mode": "both",
+    "note": "(e): nested, anchor on NON-empty key",
+    "yaml": "&x:\n  &y k: 1\n",
+    "known_divergence": false
+  },
+  {
+    "id": "e-nested-plain-key",
+    "mode": "both",
+    "note": "CONTROL: nested, plain key; must stay MATCH",
+    "yaml": "&x:\n  k: 1\n",
+    "known_divergence": false
+  },
+  {
+    "id": "e-nested-2anchor",
+    "mode": "both",
+    "note": "(e): two anchored keys nested",
+    "yaml": "&x:\n  &y: 1\n  &z: 2\n",
+    "known_divergence": false
+  },
+  {
+    "id": "e-seq-item",
+    "mode": "both",
+    "note": "CONTROL: block-seq item anchored key (R14 4: MATCH)",
+    "yaml": "&x:\n  - &y: 1\n",
+    "known_divergence": false
+  },
+  {
+    "id": "f-quoted",
+    "mode": "both",
+    "note": "CONTROL: quoted empty key",
+    "yaml": "\"\": 1\n",
+    "known_divergence": false
+  },
+  {
+    "id": "f-squoted",
+    "mode": "both",
+    "note": "CONTROL: single-quoted empty key",
+    "yaml": "'': 1\n",
+    "known_divergence": false
+  },
+  {
+    "id": "f-scalar",
+    "mode": "both",
+    "note": "CONTROL: lone-doc P0 core (closed)",
+    "yaml": "&x: 1\n",
+    "known_divergence": false
+  },
+  {
+    "id": "f-null",
+    "mode": "both",
+    "note": "CONTROL: lone-doc P0 core null (closed)",
+    "yaml": "&x:\n",
+    "known_divergence": false
+  },
+  {
+    "id": "f-tagval",
+    "mode": "both",
+    "note": "CONTROL: tag on value (closed)",
+    "yaml": "&x: !foo 1\n",
+    "known_divergence": false
+  },
+  {
+    "id": "f-flowseq-on",
+    "mode": "both",
+    "note": "CONTROL: flow-seq value with on (closed)",
+    "yaml": "&x: [{on: pull_request}]\n",
+    "known_divergence": false
+  },
+  {
+    "id": "f-blockseq-anchor",
+    "mode": "both",
+    "note": "CONTROL: block-seq value, anchored item (closed)",
+    "yaml": "&x:\n  - &b: 2\n",
+    "known_divergence": false
+  },
+  {
+    "id": "f-explicit",
+    "mode": "both",
+    "note": "CONTROL: explicit empty key",
+    "yaml": "? : 1\n",
+    "known_divergence": false
+  },
+  {
+    "id": "f-bare-colon",
+    "mode": "both",
+    "note": "CONTROL: bare colon",
+    "yaml": ": 1\n",
+    "known_divergence": false
+  },
+  {
+    "id": "f-lone-scalar",
+    "mode": "both",
+    "note": "CONTROL: lone scalar",
+    "yaml": "42\n",
+    "known_divergence": false
+  },
+  {
+    "id": "f-lone-anchored",
+    "mode": "both",
+    "note": "CONTROL: lone anchored scalar",
+    "yaml": "&x hello\n",
+    "known_divergence": false
+  },
+  {
+    "id": "f-lone-tagged",
+    "mode": "both",
+    "note": "CONTROL: lone tagged scalar",
+    "yaml": "!foo 1\n",
+    "known_divergence": false
+  },
+  {
+    "id": "f-c3-reject",
+    "mode": "both",
+    "note": "CONTROL: C3 domain, both reject",
+    "yaml": "&x: 1\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+    "known_divergence": false
+  },
+  {
+    "id": "f-c3-exempt",
+    "mode": "both",
+    "note": "CONTROL: first-pair null exempt, both VALID",
+    "yaml": "&x:\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+    "known_divergence": false
+  },
+  {
+    "id": "f-nested-single",
+    "mode": "both",
+    "note": "CONTROL: nested single pair",
+    "yaml": "m:\n  &x: 1\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+    "known_divergence": false
+  },
+  {
+    "id": "f-two-doc",
+    "mode": "both",
+    "note": "CONTROL: two documents",
+    "yaml": "&x: 1\n---\n&y: 2\n",
+    "known_divergence": false
+  },
+  {
+    "id": "f-anchor-alias-undef",
+    "mode": "both",
+    "note": "CONTROL: undefined alias value",
+    "yaml": "&x: *y\n",
+    "known_divergence": false
+  },
+  {
+    "id": "x-self-alias-val",
+    "mode": "both",
+    "note": "alias to the outer anchor as the value",
+    "yaml": "&x: *x\n",
+    "known_divergence": false
+  },
+  {
+    "id": "x-tag-undef-alias",
+    "mode": "both",
+    "note": "tag + undefined alias value",
+    "yaml": "&x: !foo *y\n",
+    "known_divergence": false
+  },
+  {
+    "id": "x-self-alias-unwrap",
+    "mode": "both",
+    "note": "self-alias inside unwrap value",
+    "yaml": "&x: {on: *x}\n",
+    "known_divergence": false
+  },
+  {
+    "id": "x-str-blockmap-on",
+    "mode": "both",
+    "note": "!!str tag on block-map value WITH on",
+    "yaml": "&x: !!str\n  on: push\n",
+    "known_divergence": false
+  },
+  {
+    "id": "x-tag-unglued-nested-2pair",
+    "mode": "both",
+    "note": "tag+unglued, nested 2-pair (C3 over-fire check)",
+    "yaml": "m:\n  !foo &x : 1\n  b: 2\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+    "known_divergence": false
+  },
+  {
+    "id": "x-flow-tagkey",
+    "mode": "both",
+    "note": "(c) tag on key in flow map",
+    "yaml": "m: {!foo &x: 1}\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+    "known_divergence": false
+  },
+  {
+    "id": "x-blockseq-tagkey",
+    "mode": "both",
+    "note": "(c) tag on key, block-seq item",
+    "yaml": "m:\n  - !foo &x: 1\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+    "known_divergence": false
+  },
+  {
+    "id": "x-blockseq-unglued",
+    "mode": "both",
+    "note": "(d) unglued, block-seq item",
+    "yaml": "m:\n  - &x : 1\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+    "known_divergence": false
+  },
+  {
+    "id": "x-blockseq-2anchor",
+    "mode": "both",
+    "note": "(b) second anchor, block-seq item",
+    "yaml": "m:\n  - &x: &y 1\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+    "known_divergence": false
+  },
+  {
+    "id": "x-nonempty-2anchor",
+    "mode": "both",
+    "note": "CONTROL: anchor on non-empty key + 2nd anchor on value",
+    "yaml": "&x k: &y 1\n",
+    "known_divergence": false
+  },
+  {
+    "id": "x-unglued-2anchor",
+    "mode": "both",
+    "note": "unglued outer anchor + second anchor",
+    "yaml": "&x : &y 1\n",
+    "known_divergence": false
+  },
+  {
+    "id": "x-alias-inside-unwrap",
+    "mode": "both",
+    "note": "CONTROL: alias defined inside unwrap value, before use",
+    "yaml": "&x: {a: &y 1, b: *y}\n",
+    "known_divergence": false
+  },
+  {
+    "id": "x-alias-before-def-unwrap",
+    "mode": "both",
+    "note": "alias BEFORE anchor definition inside unwrap value",
+    "yaml": "&x: {on: *y, a: &y 1}\n",
+    "known_divergence": false
+  },
+  {
+    "id": "x-2anchor-alias-def",
+    "mode": "both",
+    "note": "CONTROL: second anchor on alias (defined), both reject?",
+    "yaml": "a: &z 1\n&x: &y *z\n",
+    "known_divergence": false
+  },
+  {
+    "id": "x-anchor-tag-anchor-wf",
+    "mode": "both",
+    "note": "CONTROL: anchor-tag-anchor in workflow value",
+    "yaml": "m: &x !foo &y 1\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+    "known_divergence": false
+  },
+  {
+    "id": "x-flow-tagkey-null",
+    "mode": "both",
+    "note": "(c) tag on key in flow map, null value",
+    "yaml": "m: {!foo &x:}\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+    "known_divergence": false
+  },
+  {
+    "id": "x-flow-unglued-2pair",
+    "mode": "both",
+    "note": "(d) unglued in flow map, 2-pair",
+    "yaml": "m: {&x : 1, b: 2}\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+    "known_divergence": false
+  },
+  {
+    "id": "c-flow-2nd",
+    "mode": "both",
+    "note": "(c): tag on key in flow map, 2nd pair",
+    "yaml": "m: {a: 1, !foo &x: 2}\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+    "known_divergence": false
+  },
+  {
+    "id": "c-flow-1st-2pair",
+    "mode": "both",
+    "note": "(c): tag on key in flow map, 1st of 2 pairs",
+    "yaml": "m: {!foo &x: 1, b: 2}\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+    "known_divergence": false
+  },
+  {
+    "id": "c-flow-seq-of-map",
+    "mode": "both",
+    "note": "(c): tag on key in flow map inside a flow seq",
+    "yaml": "m: [{!foo &x: 1}]\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+    "known_divergence": false
+  },
+  {
+    "id": "d-blockseq-item-single",
+    "mode": "both",
+    "note": "(d): tagged+unglued as a block-seq-item mapping (control: both accept)",
+    "yaml": "m:\n  - !foo &x : 1\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+    "known_divergence": false
+  },
+  {
+    "id": "d-blockseq-item-2pair",
+    "mode": "both",
+    "note": "(d): tagged+unglued as a block-seq-item mapping, 2 items (control: both accept)",
+    "yaml": "m:\n  - !foo &x : 1\n  - b: 2\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+    "known_divergence": false
+  },
+  {
+    "id": "d-epos-tag-unglued",
+    "mode": "both",
+    "note": "(d): tagged+unglued nested key under an anchored empty key (C3 covers via the outer pair)",
+    "yaml": "&x:\n  !foo &y : 1\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+    "known_divergence": false
+  },
+  {
+    "id": "d-nested-single-tag-unglued",
+    "mode": "both",
+    "note": "(d): tagged+unglued, nested single-pair (needs the (d) tagged condition)",
+    "yaml": "m:\n  !foo &x : 1\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+    "known_divergence": false
+  },
+  {
+    "id": "x-c3-overfire-tag-unglued-2nd",
+    "mode": "both",
+    "note": "KNOWN DIVERGENCE: C3 over-fire, tagged+unglued 2nd root pair (TS VALID)",
+    "yaml": "a: 1\n!foo &x : 2\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+    "known_divergence": true
+  },
+  {
+    "id": "x-c3-overfire-tag-unglued-2nd-nested",
+    "mode": "both",
+    "note": "KNOWN DIVERGENCE: C3 over-fire, tagged+unglued 2nd pair of a nested mapping (TS VALID)",
+    "yaml": "m:\n  a: 1\n  !foo &x : 2\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+    "known_divergence": true
+  },
+  {
+    "id": "a-str-flow-nospace",
+    "mode": "both",
+    "note": "KNOWN DIVERGENCE: no-space &x:!!str, scanner-level (PyYAML reads a plain-scalar key)",
+    "yaml": "&x:!!str {on: push}\n",
+    "known_divergence": true
+  },
+  {
+    "id": "a-str-block-space",
+    "mode": "both",
+    "note": "(a): !!str tag on block-map value WITH on + jobs (span re-parse)",
+    "yaml": "&x: !!str\n  on: push\n  jobs:\n    test:\n      runs-on: ubuntu-latest\n",
+    "known_divergence": false
+  },
+  {
+    "id": "a-str-block-nospace",
+    "mode": "both",
+    "note": "KNOWN DIVERGENCE: no-space &x:!!str block, scanner-level (PyYAML ScannerError)",
+    "yaml": "&x:!!str\n  on: push\n  jobs:\n    test:\n      runs-on: ubuntu-latest\n",
+    "known_divergence": true
+  },
+  {
+    "id": "a-str-flow-space-jobs",
+    "mode": "both",
+    "note": "control: !!str on a jobs-only flow-map value + workflow suffix (both reject)",
+    "yaml": "&x: !!str {jobs: {test: {runs-on: ubuntu-latest, steps: [{run: 'echo hi'}]}}}\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+    "known_divergence": false
+  },
+  {
+    "id": "a-int-flow-space",
+    "mode": "both",
+    "note": "KNOWN DIVERGENCE: !!int on a flow-map value — the Oracle loader raises a raw TypeError (pre-existing robustness gap)",
+    "yaml": "&x: !!int {on: push}\n",
+    "known_divergence": true
+  },
+  {
+    "id": "a-bool-flow-space",
+    "mode": "both",
+    "note": "KNOWN DIVERGENCE: !!bool on a flow-map value — the Oracle loader raises a raw TypeError (pre-existing robustness gap)",
+    "yaml": "&x: !!bool {on: push}\n",
+    "known_divergence": true
+  },
+  {
+    "id": "a-unknown-block-space",
+    "mode": "both",
+    "note": "(a): unknown tag on block-map value WITH on + jobs",
+    "yaml": "&x: !foo\n  on: push\n  jobs:\n    test:\n      runs-on: ubuntu-latest\n",
+    "known_divergence": false
+  },
+  {
+    "id": "a-handle-flow-space",
+    "mode": "both",
+    "note": "(a): !!str tag on flow-map value WITH on + jobs",
+    "yaml": "&x: !!str {on: push, jobs: {test: {runs-on: ubuntu-latest, steps: [{run: 'echo hi'}]}}}\n",
+    "known_divergence": false
+  }
+]

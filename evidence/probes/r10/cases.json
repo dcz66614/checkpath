@@ -1,0 +1,266 @@
+[
+ {
+  "id": "r10-r4-ind0",
+  "mode": "both",
+  "note": "R4 disclosed: comma alone on a line, indent 0",
+  "yaml": "m: {a\n, b: 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r10-r4-nested",
+  "mode": "both",
+  "note": "R4 widening: nested flow map, comma indent 0",
+  "yaml": "m: {n: {a\n, b: 1}}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r10-r4-on",
+  "mode": "both",
+  "note": "R4 widening: on: slot, comma indent 0",
+  "yaml": "on: {a\n, b: push}\nname: probe\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r10-r4-jobs",
+  "mode": "both",
+  "note": "R4 widening: jobs env:, comma indent 0",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    env: {A: 1\n, B: 2}\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r10-r5-plain-ind0",
+  "mode": "both",
+  "note": "R5 disclosed: explicit-key colon on next line, indent 0",
+  "yaml": "m: {? a\n: 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r10-r5-quoted-ind0",
+  "mode": "both",
+  "note": "R5 disclosed: explicit quoted key, colon indent 0",
+  "yaml": "m: {? \"a\"\n: 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r10-r5-sq-ind0",
+  "mode": "both",
+  "note": "R5 widening: single-quoted explicit key, colon indent 0",
+  "yaml": "m: {? 'a'\n: 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r10-r5-nested",
+  "mode": "both",
+  "note": "R5 widening: nested explicit key, colon indent 0",
+  "yaml": "m: {n: {? a\n: 1}}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r10-r5-on",
+  "mode": "both",
+  "note": "R5 widening: on: slot, explicit quoted key, colon indent 0",
+  "yaml": "on: {? \"push\"\n: {types: [opened]}}\nname: probe\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r10-r4-comma-ind1",
+  "mode": "both",
+  "note": "Boundary: comma indent 1, both VALID",
+  "yaml": "m: {a\n , b: 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r10-r5-colon-ind1",
+  "mode": "both",
+  "note": "Boundary: explicit colon indent 1, both VALID",
+  "yaml": "m: {? a\n : 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r10-r5-colon-quoted-ind1",
+  "mode": "both",
+  "note": "Boundary: explicit quoted colon indent 1, both VALID",
+  "yaml": "m: {? \"a\"\n : 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r10-thr-close-only",
+  "mode": "both",
+  "note": "Exemption: closing brace alone on a line, indent 0",
+  "yaml": "m: {a: 1\n}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r10-thr-close-mixed",
+  "mode": "both",
+  "note": "Inner flow closed, outer content on same continuation line, indent 0",
+  "yaml": "m: {n: {a: 1}\n, b: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r10-thr-env-i4",
+  "mode": "both",
+  "note": "Threshold: jobs env: key indent 4, comma indent 4 (must be >4, reject)",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    env: {A: 1\n    , B: 2}\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r10-thr-env-i5",
+  "mode": "both",
+  "note": "Threshold: jobs env: key indent 4, comma indent 5 (accept)",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    env: {A: 1\n     , B: 2}\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r10-thr-with-i10",
+  "mode": "both",
+  "note": "Threshold: deep with: m: key indent 10, comma indent 10 (must be >10, reject)",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n        with:\n          m: {a: 1\n          , b: 2}\n"
+ },
+ {
+  "id": "r10-thr-with-i11",
+  "mode": "both",
+  "note": "Threshold: deep with: m: key indent 10, comma indent 11 (accept)",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n        with:\n          m: {a: 1\n           , b: 2}\n"
+ },
+ {
+  "id": "r10-thr-seq-i6",
+  "mode": "both",
+  "note": "Threshold: block-sequence dash indent 6, comma indent 6 (must be >6, reject)",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - {uses: actions/checkout@v4\n      , with: {ref: main}}\n"
+ },
+ {
+  "id": "r10-thr-seq-i7",
+  "mode": "both",
+  "note": "Threshold: block-sequence dash indent 6, comma indent 7 (accept)",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - {uses: actions/checkout@v4\n       , with: {ref: main}}\n"
+ },
+ {
+  "id": "r10-thr-startline",
+  "mode": "both",
+  "note": "Flow start line is NOT the threshold: continuation indent 2 > block 0",
+  "yaml": "m:\n  {a: 1,\n  b: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r10-thr-blank",
+  "mode": "both",
+  "note": "Blank line skipped, comma indent 0 still rejected",
+  "yaml": "m: {a: 1\n\n, b: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r10-thr-comment",
+  "mode": "both",
+  "note": "Comment line skipped, comma indent 0 still rejected",
+  "yaml": "m: {a: 1\n# note\n, b: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r10-thr-comment-ok",
+  "mode": "both",
+  "note": "Comment line skipped, comma indent 1 accepted",
+  "yaml": "m: {a: 1\n# note\n , b: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r10-thr-anchor-i0",
+  "mode": "both",
+  "note": "Anchor token on continuation, comma indent 0",
+  "yaml": "m: {a: 1\n, b: &x 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r10-thr-anchor-i1",
+  "mode": "both",
+  "note": "Anchor token on continuation, comma indent 1",
+  "yaml": "m: {a: 1\n , b: &x 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r10-thr-flowseq-i0",
+  "mode": "both",
+  "note": "Flow SEQUENCE comma continuation, indent 0 (fixer claims sequences covered too)",
+  "yaml": "m: [a\n, b]\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r10-thr-flowseq-i1",
+  "mode": "both",
+  "note": "Flow sequence comma continuation, indent 1",
+  "yaml": "m: [a\n , b]\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r10-thr-value-i0",
+  "mode": "both",
+  "note": "Value on next line, indent 0",
+  "yaml": "m: {a:\n1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r10-thr-value-i1",
+  "mode": "both",
+  "note": "Value on next line, indent 1",
+  "yaml": "m: {a:\n 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r10-thr-key-i0",
+  "mode": "both",
+  "note": "First item on next line, indent 0",
+  "yaml": "m: {\na: 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r10-thr-key-i2",
+  "mode": "both",
+  "note": "First item on next line, indent 2",
+  "yaml": "m: {\n  a: 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r10-thr-nested-start-i0",
+  "mode": "both",
+  "note": "Nested flow opens on continuation line, indent 0",
+  "yaml": "m: {a:\n{b: 1}}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r10-thr-nested-start-i1",
+  "mode": "both",
+  "note": "Nested flow opens on continuation line, indent 1",
+  "yaml": "m: {a:\n {b: 1}}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r10-r3-regress",
+  "mode": "both",
+  "note": "R3 regression: multi-line quoted key, both INVALID",
+  "yaml": "m: {\"a\n b\": 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r10-thr-on-seq-i0",
+  "mode": "both",
+  "note": "Flow sequence inside on: flow map, comma indent 0",
+  "yaml": "on: {push: {types: [opened\n, closed]}}\nname: probe\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r10-thr-on-seq-i1",
+  "mode": "both",
+  "note": "Flow sequence inside on: flow map, comma indent 1",
+  "yaml": "on: {push: {types: [opened\n , closed]}}\nname: probe\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r10-r6-on-pair",
+  "mode": "both",
+  "note": "R6: on: flow map, complete pair then standalone comment line indent 0",
+  "yaml": "on: {push: {types: [opened]}\n# note\n , pull}\nname: probe\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r10-r6-close",
+  "mode": "both",
+  "note": "R6: comment line indent 0 before closing brace only",
+  "yaml": "m: {a: 1, b: 2\n# note\n}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r10-r6-nestedblock",
+  "mode": "both",
+  "note": "R6: flow map nested in block mapping (indent 2), comment line indent 0, comma indent 3 (above nested threshold)",
+  "yaml": "x:\n  m: {a: 1\n# note\n   , b: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r10-r6-after-comma",
+  "mode": "both",
+  "note": "Control: comment line indent 0 after a trailing-comma line, both agree",
+  "yaml": "m: {a: 1,\n# note\n b: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r10-r6-barekey",
+  "mode": "both",
+  "note": "Control: comment line indent 0 after a bare key, both agree",
+  "yaml": "m: {a\n# note\n , b: 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r10-r6-flowseq",
+  "mode": "both",
+  "note": "Control: comment line indent 0 inside a flow sequence, both agree",
+  "yaml": "m: [a\n# note\n , b]\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r10-r6-on-pair2",
+  "mode": "both",
+  "note": "R6: on: flow map, supported second event, comment line indent 0 (cleaner on-slot shape)",
+  "yaml": "on: {push: {types: [opened]}\n# note\n , pull_request}\nname: probe\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ }
+]

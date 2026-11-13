@@ -1,0 +1,1703 @@
+[
+ {
+  "id": "A01-r11-a1",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: r11-a1 (from map.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: &x#c\n 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A02-r11-a2",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: r11-a2 (from map.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: !!str#c\n 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A03-r11-a3-on",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: r11-a3-on (from map.py)",
+  "known_divergence": false,
+  "yaml": "on: {push: &x#c\n pull_request}\nname: probe\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A04-r11-a4-flowseq",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: r11-a4-flowseq (from map.py)",
+  "known_divergence": false,
+  "yaml": "m: [&x#c\n 1]\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A05-ctrl-anchor-space",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: ctrl-anchor-space (from map.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: &x #c\n 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A06-ctrl-tag-space",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: ctrl-tag-space (from map.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: !!str #c\n 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A07-block-anchor-nospace",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: block-anchor-nospace (from map.py)",
+  "known_divergence": false,
+  "yaml": "a: &x#c\n 1\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A08-block-anchor-space",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: block-anchor-space (from map.py)",
+  "known_divergence": false,
+  "yaml": "a: &x #c\n 1\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A09-hash-eol",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: hash-eol (from map.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: &x#}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A10-hash-space-text",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: hash-space-text (from map.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: &x# c\n 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A11-tag-single-bang",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: tag-single-bang (from map.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: !foo#c\n 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A12-tag-verbatim",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: tag-verbatim (from map.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: !<tag:example.com,2026:x>#c\n 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A13-tag-bare-bang",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: tag-bare-bang (from map.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: !#c\n 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A14-alias-nospace",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: alias-nospace (from map.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: &x 1, b: *x#c\n 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A15-anchor-dash-under",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: anchor-dash-under (from map.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: &x-y_z#c\n 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A16-anchor-dot",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: anchor-dot (from map.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: &x.y#c\n 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A17-anchor-slash",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: anchor-slash (from map.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: &x/#c\n 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A18-ctrl-quoted",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: ctrl-quoted (from map.py)",
+  "known_divergence": false,
+  "yaml": "m: {\"&x#c\": 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A19-ctrl-mid-scalar",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: ctrl-mid-scalar (from map.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: b&x#c\n 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A20-ctrl-hash-in-plain",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: ctrl-hash-in-plain (from map.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: x#y\n 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A21-anchor-on-block-key",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: anchor-on-block-key (from map.py)",
+  "known_divergence": false,
+  "yaml": "&x#c: 1\nm: {a: 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A22-anchor-on-flow-key",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: anchor-on-flow-key (from map.py)",
+  "known_divergence": false,
+  "yaml": "m: {&x#c: 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A23-nospace-close-sameline",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: nospace-close-sameline (from map.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: &x#c}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A24-tag-nospace-sameline-val",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: tag-nospace-sameline-val (from map.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: !!str#c 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A25-anchor-nospace-close-next",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: anchor-nospace-close-next (from map.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: &x#c\n}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A26-block-anchor-eof",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: block-anchor-eof (from map.py)",
+  "known_divergence": false,
+  "yaml": "a: &x#c\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A27-anchor-tab-hash",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: anchor-tab-hash (from map.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: &x\t#c\n 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A28-nospace-then-pair",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: nospace-then-pair (from map.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: &x#c\n 1, b: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A29-tag-int",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: tag-int (from map.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: !!int#c\n 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A30-tag-secondary-handle",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: tag-secondary-handle (from map.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: !e!foo#c\n 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A31-blockseq-anchor-nospace",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: blockseq-anchor-nospace (from map.py)",
+  "known_divergence": false,
+  "yaml": "m:\n  - &x#c\n   1\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A32-crlf",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: crlf (from map.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: &x#c\r\n 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A33-anchor-hash-only",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: anchor-hash-only (from map.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: &x#\n 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A34-tag-hash-only",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: tag-hash-only (from map.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: !!str#\n 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A35-anchor-two-hash",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: anchor-two-hash (from map.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: &x##c\n 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A36-anchor-on-key-flow-val",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: anchor-on-key-flow-val (from map.py)",
+  "known_divergence": false,
+  "yaml": "m: {&x 1: a}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A37-tag-on-value-block",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: tag-on-value-block (from map.py)",
+  "known_divergence": false,
+  "yaml": "a: !!str#c\n 1\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A38-anchor-nospace-blockseq-map",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: anchor-nospace-blockseq-map (from map.py)",
+  "known_divergence": false,
+  "yaml": "m:\n  - a: &x#c\n    1\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "B01-r11-b1",
+  "mode": "both",
+  "note": "P0-B multi-line key (S1): r11-b1 (from map.py)",
+  "known_divergence": false,
+  "yaml": "m: {a\n b}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "B02-r11-b2",
+  "mode": "both",
+  "note": "P0-B multi-line key (S1): r11-b2 (from map.py)",
+  "known_divergence": false,
+  "yaml": "m: {\"a\n b\"}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "B03-r11-b3",
+  "mode": "both",
+  "note": "P0-B multi-line key (S1): r11-b3 (from map.py)",
+  "known_divergence": false,
+  "yaml": "m: {a:#c\n 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "B04-r11-b4",
+  "mode": "both",
+  "note": "P0-B multi-line key (S1): r11-b4 (from map.py)",
+  "known_divergence": false,
+  "yaml": "m: {a\n b, c: 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "B05-r11-b5",
+  "mode": "both",
+  "note": "P0-B multi-line key (S1): r11-b5 (from map.py)",
+  "known_divergence": false,
+  "yaml": "m: {n: {a\n b}}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "B06-r11-b6",
+  "mode": "both",
+  "note": "P0-B multi-line key (S1): r11-b6 (from map.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: 1, b:#c\n 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "B07-r11-b7",
+  "mode": "both",
+  "note": "P0-B multi-line key (S1): r11-b7 (from map.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: 1, b\n c}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "B08-r11-b8",
+  "mode": "both",
+  "note": "P0-B multi-line key (S1): r11-b8 (from map.py)",
+  "known_divergence": false,
+  "yaml": "m: {'a\n b'}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "B09-ctrl-valued",
+  "mode": "both",
+  "note": "P0-B multi-line key (S1): ctrl-valued (from map.py)",
+  "known_divergence": false,
+  "yaml": "m: {a\n b: 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "B10-ctrl-valued-after-pair",
+  "mode": "both",
+  "note": "P0-B multi-line key (S1): ctrl-valued-after-pair (from map.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: 1, b\n c: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "B11-colon-null-value",
+  "mode": "both",
+  "note": "P0-B multi-line key (S1): colon-null-value (from map.py)",
+  "known_divergence": false,
+  "yaml": "m: {a\n b: }\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "B12-colon-laterline-null",
+  "mode": "both",
+  "note": "P0-B multi-line key (S1): colon-laterline-null (from map.py)",
+  "known_divergence": false,
+  "yaml": "m: {a\n: }\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "B13-quoted-colon-null",
+  "mode": "both",
+  "note": "P0-B multi-line key (S1): quoted-colon-null (from map.py)",
+  "known_divergence": false,
+  "yaml": "m: {\"a\n b\": }\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "B14-ctrl-colon-null-single",
+  "mode": "both",
+  "note": "P0-B multi-line key (S1): ctrl-colon-null-single (from map.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: }\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "B15-valued-comment-after-colon",
+  "mode": "both",
+  "note": "P0-B multi-line key (S1): valued-comment-after-colon (from map.py)",
+  "known_divergence": false,
+  "yaml": "m: {a\n b: # comment\n 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "B16-valued-space-before-colon",
+  "mode": "both",
+  "note": "P0-B multi-line key (S1): valued-space-before-colon (from map.py)",
+  "known_divergence": false,
+  "yaml": "m: {a\n b : 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "B17-valued-seq",
+  "mode": "both",
+  "note": "P0-B multi-line key (S1): valued-seq (from map.py)",
+  "known_divergence": false,
+  "yaml": "m: {a\n b: [1]}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "B18-valued-nested-map",
+  "mode": "both",
+  "note": "P0-B multi-line key (S1): valued-nested-map (from map.py)",
+  "known_divergence": false,
+  "yaml": "m: {a\n b: {c: 1}}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "B19-colon-two-lines-later",
+  "mode": "both",
+  "note": "P0-B multi-line key (S1): colon-two-lines-later (from map.py)",
+  "known_divergence": false,
+  "yaml": "m: {a\n b\n: 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "B20-colon-two-lines-later-null",
+  "mode": "both",
+  "note": "P0-B multi-line key (S1): colon-two-lines-later-null (from map.py)",
+  "known_divergence": false,
+  "yaml": "m: {a\n b\n: }\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "B21-ctrl-explicit-key",
+  "mode": "both",
+  "note": "P0-B multi-line key (S1): ctrl-explicit-key (from map.py)",
+  "known_divergence": false,
+  "yaml": "m: {? a\n b : 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "B22-valued-then-pair",
+  "mode": "both",
+  "note": "P0-B multi-line key (S1): valued-then-pair (from map.py)",
+  "known_divergence": false,
+  "yaml": "m: {a\n b: 1, c: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "B23-valued-anchored",
+  "mode": "both",
+  "note": "P0-B multi-line key (S1): valued-anchored (from map.py)",
+  "known_divergence": false,
+  "yaml": "m: {a\n b: &x 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "B24-valued-tagged",
+  "mode": "both",
+  "note": "P0-B multi-line key (S1): valued-tagged (from map.py)",
+  "known_divergence": false,
+  "yaml": "m: {a\n b: !!str 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "B25-valued-ml-quoted-val",
+  "mode": "both",
+  "note": "P0-B multi-line key (S1): valued-ml-quoted-val (from map.py)",
+  "known_divergence": false,
+  "yaml": "m: {a\n b: \"x\n y\"}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "B26-on-valued",
+  "mode": "both",
+  "note": "P0-B multi-line key (S1): on-valued (from map.py)",
+  "known_divergence": false,
+  "yaml": "on: {a\n b: push}\nname: probe\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "B27-colon-null-crlf",
+  "mode": "both",
+  "note": "P0-B multi-line key (S1): colon-null-crlf (from map.py)",
+  "known_divergence": false,
+  "yaml": "m: {a\n b: }\r\n\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "B28-colon-eol-val-nextline",
+  "mode": "both",
+  "note": "P0-B multi-line key (S1): colon-eol-val-nextline (from map.py)",
+  "known_divergence": false,
+  "yaml": "m: {a\n b:\n 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "B29-valued-trailing-comment",
+  "mode": "both",
+  "note": "P0-B multi-line key (S1): valued-trailing-comment (from map.py)",
+  "known_divergence": false,
+  "yaml": "m: {a\n b: 1 # c\n}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "B30-sq-colon-null",
+  "mode": "both",
+  "note": "P0-B multi-line key (S1): sq-colon-null (from map.py)",
+  "known_divergence": false,
+  "yaml": "m: {'a\n b': }\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "B31-plain-colon-null-block",
+  "mode": "both",
+  "note": "P0-B multi-line key (S1): plain-colon-null-block (from map.py)",
+  "known_divergence": false,
+  "yaml": "m: {a\n b:\n}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "B32-key-multiline-colon-first-line",
+  "mode": "both",
+  "note": "P0-B multi-line key (S1): key-multiline-colon-first-line (from map.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: 1,\n b\n c: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A14b-alias-nospace-close",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: alias-nospace-close (from map2.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: &x 1, b: *x#c\n}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A14c-alias-space",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: alias-space (from map2.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: &x 1, b: *x #c\n}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A14d-alias-nospace-sameline",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: alias-nospace-sameline (from map2.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: &x 1, b: *x#c}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A14e-alias-nospace-block",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: alias-nospace-block (from map2.py)",
+  "known_divergence": false,
+  "yaml": "x: &a 1\nm: {b: *a#c\n 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A14f-alias-nospace-blockval",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: alias-nospace-blockval (from map2.py)",
+  "known_divergence": false,
+  "yaml": "x: &a 1\nb: *a#c\n 2\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A40-anchor-dot",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: anchor-dot (from map2.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: &x.y 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A41-anchor-slash",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: anchor-slash (from map2.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: &x/y 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A42-anchor-then-lbrack",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: anchor-then-lbrack (from map2.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: &x[1]}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A43-anchor-then-lbrace",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: anchor-then-lbrace (from map2.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: &x{}}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A44-anchor-then-comma",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: anchor-then-comma (from map2.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: &x, b: 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A45-anchor-then-colon-block",
+  "mode": "both",
+  "note": "KNOWN DIVERGENCE (residual, §7): anchored empty key at the document root — TS INVALID (npm implicit-key-single-line) vs Oracle VALID (PyYAML accepts). Needs an Oracle-side rejection of anchored empty keys; out of this round's TS-side scope.",
+  "known_divergence": false,
+  "yaml": "&x: 1\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A46-anchor-then-colon-flow",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: anchor-then-colon-flow (from map2.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: &x: 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A47-anchor-then-q",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: anchor-then-q (from map2.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: &x? 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A48-anchor-then-pct",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: anchor-then-pct (from map2.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: &x% 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A49-anchor-then-at",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: anchor-then-at (from map2.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: &x@ 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A50-anchor-then-backtick",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: anchor-then-backtick (from map2.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: &x` 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A51-anchor-empty-hash",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: anchor-empty-hash (from map2.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: &#c\n 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A52-anchor-empty-space",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: anchor-empty-space (from map2.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: & #c\n 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A53-anchor-empty-val",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: anchor-empty-val (from map2.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: & 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A54-anchor-then-rbrace",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: anchor-then-rbrace (from map2.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: &x}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A55-anchor-then-close-next",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: anchor-then-close-next (from map2.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: &x\n}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A56-alias-undef-close-next",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: alias-undef-close-next (from map2.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: *x\n}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A78-anchor-then-bang",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: anchor-then-bang (from map2.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: &x!y 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A79-anchor-then-star",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: anchor-then-star (from map2.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: &x*y 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A80-anchor-then-pipe",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: anchor-then-pipe (from map2.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: &x| 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A81-anchor-then-gt",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: anchor-then-gt (from map2.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: &x> 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A82-anchor-then-squote",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: anchor-then-squote (from map2.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: &x' 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A83-anchor-then-dquote",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: anchor-then-dquote (from map2.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: &x\" 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A94-tag-then-anchor-nospace",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: tag-then-anchor-nospace (from map2.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: !!str &x#c\n 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A95-anchor-then-tag-nospace",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: anchor-then-tag-nospace (from map2.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: &x !!str#c\n 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A97-quoted-then-hash-colon",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: quoted-then-hash-colon (from map2.py)",
+  "known_divergence": false,
+  "yaml": "m: {\"a\"#c: 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A98-quoted-then-hash-colon-nl",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: quoted-then-hash-colon-nl (from map2.py)",
+  "known_divergence": false,
+  "yaml": "m: {\"a\"#c\n: 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A99-dq-then-hash",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: dq-then-hash (from map2.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: \"x\"#c\n 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A100-sq-then-hash",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: sq-then-hash (from map2.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: 'x'#c\n 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A60-tag-then-comma",
+  "mode": "both",
+  "note": "KNOWN DIVERGENCE (residual, §7): tag suffix swallows a flow ` , ` — TS VALID (npm stops the tag at ',') vs Oracle INVALID (PyYAML's suffix consumes ',' and the parser then fails on the following ':' where a separator was expected). Parser-level, not scanner-level: closing it needs a flow-kind stack (fire in '{' maps, NOT in '[' seqs where PyYAML accepts '!foo, a: 1' — Y01/Y02) plus a multi-line lookahead past the tagged node; out of this round's scope.",
+  "known_divergence": false,
+  "yaml": "m: {a: !foo, b: 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A61-tag-then-colon",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: tag-then-colon (from map2.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: !foo: 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A62-tag-then-lbrack",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: tag-then-lbrack (from map2.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: !foo[1]}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A63-tag-then-lbrace",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: tag-then-lbrace (from map2.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: !foo{}}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A64-tag-then-q",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: tag-then-q (from map2.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: !foo? 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A65-tag-then-rbrack",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: tag-then-rbrack (from map2.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: !foo]}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A66-verbatim-then-comma",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: verbatim-then-comma (from map2.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: !<tag:x>, b: 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A67-verbatim-hash-frag",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: verbatim-hash-frag (from map2.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: !<tag:x#frag> 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A68-verbatim-ctrl",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: verbatim-ctrl (from map2.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: !<tag:x> 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A69-tag-slash-hash",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: tag-slash-hash (from map2.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: !foo/bar#baz 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A70-tag-brackets",
+  "mode": "both",
+  "note": "KNOWN DIVERGENCE (residual, §7): tag suffix with [ ] — TS INVALID (npm tag scanner stops at '[') vs Oracle VALID (PyYAML URI charset includes [ ]). Needs an Oracle-side rejection of [ ] in tag suffixes; out of scope.",
+  "known_divergence": false,
+  "yaml": "m: {a: !foo[bar] 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A71-handle-hash",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: handle-hash (from map2.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: !foo!bar#c\n 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A72-handle-ctrl",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: handle-ctrl (from map2.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: !foo!bar 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A73-tag-then-tab",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: tag-then-tab (from map2.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: !!str\t1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A74-anchor-then-tab",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: anchor-then-tab (from map2.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: &x\t1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A75-bare-tag-space",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: bare-tag-space (from map2.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: ! 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A76-bare-tag-tab",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: bare-tag-tab (from map2.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: !\t1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A84-tag-then-pipe",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: tag-then-pipe (from map2.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: !foo| 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A85-tag-then-gt",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: tag-then-gt (from map2.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: !foo> 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A86-tag-then-squote",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: tag-then-squote (from map2.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: !foo' 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A87-tag-then-dquote",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: tag-then-dquote (from map2.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: !foo\" 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A88-tag-then-amp",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: tag-then-amp (from map2.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: !foo&x 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A89-tag-then-star",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: tag-then-star (from map2.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: !foo*x 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A90-tag-then-bang",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: tag-then-bang (from map2.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: !foo! 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A91-double-bang-space",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: double-bang-space (from map2.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: !! 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "A92-handle-unresolved",
+  "mode": "both",
+  "note": "P0-A anchor/tag nospace: handle-unresolved (from map2.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: !e!foo 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "B40-ml-comment-colon",
+  "mode": "both",
+  "note": "P0-B multi-line key (S1): ml-comment-colon (from map2.py)",
+  "known_divergence": false,
+  "yaml": "m: {a\n b # comment\n: 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "B41-ml-comment-comma",
+  "mode": "both",
+  "note": "P0-B multi-line key (S1): ml-comment-comma (from map2.py)",
+  "known_divergence": false,
+  "yaml": "m: {a\n b # c\n, d: 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "B42-quoted-hash-colon-nl",
+  "mode": "both",
+  "note": "P0-B multi-line key (S1): quoted-hash-colon-nl (from map2.py)",
+  "known_divergence": false,
+  "yaml": "m: {\"a\n b\"#c\n: 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "B43-valued-then-nullml",
+  "mode": "both",
+  "note": "P0-B multi-line key (S1): valued-then-nullml (from map2.py)",
+  "known_divergence": false,
+  "yaml": "m: {a\n b: 1, d\n e}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "B44-valued-then-valuedml",
+  "mode": "both",
+  "note": "P0-B multi-line key (S1): valued-then-valuedml (from map2.py)",
+  "known_divergence": false,
+  "yaml": "m: {a\n b: 1, d\n e: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "B45-valuedml-anchor-nospace",
+  "mode": "both",
+  "note": "P0-B multi-line key (S1): valuedml-anchor-nospace (from map2.py)",
+  "known_divergence": false,
+  "yaml": "m: {a\n b: &x#c\n 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "B46-nested-nullml-blockval",
+  "mode": "both",
+  "note": "P0-B multi-line key (S1): nested-nullml-blockval (from map2.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: {b\n c}}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "B48-colon-comment-noval-next",
+  "mode": "both",
+  "note": "P0-B multi-line key (S1): colon-comment-noval-next (from map2.py)",
+  "known_divergence": false,
+  "yaml": "m: {a\n b: # c\n}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "B49-colon-comment-noval-same",
+  "mode": "both",
+  "note": "P0-B multi-line key (S1): colon-comment-noval-same (from map2.py)",
+  "known_divergence": false,
+  "yaml": "m: {a\n b: # c}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "B50-colon-tab-val",
+  "mode": "both",
+  "note": "P0-B multi-line key (S1): colon-tab-val (from map2.py)",
+  "known_divergence": false,
+  "yaml": "m: {a\n b:\t1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "B51-explicit-quoted-colon-nl",
+  "mode": "both",
+  "note": "P0-B multi-line key (S1): explicit-quoted-colon-nl (from map2.py)",
+  "known_divergence": false,
+  "yaml": "m: {? \"a\n b\"\n: 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "B53-valuedml-tag-nospace",
+  "mode": "both",
+  "note": "P0-B multi-line key (S1): valuedml-tag-nospace (from map2.py)",
+  "known_divergence": false,
+  "yaml": "m: {a\n b: !!str#c\n 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "B54-crlf-valuedml",
+  "mode": "both",
+  "note": "P0-B multi-line key (S1): crlf-valuedml (from map2.py)",
+  "known_divergence": false,
+  "yaml": "m: {a\r\n b: 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "B55-crlf-nullml",
+  "mode": "both",
+  "note": "P0-B multi-line key (S1): crlf-nullml (from map2.py)",
+  "known_divergence": false,
+  "yaml": "m: {a\r\n b}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "C01-flow-anchored-empty-key",
+  "mode": "both",
+  "note": "P0-A anchored empty key / anchor : ? (flow vs block): flow-anchored-empty-key (from e2e-map4.py)",
+  "known_divergence": false,
+  "yaml": "m: {&x: 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "C02-blockval-anchor-colon",
+  "mode": "both",
+  "note": "P0-A anchored empty key / anchor : ? (flow vs block): blockval-anchor-colon (from e2e-map4.py)",
+  "known_divergence": false,
+  "yaml": "a: &x: 1\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "C03-blockval-anchor-q",
+  "mode": "both",
+  "note": "P0-A anchored empty key / anchor : ? (flow vs block): blockval-anchor-q (from e2e-map4.py)",
+  "known_divergence": false,
+  "yaml": "a: &x? 1\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "C04-explicit-anchored-empty",
+  "mode": "both",
+  "note": "P0-A anchored empty key / anchor : ? (flow vs block): explicit-anchored-empty (from e2e-map4.py)",
+  "known_divergence": false,
+  "yaml": "? &x: 1\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "C05-flowval-anchor-colon-pair",
+  "mode": "both",
+  "note": "P0-A anchored empty key / anchor : ? (flow vs block): flowval-anchor-colon-pair (from e2e-map4.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: &x: 1, b: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "C06-blockseq-anchor-colon",
+  "mode": "both",
+  "note": "P0-A anchored empty key / anchor : ? (flow vs block): blockseq-anchor-colon (from e2e-map4.py)",
+  "known_divergence": false,
+  "yaml": "m:\n  - &x: 1\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "C07-flowval-anchor-q",
+  "mode": "both",
+  "note": "P0-A anchored empty key / anchor : ? (flow vs block): flowval-anchor-q (from e2e-map4.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: &x? 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "C08-anchor-space-colon",
+  "mode": "both",
+  "note": "P0-A anchored empty key / anchor : ? (flow vs block): anchor-space-colon (from e2e-map4.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: &x : 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "C09-anchor-then-rbrack",
+  "mode": "both",
+  "note": "P0-A anchored empty key / anchor : ? (flow vs block): anchor-then-rbrack (from e2e-map4.py)",
+  "known_divergence": false,
+  "yaml": "m: [&x]\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "C10-blockval-anchor-eof",
+  "mode": "both",
+  "note": "P0-A anchored empty key / anchor : ? (flow vs block): blockval-anchor-eof (from e2e-map4.py)",
+  "known_divergence": false,
+  "yaml": "a: &x\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "C12-known-tag-then-rbrace",
+  "mode": "both",
+  "note": "P0-A anchored empty key / anchor : ? (flow vs block): known-tag-then-rbrace (from e2e-map4.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: !!str}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "C14-anchor-nospace-colon",
+  "mode": "both",
+  "note": "P0-A anchored empty key / anchor : ? (flow vs block): anchor-nospace-colon (from e2e-map4.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: &x#c: 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "C16-anchor-colon-nextline-ind0",
+  "mode": "both",
+  "note": "P0-A anchored empty key / anchor : ? (flow vs block): anchor-colon-nextline-ind0 (from e2e-map4.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: &x\n: 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "C17-anchor-colon-nextline-ind",
+  "mode": "both",
+  "note": "P0-A anchored empty key / anchor : ? (flow vs block): anchor-colon-nextline-ind (from e2e-map4.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: &x\n  : 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "C20-flowval-anchor-colon-close",
+  "mode": "both",
+  "note": "P0-A anchored empty key / anchor : ? (flow vs block): flowval-anchor-colon-close (from e2e-map4.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: &x:}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "C21-flow-anchored-empty-key-pair",
+  "mode": "both",
+  "note": "P0-A anchored empty key / anchor : ? (flow vs block): flow-anchored-empty-key-pair (from e2e-map4.py)",
+  "known_divergence": false,
+  "yaml": "m: {&x: 1, b: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "C24-anchor-dot-colon-flow",
+  "mode": "both",
+  "note": "P0-A anchored empty key / anchor : ? (flow vs block): anchor-dot-colon-flow (from e2e-map4.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: &x.y: 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "C25-anchor-dot-close",
+  "mode": "both",
+  "note": "P0-A anchored empty key / anchor : ? (flow vs block): anchor-dot-close (from e2e-map4.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: &x.y}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "C26-blockval-anchor-colon-eol",
+  "mode": "both",
+  "note": "P0-A anchored empty key / anchor : ? (flow vs block): blockval-anchor-colon-eol (from e2e-map4.py)",
+  "known_divergence": false,
+  "yaml": "a: &x:\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "C27-bare-empty-key",
+  "mode": "both",
+  "note": "P0-A anchored empty key / anchor : ? (flow vs block): bare-empty-key (from e2e-map4.py)",
+  "known_divergence": false,
+  "yaml": ": 1\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "C28-flow-bare-empty-key",
+  "mode": "both",
+  "note": "P0-A anchored empty key / anchor : ? (flow vs block): flow-bare-empty-key (from e2e-map4.py)",
+  "known_divergence": false,
+  "yaml": "m: {: 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "C29-anchor-val-nextline",
+  "mode": "both",
+  "note": "P0-A anchored empty key / anchor : ? (flow vs block): anchor-val-nextline (from e2e-map4.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: &x\n 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "C30-tag-val-nextline",
+  "mode": "both",
+  "note": "P0-A anchored empty key / anchor : ? (flow vs block): tag-val-nextline (from e2e-map4.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: !!str\n 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "C31-anchor-q-key-flow",
+  "mode": "both",
+  "note": "P0-A anchored empty key / anchor : ? (flow vs block): anchor-q-key-flow (from e2e-map4.py)",
+  "known_divergence": false,
+  "yaml": "m: {&x? 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "C32-blockval-anchor-q-noval",
+  "mode": "both",
+  "note": "P0-A anchored empty key / anchor : ? (flow vs block): blockval-anchor-q-noval (from e2e-map4.py)",
+  "known_divergence": false,
+  "yaml": "a: &x?\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "C33-anchor-then-comma-eol",
+  "mode": "both",
+  "note": "P0-A anchored empty key / anchor : ? (flow vs block): anchor-then-comma-eol (from e2e-map4.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: &x\n, b: 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "D01-flowseq-anchor-colon",
+  "mode": "both",
+  "note": "P0-A anchor : ? positions / tag % escapes: flowseq-anchor-colon (from e2e-map5.py)",
+  "known_divergence": false,
+  "yaml": "m: [&x: 1]\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "D02-flowseq-anchor-q",
+  "mode": "both",
+  "note": "P0-A anchor : ? positions / tag % escapes: flowseq-anchor-q (from e2e-map5.py)",
+  "known_divergence": false,
+  "yaml": "m: [&x? 1]\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "D03-explicit-anchor-q",
+  "mode": "both",
+  "note": "P0-A anchor : ? positions / tag % escapes: explicit-anchor-q (from e2e-map5.py)",
+  "known_divergence": false,
+  "yaml": "? &x? 1\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "D04-flowmap-anchor-key-after-comma",
+  "mode": "both",
+  "note": "P0-A anchor : ? positions / tag % escapes: flowmap-anchor-key-after-comma (from e2e-map5.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: 1, &x: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "D05-block-nested-anchor-key",
+  "mode": "both",
+  "note": "P0-A anchor : ? positions / tag % escapes: block-nested-anchor-key (from e2e-map5.py)",
+  "known_divergence": false,
+  "yaml": "m:\n  &x: 1\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "D06-blockseq-val-anchor-colon",
+  "mode": "both",
+  "note": "P0-A anchor : ? positions / tag % escapes: blockseq-val-anchor-colon (from e2e-map5.py)",
+  "known_divergence": false,
+  "yaml": "m:\n  - a: &x: 1\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "D07-explicit-key-split-lines",
+  "mode": "both",
+  "note": "P0-A anchor : ? positions / tag % escapes: explicit-key-split-lines (from e2e-map5.py)",
+  "known_divergence": false,
+  "yaml": "?\n  &x: 1\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "D08-tag-pct-space",
+  "mode": "both",
+  "note": "P0-A anchor : ? positions / tag % escapes: tag-pct-space (from e2e-map5.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: !foo% 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "D09-tag-pct-valid-escape",
+  "mode": "both",
+  "note": "P0-A anchor : ? positions / tag % escapes: tag-pct-valid-escape (from e2e-map5.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: !foo%41 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "D10-tag-pct-bad-escape",
+  "mode": "both",
+  "note": "P0-A anchor : ? positions / tag % escapes: tag-pct-bad-escape (from e2e-map5.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: !foo%zz 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "D11-flow-tag-colon-key",
+  "mode": "both",
+  "note": "P0-A anchor : ? positions / tag % escapes: flow-tag-colon-key (from e2e-map5.py)",
+  "known_divergence": false,
+  "yaml": "m: {!!str: 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "D12-root-tag-colon",
+  "mode": "both",
+  "note": "P0-A anchor : ? positions / tag % escapes: root-tag-colon (from e2e-map5.py)",
+  "known_divergence": false,
+  "yaml": "!!str: 1\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "D13-flowseq-anchor-nospace",
+  "mode": "both",
+  "note": "P0-A anchor : ? positions / tag % escapes: flowseq-anchor-nospace (from e2e-map5.py)",
+  "known_divergence": false,
+  "yaml": "m: [&x#c\n 1]\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "D14-anchor-semicolon",
+  "mode": "both",
+  "note": "P0-A anchor : ? positions / tag % escapes: anchor-semicolon (from e2e-map5.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: &x;y 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "D15-anchor-plus",
+  "mode": "both",
+  "note": "P0-A anchor : ? positions / tag % escapes: anchor-plus (from e2e-map5.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: &x+y 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "D16-anchor-lt",
+  "mode": "both",
+  "note": "P0-A anchor : ? positions / tag % escapes: anchor-lt (from e2e-map5.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: &x<y 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "D17-tag-then-lbrace-noval",
+  "mode": "both",
+  "note": "P0-A anchor : ? positions / tag % escapes: tag-then-lbrace-noval (from e2e-map5.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: !foo{}}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "D18-flow-anchor-q-after-comma",
+  "mode": "both",
+  "note": "P0-A anchor : ? positions / tag % escapes: flow-anchor-q-after-comma (from e2e-map5.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: 1, &x? 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "D19-block-anchor-key-nested2",
+  "mode": "both",
+  "note": "P0-A anchor : ? positions / tag % escapes: block-anchor-key-nested2 (from e2e-map5.py)",
+  "known_divergence": false,
+  "yaml": "x:\n  y:\n    &x: 1\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "D20-tag-colon-val",
+  "mode": "both",
+  "note": "P0-A anchor : ? positions / tag % escapes: tag-colon-val (from e2e-map5.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: !!str: 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "E01-flow-double-anchor-key",
+  "mode": "both",
+  "note": "P0-A double-property chains: flow-double-anchor-key (from e2e-map6.py)",
+  "known_divergence": false,
+  "yaml": "m: {&x &y: 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "E02-block-double-anchor-key",
+  "mode": "both",
+  "note": "P0-A double-property chains: block-double-anchor-key (from e2e-map6.py)",
+  "known_divergence": false,
+  "yaml": "&x &y: 1\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "E03-flowval-double-anchor-colon",
+  "mode": "both",
+  "note": "P0-A double-property chains: flowval-double-anchor-colon (from e2e-map6.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: &x &y: 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "E04-flowval-double-anchor",
+  "mode": "both",
+  "note": "P0-A double-property chains: flowval-double-anchor (from e2e-map6.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: &x &y 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "E05-tag-then-anchor-colon",
+  "mode": "both",
+  "note": "P0-A double-property chains: tag-then-anchor-colon (from e2e-map6.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: !!str &x: 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "E06-anchor-then-tag-colon",
+  "mode": "both",
+  "note": "P0-A double-property chains: anchor-then-tag-colon (from e2e-map6.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: &x !!str: 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "E07-double-anchor-key-comma",
+  "mode": "both",
+  "note": "P0-A double-property chains: double-anchor-key-comma (from e2e-map6.py)",
+  "known_divergence": false,
+  "yaml": "m: {&x &y: 1, b: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "E08-block-double-anchor-val",
+  "mode": "both",
+  "note": "P0-A double-property chains: block-double-anchor-val (from e2e-map6.py)",
+  "known_divergence": false,
+  "yaml": "a: &x &y: 1\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "U01-unknown-local-tag",
+  "mode": "both",
+  "note": "P0-A unknown-tag controls: unknown-local-tag (from e2e-map.py (U))",
+  "known_divergence": false,
+  "yaml": "m: {a: !foo 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "U02-unknown-tag-colon",
+  "mode": "both",
+  "note": "P0-A unknown-tag controls: unknown-tag-colon (from e2e-map.py (U))",
+  "known_divergence": false,
+  "yaml": "m: {a: !foo:bar 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "U03-unknown-tag-slash",
+  "mode": "both",
+  "note": "P0-A unknown-tag controls: unknown-tag-slash (from e2e-map.py (U))",
+  "known_divergence": false,
+  "yaml": "m: {a: !foo/bar 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "U04-unknown-double-bang",
+  "mode": "both",
+  "note": "P0-A unknown-tag controls: unknown-double-bang (from e2e-map.py (U))",
+  "known_divergence": false,
+  "yaml": "m: {a: !!foo 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "U05-unknown-verbatim",
+  "mode": "both",
+  "note": "P0-A unknown-tag controls: unknown-verbatim (from e2e-map.py (U))",
+  "known_divergence": false,
+  "yaml": "m: {a: !<tag:x> 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "U06-known-timestamp",
+  "mode": "both",
+  "note": "P0-A unknown-tag controls: known-timestamp (from e2e-map.py (U))",
+  "known_divergence": false,
+  "yaml": "m: {a: !!timestamp 2020-01-01}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "U07-known-binary",
+  "mode": "both",
+  "note": "P0-A unknown-tag controls: known-binary (from e2e-map.py (U))",
+  "known_divergence": false,
+  "yaml": "m: {a: !!binary aGk=}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "U08-known-seq",
+  "mode": "both",
+  "note": "P0-A unknown-tag controls: known-seq (from e2e-map.py (U))",
+  "known_divergence": false,
+  "yaml": "m: {a: !!seq [1]}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "U09-known-map",
+  "mode": "both",
+  "note": "P0-A unknown-tag controls: known-map (from e2e-map.py (U))",
+  "known_divergence": false,
+  "yaml": "m: {a: !!map {b: 1}}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "U10-known-set",
+  "mode": "both",
+  "note": "P0-A unknown-tag controls: known-set (from e2e-map.py (U))",
+  "known_divergence": false,
+  "yaml": "m: {a: !!set {b: null}}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "U11-known-str",
+  "mode": "both",
+  "note": "P0-A unknown-tag controls: known-str (from e2e-map.py (U))",
+  "known_divergence": false,
+  "yaml": "m: {a: !!str 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "U12-known-int",
+  "mode": "both",
+  "note": "P0-A unknown-tag controls: known-int (from e2e-map.py (U))",
+  "known_divergence": false,
+  "yaml": "m: {a: !!int 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "U13-known-bool",
+  "mode": "both",
+  "note": "P0-A unknown-tag controls: known-bool (from e2e-map.py (U))",
+  "known_divergence": false,
+  "yaml": "m: {a: !!bool true}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "U14-known-float",
+  "mode": "both",
+  "note": "P0-A unknown-tag controls: known-float (from e2e-map.py (U))",
+  "known_divergence": false,
+  "yaml": "m: {a: !!float 1.5}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "U15-known-null",
+  "mode": "both",
+  "note": "P0-A unknown-tag controls: known-null (from e2e-map.py (U))",
+  "known_divergence": false,
+  "yaml": "m: {a: !!null x}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "U16-unknown-tag-on",
+  "mode": "both",
+  "note": "P0-A unknown-tag controls: unknown-tag-on (from e2e-map.py (U))",
+  "known_divergence": false,
+  "yaml": "on: {push: !foo}\nname: probe\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "U17-unknown-tag-value",
+  "mode": "both",
+  "note": "P0-A unknown-tag controls: unknown-tag-value (from e2e-map.py (U))",
+  "known_divergence": false,
+  "yaml": "m: {a: !foo}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "U18-verbatim-core-str",
+  "mode": "both",
+  "note": "P0-A unknown-tag controls: verbatim-core-str (from e2e-map.py (U))",
+  "known_divergence": false,
+  "yaml": "m: {a: !<tag:yaml.org,2002:str> 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "U19-verbatim-core-int",
+  "mode": "both",
+  "note": "P0-A unknown-tag controls: verbatim-core-int (from e2e-map.py (U))",
+  "known_divergence": false,
+  "yaml": "m: {a: !<tag:yaml.org,2002:int> 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "U20-tag-question",
+  "mode": "both",
+  "note": "P0-A unknown-tag controls: tag-question (from e2e-map.py (U))",
+  "known_divergence": false,
+  "yaml": "m: {a: !foo? 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "X02-comma-mid-suffix",
+  "mode": "both",
+  "note": "P0-A tag suffix swallowing ',' / ']': comma-mid-suffix (from x-comma.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: !foo,bar 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "X03-comma-then-close",
+  "mode": "both",
+  "note": "P0-A tag suffix swallowing ',' / ']': comma-then-close (from x-comma.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: !foo,}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "X04-comma-then-close-pair",
+  "mode": "both",
+  "note": "KNOWN DIVERGENCE (residual, §7): same ','-suffix family as A60 (flow map, another pair follows the swallowed ',').",
+  "known_divergence": false,
+  "yaml": "m: {a: !foo, b: 1, c: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "X05-comma-seq",
+  "mode": "both",
+  "note": "P0-A tag suffix swallowing ',' / ']': comma-seq (from x-comma.py)",
+  "known_divergence": false,
+  "yaml": "m: [!foo, 1]\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "X06-comma-seq-val",
+  "mode": "both",
+  "note": "P0-A tag suffix swallowing ',' / ']': comma-seq-val (from x-comma.py)",
+  "known_divergence": false,
+  "yaml": "m: [!foo, b]\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "X07-rbrack-flowmap",
+  "mode": "both",
+  "note": "P0-A tag suffix swallowing ',' / ']': rbrack-flowmap (from x-comma.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: !foo] b: 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "X08-rbrack-seq",
+  "mode": "both",
+  "note": "KNOWN DIVERGENCE (residual, §7): REVERSE — tag suffix swallows ']' — TS INVALID (npm stops the tag at ']' and then has extra tokens) vs Oracle VALID (PyYAML's suffix consumes ']' and the seq still closes). Fix direction: Oracle-side rejection of ']' in tag suffixes (same fix as A70); the TS side cannot accept this via npm.",
+  "known_divergence": false,
+  "yaml": "m: [!foo] 1]\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "X09-rbrack-seq2",
+  "mode": "both",
+  "note": "KNOWN DIVERGENCE (residual, §7): REVERSE — same ']'-suffix family as X08 (',' separator after the swallowed ']'). Fix direction: Oracle-side rejection of ']' in tag suffixes (same fix as A70).",
+  "known_divergence": false,
+  "yaml": "m: [!foo], 1]\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "X10-comma-block",
+  "mode": "both",
+  "note": "P0-A tag suffix swallowing ',' / ']': comma-block (from x-comma.py)",
+  "known_divergence": false,
+  "yaml": "a: !foo, b: 1\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "X11-comma-block2",
+  "mode": "both",
+  "note": "KNOWN DIVERGENCE (residual, §7): REVERSE — block variant of the ','-suffix family: 'a: !foo,' then 'b: 1' on the next line — TS INVALID (npm rejects) vs Oracle VALID (PyYAML's suffix consumes ','; the tag has a null node and 'b: 1' is the next pair). Fix direction: Oracle-side rejection of a tag suffix ending with ','; the TS side already rejects, so no TS-side rule can close it.",
+  "known_divergence": false,
+  "yaml": "a: !foo,\n  b: 1\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "X12-comma-anchor",
+  "mode": "both",
+  "note": "P0-A tag suffix swallowing ',' / ']': comma-anchor (from x-comma.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: &x, b: 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "X13-comma-after-tag-space",
+  "mode": "both",
+  "note": "P0-A tag suffix swallowing ',' / ']': comma-after-tag-space (from x-comma.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: !foo , b: 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "X14-comma-suffix-val",
+  "mode": "both",
+  "note": "P0-A tag suffix swallowing ',' / ']': comma-suffix-val (from x-comma.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: !foo,1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "X15-rbrack-then-close",
+  "mode": "both",
+  "note": "P0-A tag suffix swallowing ',' / ']': rbrack-then-close (from x-comma.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: !foo]}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "X16-comma-on",
+  "mode": "both",
+  "note": "P0-A tag suffix swallowing ',' / ']': comma-on (from x-comma.py)",
+  "known_divergence": false,
+  "yaml": "on: {push: !foo, pull_request}\nname: probe\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "Y01-seq-tagcomma-pair",
+  "mode": "both",
+  "note": "P0-A ','-suffix lookahead (seq vs map, node forms): seq-tagcomma-pair (from y-comma-lookahead.py)",
+  "known_divergence": false,
+  "yaml": "m: [!foo, a: 1]\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "Y02-seq-tagcomma-pair2",
+  "mode": "both",
+  "note": "P0-A ','-suffix lookahead (seq vs map, node forms): seq-tagcomma-pair2 (from y-comma-lookahead.py)",
+  "known_divergence": false,
+  "yaml": "m: [!foo, a: 1, b: 2]\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "Y03-map-tagcomma-quoted",
+  "mode": "both",
+  "note": "KNOWN DIVERGENCE (residual, §7): same ','-suffix family as A60 (flow map, quoted node after the swallowed ',').",
+  "known_divergence": false,
+  "yaml": "m: {a: !foo, \"b\": 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "Y04-map-tagcomma-nested",
+  "mode": "both",
+  "note": "P0-A ','-suffix lookahead (seq vs map, node forms): map-tagcomma-nested (from y-comma-lookahead.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: !foo, [1]: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "Y05-map-tagcomma-nl",
+  "mode": "both",
+  "note": "KNOWN DIVERGENCE (residual, §7): same ','-suffix family as A60 (flow map, node on the next line after the swallowed ',' — the lookahead must cross lines).",
+  "known_divergence": false,
+  "yaml": "m: {a: !foo,\n b: 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "Y06-map-tagcomma-nestedmap",
+  "mode": "both",
+  "note": "P0-A ','-suffix lookahead (seq vs map, node forms): map-tagcomma-nestedmap (from y-comma-lookahead.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: !foo, {b: 1}: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "Y07-map-tagcomma-alias",
+  "mode": "both",
+  "note": "P0-A ','-suffix lookahead (seq vs map, node forms): map-tagcomma-alias (from y-comma-lookahead.py)",
+  "known_divergence": false,
+  "yaml": "m: {a: !foo, *x: 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "Y08-map-tagcomma-anchor",
+  "mode": "both",
+  "note": "KNOWN DIVERGENCE (residual, §7): same ','-suffix family as A60 (flow map, anchor-prefixed node after the swallowed ',' — the lookahead must skip the anchor).",
+  "known_divergence": false,
+  "yaml": "m: {a: !foo, &x 1: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "Y09-map-tagcomma-num",
+  "mode": "both",
+  "note": "KNOWN DIVERGENCE (residual, §7): same ','-suffix family as A60 (flow map, numeric node after the swallowed ',').",
+  "known_divergence": false,
+  "yaml": "m: {a: !foo, 1: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "Y10-map-tagcomma-null",
+  "mode": "both",
+  "note": "KNOWN DIVERGENCE (residual, §7): same ','-suffix family as A60 (flow map, null-value node after the swallowed ',').",
+  "known_divergence": false,
+  "yaml": "m: {a: !foo, b:}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ }
+]

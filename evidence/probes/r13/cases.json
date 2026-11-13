@@ -1,0 +1,296 @@
+[
+ {
+  "id": "r13-c1-a60",
+  "mode": "both",
+  "note": "R12-C1a A60",
+  "yaml": "m: {a: !foo, b: 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r13-c1-x04",
+  "mode": "both",
+  "note": "R12-C1b X04",
+  "yaml": "m: {a: !foo, b: 1, c: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r13-c1-y03",
+  "mode": "both",
+  "note": "R12-C1c Y03 quoted key",
+  "yaml": "m: {a: !foo, \"b\": 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r13-c1-y05",
+  "mode": "both",
+  "note": "R12-C1d Y05 newline",
+  "yaml": "m: {a: !foo,\n b: 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r13-c1-y08",
+  "mode": "both",
+  "note": "R12-C1e Y08 anchor after comma",
+  "yaml": "m: {a: !foo, &x 1: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r13-c1-y09",
+  "mode": "both",
+  "note": "R12-C1f Y09 numeric key",
+  "yaml": "m: {a: !foo, 1: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r13-c1-y10",
+  "mode": "both",
+  "note": "R12-C1g Y10 null value",
+  "yaml": "m: {a: !foo, b:}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r13-c1-x11",
+  "mode": "both",
+  "note": "R12-C1h X11 block variant",
+  "yaml": "a: !foo,\n  b: 1\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r13-c1-both-1",
+  "mode": "both",
+  "note": "both-accept: bare scalar after comma",
+  "yaml": "m: {a: !foo, 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r13-c1-both-2",
+  "mode": "both",
+  "note": "both-accept: flow seq after comma",
+  "yaml": "m: {a: !foo, [1, 2]}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r13-c1-x02",
+  "mode": "both",
+  "note": "control: comma mid-suffix",
+  "yaml": "m: {a: !foo,bar 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r13-c1-y01",
+  "mode": "both",
+  "note": "control: flow seq with pair",
+  "yaml": "m: [!foo, a: 1]\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r13-c1-x13",
+  "mode": "both",
+  "note": "control: space before comma",
+  "yaml": "m: {a: !foo , b: 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r13-c1-x05",
+  "mode": "both",
+  "note": "control: flow seq comma",
+  "yaml": "m: [!foo, 1]\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r13-c1-nested-map-in-seq",
+  "mode": "both",
+  "note": "flow map nested in flow seq: inner kind is map -> triggers",
+  "yaml": "m: {a: [!foo, b: 1]}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r13-c1-pure-seq",
+  "mode": "both",
+  "note": "pure flow seq: never triggers",
+  "yaml": "m: [!foo, b]\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r13-c1-seq-in-map",
+  "mode": "both",
+  "note": "flow seq nested in flow map: inner kind is seq -> exempt",
+  "yaml": "m: {a: [!foo, 1]}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r13-c1-verbatim-comma",
+  "mode": "both",
+  "note": "comma inside verbatim <> is content, not suffix",
+  "yaml": "m: {a: !<foo,bar> 1, b: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r13-c1-escaped-comma",
+  "mode": "both",
+  "note": "%2C escape: only literal trailing comma triggers",
+  "yaml": "m: {a: !foo%2Cbar 1, b: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r13-c2-a70",
+  "mode": "both",
+  "note": "R12-C2a A70",
+  "yaml": "m: {a: !foo[bar] 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r13-c2-x08",
+  "mode": "both",
+  "note": "R12-C2b X08",
+  "yaml": "m: [!foo] 1]\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r13-c2-x09",
+  "mode": "both",
+  "note": "R12-C2c X09",
+  "yaml": "m: [!foo], 1]\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r13-c2-esc-5b",
+  "mode": "both",
+  "note": "%5B escape decodes to [ but must NOT trigger (raw suffix)",
+  "yaml": "m: {a: !foo%5Bbar 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r13-c2-verbatim",
+  "mode": "both",
+  "note": "verbatim tag excluded (handle None)",
+  "yaml": "m: {a: !<foo[bar]> 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r13-c2-lbrack-mid",
+  "mode": "both",
+  "note": "[ mid-suffix, no closing bracket",
+  "yaml": "m: {a: !foo[ 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r13-c2-rbrack-only",
+  "mode": "both",
+  "note": "] only suffix",
+  "yaml": "m: {a: !foo] 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r13-c2-key-pos",
+  "mode": "both",
+  "note": "bracket suffix in key position",
+  "yaml": "m: {!foo[bar]: 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r13-c3-a45",
+  "mode": "both",
+  "note": "R12-C3 A45 anchored empty key",
+  "yaml": "&x: 1\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r13-c3-flow",
+  "mode": "both",
+  "note": "flow exemption",
+  "yaml": "m: {&x: 1}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r13-c3-flow2",
+  "mode": "both",
+  "note": "flow exemption, 2 pairs",
+  "yaml": "m: {&x: 1, b: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r13-c3-single-nested",
+  "mode": "both",
+  "note": "single-pair exemption, nested block mapping",
+  "yaml": "m:\n  &x: 1\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r13-c3-first-null",
+  "mode": "both",
+  "note": "first-pair null value, glued colon -> exempt",
+  "yaml": "&x:\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r13-c3-first-null-space",
+  "mode": "both",
+  "note": "space between anchor and colon breaks the null exemption",
+  "yaml": "&x :\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r13-c3-nonfirst-null",
+  "mode": "both",
+  "note": "null value in non-first position -> triggers",
+  "yaml": "name: probe\n&x:\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r13-c3-first-valued",
+  "mode": "both",
+  "note": "first pair with collection value -> triggers",
+  "yaml": "&x: [1]\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r13-c3-double-prop",
+  "mode": "both",
+  "note": "double property !foo &x: 1 -> triggers",
+  "yaml": "!foo &x: 1\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r13-c3-blockseq",
+  "mode": "both",
+  "note": "single pair in block-seq item mapping -> exempt",
+  "yaml": "m:\n  - &x: 1\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r13-lone-scalar",
+  "mode": "both",
+  "note": "RESIDUAL: lone doc &x: 1",
+  "yaml": "&x: 1\n"
+ },
+ {
+  "id": "r13-lone-null",
+  "mode": "both",
+  "note": "RESIDUAL: lone doc &x: (null)",
+  "yaml": "&x:\n"
+ },
+ {
+  "id": "r13-lone-plain",
+  "mode": "both",
+  "note": "control: lone plain scalar 1",
+  "yaml": "1\n"
+ },
+ {
+  "id": "r13-lone-string",
+  "mode": "both",
+  "note": "control: lone plain string",
+  "yaml": "hello\n"
+ },
+ {
+  "id": "r13-lone-seq",
+  "mode": "both",
+  "note": "control: lone sequence",
+  "yaml": "- a\n- b\n"
+ },
+ {
+  "id": "r13-lone-anchored-scalar",
+  "mode": "both",
+  "note": "control: lone anchored scalar, no colon",
+  "yaml": "&x hello\n"
+ },
+ {
+  "id": "r13-lone-tagged",
+  "mode": "both",
+  "note": "control: lone tagged scalar",
+  "yaml": "!foo 1\n"
+ },
+ {
+  "id": "r13-r6-extra",
+  "mode": "both",
+  "note": "R6 core: comment indent 0 after pair",
+  "yaml": "m: {a: 1\n# note\n, b: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r13-r6-on",
+  "mode": "both",
+  "note": "R6 on: slot",
+  "yaml": "on: {push: {types: [opened]}\n# note\n, pull_request}\nname: probe\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r13-r6-on-unsupported",
+  "mode": "both",
+  "note": "R6 on: slot, unsupported event pull (Oracle UNKNOWN)",
+  "yaml": "on: {push: {types: [opened]}\n# note\n, pull}\nname: probe\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r13-r6-close",
+  "mode": "both",
+  "note": "R6 closing comment",
+  "yaml": "m: {a: 1, b: 2\n# note\n}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ },
+ {
+  "id": "r13-r6-nestedblock",
+  "mode": "both",
+  "note": "R6 nested block",
+  "yaml": "x:\n  m: {a: 1\n# note\n   , b: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n"
+ }
+]

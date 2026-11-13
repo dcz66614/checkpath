@@ -1,0 +1,44 @@
+p3-int-lone              trigger:DIFF(TS VALID/ / O ERR) jobs:DIFF(TS [0 jobs] / O ERR)  # RESIDUAL: !!int on flow-map lone-doc value
+p3-bool-lone             trigger:DIFF(TS VALID/ / O ERR) jobs:DIFF(TS [0 jobs] / O ERR)  # RESIDUAL: !!bool on flow-map lone-doc value
+p3-float-lone            trigger:DIFF(TS VALID/ / O ERR) jobs:DIFF(TS [0 jobs] / O ERR)  # !!float on flow-map lone-doc value
+p3-str-lone              trigger:MATCH(TS VALID/ / O VALID/) jobs:MATCH(TS [0 jobs] / O [0 jobs])  # CONTROL: !!str on flow-map lone-doc value — already MATCH via unwrap
+p3-int-m                 trigger:DIFF(TS VALID/ / O ERR) jobs:DIFF(TS [1 jobs] / O ERR)  # RESIDUAL: !!int on flow-map m: value
+p3-float-m               trigger:DIFF(TS VALID/ / O ERR) jobs:DIFF(TS [1 jobs] / O ERR)  # RESIDUAL: !!float on flow-map m: value
+p3-bool-m                trigger:DIFF(TS VALID/ / O ERR) jobs:DIFF(TS [1 jobs] / O ERR)  # !!bool on flow-map m: value
+p3-str-m                 trigger:MATCH(TS VALID/ / O VALID/) jobs:MATCH(TS [1 jobs] / O [1 jobs])  # !!str on flow-map m: value
+p3-null-m                trigger:MATCH(TS VALID/ / O VALID/) jobs:MATCH(TS [1 jobs] / O [1 jobs])  # !!null on flow-map m: value
+p3-foo-m                 trigger:MATCH(TS VALID/ / O VALID/) jobs:MATCH(TS [1 jobs] / O [1 jobs])  # unknown !foo on flow-map m: value
+p3-int-on                trigger:DIFF(TS VALID/ / O ERR) jobs:DIFF(TS [1 jobs] / O ERR)  # RESIDUAL: !!int on flow-map on: value
+p3-bool-on               trigger:DIFF(TS VALID/ / O ERR) jobs:DIFF(TS [1 jobs] / O ERR)  # RESIDUAL: !!bool on flow-map on: value
+p3-float-on              trigger:DIFF(TS VALID/ / O ERR) jobs:DIFF(TS [1 jobs] / O ERR)  # RESIDUAL: !!float on flow-map on: value
+p3-str-on                trigger:DIFF(TS VALID/ / O UNKNOWN/) jobs:MATCH(TS [1 jobs] / O [1 jobs])  # RESIDUAL: !!str on flow-map on: value (UNKNOWN vs VALID)
+p3-null-on               trigger:DIFF(TS VALID/ / O INVALID/on_value_invalid) jobs:MATCH(TS [1 jobs] / O [1 jobs])  # !!null on flow-map on: value
+p3-foo-on                trigger:MATCH(TS VALID/ / O VALID/) jobs:MATCH(TS [1 jobs] / O [1 jobs])  # unknown !foo on flow-map on: value
+p3-int-on-block          trigger:DIFF(TS VALID/ / O ERR) jobs:DIFF(TS [1 jobs] / O ERR)  # !!int on block-map on: value
+p3-str-on-block          trigger:DIFF(TS VALID/ / O UNKNOWN/) jobs:MATCH(TS [1 jobs] / O [1 jobs])  # !!str on block-map on: value
+p3-int-jobs              trigger:DIFF(TS VALID/ / O ERR) jobs:DIFF(TS [1 jobs] / O ERR)  # !!int on flow-map jobs: value
+p3-str-jobs              trigger:MATCH(TS VALID/ / O VALID/) jobs:DIFF(TS [1 jobs] / O [0 jobs])  # !!str on flow-map jobs: value
+p3-int-jobs-block        trigger:DIFF(TS VALID/ / O ERR) jobs:DIFF(TS [1 jobs] / O ERR)  # !!int on block-map jobs: value
+p3-int-seq               trigger:DIFF(TS VALID/ / O ERR) jobs:DIFF(TS [1 jobs] / O ERR)  # !!int on flow-seq m: value
+p3-bool-seq              trigger:DIFF(TS VALID/ / O ERR) jobs:DIFF(TS [1 jobs] / O ERR)  # !!bool on flow-seq m: value
+p3-str-seq               trigger:MATCH(TS VALID/ / O VALID/) jobs:MATCH(TS [1 jobs] / O [1 jobs])  # !!str on flow-seq m: value
+p3-float-seq-block       trigger:DIFF(TS VALID/ / O ERR) jobs:DIFF(TS [1 jobs] / O ERR)  # !!float on block-seq m: value
+p3-int-blockmap          trigger:DIFF(TS VALID/ / O ERR) jobs:DIFF(TS [1 jobs] / O ERR)  # !!int on block-map m: value
+p3-str-blockmap          trigger:MATCH(TS VALID/ / O VALID/) jobs:MATCH(TS [1 jobs] / O [1 jobs])  # !!str on block-map m: value
+p3-bool-blockmap         trigger:DIFF(TS VALID/ / O ERR) jobs:DIFF(TS [1 jobs] / O ERR)  # !!bool on block-map m: value
+p3-on-list               trigger:DIFF(TS VALID/ / O ERR) jobs:DIFF(TS [1 jobs] / O ERR)  # !!int on flow-seq on: value
+p3-on-str-list           trigger:DIFF(TS VALID/ / O UNKNOWN/) jobs:MATCH(TS [1 jobs] / O [1 jobs])  # !!str on flow-seq on: value
+p3-nested                trigger:DIFF(TS VALID/ / O ERR) jobs:DIFF(TS [1 jobs] / O ERR)  # !!int on flow-map, nested value
+p3-deep                  trigger:DIFF(TS VALID/ / O ERR) jobs:DIFF(TS [1 jobs] / O ERR)  # !!bool on flow-map, deeply nested value
+p3-timestamp-m           trigger:MATCH(TS VALID/ / O VALID/) jobs:MATCH(TS [1 jobs] / O [1 jobs])  # !!timestamp (non-core tag) on flow-map m: value
+p3-set-m                 trigger:MATCH(TS VALID/ / O VALID/) jobs:MATCH(TS [1 jobs] / O [1 jobs])  # !!set (non-core tag) on flow-map m: value
+p3-scalar-int            trigger:MATCH(TS VALID/ / O VALID/) jobs:MATCH(TS [1 jobs] / O [1 jobs])  # CONTROL: !!int on a scalar value — must stay MATCH
+p3-scalar-str            trigger:MATCH(TS VALID/ / O VALID/) jobs:MATCH(TS [1 jobs] / O [1 jobs])  # CONTROL: !!str on a scalar value — must stay MATCH
+p3-scalar-bool           trigger:MATCH(TS VALID/ / O VALID/) jobs:MATCH(TS [1 jobs] / O [1 jobs])  # CONTROL: !!bool on a scalar value — must stay MATCH
+p3-scalar-float          trigger:MATCH(TS VALID/ / O VALID/) jobs:MATCH(TS [1 jobs] / O [1 jobs])  # CONTROL: !!float on a scalar value — must stay MATCH
+p3-scalar-null           trigger:MATCH(TS VALID/ / O VALID/) jobs:MATCH(TS [1 jobs] / O [1 jobs])  # CONTROL: !!null on a scalar value — must stay MATCH
+p3-int-key               trigger:MATCH(TS VALID/ / O VALID/) jobs:MATCH(TS [1 jobs] / O [1 jobs])  # tagged scalar key — control
+p3-map-key               trigger:DIFF(TS INVALID/yaml_parse_error / O ERR) jobs:DIFF(TS [0 jobs] / O ERR)  # tagged MAP as a key — boundary probe
+
+map2-p0-16 [p3]: 35/82 MATCH
+DIFFs: p3-int-lone [trigger], p3-int-lone [jobs], p3-bool-lone [trigger], p3-bool-lone [jobs], p3-float-lone [trigger], p3-float-lone [jobs], p3-int-m [trigger], p3-int-m [jobs], p3-float-m [trigger], p3-float-m [jobs], p3-bool-m [trigger], p3-bool-m [jobs], p3-int-on [trigger], p3-int-on [jobs], p3-bool-on [trigger], p3-bool-on [jobs], p3-float-on [trigger], p3-float-on [jobs], p3-str-on [trigger], p3-null-on [trigger], p3-int-on-block [trigger], p3-int-on-block [jobs], p3-str-on-block [trigger], p3-int-jobs [trigger], p3-int-jobs [jobs], p3-str-jobs [jobs], p3-int-jobs-block [trigger], p3-int-jobs-block [jobs], p3-int-seq [trigger], p3-int-seq [jobs], p3-bool-seq [trigger], p3-bool-seq [jobs], p3-float-seq-block [trigger], p3-float-seq-block [jobs], p3-int-blockmap [trigger], p3-int-blockmap [jobs], p3-bool-blockmap [trigger], p3-bool-blockmap [jobs], p3-on-list [trigger], p3-on-list [jobs], p3-on-str-list [trigger], p3-nested [trigger], p3-nested [jobs], p3-deep [trigger], p3-deep [jobs], p3-map-key [trigger], p3-map-key [jobs]

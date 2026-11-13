@@ -1,0 +1,303 @@
+[
+ {
+  "id": "V1-tab-quote-double-run",
+  "mode": "both",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo \"a\tb\"\n",
+  "note": "R6 P0: tab inside double quotes mid plain scalar (run value)",
+  "known_divergence": false
+ },
+ {
+  "id": "V2-tab-quote-single-run",
+  "mode": "both",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo 'a\tb'\n",
+  "note": "R6 P0: tab inside single quotes mid plain scalar (run value)",
+  "known_divergence": false
+ },
+ {
+  "id": "V5-tab-quote-continuation",
+  "mode": "both",
+  "yaml": "name: some long\n  \"a\tb\" tail\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "R6 P0: quote at start of plain-scalar continuation line, tab inside quotes",
+  "known_divergence": false
+ },
+ {
+  "id": "V9-tab-quote-trailing-comment",
+  "mode": "both",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo \"a\tb\" # c\n",
+  "note": "R6 P0: V1 + trailing comment",
+  "known_divergence": false
+ },
+ {
+  "id": "V1b-anchor-plain-quote",
+  "mode": "both",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: &a echo \"a\tb\"\n",
+  "note": "V1 with anchor: quote is literal inside plain scalar after anchor",
+  "known_divergence": false
+ },
+ {
+  "id": "V1c-flow-plain-quote",
+  "mode": "both",
+  "yaml": "name: probe\non: {push: echo \"a\tb\"}\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "V1 in flow: plain scalar in progress inside flow mapping",
+  "known_divergence": false
+ },
+ {
+  "id": "V1d-plain-key-quote",
+  "mode": "both",
+  "yaml": "name: probe\non: push\njobs:\n  test \"x\ty\":\n    runs-on: ubuntu-latest\n",
+  "note": "V1 in key position: plain key with literal quote + tab",
+  "known_divergence": false
+ },
+ {
+  "id": "V1e-value-next-line-quote-cont",
+  "mode": "both",
+  "yaml": "name:\n  some long\n \"a\tb\" tail\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "V1 + value on next line after bare key: continuation at indent 1, quote at start",
+  "known_divergence": false
+ },
+ {
+  "id": "V1f-continuation-mid-quote",
+  "mode": "both",
+  "yaml": "name: some long\n  tail \"a\tb\"\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "V1 on a continuation line: quote mid-line after plain text",
+  "known_divergence": false
+ },
+ {
+  "id": "V1g-explicit-plain-key-quote",
+  "mode": "both",
+  "yaml": "name: probe\n? echo \"a\tb\": 1\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "V1 in explicit-key position: plain key with literal quote + tab",
+  "known_divergence": false
+ },
+ {
+  "id": "V3-quoted-run-value",
+  "mode": "both",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: \"a\tb\"\n",
+  "note": "R6 boundary: true quoted scalar as whole value, tab legal",
+  "known_divergence": false
+ },
+ {
+  "id": "V4-quoted-name-value",
+  "mode": "both",
+  "yaml": "name: \"a\tb\"\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "R6 boundary: true quoted scalar as whole value (name)",
+  "known_divergence": false
+ },
+ {
+  "id": "V6-tab-outside-quote",
+  "mode": "both",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo \"a\" b\tc\n",
+  "note": "R6 boundary: tab outside quotes, in plain scalar -> both reject",
+  "known_divergence": false
+ },
+ {
+  "id": "V7-quote-glued",
+  "mode": "both",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: a\"b\tc\"d\n",
+  "note": "R6 boundary: quote glued to plain text, not a quote start",
+  "known_divergence": false
+ },
+ {
+  "id": "V8-quoted-key-tab",
+  "mode": "both",
+  "yaml": "name: probe\n\"a\tb\": 1\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "R6 boundary: true quoted key, tab legal",
+  "known_divergence": false
+ },
+ {
+  "id": "Q1-continuation-quote-tab-outside",
+  "mode": "both",
+  "yaml": "name: some long\n  \"quoted\" tail\twith tab\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "FIX-P0-06 Q1 verbatim: quote at continuation start, tab OUTSIDE quotes",
+  "known_divergence": false
+ },
+ {
+  "id": "Q3-bare-seq-item-block",
+  "mode": "both",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - |\n        echo a\tb\n",
+  "note": "FIX-P0-06 Q3 verbatim: bare seq-item block scalar, tab in content",
+  "known_divergence": false
+ },
+ {
+  "id": "B4-multiline-plain-tab",
+  "mode": "both",
+  "yaml": "name: a\n  b\tc\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "FIX-P0-06 B4 verbatim: tab in multi-line plain scalar",
+  "known_divergence": false
+ },
+ {
+  "id": "B5-apostrophe-tab",
+  "mode": "both",
+  "yaml": "name: it's\ton: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "FIX-P0-06 B5 verbatim: apostrophe in plain scalar then tab",
+  "known_divergence": false
+ },
+ {
+  "id": "B6-tab-before-comment",
+  "mode": "both",
+  "yaml": "name: probe\t# comment\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "FIX-P0-06 B6 verbatim: tab before comment",
+  "known_divergence": false
+ },
+ {
+  "id": "TAB-COMMENT",
+  "mode": "both",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi # c\tomment\n",
+  "note": "R6 boundary: tab inside comment, both accept",
+  "known_divergence": false
+ },
+ {
+  "id": "TAB-BLOCK-CONTENT",
+  "mode": "both",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: |\n          echo a\tb\n",
+  "note": "R6 boundary: tab inside block scalar content, both accept",
+  "known_divergence": false
+ },
+ {
+  "id": "N5-explicit-map-key",
+  "mode": "both",
+  "yaml": "name: probe\non:\n  ? {a: b} : 1\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "FIX-P0-06 N5 verbatim: explicit collection key, must stay MATCH",
+  "known_divergence": false
+ },
+ {
+  "id": "N5-explicit-seq-key",
+  "mode": "both",
+  "yaml": "name: probe\non:\n  ? [a, b] : 1\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "FIX-P0-06 N5 verbatim: explicit collection key, must stay MATCH",
+  "known_divergence": false
+ },
+ {
+  "id": "X-empty-2",
+  "mode": "both",
+  "yaml": "name: probe\non:\n  : 1\n  : 2\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "R5 X-empty-2 (R6 re-probed): two bare empty keys, both INVALID",
+  "known_divergence": false
+ },
+ {
+  "id": "X-empty-3",
+  "mode": "both",
+  "yaml": "name: probe\non:\n  : 1\n  null: 2\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "R5 X-empty-3 (R6 re-probed): bare empty key + null key, both INVALID",
+  "known_divergence": false
+ },
+ {
+  "id": "X-empty-4",
+  "mode": "both",
+  "yaml": "name: probe\non:\n  : 1\n  ~: 2\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "R5 X-empty-4 (R6 re-probed): bare empty key + ~ key, both INVALID",
+  "known_divergence": false
+ },
+ {
+  "id": "ANCHOR-QUOTED",
+  "mode": "both",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: &a \"x\ty\"\n",
+  "note": "Boundary: quoted scalar after anchor, tab legal",
+  "known_divergence": false
+ },
+ {
+  "id": "TAG-QUOTED",
+  "mode": "both",
+  "yaml": "name: !!str \"x\ty\"\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "Boundary: quoted scalar after tag, tab legal",
+  "known_divergence": false
+ },
+ {
+  "id": "FLOW-V3-QUOTED",
+  "mode": "both",
+  "yaml": "name: probe\non: {push: \"a\tb\"}\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "Boundary: true quoted scalar as flow value, tab legal",
+  "known_divergence": false
+ },
+ {
+  "id": "SEQ-ITEM-QUOTED",
+  "mode": "both",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - \"a\tb\"\n",
+  "note": "Boundary: quoted scalar as bare sequence item, tab legal",
+  "known_divergence": false
+ },
+ {
+  "id": "MULTILINE-QUOTED-TAB",
+  "mode": "both",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: \"a\n          b\tc\"\n",
+  "note": "Boundary: quoted scalar spanning lines (continuation indented 10 > key indent 8), tab inside, both accept",
+  "known_divergence": false
+ },
+ {
+  "id": "COMMENT-THEN-CONT-QUOTE-TAB",
+  "mode": "both",
+  "yaml": "name: some long\n  # c\n  \"a\tb\" tail\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "Boundary: comment line then continuation line with quote+tab (comment is transparent)",
+  "known_divergence": false
+ },
+ {
+  "id": "BLANK-THEN-CONT-QUOTE-TAB",
+  "mode": "both",
+  "yaml": "name: some long\n\n  \"a\tb\" tail\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "Boundary: blank line then continuation line with quote+tab (blank folds)",
+  "known_divergence": false
+ },
+ {
+  "id": "TRAILING-COMMENT-THEN-CONT",
+  "mode": "both",
+  "yaml": "name: some long # c\n  \"a\tb\" tail\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "Boundary: trailing comment on scalar line, then continuation with quote+tab",
+  "known_divergence": false
+ },
+ {
+  "id": "Q8-apostrophe-run-tab",
+  "mode": "both",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo don't\tstop\n",
+  "note": "FIX-P0-06 Q8 verbatim: apostrophe in run value + tab",
+  "known_divergence": false
+ },
+ {
+  "id": "FLOW-NESTED-QUOTED",
+  "mode": "both",
+  "yaml": "name: probe\non: {push: {branches: [\"a\tb\"]}}\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "Boundary: quoted scalar nested in flow, tab legal",
+  "known_divergence": false
+ },
+ {
+  "id": "FLOW-PLAIN-KEY-TAB",
+  "mode": "both",
+  "yaml": "name: probe\non: {push\t: {}}\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "H6 regression: tab after plain key in flow, both reject",
+  "known_divergence": false
+ },
+ {
+  "id": "EXPLICIT-QUOTED-KEY",
+  "mode": "both",
+  "yaml": "name: probe\n? \"a\tb\": 1\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "Boundary: explicit quoted key, tab legal",
+  "known_divergence": false
+ },
+ {
+  "id": "FLOW-PLAIN-QUOTE-TAB",
+  "mode": "both",
+  "yaml": "name: probe\non: {a: \"b\", c: d \"e\tf\"}\njobs:\n  test:\n    runs-on: ubuntu-latest\n",
+  "note": "Boundary: flow plain scalar + literal quote + tab, both reject",
+  "known_divergence": false
+ },
+ {
+  "id": "MULTILINE-QUOTED-TAB-SQ",
+  "mode": "both",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: 'a\n          b\tc'\n",
+  "note": "Boundary: single-quoted scalar spanning lines (continuation indented 10 > key indent 8), tab inside, both accept",
+  "known_divergence": false
+ },
+ {
+  "id": "RESID-MULTILINE-QUOTED-UNINDENTED-DQ",
+  "mode": "both",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: \"a\nb\tc\"\n",
+  "note": "RESIDUAL (parser leniency, NOT the tab rule): the yaml package rejects a multi-line quoted scalar whose continuation line is indented <= the block context indent (here key indent 8; continuation at 0; threshold probed: indent 9+ parses, 8- fails), PyYAML accepts any indent. Also diverges WITHOUT any tab. Out of scope for FIX-P0-07; needs a parser-level fix.",
+  "known_divergence": false
+ },
+ {
+  "id": "RESID-MULTILINE-QUOTED-UNINDENTED-SQ",
+  "mode": "both",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: 'a\nb\tc'\n",
+  "note": "RESIDUAL (parser leniency, NOT the tab rule): the yaml package rejects a multi-line quoted scalar whose continuation line is indented <= the block context indent (here key indent 8; continuation at 0; threshold probed: indent 9+ parses, 8- fails), PyYAML accepts any indent. Also diverges WITHOUT any tab. Out of scope for FIX-P0-07; needs a parser-level fix.",
+  "known_divergence": false
+ }
+]

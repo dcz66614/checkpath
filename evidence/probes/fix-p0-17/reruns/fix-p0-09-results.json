@@ -1,0 +1,884 @@
+[
+ {
+  "id": "f01-r3-extra-ind1",
+  "mode": "both",
+  "note": "FIX-P0-09: f01 R8 R3-EXTRA-IND1, double-quoted key, continuation indent 1",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "f02-r3-on-ind1",
+  "mode": "both",
+  "note": "FIX-P0-09: f02 R8 R3-ON-IND1, double-quoted key as on: value, continuation indent 1",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "f03-r3-extra-ind0",
+  "mode": "both",
+  "note": "FIX-P0-09: f03 R8 R3-EXTRA-IND0, continuation indent 0 — both reject already (boundary)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "f04-r3-on-ind0",
+  "mode": "both",
+  "note": "FIX-P0-09: f04 R8 R3-ON-IND0, continuation indent 0 — both reject already (boundary)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "f05-r3-extra-sq",
+  "mode": "both",
+  "note": "FIX-P0-09: f05 R8 R3-EXTRA-SQ, single-quoted key, continuation indent 1",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "f06-r3-on-sq",
+  "mode": "both",
+  "note": "FIX-P0-09: f06 R8 R3-ON-SQ, single-quoted key as on: value, continuation indent 1",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "f07-r3-extra-ind2",
+  "mode": "both",
+  "note": "FIX-P0-09: f07 R8 R3-EXTRA-IND2, continuation indent 2",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "f08-r3-nested",
+  "mode": "both",
+  "note": "FIX-P0-09: f08 R8 R3-NESTED, nested flow map",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "f09-r3-blockkey",
+  "mode": "both",
+  "note": "FIX-P0-09: f09 R8 R3-BLOCKKEY, block mapping key — both reject already (boundary)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "f10-r3-on-ind9",
+  "mode": "both",
+  "note": "FIX-P0-09: f10 R8 R3-ON-IND9, continuation indent 9",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "f11-plain-key-fold",
+  "mode": "both",
+  "note": "FIX-P0-09: f11 plain key spanning lines (folds to 'a b')",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "f12-plain-key-on",
+  "mode": "both",
+  "note": "FIX-P0-09: f12 plain key spanning lines as on: value",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "f13-plain-key-ind2",
+  "mode": "both",
+  "note": "FIX-P0-09: f13 plain key, continuation indent 2",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "f14-flow-key-escaped",
+  "mode": "both",
+  "note": "FIX-P0-09: f14 double-quoted key with an escaped quote before the newline",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "f15-anchored-mlq-key",
+  "mode": "both",
+  "note": "FIX-P0-09: f15 anchored multi-line quoted key",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "f16-flow-map-in-seq",
+  "mode": "both",
+  "note": "FIX-P0-09: f16 flow map inside a sequence item",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "f17-flow-key-jobs",
+  "mode": "both",
+  "note": "FIX-P0-09: f17 multi-line quoted key inside the jobs: mapping",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "f18-flow-key-on-nested",
+  "mode": "both",
+  "note": "FIX-P0-09: f18 multi-line quoted key nested under the push: event",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "f19-flow-key-root",
+  "mode": "both",
+  "note": "FIX-P0-09: f19 flow map as the whole document — both reject already (boundary)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "f20-flow-value-mlq",
+  "mode": "both",
+  "note": "FIX-P0-09: f20 multi-line quoted VALUE — must NOT be rejected (boundary, both accept)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "f21-v8-key-tab",
+  "mode": "both",
+  "note": "FIX-P0-09: f21 R8 V8, single-line quoted key with a tab inside — both accept (boundary)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "f22-explicit-quoted",
+  "mode": "both",
+  "note": "FIX-P0-09: f22 explicit ? key, double-quoted — both accept (boundary)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "f23-explicit-plain",
+  "mode": "both",
+  "note": "FIX-P0-09: f23 explicit ? key, plain — both accept (boundary)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "f24-explicit-on",
+  "mode": "both",
+  "note": "FIX-P0-09: f24 explicit ? key as on: value — both INVALID / event_config_not_mapping (boundary)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "f25-explicit-comment",
+  "mode": "both",
+  "note": "FIX-P0-09: f25 explicit ? key with a comment between ? and the key — both accept (boundary; the ? must survive the comment scan)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "f26-explicit-q-in-value",
+  "mode": "both",
+  "note": "FIX-P0-09: f26 explicit ? key with a # inside a quoted value before it — both accept (boundary)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "f27-block-explicit",
+  "mode": "both",
+  "note": "FIX-P0-09: f27 explicit ? key in a block mapping — both accept (boundary)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "f28-normal-flow-on",
+  "mode": "both",
+  "note": "FIX-P0-09: f28 normal flow on: — both accept (baseline)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "f29-s2-plain-ind1",
+  "mode": "both",
+  "note": "FIX-P0-09: f29 S2, plain key with the colon on the next line, indent 1",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "f30-s2-plain-ind2",
+  "mode": "both",
+  "note": "FIX-P0-09: f30 S2, plain key with the colon on the next line, indent 2",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "f31-s2-quoted-ind1",
+  "mode": "both",
+  "note": "FIX-P0-09: f31 S2, quoted key with the colon on the next line, indent 1",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "f32-s2-on-quoted",
+  "mode": "both",
+  "note": "FIX-P0-09: f32 S2, quoted key with the colon on the next line as on: value",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "f33-s2-comment-ind1",
+  "mode": "both",
+  "note": "FIX-P0-09: f33 S2, comment between the key and the colon on the next line",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "f34-s2-comment-own-line",
+  "mode": "both",
+  "note": "FIX-P0-09: f34 S2, comment on its own line between the key and the colon",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "f35-s2-multi-pair",
+  "mode": "both",
+  "note": "FIX-P0-09: f35 S2, colon on the next line at indent 0 — both reject already (boundary)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "f36-s2-explicit-comment",
+  "mode": "both",
+  "note": "FIX-P0-09: f36 S2, explicit ? key with a comment before the colon on the next line — both accept (boundary)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "f37-value-next-line",
+  "mode": "both",
+  "note": "FIX-P0-09: f37 value written on the next line after the colon — both accept (boundary)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "f38-key-next-line-after-brace",
+  "mode": "both",
+  "note": "FIX-P0-09: f38 key on the next line after { — both accept (boundary)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r4-comma-ind0",
+  "mode": "both",
+  "note": "R4 (NEW residual, NOT fixed this round): comma on its own line at indent 0 in a flow map — TS INVALID / yaml_parse_error vs Oracle VALID",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r4-comma-ind1",
+  "mode": "both",
+  "note": "R4 boundary: comma on its own line at indent 1 — both VALID",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r5-explicit-plain-ind0",
+  "mode": "both",
+  "note": "R5 (NEW residual, NOT fixed this round): explicit key with the colon on the next line at indent 0 — TS INVALID / yaml_parse_error vs Oracle VALID",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r5-explicit-quoted-ind0",
+  "mode": "both",
+  "note": "R5 (NEW residual, NOT fixed this round): explicit quoted key with the colon on the next line at indent 0 — TS INVALID / yaml_parse_error vs Oracle VALID",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r5-explicit-ind1",
+  "mode": "both",
+  "note": "R5 boundary: explicit key with the colon on the next line at indent 1 — both VALID",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "r5-explicit-quoted-ind1",
+  "mode": "both",
+  "note": "R5 boundary: explicit quoted key with the colon on the next line at indent 1 — both VALID",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "comment-with-q-before-key",
+  "mode": "both",
+  "note": "Boundary: a # inside a comment before a multi-line quoted key — both INVALID (parse() rejects the implicit multi-line block key first)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "flow-multi-pair",
+  "mode": "both",
+  "note": "S1 multi-pair: the first key fires; the single-line key after it does not matter",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "plain-key-explicit-on",
+  "mode": "both",
+  "note": "Boundary: explicit plain ? key as on: value — both INVALID / event_config_not_mapping",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "block-colon-next",
+  "mode": "both",
+  "note": "Boundary: block key with the colon on the next line — both INVALID",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "block-colon-next-nested",
+  "mode": "both",
+  "note": "Boundary: nested block key with the colon on the next line — both INVALID",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ }
+]

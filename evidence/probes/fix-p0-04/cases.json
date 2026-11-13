@@ -1,0 +1,506 @@
+[
+ {
+  "id": "E3",
+  "mode": "trigger",
+  "yaml": "name: probe\non:\n  1:\n  01:\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "R4 A: dup scalar keys"
+ },
+ {
+  "id": "N3",
+  "mode": "trigger",
+  "yaml": "name: probe\non:\n  1.5:\n  1.50:\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "R4 A: dup scalar keys"
+ },
+ {
+  "id": "N4",
+  "mode": "trigger",
+  "yaml": "name: probe\non:\n  1:\n  1.0:\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "R4 A: dup scalar keys"
+ },
+ {
+  "id": "N5",
+  "mode": "trigger",
+  "yaml": "name: probe\non:\n  0x10:\n  16:\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "R4 A: dup scalar keys"
+ },
+ {
+  "id": "N6",
+  "mode": "trigger",
+  "yaml": "name: probe\non:\n  +1:\n  1:\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "R4 A: dup scalar keys"
+ },
+ {
+  "id": "N7",
+  "mode": "trigger",
+  "yaml": "name: probe\non:\n  -0:\n  0:\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "R4 A: dup scalar keys"
+ },
+ {
+  "id": "M1",
+  "mode": "trigger",
+  "yaml": "name: probe\non:\n  0o17:\n  15:\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "R4 A: dup scalar keys"
+ },
+ {
+  "id": "M3",
+  "mode": "trigger",
+  "yaml": "name: probe\non:\n  1e2:\n  100:\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "R4 A: dup scalar keys"
+ },
+ {
+  "id": "M4",
+  "mode": "trigger",
+  "yaml": "name: probe\non:\n  0.5:\n  .5:\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "R4 A: dup scalar keys"
+ },
+ {
+  "id": "M5",
+  "mode": "trigger",
+  "yaml": "name: probe\non:\n  5.:\n  5.0:\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "R4 A: dup scalar keys"
+ },
+ {
+  "id": "M6",
+  "mode": "trigger",
+  "yaml": "name: probe\non:\n  .inf:\n  .Inf:\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "R4 A: dup scalar keys"
+ },
+ {
+  "id": "K3",
+  "mode": "trigger",
+  "yaml": "name: probe\non:\n  1E2:\n  100:\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "R4 A: dup scalar keys"
+ },
+ {
+  "id": "K4",
+  "mode": "trigger",
+  "yaml": "name: probe\non:\n  .INF:\n  .inf:\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "R4 A: dup scalar keys"
+ },
+ {
+  "id": "P2c",
+  "mode": "trigger",
+  "yaml": "name: probe\non:\n  True:\n  FALSE:\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "R4 B: bool rendering"
+ },
+ {
+  "id": "N2",
+  "mode": "trigger",
+  "yaml": "name: probe\non:\n  01:\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "R4 B: single 01"
+ },
+ {
+  "id": "N8",
+  "mode": "trigger",
+  "yaml": "name: probe\non:\n  1_000:\n  1000:\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "R4 B"
+ },
+ {
+  "id": "M2",
+  "mode": "trigger",
+  "yaml": "name: probe\non:\n  0b101:\n  5:\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "R4 B"
+ },
+ {
+  "id": "M7",
+  "mode": "trigger",
+  "yaml": "name: probe\non:\n  .nan:\n  .NaN:\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "R4 B: nan collapse"
+ },
+ {
+  "id": "M8",
+  "mode": "trigger",
+  "yaml": "name: probe\non:\n  1_0:\n  10:\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "R4 B"
+ },
+ {
+  "id": "K1",
+  "mode": "trigger",
+  "yaml": "name: probe\non:\n  0O17:\n  15:\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "R4 B"
+ },
+ {
+  "id": "K2",
+  "mode": "trigger",
+  "yaml": "name: probe\non:\n  0X10:\n  16:\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "R4 B"
+ },
+ {
+  "id": "K6",
+  "mode": "trigger",
+  "yaml": "name: probe\non:\n  0b0:\n  0:\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "R4 B"
+ },
+ {
+  "id": "R2",
+  "mode": "trigger",
+  "yaml": "name: probe\non: {True: {branches: [main]}, true: {branches: [dev]}}\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "R2 verdict input"
+ },
+ {
+  "id": "P2a",
+  "mode": "trigger",
+  "yaml": "name: probe\non:\n  TRUE:\n  True:\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": ""
+ },
+ {
+  "id": "P2b",
+  "mode": "trigger",
+  "yaml": "name: probe\non:\n  False:\n  false:\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": ""
+ },
+ {
+  "id": "P4a",
+  "mode": "trigger",
+  "yaml": "name: probe\non:\n  null:\n  Null:\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": ""
+ },
+ {
+  "id": "P4b",
+  "mode": "trigger",
+  "yaml": "name: probe\non:\n  null:\n  NULL:\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": ""
+ },
+ {
+  "id": "P4c",
+  "mode": "trigger",
+  "yaml": "name: probe\non:\n  Null:\n  NULL:\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": ""
+ },
+ {
+  "id": "P3a",
+  "mode": "trigger",
+  "yaml": "name: probe\non:\n  On:\n  on:\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": ""
+ },
+ {
+  "id": "P3b",
+  "mode": "trigger",
+  "yaml": "name: probe\non:\n  yes:\n  Yes:\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": ""
+ },
+ {
+  "id": "P5",
+  "mode": "trigger",
+  "yaml": "name: probe\non:\n  Push:\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": ""
+ },
+ {
+  "id": "P6",
+  "mode": "trigger",
+  "yaml": "name: probe\non:\n  true:\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": ""
+ },
+ {
+  "id": "Q1",
+  "mode": "trigger",
+  "yaml": "name: probe\non:\n  \"True\":\n  true:\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": ""
+ },
+ {
+  "id": "Q2",
+  "mode": "trigger",
+  "yaml": "name: probe\non:\n  'True':\n  true:\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": ""
+ },
+ {
+  "id": "Q3",
+  "mode": "trigger",
+  "yaml": "name: probe\non:\n  \"true\":\n  true:\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": ""
+ },
+ {
+  "id": "Q4",
+  "mode": "trigger",
+  "yaml": "name: probe\non:\n  :\n  :\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "R4 Q4: two bare keys (=X-empty-2)"
+ },
+ {
+  "id": "Q5",
+  "mode": "trigger",
+  "yaml": "name: probe\non:\n  ON:\n  on:\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": ""
+ },
+ {
+  "id": "E1",
+  "mode": "trigger",
+  "yaml": "name: probe\non:\n  :\n  null:\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "R4 E1: bare+null (=X-empty-3)"
+ },
+ {
+  "id": "E2",
+  "mode": "trigger",
+  "yaml": "name: probe\non:\n  :\n  ~:\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "R4 E2: bare+tilde (=X-empty-4)"
+ },
+ {
+  "id": "E4",
+  "mode": "trigger",
+  "yaml": "name: probe\non:\n  1:\n  1:\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": ""
+ },
+ {
+  "id": "E5",
+  "mode": "jobs",
+  "yaml": "name: probe\non:\n  push: {}\njobs:\n  True:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n  true:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "R4 E5: jobs-layer True:/true:"
+ },
+ {
+  "id": "E6",
+  "mode": "trigger",
+  "yaml": "name: probe\non:\n  \"on\":\n  on:\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": ""
+ },
+ {
+  "id": "E7",
+  "mode": "trigger",
+  "yaml": "name: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": ""
+ },
+ {
+  "id": "E8",
+  "mode": "trigger",
+  "yaml": "name: probe\non:\n  push:\n    branches: [main]\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": ""
+ },
+ {
+  "id": "N1",
+  "mode": "trigger",
+  "yaml": "name: probe\non:\n  1:\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": ""
+ },
+ {
+  "id": "K5",
+  "mode": "trigger",
+  "yaml": "name: probe\non:\n  1_000:\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": ""
+ },
+ {
+  "id": "R1",
+  "mode": "trigger",
+  "file": "tests/fixtures/parser-divergence/scalar-rendering/s01-placeholder.yml",
+  "note": "FIX-P0-03 R1-R10 (file resolved by runner from s01..s10)"
+ },
+ {
+  "id": "R2",
+  "mode": "trigger",
+  "file": "tests/fixtures/parser-divergence/scalar-rendering/s02-placeholder.yml",
+  "note": "FIX-P0-03 R1-R10 (file resolved by runner from s01..s10)"
+ },
+ {
+  "id": "R3",
+  "mode": "trigger",
+  "file": "tests/fixtures/parser-divergence/scalar-rendering/s03-placeholder.yml",
+  "note": "FIX-P0-03 R1-R10 (file resolved by runner from s01..s10)"
+ },
+ {
+  "id": "R4",
+  "mode": "trigger",
+  "file": "tests/fixtures/parser-divergence/scalar-rendering/s04-placeholder.yml",
+  "note": "FIX-P0-03 R1-R10 (file resolved by runner from s01..s10)"
+ },
+ {
+  "id": "R5",
+  "mode": "trigger",
+  "file": "tests/fixtures/parser-divergence/scalar-rendering/s05-placeholder.yml",
+  "note": "FIX-P0-03 R1-R10 (file resolved by runner from s01..s10)"
+ },
+ {
+  "id": "R6",
+  "mode": "trigger",
+  "file": "tests/fixtures/parser-divergence/scalar-rendering/s06-placeholder.yml",
+  "note": "FIX-P0-03 R1-R10 (file resolved by runner from s01..s10)"
+ },
+ {
+  "id": "R7",
+  "mode": "trigger",
+  "file": "tests/fixtures/parser-divergence/scalar-rendering/s07-placeholder.yml",
+  "note": "FIX-P0-03 R1-R10 (file resolved by runner from s01..s10)"
+ },
+ {
+  "id": "R8",
+  "mode": "trigger",
+  "file": "tests/fixtures/parser-divergence/scalar-rendering/s08-placeholder.yml",
+  "note": "FIX-P0-03 R1-R10 (file resolved by runner from s01..s10)"
+ },
+ {
+  "id": "R9",
+  "mode": "trigger",
+  "file": "tests/fixtures/parser-divergence/scalar-rendering/s09-placeholder.yml",
+  "note": "FIX-P0-03 R1-R10 (file resolved by runner from s01..s10)"
+ },
+ {
+  "id": "R10",
+  "mode": "trigger",
+  "file": "tests/fixtures/parser-divergence/scalar-rendering/s10-placeholder.yml",
+  "note": "FIX-P0-03 R1-R10 (file resolved by runner from s01..s10)"
+ },
+ {
+  "id": "X-empty-1",
+  "mode": "trigger",
+  "yaml": "name: probe\non:\n  :\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "R5 2.1: single bare event key"
+ },
+ {
+  "id": "X-filter-empty",
+  "mode": "trigger",
+  "yaml": "name: probe\non: {push: {: [main]}}\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "R5 2.2: bare filter key (flow)"
+ },
+ {
+  "id": "J20",
+  "mode": "jobs",
+  "yaml": "name: probe\non:\n  push: {}\njobs: {test: True}\n",
+  "note": "R5 2.3: scalar job def"
+ },
+ {
+  "id": "X-empty-5",
+  "mode": "trigger",
+  "yaml": "name: probe\non:\n  '':\n  '':\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "R5 2.4: two quoted empty keys"
+ },
+ {
+  "id": "X-empty-6",
+  "mode": "trigger",
+  "yaml": "name: probe\non:\n  '':\n  null:\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "R5 2.4: quoted empty + null"
+ },
+ {
+  "id": "X-huge-1",
+  "mode": "trigger",
+  "yaml": "name: probe\non:\n  9007199254740993:\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "R5 2.4"
+ },
+ {
+  "id": "X-huge-2",
+  "mode": "trigger",
+  "yaml": "name: probe\non:\n  9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999:\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "R5 2.4: 400-digit int key"
+ },
+ {
+  "id": "X-nan-dup",
+  "mode": "trigger",
+  "yaml": "name: probe\non:\n  .nan:\n  .nan:\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "R5 2.4"
+ },
+ {
+  "id": "X-inf-dup",
+  "mode": "trigger",
+  "yaml": "name: probe\non:\n  .inf:\n  .inf:\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "R5 2.4"
+ },
+ {
+  "id": "X-neg0-dup",
+  "mode": "trigger",
+  "yaml": "name: probe\non:\n  -0:\n  0:\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "R5 2.4: dup of N7 YAML"
+ },
+ {
+  "id": "B1-bare-jobs",
+  "mode": "both",
+  "yaml": "name: probe\non:\n  push: {}\njobs:\n  :\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "boundary: bare key in jobs: mapping"
+ },
+ {
+  "id": "B2-bare-top",
+  "mode": "both",
+  "yaml": "name: probe\n:\n  foo: bar\non:\n  push: {}\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "boundary: bare key at top level"
+ },
+ {
+  "id": "B3-bare-nested-job",
+  "mode": "both",
+  "yaml": "name: probe\non:\n  push: {}\njobs:\n  test:\n    runs-on: ubuntu-latest\n    :\n      foo: bar\n    steps:\n      - run: echo hi\n",
+  "note": "boundary: bare key inside job def"
+ },
+ {
+  "id": "B4-bare-steps-item",
+  "mode": "both",
+  "yaml": "name: probe\non:\n  push: {}\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n        :\n",
+  "note": "boundary: bare key in steps item mapping"
+ },
+ {
+  "id": "B5-bare-branches-value",
+  "mode": "both",
+  "yaml": "name: probe\non:\n  push:\n    branches:\n      : [main]\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "boundary: bare key as filter-value mapping key"
+ },
+ {
+  "id": "B6-bare-flow-jobs",
+  "mode": "both",
+  "yaml": "name: probe\non:\n  push: {}\njobs: {test: True, : 1}\n",
+  "note": "boundary: bare key in flow jobs map"
+ },
+ {
+  "id": "B7-bare-seq-item",
+  "mode": "both",
+  "yaml": "name: probe\non:\n  push: {}\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - :\n",
+  "note": "boundary: bare key as sole seq-item mapping key"
+ },
+ {
+  "id": "B8-explicit-q-empty",
+  "mode": "both",
+  "yaml": "name: probe\non:\n  ? :\n    branches: [main]\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "boundary: explicit ? with empty key"
+ },
+ {
+  "id": "B9-bare-trailing-spaces",
+  "mode": "both",
+  "yaml": "name: probe\non:\n  :   \njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "boundary: bare key + trailing spaces"
+ },
+ {
+  "id": "B10-bare-on-list-item",
+  "mode": "both",
+  "yaml": "name: probe\non:\n  - :\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "boundary: bare key in on-list item mapping"
+ },
+ {
+  "id": "B11-bare-flow-on",
+  "mode": "both",
+  "yaml": "name: probe\non: {push: {}, : 1}\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "boundary: bare key in flow on-map"
+ },
+ {
+  "id": "D1-alias-block-key",
+  "mode": "both",
+  "yaml": "x: &a foo\nname: probe\non:\n  *a : 1\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "no-regression: alias key resolves to scalar on both sides",
+  "known_divergence": false
+ },
+ {
+  "id": "D3-merge-key",
+  "mode": "both",
+  "yaml": "base: &b\n  runs-on: ubuntu-latest\nname: probe\non:\n  push: {}\njobs:\n  test:\n    <<: *b\n    steps:\n      - run: echo hi\n",
+  "note": "no-regression: merge key is a scalar key",
+  "known_divergence": false
+ },
+ {
+  "id": "D4-anchor-key",
+  "mode": "both",
+  "yaml": "name: probe\non:\n  &k push: {}\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "no-regression: anchored scalar key",
+  "known_divergence": false
+ },
+ {
+  "id": "E1-q-push-2line",
+  "mode": "both",
+  "yaml": "name: probe\non:\n  ? push\n  : {}\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "no-regression: standard two-line explicit key is a scalar key",
+  "known_divergence": false
+ },
+ {
+  "id": "E2-q-push-branches",
+  "mode": "both",
+  "yaml": "name: probe\non:\n  ? push\n  :\n    branches: [main]\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "no-regression: two-line explicit key with mapping value",
+  "known_divergence": false
+ },
+ {
+  "id": "D2-alias-flow-key",
+  "mode": "both",
+  "yaml": "x: &a foo\nname: probe\non: {*a: 1}\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "note": "KNOWN DIVERGENCE (residual, out of scope): TS yaml lib rejects flow alias key, PyYAML accepts it",
+  "known_divergence": false
+ }
+]
