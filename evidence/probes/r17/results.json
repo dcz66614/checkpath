@@ -1,0 +1,1791 @@
+{
+ "checks": 141,
+ "diff": 17,
+ "match": 124,
+ "rows": [
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h1-tag-tab",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h1-tag-tab",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h1-tag-comment",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "VALID",
+   "ts_errors": [],
+   "ts_status": "VALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h1-tag-comment",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h1-tag-bare-bang",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "VALID",
+   "ts_errors": [],
+   "ts_status": "VALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h1-tag-bare-bang",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h1-tag-double-bang",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "VALID",
+   "ts_errors": [],
+   "ts_status": "VALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h1-tag-double-bang",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h1-tag-bang-mid",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "VALID",
+   "ts_errors": [],
+   "ts_status": "VALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h1-tag-bang-mid",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h1-tag-flow-next",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "VALID",
+   "ts_errors": [],
+   "ts_status": "VALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h1-tag-scalar-next",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "workflow_root_not_mapping"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "workflow_root_not_mapping"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h1-tag-tab-brace",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h1-tag-tab-brace",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h1-tag-nobrace-flow-wf",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h1-tag-nobrace-flow-wf",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h1-tag-crlf",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "VALID",
+   "ts_errors": [],
+   "ts_status": "VALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h1-tag-crlf",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h2-run-semi",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "VALID",
+   "ts_errors": [],
+   "ts_status": "VALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h2-run-semi",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h2-run-eq",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "VALID",
+   "ts_errors": [],
+   "ts_status": "VALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h2-run-eq",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h2-run-plus",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "VALID",
+   "ts_errors": [],
+   "ts_status": "VALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h2-run-plus",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h2-run-dollar",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "VALID",
+   "ts_errors": [],
+   "ts_status": "VALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h2-run-dollar",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h2-run-at",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "VALID",
+   "ts_errors": [],
+   "ts_status": "VALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h2-run-at",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h2-run-percent",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "VALID",
+   "ts_errors": [],
+   "ts_status": "VALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h2-run-percent",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h2-run-backtick",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "VALID",
+   "ts_errors": [],
+   "ts_status": "VALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h2-run-backtick",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h2-run-pipe",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "VALID",
+   "ts_errors": [],
+   "ts_status": "VALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h2-run-pipe",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h2-run-gt",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "VALID",
+   "ts_errors": [],
+   "ts_status": "VALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h2-run-gt",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h2-run-lparen",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "VALID",
+   "ts_errors": [],
+   "ts_status": "VALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h2-run-lparen",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h2-run-backslash",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "VALID",
+   "ts_errors": [],
+   "ts_status": "VALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h2-run-backslash",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h2-hash-glued",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "VALID",
+   "ts_errors": [],
+   "ts_status": "VALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h2-hash-glued",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h2-triple-colon",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "VALID",
+   "ts_errors": [],
+   "ts_status": "VALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h2-triple-colon",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h2-colon-colon-eol",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "VALID",
+   "ts_errors": [],
+   "ts_status": "VALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h2-colon-colon-eol",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h2-run-end-bang",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "VALID",
+   "ts_errors": [],
+   "ts_status": "VALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h2-run-end-bang",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h2-nbsp",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "VALID",
+   "ts_errors": [],
+   "ts_status": "VALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h2-nbsp",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h2-colon-tab",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h2-colon-tab",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h2-colon-crlf",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "VALID",
+   "ts_errors": [],
+   "ts_status": "VALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h2-colon-crlf",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h2-run-bracket-close",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h2-run-bracket-close",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h2-run-brace-close",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h2-run-brace-close",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h3-alias-resolved",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h3-alias-resolved",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h3-alias-undef-flow",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h3-alias-undef-flow",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h3-alias-key-tag-after",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h3-alias-key-tag-after",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h3-alias-key-map-val",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h3-alias-key-map-val",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h3-alias-key-seq-val",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h3-alias-key-seq-val",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h3-alias-resolved-seq",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "VALID",
+   "ts_errors": [],
+   "ts_status": "VALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h3-alias-resolved-seq",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [
+    "errors: [\"yaml_parse_error\"] vs []",
+    "evaluation.reason: \"invalid\" vs \"triggered\"",
+    "events: [] vs [{\"branches\": null, \"branches_ignore\": null, \"name\": \"push\", \"paths\": null, \"paths_ignore\": null, \"types\": null}]",
+    "on_key_is_string: false vs true",
+    "status: \"INVALID\" vs \"VALID\""
+   ],
+   "expected_diff": false,
+   "id": "r17-h3-alias-resolved-key",
+   "match": false,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "VALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [
+    "<value>: [] vs [{\"id\": \"check\", \"if\": null, \"name\": null, \"needs\": [], \"unsupported_job\": null}]"
+   ],
+   "expected_diff": false,
+   "id": "r17-h3-alias-resolved-key",
+   "match": false,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h4-value-nested",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h4-value-nested",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h4-docmark",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "VALID",
+   "ts_errors": [],
+   "ts_status": "VALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h4-docmark",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h4-seq-item-map",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h4-seq-item-map",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h4-flow-seq-absorb",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h4-flow-seq-absorb",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h4-flow-second-colon-scalar",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h4-flow-second-colon-scalar",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h4-value-flow-nested",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h4-value-flow-nested",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h4-explicit-key-val",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h4-explicit-key-val",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h5-nested-flow-null",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h5-nested-flow-null",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h5-flow-seq-of-map",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h5-flow-seq-of-map",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h5-colon-seq-val",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h5-colon-seq-val",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h5-colon-second-anchor-null",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h5-colon-second-anchor-null",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h5-colon-empty-glued",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h5-colon-empty-glued",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h5-flow-map-in-seq-val",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h5-flow-map-in-seq-val",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h5-nonabsorb-anchor-null-val",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h5-nonabsorb-anchor-null-val",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h6-c3-absorb",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h6-c3-absorb",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h6-c3-absorb-first-pair",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h6-c3-absorb-first-pair",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [
+    "errors: [\"yaml_parse_error\"] vs []",
+    "evaluation.reason: \"invalid\" vs \"triggered\"",
+    "events: [] vs [{\"branches\": null, \"branches_ignore\": null, \"name\": \"push\", \"paths\": null, \"paths_ignore\": null, \"types\": null}]",
+    "on_key_is_string: false vs true",
+    "status: \"INVALID\" vs \"VALID\""
+   ],
+   "expected_diff": false,
+   "id": "r17-h8-alias-value-flow",
+   "match": false,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "VALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [
+    "<value>: [] vs [{\"id\": \"check\", \"if\": null, \"name\": null, \"needs\": [], \"unsupported_job\": null}]"
+   ],
+   "expected_diff": false,
+   "id": "r17-h8-alias-value-flow",
+   "match": false,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [
+    "errors: [\"yaml_parse_error\"] vs []",
+    "evaluation.reason: \"invalid\" vs \"triggered\"",
+    "events: [] vs [{\"branches\": null, \"branches_ignore\": null, \"name\": \"push\", \"paths\": null, \"paths_ignore\": null, \"types\": null}]",
+    "on_key_is_string: false vs true",
+    "status: \"INVALID\" vs \"VALID\""
+   ],
+   "expected_diff": false,
+   "id": "r17-h8-alias-value-nested",
+   "match": false,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "VALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [
+    "<value>: [] vs [{\"id\": \"check\", \"if\": null, \"name\": null, \"needs\": [], \"unsupported_job\": null}]"
+   ],
+   "expected_diff": false,
+   "id": "r17-h8-alias-value-nested",
+   "match": false,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [
+    "errors: [\"yaml_parse_error\"] vs []",
+    "evaluation.reason: \"invalid\" vs \"unknown\"",
+    "evaluation.unsupported: [] vs [\"unsupported_event:a\"]",
+    "events: [] vs [{\"branches\": null, \"branches_ignore\": null, \"name\": \"a\", \"paths\": null, \"paths_ignore\": null, \"types\": null}]",
+    "on_key_is_string: false vs true",
+    "status: \"INVALID\" vs \"UNKNOWN\""
+   ],
+   "expected_diff": false,
+   "id": "r17-h8-alias-on-value",
+   "match": false,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [
+    "<value>: [] vs [{\"id\": \"check\", \"if\": null, \"name\": null, \"needs\": [], \"unsupported_job\": null}]"
+   ],
+   "expected_diff": false,
+   "id": "r17-h8-alias-on-value",
+   "match": false,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [
+    "errors: [\"yaml_parse_error\"] vs []",
+    "evaluation.reason: \"invalid\" vs \"triggered\"",
+    "events: [] vs [{\"branches\": null, \"branches_ignore\": null, \"name\": \"push\", \"paths\": null, \"paths_ignore\": null, \"types\": null}]",
+    "on_key_is_string: false vs true",
+    "status: \"INVALID\" vs \"VALID\""
+   ],
+   "expected_diff": false,
+   "id": "r17-h8-alias-jobs-value",
+   "match": false,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "VALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h8-alias-jobs-value",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [
+    "errors: [\"yaml_parse_error\"] vs []",
+    "evaluation.reason: \"invalid\" vs \"triggered\"",
+    "events: [] vs [{\"branches\": null, \"branches_ignore\": null, \"name\": \"push\", \"paths\": null, \"paths_ignore\": null, \"types\": null}]",
+    "on_key_is_string: false vs true",
+    "status: \"INVALID\" vs \"VALID\""
+   ],
+   "expected_diff": false,
+   "id": "r17-h8-alias-second-pair",
+   "match": false,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "VALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [
+    "<value>: [] vs [{\"id\": \"check\", \"if\": null, \"name\": null, \"needs\": [], \"unsupported_job\": null}]"
+   ],
+   "expected_diff": false,
+   "id": "r17-h8-alias-second-pair",
+   "match": false,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [
+    "errors: [\"yaml_parse_error\"] vs []",
+    "evaluation.reason: \"invalid\" vs \"triggered\"",
+    "events: [] vs [{\"branches\": null, \"branches_ignore\": null, \"name\": \"push\", \"paths\": null, \"paths_ignore\": null, \"types\": null}]",
+    "on_key_is_string: false vs true",
+    "status: \"INVALID\" vs \"VALID\""
+   ],
+   "expected_diff": false,
+   "id": "r17-h8-alias-flow-value-2nd",
+   "match": false,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "VALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [
+    "<value>: [] vs [{\"id\": \"check\", \"if\": null, \"name\": null, \"needs\": [], \"unsupported_job\": null}]"
+   ],
+   "expected_diff": false,
+   "id": "r17-h8-alias-flow-value-2nd",
+   "match": false,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [
+    "errors: [\"yaml_parse_error\"] vs []",
+    "evaluation.reason: \"invalid\" vs \"triggered\"",
+    "events: [] vs [{\"branches\": null, \"branches_ignore\": null, \"name\": \"push\", \"paths\": null, \"paths_ignore\": null, \"types\": null}]",
+    "on_key_is_string: false vs true",
+    "status: \"INVALID\" vs \"VALID\""
+   ],
+   "expected_diff": false,
+   "id": "r17-h8-alias-nested-flow-value",
+   "match": false,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "VALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [
+    "<value>: [] vs [{\"id\": \"check\", \"if\": null, \"name\": null, \"needs\": [], \"unsupported_job\": null}]"
+   ],
+   "expected_diff": false,
+   "id": "r17-h8-alias-nested-flow-value",
+   "match": false,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [
+    "errors: [\"yaml_parse_error\"] vs []",
+    "evaluation.reason: \"invalid\" vs \"triggered\"",
+    "events: [] vs [{\"branches\": null, \"branches_ignore\": null, \"name\": \"push\", \"paths\": null, \"paths_ignore\": null, \"types\": null}]",
+    "on_key_is_string: false vs true",
+    "status: \"INVALID\" vs \"VALID\""
+   ],
+   "expected_diff": false,
+   "id": "r17-h8-alias-twice",
+   "match": false,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "VALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [
+    "<value>: [] vs [{\"id\": \"check\", \"if\": null, \"name\": null, \"needs\": [], \"unsupported_job\": null}]"
+   ],
+   "expected_diff": false,
+   "id": "r17-h8-alias-twice",
+   "match": false,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h8-alias-flow-seq-item",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "VALID",
+   "ts_errors": [],
+   "ts_status": "VALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h8-alias-flow-seq-item",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h8-alias-block-seq-item",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "VALID",
+   "ts_errors": [],
+   "ts_status": "VALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h8-alias-block-seq-item",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h8-alias-after-tag",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h8-alias-after-tag",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h8-alias-after-anchor",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h8-alias-after-anchor",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h8-alias-explicit-key",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h8-alias-explicit-key",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h8-alias-flow-key",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h8-alias-flow-key",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h7-lone-tag-space",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "workflow_root_not_mapping"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "workflow_root_not_mapping"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h7-lone-bang",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "workflow_root_not_mapping"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "workflow_root_not_mapping"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h7-lone-double-bang",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "workflow_root_not_mapping"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "workflow_root_not_mapping"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h7-lone-hash",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "workflow_root_not_mapping"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "workflow_root_not_mapping"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h7-lone-nbsp",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "workflow_root_not_mapping"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "workflow_root_not_mapping"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h7-lone-colon-colon",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "workflow_root_not_mapping"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "workflow_root_not_mapping"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h7-lone-alias-colon",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h7-lone-run-bang",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "workflow_root_not_mapping"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "workflow_root_not_mapping"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r17-h7-lone-tag-tab",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  }
+ ]
+}

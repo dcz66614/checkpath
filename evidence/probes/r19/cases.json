@@ -1,0 +1,152 @@
+[
+ {
+  "id": "r19-h01-explicit-flow-null",
+  "yaml": "&w a: 1\nm: {? *w, a: 1}\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r19-h02-explicit-flow-valued",
+  "yaml": "&w a: 1\nm: {? *w: 1, a: 1}\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r19-h03-explicit-block-null",
+  "yaml": "&w a: 1\nm:\n  ? *w\n  a: 1\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r19-h04-explicit-block-valued",
+  "yaml": "&w a: 1\nm:\n  ? *w\n  : 1\n  a: 1\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r19-h05-alias-alone-inner",
+  "yaml": "&w a: 1\nm:\n  a: 1\n  n: {*w}\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r19-h06-two-flow-maps-seq",
+  "yaml": "&w a: 1\nm: [{a: 1, *w}, {a: 1, *w}]\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r19-h07-triple-colon-after",
+  "yaml": "&w:2:3:4 a: 1\nm: {a: 1, *w:2:3:4}\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r19-h08-triple-colon-first",
+  "yaml": "&w:2:3:4 a: 1\nm: {*w:2:3:4, a: 1}\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r19-h09-inf-dup",
+  "yaml": "x: &w .inf\nm: {.inf: y, *w}\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r19-h10-inf-vs-neg-inf",
+  "yaml": "x: &w .inf\nm: {-.inf: y, *w}\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r19-h11-zero-vs-false",
+  "yaml": "x: &w 0\nm: {false: y, *w}\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r19-h12-false-vs-zero",
+  "yaml": "x: &w false\nm: {0: y, *w}\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r19-h13-on-dup",
+  "yaml": "x: &w push\non: {push: {}, *w}\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r19-h14-on-nodup",
+  "yaml": "x: &w push\non: {*w, pull_request: {}}\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r19-h15-jobs-dup",
+  "yaml": "x: &w check\non: push\njobs: {check: {runs-on: ubuntu-latest, steps: [{run: echo hi}]}, *w}\n",
+  "mode": "both"
+ },
+ {
+  "id": "r19-h16-quoted-key",
+  "yaml": "x: &w a\nm: {'a': 1, *w}\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r19-h17-anchor-after-use",
+  "yaml": "m: {*w, &w a: 1}\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r19-h18-two-anchors-same",
+  "yaml": "x: &w a\ny: &v a\nm: {*w, *v, b: 1}\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r19-h19-alias-two-maps",
+  "yaml": "x: &w a\nm: {*w}\nn: {*w}\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r19-h20-dup-nested-value",
+  "yaml": "x: &w a\nm: {a: {x: 1}, *w}\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r19-h21-flow-in-seq-in-flow",
+  "yaml": "x: &w a\nm: {n: [{a: 1, *w}]}\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r19-h22-nan",
+  "yaml": "x: &w .nan\nm: {.nan: y, *w}\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r19-h23-comment-in-flow",
+  "yaml": "x: &w a\nm: {a: 1, *w # c\n}\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r19-h24-outer-only-dup",
+  "yaml": "x: &w a\nm: {a: 1, n: {b: 2, *w}}\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r19-h25-on-dup-nested-value",
+  "yaml": "x: &w push\non: {push: {branches: [main]}, *w}\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r19-h26-str-one-vs-int-one",
+  "yaml": "x: &w '1'\nm: {1: y, *w}\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r19-h27-int-one-vs-str-one",
+  "yaml": "x: &w 1\nm: {'1': y, *w}\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r19-h28-true-vs-one",
+  "yaml": "x: &w True\nm: {1: y, *w}\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r19-h29-tilde-vs-null",
+  "yaml": "x: &w ~\nm: {null: y, *w}\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r19-h30-env-dup",
+  "yaml": "x: &w a\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n        env: {a: 1, *w}\n",
+  "mode": "both"
+ }
+]

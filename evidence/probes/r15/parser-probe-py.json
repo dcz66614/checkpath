@@ -1,0 +1,91 @@
+{
+ "c3-root1st": {
+  "pyyaml": {
+   "ok": true,
+   "value": "{'': '2', 'on': 'push', 'jobs': {'test': {'runs-on': 'ubuntu-latest'}}}"
+  }
+ },
+ "c3-root2nd": {
+  "pyyaml": {
+   "ok": true,
+   "value": "{'a': '1', '': '2', 'on': 'push', 'jobs': {'test': {'runs-on': 'ubuntu-latest'}}}"
+  }
+ },
+ "c3-nested2nd": {
+  "pyyaml": {
+   "ok": true,
+   "value": "{'m': {'a': '1', '': '2'}, 'on': 'push'}"
+  }
+ },
+ "c3-nested1st": {
+  "pyyaml": {
+   "ok": true,
+   "value": "{'m': {'': '2'}, 'on': 'push'}"
+  }
+ },
+ "c3-lone": {
+  "pyyaml": {
+   "ok": true,
+   "value": "{'': '2'}"
+  }
+ },
+ "str-flow-nospace": {
+  "pyyaml": {
+   "ok": true,
+   "value": "{':!!str {on': 'pull_request}'}"
+  }
+ },
+ "str-block-nospace": {
+  "pyyaml": {
+   "ok": false,
+   "exc": "ScannerError",
+   "msg": "mapping values are not allowed here\n  in \"<unicode string>\", line 2, column 5:\n      on: pull_request\n        ^"
+  }
+ },
+ "str-flow-space": {
+  "pyyaml": {
+   "ok": true,
+   "value": "{'': \"[(ScalarNode(tag='tag:yaml.org,2002:str', value='on'), ScalarNode(tag='tag:yaml.org,2002:str', value='pull_request'))]\"}"
+  }
+ },
+ "int-flow": {
+  "pyyaml": {
+   "ok": false,
+   "exc": "TypeError",
+   "msg": "int() can't convert non-string with explicit base"
+  }
+ },
+ "bool-flow": {
+  "pyyaml": {
+   "ok": false,
+   "exc": "TypeError",
+   "msg": "unhashable type: 'list'"
+  }
+ },
+ "float-flow": {
+  "pyyaml": {
+   "ok": false,
+   "exc": "AttributeError",
+   "msg": "'list' object has no attribute 'lower'"
+  }
+ },
+ "int-on": {
+  "pyyaml": {
+   "ok": false,
+   "exc": "TypeError",
+   "msg": "int() can't convert non-string with explicit base"
+  }
+ },
+ "str-on": {
+  "pyyaml": {
+   "ok": true,
+   "value": "{'on': \"[(ScalarNode(tag='tag:yaml.org,2002:str', value='push'), MappingNode(tag='tag:yaml.org,2002:map', value=[]))]\"}"
+  }
+ },
+ "int-scalar": {
+  "pyyaml": {
+   "ok": true,
+   "value": "{'a': '1'}"
+  }
+ }
+}

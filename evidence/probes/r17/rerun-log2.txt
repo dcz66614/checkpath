@@ -1,0 +1,53 @@
+=== R17 rerun battery part 2 2026-11-09T20:36:33Z ===
+--- npm test (full) ---
+[22m[39merror: scenario file failed validation (/tmp/checkpath-t010-l7R4HE/bad-scenario.json):
+[2m Test Files [22m [1m[32m52 passed[39m[22m[90m (52)[39m
+[2m      Tests [22m [1m[32m1661 passed[39m[22m[90m (1661)[39m
+--- matrices 07-15 ---
+== fix-p0-07 ==
+results: /home/hatch/workspace/p020-r17-review/evidence/probes/fix-p0-07/results.json
+== fix-p0-08 ==
+results: /home/hatch/workspace/p020-r17-review/evidence/probes/fix-p0-08/results.json
+== fix-p0-09 ==
+results: /home/hatch/workspace/p020-r17-review/evidence/probes/fix-p0-09/results.json
+== fix-p0-10 ==
+results: /home/hatch/workspace/p020-r17-review/evidence/probes/fix-p0-10/results.json
+== fix-p0-11 ==
+results: /home/hatch/workspace/p020-r17-review/evidence/probes/fix-p0-11/results.json
+== fix-p0-12 ==
+results: /home/hatch/workspace/p020-r17-review/evidence/probes/fix-p0-12/results.json
+== fix-p0-13 ==
+results: /home/hatch/workspace/p020-r17-review/evidence/probes/fix-p0-13/results.json
+== fix-p0-14 ==
+results: /home/hatch/workspace/p020-r17-review/evidence/probes/fix-p0-14/results.json
+== fix-p0-15 ==
+results: /home/hatch/workspace/p020-r17-review/evidence/probes/fix-p0-15/results.json
+--- fix-p0-16 grid ---
+
+map2-p0-16 [all]: 238/238 MATCH
+results: evidence/probes/r17/grid-rerun-results.json
+--- fix-p0-17 grid ---
+FIX-P0-17 probe: 216/216 MATCH, 0 DIFF
+--- S0_GATE diff vs committed ---
+diff --git a/evidence/S0_GATE.json b/evidence/S0_GATE.json
+index 9f5a127..b8e546e 100644
+--- a/evidence/S0_GATE.json
++++ b/evidence/S0_GATE.json
+@@ -70,7 +70,7 @@
+   "determinism_unique_hash_count": 1,
+   "unsupported_as_unknown_count": 2,
+   "runtime_network_call_count": 0,
+-  "environment_fingerprint": "e1cfe76c50cb7383d15f11d1e43e804207ec5ce1c8922da86d97b5499627378e",
++  "environment_fingerprint": "b789d46b6ae92439657a067d9c140a78afb27bcfd0b108d67769f2f5f2669cd2",
+   "input_fixture_sha256": "afce74c909298f4537e9e86d95c8521476e2efca9cfbd0f417229321df2279d2",
+   "conditions": {
+     "c1_t001_environment_available": true,
+@@ -95,5 +95,5 @@
+     "Runtime network calls are 0 by construction (local processes only) and by static check over the executed implementation files; the runner itself (scripts/oracle-diff.mjs) is excluded from the grep because it contains the pattern table as string literals, and it only spawns local vitest/python3/npm/node/grep processes.",
+     "PyYAML actually used by the Oracle is 6.0.1 (system); lockfile pins 6.0.3, pip install blocked by PEP 668 (T001 D2)."
+   ],
+-  "gate_report_sha256": "f511a84709a6ebf64af94cb788ad3e15cef85af5862b5334fca4288b6ff38386"
++  "gate_report_sha256": "ad6e4f605593b3c91e5c6d8787ba9024a85e61ae96e68de9cf40ca8569835968"
+ }
+?? evidence/probes/r17/
+=== DONE ===

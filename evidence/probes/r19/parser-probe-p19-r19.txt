@@ -1,0 +1,33 @@
+F1-flow-alias-after: tokens=[('Anchor', 'w:2'), ('Alias', 'w:2')] LOAD-ERROR duplicate mapping key: 'a'
+F2-plain-alias-after: tokens=[('Anchor', 'w'), ('Alias', 'w')] LOAD-ERROR duplicate mapping key: 'a'
+F3-alias-first: tokens=[('Anchor', 'w'), ('Alias', 'w')] LOAD-ERROR duplicate mapping key: 'a'
+F4-alias-twice: tokens=[('Anchor', 'w'), ('Alias', 'w'), ('Alias', 'w')] LOAD-ERROR duplicate mapping key: 'a'
+F5-nested-flow: tokens=[('Anchor', 'w:2'), ('Alias', 'w:2')] LOAD-ERROR duplicate mapping key: 'a'
+F6-absorbed-first: tokens=[('Anchor', 'w:2'), ('Alias', 'w:2')] LOAD-ERROR duplicate mapping key: 'a'
+F7-triple-colon: tokens=[('Anchor', 'w:2:3'), ('Alias', 'w:2:3')] LOAD-ERROR duplicate mapping key: 'a'
+F8-trailing-comment: tokens=[('Anchor', 'w:2'), ('Alias', 'w:2')] LOAD-ERROR duplicate mapping key: 'a'
+B1-valued-first: tokens=[('Anchor', 'w'), ('Alias', 'w')] LOAD-ERROR duplicate mapping key: 'a'
+B2-valued-twice: tokens=[('Anchor', 'w'), ('Alias', 'w'), ('Alias', 'w')] LOAD-ERROR duplicate mapping key: 'a'
+B3-block-valued: tokens=[('Anchor', 'w'), ('Alias', 'w')] LOAD-ERROR duplicate mapping key: 'a'
+B4-other-scalar: tokens=[('Anchor', 'w'), ('Alias', 'w')] LOAD-OK {'a': '1', 'm': {'b': '2', 'a': ''}, 'on': 'push', 'jobs': {'check': {'runs-on': 'ubuntu-latest', 'steps': [{'run': 'echo hi'}]}}}
+B5-alias-alone: tokens=[('Anchor', 'w'), ('Alias', 'w')] LOAD-OK {'a': '1', 'm': {'a': ''}, 'on': 'push', 'jobs': {'check': {'runs-on': 'ubuntu-latest', 'steps': [{'run': 'echo hi'}]}}}
+B6-alias-value: tokens=[('Anchor', 'w'), ('Alias', 'w')] LOAD-OK {'a': '1', 'b': 'a', 'on': 'push', 'jobs': {'check': {'runs-on': 'ubuntu-latest', 'steps': [{'run': 'echo hi'}]}}}
+B7-plain-dup: tokens=[] LOAD-ERROR duplicate mapping key: 'a'
+B8-block-null-after: SCAN-ERROR while scanning a simple key
+B9-block-null-first: tokens=[('Anchor', 'w'), ('Alias', 'w')] LOAD-ERROR while parsing a block mapping
+B10-block-null-absorbed: SCAN-ERROR while scanning a simple key
+B11-int-anchor: tokens=[('Anchor', 'w'), ('Alias', 'w')] LOAD-ERROR duplicate mapping key: '1'
+B12-int-vs-quoted: tokens=[('Anchor', 'w'), ('Alias', 'w')] LOAD-OK {'x': '1', 'm': {'1': ''}, 'on': 'push', 'jobs': {'check': {'runs-on': 'ubuntu-latest', 'steps': [{'run': 'echo hi'}]}}}
+B13-bool-anchor: tokens=[('Anchor', 'w'), ('Alias', 'w')] LOAD-ERROR duplicate mapping key: 'True'
+B14-bool-vs-int: tokens=[('Anchor', 'w'), ('Alias', 'w')] LOAD-OK {'x': 'true', 'm': {'1': 'y', 'true': ''}, 'on': 'push', 'jobs': {'check': {'runs-on': 'ubuntu-latest', 'steps': [{'run': 'echo hi'}]}}}
+B15-null-anchor: tokens=[('Anchor', 'w'), ('Alias', 'w')] LOAD-ERROR duplicate mapping key: '~'
+B16-quoted-anchor: tokens=[('Anchor', 'w'), ('Alias', 'w')] LOAD-ERROR duplicate mapping key: 'a'
+B17-tagged-anchor: tokens=[('Anchor', 'w'), ('Alias', 'w')] LOAD-OK {'x': '1', 'm': {'1': ''}, 'on': 'push', 'jobs': {'check': {'runs-on': 'ubuntu-latest', 'steps': [{'run': 'echo hi'}]}}}
+B18-nan-anchor: tokens=[('Anchor', 'w'), ('Alias', 'w')] LOAD-OK {'x': 'NaN', 'm': {'NaN': ''}, 'on': 'push', 'jobs': {'check': {'runs-on': 'ubuntu-latest', 'steps': [{'run': 'echo hi'}]}}}
+B19-alias-twice-spread: tokens=[('Anchor', 'w'), ('Alias', 'w'), ('Alias', 'w')] LOAD-ERROR duplicate mapping key: 'a'
+B20-flow-in-seq: tokens=[('Anchor', 'w'), ('Alias', 'w')] LOAD-ERROR duplicate mapping key: 'a'
+B21-on-alias-dup: tokens=[('Anchor', 'w'), ('Alias', 'w')] LOAD-ERROR duplicate mapping key: 'push'
+B22-anchor-in-flow: tokens=[('Anchor', 'w'), ('Alias', 'w')] LOAD-ERROR duplicate mapping key: 'a'
+B23-forward-ref: tokens=[('Alias', 'w'), ('Anchor', 'w')] LOAD-ERROR found undefined alias 'w'
+B24-alias-to-collection: tokens=[('Anchor', 'a'), ('Alias', 'a')] LOAD-ERROR while constructing a mapping
+B25-chained-alias: tokens=[('Anchor', 'a'), ('Anchor', 'b'), ('Alias', 'a'), ('Alias', 'b')] LOAD-ERROR while parsing a block mapping

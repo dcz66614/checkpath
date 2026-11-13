@@ -1,0 +1,1208 @@
+[
+ {
+  "id": "N5-block-alias-key-map-anchor",
+  "mode": "both",
+  "note": "N5 itself: block alias key, mapping anchor",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "N5-block-alias-key-seq-anchor",
+  "mode": "both",
+  "note": "block alias key, sequence anchor",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "N5-block-alias-key-scalar-anchor",
+  "mode": "both",
+  "note": "control: block alias key, scalar anchor (agreed?)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "N5-block-alias-key-null-anchor",
+  "mode": "both",
+  "note": "block alias key, null anchor",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "N5-block-alias-key-int-anchor",
+  "mode": "both",
+  "note": "block alias key, int anchor",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "N5-flow-alias-key-map-anchor",
+  "mode": "both",
+  "note": "flow alias key, mapping anchor",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "N5-flow-alias-key-seq-anchor",
+  "mode": "both",
+  "note": "flow alias key, sequence anchor",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "N5-filter-alias-key-map-anchor",
+  "mode": "both",
+  "note": "alias key (map anchor) in filter position",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "N5-explicit-map-key",
+  "mode": "both",
+  "note": "control: explicit collection key (agreed)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "N5-explicit-seq-key",
+  "mode": "both",
+  "note": "control: explicit sequence key (agreed)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "N5-jobs-alias-key-map-anchor",
+  "mode": "both",
+  "note": "alias key (map anchor) in jobs position",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "N5-jobs-alias-key-scalar-anchor",
+  "mode": "both",
+  "note": "control: alias key (scalar anchor) in jobs position",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "N5-block-alias-key-empty-map-anchor",
+  "mode": "both",
+  "note": "block alias key, empty-mapping anchor",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "N5-block-alias-key-empty-seq-anchor",
+  "mode": "both",
+  "note": "block alias key, empty-seq anchor",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "N5-forward-ref-map-anchor",
+  "mode": "both",
+  "note": "forward ref to mapping anchor (control)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "H6-flow-alias-tab-before-colon",
+  "mode": "both",
+  "note": "H6 itself: flow alias key, tab before colon",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "H6-block-alias-tab-before-colon",
+  "mode": "both",
+  "note": "block alias key, tab before colon",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "H6-flow-alias-tab-space-before-colon",
+  "mode": "both",
+  "note": "flow alias key, tab+space before colon",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "H6-flow-alias-tab-after-colon",
+  "mode": "both",
+  "note": "flow alias key, tab AFTER colon",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "H6-flow-scalar-key-tab-before-colon",
+  "mode": "both",
+  "note": "flow scalar key, tab before colon",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "H6-block-scalar-key-tab-before-colon",
+  "mode": "both",
+  "note": "block scalar key, tab before colon",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "H6-flow-alias-value-tab",
+  "mode": "both",
+  "note": "flow alias in VALUE position followed by tab",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "H6-quoted-string-tab",
+  "mode": "both",
+  "note": "control: tab inside quoted string value",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "H6-tab-indentation",
+  "mode": "both",
+  "note": "tab indentation at line start",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "H6-explicit-key-alias-tab",
+  "mode": "both",
+  "note": "explicit ? key, alias, tab before colon",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "H6-map-anchor-alias-tab",
+  "mode": "both",
+  "note": "N5+H6 combined: map anchor + tab",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "H6-adjacent-colon-alias-key",
+  "mode": "both",
+  "note": "control: adjacent colon (FIX-P0-05, agreed)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "H6-flow-seq-value-alias-tab",
+  "mode": "both",
+  "note": "flow seq value alias followed by tab",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "H6-flow-alias-double-tab-before-colon",
+  "mode": "both",
+  "note": "flow alias key, double tab before colon",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "N5-chained-alias-key",
+  "mode": "both",
+  "note": "chained alias key (*b -> *a -> map)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "N5-matrix-alias-key-map-anchor",
+  "mode": "both",
+  "note": "alias key (map anchor) nested in matrix",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "N5-map-anchor-with-steps",
+  "mode": "both",
+  "note": "N5 with steps present (same as N5a + steps)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "T01-flow-scalar-key-tab-before-colon",
+  "mode": "both",
+  "note": "PyYAML REJECT: flow scalar key tab before colon",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "T02-block-scalar-key-tab-before-colon",
+  "mode": "both",
+  "note": "PyYAML REJECT: block scalar key tab before colon",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "T03-flow-tab-after-colon",
+  "mode": "both",
+  "note": "PyYAML REJECT: flow tab after colon",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "T04-block-tab-after-colon",
+  "mode": "both",
+  "note": "PyYAML REJECT: block tab after colon",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "T05-flow-tab-after-plain-value",
+  "mode": "both",
+  "note": "PyYAML REJECT: flow tab after plain value",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "T07-flow-tab-space-before-colon",
+  "mode": "both",
+  "note": "PyYAML REJECT: flow tab+space before colon",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "T08-tab-inside-plain-scalar",
+  "mode": "both",
+  "note": "PyYAML REJECT: tab inside plain scalar",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "T09-tab-inside-single-quoted-scalar",
+  "mode": "both",
+  "note": "PyYAML ACCEPT: tab inside single-quoted scalar (control)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "T10-tab-inside-block-scalar",
+  "mode": "both",
+  "note": "PyYAML ACCEPT: tab inside block scalar content (control)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "T11-tab-after-explicit-key-marker",
+  "mode": "both",
+  "note": "PyYAML REJECT: tab after ? indicator",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "T12-tab-after-dash",
+  "mode": "both",
+  "note": "PyYAML REJECT: tab after dash",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "T13-tab-inside-comment",
+  "mode": "both",
+  "note": "PyYAML ACCEPT: tab inside comment (control)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "T14-trailing-tab",
+  "mode": "both",
+  "note": "PyYAML REJECT: trailing tab at end of line",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "T15-tab-between-key-and-value",
+  "mode": "both",
+  "note": "PyYAML REJECT: tab between key and value",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "T18-flow-tab-after-comma",
+  "mode": "both",
+  "note": "PyYAML REJECT: flow tab after comma",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "T19-flow-tab-after-open-brace",
+  "mode": "both",
+  "note": "PyYAML REJECT: flow tab after open brace",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "T20-block-tab-before-colon-in-jobs",
+  "mode": "both",
+  "note": "PyYAML REJECT: block tab before colon in jobs",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "T21-tab-inside-double-quoted-key",
+  "mode": "both",
+  "note": "PyYAML ACCEPT: tab inside double-quoted key (control)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "T22-tab-inside-flow-plain-scalar-value",
+  "mode": "both",
+  "note": "PyYAML REJECT: tab in flow plain scalar value",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "T23-tab-after-anchor",
+  "mode": "both",
+  "note": "PyYAML REJECT: tab after anchor",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "T24-tab-after-tag",
+  "mode": "both",
+  "note": "PyYAML REJECT: tab after tag",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "T25-flow-nested-tab-in-list",
+  "mode": "both",
+  "note": "PyYAML REJECT: flow nested tab in list",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "B1-tab-at-start-of-block-content-line",
+  "mode": "both",
+  "note": "PyYAML REJECT: tab at start of block content line",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "B3-block-scalar-first-line-tab-indented",
+  "mode": "both",
+  "note": "PyYAML REJECT: block scalar first content line tab-indented",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "B4-tab-in-multiline-plain-scalar",
+  "mode": "both",
+  "note": "PyYAML REJECT: tab in multi-line plain scalar",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "B5-apostrophe-plain-scalar-tab",
+  "mode": "both",
+  "note": "PyYAML REJECT: apostrophe plain scalar then tab",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "B6-tab-before-comment",
+  "mode": "both",
+  "note": "PyYAML REJECT: tab before comment",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "Q1-quote-at-plain-scalar-continuation",
+  "mode": "both",
+  "note": "APPROXIMATION CHECK: quote at start of plain-scalar continuation line + tab",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "Q2-misindented-block-content-with-tab",
+  "mode": "both",
+  "note": "APPROXIMATION CHECK: block content at key indent (8) with tab — misindented",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "Q3-bare-seq-item-block-scalar-tab",
+  "mode": "both",
+  "note": "bare seq-item block scalar (- |) with tab in content",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "Q4-folded-block-scalar-tab",
+  "mode": "both",
+  "note": "folded block scalar (>) with tab in content",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "Q5-chomping-block-scalar-tab",
+  "mode": "both",
+  "note": "chomping block scalar (|-) with tab in content",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "Q6-explicit-indent-block-scalar-tab",
+  "mode": "both",
+  "note": "explicit-indent block scalar (|2) with tab in content",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "Q7-tab-in-comment-after-block-header",
+  "mode": "both",
+  "note": "tab inside trailing comment after block header",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "Q8-apostrophe-in-run-value-tab",
+  "mode": "both",
+  "note": "apostrophe in run value + tab (plain scalar)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ }
+]

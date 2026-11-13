@@ -1,0 +1,490 @@
+[
+ {
+  "id": "r15-a-flow",
+  "yaml": "&b: {on: pull_request}\n",
+  "mode": "both",
+  "expected_diff": false,
+  "note": "",
+  "diff_modes": []
+ },
+ {
+  "id": "r15-a-block",
+  "yaml": "&b:\n  on: pull_request\n",
+  "mode": "both",
+  "expected_diff": false,
+  "note": "",
+  "diff_modes": []
+ },
+ {
+  "id": "r15-a-tagmap",
+  "yaml": "&b: !bar {on: pull_request}\n",
+  "mode": "both",
+  "expected_diff": false,
+  "note": "",
+  "diff_modes": []
+ },
+ {
+  "id": "r15-a-full-flow",
+  "yaml": "&b: {on: push, jobs: {test: {runs-on: ubuntu-latest, steps: [{run: echo hi}]}}}\n",
+  "mode": "both",
+  "expected_diff": false,
+  "note": "",
+  "diff_modes": []
+ },
+ {
+  "id": "r15-a-full-block",
+  "yaml": "&b:\n  on: push\n  jobs:\n    test:\n      runs-on: ubuntu-latest\n      steps:\n        - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "note": "",
+  "diff_modes": []
+ },
+ {
+  "id": "r15-a-jobs-only",
+  "yaml": "&b: {jobs: {test: {runs-on: ubuntu-latest, steps: [{run: echo hi}]}}}\n",
+  "mode": "both",
+  "expected_diff": false,
+  "note": "",
+  "diff_modes": []
+ },
+ {
+  "id": "r15-a-str-flow",
+  "yaml": "&b: !!str {on: pull_request}\n",
+  "mode": "both",
+  "expected_diff": false,
+  "note": "",
+  "diff_modes": []
+ },
+ {
+  "id": "r15-a-str-block",
+  "yaml": "&b: !!str\n  on: pull_request\n",
+  "mode": "both",
+  "expected_diff": false,
+  "note": "",
+  "diff_modes": []
+ },
+ {
+  "id": "r15-a-self-alias",
+  "yaml": "&b: {on: *b}\n",
+  "mode": "both",
+  "expected_diff": false,
+  "note": "",
+  "diff_modes": []
+ },
+ {
+  "id": "r15-a-alias-inside",
+  "yaml": "&b: {a: &c 1, on: *c}\n",
+  "mode": "both",
+  "expected_diff": false,
+  "note": "",
+  "diff_modes": []
+ },
+ {
+  "id": "r15-a-name-only",
+  "yaml": "&b: {name: probe}\n",
+  "mode": "both",
+  "expected_diff": false,
+  "note": "",
+  "diff_modes": []
+ },
+ {
+  "id": "r15-a-bool-key",
+  "yaml": "&b: {True: pull_request}\n",
+  "mode": "both",
+  "expected_diff": false,
+  "note": "",
+  "diff_modes": []
+ },
+ {
+  "id": "r15-b-val",
+  "yaml": "&b: &c 2\n",
+  "mode": "both",
+  "expected_diff": false,
+  "note": "",
+  "diff_modes": []
+ },
+ {
+  "id": "r15-b-seq",
+  "yaml": "&b: &c [2]\n",
+  "mode": "both",
+  "expected_diff": false,
+  "note": "",
+  "diff_modes": []
+ },
+ {
+  "id": "r15-b-null",
+  "yaml": "&b: &c\n",
+  "mode": "both",
+  "expected_diff": false,
+  "note": "",
+  "diff_modes": []
+ },
+ {
+  "id": "r15-b-flowmap",
+  "yaml": "&b: &c {a: 1}\n",
+  "mode": "both",
+  "expected_diff": false,
+  "note": "",
+  "diff_modes": []
+ },
+ {
+  "id": "r15-b-alias-defined",
+  "yaml": "q: &z 9\n&b: *z\n",
+  "mode": "both",
+  "expected_diff": false,
+  "note": "",
+  "diff_modes": []
+ },
+ {
+  "id": "r15-b-alias-undef",
+  "yaml": "&b: *z\n",
+  "mode": "both",
+  "expected_diff": false,
+  "note": "",
+  "diff_modes": []
+ },
+ {
+  "id": "r15-b-nonempty-key",
+  "yaml": "&b k: &c 2\n",
+  "mode": "both",
+  "expected_diff": false,
+  "note": "",
+  "diff_modes": []
+ },
+ {
+  "id": "r15-b-unglued-2anchor",
+  "yaml": "&b : &c 2\n",
+  "mode": "both",
+  "expected_diff": false,
+  "note": "",
+  "diff_modes": []
+ },
+ {
+  "id": "r15-b-wf",
+  "yaml": "m: &b &c 2\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "note": "",
+  "diff_modes": []
+ },
+ {
+  "id": "r15-c-key",
+  "yaml": "!bar &b: 2\n",
+  "mode": "both",
+  "expected_diff": false,
+  "note": "",
+  "diff_modes": []
+ },
+ {
+  "id": "r15-c-handle",
+  "yaml": "!!str &b: 2\n",
+  "mode": "both",
+  "expected_diff": false,
+  "note": "",
+  "diff_modes": []
+ },
+ {
+  "id": "r15-c-docmark",
+  "yaml": "---\n!bar &b: 2\n",
+  "mode": "both",
+  "expected_diff": false,
+  "note": "",
+  "diff_modes": []
+ },
+ {
+  "id": "r15-c-nested",
+  "yaml": "m:\n  !bar &b: 2\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "note": "",
+  "diff_modes": []
+ },
+ {
+  "id": "r15-c-flow",
+  "yaml": "m: {!bar &b: 2}\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "note": "",
+  "diff_modes": []
+ },
+ {
+  "id": "r15-c-seqitem",
+  "yaml": "m:\n  - !bar &b: 2\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "note": "",
+  "diff_modes": []
+ },
+ {
+  "id": "r15-c-unglued",
+  "yaml": "!bar &b : 2\n",
+  "mode": "both",
+  "expected_diff": false,
+  "note": "",
+  "diff_modes": []
+ },
+ {
+  "id": "r15-c-explicit",
+  "yaml": "m:\n  ? !bar &b: 2\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "note": "",
+  "diff_modes": []
+ },
+ {
+  "id": "r15-d-lone",
+  "yaml": "&b : 2\n",
+  "mode": "both",
+  "expected_diff": false,
+  "note": "",
+  "diff_modes": []
+ },
+ {
+  "id": "r15-d-null",
+  "yaml": "&b :\n",
+  "mode": "both",
+  "expected_diff": false,
+  "note": "",
+  "diff_modes": []
+ },
+ {
+  "id": "r15-d-nested",
+  "yaml": "m:\n  &b : 2\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "note": "",
+  "diff_modes": []
+ },
+ {
+  "id": "r15-d-flow",
+  "yaml": "m: {&b : 2}\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "note": "",
+  "diff_modes": []
+ },
+ {
+  "id": "r15-d-tag-nested-first",
+  "yaml": "m:\n  !bar &b : 2\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "note": "",
+  "diff_modes": []
+ },
+ {
+  "id": "r15-d-tag-root-first",
+  "yaml": "!bar &b : 2\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "note": "C3 overfire, root 1st pair — NEW: fixer §2.4 control claim wrong (C3 fires, not (d))",
+  "diff_modes": []
+ },
+ {
+  "id": "r15-d-tag-seqitem",
+  "yaml": "m:\n  - !bar &b : 2\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "note": "",
+  "diff_modes": []
+ },
+ {
+  "id": "r15-e-nested",
+  "yaml": "&b:\n  &c: 2\n",
+  "mode": "both",
+  "expected_diff": false,
+  "note": "",
+  "diff_modes": []
+ },
+ {
+  "id": "r15-e-nested-null",
+  "yaml": "&b:\n  &c:\n",
+  "mode": "both",
+  "expected_diff": false,
+  "note": "",
+  "diff_modes": []
+ },
+ {
+  "id": "r15-e-nested-tagkey",
+  "yaml": "&b:\n  !bar &c: 2\n",
+  "mode": "both",
+  "expected_diff": false,
+  "note": "",
+  "diff_modes": []
+ },
+ {
+  "id": "r15-e-deeper",
+  "yaml": "a:\n  &b:\n    &c: 2\n",
+  "mode": "both",
+  "expected_diff": false,
+  "note": "",
+  "diff_modes": []
+ },
+ {
+  "id": "r15-e-flow",
+  "yaml": "&b: {&c: 2}\n",
+  "mode": "both",
+  "expected_diff": false,
+  "note": "",
+  "diff_modes": []
+ },
+ {
+  "id": "r15-e-2pair",
+  "yaml": "&b:\n  &c: 2\n  z: 2\n",
+  "mode": "both",
+  "expected_diff": false,
+  "note": "",
+  "diff_modes": []
+ },
+ {
+  "id": "r15-e-nonempty",
+  "yaml": "&b:\n  &c k: 2\n",
+  "mode": "both",
+  "expected_diff": false,
+  "note": "",
+  "diff_modes": []
+ },
+ {
+  "id": "r15-f-lone-7",
+  "yaml": "&b: 7\n",
+  "mode": "both",
+  "expected_diff": false,
+  "note": "",
+  "diff_modes": []
+ },
+ {
+  "id": "r15-f-lone-null",
+  "yaml": "&b:\n",
+  "mode": "both",
+  "expected_diff": false,
+  "note": "",
+  "diff_modes": []
+ },
+ {
+  "id": "r15-f-quoted",
+  "yaml": "\"\": 9\n",
+  "mode": "both",
+  "expected_diff": false,
+  "note": "",
+  "diff_modes": []
+ },
+ {
+  "id": "r15-f-mapval-flow",
+  "yaml": "&b: {c: 3}\n",
+  "mode": "both",
+  "expected_diff": false,
+  "note": "",
+  "diff_modes": []
+ },
+ {
+  "id": "r15-f-mapval-block",
+  "yaml": "&b:\n  c: 3\n",
+  "mode": "both",
+  "expected_diff": false,
+  "note": "",
+  "diff_modes": []
+ },
+ {
+  "id": "r15-r1-c3-root2nd",
+  "yaml": "a: 1\n!bar &b : 2\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "note": "C3 overfire, root 2nd pair",
+  "diff_modes": []
+ },
+ {
+  "id": "r15-r1-c3-nested2nd",
+  "yaml": "m:\n  a: 1\n  !bar &b : 2\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "note": "C3 overfire, nested 2nd pair",
+  "diff_modes": []
+ },
+ {
+  "id": "r15-r2-str-flow-nospace",
+  "yaml": "&b:!!str {on: pull_request}\n",
+  "mode": "both",
+  "expected_diff": false,
+  "note": "scanner: no-space tag, flow",
+  "diff_modes": []
+ },
+ {
+  "id": "r15-r2-str-block-nospace",
+  "yaml": "&b:!!str\n  on: pull_request\n  jobs:\n    test:\n      runs-on: ubuntu-latest\n      steps:\n        - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "note": "scanner: no-space tag, block",
+  "diff_modes": []
+ },
+ {
+  "id": "r15-r3-int",
+  "yaml": "&b: !!int {on: pull_request}\n",
+  "mode": "both",
+  "expected_diff": false,
+  "note": "loader crash TypeError",
+  "diff_modes": []
+ },
+ {
+  "id": "r15-r3-bool",
+  "yaml": "&b: !!bool {on: pull_request}\n",
+  "mode": "both",
+  "expected_diff": false,
+  "note": "loader crash TypeError",
+  "diff_modes": []
+ },
+ {
+  "id": "r15-r3-int-pos",
+  "yaml": "m: !!int {a: 1}\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "note": "loader crash, workflow position",
+  "diff_modes": []
+ },
+ {
+  "id": "r15-r3-float-pos",
+  "yaml": "m: !!float {a: 1}\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "note": "loader crash AttributeError, workflow position",
+  "diff_modes": []
+ },
+ {
+  "id": "r15-r3-scalar-ok",
+  "yaml": "a: !!int 1\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "note": "control: scalar tag, both VALID",
+  "diff_modes": []
+ },
+ {
+  "id": "r15-r3-on-tag",
+  "yaml": "on: !!int {push: {}}\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "note": "loader crash at on-value; fixer §7.3 control claim wrong (TS VALID, Oracle exits 1)",
+  "diff_modes": []
+ },
+ {
+  "id": "r15-r3-on-bool",
+  "yaml": "on: !!bool {push: {}}\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "note": "loader crash at on-value, TypeError",
+  "diff_modes": []
+ },
+ {
+  "id": "r15-r3-on-float",
+  "yaml": "on: !!float {push: {}}\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "note": "loader crash at on-value, AttributeError",
+  "diff_modes": []
+ },
+ {
+  "id": "r15-r3-on-str",
+  "yaml": "on: !!str {push: {}}\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "expected_diff": false,
+  "note": "loader boundary: TS VALID vs Oracle UNKNOWN",
+  "diff_modes": []
+ }
+]

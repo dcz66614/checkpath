@@ -1,0 +1,7 @@
+tag-comma: TS INVALID/['yaml_parse_error'] vs Oracle INVALID/['yaml_parse_error'] -> MATCH
+tag-comma-block: TS INVALID/['yaml_parse_error'] vs Oracle INVALID/['yaml_parse_error'] -> MATCH
+tag-rbracket: TS INVALID/['yaml_parse_error'] vs Oracle INVALID/['yaml_parse_error'] -> MATCH
+tag-colon: TS INVALID/['yaml_parse_error'] vs Oracle INVALID/['yaml_parse_error'] -> MATCH
+tag-colon-eol: TS VALID/[] vs Oracle VALID/[] -> MATCH
+tag-semi: TS INVALID/['yaml_parse_error'] vs Oracle INVALID/['yaml_parse_error'] -> MATCH
+tag-dot: TS INVALID/['yaml_parse_error'] vs Oracle INVALID/['yaml_parse_error'] -> MATCH

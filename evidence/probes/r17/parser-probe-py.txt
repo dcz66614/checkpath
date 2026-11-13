@@ -1,0 +1,36 @@
+### tag-root-block: '&x:!!tag\n  on: push\n  jobs:\n    check:\n      runs-on: ubuntu-latest\n      steps:\n        - run: echo hi\n'
+  tokens: StreamStart('') Anchor('x:!!tag') BlockMappingStart('') Key('') Scalar('on') Value('') Scalar('push') Key('') Scalar('jobs') Value('') BlockMappingStart('') Key('') Scalar('check') Value('') BlockMappingStart('') Key('') Scalar('runs-on') Value('') Scalar('ubuntu-latest') Key('') Scalar('steps') Value('') BlockSequenceStart('') BlockEntry('') BlockMappingStart('') Key('') Scalar('run') Value('') Scalar('echo hi') BlockEnd('') BlockEnd('') BlockEnd('') BlockEnd('') BlockEnd('') StreamEnd('')
+   LOAD-OK: {'on': 'push', 'jobs': {'check': {'runs-on': 'ubuntu-latest', 'steps': [{'run': 'echo hi'}]}}}
+### tag-nobrace: '&b:!!str{on: pull_request}\n'
+  tokens: SCAN-ERROR: while scanning a tag
+   LOAD-ERROR: while scanning a tag
+### tag-tab-brace: '&x:!!str\t{on: push}\n'
+  tokens: SCAN-ERROR: while scanning for the next token
+   LOAD-ERROR: while scanning for the next token
+### tag-bare-bang: '&x:!\n  on: push\n  jobs:\n    check:\n      runs-on: ubuntu-latest\n      steps:\n        - run: echo hi\n'
+  tokens: StreamStart('') Anchor('x:!') BlockMappingStart('') Key('') Scalar('on') Value('') Scalar('push') Key('') Scalar('jobs') Value('') BlockMappingStart('') Key('') Scalar('check') Value('') BlockMappingStart('') Key('') Scalar('runs-on') Value('') Scalar('ubuntu-latest') Key('') Scalar('steps') Value('') BlockSequenceStart('') BlockEntry('') BlockMappingStart('') Key('') Scalar('run') Value('') Scalar('echo hi') BlockEnd('') BlockEnd('') BlockEnd('') BlockEnd('') BlockEnd('') StreamEnd('')
+   LOAD-OK: {'on': 'push', 'jobs': {'check': {'runs-on': 'ubuntu-latest', 'steps': [{'run': 'echo hi'}]}}}
+### tag-double-bang: '&x:!!\n  on: push\n  jobs:\n    check:\n      runs-on: ubuntu-latest\n      steps:\n        - run: echo hi\n'
+  tokens: StreamStart('') Anchor('x:!!') BlockMappingStart('') Key('') Scalar('on') Value('') Scalar('push') Key('') Scalar('jobs') Value('') BlockMappingStart('') Key('') Scalar('check') Value('') BlockMappingStart('') Key('') Scalar('runs-on') Value('') Scalar('ubuntu-latest') Key('') Scalar('steps') Value('') BlockSequenceStart('') BlockEntry('') BlockMappingStart('') Key('') Scalar('run') Value('') Scalar('echo hi') BlockEnd('') BlockEnd('') BlockEnd('') BlockEnd('') BlockEnd('') StreamEnd('')
+   LOAD-OK: {'on': 'push', 'jobs': {'check': {'runs-on': 'ubuntu-latest', 'steps': [{'run': 'echo hi'}]}}}
+### tag-bang-mid: '&x:!!str!zap\n  on: push\n  jobs:\n    check:\n      runs-on: ubuntu-latest\n      steps:\n        - run: echo hi\n'
+  tokens: StreamStart('') Anchor('x:!!str!zap') BlockMappingStart('') Key('') Scalar('on') Value('') Scalar('push') Key('') Scalar('jobs') Value('') BlockMappingStart('') Key('') Scalar('check') Value('') BlockMappingStart('') Key('') Scalar('runs-on') Value('') Scalar('ubuntu-latest') Key('') Scalar('steps') Value('') BlockSequenceStart('') BlockEntry('') BlockMappingStart('') Key('') Scalar('run') Value('') Scalar('echo hi') BlockEnd('') BlockEnd('') BlockEnd('') BlockEnd('') BlockEnd('') StreamEnd('')
+   LOAD-OK: {'on': 'push', 'jobs': {'check': {'runs-on': 'ubuntu-latest', 'steps': [{'run': 'echo hi'}]}}}
+### tag-comment: '&x:!!str # note\n  on: push\n  jobs:\n    check:\n      runs-on: ubuntu-latest\n      steps:\n        - run: echo hi\n'
+  tokens: StreamStart('') Anchor('x:!!str') BlockMappingStart('') Key('') Scalar('on') Value('') Scalar('push') Key('') Scalar('jobs') Value('') BlockMappingStart('') Key('') Scalar('check') Value('') BlockMappingStart('') Key('') Scalar('runs-on') Value('') Scalar('ubuntu-latest') Key('') Scalar('steps') Value('') BlockSequenceStart('') BlockEntry('') BlockMappingStart('') Key('') Scalar('run') Value('') Scalar('echo hi') BlockEnd('') BlockEnd('') BlockEnd('') BlockEnd('') BlockEnd('') StreamEnd('')
+   LOAD-OK: {'on': 'push', 'jobs': {'check': {'runs-on': 'ubuntu-latest', 'steps': [{'run': 'echo hi'}]}}}
+### hash-glued: '&q:2#x\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n'
+  tokens: StreamStart('') Anchor('q:2#x') BlockMappingStart('') Key('') Scalar('on') Value('') Scalar('push') Key('') Scalar('jobs') Value('') BlockMappingStart('') Key('') Scalar('check') Value('') BlockMappingStart('') Key('') Scalar('runs-on') Value('') Scalar('ubuntu-latest') Key('') Scalar('steps') Value('') BlockSequenceStart('') BlockEntry('') BlockMappingStart('') Key('') Scalar('run') Value('') Scalar('echo hi') BlockEnd('') BlockEnd('') BlockEnd('') BlockEnd('') BlockEnd('') StreamEnd('')
+   LOAD-OK: {'on': 'push', 'jobs': {'check': {'runs-on': 'ubuntu-latest', 'steps': [{'run': 'echo hi'}]}}}
+### nbsp: '&q:2\xa0\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n'
+  tokens: StreamStart('') Anchor('q:2\xa0') BlockMappingStart('') Key('') Scalar('on') Value('') Scalar('push') Key('') Scalar('jobs') Value('') BlockMappingStart('') Key('') Scalar('check') Value('') BlockMappingStart('') Key('') Scalar('runs-on') Value('') Scalar('ubuntu-latest') Key('') Scalar('steps') Value('') BlockSequenceStart('') BlockEntry('') BlockMappingStart('') Key('') Scalar('run') Value('') Scalar('echo hi') BlockEnd('') BlockEnd('') BlockEnd('') BlockEnd('') BlockEnd('') StreamEnd('')
+   LOAD-OK: {'on': 'push', 'jobs': {'check': {'runs-on': 'ubuntu-latest', 'steps': [{'run': 'echo hi'}]}}}
+### triple-colon: '&q:2:3:4\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n'
+  tokens: StreamStart('') Anchor('q:2:3:4') BlockMappingStart('') Key('') Scalar('on') Value('') Scalar('push') Key('') Scalar('jobs') Value('') BlockMappingStart('') Key('') Scalar('check') Value('') BlockMappingStart('') Key('') Scalar('runs-on') Value('') Scalar('ubuntu-latest') Key('') Scalar('steps') Value('') BlockSequenceStart('') BlockEntry('') BlockMappingStart('') Key('') Scalar('run') Value('') Scalar('echo hi') BlockEnd('') BlockEnd('') BlockEnd('') BlockEnd('') BlockEnd('') StreamEnd('')
+   LOAD-OK: {'on': 'push', 'jobs': {'check': {'runs-on': 'ubuntu-latest', 'steps': [{'run': 'echo hi'}]}}}
+### alias-colon-lone: '*w:2\n'
+  tokens: StreamStart('') Alias('w:2') StreamEnd('')
+   LOAD-ERROR: found undefined alias 'w:2'
+### alias-resolved: 'x: &w:2 1\ny: *w:2\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n'
+  tokens: StreamStart('') BlockMappingStart('') Key('') Scalar('x') Value('') Anchor('w:2') Scalar('1') Key('') Scalar('y') Value('') Alias('w:2') Key('') Scalar('on') Value('') Scalar('push') Key('') Scalar('jobs') Value('') BlockMappingStart('') Key('') Scalar('check') Value('') BlockMappingStart('') Key('') Scalar('runs-on') Value('') Scalar('ubuntu-latest') Key('') Scalar('steps') Value('') BlockSequenceStart('') BlockEntry('') BlockMappingStart('') Key('') Scalar('run') Value('') Scalar('echo hi') BlockEnd('') BlockEnd('') BlockEnd('') BlockEnd('') BlockEnd('') StreamEnd('')
+   LOAD-OK: {'x': '1', 'y': '1', 'on': 'push', 'jobs': {'check': {'runs-on': 'ubuntu-latest', 'steps': [{'run': 'echo hi'}]}}}

@@ -1,0 +1,58 @@
+{
+ "c3-root1st": {
+  "ok": true,
+  "value": "{\"\":2,\"on\":\"push\",\"jobs\":{\"test\":{\"runs-on\":\"ubuntu-latest\"}}}"
+ },
+ "c3-root2nd": {
+  "ok": true,
+  "value": "{\"a\":1,\"\":2,\"on\":\"push\",\"jobs\":{\"test\":{\"runs-on\":\"ubuntu-latest\"}}}"
+ },
+ "c3-nested2nd": {
+  "ok": true,
+  "value": "{\"m\":{\"a\":1,\"\":2},\"on\":\"push\"}"
+ },
+ "c3-nested1st": {
+  "ok": true,
+  "value": "{\"m\":{\"\":2},\"on\":\"push\"}"
+ },
+ "c3-lone": {
+  "ok": true,
+  "value": "{\"\":2}"
+ },
+ "str-flow-nospace": {
+  "ok": true,
+  "value": "{\"on\":\"pull_request\"}"
+ },
+ "str-block-nospace": {
+  "ok": true,
+  "value": "{\"on\":\"pull_request\"}"
+ },
+ "str-flow-space": {
+  "ok": true,
+  "value": "{\"on\":\"pull_request\"}"
+ },
+ "int-flow": {
+  "ok": true,
+  "value": "{\"on\":\"pull_request\"}"
+ },
+ "bool-flow": {
+  "ok": true,
+  "value": "{\"on\":\"pull_request\"}"
+ },
+ "float-flow": {
+  "ok": true,
+  "value": "{\"on\":\"pull_request\"}"
+ },
+ "int-on": {
+  "ok": true,
+  "value": "{\"on\":{\"push\":{}}}"
+ },
+ "str-on": {
+  "ok": true,
+  "value": "{\"on\":{\"push\":{}}}"
+ },
+ "int-scalar": {
+  "ok": true,
+  "value": "{\"a\":1}"
+ }
+}

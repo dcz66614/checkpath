@@ -1,0 +1,776 @@
+[
+ {
+  "id": "V1-tab-quote-double-run",
+  "mode": "both",
+  "note": "R6 P0: tab inside double quotes mid plain scalar (run value)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "V2-tab-quote-single-run",
+  "mode": "both",
+  "note": "R6 P0: tab inside single quotes mid plain scalar (run value)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "V5-tab-quote-continuation",
+  "mode": "both",
+  "note": "R6 P0: quote at start of plain-scalar continuation line, tab inside quotes",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "V9-tab-quote-trailing-comment",
+  "mode": "both",
+  "note": "R6 P0: V1 + trailing comment",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "V1b-anchor-plain-quote",
+  "mode": "both",
+  "note": "V1 with anchor: quote is literal inside plain scalar after anchor",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "V1c-flow-plain-quote",
+  "mode": "both",
+  "note": "V1 in flow: plain scalar in progress inside flow mapping",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "V1d-plain-key-quote",
+  "mode": "both",
+  "note": "V1 in key position: plain key with literal quote + tab",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "V1e-value-next-line-quote-cont",
+  "mode": "both",
+  "note": "V1 + value on next line after bare key: continuation at indent 1, quote at start",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "V1f-continuation-mid-quote",
+  "mode": "both",
+  "note": "V1 on a continuation line: quote mid-line after plain text",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "V1g-explicit-plain-key-quote",
+  "mode": "both",
+  "note": "V1 in explicit-key position: plain key with literal quote + tab",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "V3-quoted-run-value",
+  "mode": "both",
+  "note": "R6 boundary: true quoted scalar as whole value, tab legal",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "V4-quoted-name-value",
+  "mode": "both",
+  "note": "R6 boundary: true quoted scalar as whole value (name)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "V6-tab-outside-quote",
+  "mode": "both",
+  "note": "R6 boundary: tab outside quotes, in plain scalar -> both reject",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "V7-quote-glued",
+  "mode": "both",
+  "note": "R6 boundary: quote glued to plain text, not a quote start",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "V8-quoted-key-tab",
+  "mode": "both",
+  "note": "R6 boundary: true quoted key, tab legal",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "Q1-continuation-quote-tab-outside",
+  "mode": "both",
+  "note": "FIX-P0-06 Q1 verbatim: quote at continuation start, tab OUTSIDE quotes",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "Q3-bare-seq-item-block",
+  "mode": "both",
+  "note": "FIX-P0-06 Q3 verbatim: bare seq-item block scalar, tab in content",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "B4-multiline-plain-tab",
+  "mode": "both",
+  "note": "FIX-P0-06 B4 verbatim: tab in multi-line plain scalar",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "B5-apostrophe-tab",
+  "mode": "both",
+  "note": "FIX-P0-06 B5 verbatim: apostrophe in plain scalar then tab",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "B6-tab-before-comment",
+  "mode": "both",
+  "note": "FIX-P0-06 B6 verbatim: tab before comment",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "TAB-COMMENT",
+  "mode": "both",
+  "note": "R6 boundary: tab inside comment, both accept",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "TAB-BLOCK-CONTENT",
+  "mode": "both",
+  "note": "R6 boundary: tab inside block scalar content, both accept",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "N5-explicit-map-key",
+  "mode": "both",
+  "note": "FIX-P0-06 N5 verbatim: explicit collection key, must stay MATCH",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "N5-explicit-seq-key",
+  "mode": "both",
+  "note": "FIX-P0-06 N5 verbatim: explicit collection key, must stay MATCH",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "X-empty-2",
+  "mode": "both",
+  "note": "R5 X-empty-2 (R6 re-probed): two bare empty keys, both INVALID",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "X-empty-3",
+  "mode": "both",
+  "note": "R5 X-empty-3 (R6 re-probed): bare empty key + null key, both INVALID",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "X-empty-4",
+  "mode": "both",
+  "note": "R5 X-empty-4 (R6 re-probed): bare empty key + ~ key, both INVALID",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "ANCHOR-QUOTED",
+  "mode": "both",
+  "note": "Boundary: quoted scalar after anchor, tab legal",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "TAG-QUOTED",
+  "mode": "both",
+  "note": "Boundary: quoted scalar after tag, tab legal",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "FLOW-V3-QUOTED",
+  "mode": "both",
+  "note": "Boundary: true quoted scalar as flow value, tab legal",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "SEQ-ITEM-QUOTED",
+  "mode": "both",
+  "note": "Boundary: quoted scalar as bare sequence item, tab legal",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "MULTILINE-QUOTED-TAB",
+  "mode": "both",
+  "note": "Boundary: quoted scalar spanning lines (continuation indented 10 > key indent 8), tab inside, both accept",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "COMMENT-THEN-CONT-QUOTE-TAB",
+  "mode": "both",
+  "note": "Boundary: comment line then continuation line with quote+tab (comment is transparent)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "BLANK-THEN-CONT-QUOTE-TAB",
+  "mode": "both",
+  "note": "Boundary: blank line then continuation line with quote+tab (blank folds)",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "TRAILING-COMMENT-THEN-CONT",
+  "mode": "both",
+  "note": "Boundary: trailing comment on scalar line, then continuation with quote+tab",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "Q8-apostrophe-run-tab",
+  "mode": "both",
+  "note": "FIX-P0-06 Q8 verbatim: apostrophe in run value + tab",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "FLOW-NESTED-QUOTED",
+  "mode": "both",
+  "note": "Boundary: quoted scalar nested in flow, tab legal",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "FLOW-PLAIN-KEY-TAB",
+  "mode": "both",
+  "note": "H6 regression: tab after plain key in flow, both reject",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "EXPLICIT-QUOTED-KEY",
+  "mode": "both",
+  "note": "Boundary: explicit quoted key, tab legal",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "FLOW-PLAIN-QUOTE-TAB",
+  "mode": "both",
+  "note": "Boundary: flow plain scalar + literal quote + tab, both reject",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "MULTILINE-QUOTED-TAB-SQ",
+  "mode": "both",
+  "note": "Boundary: single-quoted scalar spanning lines (continuation indented 10 > key indent 8), tab inside, both accept",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "RESID-MULTILINE-QUOTED-UNINDENTED-DQ",
+  "mode": "both",
+  "note": "RESIDUAL (parser leniency, NOT the tab rule): the yaml package rejects a multi-line quoted scalar whose continuation line is indented <= the block context indent (here key indent 8; continuation at 0; threshold probed: indent 9+ parses, 8- fails), PyYAML accepts any indent. Also diverges WITHOUT any tab. Out of scope for FIX-P0-07; needs a parser-level fix.",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ },
+ {
+  "id": "RESID-MULTILINE-QUOTED-UNINDENTED-SQ",
+  "mode": "both",
+  "note": "RESIDUAL (parser leniency, NOT the tab rule): the yaml package rejects a multi-line quoted scalar whose continuation line is indented <= the block context indent (here key indent 8; continuation at 0; threshold probed: indent 9+ parses, 8- fails), PyYAML accepts any indent. Also diverges WITHOUT any tab. Out of scope for FIX-P0-07; needs a parser-level fix.",
+  "known_divergence": false,
+  "checks": {
+   "trigger": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   },
+   "jobs": {
+    "match": true,
+    "ts": "MATCH",
+    "oracle": "MATCH"
+   }
+  }
+ }
+]

@@ -1,0 +1,382 @@
+[
+ {
+  "id": "r17-h1-tag-tab",
+  "yaml": "&x:!!str\t\n  on: push\n  jobs:\n    check:\n      runs-on: ubuntu-latest\n      steps:\n        - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r17-h1-tag-comment",
+  "yaml": "&x:!!str # note\n  on: push\n  jobs:\n    check:\n      runs-on: ubuntu-latest\n      steps:\n        - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r17-h1-tag-bare-bang",
+  "yaml": "&x:!\n  on: push\n  jobs:\n    check:\n      runs-on: ubuntu-latest\n      steps:\n        - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r17-h1-tag-double-bang",
+  "yaml": "&x:!!\n  on: push\n  jobs:\n    check:\n      runs-on: ubuntu-latest\n      steps:\n        - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r17-h1-tag-bang-mid",
+  "yaml": "&x:!!str!zap\n  on: push\n  jobs:\n    check:\n      runs-on: ubuntu-latest\n      steps:\n        - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r17-h1-tag-flow-next",
+  "yaml": "&x:!!str\n{on: push}\n",
+  "mode": "trigger"
+ },
+ {
+  "id": "r17-h1-tag-scalar-next",
+  "yaml": "&x:!!str\nhello\n",
+  "mode": "trigger"
+ },
+ {
+  "id": "r17-h1-tag-tab-brace",
+  "yaml": "&x:!!str\t{on: push}\n",
+  "mode": "both"
+ },
+ {
+  "id": "r17-h1-tag-nobrace-flow-wf",
+  "yaml": "&b:!!str{on: push, jobs: {check: {runs-on: ubuntu-latest, steps: [{run: echo hi}]}}}\n",
+  "mode": "both"
+ },
+ {
+  "id": "r17-h1-tag-crlf",
+  "yaml": "&x:!!str\r\n  on: push\n  jobs:\n    check:\n      runs-on: ubuntu-latest\n      steps:\n        - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r17-h2-run-semi",
+  "yaml": "&q:2;\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r17-h2-run-eq",
+  "yaml": "&q:2=\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r17-h2-run-plus",
+  "yaml": "&q:2+\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r17-h2-run-dollar",
+  "yaml": "&q:2$\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r17-h2-run-at",
+  "yaml": "&q:2@\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r17-h2-run-percent",
+  "yaml": "&q:2%\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r17-h2-run-backtick",
+  "yaml": "&q:2`\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r17-h2-run-pipe",
+  "yaml": "&q:2|\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r17-h2-run-gt",
+  "yaml": "&q:2>\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r17-h2-run-lparen",
+  "yaml": "&q:2(x)\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r17-h2-run-backslash",
+  "yaml": "&q:2\\x\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r17-h2-hash-glued",
+  "yaml": "&q:2#x\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r17-h2-triple-colon",
+  "yaml": "&q:2:3:4\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r17-h2-colon-colon-eol",
+  "yaml": "&q:2::\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r17-h2-run-end-bang",
+  "yaml": "&q:2!\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r17-h2-nbsp",
+  "yaml": "&q:2 \non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r17-h2-colon-tab",
+  "yaml": "&q:\t2\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r17-h2-colon-crlf",
+  "yaml": "&q:\r\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r17-h2-run-bracket-close",
+  "yaml": "&q:2]\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r17-h2-run-brace-close",
+  "yaml": "&q:2}\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r17-h3-alias-resolved",
+  "yaml": "x: &w:2 1\ny: *w:2\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r17-h3-alias-undef-flow",
+  "yaml": "m: {a: *w:2}\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r17-h3-alias-key-tag-after",
+  "yaml": "x: &w 1\n&q:!!str *w:!!int 2\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r17-h3-alias-key-map-val",
+  "yaml": "x: &w 1\n&q:!!str *w:\n  a: 1\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r17-h3-alias-key-seq-val",
+  "yaml": "x: &w 1\n&q:!!str *w:\n  - 1\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r17-h3-alias-resolved-seq",
+  "yaml": "m:\n  - &w:2 1\n  - *w:2\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r17-h3-alias-resolved-key",
+  "yaml": "&w:2 a: 1\nb: *w:2\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r17-h4-value-nested",
+  "yaml": "m:\n  n: &q:2\n  on: push\n  jobs:\n    check:\n      runs-on: ubuntu-latest\n      steps:\n        - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r17-h4-docmark",
+  "yaml": "--- &q:2\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r17-h4-seq-item-map",
+  "yaml": "m:\n  - &q:2\n    a: 1\n  - b: 2\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r17-h4-flow-seq-absorb",
+  "yaml": "m: [&q:2, 1]\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r17-h4-flow-second-colon-scalar",
+  "yaml": "m: {a: 1, &q:2: 3}\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r17-h4-value-flow-nested",
+  "yaml": "m: {a: {b: &q:2}}\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r17-h4-explicit-key-val",
+  "yaml": "? &q:2\n: 1\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r17-h5-nested-flow-null",
+  "yaml": "m: {a: {&q:2}}\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r17-h5-flow-seq-of-map",
+  "yaml": "m: [{&q:2}]\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r17-h5-colon-seq-val",
+  "yaml": "m: {&q:2: [1]}\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r17-h5-colon-second-anchor-null",
+  "yaml": "m: {&q:2: &s}\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r17-h5-colon-empty-glued",
+  "yaml": "m: {&q:2:}\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r17-h5-flow-map-in-seq-val",
+  "yaml": "m: [{&q:2: 1}]\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r17-h5-nonabsorb-anchor-null-val",
+  "yaml": "m: {&r: &s}\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r17-h6-c3-absorb",
+  "yaml": "!zap &q:2 : 1\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r17-h6-c3-absorb-first-pair",
+  "yaml": "&q:2 : 1\non: schedule\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r17-h8-alias-value-flow",
+  "yaml": "&w:2 a: 1\nm: {b: *w:2}\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r17-h8-alias-value-nested",
+  "yaml": "&w:2 a: 1\nm:\n  n: *w:2\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r17-h8-alias-on-value",
+  "yaml": "&w:2 a: 1\non: *w:2\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r17-h8-alias-jobs-value",
+  "yaml": "&w:2 a: 1\non: push\njobs: *w:2\n",
+  "mode": "both"
+ },
+ {
+  "id": "r17-h8-alias-second-pair",
+  "yaml": "&w:2 a: 1\nb: 1\nc: *w:2\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r17-h8-alias-flow-value-2nd",
+  "yaml": "&w:2 a: 1\nm: {b: 1, c: *w:2}\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r17-h8-alias-nested-flow-value",
+  "yaml": "&w:2 a: 1\nm: {a: {b: *w:2}}\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r17-h8-alias-twice",
+  "yaml": "&w:2 a: 1\nb: *w:2\nc: *w:2\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r17-h8-alias-flow-seq-item",
+  "yaml": "&w:2 a: 1\nm: [*w:2]\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r17-h8-alias-block-seq-item",
+  "yaml": "&w:2 a: 1\nm:\n  - *w:2\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r17-h8-alias-after-tag",
+  "yaml": "&w:2 a: 1\nm: !zap *w:2\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r17-h8-alias-after-anchor",
+  "yaml": "&w:2 a: 1\nm: &s *w:2\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r17-h8-alias-explicit-key",
+  "yaml": "&w:2 a: 1\n? *w:2\n: 1\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r17-h8-alias-flow-key",
+  "yaml": "&w:2 a: 1\nm: {*w:2: 1}\non: push\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both"
+ },
+ {
+  "id": "r17-h7-lone-tag-space",
+  "yaml": "&x:!!str \n",
+  "mode": "trigger"
+ },
+ {
+  "id": "r17-h7-lone-bang",
+  "yaml": "&x:!\n",
+  "mode": "trigger"
+ },
+ {
+  "id": "r17-h7-lone-double-bang",
+  "yaml": "&x:!!\n",
+  "mode": "trigger"
+ },
+ {
+  "id": "r17-h7-lone-hash",
+  "yaml": "&q:2#x\n",
+  "mode": "trigger"
+ },
+ {
+  "id": "r17-h7-lone-nbsp",
+  "yaml": "&q:2 \n",
+  "mode": "trigger"
+ },
+ {
+  "id": "r17-h7-lone-colon-colon",
+  "yaml": "&q:2::\n",
+  "mode": "trigger"
+ },
+ {
+  "id": "r17-h7-lone-alias-colon",
+  "yaml": "*w:2\n",
+  "mode": "trigger"
+ },
+ {
+  "id": "r17-h7-lone-run-bang",
+  "yaml": "&q:2!\n",
+  "mode": "trigger"
+ },
+ {
+  "id": "r17-h7-lone-tag-tab",
+  "yaml": "&x:!!str\t\n",
+  "mode": "trigger"
+ }
+]

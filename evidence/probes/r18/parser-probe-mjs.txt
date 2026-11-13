@@ -1,0 +1,22 @@
+dup-scalar-first-plain: errors=0 [] parsed={"a":1,"m":{"a":null}}
+dup-scalar-first-absorbed: errors=0 [] parsed={"a":1,"m":{"a":null}}
+dup-alias-first-plain: errors=0 [] parsed={"a":1,"m":{"a":1}}
+dup-alias-twice-plain: errors=0 [] parsed={"a":1,"m":{"a":null}}
+dup-nested: errors=0 [] parsed={"a":1,"m":{"x":{"a":null}}}
+control-valued-first: errors=1 [Missing , or : between flow map items at line 2, column 9:
+
+m: {*w: 1, a: 1}
+        ^
+] parsed=THROW Missing , or : between flow map items at line 2, column 9:
+
+m: {*w: 1, a: 1}
+        ^
+
+control-diff-scalar: errors=0 [] parsed={"a":1,"m":{"b":2,"a":null}}
+control-alias-alone: errors=0 [] parsed={"a":1,"m":{"a":null}}
+(node:2092) [BAD_ALIAS] YAMLWarning: Alias ending in : is ambiguous at line 2, column 7:
+
+m: {*w: 1, a: 1}
+      ^
+
+(Use `node --trace-warnings ...` to show where the warning was created)

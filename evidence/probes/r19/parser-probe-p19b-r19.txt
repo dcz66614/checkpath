@@ -1,0 +1,81 @@
+=== B11-int-anchor ===
+  parse(): OK {"1":null}
+  doc errors: []
+  root flow=false keys=[Scalar("x", type=PLAIN) | Scalar("m", type=PLAIN) | Scalar("on", type=PLAIN) | Scalar("jobs", type=PLAIN)]
+  root.v flow=true keys=[Scalar(1, type=PLAIN) | Alias("w") -> Scalar(1)]
+  root.v flow=false keys=[Scalar("check", type=PLAIN)]
+  root.v.v flow=false keys=[Scalar("runs-on", type=PLAIN) | Scalar("steps", type=PLAIN)]
+  root.v.v.v[0] flow=false keys=[Scalar("run", type=PLAIN)]
+=== B12-int-vs-quoted ===
+  parse(): OK {"1":null}
+  doc errors: []
+  root flow=false keys=[Scalar("x", type=PLAIN) | Scalar("m", type=PLAIN) | Scalar("on", type=PLAIN) | Scalar("jobs", type=PLAIN)]
+  root.v flow=true keys=[Scalar("1", type=QUOTE_SINGLE) | Alias("w") -> Scalar(1)]
+  root.v flow=false keys=[Scalar("check", type=PLAIN)]
+  root.v.v flow=false keys=[Scalar("runs-on", type=PLAIN) | Scalar("steps", type=PLAIN)]
+  root.v.v.v[0] flow=false keys=[Scalar("run", type=PLAIN)]
+=== B13-bool-anchor ===
+  parse(): OK {"true":null}
+  doc errors: []
+  root flow=false keys=[Scalar("x", type=PLAIN) | Scalar("m", type=PLAIN) | Scalar("on", type=PLAIN) | Scalar("jobs", type=PLAIN)]
+  root.v flow=true keys=[Scalar(true, type=PLAIN) | Alias("w") -> Scalar(true)]
+  root.v flow=false keys=[Scalar("check", type=PLAIN)]
+  root.v.v flow=false keys=[Scalar("runs-on", type=PLAIN) | Scalar("steps", type=PLAIN)]
+  root.v.v.v[0] flow=false keys=[Scalar("run", type=PLAIN)]
+=== B14-bool-vs-int ===
+  parse(): OK {"1":"y","true":null}
+  doc errors: []
+  root flow=false keys=[Scalar("x", type=PLAIN) | Scalar("m", type=PLAIN) | Scalar("on", type=PLAIN) | Scalar("jobs", type=PLAIN)]
+  root.v flow=true keys=[Scalar(1, type=PLAIN) | Alias("w") -> Scalar(true)]
+  root.v flow=false keys=[Scalar("check", type=PLAIN)]
+  root.v.v flow=false keys=[Scalar("runs-on", type=PLAIN) | Scalar("steps", type=PLAIN)]
+  root.v.v.v[0] flow=false keys=[Scalar("run", type=PLAIN)]
+=== B15-null-anchor ===
+  parse(): OK {"":null}
+  doc errors: []
+  root flow=false keys=[Scalar("x", type=PLAIN) | Scalar("m", type=PLAIN) | Scalar("on", type=PLAIN) | Scalar("jobs", type=PLAIN)]
+  root.v flow=true keys=[Scalar(null, type=PLAIN) | Alias("w") -> Scalar(null)]
+  root.v flow=false keys=[Scalar("check", type=PLAIN)]
+  root.v.v flow=false keys=[Scalar("runs-on", type=PLAIN) | Scalar("steps", type=PLAIN)]
+  root.v.v.v[0] flow=false keys=[Scalar("run", type=PLAIN)]
+=== B16-quoted-anchor ===
+  parse(): OK {"a":null}
+  doc errors: []
+  root flow=false keys=[Scalar("x", type=PLAIN) | Scalar("m", type=PLAIN) | Scalar("on", type=PLAIN) | Scalar("jobs", type=PLAIN)]
+  root.v flow=true keys=[Scalar("a", type=PLAIN) | Alias("w") -> Scalar("a")]
+  root.v flow=false keys=[Scalar("check", type=PLAIN)]
+  root.v.v flow=false keys=[Scalar("runs-on", type=PLAIN) | Scalar("steps", type=PLAIN)]
+  root.v.v.v[0] flow=false keys=[Scalar("run", type=PLAIN)]
+=== B17-tagged-anchor ===
+  parse(): OK {"1":null}
+  doc errors: []
+  root flow=false keys=[Scalar("x", type=PLAIN) | Scalar("m", type=PLAIN) | Scalar("on", type=PLAIN) | Scalar("jobs", type=PLAIN)]
+  root.v flow=true keys=[Scalar(1, type=PLAIN) | Alias("w") -> Scalar("1")]
+  root.v flow=false keys=[Scalar("check", type=PLAIN)]
+  root.v.v flow=false keys=[Scalar("runs-on", type=PLAIN) | Scalar("steps", type=PLAIN)]
+  root.v.v.v[0] flow=false keys=[Scalar("run", type=PLAIN)]
+=== B18-nan-anchor ===
+  parse(): OK {"NaN":null}
+  doc errors: []
+  root flow=false keys=[Scalar("x", type=PLAIN) | Scalar("m", type=PLAIN) | Scalar("on", type=PLAIN) | Scalar("jobs", type=PLAIN)]
+  root.v flow=true keys=[Scalar(null, type=PLAIN) | Alias("w") -> Scalar(null)]
+  root.v flow=false keys=[Scalar("check", type=PLAIN)]
+  root.v.v flow=false keys=[Scalar("runs-on", type=PLAIN) | Scalar("steps", type=PLAIN)]
+  root.v.v.v[0] flow=false keys=[Scalar("run", type=PLAIN)]
+=== B21-on-alias-dup ===
+  parse(): OK {"push":{}}
+  doc errors: []
+  root flow=false keys=[Scalar("x", type=PLAIN) | Scalar("on", type=PLAIN) | Scalar("jobs", type=PLAIN)]
+  root.v flow=true keys=[Alias("w") -> Scalar("push") | Scalar("push", type=PLAIN)]
+  root.v.v flow=true keys=[]
+  root.v flow=false keys=[Scalar("check", type=PLAIN)]
+  root.v.v flow=false keys=[Scalar("runs-on", type=PLAIN) | Scalar("steps", type=PLAIN)]
+  root.v.v.v[0] flow=false keys=[Scalar("run", type=PLAIN)]
+=== B25-chained-alias ===
+  parse(): THROW An alias node must not specify any properties at line 2, column 7:
+  doc errors: ["ALIAS_PROPS"]
+  root flow=false keys=[Scalar("x", type=PLAIN) | Scalar("y", type=PLAIN) | Scalar("m", type=PLAIN) | Scalar("on", type=PLAIN) | Scalar("jobs", type=PLAIN)]
+  root.v flow=true keys=[Scalar("foo", type=PLAIN) | Alias("b") -> undefined]
+  root.v flow=false keys=[Scalar("check", type=PLAIN)]
+  root.v.v flow=false keys=[Scalar("runs-on", type=PLAIN) | Scalar("steps", type=PLAIN)]
+  root.v.v.v[0] flow=false keys=[Scalar("run", type=PLAIN)]

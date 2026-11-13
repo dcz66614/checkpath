@@ -1,0 +1,139 @@
+{
+ "checks": 10,
+ "diff": 2,
+ "match": 8,
+ "rows": [
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "adj2-block-alias-key-first",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "adj2-block-alias-key-first",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "adj2-flow-alias-key-first-valued",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "adj2-flow-alias-key-first-valued",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "adj2-flow-alias-key-twice-valued",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "adj2-flow-alias-key-twice-valued",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "adj2-block-alias-value-clean",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "VALID",
+   "ts_errors": [],
+   "ts_status": "VALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "adj2-block-alias-value-clean",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [
+    "errors: [] vs [\"yaml_parse_error\"]",
+    "evaluation.reason: \"triggered\" vs \"invalid\"",
+    "events: [{\"name\": \"push\", \"types\": null, \"branches\": null, \"branches_ignore\": null, \"paths\": null, \"paths_ignore\": null}] vs []",
+    "on_key_is_string: true vs false",
+    "status: \"VALID\" vs \"INVALID\""
+   ],
+   "expected_diff": false,
+   "id": "adj2-flow-alias-key-first-absorbed",
+   "match": false,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [],
+   "ts_status": "VALID"
+  },
+  {
+   "diff": [
+    "<value>: [{\"id\": \"check\", \"name\": null, \"needs\": [], \"if\": null, \"unsupported_job\": null}] vs []"
+   ],
+   "expected_diff": false,
+   "id": "adj2-flow-alias-key-first-absorbed",
+   "match": false,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  }
+ ]
+}

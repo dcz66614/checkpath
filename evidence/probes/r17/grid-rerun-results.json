@@ -1,0 +1,2031 @@
+{
+ "group": "all",
+ "match": 238,
+ "total": 238,
+ "diffs": [],
+ "shapes": [
+  {
+   "id": "p1-root-first",
+   "note": "FIXED: tag+unglued, root 1st pair (C3 narrowed)",
+   "yaml": "!bar &b : 2\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p1-root-first-str",
+   "note": "FIXED: !!str tag+unglued, root 1st pair (C3 narrowed)",
+   "yaml": "!!str &b : 2\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p1-root-first-foo",
+   "note": "FIXED: !foo tag+unglued, root 1st pair (C3 narrowed)",
+   "yaml": "!foo &x : 1\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p1-root-second",
+   "note": "FIXED: tag+unglued, root 2nd pair (C3 narrowed)",
+   "yaml": "a: 1\n!bar &b : 2\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p1-root-third",
+   "note": "tag+unglued, root 3rd pair",
+   "yaml": "a: 1\nb: 2\n!bar &b : 3\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p1-root-second-null",
+   "note": "tag+unglued, root 2nd pair, null value",
+   "yaml": "a: 1\n!bar &b :\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p1-nested-second",
+   "note": "FIXED: tag+unglued, nested 2nd pair (C3 narrowed)",
+   "yaml": "m:\n  a: 1\n  !bar &b : 2\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p1-nested-third",
+   "note": "tag+unglued, nested 3rd pair",
+   "yaml": "m:\n  a: 1\n  b: 2\n  !bar &b : 3\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p1-nested-first",
+   "note": "CONTROL: tag+unglued, nested 1st pair of value map \u2014 (d) must still reject",
+   "yaml": "m:\n  !bar &b : 2\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "INVALID/yaml_parse_error",
+     "oracle": "INVALID/yaml_parse_error"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[0 jobs]",
+     "oracle": "[0 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p1-nested-first-2pair",
+   "note": "tag+unglued, nested 1st pair + 2nd pair \u2014 (d) must still reject",
+   "yaml": "m:\n  !bar &b : 2\n  c: 3\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "INVALID/yaml_parse_error",
+     "oracle": "INVALID/yaml_parse_error"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[0 jobs]",
+     "oracle": "[0 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p1-nested-first-3pair",
+   "note": "tag+unglued, nested 1st pair + 2 more pairs",
+   "yaml": "m:\n  !bar &b : 2\n  c: 3\n  d: 4\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "INVALID/yaml_parse_error",
+     "oracle": "INVALID/yaml_parse_error"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[0 jobs]",
+     "oracle": "[0 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p1-deep-second",
+   "note": "tag+unglued, deeply nested 2nd pair",
+   "yaml": "a:\n  b:\n    c: 1\n    !bar &x : 2\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p1-flow-first",
+   "note": "tag+unglued in flow map, 1st pair",
+   "yaml": "m: {!bar &b : 1}\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p1-flow-second",
+   "note": "tag+unglued in flow map, 2nd pair",
+   "yaml": "m: {a: 1, !bar &b : 2}\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p1-seq-item",
+   "note": "tag+unglued in block-seq item map",
+   "yaml": "m:\n  - !bar &b : 2\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p1-lone",
+   "note": "tag+unglued, lone doc (single pair)",
+   "yaml": "!bar &b : 2\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "INVALID/missing_on_key",
+     "oracle": "INVALID/missing_on_key"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[0 jobs]",
+     "oracle": "[0 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p1-docmark-first",
+   "note": "tag+unglued, root 1st pair after docmark",
+   "yaml": "---\n!bar &b : 2\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p1-glued-ctrl",
+   "note": "CONTROL: tag+GLUED \u2014 (c)/C3 must still reject",
+   "yaml": "a: 1\n!bar &b: 2\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "INVALID/yaml_parse_error",
+     "oracle": "INVALID/yaml_parse_error"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[0 jobs]",
+     "oracle": "[0 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p1-glued-root-first",
+   "note": "CONTROL: tag+glued, root 1st pair (single pair map, (c) fires)",
+   "yaml": "!bar &b: 2\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "INVALID/yaml_parse_error",
+     "oracle": "INVALID/yaml_parse_error"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[0 jobs]",
+     "oracle": "[0 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p1-untagged-unglued-ctrl",
+   "note": "CONTROL: untagged unglued \u2014 (d) must still reject",
+   "yaml": "a: 1\n&b : 2\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "INVALID/yaml_parse_error",
+     "oracle": "INVALID/yaml_parse_error"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[0 jobs]",
+     "oracle": "[0 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p1-untagged-glued-ctrl",
+   "note": "CONTROL: untagged glued \u2014 C3 must still reject",
+   "yaml": "a: 1\n&b: 2\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "INVALID/yaml_parse_error",
+     "oracle": "INVALID/yaml_parse_error"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[0 jobs]",
+     "oracle": "[0 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p1-first-null-exempt",
+   "note": "CONTROL R13 4.2: first-pair null glued \u2014 both VALID",
+   "yaml": "&b:\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p1-first-null-unglued",
+   "note": "CONTROL R13 4.2: first-pair null unglued \u2014 both reject",
+   "yaml": "&b :\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "INVALID/yaml_parse_error",
+     "oracle": "INVALID/yaml_parse_error"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[0 jobs]",
+     "oracle": "[0 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p1-tag-no-anchor",
+   "note": "FIXED: tag, no anchor \u2014 _reject_tagged_empty_key",
+   "yaml": "m:\n  !bar : 2\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "INVALID/yaml_parse_error",
+     "oracle": "INVALID/yaml_parse_error"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[0 jobs]",
+     "oracle": "[0 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p1-explicit-key",
+   "note": "tag+unglued, explicit key",
+   "yaml": "m:\n  ? !bar &b : 2\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "INVALID/yaml_parse_error",
+     "oracle": "INVALID/yaml_parse_error"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[0 jobs]",
+     "oracle": "[0 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p1-verbatim-tag",
+   "note": "verbatim tag+unglued, root 1st pair",
+   "yaml": "!<foo> &b : 2\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p1-handle-tag-second",
+   "note": "handle tag+unglued, root 2nd pair",
+   "yaml": "a: 1\n!!str &b : 2\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p2-str-flow",
+   "note": "FIXED: nospace !!str, flow-map lone doc (scanner mirror)",
+   "yaml": "&b:!!str {on: pull_request}\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[0 jobs]",
+     "oracle": "[0 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p2-str-block",
+   "note": "FIXED: nospace !!str, block-map lone doc (scanner mirror)",
+   "yaml": "&b:!!str\n  on: pull_request\n  jobs:\n    test:\n      runs-on: ubuntu-latest\n      steps:\n        - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p2-int-flow",
+   "note": "nospace !!int, flow-map lone doc",
+   "yaml": "&b:!!int {on: pull_request}\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[0 jobs]",
+     "oracle": "[0 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p2-bool-block",
+   "note": "nospace !!bool, block-map lone doc",
+   "yaml": "&b:!!bool\n  on: pull_request\n  jobs:\n    test:\n      runs-on: ubuntu-latest\n      steps:\n        - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p2-foo-flow",
+   "note": "nospace !foo, flow-map lone doc",
+   "yaml": "&b:!foo {on: pull_request}\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[0 jobs]",
+     "oracle": "[0 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p2-foo-block",
+   "note": "nospace !foo, block-map lone doc",
+   "yaml": "&b:!foo\n  on: pull_request\n  jobs:\n    test:\n      runs-on: ubuntu-latest\n      steps:\n        - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p2-str-scalar",
+   "note": "nospace !!str, scalar lone-doc value",
+   "yaml": "&b:!!str hello\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "INVALID/workflow_root_not_mapping",
+     "oracle": "INVALID/workflow_root_not_mapping"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[0 jobs]",
+     "oracle": "[0 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p2-str-scalar-wf",
+   "note": "nospace !!str, scalar value + workflow pairs",
+   "yaml": "&b:!!str hello\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "INVALID/yaml_parse_error",
+     "oracle": "INVALID/yaml_parse_error"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[0 jobs]",
+     "oracle": "[0 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p2-str-seq",
+   "note": "nospace !!str, flow-seq lone-doc value",
+   "yaml": "&b:!!str [1, 2]\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "INVALID/workflow_root_not_mapping",
+     "oracle": "INVALID/workflow_root_not_mapping"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[0 jobs]",
+     "oracle": "[0 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p2-str-null",
+   "note": "nospace !!str, null lone-doc value",
+   "yaml": "&b:!!str\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "INVALID/workflow_root_not_mapping",
+     "oracle": "INVALID/workflow_root_not_mapping"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[0 jobs]",
+     "oracle": "[0 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p2-str-nobrace",
+   "note": "nospace !!str, no space before brace either",
+   "yaml": "&b:!!str{on: pull_request}\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "INVALID/yaml_parse_error",
+     "oracle": "INVALID/yaml_parse_error"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[0 jobs]",
+     "oracle": "[0 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p2-nested",
+   "note": "nospace !!str, nested pair",
+   "yaml": "m:\n  &b:!!str {a: 1}\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p2-root-second",
+   "note": "nospace !!str, root 2nd pair",
+   "yaml": "a: 1\n&b:!!str {c: 3}\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "INVALID/yaml_parse_error",
+     "oracle": "INVALID/yaml_parse_error"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[0 jobs]",
+     "oracle": "[0 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p2-flow-map",
+   "note": "nospace !!str inside a flow map",
+   "yaml": "m: {&b:!!str {a: 1}}\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "INVALID/yaml_parse_error",
+     "oracle": "INVALID/yaml_parse_error"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[0 jobs]",
+     "oracle": "[0 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p2-value-pos",
+   "note": "nospace anchor-colon in a value slot",
+   "yaml": "m: &b:!!str {a: 1}\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "INVALID/yaml_parse_error",
+     "oracle": "INVALID/yaml_parse_error"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[0 jobs]",
+     "oracle": "[0 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p2-on-value",
+   "note": "nospace anchor-colon on the on: value",
+   "yaml": "on: &b:!!str {push: {}}\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "INVALID/yaml_parse_error",
+     "oracle": "INVALID/yaml_parse_error"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[0 jobs]",
+     "oracle": "[0 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p2-str-flow-spaced",
+   "note": "CONTROL: spaced !!str flow \u2014 already MATCH",
+   "yaml": "&b: !!str {on: pull_request}\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[0 jobs]",
+     "oracle": "[0 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p2-str-block-spaced",
+   "note": "CONTROL: spaced !!str block \u2014 already MATCH",
+   "yaml": "&b: !!str\n  on: pull_request\n  jobs:\n    test:\n      runs-on: ubuntu-latest\n      steps:\n        - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p2-quoted",
+   "note": "CONTROL: pattern inside a double-quoted scalar \u2014 must NOT be mirrored",
+   "yaml": "a: \"&b:!!str {on: push}\"\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p2-squoted",
+   "note": "CONTROL: pattern inside a single-quoted scalar \u2014 must NOT be mirrored",
+   "yaml": "a: '&b:!!str {on: push}'\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p2-comment",
+   "note": "CONTROL: pattern inside a comment \u2014 must NOT be mirrored",
+   "yaml": "# &b:!!str {on: push}\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p2-plain-mid",
+   "note": "CONTROL: pattern mid plain scalar \u2014 must NOT be mirrored",
+   "yaml": "a: x&b:!!str\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p2-plain-key",
+   "note": "nospace !!str as a plain-scalar key fragment?",
+   "yaml": "&b:!!str hello: 1\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p3-int-lone",
+   "note": "FIXED: !!int on flow-map lone-doc value (loader)",
+   "yaml": "&b: !!int {on: pull_request}\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[0 jobs]",
+     "oracle": "[0 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p3-bool-lone",
+   "note": "FIXED: !!bool on flow-map lone-doc value (loader)",
+   "yaml": "&b: !!bool {on: pull_request}\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[0 jobs]",
+     "oracle": "[0 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p3-float-lone",
+   "note": "!!float on flow-map lone-doc value",
+   "yaml": "&b: !!float {on: pull_request}\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[0 jobs]",
+     "oracle": "[0 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p3-str-lone",
+   "note": "CONTROL: !!str on flow-map lone-doc value \u2014 already MATCH via unwrap",
+   "yaml": "&b: !!str {on: pull_request}\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[0 jobs]",
+     "oracle": "[0 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p3-int-m",
+   "note": "FIXED: !!int on flow-map m: value (loader)",
+   "yaml": "m: !!int {a: 1}\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p3-float-m",
+   "note": "FIXED: !!float on flow-map m: value (loader)",
+   "yaml": "m: !!float {a: 1}\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p3-bool-m",
+   "note": "!!bool on flow-map m: value",
+   "yaml": "m: !!bool {a: 1}\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p3-str-m",
+   "note": "!!str on flow-map m: value",
+   "yaml": "m: !!str {a: 1}\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p3-null-m",
+   "note": "!!null on flow-map m: value",
+   "yaml": "m: !!null {a: 1}\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p3-foo-m",
+   "note": "unknown !foo on flow-map m: value",
+   "yaml": "m: !foo {a: 1}\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p3-int-on",
+   "note": "FIXED: !!int on flow-map on: value (loader)",
+   "yaml": "on: !!int {push: {}}\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p3-bool-on",
+   "note": "FIXED: !!bool on flow-map on: value (loader)",
+   "yaml": "on: !!bool {push: {}}\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p3-float-on",
+   "note": "FIXED: !!float on flow-map on: value (loader)",
+   "yaml": "on: !!float {push: {}}\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p3-str-on",
+   "note": "FIXED: !!str on flow-map on: value (was UNKNOWN; loader)",
+   "yaml": "on: !!str {push: {}}\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p3-null-on",
+   "note": "!!null on flow-map on: value",
+   "yaml": "on: !!null {push: {}}\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p3-foo-on",
+   "note": "unknown !foo on flow-map on: value",
+   "yaml": "on: !foo {push: {}}\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p3-int-on-block",
+   "note": "!!int on block-map on: value",
+   "yaml": "on: !!int\n  push: {}\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p3-str-on-block",
+   "note": "!!str on block-map on: value",
+   "yaml": "on: !!str\n  push: {}\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p3-int-jobs",
+   "note": "!!int on flow-map jobs: value",
+   "yaml": "on: push\njobs: !!int {test: {runs-on: ubuntu-latest, steps: [{run: echo hi}]}}\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p3-str-jobs",
+   "note": "!!str on flow-map jobs: value",
+   "yaml": "on: push\njobs: !!str {test: {runs-on: ubuntu-latest, steps: [{run: echo hi}]}}\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p3-int-jobs-block",
+   "note": "!!int on block-map jobs: value",
+   "yaml": "on: push\njobs: !!int\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p3-int-seq",
+   "note": "!!int on flow-seq m: value",
+   "yaml": "m: !!int [1, 2]\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p3-bool-seq",
+   "note": "!!bool on flow-seq m: value",
+   "yaml": "m: !!bool [1, 2]\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p3-str-seq",
+   "note": "!!str on flow-seq m: value",
+   "yaml": "m: !!str [1, 2]\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p3-float-seq-block",
+   "note": "!!float on block-seq m: value",
+   "yaml": "m: !!float\n  - 1\n  - 2\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p3-int-blockmap",
+   "note": "!!int on block-map m: value",
+   "yaml": "m: !!int\n  a: 1\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p3-str-blockmap",
+   "note": "!!str on block-map m: value",
+   "yaml": "m: !!str\n  a: 1\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p3-bool-blockmap",
+   "note": "!!bool on block-map m: value",
+   "yaml": "m: !!bool\n  a: 1\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p3-on-list",
+   "note": "!!int on flow-seq on: value",
+   "yaml": "on: !!int [push]\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p3-on-str-list",
+   "note": "!!str on flow-seq on: value",
+   "yaml": "on: !!str [push]\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p3-nested",
+   "note": "!!int on flow-map, nested value",
+   "yaml": "m:\n  n: !!int {a: 1}\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p3-deep",
+   "note": "!!bool on flow-map, deeply nested value",
+   "yaml": "m:\n  n:\n    o: !!bool {a: 1}\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p3-timestamp-m",
+   "note": "!!timestamp (non-core tag) on flow-map m: value",
+   "yaml": "m: !!timestamp {a: 1}\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p3-set-m",
+   "note": "!!set (non-core tag) on flow-map m: value",
+   "yaml": "m: !!set {a: null}\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p3-scalar-int",
+   "note": "CONTROL: !!int on a scalar value \u2014 must stay MATCH",
+   "yaml": "a: !!int 1\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p3-scalar-str",
+   "note": "CONTROL: !!str on a scalar value \u2014 must stay MATCH",
+   "yaml": "a: !!str 1\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p3-scalar-bool",
+   "note": "CONTROL: !!bool on a scalar value \u2014 must stay MATCH",
+   "yaml": "a: !!bool true\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p3-scalar-float",
+   "note": "CONTROL: !!float on a scalar value \u2014 must stay MATCH",
+   "yaml": "a: !!float 1.5\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p3-scalar-null",
+   "note": "CONTROL: !!null on a scalar value \u2014 must stay MATCH",
+   "yaml": "a: !!null 1\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p3-int-key",
+   "note": "tagged scalar key \u2014 control",
+   "yaml": "!!int 1: x\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p3-map-key",
+   "note": "tagged MAP as a key \u2014 boundary probe",
+   "yaml": "!!int {a: 1}: x\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "INVALID/yaml_parse_error",
+     "oracle": "INVALID/yaml_parse_error"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[0 jobs]",
+     "oracle": "[0 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p4-flow-notag",
+   "note": "nospace anchor-colon, no tag, flow-map value",
+   "yaml": "m: {&b: {a: 1}}\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "INVALID/yaml_parse_error",
+     "oracle": "INVALID/yaml_parse_error"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[0 jobs]",
+     "oracle": "[0 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p4-flow-seq",
+   "note": "nospace anchor-colon, flow-seq value",
+   "yaml": "m: {&b:!!str [1, 2]}\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "INVALID/yaml_parse_error",
+     "oracle": "INVALID/yaml_parse_error"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[0 jobs]",
+     "oracle": "[0 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p4-flow-second",
+   "note": "nospace anchor-colon, flow 2nd pair",
+   "yaml": "m: {a: 1, &b:!!str {c: 3}}\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "INVALID/yaml_parse_error",
+     "oracle": "INVALID/yaml_parse_error"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[0 jobs]",
+     "oracle": "[0 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p4-flow-scalar",
+   "note": "CONTROL: nospace anchor-colon, scalar value \u2014 both VALID",
+   "yaml": "m: {&b:!!str hello}\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p4-flow-spaced",
+   "note": "CONTROL: spaced anchor-colon, flow-map value \u2014 both VALID",
+   "yaml": "m: {&b: !!str {a: 1}}\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "INVALID/yaml_parse_error",
+     "oracle": "INVALID/yaml_parse_error"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[0 jobs]",
+     "oracle": "[0 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p4-flow-blockseq",
+   "note": "nospace anchor-colon, flow-seq of flow-map",
+   "yaml": "m: [{&b:!!str {a: 1}}]\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "INVALID/yaml_parse_error",
+     "oracle": "INVALID/yaml_parse_error"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[0 jobs]",
+     "oracle": "[0 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p4-tag-noanchor-flow",
+   "note": "tag, no anchor, flow map",
+   "yaml": "m: {!bar : 2}\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p4-tag-noanchor-root",
+   "note": "tag, no anchor, root 1st pair",
+   "yaml": "!bar : 2\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p4-tag-noanchor-null",
+   "note": "tag, no anchor, null value",
+   "yaml": "m:\n  !bar :\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "INVALID/yaml_parse_error",
+     "oracle": "INVALID/yaml_parse_error"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[0 jobs]",
+     "oracle": "[0 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p4-tag-noanchor-quoted",
+   "note": "CONTROL: tag + QUOTED empty key \u2014 both VALID",
+   "yaml": "m:\n  !bar \"\": 2\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p4-tag-noanchor-plain",
+   "note": "CONTROL: tag + scalar key \u2014 both VALID",
+   "yaml": "m:\n  !bar x: 2\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p4-tag-noanchor-second",
+   "note": "tag, no anchor, 2nd pair of pair-value map",
+   "yaml": "m:\n  a: 1\n  !bar : 2\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p4-tag-noanchor-seq",
+   "note": "tag, no anchor, block-seq item map",
+   "yaml": "m:\n  - !bar : 2\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p4-tag-noanchor-deep",
+   "note": "tag, no anchor, deeply nested 1st pair",
+   "yaml": "a:\n  b:\n    !bar : 2\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "INVALID/yaml_parse_error",
+     "oracle": "INVALID/yaml_parse_error"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[0 jobs]",
+     "oracle": "[0 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p4-tag-noanchor-root2",
+   "note": "tag, no anchor, root 2nd pair",
+   "yaml": "a: 1\n!bar : 2\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p4-flow-valpos-map",
+   "note": "nospace anchor-colon, flow VALUE pos, map value",
+   "yaml": "m: {a: &b:!!str {c: 3}}\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "INVALID/yaml_parse_error",
+     "oracle": "INVALID/yaml_parse_error"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[0 jobs]",
+     "oracle": "[0 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p4-flow-valpos-scalar",
+   "note": "CONTROL: nospace anchor-colon, flow VALUE pos, scalar value",
+   "yaml": "m: {a: &b:!!str hello}\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "INVALID/yaml_parse_error",
+     "oracle": "INVALID/yaml_parse_error"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[0 jobs]",
+     "oracle": "[0 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p4-flow-valpos-notag",
+   "note": "nospace anchor-colon, flow VALUE pos, no tag, map value",
+   "yaml": "m: {a: &b: {c: 3}}\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "INVALID/yaml_parse_error",
+     "oracle": "INVALID/yaml_parse_error"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[0 jobs]",
+     "oracle": "[0 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p4-flow-valpos-seq",
+   "note": "nospace anchor-colon, flow VALUE pos, seq value",
+   "yaml": "m: {a: &b: [1, 2]}\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "INVALID/yaml_parse_error",
+     "oracle": "INVALID/yaml_parse_error"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[0 jobs]",
+     "oracle": "[0 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p4-block-coll-map",
+   "note": "block pair, anchor-colon, flow-map value",
+   "yaml": "m:\n  &b: {a: 1}\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p4-block-coll-seq",
+   "note": "block pair, anchor-colon, flow-seq value",
+   "yaml": "m:\n  &b: [1, 2]\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p4-block-coll-blockmap",
+   "note": "block pair, anchor-colon, block-map value",
+   "yaml": "m:\n  &b:\n    a: 1\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p4-block-coll-tag",
+   "note": "block pair, tag+anchor-colon, flow-map value \u2014 (c) fires",
+   "yaml": "m:\n  !foo &b: {a: 1}\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "INVALID/yaml_parse_error",
+     "oracle": "INVALID/yaml_parse_error"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[0 jobs]",
+     "oracle": "[0 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p4-block-scalar",
+   "note": "CONTROL: block pair, anchor-colon, scalar value \u2014 both VALID",
+   "yaml": "m:\n  &b: 1\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p4-flow-seqitem-map",
+   "note": "flow-seq item pair, anchor-colon, map value",
+   "yaml": "m: [&b:!!str {a: 1}]\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p4-flow-seqitem-scalar",
+   "note": "CONTROL: flow-seq item pair, anchor-colon, scalar value",
+   "yaml": "m: [&b: 1]\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "VALID/",
+     "oracle": "VALID/"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[1 jobs]",
+     "oracle": "[1 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p4-tag-anchor-nospace",
+   "note": "tag + nospace anchor-colon, flow value",
+   "yaml": "!foo &b:!!str {on: push}\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "INVALID/yaml_parse_error",
+     "oracle": "INVALID/yaml_parse_error"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[0 jobs]",
+     "oracle": "[0 jobs]"
+    }
+   }
+  },
+  {
+   "id": "p4-tag-anchor-nospace-2",
+   "note": "tag + nospace anchor-colon, root 2nd pair",
+   "yaml": "a: 1\n!foo &b:!!str {c: 3}\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+   "checks": {
+    "trigger": {
+     "match": true,
+     "typescript": "INVALID/yaml_parse_error",
+     "oracle": "INVALID/yaml_parse_error"
+    },
+    "jobs": {
+     "match": true,
+     "typescript": "[0 jobs]",
+     "oracle": "[0 jobs]"
+    }
+   }
+  }
+ ]
+}

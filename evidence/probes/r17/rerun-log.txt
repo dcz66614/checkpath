@@ -1,0 +1,83 @@
+=== R17 rerun battery 2026-11-09T20:26:09Z ===
+--- npm test ---
+
+[2m    Isolate [22m [33m52 workers spawned[39m[2m · ~475ms startup each (spawn + environment, per file)[22m
+[2m            [22m [2mat least ~7.76s faster with [22m[33misolate: false[39m[2m — reuses workers across files instead of one per file[22m
+
+--- typecheck ---
+> tsc --noEmit
+
+typecheck exit=0
+--- test:oracle ---
+fixtures: 167, TS==expected exit=0, Oracle==expected exit=0, formal TS exit=0
+TS vs Oracle mismatches: 0
+false PASS: 0
+TS formal-pipeline false PASS: 0
+unsupported surfaced as UNKNOWN: 34/34 fixtures
+report: evidence/tests/ORACLE_PARITY_REPORT.json
+--- s0:oracle ---
+false PASS: 0
+TS formal-pipeline false PASS: 0
+unsupported surfaced as UNKNOWN: 2/2 fixtures
+report: evidence/s0/S0_ORACLE_REPORT.json
+--- build-golden --check-only ---
+golden cases: 167
+golden exit=0
+--- s0:gate ---
+gate: network table-confinement scripts/oracle-diff.mjs: 3 matches, 0 unexplained
+gate: network table-confinement scripts/release-verify.mjs: 9 matches, 0 unexplained
+gate: status=PASS
+gate: oracle 24/24, mismatches=0, false PASS=0, TS formal false PASS=0
+gate: determinism 100 runs, 1 unique hash(es)
+gate: network matches=0
+gate: gate_report_sha256=ad6e4f605593b3c91e5c6d8787ba9024a85e61ae96e68de9cf40ca8569835968
+gate: report=evidence/S0_GATE.json
+--- release:verify ---
+[5/5] license guard
+  PASS license guard: no LICENSE file; LICENSE_STATUS.md still PENDING_SAM_DECISION
+release:verify PASS
+--- oracle:diff trigger/jobs/checks/witness ---
+== trigger ==
+TS vs Oracle mismatches: 0
+report: evidence/tests/T006_ORACLE_TRIGGER_REPORT.json
+== jobs ==
+TS vs Oracle mismatches: 0
+report: evidence/tests/T007_ORACLE_JOBS_REPORT.json
+== checks ==
+TS vs Oracle mismatches: 0
+report: evidence/tests/T008_ORACLE_CHECKS_REPORT.json
+== witness ==
+TS vs Oracle mismatches: 0
+report: evidence/tests/T009_ORACLE_WITNESS_REPORT.json
+--- R16 probe (362) ---
+wrote 181 cases -> /home/hatch/workspace/p020-r17-review/evidence/probes/r16/cases.json
+R16 probe: 362/362 MATCH, 0 DIFF
+r16 exit=0
+--- R10-R15 probes ---
+== r10 ==
+R10 probe: 88/88 MATCH, 0 DIFF
+== r11 ==
+R11 probe: 74/74 MATCH, 0 DIFF
+== r12 ==
+R12 probe: 118/118 MATCH, 0 DIFF
+== r13 ==
+R13 probe: 98/98 MATCH, 0 DIFF
+== r14 ==
+  FLAG STALE r14-r-tagkey-docmark [trigger]: expected DIFF, got MATCH
+  FLAG STALE r14-r-unglued [trigger]: expected DIFF, got MATCH
+  FLAG STALE r14-r-nested-block [trigger]: expected DIFF, got MATCH
+== r15 ==
+  FLAG STALE r15-r3-on-float [trigger]: expected DIFF, got MATCH
+  FLAG STALE r15-r3-on-float [jobs]: expected DIFF, got MATCH
+  FLAG STALE r15-r3-on-str [trigger]: expected DIFF, got MATCH
+--- twelve matrices ---
+== fix-p0-04 ==
+CHECKS 100/100 MATCH (of which 0 checks are flagged known-divergence)
+results: /home/hatch/workspace/p020-r17-review/evidence/probes/fix-p0-04/results.json
+== fix-p0-05 ==
+CHECKS 76/76 MATCH (of which 0 checks are flagged known-divergence)
+results: /home/hatch/workspace/p020-r17-review/evidence/probes/fix-p0-05/results.json
+== fix-p0-06 ==
+CHECKS 134/134 MATCH (of which 0 checks are flagged known-divergence)
+results: /home/hatch/workspace/p020-r17-review/evidence/probes/fix-p0-06/results.json
+== fix-p0-07 ==

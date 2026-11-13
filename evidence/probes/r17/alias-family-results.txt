@@ -1,0 +1,15 @@
+fam-value-block: TS INVALID/['yaml_parse_error'] vs Oracle VALID/[] -> DIFF
+fam-value-flow: TS INVALID/['yaml_parse_error'] vs Oracle VALID/[] -> DIFF
+fam-value-nested: TS INVALID/['yaml_parse_error'] vs Oracle VALID/[] -> DIFF
+fam-value-after-tag: TS INVALID/['yaml_parse_error'] vs Oracle INVALID/['yaml_parse_error'] -> MATCH
+fam-value-after-anchor: TS INVALID/['yaml_parse_error'] vs Oracle INVALID/['yaml_parse_error'] -> MATCH
+fam-explicit-key: TS INVALID/['yaml_parse_error'] vs Oracle INVALID/['yaml_parse_error'] -> MATCH
+fam-flow-seq-item: TS VALID/[] vs Oracle VALID/[] -> MATCH
+fam-flow-key: TS INVALID/['yaml_parse_error'] vs Oracle INVALID/['yaml_parse_error'] -> MATCH
+fam-block-seq-item: TS VALID/[] vs Oracle VALID/[] -> MATCH
+fam-docmark: TS INVALID/['yaml_parse_error'] vs Oracle INVALID/['yaml_parse_error'] -> MATCH
+fam-on-value: TS INVALID/['yaml_parse_error'] vs Oracle UNKNOWN/[] -> DIFF
+fam-jobs-value: TS INVALID/['yaml_parse_error'] vs Oracle VALID/[] -> DIFF
+fam-second-pair: TS INVALID/['yaml_parse_error'] vs Oracle VALID/[] -> DIFF
+fam-flow-value-2nd: TS INVALID/['yaml_parse_error'] vs Oracle VALID/[] -> DIFF
+fam-nested-flow-value: TS INVALID/['yaml_parse_error'] vs Oracle VALID/[] -> DIFF

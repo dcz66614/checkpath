@@ -1,0 +1,18 @@
+### key-absorb-alias
+  errors: (none)
+  parsed: {"a":1,"b":"a","on":"push","jobs":{"check":{"runs-on":"ubuntu-latest","steps":[{"run":"echo hi"}]}}}
+### key-absorb-noalias
+  errors: (none)
+  parsed: {"a":1,"on":"push","jobs":{"check":{"runs-on":"ubuntu-latest","steps":[{"run":"echo hi"}]}}}
+### key-plain-alias
+  errors: (none)
+  parsed: {"a":1,"b":"a","on":"push","jobs":{"check":{"runs-on":"ubuntu-latest","steps":[{"run":"echo hi"}]}}}
+### seq-absorb-alias
+  errors: (none)
+  parsed: {"m":[1,1],"on":"push","jobs":{"check":{"runs-on":"ubuntu-latest","steps":[{"run":"echo hi"}]}}}
+### key-absorb-alias-lone
+  errors: (none)
+  parsed: {"a":1,"b":"a"}
+### key-absorb-undef-alias
+  errors: (none)
+  toJS THROW: ReferenceError: Unresolved alias (the anchor must be set before the alias): w:9

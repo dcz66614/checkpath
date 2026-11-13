@@ -1,0 +1,275 @@
+[
+ {
+  "id": "r14-p0-scalar",
+  "yaml": "&a: 7\n",
+  "mode": "both",
+  "note": "P0 core: lone &a: 7",
+  "expected_diff": false
+ },
+ {
+  "id": "r14-p0-null",
+  "yaml": "&a:\n",
+  "mode": "both",
+  "note": "P0 core: lone &a: (null)",
+  "expected_diff": false
+ },
+ {
+  "id": "r14-c-quoted",
+  "yaml": "\"\": 9\n",
+  "mode": "both",
+  "note": "CONTROL: quoted empty key, cond 2 violated (ScalarToken key)",
+  "expected_diff": false
+ },
+ {
+  "id": "r14-c-squoted",
+  "yaml": "'': 9\n",
+  "mode": "both",
+  "note": "CONTROL: single-quoted empty key",
+  "expected_diff": false
+ },
+ {
+  "id": "r14-c-flowmap",
+  "yaml": "&a: {b: 3}\n",
+  "mode": "both",
+  "note": "CONTROL: flow-map value, cond 5 violated",
+  "expected_diff": false
+ },
+ {
+  "id": "r14-c-blockmap",
+  "yaml": "&a:\n  b: 3\n",
+  "mode": "both",
+  "note": "CONTROL: block-map value, cond 5 violated",
+  "expected_diff": false
+ },
+ {
+  "id": "r14-c-lone-scalar",
+  "yaml": "42\n",
+  "mode": "both",
+  "note": "CONTROL: lone scalar",
+  "expected_diff": false
+ },
+ {
+  "id": "r14-c-lone-anchored",
+  "yaml": "&a hello\n",
+  "mode": "both",
+  "note": "CONTROL: lone anchored scalar",
+  "expected_diff": false
+ },
+ {
+  "id": "r14-c-lone-tagged",
+  "yaml": "!bar 7\n",
+  "mode": "both",
+  "note": "CONTROL: lone tagged scalar",
+  "expected_diff": false
+ },
+ {
+  "id": "r14-c-quoted-wf",
+  "yaml": "\"\": 1\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "note": "CONTROL: quoted empty key + full workflow",
+  "expected_diff": false
+ },
+ {
+  "id": "r14-c-explicit",
+  "yaml": "? : 1\n",
+  "mode": "both",
+  "note": "CONTROL: explicit empty key, both yaml_parse_error",
+  "expected_diff": false
+ },
+ {
+  "id": "r14-c-bare-colon",
+  "yaml": ": 1\n",
+  "mode": "both",
+  "note": "CONTROL: bare colon, both yaml_parse_error",
+  "expected_diff": false
+ },
+ {
+  "id": "r14-d-tagval",
+  "yaml": "&a: !bar 2\n",
+  "mode": "both",
+  "note": "value tag skipped, rule must fire",
+  "expected_diff": false
+ },
+ {
+  "id": "r14-d-flowseq-on",
+  "yaml": "&a: [{on: pull_request}]\n",
+  "mode": "both",
+  "note": "flow-seq value containing on; doc is a sequence, rule must fire",
+  "expected_diff": false
+ },
+ {
+  "id": "r14-d-blockseq",
+  "yaml": "&a:\n  - b\n",
+  "mode": "both",
+  "note": "block-seq value; rule must fire",
+  "expected_diff": false
+ },
+ {
+  "id": "r14-d-docmark",
+  "yaml": "---\n&a: 5\n",
+  "mode": "both",
+  "note": "explicit doc start; rule must fire",
+  "expected_diff": false
+ },
+ {
+  "id": "r14-d-docend",
+  "yaml": "&a: 5\n...\n",
+  "mode": "both",
+  "note": "explicit doc end; rule must fire",
+  "expected_diff": false
+ },
+ {
+  "id": "r14-d-comment",
+  "yaml": "&a: 5  # note\n",
+  "mode": "both",
+  "note": "trailing comment; rule must fire",
+  "expected_diff": false
+ },
+ {
+  "id": "r14-d-alias",
+  "yaml": "&a: *missing\n",
+  "mode": "both",
+  "note": "undefined alias value",
+  "expected_diff": false
+ },
+ {
+  "id": "r14-d-null-space",
+  "yaml": "&a: \n",
+  "mode": "both",
+  "note": "null value, trailing space",
+  "expected_diff": false
+ },
+ {
+  "id": "r14-d-two-pair-real",
+  "yaml": "&a: 7\nname: probe\n",
+  "mode": "both",
+  "note": "cond 1 violated: doc has a real key; rule must NOT fire",
+  "expected_diff": false
+ },
+ {
+  "id": "r14-d-seq-anchor-item",
+  "yaml": "&a:\n  - &b: 2\n",
+  "mode": "both",
+  "note": "block-seq value, anchored-empty-key item; rule must fire",
+  "expected_diff": false
+ },
+ {
+  "id": "r14-r-on-flow",
+  "yaml": "&a: {on: pull_request}\n",
+  "mode": "both",
+  "note": "CLOSED RESIDUAL (a): flow-map value WITH on, TS VALID",
+  "expected_diff": false
+ },
+ {
+  "id": "r14-r-on-block",
+  "yaml": "&a:\n  on: pull_request\n",
+  "mode": "both",
+  "note": "CLOSED RESIDUAL (a): block-map value WITH on, TS VALID",
+  "expected_diff": false
+ },
+ {
+  "id": "r14-r-on-tag",
+  "yaml": "&a: !bar {on: pull_request}\n",
+  "mode": "both",
+  "note": "CLOSED RESIDUAL (a): tagged flow-map value WITH on, TS VALID",
+  "expected_diff": false
+ },
+ {
+  "id": "r14-r-2anchor-scalar",
+  "yaml": "&a: &b 2\n",
+  "mode": "both",
+  "note": "CLOSED RESIDUAL (b): second anchor on scalar value, TS yaml_parse_error",
+  "expected_diff": false
+ },
+ {
+  "id": "r14-r-2anchor-seq",
+  "yaml": "&a: &b [2]\n",
+  "mode": "both",
+  "note": "CLOSED RESIDUAL (b): second anchor on seq value, TS yaml_parse_error",
+  "expected_diff": false
+ },
+ {
+  "id": "r14-r-2anchor-null",
+  "yaml": "&a: &b\n",
+  "mode": "both",
+  "note": "CLOSED RESIDUAL (b): second anchor on null value, TS yaml_parse_error",
+  "expected_diff": false
+ },
+ {
+  "id": "r14-r-tagkey",
+  "yaml": "!bar &a: 2\n",
+  "mode": "both",
+  "note": "CLOSED RESIDUAL (c): tag on the key, TS yaml_parse_error (E05)",
+  "expected_diff": false
+ },
+ {
+  "id": "r14-r-tagkey-handle",
+  "yaml": "!!str &a: 2\n",
+  "mode": "both",
+  "note": "CLOSED RESIDUAL (c): handle tag on the key, TS yaml_parse_error",
+  "expected_diff": false
+ },
+ {
+  "id": "r14-r-tagkey-docmark",
+  "yaml": "---\n!bar &a: 2\n",
+  "mode": "both",
+  "note": "CLOSED RESIDUAL (c): docmark + tag on key, TS yaml_parse_error",
+  "expected_diff": false
+ },
+ {
+  "id": "r14-r-unglued",
+  "yaml": "&a : 2\n",
+  "mode": "both",
+  "note": "CLOSED RESIDUAL (d): space between anchor and colon, TS yaml_parse_error",
+  "expected_diff": false
+ },
+ {
+  "id": "r14-r-nested-block",
+  "yaml": "&a:\n  &b: 2\n",
+  "mode": "both",
+  "note": "CLOSED RESIDUAL (e): nested block-map value, anchored key, TS yaml_parse_error",
+  "expected_diff": false
+ },
+ {
+  "id": "r14-r-nested-flow",
+  "yaml": "&a: {&b: 2}\n",
+  "mode": "both",
+  "note": "CONTROL twin of (e): flow-map value, anchored key; must MATCH",
+  "expected_diff": false
+ },
+ {
+  "id": "r14-g-extra",
+  "yaml": "m: {a: 1\n# note\n, b: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "note": "R6 core: standalone comment line indent 0 after complete pair",
+  "expected_diff": false
+ },
+ {
+  "id": "r14-g-on",
+  "yaml": "on: {push: {types: [opened]}\n# note\n, pull_request}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "note": "R6 on: slot",
+  "expected_diff": false
+ },
+ {
+  "id": "r14-g-on-unsupported",
+  "yaml": "on: {push: {types: [opened]}\n# note\n, pull}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "note": "R6 on: slot, unsupported event pull",
+  "expected_diff": false
+ },
+ {
+  "id": "r14-g-close",
+  "yaml": "m: {a: 1, b: 2\n# note\n}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "note": "R6 close: comment before flow close",
+  "expected_diff": false
+ },
+ {
+  "id": "r14-g-nestedblock",
+  "yaml": "x:\n  m: {a: 1\n# note\n   , b: 2}\nname: probe\non: push\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - run: echo hi\n",
+  "mode": "both",
+  "note": "R6 nested block: comment indent 0 inside flow mapping",
+  "expected_diff": false
+ }
+]

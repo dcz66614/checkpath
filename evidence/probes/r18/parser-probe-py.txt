@@ -1,0 +1,8 @@
+dup-scalar-first-plain: tokens=[('Anchor', 'w'), ('Alias', 'w')] LOAD-ERROR duplicate mapping key: 'a'
+dup-scalar-first-absorbed: tokens=[('Anchor', 'w:2'), ('Alias', 'w:2')] LOAD-ERROR duplicate mapping key: 'a'
+dup-alias-first-plain: tokens=[('Anchor', 'w'), ('Alias', 'w')] LOAD-ERROR duplicate mapping key: 'a'
+dup-alias-twice-plain: tokens=[('Anchor', 'w'), ('Alias', 'w'), ('Alias', 'w')] LOAD-ERROR duplicate mapping key: 'a'
+dup-nested: tokens=[('Anchor', 'w:2'), ('Alias', 'w:2')] LOAD-ERROR duplicate mapping key: 'a'
+control-valued-first: tokens=[('Anchor', 'w'), ('Alias', 'w')] LOAD-ERROR duplicate mapping key: 'a'
+control-diff-scalar: tokens=[('Anchor', 'w'), ('Alias', 'w')] LOAD-OK {'a': '1', 'm': {'b': '2', 'a': ''}}
+control-alias-alone: tokens=[('Anchor', 'w'), ('Alias', 'w')] LOAD-OK {'a': '1', 'm': {'a': ''}}
