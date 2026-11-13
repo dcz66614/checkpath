@@ -1,0 +1,9 @@
+name: s11-num-01-event
+on:
+  01:
+    branches: [main]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo hi

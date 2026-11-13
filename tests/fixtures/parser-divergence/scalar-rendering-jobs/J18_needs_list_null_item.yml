@@ -1,0 +1,8 @@
+name: j18
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    needs: [null]
+    steps:
+      - run: echo hi

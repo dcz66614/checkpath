@@ -1,0 +1,8 @@
+name: j10
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    if: null
+    steps:
+      - run: echo hi

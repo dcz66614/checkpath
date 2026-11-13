@@ -1,0 +1,9 @@
+name: s01-bool-true-event
+on:
+  True:
+    branches: [main]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo hi

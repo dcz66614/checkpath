@@ -1,0 +1,8 @@
+name: j06-dict-job-control
+on:
+  push: {}
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo hi

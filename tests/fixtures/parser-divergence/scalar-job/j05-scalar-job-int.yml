@@ -1,0 +1,4 @@
+name: j05-scalar-job-int
+on:
+  push: {}
+jobs: {test: 1}

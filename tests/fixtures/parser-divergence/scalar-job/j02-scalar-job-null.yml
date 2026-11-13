@@ -1,0 +1,4 @@
+name: j02-scalar-job-null
+on:
+  push: {}
+jobs: {test:}

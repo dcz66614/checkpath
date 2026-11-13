@@ -1,0 +1,158 @@
+{
+  "schema": "checkpath.parser-divergence/v1",
+  "note": "FIX-P0-04 scalar-job parity fixtures: a non-mapping job definition (scalar, null, or sequence) omits the `unsupported_job` field on the TypeScript side (src/core/e2e.ts non-dict branch) and now also in the Oracle (oracle/checkpath_oracle/parser.py extract_jobs non-dict branch, which used to write `\"unsupported_job\": None`). A normal mapping job definition still carries the field on both sides (control case j06). The trigger suite (T6-50/T6-51) and golden suite (G-114/G-115) cover the same shapes end to end. See README.md in this directory and ADR FIX-P0-04 in handoff/P020-FIX-P0-04/TASK_REPORT.md.",
+  "cases": [
+    {
+      "file": "j01-scalar-job-true.yml",
+      "id": "j01-scalar-job-true",
+      "note": "FIX-P0-04: scalar job definition `True` (R5 J20) — both sides omit `unsupported_job`.",
+      "typescript": {
+        "jobs": [
+          {
+            "id": "test",
+            "name": null,
+            "needs": [],
+            "if": "__unsupported_if__"
+          }
+        ]
+      },
+      "oracle": {
+        "jobs": [
+          {
+            "id": "test",
+            "if": "__unsupported_if__",
+            "name": null,
+            "needs": []
+          }
+        ]
+      }
+    },
+    {
+      "file": "j02-scalar-job-null.yml",
+      "id": "j02-scalar-job-null",
+      "note": "FIX-P0-04: scalar job definition (empty / null) — non-dict branch on both sides, no `unsupported_job` field.",
+      "typescript": {
+        "jobs": [
+          {
+            "id": "test",
+            "name": null,
+            "needs": [],
+            "if": "__unsupported_if__"
+          }
+        ]
+      },
+      "oracle": {
+        "jobs": [
+          {
+            "id": "test",
+            "if": "__unsupported_if__",
+            "name": null,
+            "needs": []
+          }
+        ]
+      }
+    },
+    {
+      "file": "j03-scalar-job-list.yml",
+      "id": "j03-scalar-job-list",
+      "note": "FIX-P0-04: scalar job definition (sequence) — non-dict branch on both sides, no `unsupported_job` field.",
+      "typescript": {
+        "jobs": [
+          {
+            "id": "test",
+            "name": null,
+            "needs": [],
+            "if": "__unsupported_if__"
+          }
+        ]
+      },
+      "oracle": {
+        "jobs": [
+          {
+            "id": "test",
+            "if": "__unsupported_if__",
+            "name": null,
+            "needs": []
+          }
+        ]
+      }
+    },
+    {
+      "file": "j04-scalar-job-string.yml",
+      "id": "j04-scalar-job-string",
+      "note": "FIX-P0-04: scalar job definition (quoted string) — non-dict branch on both sides, no `unsupported_job` field.",
+      "typescript": {
+        "jobs": [
+          {
+            "id": "test",
+            "name": null,
+            "needs": [],
+            "if": "__unsupported_if__"
+          }
+        ]
+      },
+      "oracle": {
+        "jobs": [
+          {
+            "id": "test",
+            "if": "__unsupported_if__",
+            "name": null,
+            "needs": []
+          }
+        ]
+      }
+    },
+    {
+      "file": "j05-scalar-job-int.yml",
+      "id": "j05-scalar-job-int",
+      "note": "FIX-P0-04: scalar job definition (number) — non-dict branch on both sides, no `unsupported_job` field.",
+      "typescript": {
+        "jobs": [
+          {
+            "id": "test",
+            "name": null,
+            "needs": [],
+            "if": "__unsupported_if__"
+          }
+        ]
+      },
+      "oracle": {
+        "jobs": [
+          {
+            "id": "test",
+            "if": "__unsupported_if__",
+            "name": null,
+            "needs": []
+          }
+        ]
+      }
+    },
+    {
+      "file": "j06-dict-job-control.yml",
+      "id": "j06-dict-job-control",
+      "note": "FIX-P0-04 control: a normal mapping job definition still carries `unsupported_job: null` on both sides.",
+      "typescript": {
+        "jobs": [
+          {
+            "id": "test",
+            "name": null,
+            "needs": [],
+            "if": null,
+            "unsupported_job": null
+          }
+        ]
+      },
+      "oracle": {
+        "jobs": [
+          {
+            "id": "test",
+            "if": null,
+            "name": null,
+            "needs": [],
+            "unsupported_job": null
+          }
+        ]
+      }
+    }
+  ]
+}

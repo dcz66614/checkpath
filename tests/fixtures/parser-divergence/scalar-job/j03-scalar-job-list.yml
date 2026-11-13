@@ -1,0 +1,4 @@
+name: j03-scalar-job-list
+on:
+  push: {}
+jobs: {test: [a]}

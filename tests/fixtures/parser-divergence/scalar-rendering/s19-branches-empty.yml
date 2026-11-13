@@ -1,0 +1,9 @@
+name: s19-branches-empty
+on:
+  push:
+    branches:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo hi

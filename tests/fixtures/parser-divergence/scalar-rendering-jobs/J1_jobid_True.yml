@@ -1,0 +1,7 @@
+name: j1
+on: push
+jobs:
+  True:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo hi

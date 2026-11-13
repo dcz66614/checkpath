@@ -1,0 +1,4 @@
+name: j04-scalar-job-string
+on:
+  push: {}
+jobs: {test: "x"}

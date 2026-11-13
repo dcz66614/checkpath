@@ -1,0 +1,1321 @@
+{
+ "schema": "checkpath.parser-divergence/v1",
+ "note": "FIX-P0-06 tab parity fixtures: PyYAML's scanner rejects a tab character anywhere except inside a single/double-quoted scalar, inside a block scalar's content, or inside a comment — before/after a colon, after an alias, after a plain scalar, after a comma / `{` / `-` / `?`, after an anchor/tag, and inside a plain scalar, in block and flow context alike. The TypeScript `yaml` package accepted tabs as separation in all those positions. The TypeScript side now rejects the same shapes through hasRejectedTab (src/core/workflow-parser.ts) with the identical yaml_parse_error, in both parseWorkflowYaml and extractJobs. Tabs inside quoted scalars, block scalar content, and comments are deliberately NOT rejected — both sides already agree on them. See README.md in this directory and ADR FIX-P0-06 in handoff/P020-FIX-P0-06/TASK_REPORT.md.",
+ "cases": [
+  {
+   "file": "f01-h6-flow-alias-tab-before-colon.yml",
+   "id": "f01-h6-flow-alias-tab-before-colon",
+   "note": "FIX-P0-06: H6 itself: flow alias key, tab before colon",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f02-h6-block-alias-tab-before-colon.yml",
+   "id": "f02-h6-block-alias-tab-before-colon",
+   "note": "FIX-P0-06: block alias key, tab before colon",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f03-h6-flow-alias-tab-space-before-colon.yml",
+   "id": "f03-h6-flow-alias-tab-space-before-colon",
+   "note": "FIX-P0-06: flow alias key, tab+space before colon",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f04-h6-flow-alias-tab-after-colon.yml",
+   "id": "f04-h6-flow-alias-tab-after-colon",
+   "note": "FIX-P0-06: flow alias key, tab AFTER colon",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f05-h6-flow-scalar-key-tab-before-colon.yml",
+   "id": "f05-h6-flow-scalar-key-tab-before-colon",
+   "note": "FIX-P0-06: flow scalar key, tab before colon",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f06-h6-block-scalar-key-tab-before-colon.yml",
+   "id": "f06-h6-block-scalar-key-tab-before-colon",
+   "note": "FIX-P0-06: block scalar key, tab before colon",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f07-h6-flow-alias-value-tab.yml",
+   "id": "f07-h6-flow-alias-value-tab",
+   "note": "FIX-P0-06: flow alias in VALUE position followed by tab",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f08-h6-quoted-string-tab.yml",
+   "id": "f08-h6-quoted-string-tab",
+   "note": "FIX-P0-06: control: tab inside quoted string value",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "event_config_not_mapping"
+    ],
+    "events": [],
+    "jobs": [
+     {
+      "id": "test",
+      "name": null,
+      "needs": [],
+      "if": null,
+      "unsupported_job": null
+     }
+    ]
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "event_config_not_mapping"
+    ],
+    "events": [],
+    "jobs": [
+     {
+      "id": "test",
+      "if": null,
+      "name": null,
+      "needs": [],
+      "unsupported_job": null
+     }
+    ]
+   }
+  },
+  {
+   "file": "f09-h6-tab-indentation.yml",
+   "id": "f09-h6-tab-indentation",
+   "note": "FIX-P0-06: tab indentation at line start",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f10-h6-explicit-key-alias-tab.yml",
+   "id": "f10-h6-explicit-key-alias-tab",
+   "note": "FIX-P0-06: explicit ? key, alias, tab before colon",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f11-h6-map-anchor-alias-tab.yml",
+   "id": "f11-h6-map-anchor-alias-tab",
+   "note": "FIX-P0-06: N5+H6 combined: map anchor + tab",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f12-h6-adjacent-colon-alias-key.yml",
+   "id": "f12-h6-adjacent-colon-alias-key",
+   "note": "FIX-P0-06: control: adjacent colon (FIX-P0-05, agreed)",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f13-h6-flow-seq-value-alias-tab.yml",
+   "id": "f13-h6-flow-seq-value-alias-tab",
+   "note": "FIX-P0-06: flow seq value alias followed by tab",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f14-h6-flow-alias-double-tab-before-colon.yml",
+   "id": "f14-h6-flow-alias-double-tab-before-colon",
+   "note": "FIX-P0-06: flow alias key, double tab before colon",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f15-t01-flow-scalar-key-tab-before-colon.yml",
+   "id": "f15-t01-flow-scalar-key-tab-before-colon",
+   "note": "FIX-P0-06: PyYAML REJECT: flow scalar key tab before colon",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f16-t02-block-scalar-key-tab-before-colon.yml",
+   "id": "f16-t02-block-scalar-key-tab-before-colon",
+   "note": "FIX-P0-06: PyYAML REJECT: block scalar key tab before colon",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f17-t03-flow-tab-after-colon.yml",
+   "id": "f17-t03-flow-tab-after-colon",
+   "note": "FIX-P0-06: PyYAML REJECT: flow tab after colon",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f18-t04-block-tab-after-colon.yml",
+   "id": "f18-t04-block-tab-after-colon",
+   "note": "FIX-P0-06: PyYAML REJECT: block tab after colon",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f19-t05-flow-tab-after-plain-value.yml",
+   "id": "f19-t05-flow-tab-after-plain-value",
+   "note": "FIX-P0-06: PyYAML REJECT: flow tab after plain value",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f20-t07-flow-tab-space-before-colon.yml",
+   "id": "f20-t07-flow-tab-space-before-colon",
+   "note": "FIX-P0-06: PyYAML REJECT: flow tab+space before colon",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f21-t08-tab-inside-plain-scalar.yml",
+   "id": "f21-t08-tab-inside-plain-scalar",
+   "note": "FIX-P0-06: PyYAML REJECT: tab inside plain scalar",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f22-t09-tab-inside-single-quoted-scalar.yml",
+   "id": "f22-t09-tab-inside-single-quoted-scalar",
+   "note": "FIX-P0-06: PyYAML ACCEPT: tab inside single-quoted scalar (control)",
+   "typescript": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "name": "push",
+      "types": null,
+      "branches": null,
+      "branches_ignore": null,
+      "paths": null,
+      "paths_ignore": null
+     }
+    ],
+    "jobs": [
+     {
+      "id": "test",
+      "name": null,
+      "needs": [],
+      "if": null,
+      "unsupported_job": null
+     }
+    ]
+   },
+   "oracle": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "branches": null,
+      "branches_ignore": null,
+      "name": "push",
+      "paths": null,
+      "paths_ignore": null,
+      "types": null
+     }
+    ],
+    "jobs": [
+     {
+      "id": "test",
+      "if": null,
+      "name": null,
+      "needs": [],
+      "unsupported_job": null
+     }
+    ]
+   }
+  },
+  {
+   "file": "f23-t10-tab-inside-block-scalar.yml",
+   "id": "f23-t10-tab-inside-block-scalar",
+   "note": "FIX-P0-06: PyYAML ACCEPT: tab inside block scalar content (control)",
+   "typescript": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "name": "push",
+      "types": null,
+      "branches": null,
+      "branches_ignore": null,
+      "paths": null,
+      "paths_ignore": null
+     }
+    ],
+    "jobs": [
+     {
+      "id": "test",
+      "name": null,
+      "needs": [],
+      "if": null,
+      "unsupported_job": null
+     }
+    ]
+   },
+   "oracle": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "branches": null,
+      "branches_ignore": null,
+      "name": "push",
+      "paths": null,
+      "paths_ignore": null,
+      "types": null
+     }
+    ],
+    "jobs": [
+     {
+      "id": "test",
+      "if": null,
+      "name": null,
+      "needs": [],
+      "unsupported_job": null
+     }
+    ]
+   }
+  },
+  {
+   "file": "f24-t11-tab-after-explicit-key-marker.yml",
+   "id": "f24-t11-tab-after-explicit-key-marker",
+   "note": "FIX-P0-06: PyYAML REJECT: tab after ? indicator",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f25-t12-tab-after-dash.yml",
+   "id": "f25-t12-tab-after-dash",
+   "note": "FIX-P0-06: PyYAML REJECT: tab after dash",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f26-t13-tab-inside-comment.yml",
+   "id": "f26-t13-tab-inside-comment",
+   "note": "FIX-P0-06: PyYAML ACCEPT: tab inside comment (control)",
+   "typescript": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "name": "push",
+      "types": null,
+      "branches": null,
+      "branches_ignore": null,
+      "paths": null,
+      "paths_ignore": null
+     }
+    ],
+    "jobs": [
+     {
+      "id": "test",
+      "name": null,
+      "needs": [],
+      "if": null,
+      "unsupported_job": null
+     }
+    ]
+   },
+   "oracle": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "branches": null,
+      "branches_ignore": null,
+      "name": "push",
+      "paths": null,
+      "paths_ignore": null,
+      "types": null
+     }
+    ],
+    "jobs": [
+     {
+      "id": "test",
+      "if": null,
+      "name": null,
+      "needs": [],
+      "unsupported_job": null
+     }
+    ]
+   }
+  },
+  {
+   "file": "f27-t14-trailing-tab.yml",
+   "id": "f27-t14-trailing-tab",
+   "note": "FIX-P0-06: PyYAML REJECT: trailing tab at end of line",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f28-t15-tab-between-key-and-value.yml",
+   "id": "f28-t15-tab-between-key-and-value",
+   "note": "FIX-P0-06: PyYAML REJECT: tab between key and value",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f29-t18-flow-tab-after-comma.yml",
+   "id": "f29-t18-flow-tab-after-comma",
+   "note": "FIX-P0-06: PyYAML REJECT: flow tab after comma",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f30-t19-flow-tab-after-open-brace.yml",
+   "id": "f30-t19-flow-tab-after-open-brace",
+   "note": "FIX-P0-06: PyYAML REJECT: flow tab after open brace",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f31-t20-block-tab-before-colon-in-jobs.yml",
+   "id": "f31-t20-block-tab-before-colon-in-jobs",
+   "note": "FIX-P0-06: PyYAML REJECT: block tab before colon in jobs",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f32-t21-tab-inside-double-quoted-key.yml",
+   "id": "f32-t21-tab-inside-double-quoted-key",
+   "note": "FIX-P0-06: PyYAML ACCEPT: tab inside double-quoted key (control)",
+   "typescript": {
+    "status": "UNKNOWN",
+    "errors": [],
+    "events": [
+     {
+      "name": "pu\tsh",
+      "types": null,
+      "branches": null,
+      "branches_ignore": null,
+      "paths": null,
+      "paths_ignore": null
+     }
+    ],
+    "jobs": [
+     {
+      "id": "test",
+      "name": null,
+      "needs": [],
+      "if": null,
+      "unsupported_job": null
+     }
+    ]
+   },
+   "oracle": {
+    "status": "UNKNOWN",
+    "errors": [],
+    "events": [
+     {
+      "branches": null,
+      "branches_ignore": null,
+      "name": "pu\tsh",
+      "paths": null,
+      "paths_ignore": null,
+      "types": null
+     }
+    ],
+    "jobs": [
+     {
+      "id": "test",
+      "if": null,
+      "name": null,
+      "needs": [],
+      "unsupported_job": null
+     }
+    ]
+   }
+  },
+  {
+   "file": "f33-t22-tab-inside-flow-plain-scalar-value.yml",
+   "id": "f33-t22-tab-inside-flow-plain-scalar-value",
+   "note": "FIX-P0-06: PyYAML REJECT: tab in flow plain scalar value",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f34-t23-tab-after-anchor.yml",
+   "id": "f34-t23-tab-after-anchor",
+   "note": "FIX-P0-06: PyYAML REJECT: tab after anchor",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f35-t24-tab-after-tag.yml",
+   "id": "f35-t24-tab-after-tag",
+   "note": "FIX-P0-06: PyYAML REJECT: tab after tag",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f36-t25-flow-nested-tab-in-list.yml",
+   "id": "f36-t25-flow-nested-tab-in-list",
+   "note": "FIX-P0-06: PyYAML REJECT: flow nested tab in list",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f37-b1-tab-at-start-of-block-content-line.yml",
+   "id": "f37-b1-tab-at-start-of-block-content-line",
+   "note": "FIX-P0-06: PyYAML REJECT: tab at start of block content line",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f38-b3-block-scalar-first-line-tab-indented.yml",
+   "id": "f38-b3-block-scalar-first-line-tab-indented",
+   "note": "FIX-P0-06: PyYAML REJECT: block scalar first content line tab-indented",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f39-b4-tab-in-multiline-plain-scalar.yml",
+   "id": "f39-b4-tab-in-multiline-plain-scalar",
+   "note": "FIX-P0-06: PyYAML REJECT: tab in multi-line plain scalar",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f40-b5-apostrophe-plain-scalar-tab.yml",
+   "id": "f40-b5-apostrophe-plain-scalar-tab",
+   "note": "FIX-P0-06: PyYAML REJECT: apostrophe plain scalar then tab",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f41-b6-tab-before-comment.yml",
+   "id": "f41-b6-tab-before-comment",
+   "note": "FIX-P0-06: PyYAML REJECT: tab before comment",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f42-q1-quote-at-plain-scalar-continuation.yml",
+   "id": "f42-q1-quote-at-plain-scalar-continuation",
+   "note": "FIX-P0-06: APPROXIMATION CHECK: quote at start of plain-scalar continuation line + tab",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f43-q2-misindented-block-content-with-tab.yml",
+   "id": "f43-q2-misindented-block-content-with-tab",
+   "note": "FIX-P0-06: APPROXIMATION CHECK: block content at key indent (8) with tab — misindented",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f44-q3-bare-seq-item-block-scalar-tab.yml",
+   "id": "f44-q3-bare-seq-item-block-scalar-tab",
+   "note": "FIX-P0-06: bare seq-item block scalar (- |) with tab in content",
+   "typescript": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "name": "push",
+      "types": null,
+      "branches": null,
+      "branches_ignore": null,
+      "paths": null,
+      "paths_ignore": null
+     }
+    ],
+    "jobs": [
+     {
+      "id": "test",
+      "name": null,
+      "needs": [],
+      "if": null,
+      "unsupported_job": null
+     }
+    ]
+   },
+   "oracle": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "branches": null,
+      "branches_ignore": null,
+      "name": "push",
+      "paths": null,
+      "paths_ignore": null,
+      "types": null
+     }
+    ],
+    "jobs": [
+     {
+      "id": "test",
+      "if": null,
+      "name": null,
+      "needs": [],
+      "unsupported_job": null
+     }
+    ]
+   }
+  },
+  {
+   "file": "f45-q4-folded-block-scalar-tab.yml",
+   "id": "f45-q4-folded-block-scalar-tab",
+   "note": "FIX-P0-06: folded block scalar (>) with tab in content",
+   "typescript": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "name": "push",
+      "types": null,
+      "branches": null,
+      "branches_ignore": null,
+      "paths": null,
+      "paths_ignore": null
+     }
+    ],
+    "jobs": [
+     {
+      "id": "test",
+      "name": null,
+      "needs": [],
+      "if": null,
+      "unsupported_job": null
+     }
+    ]
+   },
+   "oracle": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "branches": null,
+      "branches_ignore": null,
+      "name": "push",
+      "paths": null,
+      "paths_ignore": null,
+      "types": null
+     }
+    ],
+    "jobs": [
+     {
+      "id": "test",
+      "if": null,
+      "name": null,
+      "needs": [],
+      "unsupported_job": null
+     }
+    ]
+   }
+  },
+  {
+   "file": "f46-q5-chomping-block-scalar-tab.yml",
+   "id": "f46-q5-chomping-block-scalar-tab",
+   "note": "FIX-P0-06: chomping block scalar (|-) with tab in content",
+   "typescript": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "name": "push",
+      "types": null,
+      "branches": null,
+      "branches_ignore": null,
+      "paths": null,
+      "paths_ignore": null
+     }
+    ],
+    "jobs": [
+     {
+      "id": "test",
+      "name": null,
+      "needs": [],
+      "if": null,
+      "unsupported_job": null
+     }
+    ]
+   },
+   "oracle": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "branches": null,
+      "branches_ignore": null,
+      "name": "push",
+      "paths": null,
+      "paths_ignore": null,
+      "types": null
+     }
+    ],
+    "jobs": [
+     {
+      "id": "test",
+      "if": null,
+      "name": null,
+      "needs": [],
+      "unsupported_job": null
+     }
+    ]
+   }
+  },
+  {
+   "file": "f47-q6-explicit-indent-block-scalar-tab.yml",
+   "id": "f47-q6-explicit-indent-block-scalar-tab",
+   "note": "FIX-P0-06: explicit-indent block scalar (|2) with tab in content",
+   "typescript": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "name": "push",
+      "types": null,
+      "branches": null,
+      "branches_ignore": null,
+      "paths": null,
+      "paths_ignore": null
+     }
+    ],
+    "jobs": [
+     {
+      "id": "test",
+      "name": null,
+      "needs": [],
+      "if": null,
+      "unsupported_job": null
+     }
+    ]
+   },
+   "oracle": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "branches": null,
+      "branches_ignore": null,
+      "name": "push",
+      "paths": null,
+      "paths_ignore": null,
+      "types": null
+     }
+    ],
+    "jobs": [
+     {
+      "id": "test",
+      "if": null,
+      "name": null,
+      "needs": [],
+      "unsupported_job": null
+     }
+    ]
+   }
+  },
+  {
+   "file": "f48-q7-tab-in-comment-after-block-header.yml",
+   "id": "f48-q7-tab-in-comment-after-block-header",
+   "note": "FIX-P0-06: tab inside trailing comment after block header",
+   "typescript": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "name": "push",
+      "types": null,
+      "branches": null,
+      "branches_ignore": null,
+      "paths": null,
+      "paths_ignore": null
+     }
+    ],
+    "jobs": [
+     {
+      "id": "test",
+      "name": null,
+      "needs": [],
+      "if": null,
+      "unsupported_job": null
+     }
+    ]
+   },
+   "oracle": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "branches": null,
+      "branches_ignore": null,
+      "name": "push",
+      "paths": null,
+      "paths_ignore": null,
+      "types": null
+     }
+    ],
+    "jobs": [
+     {
+      "id": "test",
+      "if": null,
+      "name": null,
+      "needs": [],
+      "unsupported_job": null
+     }
+    ]
+   }
+  },
+  {
+   "file": "f49-q8-apostrophe-in-run-value-tab.yml",
+   "id": "f49-q8-apostrophe-in-run-value-tab",
+   "note": "FIX-P0-06: apostrophe in run value + tab (plain scalar)",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  }
+ ]
+}

@@ -1,0 +1,292 @@
+{
+ "schema": "checkpath.parser-divergence/v1",
+ "note": "FIX-P0-07 quoted-mid-plain-scalar parity fixtures: a quote only starts a quoted scalar where a scalar can start; inside a plain scalar in progress (run: echo \"a\\tb\", a multi-line plain scalar's continuation line, a flow plain scalar) the quote is a literal character, so the tab is a tab inside a plain scalar and PyYAML rejects it. The TypeScript side now rejects the same shapes through hasRejectedTab (src/core/workflow-parser.ts) with the identical yaml_parse_error, in both parseWorkflowYaml and extractJobs. f12 is the VALID boundary: a tab inside a genuinely quoted scalar whose continuation line is indented deeper than the block context — both sides accept it. The two RESID rows in evidence/probes/fix-p0-07 (unindented multi-line quoted scalar continuation) are NOT covered here: that divergence is in the yaml package's parser leniency, not hasRejectedTab. See README.md in this directory and ADR FIX-P0-07 in handoff/P020-FIX-P0-07/TASK_REPORT.md.",
+ "cases": [
+  {
+   "file": "f01-v1-double-quote-tab.yml",
+   "id": "f01-v1-double-quote-tab",
+   "note": "FIX-P0-07: f01 v1 double quote tab",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f02-v2-single-quote-tab.yml",
+   "id": "f02-v2-single-quote-tab",
+   "note": "FIX-P0-07: f02 v2 single quote tab",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f03-v5-continuation-quote-tab.yml",
+   "id": "f03-v5-continuation-quote-tab",
+   "note": "FIX-P0-07: f03 v5 continuation quote tab",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f04-v9-trailing-comment-tab.yml",
+   "id": "f04-v9-trailing-comment-tab",
+   "note": "FIX-P0-07: f04 v9 trailing comment tab",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f05-v1b-anchor-plain-quote-tab.yml",
+   "id": "f05-v1b-anchor-plain-quote-tab",
+   "note": "FIX-P0-07: f05 v1b anchor plain quote tab",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f06-v1c-flow-plain-quote-tab.yml",
+   "id": "f06-v1c-flow-plain-quote-tab",
+   "note": "FIX-P0-07: f06 v1c flow plain quote tab",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f07-v1d-plain-key-quote-tab.yml",
+   "id": "f07-v1d-plain-key-quote-tab",
+   "note": "FIX-P0-07: f07 v1d plain key quote tab",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f08-v1e-value-next-line-quote-tab.yml",
+   "id": "f08-v1e-value-next-line-quote-tab",
+   "note": "FIX-P0-07: f08 v1e value next line quote tab",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f09-v1f-continuation-mid-quote-tab.yml",
+   "id": "f09-v1f-continuation-mid-quote-tab",
+   "note": "FIX-P0-07: f09 v1f continuation mid quote tab",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f10-blank-line-then-cont-quote-tab.yml",
+   "id": "f10-blank-line-then-cont-quote-tab",
+   "note": "FIX-P0-07: f10 blank line then cont quote tab",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f11-flow-plain-quote-tab.yml",
+   "id": "f11-flow-plain-quote-tab",
+   "note": "FIX-P0-07: f11 flow plain quote tab",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f12-multiline-quoted-tab-indented.yml",
+   "id": "f12-multiline-quoted-tab-indented",
+   "note": "FIX-P0-07: f12 multiline quoted tab indented",
+   "typescript": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "name": "push",
+      "types": null,
+      "branches": [
+       "main"
+      ],
+      "branches_ignore": null,
+      "paths": null,
+      "paths_ignore": null
+     }
+    ],
+    "jobs": [
+     {
+      "id": "test",
+      "name": null,
+      "needs": [],
+      "if": null,
+      "unsupported_job": null
+     }
+    ]
+   },
+   "oracle": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "branches": [
+       "main"
+      ],
+      "branches_ignore": null,
+      "name": "push",
+      "paths": null,
+      "paths_ignore": null,
+      "types": null
+     }
+    ],
+    "jobs": [
+     {
+      "id": "test",
+      "if": null,
+      "name": null,
+      "needs": [],
+      "unsupported_job": null
+     }
+    ]
+   }
+  }
+ ]
+}

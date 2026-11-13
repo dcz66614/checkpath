@@ -1,0 +1,5 @@
+name: probe
+on: {push: echo "a	b"}
+jobs:
+  test:
+    runs-on: ubuntu-latest

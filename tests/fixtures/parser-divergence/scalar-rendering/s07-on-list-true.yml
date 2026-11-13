@@ -1,0 +1,7 @@
+name: s07-on-list-true
+on: [True, push]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo hi

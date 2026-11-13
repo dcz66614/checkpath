@@ -1,0 +1,9 @@
+name: s14-num-1e3-event
+on:
+  1e3:
+    branches: [main]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo hi

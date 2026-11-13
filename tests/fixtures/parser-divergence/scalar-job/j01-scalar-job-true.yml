@@ -1,0 +1,4 @@
+name: j01-scalar-job-true
+on:
+  push: {}
+jobs: {test: True}

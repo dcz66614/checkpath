@@ -1,0 +1,11 @@
+name: s21-dup-nan-nan
+on:
+  .nan:
+    branches: [main]
+  .nan:
+    branches: [dev]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo hi

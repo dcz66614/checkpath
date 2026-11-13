@@ -1,0 +1,8 @@
+name: j7
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    if: True
+    steps:
+      - run: echo hi

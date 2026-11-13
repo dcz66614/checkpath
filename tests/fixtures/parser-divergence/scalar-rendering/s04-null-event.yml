@@ -1,0 +1,9 @@
+name: s04-null-event
+on:
+  Null:
+    branches: [main]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo hi

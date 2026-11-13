@@ -1,0 +1,6 @@
+x: &a foo
+name: probe
+on: {push: [*a	]}
+jobs:
+  test:
+    runs-on: ubuntu-latest

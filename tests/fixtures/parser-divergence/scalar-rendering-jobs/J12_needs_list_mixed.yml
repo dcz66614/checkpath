@@ -1,0 +1,16 @@
+name: j12
+on: push
+jobs:
+  a:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo hi
+  b:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo hi
+  test:
+    runs-on: ubuntu-latest
+    needs: [a, True, 1]
+    steps:
+      - run: echo hi

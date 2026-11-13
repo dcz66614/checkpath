@@ -1,0 +1,703 @@
+{
+  "schema": "checkpath.parser-divergence/v1",
+  "note": "FIX-P0-03 scalar-rendering parity fixtures: every plain YAML 1.2 core-schema scalar (boolean/null/number spellings) renders the same way on the TypeScript side and in the Python Oracle, and plain non-string scalars in string-only positions are rejected the same way. Each case also lives in the automated Oracle\u5bf9\u7167 \u2014 the trigger suite (tests/fixtures/trigger/T6-21..T6-41) and the golden suite (tests/fixtures/golden/G-85..G-105, via `npm run test:oracle`) \u2014 so parity is checked by the diff runners, not only by this unit test. See README.md in this directory and ADR FIX-P0-03 in handoff/P020-FIX-P0-03/TASK_REPORT.md.",
+  "cases": [
+    {
+      "file": "s01-bool-true-event.yml",
+      "id": "s01-bool-true-event",
+      "note": "FIX-P0-03: plain `True:` event renders `true` on both sides (UNKNOWN / unsupported_event:true).",
+      "typescript": {
+        "status": "UNKNOWN",
+        "errors": [],
+        "events": [
+          {
+            "name": "true",
+            "types": null,
+            "branches": [
+              "main"
+            ],
+            "branches_ignore": null,
+            "paths": null,
+            "paths_ignore": null
+          }
+        ]
+      },
+      "oracle": {
+        "status": "UNKNOWN",
+        "errors": [],
+        "events": [
+          {
+            "name": "true",
+            "types": null,
+            "branches": [
+              "main"
+            ],
+            "branches_ignore": null,
+            "paths": null,
+            "paths_ignore": null
+          }
+        ]
+      }
+    },
+    {
+      "file": "s02-bool-false-event.yml",
+      "id": "s02-bool-false-event",
+      "note": "FIX-P0-03: plain `FALSE:` event renders `false` on both sides.",
+      "typescript": {
+        "status": "UNKNOWN",
+        "errors": [],
+        "events": [
+          {
+            "name": "false",
+            "types": null,
+            "branches": [
+              "main"
+            ],
+            "branches_ignore": null,
+            "paths": null,
+            "paths_ignore": null
+          }
+        ]
+      },
+      "oracle": {
+        "status": "UNKNOWN",
+        "errors": [],
+        "events": [
+          {
+            "name": "false",
+            "types": null,
+            "branches": [
+              "main"
+            ],
+            "branches_ignore": null,
+            "paths": null,
+            "paths_ignore": null
+          }
+        ]
+      }
+    },
+    {
+      "file": "s03-bool-true-false-events.yml",
+      "id": "s03-bool-true-false-events",
+      "note": "FIX-P0-03: `True:` + `FALSE:` are distinct keys; both render lower-case (the FIX-P0-02 \u00a77-1 residual).",
+      "typescript": {
+        "status": "UNKNOWN",
+        "errors": [],
+        "events": [
+          {
+            "name": "true",
+            "types": null,
+            "branches": [
+              "main"
+            ],
+            "branches_ignore": null,
+            "paths": null,
+            "paths_ignore": null
+          },
+          {
+            "name": "false",
+            "types": null,
+            "branches": [
+              "dev"
+            ],
+            "branches_ignore": null,
+            "paths": null,
+            "paths_ignore": null
+          }
+        ]
+      },
+      "oracle": {
+        "status": "UNKNOWN",
+        "errors": [],
+        "events": [
+          {
+            "name": "true",
+            "types": null,
+            "branches": [
+              "main"
+            ],
+            "branches_ignore": null,
+            "paths": null,
+            "paths_ignore": null
+          },
+          {
+            "name": "false",
+            "types": null,
+            "branches": [
+              "dev"
+            ],
+            "branches_ignore": null,
+            "paths": null,
+            "paths_ignore": null
+          }
+        ]
+      }
+    },
+    {
+      "file": "s04-null-event.yml",
+      "id": "s04-null-event",
+      "note": "FIX-P0-03: plain `Null:` event renders `` (empty string) on both sides.",
+      "typescript": {
+        "status": "UNKNOWN",
+        "errors": [],
+        "events": [
+          {
+            "name": "",
+            "types": null,
+            "branches": [
+              "main"
+            ],
+            "branches_ignore": null,
+            "paths": null,
+            "paths_ignore": null
+          }
+        ]
+      },
+      "oracle": {
+        "status": "UNKNOWN",
+        "errors": [],
+        "events": [
+          {
+            "name": "",
+            "types": null,
+            "branches": [
+              "main"
+            ],
+            "branches_ignore": null,
+            "paths": null,
+            "paths_ignore": null
+          }
+        ]
+      }
+    },
+    {
+      "file": "s05-tilde-event.yml",
+      "id": "s05-tilde-event",
+      "note": "FIX-P0-03: plain `~:` event renders `` (empty string) on both sides.",
+      "typescript": {
+        "status": "UNKNOWN",
+        "errors": [],
+        "events": [
+          {
+            "name": "",
+            "types": null,
+            "branches": [
+              "main"
+            ],
+            "branches_ignore": null,
+            "paths": null,
+            "paths_ignore": null
+          }
+        ]
+      },
+      "oracle": {
+        "status": "UNKNOWN",
+        "errors": [],
+        "events": [
+          {
+            "name": "",
+            "types": null,
+            "branches": [
+              "main"
+            ],
+            "branches_ignore": null,
+            "paths": null,
+            "paths_ignore": null
+          }
+        ]
+      }
+    },
+    {
+      "file": "s06-filter-key-true.yml",
+      "id": "s06-filter-key-true",
+      "note": "FIX-P0-03: plain `True:` filter key renders `true` (unsupported_filter:true).",
+      "typescript": {
+        "status": "UNKNOWN",
+        "errors": [],
+        "events": [
+          {
+            "name": "push",
+            "types": null,
+            "branches": null,
+            "branches_ignore": null,
+            "paths": null,
+            "paths_ignore": null
+          }
+        ]
+      },
+      "oracle": {
+        "status": "UNKNOWN",
+        "errors": [],
+        "events": [
+          {
+            "name": "push",
+            "types": null,
+            "branches": null,
+            "branches_ignore": null,
+            "paths": null,
+            "paths_ignore": null
+          }
+        ]
+      }
+    },
+    {
+      "file": "s07-on-list-true.yml",
+      "id": "s07-on-list-true",
+      "note": "FIX-P0-03: plain `True` in an `on:` list is not a string -> INVALID / on_list_item_not_string.",
+      "typescript": {
+        "status": "INVALID",
+        "errors": [
+          "on_list_item_not_string"
+        ],
+        "events": []
+      },
+      "oracle": {
+        "status": "INVALID",
+        "errors": [
+          "on_list_item_not_string"
+        ],
+        "events": []
+      }
+    },
+    {
+      "file": "s08-branches-true.yml",
+      "id": "s08-branches-true",
+      "note": "FIX-P0-03: plain `True` in `branches:` is not a string -> INVALID / filter_not_string_or_list:branches.",
+      "typescript": {
+        "status": "INVALID",
+        "errors": [
+          "filter_not_string_or_list:branches"
+        ],
+        "events": []
+      },
+      "oracle": {
+        "status": "INVALID",
+        "errors": [
+          "filter_not_string_or_list:branches"
+        ],
+        "events": []
+      }
+    },
+    {
+      "file": "s09-types-true.yml",
+      "id": "s09-types-true",
+      "note": "FIX-P0-03: plain `True` in `types:` is not a string -> INVALID / filter_not_string_or_list:types.",
+      "typescript": {
+        "status": "INVALID",
+        "errors": [
+          "filter_not_string_or_list:types"
+        ],
+        "events": []
+      },
+      "oracle": {
+        "status": "INVALID",
+        "errors": [
+          "filter_not_string_or_list:types"
+        ],
+        "events": []
+      }
+    },
+    {
+      "file": "s10-bool-TRUE-event.yml",
+      "id": "s10-bool-TRUE-event",
+      "note": "FIX-P0-03: plain `TRUE:` event renders `true` on both sides.",
+      "typescript": {
+        "status": "UNKNOWN",
+        "errors": [],
+        "events": [
+          {
+            "name": "true",
+            "types": null,
+            "branches": [
+              "main"
+            ],
+            "branches_ignore": null,
+            "paths": null,
+            "paths_ignore": null
+          }
+        ]
+      },
+      "oracle": {
+        "status": "UNKNOWN",
+        "errors": [],
+        "events": [
+          {
+            "name": "true",
+            "types": null,
+            "branches": [
+              "main"
+            ],
+            "branches_ignore": null,
+            "paths": null,
+            "paths_ignore": null
+          }
+        ]
+      }
+    },
+    {
+      "file": "s11-num-01-event.yml",
+      "id": "s11-num-01-event",
+      "note": "FIX-P0-03: plain `01:` event renders `1` on both sides (YAML 1.2 core int).",
+      "typescript": {
+        "status": "UNKNOWN",
+        "errors": [],
+        "events": [
+          {
+            "name": "1",
+            "types": null,
+            "branches": [
+              "main"
+            ],
+            "branches_ignore": null,
+            "paths": null,
+            "paths_ignore": null
+          }
+        ]
+      },
+      "oracle": {
+        "status": "UNKNOWN",
+        "errors": [],
+        "events": [
+          {
+            "name": "1",
+            "types": null,
+            "branches": [
+              "main"
+            ],
+            "branches_ignore": null,
+            "paths": null,
+            "paths_ignore": null
+          }
+        ]
+      }
+    },
+    {
+      "file": "s12-dup-num-1-01.yml",
+      "id": "s12-dup-num-1-01",
+      "note": "FIX-P0-03: `1:` + `01:` are one numeric key -> INVALID / yaml_parse_error on both sides.",
+      "typescript": {
+        "status": "INVALID",
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": []
+      },
+      "oracle": {
+        "status": "INVALID",
+        "errors": [
+          "yaml_parse_error"
+        ],
+        "events": []
+      }
+    },
+    {
+      "file": "s13-branches-1.yml",
+      "id": "s13-branches-1",
+      "note": "FIX-P0-03: plain `1` in `branches:` is not a string -> INVALID / filter_not_string_or_list:branches.",
+      "typescript": {
+        "status": "INVALID",
+        "errors": [
+          "filter_not_string_or_list:branches"
+        ],
+        "events": []
+      },
+      "oracle": {
+        "status": "INVALID",
+        "errors": [
+          "filter_not_string_or_list:branches"
+        ],
+        "events": []
+      }
+    },
+    {
+      "file": "s14-num-1e3-event.yml",
+      "id": "s14-num-1e3-event",
+      "note": "FIX-P0-03: plain `1e3:` event renders `1000` on both sides (JS number rendering).",
+      "typescript": {
+        "status": "UNKNOWN",
+        "errors": [],
+        "events": [
+          {
+            "name": "1000",
+            "types": null,
+            "branches": [
+              "main"
+            ],
+            "branches_ignore": null,
+            "paths": null,
+            "paths_ignore": null
+          }
+        ]
+      },
+      "oracle": {
+        "status": "UNKNOWN",
+        "errors": [],
+        "events": [
+          {
+            "name": "1000",
+            "types": null,
+            "branches": [
+              "main"
+            ],
+            "branches_ignore": null,
+            "paths": null,
+            "paths_ignore": null
+          }
+        ]
+      }
+    },
+    {
+      "file": "s15-num-inf-event.yml",
+      "id": "s15-num-inf-event",
+      "note": "FIX-P0-03: plain `.inf:` event renders `Infinity` on both sides.",
+      "typescript": {
+        "status": "UNKNOWN",
+        "errors": [],
+        "events": [
+          {
+            "name": "Infinity",
+            "types": null,
+            "branches": [
+              "main"
+            ],
+            "branches_ignore": null,
+            "paths": null,
+            "paths_ignore": null
+          }
+        ]
+      },
+      "oracle": {
+        "status": "UNKNOWN",
+        "errors": [],
+        "events": [
+          {
+            "name": "Infinity",
+            "types": null,
+            "branches": [
+              "main"
+            ],
+            "branches_ignore": null,
+            "paths": null,
+            "paths_ignore": null
+          }
+        ]
+      }
+    },
+    {
+      "file": "s16-order-num-keys.yml",
+      "id": "s16-order-num-keys",
+      "note": "FIX-P0-03: `on` keys `10:` then `2:` enumerate `2`, `10` on both sides (JS integer-index order).",
+      "typescript": {
+        "status": "UNKNOWN",
+        "errors": [],
+        "events": [
+          {
+            "name": "2",
+            "types": null,
+            "branches": [
+              "dev"
+            ],
+            "branches_ignore": null,
+            "paths": null,
+            "paths_ignore": null
+          },
+          {
+            "name": "10",
+            "types": null,
+            "branches": [
+              "main"
+            ],
+            "branches_ignore": null,
+            "paths": null,
+            "paths_ignore": null
+          }
+        ]
+      },
+      "oracle": {
+        "status": "UNKNOWN",
+        "errors": [],
+        "events": [
+          {
+            "name": "2",
+            "types": null,
+            "branches": [
+              "dev"
+            ],
+            "branches_ignore": null,
+            "paths": null,
+            "paths_ignore": null
+          },
+          {
+            "name": "10",
+            "types": null,
+            "branches": [
+              "main"
+            ],
+            "branches_ignore": null,
+            "paths": null,
+            "paths_ignore": null
+          }
+        ]
+      }
+    },
+    {
+      "file": "s17-on-scalar-true.yml",
+      "id": "s17-on-scalar-true",
+      "note": "FIX-P0-03: scalar `on: True` is not a string/list/mapping -> INVALID / on_value_invalid.",
+      "typescript": {
+        "status": "INVALID",
+        "errors": [
+          "on_value_invalid"
+        ],
+        "events": []
+      },
+      "oracle": {
+        "status": "INVALID",
+        "errors": [
+          "on_value_invalid"
+        ],
+        "events": []
+      }
+    },
+    {
+      "file": "s18-branches-null.yml",
+      "id": "s18-branches-null",
+      "note": "FIX-P0-03: scalar `branches: null` is no filter on both sides (VALID, branches null).",
+      "typescript": {
+        "status": "VALID",
+        "errors": [],
+        "events": [
+          {
+            "name": "push",
+            "types": null,
+            "branches": null,
+            "branches_ignore": null,
+            "paths": null,
+            "paths_ignore": null
+          }
+        ]
+      },
+      "oracle": {
+        "status": "VALID",
+        "errors": [],
+        "events": [
+          {
+            "name": "push",
+            "types": null,
+            "branches": null,
+            "branches_ignore": null,
+            "paths": null,
+            "paths_ignore": null
+          }
+        ]
+      }
+    },
+    {
+      "file": "s19-branches-empty.yml",
+      "id": "s19-branches-empty",
+      "note": "FIX-P0-03: empty `branches:` value is no filter on both sides (VALID, branches null).",
+      "typescript": {
+        "status": "VALID",
+        "errors": [],
+        "events": [
+          {
+            "name": "push",
+            "types": null,
+            "branches": null,
+            "branches_ignore": null,
+            "paths": null,
+            "paths_ignore": null
+          }
+        ]
+      },
+      "oracle": {
+        "status": "VALID",
+        "errors": [],
+        "events": [
+          {
+            "name": "push",
+            "types": null,
+            "branches": null,
+            "branches_ignore": null,
+            "paths": null,
+            "paths_ignore": null
+          }
+        ]
+      }
+    },
+    {
+      "file": "s20-quoted-true-event.yml",
+      "id": "s20-quoted-true-event",
+      "note": "FIX-P0-03 regression lock: quoted `\"True\":` stays the string `True` (NOT folded to `true`).",
+      "typescript": {
+        "status": "UNKNOWN",
+        "errors": [],
+        "events": [
+          {
+            "name": "True",
+            "types": null,
+            "branches": [
+              "main"
+            ],
+            "branches_ignore": null,
+            "paths": null,
+            "paths_ignore": null
+          }
+        ]
+      },
+      "oracle": {
+        "status": "UNKNOWN",
+        "errors": [],
+        "events": [
+          {
+            "name": "True",
+            "types": null,
+            "branches": [
+              "main"
+            ],
+            "branches_ignore": null,
+            "paths": null,
+            "paths_ignore": null
+          }
+        ]
+      }
+    },
+    {
+      "file": "s21-dup-nan-nan.yml",
+      "id": "s21-dup-nan-nan",
+      "note": "FIX-P0-03: `.nan:` + `.nan:` are NOT a duplicate (NaN !== NaN); the JS object collapses both to the one `NaN` key, last value wins.",
+      "typescript": {
+        "status": "UNKNOWN",
+        "errors": [],
+        "events": [
+          {
+            "name": "NaN",
+            "types": null,
+            "branches": [
+              "dev"
+            ],
+            "branches_ignore": null,
+            "paths": null,
+            "paths_ignore": null
+          }
+        ]
+      },
+      "oracle": {
+        "status": "UNKNOWN",
+        "errors": [],
+        "events": [
+          {
+            "name": "NaN",
+            "types": null,
+            "branches": [
+              "dev"
+            ],
+            "branches_ignore": null,
+            "paths": null,
+            "paths_ignore": null
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+name: s13-branches-1
+on:
+  push:
+    branches: [1]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo hi
