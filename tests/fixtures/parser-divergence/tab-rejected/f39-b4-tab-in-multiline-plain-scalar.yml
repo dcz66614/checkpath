@@ -1,0 +1,6 @@
+name: a
+  b	c
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest

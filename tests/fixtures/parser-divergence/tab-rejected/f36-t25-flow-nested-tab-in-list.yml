@@ -1,0 +1,5 @@
+name: probe
+on: {push: {branches: [ma	in]}}
+jobs:
+  test:
+    runs-on: ubuntu-latest

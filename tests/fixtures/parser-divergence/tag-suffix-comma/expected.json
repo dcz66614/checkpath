@@ -1,0 +1,365 @@
+{
+ "schema": "checkpath.parser-divergence/v1",
+ "cases": [
+  {
+   "file": "c01-comma-pair.yml",
+   "id": "c01-comma-pair",
+   "note": "C1 core A60: tag-comma, pair follows — INVALID both sides.",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   }
+  },
+  {
+   "file": "c02-comma-2pairs.yml",
+   "id": "c02-comma-2pairs",
+   "note": "X04: another pair follows — INVALID both sides.",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   }
+  },
+  {
+   "file": "c03-comma-quoted.yml",
+   "id": "c03-comma-quoted",
+   "note": "Y03: quoted node after comma — INVALID both sides.",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   }
+  },
+  {
+   "file": "c04-comma-nl.yml",
+   "id": "c04-comma-nl",
+   "note": "Y05: node on next line — INVALID both sides.",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   }
+  },
+  {
+   "file": "c05-comma-anchor.yml",
+   "id": "c05-comma-anchor",
+   "note": "Y08: anchor-prefixed node — INVALID both sides.",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   }
+  },
+  {
+   "file": "c06-comma-num.yml",
+   "id": "c06-comma-num",
+   "note": "Y09: numeric node — INVALID both sides.",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   }
+  },
+  {
+   "file": "c07-comma-null.yml",
+   "id": "c07-comma-null",
+   "note": "Y10: null-value node — INVALID both sides.",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   }
+  },
+  {
+   "file": "c08-comma-block.yml",
+   "id": "c08-comma-block",
+   "note": "X11 reverse: block variant — INVALID both sides.",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   }
+  },
+  {
+   "file": "c09-comma-val.yml",
+   "id": "c09-comma-val",
+   "note": "Value (not pair) after comma — INVALID both sides after fix.",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   }
+  },
+  {
+   "file": "c10-comma-seq-in-map.yml",
+   "id": "c10-comma-seq-in-map",
+   "note": "Control: flow seq inside flow map — VALID both sides.",
+   "typescript": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "name": "push",
+      "types": null,
+      "branches": null,
+      "branches_ignore": null,
+      "paths": null,
+      "paths_ignore": null
+     }
+    ]
+   },
+   "oracle": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "branches": null,
+      "branches_ignore": null,
+      "name": "push",
+      "paths": null,
+      "paths_ignore": null,
+      "types": null
+     }
+    ]
+   }
+  },
+  {
+   "file": "c11-comma-seq.yml",
+   "id": "c11-comma-seq",
+   "note": "Control Y01: flow seq with pair — VALID both sides.",
+   "typescript": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "name": "push",
+      "types": null,
+      "branches": null,
+      "branches_ignore": null,
+      "paths": null,
+      "paths_ignore": null
+     }
+    ]
+   },
+   "oracle": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "branches": null,
+      "branches_ignore": null,
+      "name": "push",
+      "paths": null,
+      "paths_ignore": null,
+      "types": null
+     }
+    ]
+   }
+  },
+  {
+   "file": "c12-comma-mid.yml",
+   "id": "c12-comma-mid",
+   "note": "Control X02: comma mid-suffix — VALID both sides.",
+   "typescript": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "name": "push",
+      "types": null,
+      "branches": null,
+      "branches_ignore": null,
+      "paths": null,
+      "paths_ignore": null
+     }
+    ]
+   },
+   "oracle": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "branches": null,
+      "branches_ignore": null,
+      "name": "push",
+      "paths": null,
+      "paths_ignore": null,
+      "types": null
+     }
+    ]
+   }
+  },
+  {
+   "file": "c13-comma-space.yml",
+   "id": "c13-comma-space",
+   "note": "Control X13: space before comma — VALID both sides.",
+   "typescript": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "name": "push",
+      "types": null,
+      "branches": null,
+      "branches_ignore": null,
+      "paths": null,
+      "paths_ignore": null
+     }
+    ]
+   },
+   "oracle": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "branches": null,
+      "branches_ignore": null,
+      "name": "push",
+      "paths": null,
+      "paths_ignore": null,
+      "types": null
+     }
+    ]
+   }
+  },
+  {
+   "file": "c14-comma-handle.yml",
+   "id": "c14-comma-handle",
+   "note": "Handle tag + comma — INVALID both sides.",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   }
+  },
+  {
+   "file": "c15-comma-nested.yml",
+   "id": "c15-comma-nested",
+   "note": "Nested flow map — INVALID both sides.",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   }
+  },
+  {
+   "file": "c16-comma-escaped.yml",
+   "id": "c16-comma-escaped",
+   "note": "Escaped comma + literal trailing comma — INVALID both sides.",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   }
+  }
+ ]
+}

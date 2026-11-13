@@ -1,0 +1,6 @@
+name: some long
+  "quoted" tail	with tab
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest

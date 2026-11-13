@@ -1,0 +1,86 @@
+{
+  "diff_boundary": null,
+  "fixture_id": "E2E-01",
+  "input_sha256": "0cf82e76341cef173357a5dd13ddf36aa32de91e0f5748c03380962b3e1d9877",
+  "jobs": [
+    {
+      "context": "unit-tests",
+      "job_id": "test",
+      "reason": "workflow_not_triggered",
+      "status": "SKIPPED",
+      "workflow": "workflow.yml"
+    }
+  ],
+  "required_checks": [
+    {
+      "context": "unit-tests",
+      "provider_count": 1,
+      "provider_job_id": "test",
+      "reason": "workflow_not_triggered",
+      "status": "PENDING_NOT_REPORTED"
+    }
+  ],
+  "scenario_id": "E2E-01",
+  "schema": "checkpath.e2e-report/v1",
+  "summary": {
+    "check_status_counts": {
+      "AMBIGUOUS": 0,
+      "INVALID": 0,
+      "PENDING_NOT_REPORTED": 1,
+      "REPORTABLE_PENDING": 0,
+      "SKIPPED_SUCCESS": 0,
+      "UNKNOWN": 0
+    },
+    "job_status_counts": {
+      "CONDITIONAL_AFTER_NEEDS": 0,
+      "ELIGIBLE": 0,
+      "INVALID": 0,
+      "SKIPPED": 1,
+      "UNKNOWN": 0
+    },
+    "triggered_workflow_count": 0,
+    "workflow_count": 1
+  },
+  "unsupported_features": [],
+  "workflows": [
+    {
+      "path": "workflow.yml",
+      "trigger": {
+        "errors": [],
+        "evaluation": {
+          "activity_type_match": true,
+          "branch_match": true,
+          "branch_value": "main",
+          "commit_skip": false,
+          "event_match": true,
+          "path_file_results": [
+            {
+              "file": "README.md",
+              "matched": false
+            }
+          ],
+          "path_match": false,
+          "reason": "path_mismatch",
+          "triggered": false,
+          "unsupported": []
+        },
+        "events": [
+          {
+            "branches": null,
+            "branches_ignore": null,
+            "name": "pull_request",
+            "paths": [
+              "src/**"
+            ],
+            "paths_ignore": null,
+            "types": null
+          }
+        ],
+        "fixture_id": "E2E-01",
+        "on_key_is_string": true,
+        "schema": "checkpath.trigger-ir/v1",
+        "status": "VALID"
+      }
+    }
+  ]
+}

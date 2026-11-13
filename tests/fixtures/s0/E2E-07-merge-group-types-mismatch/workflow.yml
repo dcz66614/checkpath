@@ -1,0 +1,13 @@
+name: ci
+on:
+  merge_group:
+    types:
+      - checks_requested
+    branches:
+      - main
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: unit-tests
+    steps:
+      - run: echo hi

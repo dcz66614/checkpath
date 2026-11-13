@@ -1,0 +1,261 @@
+{
+ "schema": "checkpath.parser-divergence/v1",
+ "cases": [
+  {
+   "file": "b01-bracket.yml",
+   "id": "b01-bracket",
+   "note": "C2 core A70 — INVALID both sides.",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   }
+  },
+  {
+   "file": "b02-rbrack-seq.yml",
+   "id": "b02-rbrack-seq",
+   "note": "X08 reverse — INVALID both sides.",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   }
+  },
+  {
+   "file": "b03-rbrack-comma.yml",
+   "id": "b03-rbrack-comma",
+   "note": "X09 reverse — INVALID both sides.",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   }
+  },
+  {
+   "file": "b04-bracket-mid.yml",
+   "id": "b04-bracket-mid",
+   "note": "Bracket mid-suffix — INVALID both sides.",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   }
+  },
+  {
+   "file": "b05-rbrack.yml",
+   "id": "b05-rbrack",
+   "note": "Rbrack, no value — INVALID both sides.",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   }
+  },
+  {
+   "file": "b06-lbrack.yml",
+   "id": "b06-lbrack",
+   "note": "Lbrack then space — INVALID both sides.",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   }
+  },
+  {
+   "file": "b07-empty-brackets.yml",
+   "id": "b07-empty-brackets",
+   "note": "Empty brackets — INVALID both sides.",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   }
+  },
+  {
+   "file": "b08-nested-brackets.yml",
+   "id": "b08-nested-brackets",
+   "note": "Nested brackets — INVALID both sides.",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   }
+  },
+  {
+   "file": "b09-bracket-key.yml",
+   "id": "b09-bracket-key",
+   "note": "Tag-bracket on a key — INVALID both sides.",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   }
+  },
+  {
+   "file": "b10-bracket-block.yml",
+   "id": "b10-bracket-block",
+   "note": "Block tag-bracket — INVALID both sides.",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": []
+   }
+  },
+  {
+   "file": "b11-verbatim.yml",
+   "id": "b11-verbatim",
+   "note": "Control: verbatim tag — VALID both sides.",
+   "typescript": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "name": "push",
+      "types": null,
+      "branches": null,
+      "branches_ignore": null,
+      "paths": null,
+      "paths_ignore": null
+     }
+    ]
+   },
+   "oracle": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "branches": null,
+      "branches_ignore": null,
+      "name": "push",
+      "paths": null,
+      "paths_ignore": null,
+      "types": null
+     }
+    ]
+   }
+  },
+  {
+   "file": "b12-quoted.yml",
+   "id": "b12-quoted",
+   "note": "Control: bracket in quoted scalar — VALID both sides.",
+   "typescript": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "name": "push",
+      "types": null,
+      "branches": null,
+      "branches_ignore": null,
+      "paths": null,
+      "paths_ignore": null
+     }
+    ]
+   },
+   "oracle": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "branches": null,
+      "branches_ignore": null,
+      "name": "push",
+      "paths": null,
+      "paths_ignore": null,
+      "types": null
+     }
+    ]
+   }
+  }
+ ]
+}

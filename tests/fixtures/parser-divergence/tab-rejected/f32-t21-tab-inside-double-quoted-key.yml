@@ -1,0 +1,5 @@
+name: probe
+on: {"pu	sh": {}}
+jobs:
+  test:
+    runs-on: ubuntu-latest
