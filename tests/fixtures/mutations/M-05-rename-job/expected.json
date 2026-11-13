@@ -1,0 +1,15 @@
+{
+  "base": {
+    "checks": {
+      "unit-tests": "REPORTABLE_PENDING"
+    },
+    "triggered": true
+  },
+  "mutated": {
+    "checks": {
+      "unit-tests": "PENDING_NOT_REPORTED"
+    },
+    "triggered": true
+  },
+  "mutation": "renaming the job name breaks the required-check context match"
+}

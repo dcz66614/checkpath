@@ -1,0 +1,2520 @@
+{
+  "fixtures": [
+    {
+      "adversarial": true,
+      "cp": "CP-A",
+      "description": "CP-A: PR only touches README, workflow paths src/** -> Pending.",
+      "dir": "G-01-cp-a-pr-docs-only",
+      "expected": "expected.json",
+      "group": "event",
+      "id": "G-01",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": false,
+      "cp": "CP-B",
+      "description": "CP-B: workflow explicitly includes merge_group -> triggered.",
+      "dir": "G-02-cp-b-merge-group-present",
+      "expected": "expected.json",
+      "group": "event",
+      "id": "G-02",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": "CP-C",
+      "description": "CP-C: only pull_request in workflow, scenario is merge_group -> Pending.",
+      "dir": "G-03-cp-c-merge-group-missing",
+      "expected": "expected.json",
+      "group": "event",
+      "id": "G-03",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": false,
+      "cp": null,
+      "description": "Push baseline: on push branches main, push to main -> triggered.",
+      "dir": "G-04-push-baseline",
+      "expected": "expected.json",
+      "group": "event",
+      "id": "G-04",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "pull_request types [opened] but action synchronize -> no trigger.",
+      "dir": "G-05-pr-types-mismatch",
+      "expected": "expected.json",
+      "group": "event",
+      "id": "G-05",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": false,
+      "cp": null,
+      "description": "pull_request types [opened, synchronize], action opened -> triggered.",
+      "dir": "G-06-pr-types-match",
+      "expected": "expected.json",
+      "group": "event",
+      "id": "G-06",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "merge_group types [checks_requested] but action synchronize -> no trigger.",
+      "dir": "G-07-merge-group-types-mismatch",
+      "expected": "expected.json",
+      "group": "event",
+      "id": "G-07",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": false,
+      "cp": null,
+      "description": "List-form on: [push, pull_request], scenario pull_request -> triggered.",
+      "dir": "G-08-on-list-form",
+      "expected": "expected.json",
+      "group": "event",
+      "id": "G-08",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": "CP-F",
+      "description": "CP-F: branches+paths, only branch matches (docs-only change) -> no trigger.",
+      "dir": "G-09-cp-f-branch-only-match",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-09",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": "CP-F",
+      "description": "CP-F complement: branches+paths, only path matches (base release/2.x) -> no trigger.",
+      "dir": "G-10-cp-f-path-only-match",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-10",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": false,
+      "cp": "CP-G",
+      "description": "CP-G: ordered negation src/**, !src/generated/**, src/generated/keep.ts -> keep.ts re-included, triggered.",
+      "dir": "G-11-cp-g-ordered-negation",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-11",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": "CP-H",
+      "description": "CP-H: commit message contains [skip ci] -> workflow skip, Pending.",
+      "dir": "G-12-cp-h-commit-skip",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-12",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "branches-ignore [main], PR base is main -> branch mismatch, no trigger.",
+      "dir": "G-13-branches-ignore",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-13",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "paths-ignore [docs/**], only docs changed -> path mismatch, no trigger.",
+      "dir": "G-14-paths-ignore",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-14",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": false,
+      "cp": "CP-K",
+      "description": "CP-K: push 1500 commits > 1000 -> path filter treated as triggered.",
+      "dir": "G-15-cp-k-push-over-1000",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-15",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": "CP-L",
+      "description": "CP-L: diff 3500 files, first-3000 list unconfirmed -> UNKNOWN.",
+      "dir": "G-16-cp-l-diff-unconfirmed",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-16",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": false,
+      "cp": "CP-D",
+      "description": "CP-D: workflow triggered, required job if: false -> SKIPPED_SUCCESS.",
+      "dir": "G-17-cp-d-if-false",
+      "expected": "expected.json",
+      "group": "job",
+      "id": "G-17",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": false,
+      "cp": "CP-E",
+      "description": "CP-E: aggregator if always() with skipped upstream -> ELIGIBLE.",
+      "dir": "G-18-cp-e-always-aggregator",
+      "expected": "expected.json",
+      "group": "job",
+      "id": "G-18",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": "CP-I",
+      "description": "CP-I: two workflows declare the same job context 'tests' -> AMBIGUOUS.",
+      "dir": "G-19-cp-i-duplicate-cross-workflow",
+      "expected": "expected.json",
+      "group": "job",
+      "id": "G-19",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow-a.yml",
+        "workflow-b.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": "CP-J",
+      "description": "CP-J: required check 'integration' has no provider job -> Pending.",
+      "dir": "G-20-cp-j-no-provider",
+      "expected": "expected.json",
+      "group": "job",
+      "id": "G-20",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": "CP-I",
+      "description": "CP-I complement: two jobs in one workflow share context 'tests' -> AMBIGUOUS.",
+      "dir": "G-21-duplicate-same-workflow",
+      "expected": "expected.json",
+      "group": "job",
+      "id": "G-21",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": false,
+      "cp": null,
+      "description": "Upstream if:false skipped; downstream with no if inherits default success() gate -> SKIPPED.",
+      "dir": "G-22-needs-skipped",
+      "expected": "expected.json",
+      "group": "job",
+      "id": "G-22",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": false,
+      "cp": null,
+      "description": "Downstream of ELIGIBLE upstream with supported context if -> CONDITIONAL_AFTER_NEEDS, reportable.",
+      "dir": "G-23-conditional-after-needs",
+      "expected": "expected.json",
+      "group": "job",
+      "id": "G-23",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "Fail-closed bundle: unsupported if -> UNKNOWN, missing need -> INVALID, needs cycle -> INVALID, external source -> UNKNOWN; one healthy job stays reportable.",
+      "dir": "G-24-fail-closed-bundle",
+      "expected": "expected.json",
+      "group": "job",
+      "id": "G-24",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": false,
+      "cp": null,
+      "description": "T6 trigger case T6-01 as a golden e2e case.",
+      "dir": "G-25-t6-T6-01-push-1000-boundary",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-25",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "derived-required-checks",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": false,
+      "cp": null,
+      "description": "T6 trigger case T6-02 as a golden e2e case.",
+      "dir": "G-26-t6-T6-02-push-1001-always-run",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-26",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "derived-required-checks",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": false,
+      "cp": null,
+      "description": "T6 trigger case T6-03 as a golden e2e case.",
+      "dir": "G-27-t6-T6-03-diff-timeout-pr",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-27",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "derived-required-checks",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": false,
+      "cp": null,
+      "description": "T6 trigger case T6-04 as a golden e2e case.",
+      "dir": "G-28-t6-T6-04-diff-timeout-paths-ignore",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-28",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "derived-required-checks",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": false,
+      "cp": null,
+      "description": "T6 trigger case T6-05 as a golden e2e case.",
+      "dir": "G-29-t6-T6-05-first3000-confirmed-no-match",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-29",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "derived-required-checks",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": false,
+      "cp": null,
+      "description": "T6 trigger case T6-06 as a golden e2e case.",
+      "dir": "G-30-t6-T6-06-first3000-confirmed-match-inside",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-30",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "derived-required-checks",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": false,
+      "cp": null,
+      "description": "T6 trigger case T6-07 as a golden e2e case.",
+      "dir": "G-31-t6-T6-07-commit-skip-actions",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-31",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "derived-required-checks",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": false,
+      "cp": null,
+      "description": "T6 trigger case T6-08 as a golden e2e case.",
+      "dir": "G-32-t6-T6-08-commit-skip-checks-space",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-32",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "derived-required-checks",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": false,
+      "cp": null,
+      "description": "T6 trigger case T6-09 as a golden e2e case.",
+      "dir": "G-33-t6-T6-09-merge-group-target-branch",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-33",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "derived-required-checks",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": false,
+      "cp": null,
+      "description": "T6 trigger case T6-10 as a golden e2e case.",
+      "dir": "G-34-t6-T6-10-pr-base-not-head",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-34",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "derived-required-checks",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": false,
+      "cp": null,
+      "description": "T6 trigger case T6-11 as a golden e2e case.",
+      "dir": "G-35-t6-T6-11-types-missing-action",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-35",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "derived-required-checks",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": false,
+      "cp": null,
+      "description": "T6 trigger case T6-12 as a golden e2e case.",
+      "dir": "G-36-t6-T6-12-missing-base-branch",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-36",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "derived-required-checks",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": false,
+      "cp": null,
+      "description": "T6 trigger case T6-13 as a golden e2e case.",
+      "dir": "G-37-t6-T6-13-total-exactly-3000",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-37",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "derived-required-checks",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": false,
+      "cp": null,
+      "description": "T6 trigger case T6-14 as a golden e2e case.",
+      "dir": "G-38-t6-T6-14-complete-false-ignored",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-38",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "derived-required-checks",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": false,
+      "cp": null,
+      "description": "T6 trigger case T6-15 as a golden e2e case.",
+      "dir": "G-39-t6-T6-15-returned-files-subset",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-39",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "derived-required-checks",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": false,
+      "cp": null,
+      "description": "T6 trigger case T6-16 as a golden e2e case.",
+      "dir": "G-40-t6-T6-16-empty-event-value",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-40",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "derived-required-checks",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P1-01 duplicate-key case T6-17 as a golden e2e case.",
+      "dir": "G-81-fix-p1-01-T6-17-dup-branches",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-81",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P1-01 duplicate-key case T6-18 as a golden e2e case.",
+      "dir": "G-82-fix-p1-01-T6-18-dup-event",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-82",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P1-01 duplicate-key case T6-19 as a golden e2e case.",
+      "dir": "G-83-fix-p1-01-T6-19-dup-name",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-83",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-02 duplicate-key case T6-20 as a golden e2e case.",
+      "dir": "G-84-fix-p0-02-T6-20-dup-bool-true",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-84",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-03 scalar-rendering case T6-21 as a golden e2e case.",
+      "dir": "G-85-fix-p0-03-T6-21-bool-true-event",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-85",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-03 scalar-rendering case T6-22 as a golden e2e case.",
+      "dir": "G-86-fix-p0-03-T6-22-bool-false-event",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-86",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-03 scalar-rendering case T6-23 as a golden e2e case.",
+      "dir": "G-87-fix-p0-03-T6-23-bool-true-false-events",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-87",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-03 scalar-rendering case T6-24 as a golden e2e case.",
+      "dir": "G-88-fix-p0-03-T6-24-null-event",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-88",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-03 scalar-rendering case T6-25 as a golden e2e case.",
+      "dir": "G-89-fix-p0-03-T6-25-tilde-event",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-89",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-03 scalar-rendering case T6-26 as a golden e2e case.",
+      "dir": "G-90-fix-p0-03-T6-26-filter-key-true",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-90",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-03 scalar-rendering case T6-27 as a golden e2e case.",
+      "dir": "G-91-fix-p0-03-T6-27-on-list-true",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-91",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-03 scalar-rendering case T6-28 as a golden e2e case.",
+      "dir": "G-92-fix-p0-03-T6-28-branches-true",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-92",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-03 scalar-rendering case T6-29 as a golden e2e case.",
+      "dir": "G-93-fix-p0-03-T6-29-types-true",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-93",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-03 scalar-rendering case T6-30 as a golden e2e case.",
+      "dir": "G-94-fix-p0-03-T6-30-bool-TRUE-event",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-94",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-03 scalar-rendering case T6-31 as a golden e2e case.",
+      "dir": "G-95-fix-p0-03-T6-31-num-01-event",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-95",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-03 scalar-rendering case T6-32 as a golden e2e case.",
+      "dir": "G-96-fix-p0-03-T6-32-dup-num-1-01",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-96",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-03 scalar-rendering case T6-33 as a golden e2e case.",
+      "dir": "G-97-fix-p0-03-T6-33-branches-1",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-97",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-03 scalar-rendering case T6-34 as a golden e2e case.",
+      "dir": "G-98-fix-p0-03-T6-34-num-1e3-event",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-98",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-03 scalar-rendering case T6-35 as a golden e2e case.",
+      "dir": "G-99-fix-p0-03-T6-35-num-inf-event",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-99",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-03 scalar-rendering case T6-36 as a golden e2e case.",
+      "dir": "G-100-fix-p0-03-T6-36-order-num-keys",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-100",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-03 scalar-rendering case T6-37 as a golden e2e case.",
+      "dir": "G-101-fix-p0-03-T6-37-on-scalar-true",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-101",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-03 scalar-rendering case T6-38 as a golden e2e case.",
+      "dir": "G-102-fix-p0-03-T6-38-branches-null",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-102",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-03 scalar-rendering case T6-39 as a golden e2e case.",
+      "dir": "G-103-fix-p0-03-T6-39-branches-empty",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-103",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-03 scalar-rendering case T6-40 as a golden e2e case.",
+      "dir": "G-104-fix-p0-03-T6-40-quoted-true-event",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-104",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-03 scalar-rendering case T6-41 as a golden e2e case.",
+      "dir": "G-105-fix-p0-03-T6-41-dup-nan-nan",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-105",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-04 bare-empty-key / scalar-job case T6-42 as a golden e2e case.",
+      "dir": "G-106-fix-p0-04-T6-42-bare-empty-event",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-106",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-04 bare-empty-key / scalar-job case T6-43 as a golden e2e case.",
+      "dir": "G-107-fix-p0-04-T6-43-bare-empty-filter",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-107",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-04 bare-empty-key / scalar-job case T6-44 as a golden e2e case.",
+      "dir": "G-108-fix-p0-04-T6-44-bare-empty-jobs",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-108",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-04 bare-empty-key / scalar-job case T6-45 as a golden e2e case.",
+      "dir": "G-109-fix-p0-04-T6-45-bare-empty-top",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-109",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-04 bare-empty-key / scalar-job case T6-46 as a golden e2e case.",
+      "dir": "G-110-fix-p0-04-T6-46-bare-empty-nested-job",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-110",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-04 bare-empty-key / scalar-job case T6-47 as a golden e2e case.",
+      "dir": "G-111-fix-p0-04-T6-47-bare-empty-steps-item",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-111",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-04 bare-empty-key / scalar-job case T6-48 as a golden e2e case.",
+      "dir": "G-112-fix-p0-04-T6-48-two-bare-keys",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-112",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-04 bare-empty-key / scalar-job case T6-49 as a golden e2e case.",
+      "dir": "G-113-fix-p0-04-T6-49-bare-plus-null",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-113",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-04 bare-empty-key / scalar-job case T6-50 as a golden e2e case.",
+      "dir": "G-114-fix-p0-04-T6-50-scalar-job-true",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-114",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-04 bare-empty-key / scalar-job case T6-51 as a golden e2e case.",
+      "dir": "G-115-fix-p0-04-T6-51-scalar-job-null",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-115",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-05 flow-alias-key case T6-52 as a golden e2e case.",
+      "dir": "G-116-fix-p0-05-T6-52-flow-alias-key",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-116",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-05 flow-alias-key case T6-53 as a golden e2e case.",
+      "dir": "G-117-fix-p0-05-T6-53-block-alias-no-space",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-117",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-05 flow-alias-key case T6-54 as a golden e2e case.",
+      "dir": "G-118-fix-p0-05-T6-54-filter-flow-alias-key",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-118",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-05 flow-alias-key case T6-55 as a golden e2e case.",
+      "dir": "G-119-fix-p0-05-T6-55-jobs-flow-alias-key",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-119",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-06 collection-alias-key / tab case T6-56 as a golden e2e case.",
+      "dir": "G-120-fix-p0-06-T6-56-collection-alias-key",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-120",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-06 collection-alias-key / tab case T6-57 as a golden e2e case.",
+      "dir": "G-121-fix-p0-06-T6-57-flow-collection-alias-key",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-121",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-06 collection-alias-key / tab case T6-58 as a golden e2e case.",
+      "dir": "G-122-fix-p0-06-T6-58-seq-collection-alias-key",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-122",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-06 collection-alias-key / tab case T6-59 as a golden e2e case.",
+      "dir": "G-123-fix-p0-06-T6-59-flow-alias-tab",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-123",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-06 collection-alias-key / tab case T6-60 as a golden e2e case.",
+      "dir": "G-124-fix-p0-06-T6-60-block-alias-tab",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-124",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-06 collection-alias-key / tab case T6-61 as a golden e2e case.",
+      "dir": "G-125-fix-p0-06-T6-61-flow-scalar-key-tab",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-125",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-07 quoted-mid-plain-scalar case T6-62 as a golden e2e case.",
+      "dir": "G-126-fix-p0-07-T6-62-v1-double-quote-tab",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-126",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-07 quoted-mid-plain-scalar case T6-63 as a golden e2e case.",
+      "dir": "G-127-fix-p0-07-T6-63-v2-single-quote-tab",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-127",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-07 quoted-mid-plain-scalar case T6-64 as a golden e2e case.",
+      "dir": "G-128-fix-p0-07-T6-64-v5-continuation-quote-tab",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-128",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-07 quoted-mid-plain-scalar case T6-65 as a golden e2e case.",
+      "dir": "G-129-fix-p0-07-T6-65-v9-trailing-comment-tab",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-129",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-07 quoted-mid-plain-scalar case T6-66 as a golden e2e case.",
+      "dir": "G-130-fix-p0-07-T6-66-v1e-value-next-line-quote-tab",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-130",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-07 quoted-mid-plain-scalar case T6-67 as a golden e2e case.",
+      "dir": "G-131-fix-p0-07-T6-67-v1f-continuation-mid-quote-tab",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-131",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-08 multiline-quoted-unindented case T6-68 as a golden e2e case.",
+      "dir": "G-132-fix-p0-08-T6-68-resid-dq",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-132",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-08 multiline-quoted-unindented case T6-69 as a golden e2e case.",
+      "dir": "G-133-fix-p0-08-T6-69-resid-sq",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-133",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-08 multiline-quoted-unindented case T6-70 as a golden e2e case.",
+      "dir": "G-134-fix-p0-08-T6-70-resid-dq-notab",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-134",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-08 multiline-quoted-unindented case T6-71 as a golden e2e case.",
+      "dir": "G-135-fix-p0-08-T6-71-resid-dq-ind2",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-135",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-08 multiline-quoted-unindented case T6-72 as a golden e2e case.",
+      "dir": "G-136-fix-p0-08-T6-72-resid-dq-ind8",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-136",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-08 multiline-quoted-unindented case T6-73 as a golden e2e case.",
+      "dir": "G-137-fix-p0-08-T6-73-resid-dq-ind9",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-137",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-08 multiline-quoted-unindented case T6-74 as a golden e2e case.",
+      "dir": "G-138-fix-p0-08-T6-74-name-k0-ind0",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-138",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-08 multiline-quoted-unindented case T6-75 as a golden e2e case.",
+      "dir": "G-139-fix-p0-08-T6-75-name-k0-ind1",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-139",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-08 multiline-quoted-unindented case T6-76 as a golden e2e case.",
+      "dir": "G-140-fix-p0-08-T6-76-flow-value-ind0",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-140",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-08 multiline-quoted-unindented case T6-77 as a golden e2e case.",
+      "dir": "G-141-fix-p0-08-T6-77-flow-value-ind1",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-141",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-08 multiline-quoted-unindented case T6-78 as a golden e2e case.",
+      "dir": "G-142-fix-p0-08-T6-78-seq-item-ind2",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-142",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-08 multiline-quoted-unindented case T6-79 as a golden e2e case.",
+      "dir": "G-143-fix-p0-08-T6-79-seq-item-ind3",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-143",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-09 flow-quoted-key case T6-80 as a golden e2e case.",
+      "dir": "G-144-fix-p0-09-T6-80-r3-extra-ind1",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-144",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-09 flow-quoted-key case T6-81 as a golden e2e case.",
+      "dir": "G-145-fix-p0-09-T6-81-r3-on-ind1",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-145",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-09 flow-quoted-key case T6-82 as a golden e2e case.",
+      "dir": "G-146-fix-p0-09-T6-82-r3-extra-sq",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-146",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-09 flow-quoted-key case T6-83 as a golden e2e case.",
+      "dir": "G-147-fix-p0-09-T6-83-r3-plain-fold",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-147",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-09 flow-quoted-key case T6-84 as a golden e2e case.",
+      "dir": "G-148-fix-p0-09-T6-84-r3-nested",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-148",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-09 flow-quoted-key case T6-85 as a golden e2e case.",
+      "dir": "G-149-fix-p0-09-T6-85-r3-on-ind9",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-149",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-09 flow-quoted-key case T6-86 as a golden e2e case.",
+      "dir": "G-150-fix-p0-09-T6-86-r3-flow-value-mlq",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-150",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-09 flow-quoted-key case T6-87 as a golden e2e case.",
+      "dir": "G-151-fix-p0-09-T6-87-r3-explicit-quoted",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-151",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-09 flow-quoted-key case T6-88 as a golden e2e case.",
+      "dir": "G-152-fix-p0-09-T6-88-r3-explicit-comment",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-152",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-09 flow-quoted-key case T6-89 as a golden e2e case.",
+      "dir": "G-153-fix-p0-09-T6-89-s2-plain-ind1",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-153",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-09 flow-quoted-key case T6-90 as a golden e2e case.",
+      "dir": "G-154-fix-p0-09-T6-90-s2-quoted-ind1",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-154",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-09 flow-quoted-key case T6-91 as a golden e2e case.",
+      "dir": "G-155-fix-p0-09-T6-91-s2-comment-ind1",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-155",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-10 flow-continuation case T6-92 as a golden e2e case.",
+      "dir": "G-156-fix-p0-10-T6-92-r4-comma-ind0",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-156",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-10 flow-continuation case T6-93 as a golden e2e case.",
+      "dir": "G-157-fix-p0-10-T6-93-r4-comma-nested",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-157",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-10 flow-continuation case T6-94 as a golden e2e case.",
+      "dir": "G-158-fix-p0-10-T6-94-r4-comma-on",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-158",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-10 flow-continuation case T6-95 as a golden e2e case.",
+      "dir": "G-159-fix-p0-10-T6-95-r4-comma-jobs",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-159",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-10 flow-continuation case T6-96 as a golden e2e case.",
+      "dir": "G-160-fix-p0-10-T6-96-r5-plain-ind0",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-160",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-10 flow-continuation case T6-97 as a golden e2e case.",
+      "dir": "G-161-fix-p0-10-T6-97-r5-quoted-ind0",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-161",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-10 flow-continuation case T6-98 as a golden e2e case.",
+      "dir": "G-162-fix-p0-10-T6-98-r5-sq-ind0",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-162",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-10 flow-continuation case T6-99 as a golden e2e case.",
+      "dir": "G-163-fix-p0-10-T6-99-r5-nested",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-163",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-10 flow-continuation case T6-100 as a golden e2e case.",
+      "dir": "G-164-fix-p0-10-T6-100-r5-on",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-164",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-10 flow-continuation case T6-101 as a golden e2e case.",
+      "dir": "G-165-fix-p0-10-T6-101-r4-comma-ind1",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-165",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-10 flow-continuation case T6-102 as a golden e2e case.",
+      "dir": "G-166-fix-p0-10-T6-102-r5-colon-ind1",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-166",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "FIX-P0-10 flow-continuation case T6-103 as a golden e2e case.",
+      "dir": "G-167-fix-p0-10-T6-103-close-ind0",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "G-167",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": false,
+      "cp": null,
+      "description": "T7 job/DAG case T7-01 as a golden e2e case.",
+      "dir": "G-41-t7-T7-01-missing-need",
+      "expected": "expected.json",
+      "group": "job",
+      "id": "G-41",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "derived-required-checks",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": false,
+      "cp": null,
+      "description": "T7 job/DAG case T7-02 as a golden e2e case.",
+      "dir": "G-42-t7-T7-02-needs-cycle-3",
+      "expected": "expected.json",
+      "group": "job",
+      "id": "G-42",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "derived-required-checks",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": false,
+      "cp": null,
+      "description": "T7 job/DAG case T7-03 as a golden e2e case.",
+      "dir": "G-43-t7-T7-03-self-need",
+      "expected": "expected.json",
+      "group": "job",
+      "id": "G-43",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "derived-required-checks",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": false,
+      "cp": null,
+      "description": "T7 job/DAG case T7-04 as a golden e2e case.",
+      "dir": "G-44-t7-T7-04-diamond",
+      "expected": "expected.json",
+      "group": "job",
+      "id": "G-44",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "derived-required-checks",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": false,
+      "cp": null,
+      "description": "T7 job/DAG case T7-05 as a golden e2e case.",
+      "dir": "G-45-t7-T7-05-deep-skip-chain",
+      "expected": "expected.json",
+      "group": "job",
+      "id": "G-45",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "derived-required-checks",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": false,
+      "cp": null,
+      "description": "T7 job/DAG case T7-06 as a golden e2e case.",
+      "dir": "G-46-t7-T7-06-always-compound",
+      "expected": "expected.json",
+      "group": "job",
+      "id": "G-46",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "derived-required-checks",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": false,
+      "cp": null,
+      "description": "T7 job/DAG case T7-07 as a golden e2e case.",
+      "dir": "G-47-t7-T7-07-unsupported-if-variants",
+      "expected": "expected.json",
+      "group": "job",
+      "id": "G-47",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "derived-required-checks",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": false,
+      "cp": null,
+      "description": "T7 job/DAG case T7-08 as a golden e2e case.",
+      "dir": "G-48-t7-T7-08-context-comparisons",
+      "expected": "expected.json",
+      "group": "job",
+      "id": "G-48",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "derived-required-checks",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": false,
+      "cp": null,
+      "description": "T7 job/DAG case T7-09 as a golden e2e case.",
+      "dir": "G-49-t7-T7-09-same-job-id-two-workflows",
+      "expected": "expected.json",
+      "group": "job",
+      "id": "G-49",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "derived-required-checks",
+      "workflows": [
+        "workflow-a.yml",
+        "workflow-b.yml"
+      ]
+    },
+    {
+      "adversarial": false,
+      "cp": null,
+      "description": "T7 job/DAG case T7-10 as a golden e2e case.",
+      "dir": "G-50-t7-T7-10-invalid-propagation",
+      "expected": "expected.json",
+      "group": "job",
+      "id": "G-50",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "derived-required-checks",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": false,
+      "cp": null,
+      "description": "T7 job/DAG case T7-11 as a golden e2e case.",
+      "dir": "G-51-t7-T7-11-unknown-propagation",
+      "expected": "expected.json",
+      "group": "job",
+      "id": "G-51",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "derived-required-checks",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": false,
+      "cp": null,
+      "description": "T7 job/DAG case T7-12 as a golden e2e case.",
+      "dir": "G-52-t7-T7-12-if-precedence-vs-needs",
+      "expected": "expected.json",
+      "group": "job",
+      "id": "G-52",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "derived-required-checks",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": false,
+      "cp": null,
+      "description": "T8 check-resolver case T8-01 as a golden e2e case.",
+      "dir": "G-53-t8-T8-01-name-priority",
+      "expected": "expected.json",
+      "group": "job",
+      "id": "G-53",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": false,
+      "cp": null,
+      "description": "T8 check-resolver case T8-02 as a golden e2e case.",
+      "dir": "G-54-t8-T8-02-same-job-id-distinct-names",
+      "expected": "expected.json",
+      "group": "job",
+      "id": "G-54",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow-a.yml",
+        "workflow-b.yml"
+      ]
+    },
+    {
+      "adversarial": false,
+      "cp": null,
+      "description": "T8 check-resolver case T8-03 as a golden e2e case.",
+      "dir": "G-55-t8-T8-03-same-job-id-same-context",
+      "expected": "expected.json",
+      "group": "job",
+      "id": "G-55",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow-a.yml",
+        "workflow-b.yml"
+      ]
+    },
+    {
+      "adversarial": false,
+      "cp": null,
+      "description": "T8 check-resolver case T8-04 as a golden e2e case.",
+      "dir": "G-56-t8-T8-04-workflow-skip-vs-job-skip",
+      "expected": "expected.json",
+      "group": "job",
+      "id": "G-56",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow-a.yml",
+        "workflow-b.yml"
+      ]
+    },
+    {
+      "adversarial": false,
+      "cp": null,
+      "description": "T8 check-resolver case T8-05 as a golden e2e case.",
+      "dir": "G-57-t8-T8-05-external-source",
+      "expected": "expected.json",
+      "group": "job",
+      "id": "G-57",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": false,
+      "cp": null,
+      "description": "T8 check-resolver case T8-06 as a golden e2e case.",
+      "dir": "G-58-t8-T8-06-trigger-invalid-unknown",
+      "expected": "expected.json",
+      "group": "job",
+      "id": "G-58",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow-invalid.yml",
+        "workflow-unknown.yml",
+        "workflow-broken-job.yml"
+      ]
+    },
+    {
+      "adversarial": false,
+      "cp": null,
+      "description": "T8 check-resolver case T8-07 as a golden e2e case.",
+      "dir": "G-59-t8-T8-07-provider-unknown-conditional",
+      "expected": "expected.json",
+      "group": "job",
+      "id": "G-59",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": false,
+      "cp": null,
+      "description": "T8 check-resolver case T8-08 as a golden e2e case.",
+      "dir": "G-60-t8-T8-08-duplicate-beats-invalid",
+      "expected": "expected.json",
+      "group": "job",
+      "id": "G-60",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": false,
+      "cp": null,
+      "description": "T8 check-resolver case T8-09 as a golden e2e case.",
+      "dir": "G-61-t8-T8-09-merge-group-missing",
+      "expected": "expected.json",
+      "group": "job",
+      "id": "G-61",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": false,
+      "cp": null,
+      "description": "T8 check-resolver case T8-10 as a golden e2e case.",
+      "dir": "G-62-t8-T8-10-duplicate-manifest-entries",
+      "expected": "expected.json",
+      "group": "job",
+      "id": "G-62",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": false,
+      "cp": null,
+      "description": "T9 witness case T9-01 as a golden e2e case.",
+      "dir": "G-63-t9-T9-01",
+      "expected": "expected.json",
+      "group": "job",
+      "id": "G-63",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow-ci.yml"
+      ]
+    },
+    {
+      "adversarial": false,
+      "cp": null,
+      "description": "T9 witness case T9-03 as a golden e2e case.",
+      "dir": "G-64-t9-T9-03",
+      "expected": "expected.json",
+      "group": "job",
+      "id": "G-64",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": false,
+      "cp": null,
+      "description": "T9 witness case T9-05 as a golden e2e case.",
+      "dir": "G-65-t9-T9-05",
+      "expected": "expected.json",
+      "group": "job",
+      "id": "G-65",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": false,
+      "cp": null,
+      "description": "T9 witness case T9-07 as a golden e2e case.",
+      "dir": "G-66-t9-T9-07",
+      "expected": "expected.json",
+      "group": "job",
+      "id": "G-66",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": false,
+      "cp": null,
+      "description": "T9 witness case T9-09 as a golden e2e case.",
+      "dir": "G-67-t9-T9-09",
+      "expected": "expected.json",
+      "group": "job",
+      "id": "G-67",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": false,
+      "cp": null,
+      "description": "T9 witness case T9-11 as a golden e2e case.",
+      "dir": "G-68-t9-T9-11",
+      "expected": "expected.json",
+      "group": "job",
+      "id": "G-68",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow-a.yml",
+        "workflow-b.yml"
+      ]
+    },
+    {
+      "adversarial": false,
+      "cp": null,
+      "description": "T9 witness case T9-13 as a golden e2e case.",
+      "dir": "G-69-t9-T9-13",
+      "expected": "expected.json",
+      "group": "job",
+      "id": "G-69",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": false,
+      "cp": null,
+      "description": "T9 witness case T9-16 as a golden e2e case.",
+      "dir": "G-70-t9-T9-16",
+      "expected": "expected.json",
+      "group": "job",
+      "id": "G-70",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": false,
+      "cp": null,
+      "description": "T9 witness case T9-18 as a golden e2e case.",
+      "dir": "G-71-t9-T9-18",
+      "expected": "expected.json",
+      "group": "job",
+      "id": "G-71",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": false,
+      "cp": null,
+      "description": "T9 witness case T9-19 as a golden e2e case.",
+      "dir": "G-72-t9-T9-19",
+      "expected": "expected.json",
+      "group": "job",
+      "id": "G-72",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "copied",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "Unsupported case U-01 (contains-if): contains() in if is outside the frozen subset (§3.4).",
+      "dir": "../unsupported/U-01-contains-if",
+      "expected": "expected.json",
+      "group": "unsupported",
+      "id": "G-73",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "unsupported",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "Unsupported case U-02 (hashfiles-if): hashFiles() in if is outside the frozen subset (§3.4).",
+      "dir": "../unsupported/U-02-hashfiles-if",
+      "expected": "expected.json",
+      "group": "unsupported",
+      "id": "G-74",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "unsupported",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "Unsupported case U-03 (pull-request-target-event): pull_request_target is not a supported event (§3.3).",
+      "dir": "../unsupported/U-03-pull-request-target-event",
+      "expected": "expected.json",
+      "group": "unsupported",
+      "id": "G-75",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "unsupported",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "Unsupported case U-04 (workflow-run-event): workflow_run is not a supported event (§3.3).",
+      "dir": "../unsupported/U-04-workflow-run-event",
+      "expected": "expected.json",
+      "group": "unsupported",
+      "id": "G-76",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "unsupported",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "Unsupported case U-05 (brace-glob): brace expansion in a path glob is unsupported (§3.4).",
+      "dir": "../unsupported/U-05-brace-glob",
+      "expected": "expected.json",
+      "group": "unsupported",
+      "id": "G-77",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "unsupported",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "Unsupported case U-06 (needs-outputs-if): needs.*.outputs in if is outside the frozen subset (§3.4).",
+      "dir": "../unsupported/U-06-needs-outputs-if",
+      "expected": "expected.json",
+      "group": "unsupported",
+      "id": "G-78",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "unsupported",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "Unsupported case U-07 (matrix-job): strategy.matrix expansion has no single check context (§3.4, ADR-04).",
+      "dir": "../unsupported/U-07-matrix-job",
+      "expected": "expected.json",
+      "group": "unsupported",
+      "id": "G-79",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "unsupported",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "Unsupported case U-08 (reusable-workflow-job): a reusable-workflow call job has no local check context (§3.4, ADR-04).",
+      "dir": "../unsupported/U-08-reusable-workflow-job",
+      "expected": "expected.json",
+      "group": "unsupported",
+      "id": "G-80",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "source": "unsupported",
+      "workflows": [
+        "workflow.yml"
+      ]
+    }
+  ],
+  "schema": "checkpath.s0-e2e-suite/v1",
+  "seed": 20261108,
+  "suite_id": "golden"
+}

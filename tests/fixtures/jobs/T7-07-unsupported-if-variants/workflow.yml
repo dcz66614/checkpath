@@ -1,0 +1,36 @@
+name: ci
+on:
+  pull_request:
+    branches:
+      - main
+jobs:
+  u1:
+    runs-on: ubuntu-latest
+    name: u1
+    if: "success()"
+    steps:
+      - run: echo hi
+  u2:
+    runs-on: ubuntu-latest
+    name: u2
+    if: "needs.build.outputs.x == '1'"
+    steps:
+      - run: echo hi
+  u3:
+    runs-on: ubuntu-latest
+    name: u3
+    if: "contains(github.event_name, 'push')"
+    steps:
+      - run: echo hi
+  u4:
+    runs-on: ubuntu-latest
+    name: u4
+    if: "github.sha == 'abc'"
+    steps:
+      - run: echo hi
+  u5:
+    runs-on: ubuntu-latest
+    name: u5
+    if: "${{ failure() }}"
+    steps:
+      - run: echo hi

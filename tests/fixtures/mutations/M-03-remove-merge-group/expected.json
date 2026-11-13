@@ -1,0 +1,15 @@
+{
+  "base": {
+    "checks": {
+      "unit-tests": "REPORTABLE_PENDING"
+    },
+    "triggered": true
+  },
+  "mutated": {
+    "checks": {
+      "unit-tests": "PENDING_NOT_REPORTED"
+    },
+    "triggered": false
+  },
+  "mutation": "dropping merge_group from on: flips a merge_group scenario to not triggered"
+}

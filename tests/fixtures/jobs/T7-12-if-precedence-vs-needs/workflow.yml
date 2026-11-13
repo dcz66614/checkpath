@@ -1,0 +1,33 @@
+name: ci
+on:
+  pull_request:
+    branches:
+      - main
+jobs:
+  a:
+    runs-on: ubuntu-latest
+    name: job-a
+    if: false
+    steps:
+      - run: echo a
+  b:
+    runs-on: ubuntu-latest
+    name: job-b
+    needs: [a]
+    if: "contains(github.event_name, 'push')"
+    steps:
+      - run: echo b
+  c:
+    runs-on: ubuntu-latest
+    name: job-c
+    needs: [a]
+    if: false
+    steps:
+      - run: echo c
+  d:
+    runs-on: ubuntu-latest
+    name: job-d
+    needs: [a]
+    if: "github.event_name == 'push'"
+    steps:
+      - run: echo d

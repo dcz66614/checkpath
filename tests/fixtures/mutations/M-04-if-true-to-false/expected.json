@@ -1,0 +1,15 @@
+{
+  "base": {
+    "checks": {
+      "unit-tests": "REPORTABLE_PENDING"
+    },
+    "triggered": true
+  },
+  "mutated": {
+    "checks": {
+      "unit-tests": "SKIPPED_SUCCESS"
+    },
+    "triggered": true
+  },
+  "mutation": "if: true -> if: false flips ELIGIBLE -> SKIPPED (check SKIPPED_SUCCESS)"
+}

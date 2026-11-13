@@ -1,0 +1,15 @@
+{
+  "base": {
+    "checks": {
+      "unit-tests": "REPORTABLE_PENDING"
+    },
+    "triggered": true
+  },
+  "mutated": {
+    "checks": {
+      "unit-tests": "PENDING_NOT_REPORTED"
+    },
+    "triggered": false
+  },
+  "mutation": "branches main -> develop flips triggered -> not triggered"
+}

@@ -1,0 +1,14 @@
+name: ci
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'src/**'
+  merge_group:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: unit-tests
+    steps:
+      - run: echo hi

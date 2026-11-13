@@ -1,0 +1,33 @@
+name: ci
+on:
+  pull_request:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: build
+    if: false
+    steps:
+      - run: echo hi
+  agg:
+    runs-on: ubuntu-latest
+    name: agg
+    needs: [build]
+    if: "always() && github.event_name == 'pull_request'"
+    steps:
+      - run: echo ok
+  agg2:
+    runs-on: ubuntu-latest
+    name: agg2
+    needs: [build]
+    if: "always() || false"
+    steps:
+      - run: echo ok
+  agg3:
+    runs-on: ubuntu-latest
+    name: agg3
+    needs: [build]
+    if: "github.event_name == 'pull_request'"
+    steps:
+      - run: echo ok

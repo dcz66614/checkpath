@@ -1,0 +1,9 @@
+name: t6-29-types-true
+on:
+  pull_request:
+    types: [True]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo hi

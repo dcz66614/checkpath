@@ -1,0 +1,726 @@
+{
+  "schema": "checkpath.jobs-suite/v1",
+  "suite_id": "jobs",
+  "seed": 20261108,
+  "fixtures": [
+    {
+      "id": "E2E-01",
+      "dir": "../s0/E2E-01-cp-a-pr-docs-only",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "s0-expected"
+    },
+    {
+      "id": "E2E-02",
+      "dir": "../s0/E2E-02-cp-b-merge-group-present",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "s0-expected"
+    },
+    {
+      "id": "E2E-03",
+      "dir": "../s0/E2E-03-cp-c-merge-group-missing",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "s0-expected"
+    },
+    {
+      "id": "E2E-04",
+      "dir": "../s0/E2E-04-push-baseline",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "s0-expected"
+    },
+    {
+      "id": "E2E-05",
+      "dir": "../s0/E2E-05-pr-types-mismatch",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "s0-expected"
+    },
+    {
+      "id": "E2E-06",
+      "dir": "../s0/E2E-06-pr-types-match",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "s0-expected"
+    },
+    {
+      "id": "E2E-07",
+      "dir": "../s0/E2E-07-merge-group-types-mismatch",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "s0-expected"
+    },
+    {
+      "id": "E2E-08",
+      "dir": "../s0/E2E-08-on-list-form",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "s0-expected"
+    },
+    {
+      "id": "E2E-09",
+      "dir": "../s0/E2E-09-cp-f-branch-only-match",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "s0-expected"
+    },
+    {
+      "id": "E2E-10",
+      "dir": "../s0/E2E-10-cp-f-path-only-match",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "s0-expected"
+    },
+    {
+      "id": "E2E-11",
+      "dir": "../s0/E2E-11-cp-g-ordered-negation",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "s0-expected"
+    },
+    {
+      "id": "E2E-12",
+      "dir": "../s0/E2E-12-cp-h-commit-skip",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "s0-expected"
+    },
+    {
+      "id": "E2E-13",
+      "dir": "../s0/E2E-13-branches-ignore",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "s0-expected"
+    },
+    {
+      "id": "E2E-14",
+      "dir": "../s0/E2E-14-paths-ignore",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "s0-expected"
+    },
+    {
+      "id": "E2E-15",
+      "dir": "../s0/E2E-15-cp-k-push-over-1000",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "s0-expected"
+    },
+    {
+      "id": "E2E-16",
+      "dir": "../s0/E2E-16-cp-l-diff-unconfirmed",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "s0-expected"
+    },
+    {
+      "id": "E2E-17",
+      "dir": "../s0/E2E-17-cp-d-if-false",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "s0-expected"
+    },
+    {
+      "id": "E2E-18",
+      "dir": "../s0/E2E-18-cp-e-always-aggregator",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "s0-expected"
+    },
+    {
+      "id": "E2E-19",
+      "dir": "../s0/E2E-19-cp-i-duplicate-cross-workflow",
+      "workflows": [
+        "workflow-a.yml",
+        "workflow-b.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "s0-expected"
+    },
+    {
+      "id": "E2E-20",
+      "dir": "../s0/E2E-20-cp-j-no-provider",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "s0-expected"
+    },
+    {
+      "id": "E2E-21",
+      "dir": "../s0/E2E-21-duplicate-same-workflow",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "s0-expected"
+    },
+    {
+      "id": "E2E-22",
+      "dir": "../s0/E2E-22-needs-skipped",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "s0-expected"
+    },
+    {
+      "id": "E2E-23",
+      "dir": "../s0/E2E-23-conditional-after-needs",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "s0-expected"
+    },
+    {
+      "id": "E2E-24",
+      "dir": "../s0/E2E-24-fail-closed-bundle",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "s0-expected"
+    },
+    {
+      "id": "T7-01",
+      "dir": "T7-01-missing-need",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "t007",
+      "expected": [
+        {
+          "workflow": "workflow.yml",
+          "job_id": "build",
+          "context": "build",
+          "status": "ELIGIBLE",
+          "reason": "eligible"
+        },
+        {
+          "workflow": "workflow.yml",
+          "job_id": "deploy",
+          "context": "deploy",
+          "status": "INVALID",
+          "reason": "missing_need:ghost"
+        }
+      ]
+    },
+    {
+      "id": "T7-02",
+      "dir": "T7-02-needs-cycle-3",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "t007",
+      "expected": [
+        {
+          "workflow": "workflow.yml",
+          "job_id": "a",
+          "context": "job-a",
+          "status": "INVALID",
+          "reason": "needs_cycle"
+        },
+        {
+          "workflow": "workflow.yml",
+          "job_id": "b",
+          "context": "job-b",
+          "status": "INVALID",
+          "reason": "needs_cycle"
+        },
+        {
+          "workflow": "workflow.yml",
+          "job_id": "c",
+          "context": "job-c",
+          "status": "INVALID",
+          "reason": "needs_cycle"
+        },
+        {
+          "workflow": "workflow.yml",
+          "job_id": "ok",
+          "context": "ok-check",
+          "status": "ELIGIBLE",
+          "reason": "eligible"
+        }
+      ]
+    },
+    {
+      "id": "T7-03",
+      "dir": "T7-03-self-need",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "t007",
+      "expected": [
+        {
+          "workflow": "workflow.yml",
+          "job_id": "a",
+          "context": "job-a",
+          "status": "INVALID",
+          "reason": "needs_cycle"
+        },
+        {
+          "workflow": "workflow.yml",
+          "job_id": "b",
+          "context": "ok-check",
+          "status": "ELIGIBLE",
+          "reason": "eligible"
+        }
+      ]
+    },
+    {
+      "id": "T7-04",
+      "dir": "T7-04-diamond",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "t007",
+      "expected": [
+        {
+          "workflow": "workflow.yml",
+          "job_id": "a",
+          "context": "job-a",
+          "status": "ELIGIBLE",
+          "reason": "eligible"
+        },
+        {
+          "workflow": "workflow.yml",
+          "job_id": "b",
+          "context": "job-b",
+          "status": "CONDITIONAL_AFTER_NEEDS",
+          "reason": "needs_pending"
+        },
+        {
+          "workflow": "workflow.yml",
+          "job_id": "c",
+          "context": "job-c",
+          "status": "CONDITIONAL_AFTER_NEEDS",
+          "reason": "needs_pending"
+        },
+        {
+          "workflow": "workflow.yml",
+          "job_id": "d",
+          "context": "job-d",
+          "status": "CONDITIONAL_AFTER_NEEDS",
+          "reason": "needs_pending"
+        }
+      ]
+    },
+    {
+      "id": "T7-05",
+      "dir": "T7-05-deep-skip-chain",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "t007",
+      "expected": [
+        {
+          "workflow": "workflow.yml",
+          "job_id": "a",
+          "context": "job-a",
+          "status": "SKIPPED",
+          "reason": "if_false"
+        },
+        {
+          "workflow": "workflow.yml",
+          "job_id": "b",
+          "context": "job-b",
+          "status": "SKIPPED",
+          "reason": "needs_skipped"
+        },
+        {
+          "workflow": "workflow.yml",
+          "job_id": "c",
+          "context": "job-c",
+          "status": "SKIPPED",
+          "reason": "needs_skipped"
+        },
+        {
+          "workflow": "workflow.yml",
+          "job_id": "d",
+          "context": "job-d",
+          "status": "ELIGIBLE",
+          "reason": "always_overrides_skipped_needs"
+        }
+      ]
+    },
+    {
+      "id": "T7-06",
+      "dir": "T7-06-always-compound",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "t007",
+      "expected": [
+        {
+          "workflow": "workflow.yml",
+          "job_id": "build",
+          "context": "build",
+          "status": "SKIPPED",
+          "reason": "if_false"
+        },
+        {
+          "workflow": "workflow.yml",
+          "job_id": "agg",
+          "context": "agg",
+          "status": "ELIGIBLE",
+          "reason": "always_overrides_skipped_needs"
+        },
+        {
+          "workflow": "workflow.yml",
+          "job_id": "agg2",
+          "context": "agg2",
+          "status": "ELIGIBLE",
+          "reason": "always_overrides_skipped_needs"
+        },
+        {
+          "workflow": "workflow.yml",
+          "job_id": "agg3",
+          "context": "agg3",
+          "status": "SKIPPED",
+          "reason": "needs_skipped"
+        }
+      ]
+    },
+    {
+      "id": "T7-07",
+      "dir": "T7-07-unsupported-if-variants",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "t007",
+      "expected": [
+        {
+          "workflow": "workflow.yml",
+          "job_id": "u1",
+          "context": "u1",
+          "status": "UNKNOWN",
+          "reason": "unsupported_if"
+        },
+        {
+          "workflow": "workflow.yml",
+          "job_id": "u2",
+          "context": "u2",
+          "status": "UNKNOWN",
+          "reason": "unsupported_if"
+        },
+        {
+          "workflow": "workflow.yml",
+          "job_id": "u3",
+          "context": "u3",
+          "status": "UNKNOWN",
+          "reason": "unsupported_if"
+        },
+        {
+          "workflow": "workflow.yml",
+          "job_id": "u4",
+          "context": "u4",
+          "status": "UNKNOWN",
+          "reason": "unsupported_if"
+        },
+        {
+          "workflow": "workflow.yml",
+          "job_id": "u5",
+          "context": "u5",
+          "status": "UNKNOWN",
+          "reason": "unsupported_if"
+        }
+      ]
+    },
+    {
+      "id": "T7-08",
+      "dir": "T7-08-context-comparisons",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "t007",
+      "expected": [
+        {
+          "workflow": "workflow.yml",
+          "job_id": "r1",
+          "context": "r1",
+          "status": "ELIGIBLE",
+          "reason": "eligible"
+        },
+        {
+          "workflow": "workflow.yml",
+          "job_id": "r2",
+          "context": "r2",
+          "status": "SKIPPED",
+          "reason": "if_false"
+        },
+        {
+          "workflow": "workflow.yml",
+          "job_id": "r3",
+          "context": "r3",
+          "status": "ELIGIBLE",
+          "reason": "eligible"
+        },
+        {
+          "workflow": "workflow.yml",
+          "job_id": "r4",
+          "context": "r4",
+          "status": "SKIPPED",
+          "reason": "if_false"
+        },
+        {
+          "workflow": "workflow.yml",
+          "job_id": "r5",
+          "context": "r5",
+          "status": "ELIGIBLE",
+          "reason": "eligible"
+        }
+      ]
+    },
+    {
+      "id": "T7-09",
+      "dir": "T7-09-same-job-id-two-workflows",
+      "workflows": [
+        "workflow-a.yml",
+        "workflow-b.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "t007",
+      "expected": [
+        {
+          "workflow": "workflow-a.yml",
+          "job_id": "test",
+          "context": "tests",
+          "status": "ELIGIBLE",
+          "reason": "eligible"
+        },
+        {
+          "workflow": "workflow-b.yml",
+          "job_id": "test",
+          "context": "tests",
+          "status": "SKIPPED",
+          "reason": "workflow_not_triggered"
+        }
+      ]
+    },
+    {
+      "id": "T7-10",
+      "dir": "T7-10-invalid-propagation",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "t007",
+      "expected": [
+        {
+          "workflow": "workflow.yml",
+          "job_id": "a",
+          "context": "job-a",
+          "status": "INVALID",
+          "reason": "missing_need:ghost"
+        },
+        {
+          "workflow": "workflow.yml",
+          "job_id": "b",
+          "context": "job-b",
+          "status": "INVALID",
+          "reason": "invalid_need:a"
+        },
+        {
+          "workflow": "workflow.yml",
+          "job_id": "c",
+          "context": "job-c",
+          "status": "INVALID",
+          "reason": "invalid_need:b"
+        },
+        {
+          "workflow": "workflow.yml",
+          "job_id": "d",
+          "context": "ok-check",
+          "status": "ELIGIBLE",
+          "reason": "eligible"
+        }
+      ]
+    },
+    {
+      "id": "T7-11",
+      "dir": "T7-11-unknown-propagation",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "t007",
+      "expected": [
+        {
+          "workflow": "workflow.yml",
+          "job_id": "a",
+          "context": "job-a",
+          "status": "UNKNOWN",
+          "reason": "unsupported_if"
+        },
+        {
+          "workflow": "workflow.yml",
+          "job_id": "b",
+          "context": "job-b",
+          "status": "UNKNOWN",
+          "reason": "needs_unknown"
+        },
+        {
+          "workflow": "workflow.yml",
+          "job_id": "c",
+          "context": "job-c",
+          "status": "UNKNOWN",
+          "reason": "needs_unknown"
+        },
+        {
+          "workflow": "workflow.yml",
+          "job_id": "d",
+          "context": "ok-check",
+          "status": "ELIGIBLE",
+          "reason": "eligible"
+        }
+      ]
+    },
+    {
+      "id": "T7-12",
+      "dir": "T7-12-if-precedence-vs-needs",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "t007",
+      "expected": [
+        {
+          "workflow": "workflow.yml",
+          "job_id": "a",
+          "context": "job-a",
+          "status": "SKIPPED",
+          "reason": "if_false"
+        },
+        {
+          "workflow": "workflow.yml",
+          "job_id": "b",
+          "context": "job-b",
+          "status": "UNKNOWN",
+          "reason": "unsupported_if"
+        },
+        {
+          "workflow": "workflow.yml",
+          "job_id": "c",
+          "context": "job-c",
+          "status": "SKIPPED",
+          "reason": "if_false"
+        },
+        {
+          "workflow": "workflow.yml",
+          "job_id": "d",
+          "context": "job-d",
+          "status": "SKIPPED",
+          "reason": "if_false"
+        }
+      ]
+    }
+  ],
+  "job_check_suite": "../s0/job-check/suite.json"
+}
