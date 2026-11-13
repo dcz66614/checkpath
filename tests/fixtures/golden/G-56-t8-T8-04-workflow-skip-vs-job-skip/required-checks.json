@@ -1,0 +1,11 @@
+{
+  "required_checks": [
+    {
+      "context": "ci"
+    },
+    {
+      "context": "unit"
+    }
+  ],
+  "schema": "checkpath.required-checks/v1"
+}

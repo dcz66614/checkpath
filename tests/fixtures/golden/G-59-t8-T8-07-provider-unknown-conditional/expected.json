@@ -1,0 +1,121 @@
+{
+  "diff_boundary": null,
+  "fixture_id": "G-59",
+  "input_sha256": "cb970406c119a5255f42780b080dc8e44e8ac14d81772dc718a93e37ddc1634e",
+  "jobs": [
+    {
+      "context": "unsup",
+      "job_id": "u1",
+      "reason": "unsupported_if",
+      "status": "UNKNOWN",
+      "workflow": "workflow.yml"
+    },
+    {
+      "context": "base",
+      "job_id": "base",
+      "reason": "eligible",
+      "status": "ELIGIBLE",
+      "workflow": "workflow.yml"
+    },
+    {
+      "context": "downstream",
+      "job_id": "down",
+      "reason": "needs_pending",
+      "status": "CONDITIONAL_AFTER_NEEDS",
+      "workflow": "workflow.yml"
+    },
+    {
+      "context": "skipped-one",
+      "job_id": "solo",
+      "reason": "if_false",
+      "status": "SKIPPED",
+      "workflow": "workflow.yml"
+    }
+  ],
+  "required_checks": [
+    {
+      "context": "unsup",
+      "provider_count": 1,
+      "provider_job_id": "u1",
+      "reason": "provider_unknown",
+      "status": "UNKNOWN"
+    },
+    {
+      "context": "downstream",
+      "provider_count": 1,
+      "provider_job_id": "down",
+      "reason": "provider_reportable",
+      "status": "REPORTABLE_PENDING"
+    },
+    {
+      "context": "skipped-one",
+      "provider_count": 1,
+      "provider_job_id": "solo",
+      "reason": "provider_skipped",
+      "status": "SKIPPED_SUCCESS"
+    }
+  ],
+  "scenario_id": "G-59",
+  "schema": "checkpath.e2e-report/v1",
+  "summary": {
+    "check_status_counts": {
+      "AMBIGUOUS": 0,
+      "INVALID": 0,
+      "PENDING_NOT_REPORTED": 0,
+      "REPORTABLE_PENDING": 1,
+      "SKIPPED_SUCCESS": 1,
+      "UNKNOWN": 1
+    },
+    "job_status_counts": {
+      "CONDITIONAL_AFTER_NEEDS": 1,
+      "ELIGIBLE": 1,
+      "INVALID": 0,
+      "SKIPPED": 1,
+      "UNKNOWN": 1
+    },
+    "triggered_workflow_count": 1,
+    "workflow_count": 1
+  },
+  "unsupported_features": [
+    "unsupported_if:u1"
+  ],
+  "workflows": [
+    {
+      "path": "workflow.yml",
+      "trigger": {
+        "errors": [],
+        "evaluation": {
+          "activity_type_match": true,
+          "branch_match": true,
+          "branch_value": "main",
+          "commit_skip": false,
+          "event_match": true,
+          "path_file_results": [
+            {
+              "file": "src/app.ts",
+              "matched": true
+            }
+          ],
+          "path_match": true,
+          "reason": "triggered",
+          "triggered": true,
+          "unsupported": []
+        },
+        "events": [
+          {
+            "branches": null,
+            "branches_ignore": null,
+            "name": "pull_request",
+            "paths": null,
+            "paths_ignore": null,
+            "types": null
+          }
+        ],
+        "fixture_id": "G-59",
+        "on_key_is_string": true,
+        "schema": "checkpath.trigger-ir/v1",
+        "status": "VALID"
+      }
+    }
+  ]
+}

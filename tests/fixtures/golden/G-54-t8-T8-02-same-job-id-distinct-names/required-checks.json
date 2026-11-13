@@ -1,0 +1,11 @@
+{
+  "required_checks": [
+    {
+      "context": "alpha"
+    },
+    {
+      "context": "beta"
+    }
+  ],
+  "schema": "checkpath.required-checks/v1"
+}

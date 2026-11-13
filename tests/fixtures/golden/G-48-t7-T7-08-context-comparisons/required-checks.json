@@ -1,0 +1,25 @@
+{
+  "required_checks": [
+    {
+      "context": "r1",
+      "source": "github-actions"
+    },
+    {
+      "context": "r2",
+      "source": "github-actions"
+    },
+    {
+      "context": "r3",
+      "source": "github-actions"
+    },
+    {
+      "context": "r4",
+      "source": "github-actions"
+    },
+    {
+      "context": "r5",
+      "source": "github-actions"
+    }
+  ],
+  "schema": "checkpath.required-checks/v1"
+}

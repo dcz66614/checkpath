@@ -1,0 +1,36 @@
+name: ci
+on:
+  pull_request:
+    branches:
+      - main
+jobs:
+  r1:
+    runs-on: ubuntu-latest
+    name: r1
+    if: "github.ref == 'refs/pull/42/merge'"
+    steps:
+      - run: echo hi
+  r2:
+    runs-on: ubuntu-latest
+    name: r2
+    if: "github.ref == 'refs/heads/main'"
+    steps:
+      - run: echo hi
+  r3:
+    runs-on: ubuntu-latest
+    name: r3
+    if: "github.base_ref == 'main'"
+    steps:
+      - run: echo hi
+  r4:
+    runs-on: ubuntu-latest
+    name: r4
+    if: "github.event.action == 'opened'"
+    steps:
+      - run: echo hi
+  r5:
+    runs-on: ubuntu-latest
+    name: r5
+    if: "github.head_ref == 'feature/x'"
+    steps:
+      - run: echo hi

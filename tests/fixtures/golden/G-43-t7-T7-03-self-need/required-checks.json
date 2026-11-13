@@ -1,0 +1,13 @@
+{
+  "required_checks": [
+    {
+      "context": "job-a",
+      "source": "github-actions"
+    },
+    {
+      "context": "ok-check",
+      "source": "github-actions"
+    }
+  ],
+  "schema": "checkpath.required-checks/v1"
+}

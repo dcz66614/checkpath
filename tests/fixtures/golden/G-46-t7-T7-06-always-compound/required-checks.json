@@ -1,0 +1,21 @@
+{
+  "required_checks": [
+    {
+      "context": "build",
+      "source": "github-actions"
+    },
+    {
+      "context": "agg",
+      "source": "github-actions"
+    },
+    {
+      "context": "agg2",
+      "source": "github-actions"
+    },
+    {
+      "context": "agg3",
+      "source": "github-actions"
+    }
+  ],
+  "schema": "checkpath.required-checks/v1"
+}

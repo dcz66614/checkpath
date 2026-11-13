@@ -1,0 +1,13 @@
+name: ci-invalid
+on:
+  pull_request:
+    paths:
+      - 'src/**'
+    paths-ignore:
+      - 'docs/**'
+jobs:
+  w1:
+    runs-on: ubuntu-latest
+    name: bad-trigger
+    steps:
+      - run: echo hi

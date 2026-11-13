@@ -1,0 +1,29 @@
+name: ci
+on:
+  pull_request:
+    branches:
+      - main
+jobs:
+  a:
+    runs-on: ubuntu-latest
+    name: job-a
+    needs: [c]
+    steps:
+      - run: echo a
+  b:
+    runs-on: ubuntu-latest
+    name: job-b
+    needs: [a]
+    steps:
+      - run: echo b
+  c:
+    runs-on: ubuntu-latest
+    name: job-c
+    needs: [b]
+    steps:
+      - run: echo c
+  ok:
+    runs-on: ubuntu-latest
+    name: ok-check
+    steps:
+      - run: echo ok

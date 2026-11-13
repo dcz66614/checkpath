@@ -1,0 +1,26 @@
+{
+  "diff": {
+    "algorithm": "three-dot",
+    "changed_files": [
+      "src/app.ts"
+    ],
+    "changed_files_total": 1,
+    "complete": true,
+    "diff_timed_out": false,
+    "first_3000_confirmed": true,
+    "push_commit_count": null,
+    "returned_files": 1
+  },
+  "event": {
+    "action": "synchronize",
+    "base_branch": "main",
+    "branch": null,
+    "commit_message": "feat: change",
+    "head_branch": "feature/x",
+    "name": "pull_request",
+    "ref": "refs/pull/42/merge",
+    "target_branch": null
+  },
+  "scenario_id": "G-45",
+  "schema": "checkpath.scenario/v1"
+}

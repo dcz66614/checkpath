@@ -1,0 +1,27 @@
+name: ci
+on:
+  pull_request: {}
+jobs:
+  u1:
+    runs-on: ubuntu-latest
+    name: unsup
+    if: success()
+    steps:
+      - run: echo hi
+  base:
+    runs-on: ubuntu-latest
+    name: base
+    steps:
+      - run: echo hi
+  down:
+    runs-on: ubuntu-latest
+    name: downstream
+    needs: [base]
+    steps:
+      - run: echo hi
+  solo:
+    runs-on: ubuntu-latest
+    name: skipped-one
+    if: false
+    steps:
+      - run: echo hi

@@ -1,0 +1,14 @@
+{
+  "required_checks": [
+    {
+      "context": "unsup"
+    },
+    {
+      "context": "downstream"
+    },
+    {
+      "context": "skipped-one"
+    }
+  ],
+  "schema": "checkpath.required-checks/v1"
+}

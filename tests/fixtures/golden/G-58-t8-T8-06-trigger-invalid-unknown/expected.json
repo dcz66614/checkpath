@@ -1,0 +1,184 @@
+{
+  "diff_boundary": null,
+  "fixture_id": "G-58",
+  "input_sha256": "bd576b90dcdb72ec395f05b6c31598320a8094deb8dc5abb3ada6f0e1d32675a",
+  "jobs": [
+    {
+      "context": "bad-trigger",
+      "job_id": "w1",
+      "reason": "trigger_invalid",
+      "status": "INVALID",
+      "workflow": "workflow-invalid.yml"
+    },
+    {
+      "context": "branch-check",
+      "job_id": "w2",
+      "reason": "trigger_unknown",
+      "status": "UNKNOWN",
+      "workflow": "workflow-unknown.yml"
+    },
+    {
+      "context": "broken-deploy",
+      "job_id": "deploy",
+      "reason": "missing_need:ghost",
+      "status": "INVALID",
+      "workflow": "workflow-broken-job.yml"
+    }
+  ],
+  "required_checks": [
+    {
+      "context": "bad-trigger",
+      "provider_count": 1,
+      "provider_job_id": "w1",
+      "reason": "provider_invalid",
+      "status": "INVALID"
+    },
+    {
+      "context": "branch-check",
+      "provider_count": 1,
+      "provider_job_id": "w2",
+      "reason": "trigger_unknown",
+      "status": "UNKNOWN"
+    },
+    {
+      "context": "broken-deploy",
+      "provider_count": 1,
+      "provider_job_id": "deploy",
+      "reason": "provider_invalid",
+      "status": "INVALID"
+    }
+  ],
+  "scenario_id": "G-58",
+  "schema": "checkpath.e2e-report/v1",
+  "summary": {
+    "check_status_counts": {
+      "AMBIGUOUS": 0,
+      "INVALID": 2,
+      "PENDING_NOT_REPORTED": 0,
+      "REPORTABLE_PENDING": 0,
+      "SKIPPED_SUCCESS": 0,
+      "UNKNOWN": 1
+    },
+    "job_status_counts": {
+      "CONDITIONAL_AFTER_NEEDS": 0,
+      "ELIGIBLE": 0,
+      "INVALID": 2,
+      "SKIPPED": 0,
+      "UNKNOWN": 1
+    },
+    "triggered_workflow_count": 1,
+    "workflow_count": 3
+  },
+  "unsupported_features": [],
+  "workflows": [
+    {
+      "path": "workflow-invalid.yml",
+      "trigger": {
+        "errors": [
+          "paths_and_paths_ignore_both_present"
+        ],
+        "evaluation": {
+          "activity_type_match": null,
+          "branch_match": null,
+          "branch_value": null,
+          "commit_skip": false,
+          "event_match": null,
+          "path_file_results": [],
+          "path_match": null,
+          "reason": "invalid",
+          "triggered": null,
+          "unsupported": []
+        },
+        "events": [
+          {
+            "branches": null,
+            "branches_ignore": null,
+            "name": "pull_request",
+            "paths": [
+              "src/**"
+            ],
+            "paths_ignore": [
+              "docs/**"
+            ],
+            "types": null
+          }
+        ],
+        "fixture_id": "G-58",
+        "on_key_is_string": true,
+        "schema": "checkpath.trigger-ir/v1",
+        "status": "INVALID"
+      }
+    },
+    {
+      "path": "workflow-unknown.yml",
+      "trigger": {
+        "errors": [],
+        "evaluation": {
+          "activity_type_match": true,
+          "branch_match": null,
+          "branch_value": null,
+          "commit_skip": false,
+          "event_match": true,
+          "path_file_results": [],
+          "path_match": true,
+          "reason": "unknown",
+          "triggered": null,
+          "unsupported": []
+        },
+        "events": [
+          {
+            "branches": [
+              "main"
+            ],
+            "branches_ignore": null,
+            "name": "pull_request",
+            "paths": null,
+            "paths_ignore": null,
+            "types": null
+          }
+        ],
+        "fixture_id": "G-58",
+        "on_key_is_string": true,
+        "schema": "checkpath.trigger-ir/v1",
+        "status": "VALID"
+      }
+    },
+    {
+      "path": "workflow-broken-job.yml",
+      "trigger": {
+        "errors": [],
+        "evaluation": {
+          "activity_type_match": true,
+          "branch_match": true,
+          "branch_value": null,
+          "commit_skip": false,
+          "event_match": true,
+          "path_file_results": [
+            {
+              "file": "src/app.ts",
+              "matched": true
+            }
+          ],
+          "path_match": true,
+          "reason": "triggered",
+          "triggered": true,
+          "unsupported": []
+        },
+        "events": [
+          {
+            "branches": null,
+            "branches_ignore": null,
+            "name": "pull_request",
+            "paths": null,
+            "paths_ignore": null,
+            "types": null
+          }
+        ],
+        "fixture_id": "G-58",
+        "on_key_is_string": true,
+        "schema": "checkpath.trigger-ir/v1",
+        "status": "VALID"
+      }
+    }
+  ]
+}

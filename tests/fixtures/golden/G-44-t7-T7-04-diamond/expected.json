@@ -1,0 +1,128 @@
+{
+  "diff_boundary": null,
+  "fixture_id": "G-44",
+  "input_sha256": "a260ce4b1ea736c740ee131a4158f79f31db3caa17c9ffc32a455455d9a7e0ac",
+  "jobs": [
+    {
+      "context": "job-a",
+      "job_id": "a",
+      "reason": "eligible",
+      "status": "ELIGIBLE",
+      "workflow": "workflow.yml"
+    },
+    {
+      "context": "job-b",
+      "job_id": "b",
+      "reason": "needs_pending",
+      "status": "CONDITIONAL_AFTER_NEEDS",
+      "workflow": "workflow.yml"
+    },
+    {
+      "context": "job-c",
+      "job_id": "c",
+      "reason": "needs_pending",
+      "status": "CONDITIONAL_AFTER_NEEDS",
+      "workflow": "workflow.yml"
+    },
+    {
+      "context": "job-d",
+      "job_id": "d",
+      "reason": "needs_pending",
+      "status": "CONDITIONAL_AFTER_NEEDS",
+      "workflow": "workflow.yml"
+    }
+  ],
+  "required_checks": [
+    {
+      "context": "job-a",
+      "provider_count": 1,
+      "provider_job_id": "a",
+      "reason": "provider_reportable",
+      "status": "REPORTABLE_PENDING"
+    },
+    {
+      "context": "job-b",
+      "provider_count": 1,
+      "provider_job_id": "b",
+      "reason": "provider_reportable",
+      "status": "REPORTABLE_PENDING"
+    },
+    {
+      "context": "job-c",
+      "provider_count": 1,
+      "provider_job_id": "c",
+      "reason": "provider_reportable",
+      "status": "REPORTABLE_PENDING"
+    },
+    {
+      "context": "job-d",
+      "provider_count": 1,
+      "provider_job_id": "d",
+      "reason": "provider_reportable",
+      "status": "REPORTABLE_PENDING"
+    }
+  ],
+  "scenario_id": "G-44",
+  "schema": "checkpath.e2e-report/v1",
+  "summary": {
+    "check_status_counts": {
+      "AMBIGUOUS": 0,
+      "INVALID": 0,
+      "PENDING_NOT_REPORTED": 0,
+      "REPORTABLE_PENDING": 4,
+      "SKIPPED_SUCCESS": 0,
+      "UNKNOWN": 0
+    },
+    "job_status_counts": {
+      "CONDITIONAL_AFTER_NEEDS": 3,
+      "ELIGIBLE": 1,
+      "INVALID": 0,
+      "SKIPPED": 0,
+      "UNKNOWN": 0
+    },
+    "triggered_workflow_count": 1,
+    "workflow_count": 1
+  },
+  "unsupported_features": [],
+  "workflows": [
+    {
+      "path": "workflow.yml",
+      "trigger": {
+        "errors": [],
+        "evaluation": {
+          "activity_type_match": true,
+          "branch_match": true,
+          "branch_value": "main",
+          "commit_skip": false,
+          "event_match": true,
+          "path_file_results": [
+            {
+              "file": "src/app.ts",
+              "matched": true
+            }
+          ],
+          "path_match": true,
+          "reason": "triggered",
+          "triggered": true,
+          "unsupported": []
+        },
+        "events": [
+          {
+            "branches": [
+              "main"
+            ],
+            "branches_ignore": null,
+            "name": "pull_request",
+            "paths": null,
+            "paths_ignore": null,
+            "types": null
+          }
+        ],
+        "fixture_id": "G-44",
+        "on_key_is_string": true,
+        "schema": "checkpath.trigger-ir/v1",
+        "status": "VALID"
+      }
+    }
+  ]
+}
