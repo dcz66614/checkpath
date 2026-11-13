@@ -1,0 +1,5 @@
+x: &a foo
+name: probe
+on:
+  push: {}
+jobs: {test: {*a: 1}}

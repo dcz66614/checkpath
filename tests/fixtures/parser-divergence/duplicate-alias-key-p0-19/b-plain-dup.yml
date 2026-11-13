@@ -1,0 +1,7 @@
+m: {a: 1, a: 2}
+on: push
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo hi

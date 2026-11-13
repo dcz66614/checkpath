@@ -1,0 +1,1603 @@
+{
+ "schema": "checkpath.parser-divergence/v1",
+ "cases": [
+  {
+   "id": "f01-r4-m-comma-ind0",
+   "file": "f01-r4-m-comma-ind0.yml",
+   "note": "FIX-P0-10: R4 comma indent 0",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "id": "f02-r4-m-comma-ind1",
+   "file": "f02-r4-m-comma-ind1.yml",
+   "note": "FIX-P0-10: R4 comma indent 1 (boundary)",
+   "typescript": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "name": "push",
+      "types": null,
+      "branches": null,
+      "branches_ignore": null,
+      "paths": null,
+      "paths_ignore": null
+     }
+    ],
+    "jobs": [
+     {
+      "id": "test",
+      "name": null,
+      "needs": [],
+      "if": null,
+      "unsupported_job": null
+     }
+    ]
+   },
+   "oracle": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "branches": null,
+      "branches_ignore": null,
+      "name": "push",
+      "paths": null,
+      "paths_ignore": null,
+      "types": null
+     }
+    ],
+    "jobs": [
+     {
+      "id": "test",
+      "if": null,
+      "name": null,
+      "needs": [],
+      "unsupported_job": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "f03-r4-m-comma-ind2",
+   "file": "f03-r4-m-comma-ind2.yml",
+   "note": "FIX-P0-10: R4 comma indent 2",
+   "typescript": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "name": "push",
+      "types": null,
+      "branches": null,
+      "branches_ignore": null,
+      "paths": null,
+      "paths_ignore": null
+     }
+    ],
+    "jobs": [
+     {
+      "id": "test",
+      "name": null,
+      "needs": [],
+      "if": null,
+      "unsupported_job": null
+     }
+    ]
+   },
+   "oracle": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "branches": null,
+      "branches_ignore": null,
+      "name": "push",
+      "paths": null,
+      "paths_ignore": null,
+      "types": null
+     }
+    ],
+    "jobs": [
+     {
+      "id": "test",
+      "if": null,
+      "name": null,
+      "needs": [],
+      "unsupported_job": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "f04-r4-m-nested-ind0",
+   "file": "f04-r4-m-nested-ind0.yml",
+   "note": "FIX-P0-10: R4 nested comma indent 0",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "id": "f05-r4-m-nested-ind1",
+   "file": "f05-r4-m-nested-ind1.yml",
+   "note": "FIX-P0-10: R4 nested comma indent 1",
+   "typescript": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "name": "push",
+      "types": null,
+      "branches": null,
+      "branches_ignore": null,
+      "paths": null,
+      "paths_ignore": null
+     }
+    ],
+    "jobs": [
+     {
+      "id": "test",
+      "name": null,
+      "needs": [],
+      "if": null,
+      "unsupported_job": null
+     }
+    ]
+   },
+   "oracle": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "branches": null,
+      "branches_ignore": null,
+      "name": "push",
+      "paths": null,
+      "paths_ignore": null,
+      "types": null
+     }
+    ],
+    "jobs": [
+     {
+      "id": "test",
+      "if": null,
+      "name": null,
+      "needs": [],
+      "unsupported_job": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "f06-r4-on-ind0",
+   "file": "f06-r4-on-ind0.yml",
+   "note": "FIX-P0-10: R4 on: comma indent 0",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "id": "f07-r4-on-ind1",
+   "file": "f07-r4-on-ind1.yml",
+   "note": "FIX-P0-10: R4 on: comma indent 1",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "event_config_not_mapping"
+    ],
+    "events": [],
+    "jobs": [
+     {
+      "id": "test",
+      "name": null,
+      "needs": [],
+      "if": null,
+      "unsupported_job": null
+     }
+    ]
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "event_config_not_mapping"
+    ],
+    "events": [],
+    "jobs": [
+     {
+      "id": "test",
+      "if": null,
+      "name": null,
+      "needs": [],
+      "unsupported_job": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "f08-r4-jobs-ind0",
+   "file": "f08-r4-jobs-ind0.yml",
+   "note": "FIX-P0-10: R4 jobs env comma indent 0",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "id": "f09-r4-jobs-ind4",
+   "file": "f09-r4-jobs-ind4.yml",
+   "note": "FIX-P0-10: R4 jobs env comma indent 4 (threshold)",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "id": "f10-r4-jobs-ind5",
+   "file": "f10-r4-jobs-ind5.yml",
+   "note": "FIX-P0-10: R4 jobs env comma indent 5 (boundary)",
+   "typescript": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "name": "push",
+      "types": null,
+      "branches": null,
+      "branches_ignore": null,
+      "paths": null,
+      "paths_ignore": null
+     }
+    ],
+    "jobs": [
+     {
+      "id": "test",
+      "name": null,
+      "needs": [],
+      "if": null,
+      "unsupported_job": null
+     }
+    ]
+   },
+   "oracle": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "branches": null,
+      "branches_ignore": null,
+      "name": "push",
+      "paths": null,
+      "paths_ignore": null,
+      "types": null
+     }
+    ],
+    "jobs": [
+     {
+      "id": "test",
+      "if": null,
+      "name": null,
+      "needs": [],
+      "unsupported_job": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "f11-r4-deep-ind0",
+   "file": "f11-r4-deep-ind0.yml",
+   "note": "FIX-P0-10: R4 deep with: comma indent 0",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "id": "f12-r4-deep-ind10",
+   "file": "f12-r4-deep-ind10.yml",
+   "note": "FIX-P0-10: R4 deep with: comma indent 10 (threshold)",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "id": "f13-r4-deep-ind11",
+   "file": "f13-r4-deep-ind11.yml",
+   "note": "FIX-P0-10: R4 deep with: comma indent 11 (boundary)",
+   "typescript": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "name": "push",
+      "types": null,
+      "branches": null,
+      "branches_ignore": null,
+      "paths": null,
+      "paths_ignore": null
+     }
+    ],
+    "jobs": [
+     {
+      "id": "test",
+      "name": null,
+      "needs": [],
+      "if": null,
+      "unsupported_job": null
+     }
+    ]
+   },
+   "oracle": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "branches": null,
+      "branches_ignore": null,
+      "name": "push",
+      "paths": null,
+      "paths_ignore": null,
+      "types": null
+     }
+    ],
+    "jobs": [
+     {
+      "id": "test",
+      "if": null,
+      "name": null,
+      "needs": [],
+      "unsupported_job": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "f14-r4-seqitem-ind0",
+   "file": "f14-r4-seqitem-ind0.yml",
+   "note": "FIX-P0-10: R4 block-seq item comma indent 0",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "id": "f15-r4-seqitem-ind6",
+   "file": "f15-r4-seqitem-ind6.yml",
+   "note": "FIX-P0-10: R4 block-seq item comma indent 6 (threshold)",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "id": "f16-r4-seqitem-ind7",
+   "file": "f16-r4-seqitem-ind7.yml",
+   "note": "FIX-P0-10: R4 block-seq item comma indent 7 (boundary)",
+   "typescript": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "name": "push",
+      "types": null,
+      "branches": null,
+      "branches_ignore": null,
+      "paths": null,
+      "paths_ignore": null
+     }
+    ],
+    "jobs": [
+     {
+      "id": "test",
+      "name": null,
+      "needs": [],
+      "if": null,
+      "unsupported_job": null
+     }
+    ]
+   },
+   "oracle": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "branches": null,
+      "branches_ignore": null,
+      "name": "push",
+      "paths": null,
+      "paths_ignore": null,
+      "types": null
+     }
+    ],
+    "jobs": [
+     {
+      "id": "test",
+      "if": null,
+      "name": null,
+      "needs": [],
+      "unsupported_job": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "f17-r4-outer-ind0",
+   "file": "f17-r4-outer-ind0.yml",
+   "note": "FIX-P0-10: R4 outer-map comma indent 0",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "id": "f18-r4-outer-ind1",
+   "file": "f18-r4-outer-ind1.yml",
+   "note": "FIX-P0-10: R4 outer-map comma indent 1",
+   "typescript": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "name": "push",
+      "types": null,
+      "branches": null,
+      "branches_ignore": null,
+      "paths": null,
+      "paths_ignore": null
+     }
+    ],
+    "jobs": [
+     {
+      "id": "test",
+      "name": null,
+      "needs": [],
+      "if": null,
+      "unsupported_job": null
+     }
+    ]
+   },
+   "oracle": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "branches": null,
+      "branches_ignore": null,
+      "name": "push",
+      "paths": null,
+      "paths_ignore": null,
+      "types": null
+     }
+    ],
+    "jobs": [
+     {
+      "id": "test",
+      "if": null,
+      "name": null,
+      "needs": [],
+      "unsupported_job": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "f19-r4-comma-alone",
+   "file": "f19-r4-comma-alone.yml",
+   "note": "FIX-P0-10: R4 comma alone on its line",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "id": "f20-r4-trailing-ind0",
+   "file": "f20-r4-trailing-ind0.yml",
+   "note": "FIX-P0-10: R4 trailing comma indent 0",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "id": "f21-r4-trailing-ind1",
+   "file": "f21-r4-trailing-ind1.yml",
+   "note": "FIX-P0-10: R4 trailing comma indent 1",
+   "typescript": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "name": "push",
+      "types": null,
+      "branches": null,
+      "branches_ignore": null,
+      "paths": null,
+      "paths_ignore": null
+     }
+    ],
+    "jobs": [
+     {
+      "id": "test",
+      "name": null,
+      "needs": [],
+      "if": null,
+      "unsupported_job": null
+     }
+    ]
+   },
+   "oracle": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "branches": null,
+      "branches_ignore": null,
+      "name": "push",
+      "paths": null,
+      "paths_ignore": null,
+      "types": null
+     }
+    ],
+    "jobs": [
+     {
+      "id": "test",
+      "if": null,
+      "name": null,
+      "needs": [],
+      "unsupported_job": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "f22-r5-plain-ind0",
+   "file": "f22-r5-plain-ind0.yml",
+   "note": "FIX-P0-10: R5 explicit plain key colon indent 0",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "id": "f23-r5-plain-ind1",
+   "file": "f23-r5-plain-ind1.yml",
+   "note": "FIX-P0-10: R5 explicit plain key colon indent 1 (boundary)",
+   "typescript": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "name": "push",
+      "types": null,
+      "branches": null,
+      "branches_ignore": null,
+      "paths": null,
+      "paths_ignore": null
+     }
+    ],
+    "jobs": [
+     {
+      "id": "test",
+      "name": null,
+      "needs": [],
+      "if": null,
+      "unsupported_job": null
+     }
+    ]
+   },
+   "oracle": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "branches": null,
+      "branches_ignore": null,
+      "name": "push",
+      "paths": null,
+      "paths_ignore": null,
+      "types": null
+     }
+    ],
+    "jobs": [
+     {
+      "id": "test",
+      "if": null,
+      "name": null,
+      "needs": [],
+      "unsupported_job": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "f24-r5-quoted-ind0",
+   "file": "f24-r5-quoted-ind0.yml",
+   "note": "FIX-P0-10: R5 explicit double-quoted key colon indent 0",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "id": "f25-r5-quoted-ind1",
+   "file": "f25-r5-quoted-ind1.yml",
+   "note": "FIX-P0-10: R5 explicit double-quoted key colon indent 1",
+   "typescript": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "name": "push",
+      "types": null,
+      "branches": null,
+      "branches_ignore": null,
+      "paths": null,
+      "paths_ignore": null
+     }
+    ],
+    "jobs": [
+     {
+      "id": "test",
+      "name": null,
+      "needs": [],
+      "if": null,
+      "unsupported_job": null
+     }
+    ]
+   },
+   "oracle": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "branches": null,
+      "branches_ignore": null,
+      "name": "push",
+      "paths": null,
+      "paths_ignore": null,
+      "types": null
+     }
+    ],
+    "jobs": [
+     {
+      "id": "test",
+      "if": null,
+      "name": null,
+      "needs": [],
+      "unsupported_job": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "f26-r5-sq-ind0",
+   "file": "f26-r5-sq-ind0.yml",
+   "note": "FIX-P0-10: R5 explicit single-quoted key colon indent 0",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "id": "f27-r5-nested-ind0",
+   "file": "f27-r5-nested-ind0.yml",
+   "note": "FIX-P0-10: R5 nested explicit key colon indent 0",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "id": "f28-r5-nested-ind1",
+   "file": "f28-r5-nested-ind1.yml",
+   "note": "FIX-P0-10: R5 nested explicit key colon indent 1",
+   "typescript": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "name": "push",
+      "types": null,
+      "branches": null,
+      "branches_ignore": null,
+      "paths": null,
+      "paths_ignore": null
+     }
+    ],
+    "jobs": [
+     {
+      "id": "test",
+      "name": null,
+      "needs": [],
+      "if": null,
+      "unsupported_job": null
+     }
+    ]
+   },
+   "oracle": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "branches": null,
+      "branches_ignore": null,
+      "name": "push",
+      "paths": null,
+      "paths_ignore": null,
+      "types": null
+     }
+    ],
+    "jobs": [
+     {
+      "id": "test",
+      "if": null,
+      "name": null,
+      "needs": [],
+      "unsupported_job": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "f29-r5-on-ind0",
+   "file": "f29-r5-on-ind0.yml",
+   "note": "FIX-P0-10: R5 on: explicit key colon indent 0",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "id": "f30-r5-on-ind1",
+   "file": "f30-r5-on-ind1.yml",
+   "note": "FIX-P0-10: R5 on: explicit key colon indent 1",
+   "typescript": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "name": "push",
+      "types": [
+       "opened"
+      ],
+      "branches": null,
+      "branches_ignore": null,
+      "paths": null,
+      "paths_ignore": null
+     }
+    ],
+    "jobs": [
+     {
+      "id": "test",
+      "name": null,
+      "needs": [],
+      "if": null,
+      "unsupported_job": null
+     }
+    ]
+   },
+   "oracle": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "branches": null,
+      "branches_ignore": null,
+      "name": "push",
+      "paths": null,
+      "paths_ignore": null,
+      "types": [
+       "opened"
+      ]
+     }
+    ],
+    "jobs": [
+     {
+      "id": "test",
+      "if": null,
+      "name": null,
+      "needs": [],
+      "unsupported_job": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "f31-r5-jobs-ind0",
+   "file": "f31-r5-jobs-ind0.yml",
+   "note": "FIX-P0-10: R5 jobs env colon indent 0",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "id": "f32-r5-jobs-ind4",
+   "file": "f32-r5-jobs-ind4.yml",
+   "note": "FIX-P0-10: R5 jobs env colon indent 4 (threshold)",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "id": "f33-r5-jobs-ind5",
+   "file": "f33-r5-jobs-ind5.yml",
+   "note": "FIX-P0-10: R5 jobs env colon indent 5 (boundary)",
+   "typescript": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "name": "push",
+      "types": null,
+      "branches": null,
+      "branches_ignore": null,
+      "paths": null,
+      "paths_ignore": null
+     }
+    ],
+    "jobs": [
+     {
+      "id": "test",
+      "name": null,
+      "needs": [],
+      "if": null,
+      "unsupported_job": null
+     }
+    ]
+   },
+   "oracle": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "branches": null,
+      "branches_ignore": null,
+      "name": "push",
+      "paths": null,
+      "paths_ignore": null,
+      "types": null
+     }
+    ],
+    "jobs": [
+     {
+      "id": "test",
+      "if": null,
+      "name": null,
+      "needs": [],
+      "unsupported_job": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "f34-r5-qkey-next-ind0",
+   "file": "f34-r5-qkey-next-ind0.yml",
+   "note": "FIX-P0-10: R5 explicit key on next line indent 0",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "id": "f35-r5-qkey-next-ind1",
+   "file": "f35-r5-qkey-next-ind1.yml",
+   "note": "FIX-P0-10: R5 explicit key on next line indent 1",
+   "typescript": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "name": "push",
+      "types": null,
+      "branches": null,
+      "branches_ignore": null,
+      "paths": null,
+      "paths_ignore": null
+     }
+    ],
+    "jobs": [
+     {
+      "id": "test",
+      "name": null,
+      "needs": [],
+      "if": null,
+      "unsupported_job": null
+     }
+    ]
+   },
+   "oracle": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "branches": null,
+      "branches_ignore": null,
+      "name": "push",
+      "paths": null,
+      "paths_ignore": null,
+      "types": null
+     }
+    ],
+    "jobs": [
+     {
+      "id": "test",
+      "if": null,
+      "name": null,
+      "needs": [],
+      "unsupported_job": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "f36-r5-val-next-ind0",
+   "file": "f36-r5-val-next-ind0.yml",
+   "note": "FIX-P0-10: R5 explicit-key value on next line indent 0",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "id": "f37-r5-val-next-ind1",
+   "file": "f37-r5-val-next-ind1.yml",
+   "note": "FIX-P0-10: R5 explicit-key value on next line indent 1",
+   "typescript": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "name": "push",
+      "types": null,
+      "branches": null,
+      "branches_ignore": null,
+      "paths": null,
+      "paths_ignore": null
+     }
+    ],
+    "jobs": [
+     {
+      "id": "test",
+      "name": null,
+      "needs": [],
+      "if": null,
+      "unsupported_job": null
+     }
+    ]
+   },
+   "oracle": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "branches": null,
+      "branches_ignore": null,
+      "name": "push",
+      "paths": null,
+      "paths_ignore": null,
+      "types": null
+     }
+    ],
+    "jobs": [
+     {
+      "id": "test",
+      "if": null,
+      "name": null,
+      "needs": [],
+      "unsupported_job": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "f38-r5-colon-alone",
+   "file": "f38-r5-colon-alone.yml",
+   "note": "FIX-P0-10: R5 colon alone on its line",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "id": "f39-adj-keynext-ind0",
+   "file": "f39-adj-keynext-ind0.yml",
+   "note": "FIX-P0-10: key on next line indent 0",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "id": "f40-adj-keynext-ind1",
+   "file": "f40-adj-keynext-ind1.yml",
+   "note": "FIX-P0-10: key on next line indent 1",
+   "typescript": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "name": "push",
+      "types": null,
+      "branches": null,
+      "branches_ignore": null,
+      "paths": null,
+      "paths_ignore": null
+     }
+    ],
+    "jobs": [
+     {
+      "id": "test",
+      "name": null,
+      "needs": [],
+      "if": null,
+      "unsupported_job": null
+     }
+    ]
+   },
+   "oracle": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "branches": null,
+      "branches_ignore": null,
+      "name": "push",
+      "paths": null,
+      "paths_ignore": null,
+      "types": null
+     }
+    ],
+    "jobs": [
+     {
+      "id": "test",
+      "if": null,
+      "name": null,
+      "needs": [],
+      "unsupported_job": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "f41-adj-valnext-ind0",
+   "file": "f41-adj-valnext-ind0.yml",
+   "note": "FIX-P0-10: value on next line indent 0",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "id": "f42-adj-close-ind0",
+   "file": "f42-adj-close-ind0.yml",
+   "note": "FIX-P0-10: closing brace alone indent 0 (exempt)",
+   "typescript": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "name": "push",
+      "types": null,
+      "branches": null,
+      "branches_ignore": null,
+      "paths": null,
+      "paths_ignore": null
+     }
+    ],
+    "jobs": [
+     {
+      "id": "test",
+      "name": null,
+      "needs": [],
+      "if": null,
+      "unsupported_job": null
+     }
+    ]
+   },
+   "oracle": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "branches": null,
+      "branches_ignore": null,
+      "name": "push",
+      "paths": null,
+      "paths_ignore": null,
+      "types": null
+     }
+    ],
+    "jobs": [
+     {
+      "id": "test",
+      "if": null,
+      "name": null,
+      "needs": [],
+      "unsupported_job": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "f43-adj-first-ind0",
+   "file": "f43-adj-first-ind0.yml",
+   "note": "FIX-P0-10: first item on next line indent 0",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "id": "f44-adj-plaincont-ind0",
+   "file": "f44-adj-plaincont-ind0.yml",
+   "note": "FIX-P0-10: plain-scalar continuation indent 0",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "id": "f45-adj-plaincont-ind1",
+   "file": "f45-adj-plaincont-ind1.yml",
+   "note": "FIX-P0-10: plain-scalar continuation indent 1",
+   "typescript": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "name": "push",
+      "types": null,
+      "branches": null,
+      "branches_ignore": null,
+      "paths": null,
+      "paths_ignore": null
+     }
+    ],
+    "jobs": [
+     {
+      "id": "test",
+      "name": null,
+      "needs": [],
+      "if": null,
+      "unsupported_job": null
+     }
+    ]
+   },
+   "oracle": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "branches": null,
+      "branches_ignore": null,
+      "name": "push",
+      "paths": null,
+      "paths_ignore": null,
+      "types": null
+     }
+    ],
+    "jobs": [
+     {
+      "id": "test",
+      "if": null,
+      "name": null,
+      "needs": [],
+      "unsupported_job": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "f46-adj-seq-comma-ind0",
+   "file": "f46-adj-seq-comma-ind0.yml",
+   "note": "FIX-P0-10: flow-seq comma indent 0",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "id": "f47-adj-seq-comma-ind1",
+   "file": "f47-adj-seq-comma-ind1.yml",
+   "note": "FIX-P0-10: flow-seq comma indent 1",
+   "typescript": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "name": "push",
+      "types": null,
+      "branches": null,
+      "branches_ignore": null,
+      "paths": null,
+      "paths_ignore": null
+     }
+    ],
+    "jobs": [
+     {
+      "id": "test",
+      "name": null,
+      "needs": [],
+      "if": null,
+      "unsupported_job": null
+     }
+    ]
+   },
+   "oracle": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "branches": null,
+      "branches_ignore": null,
+      "name": "push",
+      "paths": null,
+      "paths_ignore": null,
+      "types": null
+     }
+    ],
+    "jobs": [
+     {
+      "id": "test",
+      "if": null,
+      "name": null,
+      "needs": [],
+      "unsupported_job": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "f48-adj-seq-first-ind0",
+   "file": "f48-adj-seq-first-ind0.yml",
+   "note": "FIX-P0-10: flow-seq first item indent 0",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  }
+ ]
+}

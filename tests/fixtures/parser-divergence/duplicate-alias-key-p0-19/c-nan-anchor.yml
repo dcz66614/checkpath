@@ -1,0 +1,8 @@
+x: &w .nan
+m: {.nan: y, *w}
+on: push
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo hi

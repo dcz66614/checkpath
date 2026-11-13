@@ -1,0 +1,440 @@
+{
+ "schema": "checkpath.parser-divergence/v1",
+ "note": "FIX-P0-05 flow-alias-key parity fixtures: an alias used as a mapping key with `:` glued to it (`on: {*a: 1}`, `{? *a: 1}`, block `*a: 1`) is a parse error in the TypeScript `yaml` package (\"Alias ending in : is ambiguous\") but was accepted by PyYAML, so the Oracle returned a different error — or even VALID/UNKNOWN. The Oracle now rejects the same shape through _reject_adjacent_alias_colon (oracle/checkpath_oracle/parser.py) with the identical yaml_parse_error, in both parse_workflow_yaml and extract_jobs. A space/tab before the colon, a `?` glued to the alias (`?*a` is a plain scalar), and aliases in non-key positions are deliberately NOT rejected — both sides already agree on them (cases f11-f15 lock that). See README.md in this directory and ADR FIX-P0-05 in handoff/P020-FIX-P0-05/TASK_REPORT.md.",
+ "cases": [
+  {
+   "file": "f01-flow-alias-event-key.yml",
+   "id": "f01-flow-alias-event-key",
+   "note": "FIX-P0-05: D2 itself — flow alias event key `on: {*a: 1}` — INVALID / yaml_parse_error on both sides.",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f02-block-alias-no-space.yml",
+   "id": "f02-block-alias-no-space",
+   "note": "FIX-P0-05: block alias key with no space before the colon (`*a: 1`) — same root as D2 (adjacency), INVALID / yaml_parse_error on both sides.",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f03-explicit-alias-no-space.yml",
+   "id": "f03-explicit-alias-no-space",
+   "note": "FIX-P0-05: explicit `?` does not save an adjacent-colon alias key (`{? *a: 1}`) — INVALID / yaml_parse_error on both sides.",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f04-flow-alias-key-map-value.yml",
+   "id": "f04-flow-alias-key-map-value",
+   "note": "FIX-P0-05: flow alias key with a mapping value (`{*a: {b: 1}}`) — INVALID / yaml_parse_error on both sides (pre-fix the Oracle returned UNKNOWN).",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f05-two-flow-alias-keys.yml",
+   "id": "f05-two-flow-alias-keys",
+   "note": "FIX-P0-05: two flow alias keys (`{*a: 1, *b: 2}`) — INVALID / yaml_parse_error on both sides.",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f06-flow-alias-colon-glued.yml",
+   "id": "f06-flow-alias-colon-glued",
+   "note": "FIX-P0-05: alias key with the colon glued to a bare value (`{*a:b}`) — INVALID / yaml_parse_error on both sides.",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f07-flow-alias-key-in-jobs.yml",
+   "id": "f07-flow-alias-key-in-jobs",
+   "note": "FIX-P0-05: flow alias key inside `jobs:` (`jobs: {test: {*a: 1}}`) — the whole document fails, INVALID / yaml_parse_error, jobs [].",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f08-flow-alias-key-in-filter.yml",
+   "id": "f08-flow-alias-key-in-filter",
+   "note": "FIX-P0-05: flow alias key inside a filter mapping (`on: {push: {*a: 1}}`) — INVALID / yaml_parse_error on both sides.",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f09-flow-alias-key-in-job-def.yml",
+   "id": "f09-flow-alias-key-in-job-def",
+   "note": "FIX-P0-05: flow alias key inside a job definition — INVALID / yaml_parse_error on both sides (pre-fix the Oracle returned VALID).",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f10-flow-alias-key-in-list-item.yml",
+   "id": "f10-flow-alias-key-in-list-item",
+   "note": "FIX-P0-05: flow alias key inside a flow mapping in an `on:` list item (`- {*a: 1}`) — INVALID / yaml_parse_error on both sides.",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  },
+  {
+   "file": "f11-flow-alias-key-space.yml",
+   "id": "f11-flow-alias-key-space",
+   "note": "FIX-P0-05 no-regression: a space before the colon (`{*a : 1}`) parses on both sides — INVALID / event_config_not_mapping, jobs [test].",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "event_config_not_mapping"
+    ],
+    "events": [],
+    "jobs": [
+     {
+      "id": "test",
+      "name": null,
+      "needs": [],
+      "if": null,
+      "unsupported_job": null
+     }
+    ]
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "event_config_not_mapping"
+    ],
+    "events": [],
+    "jobs": [
+     {
+      "id": "test",
+      "if": null,
+      "name": null,
+      "needs": [],
+      "unsupported_job": null
+     }
+    ]
+   }
+  },
+  {
+   "file": "f12-glued-qmark-alias-key.yml",
+   "id": "f12-glued-qmark-alias-key",
+   "note": "FIX-P0-05 no-regression: `?` glued to the alias (`{?*a: 1}`) is a plain scalar \"?*a\" to the TypeScript reader — INVALID / event_config_not_mapping on both sides.",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "event_config_not_mapping"
+    ],
+    "events": [],
+    "jobs": [
+     {
+      "id": "test",
+      "name": null,
+      "needs": [],
+      "if": null,
+      "unsupported_job": null
+     }
+    ]
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "event_config_not_mapping"
+    ],
+    "events": [],
+    "jobs": [
+     {
+      "id": "test",
+      "if": null,
+      "name": null,
+      "needs": [],
+      "unsupported_job": null
+     }
+    ]
+   }
+  },
+  {
+   "file": "f13-explicit-alias-space.yml",
+   "id": "f13-explicit-alias-space",
+   "note": "FIX-P0-05 no-regression: explicit `?` with a space before the colon (`{? *a : 1}`) parses on both sides — INVALID / event_config_not_mapping, jobs [test].",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "event_config_not_mapping"
+    ],
+    "events": [],
+    "jobs": [
+     {
+      "id": "test",
+      "name": null,
+      "needs": [],
+      "if": null,
+      "unsupported_job": null
+     }
+    ]
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "event_config_not_mapping"
+    ],
+    "events": [],
+    "jobs": [
+     {
+      "id": "test",
+      "if": null,
+      "name": null,
+      "needs": [],
+      "unsupported_job": null
+     }
+    ]
+   }
+  },
+  {
+   "file": "f14-alias-flow-seq-value.yml",
+   "id": "f14-alias-flow-seq-value",
+   "note": "FIX-P0-05 no-regression: alias as a flow sequence value (`{push: [*a]}`) is not a key — INVALID / event_config_not_mapping on both sides.",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "event_config_not_mapping"
+    ],
+    "events": [],
+    "jobs": [
+     {
+      "id": "test",
+      "name": null,
+      "needs": [],
+      "if": null,
+      "unsupported_job": null
+     }
+    ]
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "event_config_not_mapping"
+    ],
+    "events": [],
+    "jobs": [
+     {
+      "id": "test",
+      "if": null,
+      "name": null,
+      "needs": [],
+      "unsupported_job": null
+     }
+    ]
+   }
+  },
+  {
+   "file": "f15-alias-flow-map-value.yml",
+   "id": "f15-alias-flow-map-value",
+   "note": "FIX-P0-05 no-regression (VALID control): alias as a flow mapping value (`{push: *a}` with a mapping anchor) — VALID, push with branches [main], on both sides.",
+   "typescript": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "name": "push",
+      "types": null,
+      "branches": [
+       "main"
+      ],
+      "branches_ignore": null,
+      "paths": null,
+      "paths_ignore": null
+     }
+    ],
+    "jobs": [
+     {
+      "id": "test",
+      "name": null,
+      "needs": [],
+      "if": null,
+      "unsupported_job": null
+     }
+    ]
+   },
+   "oracle": {
+    "status": "VALID",
+    "errors": [],
+    "events": [
+     {
+      "branches": [
+       "main"
+      ],
+      "branches_ignore": null,
+      "name": "push",
+      "paths": null,
+      "paths_ignore": null,
+      "types": null
+     }
+    ],
+    "jobs": [
+     {
+      "id": "test",
+      "if": null,
+      "name": null,
+      "needs": [],
+      "unsupported_job": null
+     }
+    ]
+   }
+  },
+  {
+   "file": "f16-explicit-alias-two-spaces.yml",
+   "id": "f16-explicit-alias-two-spaces",
+   "note": "FIX-P0-05: two spaces after an explicit `?` (`{?  *a: 1}`) — still an adjacent-colon alias key, INVALID / yaml_parse_error on both sides.",
+   "typescript": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   },
+   "oracle": {
+    "status": "INVALID",
+    "errors": [
+     "yaml_parse_error"
+    ],
+    "events": [],
+    "jobs": []
+   }
+  }
+ ]
+}

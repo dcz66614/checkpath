@@ -1,0 +1,8 @@
+x: &a {branches: [main]}
+name: probe
+on: {push: *a}
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo hi

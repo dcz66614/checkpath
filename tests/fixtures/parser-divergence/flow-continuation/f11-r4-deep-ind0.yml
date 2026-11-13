@@ -1,0 +1,10 @@
+name: probe
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: x
+        with:
+          m: {a
+, b: 1}

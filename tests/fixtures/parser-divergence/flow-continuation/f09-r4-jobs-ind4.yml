@@ -1,0 +1,9 @@
+name: probe
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env: {A: 1
+    , B: 2}
+    steps:
+      - run: echo hi

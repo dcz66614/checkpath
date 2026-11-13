@@ -1,0 +1,9 @@
+x: &a foo
+y: &b foo
+m: {*a, *b}
+on: push
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo hi

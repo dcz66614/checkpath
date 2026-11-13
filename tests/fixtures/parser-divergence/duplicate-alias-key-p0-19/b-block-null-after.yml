@@ -1,0 +1,10 @@
+&w a: 1
+m:
+  a: 1
+  *w
+on: push
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo hi

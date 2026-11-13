@@ -1,0 +1,7 @@
+x: &w push
+on: {*w, push: {}}
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo hi
