@@ -1,0 +1,38 @@
+{
+  "mode": "offline",
+  "steps": [
+    {
+      "step": "build",
+      "ok": true,
+      "detail": "npm run build exit 0"
+    },
+    {
+      "step": "unshare -rn run",
+      "ok": true,
+      "detail": "isolated demo exit 2, isolated analyze exit 2, normal analyze exit 2; isolated report byte-identical to normal report: true"
+    },
+    {
+      "step": "strace network syscalls",
+      "ok": true,
+      "detail": "0 network syscalls in the whole process tree (no socket/connect/sendto/recvfrom)"
+    },
+    {
+      "step": "offline static scan",
+      "ok": true,
+      "detail": "31 files scanned, 0 remote resource references"
+    }
+  ],
+  "ok": true,
+  "isolated_report_sha256": "9dc3af313677f795b3a836d9074833c9cfd2bf190d5e2201b7a99b08a23375b7",
+  "strace_network_syscalls": 0,
+  "strace_log_lines": 23,
+  "offline_scan": {
+    "files_scanned": 31,
+    "failures": [],
+    "notes": [
+      "dist/assets/index-EBeRcM8p.js: 20x bare URL string(s), e.g. https://react.dev/errors/, http://www.w3.org/2000/svg, http://www.w3.org/1998/Math/MathML, http://www.w3.org/1999/xlink, http://www.w3.org/XML/1998/namespace — string constant, not a fetched resource",
+      "dist/assets/index-EBeRcM8p.js: contains fetch( from Vite's modulepreload polyfill; it only fetches in-document <link rel=\"modulepreload\"> entries, and dist/index.html contains none — no request is issued",
+      "dist/report/html.js: 2x bare URL string(s), e.g. http://`,, https://`, — string constant, not a fetched resource"
+    ]
+  }
+}

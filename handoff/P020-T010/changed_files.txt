@@ -1,0 +1,39 @@
+ M src/cli/commands/analyze.ts
+ M src/cli/commands/demo.ts
+ M src/cli/commands/matrix.ts
+ M src/cli/index.ts
+ M src/core/e2e.ts
+ M src/core/witness-reducer.ts
+ M src/report/html.ts
+ M src/report/json.ts
+ M src/ui/App.tsx
+ M src/ui/EventPath.tsx
+ M src/ui/RequiredCheckTable.tsx
+ M src/ui/WitnessPanel.tsx
+ M src/ui/WorkflowDag.tsx
+ M src/ui/main.tsx
+ M src/worker/analysis.worker.ts
+ M src/worker/protocol.ts
+ M vite.config.ts
+?? evidence/tests/T010_REPORT.md
+?? examples/repo-basic/.github/workflows/ci.yml
+?? examples/required-checks.yml
+?? examples/scenarios/merge-group.json
+?? examples/scenarios/pr-docs-only.json
+?? examples/scenarios/pr-src-only.json
+?? examples/suites/merge-queue.json
+?? handoff/P020-T010/TASK_REPORT.md
+?? handoff/P020-T010/changed_files.txt
+?? handoff/P020-T010/sha256.txt
+?? handoff/P020-T010/test_commands.txt
+?? handoff/P020-T010/unresolved_items.md
+?? index.html
+?? scripts/build-cli.mjs
+?? src/cli/commands/common.ts
+?? src/report/build.ts
+?? src/report/matrix.ts
+?? tests/unit/cli/cli-commands.test.ts
+?? tests/unit/cli/report-builder.test.ts
+?? tests/unit/cli/report-html.test.ts
+?? tests/unit/cli/ui-worker.test.tsx
+?? tsconfig.cli.json

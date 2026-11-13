@@ -1,0 +1,10 @@
+
+> checkpath@0.0.0-t001-skeleton lint
+> eslint src tests scripts
+
+
+/home/hatch/workspace/p020-checkpath/scripts/oracle-diff.mjs
+  448:7  error  The value assigned to 'formalReports' is not used in subsequent statements  no-useless-assignment
+
+✖ 1 problem (1 error, 0 warnings)
+

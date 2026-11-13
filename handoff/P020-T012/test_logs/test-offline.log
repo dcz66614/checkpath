@@ -1,0 +1,16 @@
+
+> checkpath@0.0.0-t001-skeleton test:offline
+> node scripts/release-verify.mjs --offline
+
+[1/4] fresh build
+  PASS build: npm run build exit 0
+[2/4] CLI inside `unshare -rn` (network namespace, no interface) vs normal run
+  PASS unshare -rn run: isolated demo exit 2, isolated analyze exit 2, normal analyze exit 2; isolated report byte-identical to normal report: true
+[3/4] strace network-syscall proof (analyze under strace -f -e trace=network)
+  PASS strace network syscalls: 0 network syscalls in the whole process tree (no socket/connect/sendto/recvfrom)
+[4/4] offline static scan (dist + isolated-run reports)
+  note: dist/assets/index-EBeRcM8p.js: 20x bare URL string(s), e.g. https://react.dev/errors/, http://www.w3.org/2000/svg, http://www.w3.org/1998/Math/MathML, http://www.w3.org/1999/xlink, http://www.w3.org/XML/1998/namespace — string constant, not a fetched resource
+  note: dist/assets/index-EBeRcM8p.js: contains fetch( from Vite's modulepreload polyfill; it only fetches in-document <link rel="modulepreload"> entries, and dist/index.html contains none — no request is issued
+  note: dist/report/html.js: 2x bare URL string(s), e.g. http://`,, https://`, — string constant, not a fetched resource
+  PASS offline static scan: 31 files scanned, 0 remote resource references
+offline PASS

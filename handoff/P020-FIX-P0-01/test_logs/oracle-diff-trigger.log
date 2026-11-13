@@ -1,0 +1,8 @@
+
+> checkpath@0.0.0-t001-skeleton oracle:diff:trigger
+> node scripts/oracle-diff-trigger.mjs
+
+suite: tests/fixtures/trigger/suite.json
+fixtures: 41, TS exit=0, Oracle exit=0
+TS vs Oracle mismatches: 0
+report: evidence/tests/T006_ORACLE_TRIGGER_REPORT.json

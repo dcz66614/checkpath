@@ -1,0 +1,19 @@
+{
+  "schema": "checkpath.t009-oracle-witness-report/v1",
+  "suite": "tests/fixtures/witness/suite.json",
+  "suite_sha256": "9d39e4d54bf288a8c48f8a7582cbc4a57a23379ca8b9cab8c4d494579def2441",
+  "seed": 20261108,
+  "fixture_count": 44,
+  "passed": 44,
+  "failed": 0,
+  "oracle_mismatch_count": 0,
+  "mismatches": [],
+  "missing_fixture_ids": [],
+  "typescript_exit_code": 0,
+  "oracle_exit_code": 0,
+  "notes": [
+    "TS and Oracle witnesses + recommendations are compared field-by-field with no ignore list (id, kind, check_context, first_blocking_condition, scenario, note; witness_id, rule_id, kind, check_context, recommendation).",
+    "The TS side is the formal witness reducer (buildWitnesses over the formal pipeline); the Oracle side is oracle/checkpath_oracle/witness.py, which only calls the Reference Oracle's existing evaluate_e2e_fixture.",
+    "PyYAML is the system 6.0.1 (lockfile pins 6.0.3; pip install blocked by PEP 668; see T001 ENVIRONMENT_REPORT.md D2)."
+  ]
+}

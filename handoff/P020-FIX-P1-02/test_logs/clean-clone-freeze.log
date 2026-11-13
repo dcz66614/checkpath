@@ -1,0 +1,12 @@
+HEAD commit: 36476cf19264b3a2f3d0b907bb61f92df47ec91e (descendant of reviewed candidate 933dd35; recorded as source_commit)
+build inputs clean vs HEAD
+freezer script tracked at HEAD; included from HEAD tree
+source tree: 1203 files (1203 tracked at HEAD)
+running npm run build ...
+dist tree: 29 files
+vendored runtime dependency: yaml 2.9.1 (76 files: package.json + LICENSE + 74 dist/*.js)
+dist.zip entries: 114 (29 built + 76 vendored yaml + 6 examples + 2 docs + QUICKSTART.md)
+source.zip: 2057e207bf35b47f6aabc94386bb8d9aa5b0e04cddf5f562145142fdadba4bd0 (1203 files)
+dist.zip:   da130ad2747a810c0f62488245fe7902298199faa6e8372f3975d58b573911e6 (114 files)
+RELEASE_MANIFEST.json: 6745287584ce0ba5611794c326d8d4eba03d3a3a458e4a05ce50e90db2df7d94
+freeze OK

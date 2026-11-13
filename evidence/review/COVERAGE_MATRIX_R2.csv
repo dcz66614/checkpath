@@ -1,0 +1,71 @@
+file,lines,status,reviewer_note
+README.md,217,READ,Changed in FIX-P1-01/FIX-P2; diff read in full this session
+THIRD_PARTY_NOTICES.md,18,READ,Changed in FIX-P2; diff read in full this session
+oracle/checkpath_oracle/__init__.py,7,READ-R1,"Unchanged since R1 (git diff dcd80d7..857e670 empty for this file); R1 coverage (INDEPENDENT_REVIEW.md §4.1, COVERAGE_MATRIX.csv) carried forward, verified byte-identical"
+oracle/checkpath_oracle/canonical.py,36,READ-R1,"Unchanged since R1 (git diff dcd80d7..857e670 empty for this file); R1 coverage (INDEPENDENT_REVIEW.md §4.1, COVERAGE_MATRIX.csv) carried forward, verified byte-identical"
+oracle/checkpath_oracle/cli.py,209,READ-R1,"Unchanged since R1 (git diff dcd80d7..857e670 empty for this file); R1 coverage (INDEPENDENT_REVIEW.md §4.1, COVERAGE_MATRIX.csv) carried forward, verified byte-identical"
+oracle/checkpath_oracle/evaluator.py,672,READ-R1,"Unchanged since R1 (git diff dcd80d7..857e670 empty for this file); R1 coverage (INDEPENDENT_REVIEW.md §4.1, COVERAGE_MATRIX.csv) carried forward, verified byte-identical"
+oracle/checkpath_oracle/glob_subset.py,128,READ-R1,"Unchanged since R1 (git diff dcd80d7..857e670 empty for this file); R1 coverage (INDEPENDENT_REVIEW.md §4.1, COVERAGE_MATRIX.csv) carried forward, verified byte-identical"
+oracle/checkpath_oracle/parser.py,444,READ-R1,"Unchanged since R1 (git diff dcd80d7..857e670 empty for this file); R1 coverage (INDEPENDENT_REVIEW.md §4.1, COVERAGE_MATRIX.csv) carried forward, verified byte-identical"
+oracle/checkpath_oracle/resolver.py,111,READ-R1,"Unchanged since R1 (git diff dcd80d7..857e670 empty for this file); R1 coverage (INDEPENDENT_REVIEW.md §4.1, COVERAGE_MATRIX.csv) carried forward, verified byte-identical"
+oracle/checkpath_oracle/witness.py,760,READ-R1,"Unchanged since R1 (git diff dcd80d7..857e670 empty for this file); R1 coverage (INDEPENDENT_REVIEW.md §4.1, COVERAGE_MATRIX.csv) carried forward, verified byte-identical"
+oracle/requirements.lock.txt,1,READ-R1,"Unchanged since R1; R1 coverage carried forward (lockfile pin, PyYAML 6.0.3 vs system 6.0.1 noted in R1)"
+scripts/build-cli.mjs,39,READ-R1,"Unchanged since R1 (git diff dcd80d7..857e670 empty for this file); R1 coverage (INDEPENDENT_REVIEW.md §4.1, COVERAGE_MATRIX.csv) carried forward, verified byte-identical"
+scripts/build-golden.py,516,READ-R1,"Unchanged since R1 (git diff dcd80d7..857e670 empty for this file); R1 coverage (INDEPENDENT_REVIEW.md §4.1, COVERAGE_MATRIX.csv) carried forward, verified byte-identical"
+scripts/env-check.mjs,110,READ-R1,"Unchanged since R1 (git diff dcd80d7..857e670 empty for this file); R1 coverage (INDEPENDENT_REVIEW.md §4.1, COVERAGE_MATRIX.csv) carried forward, verified byte-identical"
+scripts/make-fixtures.mjs,571,READ-R1,"Unchanged since R1 (git diff dcd80d7..857e670 empty for this file); R1 coverage (INDEPENDENT_REVIEW.md §4.1, COVERAGE_MATRIX.csv) carried forward, verified byte-identical"
+scripts/make-perf-input.mjs,185,READ-R1,"Unchanged since R1 (git diff dcd80d7..857e670 empty for this file); R1 coverage (INDEPENDENT_REVIEW.md §4.1, COVERAGE_MATRIX.csv) carried forward, verified byte-identical"
+scripts/oracle-checks-dump.py,85,READ-R1,"Unchanged since R1 (git diff dcd80d7..857e670 empty for this file); R1 coverage (INDEPENDENT_REVIEW.md §4.1, COVERAGE_MATRIX.csv) carried forward, verified byte-identical"
+scripts/oracle-diff-checks.mjs,186,READ-R1,"Unchanged since R1 (git diff dcd80d7..857e670 empty for this file); R1 coverage (INDEPENDENT_REVIEW.md §4.1, COVERAGE_MATRIX.csv) carried forward, verified byte-identical"
+scripts/oracle-diff-jobs.mjs,185,READ-R1,"Unchanged since R1 (git diff dcd80d7..857e670 empty for this file); R1 coverage (INDEPENDENT_REVIEW.md §4.1, COVERAGE_MATRIX.csv) carried forward, verified byte-identical"
+scripts/oracle-diff-trigger.mjs,175,READ-R1,"Unchanged since R1 (git diff dcd80d7..857e670 empty for this file); R1 coverage (INDEPENDENT_REVIEW.md §4.1, COVERAGE_MATRIX.csv) carried forward, verified byte-identical"
+scripts/oracle-diff-witness.mjs,177,READ-R1,"Unchanged since R1 (git diff dcd80d7..857e670 empty for this file); R1 coverage (INDEPENDENT_REVIEW.md §4.1, COVERAGE_MATRIX.csv) carried forward, verified byte-identical"
+scripts/oracle-diff.mjs,1049,READ,Changed in dcd80d7..857e670; read in full this session (diff + full-file read where noted)
+scripts/oracle-jobs-dump.py,83,READ-R1,"Unchanged since R1 (git diff dcd80d7..857e670 empty for this file); R1 coverage (INDEPENDENT_REVIEW.md §4.1, COVERAGE_MATRIX.csv) carried forward, verified byte-identical"
+scripts/oracle-parse-probe.py,40,READ,Changed in dcd80d7..857e670; read in full this session (diff + full-file read where noted)
+scripts/oracle-trigger-dump.py,88,READ-R1,"Unchanged since R1 (git diff dcd80d7..857e670 empty for this file); R1 coverage (INDEPENDENT_REVIEW.md §4.1, COVERAGE_MATRIX.csv) carried forward, verified byte-identical"
+scripts/oracle-witness-dump.py,69,READ-R1,"Unchanged since R1 (git diff dcd80d7..857e670 empty for this file); R1 coverage (INDEPENDENT_REVIEW.md §4.1, COVERAGE_MATRIX.csv) carried forward, verified byte-identical"
+scripts/property-oracle-dump.py,61,READ-R1,"Unchanged since R1 (git diff dcd80d7..857e670 empty for this file); R1 coverage (INDEPENDENT_REVIEW.md §4.1, COVERAGE_MATRIX.csv) carried forward, verified byte-identical"
+scripts/release-verify.mjs,770,READ,Changed in dcd80d7..857e670; read in full this session (diff + full-file read where noted)
+scripts/verify-mutations.py,66,READ-R1,"Unchanged since R1 (git diff dcd80d7..857e670 empty for this file); R1 coverage (INDEPENDENT_REVIEW.md §4.1, COVERAGE_MATRIX.csv) carried forward, verified byte-identical"
+src/cli/commands/analyze.ts,59,READ-R1,"Unchanged since R1 (git diff dcd80d7..857e670 empty for this file); R1 coverage (INDEPENDENT_REVIEW.md §4.1, COVERAGE_MATRIX.csv) carried forward, verified byte-identical"
+src/cli/commands/common.ts,209,READ-R1,"Unchanged since R1 (git diff dcd80d7..857e670 empty for this file); R1 coverage (INDEPENDENT_REVIEW.md §4.1, COVERAGE_MATRIX.csv) carried forward, verified byte-identical"
+src/cli/commands/demo.ts,120,READ-R1,"Unchanged since R1 (git diff dcd80d7..857e670 empty for this file); R1 coverage (INDEPENDENT_REVIEW.md §4.1, COVERAGE_MATRIX.csv) carried forward, verified byte-identical"
+src/cli/commands/matrix.ts,127,READ-R1,"Unchanged since R1 (git diff dcd80d7..857e670 empty for this file); R1 coverage (INDEPENDENT_REVIEW.md §4.1, COVERAGE_MATRIX.csv) carried forward, verified byte-identical"
+src/cli/index.ts,61,READ-R1,"Unchanged since R1 (git diff dcd80d7..857e670 empty for this file); R1 coverage (INDEPENDENT_REVIEW.md §4.1, COVERAGE_MATRIX.csv) carried forward, verified byte-identical"
+src/core/canonical-json.ts,36,READ-R1,"Unchanged since R1 (git diff dcd80d7..857e670 empty for this file); R1 coverage (INDEPENDENT_REVIEW.md §4.1, COVERAGE_MATRIX.csv) carried forward, verified byte-identical"
+src/core/check-resolver.ts,364,READ-R1,"Unchanged since R1 (git diff dcd80d7..857e670 empty for this file); R1 coverage (INDEPENDENT_REVIEW.md §4.1, COVERAGE_MATRIX.csv) carried forward, verified byte-identical"
+src/core/e2e.ts,478,READ,Changed in dcd80d7..857e670; read in full this session (diff + full-file read where noted)
+src/core/event-evaluator.ts,273,READ-R1,"Unchanged since R1 (git diff dcd80d7..857e670 empty for this file); R1 coverage (INDEPENDENT_REVIEW.md §4.1, COVERAGE_MATRIX.csv) carried forward, verified byte-identical"
+src/core/glob-subset.ts,140,READ-R1,"Unchanged since R1 (git diff dcd80d7..857e670 empty for this file); R1 coverage (INDEPENDENT_REVIEW.md §4.1, COVERAGE_MATRIX.csv) carried forward, verified byte-identical"
+src/core/if-subset.ts,428,READ-R1,"Unchanged since R1 (git diff dcd80d7..857e670 empty for this file); R1 coverage (INDEPENDENT_REVIEW.md §4.1, COVERAGE_MATRIX.csv) carried forward, verified byte-identical"
+src/core/job-dag.ts,518,READ,Changed in dcd80d7..857e670; read in full this session (diff + full-file read where noted)
+src/core/recommendations.ts,471,READ-R1,"Unchanged since R1 (git diff dcd80d7..857e670 empty for this file); R1 coverage (INDEPENDENT_REVIEW.md §4.1, COVERAGE_MATRIX.csv) carried forward, verified byte-identical"
+src/core/sha256.ts,20,READ-R1,"Unchanged since R1 (git diff dcd80d7..857e670 empty for this file); R1 coverage (INDEPENDENT_REVIEW.md §4.1, COVERAGE_MATRIX.csv) carried forward, verified byte-identical"
+src/core/skip-annotation.ts,175,READ-R1,"Unchanged since R1 (git diff dcd80d7..857e670 empty for this file); R1 coverage (INDEPENDENT_REVIEW.md §4.1, COVERAGE_MATRIX.csv) carried forward, verified byte-identical"
+src/core/types.ts,319,READ,Changed in dcd80d7..857e670; read in full this session (diff + full-file read where noted)
+src/core/validate.ts,1177,READ,Changed in dcd80d7..857e670; read in full this session (diff + full-file read where noted)
+src/core/witness-reducer.ts,849,READ-R1,"Unchanged since R1 (git diff dcd80d7..857e670 empty for this file); R1 coverage (INDEPENDENT_REVIEW.md §4.1, COVERAGE_MATRIX.csv) carried forward, verified byte-identical"
+src/core/workflow-ir.ts,154,READ-R1,"Unchanged since R1 (git diff dcd80d7..857e670 empty for this file); R1 coverage (INDEPENDENT_REVIEW.md §4.1, COVERAGE_MATRIX.csv) carried forward, verified byte-identical"
+src/core/workflow-parser.ts,363,READ-R1,"Unchanged since R1 (git diff dcd80d7..857e670 empty for this file); R1 coverage (INDEPENDENT_REVIEW.md §4.1, COVERAGE_MATRIX.csv) carried forward, verified byte-identical"
+src/report/build.ts,338,READ-R1,"Unchanged since R1 (git diff dcd80d7..857e670 empty for this file); R1 coverage (INDEPENDENT_REVIEW.md §4.1, COVERAGE_MATRIX.csv) carried forward, verified byte-identical"
+src/report/html.ts,355,READ-R1,"Unchanged since R1 (git diff dcd80d7..857e670 empty for this file); R1 coverage (INDEPENDENT_REVIEW.md §4.1, COVERAGE_MATRIX.csv) carried forward, verified byte-identical"
+src/report/json.ts,131,READ-R1,"Unchanged since R1 (git diff dcd80d7..857e670 empty for this file); R1 coverage (INDEPENDENT_REVIEW.md §4.1, COVERAGE_MATRIX.csv) carried forward, verified byte-identical"
+src/report/matrix.ts,150,READ-R1,"Unchanged since R1 (git diff dcd80d7..857e670 empty for this file); R1 coverage (INDEPENDENT_REVIEW.md §4.1, COVERAGE_MATRIX.csv) carried forward, verified byte-identical"
+src/report/templates/.gitkeep,0,READ-R1,"Unchanged since R1; empty placeholder file, R1 coverage carried forward"
+src/ui/App.tsx,104,READ-R1,"Unchanged since R1 (git diff dcd80d7..857e670 empty for this file); R1 coverage (INDEPENDENT_REVIEW.md §4.1, COVERAGE_MATRIX.csv) carried forward, verified byte-identical"
+src/ui/EventPath.tsx,84,READ-R1,"Unchanged since R1 (git diff dcd80d7..857e670 empty for this file); R1 coverage (INDEPENDENT_REVIEW.md §4.1, COVERAGE_MATRIX.csv) carried forward, verified byte-identical"
+src/ui/RequiredCheckTable.tsx,91,READ,Changed in dcd80d7..857e670; read in full this session (diff + full-file read where noted)
+src/ui/WitnessPanel.tsx,89,READ-R1,"Unchanged since R1 (git diff dcd80d7..857e670 empty for this file); R1 coverage (INDEPENDENT_REVIEW.md §4.1, COVERAGE_MATRIX.csv) carried forward, verified byte-identical"
+src/ui/WorkflowDag.tsx,71,READ-R1,"Unchanged since R1 (git diff dcd80d7..857e670 empty for this file); R1 coverage (INDEPENDENT_REVIEW.md §4.1, COVERAGE_MATRIX.csv) carried forward, verified byte-identical"
+src/ui/main.tsx,26,READ-R1,"Unchanged since R1 (git diff dcd80d7..857e670 empty for this file); R1 coverage (INDEPENDENT_REVIEW.md §4.1, COVERAGE_MATRIX.csv) carried forward, verified byte-identical"
+src/worker/analysis.worker.ts,57,READ-R1,"Unchanged since R1 (git diff dcd80d7..857e670 empty for this file); R1 coverage (INDEPENDENT_REVIEW.md §4.1, COVERAGE_MATRIX.csv) carried forward, verified byte-identical"
+src/worker/protocol.ts,43,READ-R1,"Unchanged since R1 (git diff dcd80d7..857e670 empty for this file); R1 coverage (INDEPENDENT_REVIEW.md §4.1, COVERAGE_MATRIX.csv) carried forward, verified byte-identical"
+tests/fixtures/parser-divergence/duplicate-key/README.md,63,READ,New in FIX-P2; read in full via diff this session
+tests/fixtures/parser-divergence/duplicate-key/dup-branches.yml,10,READ,New in FIX-P2; read in full via diff this session
+tests/fixtures/parser-divergence/duplicate-key/dup-event.yml,9,READ,New in FIX-P2; read in full via diff this session
+tests/fixtures/parser-divergence/duplicate-key/expected.json,0,READ,New in FIX-P2; read in full via diff this session
+tests/unit/cli/formal-pipeline-unsupported.test.ts,355,READ,New in FIX-P0-01; read in full (355 lines) this session
+tests/unit/cli/required-check-table.test.tsx,124,READ,New in FIX-P2; read in full via diff this session
+tests/unit/diff-boundaries/duplicate-key-yaml.test.ts,82,READ,New in FIX-P2; read in full via diff this session
+tests/unit/validation/required-checks.test.ts,158,READ,Changed in FIX-P1-01; read in full via diff this session

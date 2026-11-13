@@ -1,0 +1,21 @@
+{
+  "schema": "checkpath.t008-oracle-checks-report/v1",
+  "suite": "tests/fixtures/checks/suite.json",
+  "suite_sha256": "24931fbde70fb64ae1b74503c4d54f690a21e678c2b4731b284c6376829d2b73",
+  "job_check_suite": "tests/fixtures/s0/job-check/suite.json",
+  "job_check_suite_sha256": "a6350696adf615604750c5649b98f370463058a30e419279016fffc58d7e4a8d",
+  "seed": 20261108,
+  "fixture_count": 46,
+  "passed": 46,
+  "failed": 0,
+  "oracle_mismatch_count": 0,
+  "mismatches": [],
+  "missing_fixture_ids": [],
+  "typescript_exit_code": 0,
+  "oracle_exit_code": 0,
+  "notes": [
+    "TS and Oracle required-check rows are compared field-by-field with no ignore list (context, status, provider_job_id, provider_count, reason).",
+    "The TS side is the formal check resolver (buildWorkflowIR + trigger evaluation + evaluateJobsForTrigger per workflow + resolveRequiredChecksKeyed, projected to the Oracle-compatible shape by toBaseCheckResult; resolveRequiredChecks for the S0 job-check cases); the Oracle side is the Reference Oracle's evaluate_e2e_fixture / evaluate_case.",
+    "PyYAML is the system 6.0.1 (lockfile pins 6.0.3; pip install blocked by PEP 668; see T001 ENVIRONMENT_REPORT.md D2)."
+  ]
+}

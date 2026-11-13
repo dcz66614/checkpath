@@ -1,0 +1,19 @@
+{
+  "schema": "checkpath.t006-oracle-trigger-report/v1",
+  "suite": "tests/fixtures/trigger/suite.json",
+  "suite_sha256": "36c3853d8a803ccbfe04ce1be7b85ba1eeab5bec9b88b91c970f3d06cbf62574",
+  "seed": 20261108,
+  "fixture_count": 128,
+  "passed": 128,
+  "failed": 0,
+  "oracle_mismatch_count": 0,
+  "mismatches": [],
+  "missing_fixture_ids": [],
+  "typescript_exit_code": 0,
+  "oracle_exit_code": 0,
+  "notes": [
+    "TS and Oracle trigger IRs are compared field-by-field with no ignore list.",
+    "The TS side is the formal evaluator (buildWorkflowIR + evaluateWorkflowTrigger); the Oracle side is the Reference Oracle's build_trigger_ir.",
+    "PyYAML is the system 6.0.1 (lockfile pins 6.0.3; pip install blocked by PEP 668; see T001 ENVIRONMENT_REPORT.md D2)."
+  ]
+}

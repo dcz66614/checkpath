@@ -1,0 +1,8 @@
+
+> checkpath@0.0.0-t001-skeleton oracle:diff:jobs
+> node scripts/oracle-diff-jobs.mjs
+
+suite: tests/fixtures/jobs/suite.json + tests/fixtures/s0/job-check/suite.json
+fixtures: 48, TS exit=0, Oracle exit=0
+TS vs Oracle mismatches: 0
+report: evidence/tests/T007_ORACLE_JOBS_REPORT.json

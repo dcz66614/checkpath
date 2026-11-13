@@ -1,0 +1,28 @@
+=== t805 ===
+error: required-checks file failed validation (/tmp/fixp1/probe/t805/required-checks.yml):
+$.required_checks[1].context: duplicate_value: duplicate required check context "unit-tests",$.required_checks[4].context: duplicate_value: duplicate required check context "unit-tests"
+exit=3
+=== u07 ===
+scenario: G-79
+event: pull_request/synchronize
+workflows: 1 (1 triggered)
+jobs: 1
+required checks: 1 (UNKNOWN=1)
+witnesses: 1
+report_sha256: 59fb7bf4ddea3b5391ccc46a81e2a5c29e08469cef1271c0ab31ffc7386f5016
+json: /tmp/fixp1/probe/u07/out/report.json
+html: /tmp/fixp1/probe/u07/out/report.html
+exit code: 2
+exit=2
+=== u08 ===
+scenario: G-80
+event: pull_request/synchronize
+workflows: 1 (1 triggered)
+jobs: 1
+required checks: 1 (UNKNOWN=1)
+witnesses: 1
+report_sha256: 4b9d167b806d0d73868d3f509c808da325776229ebb2f2947bc4d2279324ec46
+json: /tmp/fixp1/probe/u08/out/report.json
+html: /tmp/fixp1/probe/u08/out/report.html
+exit code: 2
+exit=2

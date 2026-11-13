@@ -1,0 +1,4313 @@
+{
+ "checks": 362,
+ "diff": 0,
+ "match": 362,
+ "rows": [
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-a1-root-first",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-a1-root-first",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-a2-root-2nd",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-a2-root-2nd",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-a3-nested-2nd",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-a3-nested-2nd",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-a4-str-flow-nospace",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-a4-str-flow-nospace",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-a5-str-block-nospace",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-a5-str-block-nospace",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-a6-int-lone",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-a6-int-lone",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-a7-bool-lone",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-a7-bool-lone",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-a8-int-m",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-a8-int-m",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-a9-float-m",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-a9-float-m",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-a10-on-int",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-a10-on-int",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-a11-on-bool",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-a11-on-bool",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-a12-on-float",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-a12-on-float",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-a13-on-str",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-a13-on-str",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-b1-nested-first",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-b1-nested-first",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-b2-tag-glued",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-b2-tag-glued",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-b3-untagged-unglued",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-b3-untagged-unglued",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-b4-untagged-glued",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-b4-untagged-glued",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-b5-root-first-glued",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-b5-root-first-glued",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-b6-verbatim-2nd",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-b6-verbatim-2nd",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-b7-handle-2nd",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-b7-handle-2nd",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-b8-explicit-key",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-b8-explicit-key",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-b9-first-null",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-b9-first-null",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-b10-first-null-unglued",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-b10-first-null-unglued",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-b11-lone",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "missing_on_key"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "missing_on_key"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-b11-lone",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-b12-docmark-first",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-b12-docmark-first",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-b13-seq-item",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-b13-seq-item",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-b14-flow-first",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-b14-flow-first",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-b15-flow-second",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-b15-flow-second",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-b16-deep-second",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-b16-deep-second",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-b17-root-third",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-b17-root-third",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-b18-nested-third",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-b18-nested-third",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-b19-nested-first-2pair",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-b19-nested-first-2pair",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-b20-tag-noanchor-first",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-b20-tag-noanchor-first",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-c1-int-flow",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-c1-int-flow",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-c2-bool-block",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-c2-bool-block",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-c3-foo-flow",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-c3-foo-flow",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-c4-foo-block",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-c4-foo-block",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-c5-str-seq",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "workflow_root_not_mapping"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "workflow_root_not_mapping"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-c5-str-seq",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-c6-str-null",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "workflow_root_not_mapping"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "workflow_root_not_mapping"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-c6-str-null",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-c7-str-nobrace",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-c7-str-nobrace",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-c8-nested",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-c8-nested",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-c9-root-second",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-c9-root-second",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-c10-flow-map",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-c10-flow-map",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-c11-value-pos",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-c11-value-pos",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-c12-on-value",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-c12-on-value",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-c13-after-qmark",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-c13-after-qmark",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-c14-scalar-key",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-c14-scalar-key",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-c15-alias-key",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-c15-alias-key",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-c16-absorb-2",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-c16-absorb-2",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-c17-absorb-foo",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-c17-absorb-foo",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-c18-seq-item",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-c18-seq-item",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-c19-anchor-digit",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-c19-anchor-digit",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-c20-anchor-underscore",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-c20-anchor-underscore",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-c21-anchor-hyphen",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-c21-anchor-hyphen",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-c22-unglued-anchor-nospace-tag",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "missing_on_key"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "missing_on_key"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-c22-unglued-anchor-nospace-tag",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-c23-spaced-ctrl",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-c23-spaced-ctrl",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-c24-scalar-val",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "workflow_root_not_mapping"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "workflow_root_not_mapping"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-c24-scalar-val",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-c25-empty-map",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "missing_on_key"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "missing_on_key"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-c25-empty-map",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-c26-empty-seq",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "workflow_root_not_mapping"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "workflow_root_not_mapping"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-c26-empty-seq",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-d1-null-m",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-d1-null-m",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-d2-timestamp-m",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-d2-timestamp-m",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-d3-set-m",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-d3-set-m",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-d4-binary-m",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-d4-binary-m",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-d5-binary-on",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-d5-binary-on",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-d6-int-seq",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-d6-int-seq",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-d7-str-seq",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-d7-str-seq",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-d8-int-on-list",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-d8-int-on-list",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-d9-str-on-list",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-d9-str-on-list",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-d10-int-blockmap",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-d10-int-blockmap",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-d11-int-on-block",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-d11-int-on-block",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-d12-nested",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-d12-nested",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-d13-deep",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-d13-deep",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-d14-scalar-int",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-d14-scalar-int",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-d15-scalar-str",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-d15-scalar-str",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-d16-scalar-bool",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-d16-scalar-bool",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-d17-int-key",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-d17-int-key",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-d18-map-key",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-d18-map-key",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-d19-int-jobs",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-d19-int-jobs",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-d20-int-on-multi",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-d20-int-on-multi",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-d21-omap-m",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-d21-omap-m",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-d22-pairs-m",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-d22-pairs-m",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-d23-anchor-tag-map",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-d23-anchor-tag-map",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-d24-anchor-tag-seq",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "workflow_root_not_mapping"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "workflow_root_not_mapping"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-d24-anchor-tag-seq",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-e1-tag-noanchor-flow",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-e1-tag-noanchor-flow",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-e2-tag-noanchor-root",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-e2-tag-noanchor-root",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-e3-tag-noanchor-null",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-e3-tag-noanchor-null",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-e4-tag-noanchor-quoted",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-e4-tag-noanchor-quoted",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-e5-tag-noanchor-plain",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-e5-tag-noanchor-plain",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-e6-tag-noanchor-second",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-e6-tag-noanchor-second",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-e7-tag-noanchor-seq",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-e7-tag-noanchor-seq",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-e8-tag-noanchor-deep",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-e8-tag-noanchor-deep",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-e9-flow-notag",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-e9-flow-notag",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-e10-flow-seq",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-e10-flow-seq",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-e11-flow-second",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-e11-flow-second",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-e12-flow-scalar",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-e12-flow-scalar",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-e13-flow-spaced",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-e13-flow-spaced",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-e14-flow-blockseq",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-e14-flow-blockseq",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-e15-flow-valpos-map",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-e15-flow-valpos-map",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-e16-flow-valpos-scalar",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-e16-flow-valpos-scalar",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-e17-flow-valpos-notag",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-e17-flow-valpos-notag",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-e18-flow-valpos-seq",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-e18-flow-valpos-seq",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-e19-block-coll-map",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-e19-block-coll-map",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-e20-block-coll-seq",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-e20-block-coll-seq",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-e21-block-coll-blockmap",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-e21-block-coll-blockmap",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-e22-block-coll-tag",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-e22-block-coll-tag",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-e23-block-scalar",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-e23-block-scalar",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-e24-flow-seqitem-map",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-e24-flow-seqitem-map",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-e25-flow-seqitem-scalar",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-e25-flow-seqitem-scalar",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-f1-tag-nospace-flow",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-f1-tag-nospace-flow",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-f2-tag-nospace-block",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-f2-tag-nospace-block",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-f3-handle-nospace",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-f3-handle-nospace",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-f4-tag-nospace-int",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-f4-tag-nospace-int",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-f5-tag-nospace-2nd",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-f5-tag-nospace-2nd",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-f6-tag-nospace-valpos",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-f6-tag-nospace-valpos",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-f7-tag-nospace-onval",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-f7-tag-nospace-onval",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-f8-tag-nospace-full",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-f8-tag-nospace-full",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-f9-tag-nospace-empty",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-f9-tag-nospace-empty",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-f10-tag-nospace-seq",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-f10-tag-nospace-seq",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-g1-nospace-wd",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-g1-nospace-wd",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-g2-nospace-on-list",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "VALID",
+   "ts_errors": [],
+   "ts_status": "VALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-g2-nospace-on-list",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-g3-nospace-full",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-g3-nospace-full",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-g4-nospace-full-block",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-g4-nospace-full-block",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-g5-deep-third",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-g5-deep-third",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-g6-seqitem-2nd",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-g6-seqitem-2nd",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-g7-qmark-nospace",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-g7-qmark-nospace",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-g8-docmark-nospace",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-g8-docmark-nospace",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-g9-nospace-comment",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-g9-nospace-comment",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-g10-two-docs",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-g10-two-docs",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-g11-str-on-multi",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-g11-str-on-multi",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-g12-nested-tagged",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-g12-nested-tagged",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-g13-nested-tagged-same",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-g13-nested-tagged-same",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-g14-nested-nospace-flow",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-g14-nested-nospace-flow",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-g15-nospace-2pair",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "missing_on_key"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "missing_on_key"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-g15-nospace-2pair",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-g16-nospace-name",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-g16-nospace-name",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-g17-map-tag-lone",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-g17-map-tag-lone",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-g18-seq-tag-lone",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-g18-seq-tag-lone",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-g19-str-tag-map-root",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-g19-str-tag-map-root",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-g20-custom-tag-map",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-g20-custom-tag-map",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-g21-anchor-custom-tag-map",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-g21-anchor-custom-tag-map",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-g22-anchor-nospace-custom-tag",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-g22-anchor-nospace-custom-tag",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-g23-anchor-nospace-custom-tag-block",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-g23-anchor-nospace-custom-tag-block",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-g24-tab-after-colon",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-g24-tab-after-colon",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-g25-tab-indent",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-g25-tab-indent",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-g26-self-alias-nospace",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-g26-self-alias-nospace",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-g27-alias-inside-nospace",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-g27-alias-inside-nospace",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-g28-flowmap-then-pair",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-g28-flowmap-then-pair",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-g29-bool-tag-boolseq",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "workflow_root_not_mapping"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "workflow_root_not_mapping"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-g29-bool-tag-boolseq",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-g30-int-on-multi",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "VALID",
+   "ts_errors": [],
+   "ts_status": "VALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-g30-int-on-multi",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-h1-flow-exempt",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-h1-flow-exempt",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-h2-flow-exempt-2pair",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-h2-flow-exempt-2pair",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-h3-nested-single",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-h3-nested-single",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-h4-first-null-glued",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-h4-first-null-glued",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-h5-first-space",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-h5-first-space",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-h6-null-nonfirst",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-h6-null-nonfirst",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-h7-first-coll-val",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-h7-first-coll-val",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-h8-two-props",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-h8-two-props",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-h9-blockseq-single",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-h9-blockseq-single",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-i1-unwrap",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-i1-unwrap",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-i2-second-anchor",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-i2-second-anchor",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-i3-key-tag",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-i3-key-tag",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-i4-unglued",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-i4-unglued",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-i5-nested-block",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-i5-nested-block",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-i6-lone-doc",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "workflow_root_not_mapping"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "workflow_root_not_mapping"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-i6-lone-doc",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-n1-alias-key-lone",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-n1-alias-key-lone",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-n2-alias-key-push",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-n2-alias-key-push",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-n3-alias-key-int-tag",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-n3-alias-key-int-tag",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-n4-alias-key-custom-tag",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-n4-alias-key-custom-tag",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-n5-alias-key-quoted-dq",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-n5-alias-key-quoted-dq",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-n6-alias-key-quoted-sq",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "UNKNOWN",
+   "ts_errors": [],
+   "ts_status": "UNKNOWN"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-n6-alias-key-quoted-sq",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-n14-alias-seq-key",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-n14-alias-seq-key",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-n15-alias-undef-key",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-n15-alias-undef-key",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-n16-alias-key-qmark",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-n16-alias-key-qmark",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-n18-alias-key-spaced",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-n18-alias-key-spaced",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-n7-absorb-2-push",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "VALID",
+   "ts_errors": [],
+   "ts_status": "VALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-n7-absorb-2-push",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-n8-absorb-foo-push",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "VALID",
+   "ts_errors": [],
+   "ts_status": "VALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-n8-absorb-foo-push",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-n9-absorb-2-lone",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "workflow_root_not_mapping"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "workflow_root_not_mapping"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-n9-absorb-2-lone",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-n10-absorb-hyphen-push",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "VALID",
+   "ts_errors": [],
+   "ts_status": "VALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-n10-absorb-hyphen-push",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-n11-absorb-num-push",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "VALID",
+   "ts_errors": [],
+   "ts_status": "VALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-n11-absorb-num-push",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-n12-absorb-2x-push",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [],
+   "oracle_status": "VALID",
+   "ts_errors": [],
+   "ts_status": "VALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-n12-absorb-2x-push",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-n13-absorb-value-pos",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-n13-absorb-value-pos",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-n17-absorb-flow",
+   "match": true,
+   "mode": "trigger",
+   "oracle_errors": [
+    "yaml_parse_error"
+   ],
+   "oracle_status": "INVALID",
+   "ts_errors": [
+    "yaml_parse_error"
+   ],
+   "ts_status": "INVALID"
+  },
+  {
+   "diff": [],
+   "expected_diff": false,
+   "id": "r16-n17-absorb-flow",
+   "match": true,
+   "mode": "jobs",
+   "oracle_errors": null,
+   "oracle_status": null,
+   "ts_errors": null,
+   "ts_status": null
+  }
+ ]
+}

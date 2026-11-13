@@ -1,0 +1,17 @@
+
+> checkpath@0.0.0-t001-skeleton test:e2e
+> playwright test
+
+
+Running 8 tests using 2 workers
+
+  ✓  1 tests/e2e/demo-analyze.spec.ts:24:1 › demo → analyze → matrix: gate exit codes and recomputable hashes (989ms)
+  ✓  2 tests/e2e/demo-analyze.spec.ts:138:1 › matrix HTML: scenario links resolve to per-scenario reports (2.4s)
+  ✓  3 tests/e2e/demo-analyze.spec.ts:81:1 › HTML report: five sections, check-click highlights provider (2.2s)
+  ✓  4 tests/e2e/demo-analyze.spec.ts:166:1 › offline UI viewer (dist/index.html) renders its empty state (552ms)
+  ✓  6 tests/e2e/offline.spec.ts:27:1 › report.html via file:// issues zero network requests (829ms)
+  ✓  5 tests/e2e/demo-analyze.spec.ts:114:1 › HTML report: witness toggle shows reduced vs original scenario (1.8s)
+  ✓  7 tests/e2e/offline.spec.ts:41:1 › report.html over HTTP issues zero external requests (971ms)
+  ✓  8 tests/e2e/offline.spec.ts:69:1 › dist UI viewer issues zero external requests (615ms)
+
+  8 passed (12.5s)

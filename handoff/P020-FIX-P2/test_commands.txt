@@ -1,0 +1,21 @@
+npm run typecheck
+npm run lint
+npm test
+npm run test:oracle
+npm run test:property -- --seed 20261108 --count 1000
+npm run test:mutation
+npm run test:e2e
+npm run test:offline
+npm run test:performance
+npm run build
+npm run release:verify
+npm run oracle:diff:trigger
+npm run oracle:diff:jobs
+npm run oracle:diff:checks
+npm run oracle:diff:witness
+npm run s0:oracle
+npm run s0:gate
+npx vitest run tests/unit/cli/required-check-table.test.tsx
+npx vitest run tests/unit/diff-boundaries/duplicate-key-yaml.test.ts
+python3 scripts/oracle-parse-probe.py --yaml tests/fixtures/parser-divergence/duplicate-key/dup-branches.yml --fixture-id dup-branches
+python3 scripts/oracle-parse-probe.py --yaml tests/fixtures/parser-divergence/duplicate-key/dup-event.yml --fixture-id dup-event

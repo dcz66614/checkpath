@@ -1,0 +1,21 @@
+{
+  "schema": "checkpath.t007-oracle-jobs-report/v1",
+  "suite": "tests/fixtures/jobs/suite.json",
+  "suite_sha256": "2dadabef2732b6f2c130b3f5631a1c678ef06a88031b3f2a855deec605c8a142",
+  "job_check_suite": "tests/fixtures/s0/job-check/suite.json",
+  "job_check_suite_sha256": "a6350696adf615604750c5649b98f370463058a30e419279016fffc58d7e4a8d",
+  "seed": 20261108,
+  "fixture_count": 48,
+  "passed": 48,
+  "failed": 0,
+  "oracle_mismatch_count": 0,
+  "mismatches": [],
+  "missing_fixture_ids": [],
+  "typescript_exit_code": 0,
+  "oracle_exit_code": 0,
+  "notes": [
+    "TS and Oracle job rows are compared field-by-field with no ignore list (workflow, job_id, context, status, reason).",
+    "The TS side is the formal job DAG (buildWorkflowIR + trigger evaluation + evaluateJobsForTrigger per workflow; evaluateJobs for the S0 job-check cases); the Oracle side is the Reference Oracle's evaluate_e2e_fixture / evaluate_case.",
+    "PyYAML is the system 6.0.1 (lockfile pins 6.0.3; pip install blocked by PEP 668; see T001 ENVIRONMENT_REPORT.md D2)."
+  ]
+}

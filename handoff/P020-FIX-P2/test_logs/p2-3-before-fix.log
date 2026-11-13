@@ -1,0 +1,35 @@
+
+[1m[30m[46m RUN [49m[39m[22m [36mv5.1.0 [39m[90m/home/hatch/workspace/p020-checkpath[39m
+
+ [31m❯[39m tests/unit/cli/required-check-table.test.tsx [2m([22m[2m2 tests[22m[2m | [22m[31m1 failed[39m[2m)[22m[32m 54[2mms[22m[39m
+   [31m❯[39m RequiredCheckTable duplicate-context rows (T013 P2-3) [2m(2)[22m
+     [32m✓[39m renders one row per manifest entry for duplicate contexts[32m 37[2mms[22m[39m
+[31m     [31m×[31m assigns a unique React key to every row (no key conflict)[39m[32m 16[2mms[22m[39m
+
+[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 1 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m tests/unit/cli/required-check-table.test.tsx[2m > [22mRequiredCheckTable duplicate-context rows (T013 P2-3)[2m > [22massigns a unique React key to every row (no key conflict)
+[31m[1mAssertionError[22m: expected 3 to be 5 // Object.is equality[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[32m- 5[39m
+[31m+ 3[39m
+
+[36m [2m❯[22m tests/unit/cli/required-check-table.test.tsx:[2m122:32[22m[39m
+    [90m120|[39m     [34mwalk[39m(tree)[33m;[39m
+    [90m121|[39m     [34mexpect[39m(keys)[33m.[39m[34mtoHaveLength[39m([34m5[39m)[33m;[39m
+    [90m122|[39m     [34mexpect[39m([35mnew[39m [33mSet[39m(keys)[33m.[39msize)[33m.[39m[34mtoBe[39m(keys[33m.[39mlength)[33m;[39m
+    [90m   |[39m                                [31m^[39m
+    [90m123|[39m   })[33m;[39m
+    [90m124|[39m })[33m;[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯[22m[39m
+
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[31m1 failed[39m[22m[2m | [22m[1m[32m1 passed[39m[22m[90m (2)[39m
+[2m   Start at [22m 17:42:23
+[2m   Duration [22m 593ms[2m (transform 42%, import 39%, tests 16%, worker 2%)[22m
+

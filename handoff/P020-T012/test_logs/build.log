@@ -1,0 +1,13 @@
+
+> checkpath@0.0.0-t001-skeleton build
+> vite build && node scripts/build-cli.mjs
+
+vite v7.3.7 building client environment for production...
+transforming...
+✓ 32 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                  0.26 kB │ gzip:  0.20 kB
+dist/assets/index-EBeRcM8p.js  230.54 kB │ gzip: 71.69 kB
+✓ built in 1.80s
+wrote /home/hatch/workspace/p020-checkpath/dist/checkpath.mjs

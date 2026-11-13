@@ -1,0 +1,175 @@
+
+> checkpath@0.0.0-t001-skeleton test
+> vitest run
+
+
+[1m[30m[46m RUN [49m[39m[22m [36mv5.1.0 [39m[90m/home/hatch/workspace/p020-checkpath[39m
+
+ [32m✓[39m tests/unit/cli/report-html.test.ts [2m([22m[2m8 tests[22m[2m)[22m[33m 413[2mms[22m[39m
+ [32m✓[39m tests/unit/golden/golden.test.ts [2m([22m[2m82 tests[22m[2m)[22m[33m 877[2mms[22m[39m
+ [32m✓[39m tests/unit/diff-boundaries/diff-boundaries.test.ts [2m([22m[2m18 tests[22m[2m)[22m[32m 237[2mms[22m[39m
+ [32m✓[39m tests/unit/cli/report-builder.test.ts [2m([22m[2m8 tests[22m[2m)[22m[33m 413[2mms[22m[39m
+ [32m✓[39m tests/unit/s0-e2e/e2e.test.ts [2m([22m[2m25 tests[22m[2m)[22m[33m 398[2mms[22m[39m
+[90mstdout[2m | tests/unit/cli/cli-commands.test.ts[2m > [22m[2mCLI entry[2m > [22m[2mhelp and version exit 0; unknown command exits 3
+[22m[39mCheckPath — deterministic GitHub Actions required-check coverage simulator (local, offline).
+
+Usage:
+  checkpath demo [--out <dir>] [--strict-skipped]
+  checkpath analyze --repo <dir> --scenario <scenario.json> --required-checks <required-checks.yml> [--out <dir>] [--strict-skipped]
+  checkpath matrix --repo <dir> --suite <suite.json> --required-checks <required-checks.yml> [--out <dir>] [--strict-skipped]
+  checkpath --help | --version
+
+Exit codes: 0 all required checks reportable, 2 pending/ambiguous/unknown (or skipped with --strict-skipped), 3 invalid or input/usage error.
+
+[90mstdout[2m | tests/unit/cli/cli-commands.test.ts[2m > [22m[2mCLI entry[2m > [22m[2mhelp and version exit 0; unknown command exits 3
+[22m[39mcheckpath 0.1.0
+
+[90mstderr[2m | tests/unit/cli/cli-commands.test.ts[2m > [22m[2mCLI entry[2m > [22m[2mhelp and version exit 0; unknown command exits 3
+[22m[39munknown command: bogus-command
+
+CheckPath — deterministic GitHub Actions required-check coverage simulator (local, offline).
+
+Usage:
+  checkpath demo [--out <dir>] [--strict-skipped]
+  checkpath analyze --repo <dir> --scenario <scenario.json> --required-checks <required-checks.yml> [--out <dir>] [--strict-skipped]
+  checkpath matrix --repo <dir> --suite <suite.json> --required-checks <required-checks.yml> [--out <dir>] [--strict-skipped]
+  checkpath --help | --version
+
+Exit codes: 0 all required checks reportable, 2 pending/ambiguous/unknown (or skipped with --strict-skipped), 3 invalid or input/usage error.
+
+[90mstdout[2m | tests/unit/cli/cli-commands.test.ts[2m > [22m[2mCLI entry[2m > [22m[2manalyze docs-only PR exits 2 and writes JSON + HTML
+[22m[39mscenario: PR-DOCS-ONLY
+event: pull_request/synchronize
+workflows: 1 (0 triggered)
+jobs: 2
+required checks: 2 (PENDING_NOT_REPORTED=2)
+witnesses: 2
+report_sha256: 9dc3af313677f795b3a836d9074833c9cfd2bf190d5e2201b7a99b08a23375b7
+json: /tmp/checkpath-t010-Oy1l83/pr-docs-only/report.json
+html: /tmp/checkpath-t010-Oy1l83/pr-docs-only/report.html
+exit code: 2
+
+[90mstdout[2m | tests/unit/cli/cli-commands.test.ts[2m > [22m[2mCLI entry[2m > [22m[2manalyze src-only PR exits 0
+[22m[39mscenario: PR-SRC-ONLY
+event: pull_request/synchronize
+workflows: 1 (1 triggered)
+jobs: 2
+required checks: 2 (REPORTABLE_PENDING=2)
+witnesses: 0
+report_sha256: 32d20af3b7249163806d0b662b9da77497d367f94387a962b5b3fd46c9d64dcd
+json: /tmp/checkpath-t010-DpldfB/pr-src-only/report.json
+html: /tmp/checkpath-t010-DpldfB/pr-src-only/report.html
+exit code: 0
+
+[90mstdout[2m | tests/unit/cli/cli-commands.test.ts[2m > [22m[2mCLI entry[2m > [22m[2mdemo report equals analyze report on the example files
+[22m[39mscenario: PR-DOCS-ONLY
+event: pull_request/synchronize
+workflows: 1 (0 triggered)
+jobs: 2
+required checks: 2 (PENDING_NOT_REPORTED=2)
+witnesses: 2
+report_sha256: 9dc3af313677f795b3a836d9074833c9cfd2bf190d5e2201b7a99b08a23375b7
+json: /tmp/checkpath-t010-duWtwJ/demo/report.json
+html: /tmp/checkpath-t010-duWtwJ/demo/report.html
+exit code: 2
+demo gate: exit 2 is the §4.7 gate outcome for this synthetic scenario (required checks are PENDING_NOT_REPORTED), not a demo failure.
+
+[90mstdout[2m | tests/unit/cli/cli-commands.test.ts[2m > [22m[2mCLI entry[2m > [22m[2mdemo report equals analyze report on the example files
+[22m[39mscenario: PR-DOCS-ONLY
+event: pull_request/synchronize
+workflows: 1 (0 triggered)
+jobs: 2
+required checks: 2 (PENDING_NOT_REPORTED=2)
+witnesses: 2
+report_sha256: 9dc3af313677f795b3a836d9074833c9cfd2bf190d5e2201b7a99b08a23375b7
+json: /tmp/checkpath-t010-u4FngO/analyze/report.json
+html: /tmp/checkpath-t010-u4FngO/analyze/report.html
+exit code: 2
+
+[90mstdout[2m | tests/unit/cli/cli-commands.test.ts[2m > [22m[2mCLI entry[2m > [22m[2mmatrix runs all suite scenarios and exits with the worst code
+[22m[39mscenario: PR-DOCS-ONLY
+event: pull_request/synchronize
+workflows: 1 (0 triggered)
+jobs: 2
+required checks: 2 (PENDING_NOT_REPORTED=2)
+witnesses: 2
+report_sha256: 9dc3af313677f795b3a836d9074833c9cfd2bf190d5e2201b7a99b08a23375b7
+json: /tmp/checkpath-t010-dOGk2E/merge-queue/PR-DOCS-ONLY/report.json
+html: /tmp/checkpath-t010-dOGk2E/merge-queue/PR-DOCS-ONLY/report.html
+exit code: 2
+---
+scenario: PR-SRC-ONLY
+event: pull_request/synchronize
+workflows: 1 (1 triggered)
+jobs: 2
+required checks: 2 (REPORTABLE_PENDING=2)
+witnesses: 0
+report_sha256: 32d20af3b7249163806d0b662b9da77497d367f94387a962b5b3fd46c9d64dcd
+json: /tmp/checkpath-t010-dOGk2E/merge-queue/PR-SRC-ONLY/report.json
+html: /tmp/checkpath-t010-dOGk2E/merge-queue/PR-SRC-ONLY/report.html
+exit code: 0
+---
+scenario: MERGE-GROUP-01
+event: merge_group/checks_requested
+workflows: 1 (0 triggered)
+jobs: 2
+required checks: 2 (PENDING_NOT_REPORTED=2)
+witnesses: 2
+report_sha256: efc6a6d452eebafdb7cd8a57a492a7aaf54baea4bb2df6fd149c3c784e05f977
+json: /tmp/checkpath-t010-dOGk2E/merge-queue/MERGE-GROUP-01/report.json
+html: /tmp/checkpath-t010-dOGk2E/merge-queue/MERGE-GROUP-01/report.html
+exit code: 2
+---
+suite: merge-queue (3 scenarios)
+matrix json: /tmp/checkpath-t010-dOGk2E/merge-queue/matrix.json
+matrix html: /tmp/checkpath-t010-dOGk2E/merge-queue/matrix.html
+exit code: 2
+
+[90mstderr[2m | tests/unit/cli/cli-commands.test.ts[2m > [22m[2mCLI entry[2m > [22m[2minput errors exit 3 and write no report
+[22m[39merror: scenario file not found: /home/hatch/workspace/p020-checkpath/examples/scenarios/does-not-exist.json
+
+[90mstderr[2m | tests/unit/cli/cli-commands.test.ts[2m > [22m[2mCLI entry[2m > [22m[2minput errors exit 3 and write no report
+[22m[39merror: scenario file failed validation (/tmp/checkpath-t010-kfULLH/bad-scenario.json):
+$.scenario_id: missing_field: missing required field "scenario_id",$.event: missing_field: missing required field "event",$.diff: missing_field: missing required field "diff"
+
+[90mstderr[2m | tests/unit/cli/cli-commands.test.ts[2m > [22m[2mCLI entry[2m > [22m[2mmissing required flags exit 3
+[22m[39merror: missing required flag --scenario
+
+[90mstderr[2m | tests/unit/cli/cli-commands.test.ts[2m > [22m[2mCLI entry[2m > [22m[2mmissing required flags exit 3
+[22m[39merror: unknown flag --bogus
+
+ [32m✓[39m tests/unit/cli/cli-commands.test.ts [2m([22m[2m7 tests[22m[2m)[22m[33m 309[2mms[22m[39m
+ [32m✓[39m tests/unit/cli/ui-worker.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[32m 283[2mms[22m[39m
+ [32m✓[39m tests/unit/witness/witness.test.ts [2m([22m[2m6 tests[22m[2m)[22m[33m 303[2mms[22m[39m
+ [32m✓[39m tests/unit/mutations/mutations.test.ts [2m([22m[2m13 tests[22m[2m)[22m[33m 389[2mms[22m[39m
+ [32m✓[39m tests/unit/event/trigger-oracle-dump.test.ts [2m([22m[2m42 tests[22m[2m)[22m[33m 312[2mms[22m[39m
+ [32m✓[39m tests/unit/event/workflow-ir.test.ts [2m([22m[2m15 tests[22m[2m)[22m[32m 219[2mms[22m[39m
+ [32m✓[39m tests/unit/s0-parser/parser-trigger.test.ts [2m([22m[2m9 tests[22m[2m)[22m[32m 95[2mms[22m[39m
+ [32m✓[39m tests/unit/witness/witness-oracle-dump.test.ts [2m([22m[2m52 tests[22m[2m)[22m[32m 97[2mms[22m[39m
+ [32m✓[39m tests/unit/filters/filters.test.ts [2m([22m[2m17 tests[22m[2m)[22m[32m 87[2mms[22m[39m
+ [32m✓[39m tests/unit/job-dag/job-dag.test.ts [2m([22m[2m33 tests[22m[2m)[22m[32m 82[2mms[22m[39m
+ [32m✓[39m tests/unit/if-subset/if-subset.test.ts [2m([22m[2m80 tests[22m[2m)[22m[32m 24[2mms[22m[39m
+ [32m✓[39m tests/unit/witness/witness-determinism.test.ts [2m([22m[2m1 test[22m[2m)[22m[33m 8701[2mms[22m[39m
+   [32m✓[39m T009 witness determinism [2m(1)[22m
+     [33m[2m✓[22m[39m 100 repetitions over all 44 suite cases yield exactly one canonical SHA-256[33m 8698[2mms[22m[39m
+ [32m✓[39m tests/unit/validation/required-checks.test.ts [2m([22m[2m10 tests[22m[2m)[22m[32m 76[2mms[22m[39m
+ [32m✓[39m tests/unit/job-dag/jobs-oracle-dump.test.ts [2m([22m[2m50 tests[22m[2m)[22m[32m 31[2mms[22m[39m
+ [32m✓[39m tests/unit/event/event.test.ts [2m([22m[2m20 tests[22m[2m)[22m[32m 15[2mms[22m[39m
+ [32m✓[39m tests/unit/job-dag/unsupported-job.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 9[2mms[22m[39m
+ [32m✓[39m tests/unit/validation/scenario.test.ts [2m([22m[2m15 tests[22m[2m)[22m[32m 19[2mms[22m[39m
+ [32m✓[39m tests/unit/schema/schema.test.ts [2m([22m[2m26 tests[22m[2m)[22m[32m 24[2mms[22m[39m
+ [32m✓[39m tests/unit/check-resolver/check-resolver.test.ts [2m([22m[2m36 tests[22m[2m)[22m[32m 88[2mms[22m[39m
+ [32m✓[39m tests/unit/check-resolver/checks-oracle-dump.test.ts [2m([22m[2m50 tests[22m[2m)[22m[32m 14[2mms[22m[39m
+ [32m✓[39m tests/unit/validation/report.test.ts [2m([22m[2m12 tests[22m[2m)[22m[32m 20[2mms[22m[39m
+ [32m✓[39m tests/unit/s0-semantics/job-check.test.ts [2m([22m[2m13 tests[22m[2m)[22m[32m 14[2mms[22m[39m
+ [32m✓[39m tests/unit/validation/workflow-ir.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 10[2mms[22m[39m
+ [32m✓[39m tests/unit/schema/canonical-json.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 28[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m29 passed[39m[22m[90m (29)[39m
+[2m      Tests [22m [1m[32m673 passed[39m[22m[90m (673)[39m
+[2m   Start at [22m 16:28:42
+[2m   Duration [22m 12.90s[2m (tests 58%, import 28%, transform 13%, worker 1%)[22m
+
+[2m    Isolate [22m [33m29 workers spawned[39m[2m · ~460ms startup each (spawn + environment, per file)[22m
+[2m            [22m [2mat least ~3.99s faster with [22m[33misolate: false[39m[2m — reuses workers across files instead of one per file[22m
+

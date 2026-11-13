@@ -1,0 +1,11 @@
+npm run test:witness # exit 0 — 3 files, 59/59
+npm run test:witness:determinism # exit 0 — 44 cases x 100 runs, 1 canonical SHA-256
+npm run oracle:diff:witness # exit 0 — 44/44, 0 mismatches
+npm run typecheck # exit 0
+npm run lint # exit 0
+npm test # exit 0 — 22 files, 543/543
+npm run oracle:diff:trigger # exit 0 — 40/40, 0 mismatches
+npm run oracle:diff:jobs # exit 0 — 48/48, 0 mismatches
+npm run oracle:diff:checks # exit 0 — 46/46, 0 mismatches
+npm run s0:oracle # exit 0 — 24/24, 0 mismatches, false PASS 0
+npm run s0:gate # exit 0 — S0_GATE PASS, gate_report_sha256 f511a84709a6ebf64af94cb788ad3e15cef85af5862b5334fca4288b6ff38386

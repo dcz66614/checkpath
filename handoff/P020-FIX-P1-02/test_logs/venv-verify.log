@@ -1,0 +1,5 @@
+HEAD: 3e5e14556f37e78ed411369d3e2324dcad199e20 3e5e145
+system python: Python 3.12.3 PyYAML 6.0.1
+venv python: Python 3.12.3 PyYAML 6.0.3
+probes run: 83 per interpreter
+RESULT: IDENTICAL — all 83 oracle parse outputs byte-identical between PyYAML 6.0.1 (system) and 6.0.3 (venv)

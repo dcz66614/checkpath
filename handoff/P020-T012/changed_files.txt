@@ -1,0 +1,22 @@
+ M README.md
+ M playwright.config.ts
+?? evidence/screenshots/e2e-matrix.png
+?? evidence/screenshots/e2e-report-pr-docs-only.png
+?? evidence/screenshots/e2e-ui-viewer.png
+?? evidence/screenshots/e2e-witness-toggle.png
+?? evidence/tests/OFFLINE_REPORT.json
+?? evidence/tests/OFFLINE_REPORT.md
+?? evidence/tests/PERFORMANCE_REPORT.json
+?? evidence/tests/PERFORMANCE_REPORT.md
+?? evidence/tests/RELEASE_VERIFY_REPORT.json
+?? evidence/tests/T012_REPORT.md
+?? evidence/tests/e2e-output/
+?? evidence/tests/perf-input/
+?? handoff/P020-T012/
+?? scripts/make-perf-input.mjs
+?? scripts/release-verify.mjs
+?? tests/e2e/demo-analyze.spec.ts
+?? tests/e2e/global-setup.ts
+?? tests/e2e/helpers.ts
+?? tests/e2e/offline.spec.ts
+?? vitest.config.ts

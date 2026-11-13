@@ -1,0 +1,10 @@
+scenario: G-80
+event: pull_request/synchronize
+workflows: 1 (1 triggered)
+jobs: 1
+required checks: 1 (REPORTABLE_PENDING=1)
+witnesses: 0
+report_sha256: d4b4cad7339a929b625395220c2e37176cd5a6077e7d12fdbd3ca4c183983a33
+json: /tmp/fix-p0-01/probe-before/U-08-reusable-workflow-job/out/report.json
+html: /tmp/fix-p0-01/probe-before/U-08-reusable-workflow-job/out/report.html
+exit code: 0

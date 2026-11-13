@@ -1,0 +1,16 @@
+# T011 acceptance commands and exit codes (full logs: test_logs/*.log, gitignored by *.log)
+npm run test=0
+npm run test:property -- --seed 20261108 --count 1000=0
+npm run test:property=0
+npm run test:oracle=0
+npm run test:mutation=0
+npm run typecheck=0
+npm run lint=0
+npm run oracle:diff:trigger=0
+npm run oracle:diff:jobs=0
+npm run oracle:diff:checks=0
+npm run oracle:diff:witness=0
+npm run s0:oracle=0
+npm run s0:gate=0
+python3 scripts/build-golden.py --check-only=0
+python3 scripts/verify-mutations.py=0

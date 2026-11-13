@@ -1,0 +1,9 @@
+npm run test:check-resolver # exit 0 — 2 files, 86/86
+npm run oracle:diff:checks # exit 0 — 46/46, 0 mismatches
+npm run typecheck # exit 0
+npm run lint # exit 0
+npm test # exit 0 — 19 files, 484/484
+npm run oracle:diff:trigger # exit 0 — 40/40, 0 mismatches
+npm run oracle:diff:jobs # exit 0 — 48/48, 0 mismatches
+npm run s0:oracle # exit 0 — 24/24, 0 mismatches, false PASS 0
+npm run s0:gate # exit 0 — S0_GATE PASS, gate_report_sha256 f511a84709a6ebf64af94cb788ad3e15cef85af5862b5334fca4288b6ff38386

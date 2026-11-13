@@ -1,0 +1,8 @@
+
+> checkpath@0.0.0-t001-skeleton oracle:diff:witness
+> node scripts/oracle-diff-witness.mjs
+
+suite: tests/fixtures/witness/suite.json
+fixtures: 44, TS exit=0, Oracle exit=0
+TS vs Oracle mismatches: 0
+report: evidence/tests/T009_ORACLE_WITNESS_REPORT.json

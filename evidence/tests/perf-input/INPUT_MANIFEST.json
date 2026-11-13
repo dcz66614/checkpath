@@ -1,0 +1,98 @@
+{
+  "schema": "checkpath.perf-input-manifest/v1",
+  "workflows": 20,
+  "jobs": 200,
+  "changed_files": 100,
+  "required_checks": 50,
+  "files": [
+    {
+      "path": "repo/.github/workflows/wf-01.yml",
+      "sha256": "e85492513d8a6a2100a3eb23dfac3b2ebd03514937b6512bd11472cb1dec7df1"
+    },
+    {
+      "path": "repo/.github/workflows/wf-02.yml",
+      "sha256": "524ac1f792b59d531f04b85593988603e9166404535a62184ff309866cdea7db"
+    },
+    {
+      "path": "repo/.github/workflows/wf-03.yml",
+      "sha256": "ddf6fbab02842db3b5a5bf6693fc5bfa0558395de6688edb92af29f07474967f"
+    },
+    {
+      "path": "repo/.github/workflows/wf-04.yml",
+      "sha256": "d76b0e3822439648bc5387395c11355e2a75f86aad5f573de937a6a6d81082f1"
+    },
+    {
+      "path": "repo/.github/workflows/wf-05.yml",
+      "sha256": "1ef3f4dc3528a0e0e2b1635fbdd176a903d07d56e72019d62c8fe6e538e0ee8a"
+    },
+    {
+      "path": "repo/.github/workflows/wf-06.yml",
+      "sha256": "8c157fdcb2394dc23f57db828d60f07b666c3f600871a8085dfdec385a22686c"
+    },
+    {
+      "path": "repo/.github/workflows/wf-07.yml",
+      "sha256": "3d1de126c093ca4a11bb5009463e30af3f6364884f50ef319a2637e976f301ce"
+    },
+    {
+      "path": "repo/.github/workflows/wf-08.yml",
+      "sha256": "d71ac9427e986c48d99f9695df5fac9bd5071787aba3cadb4844496d58b5c0f7"
+    },
+    {
+      "path": "repo/.github/workflows/wf-09.yml",
+      "sha256": "29407f3cc5a433922c95b35c42693f74ad3fe6181edaf9451f35c522d6102c1b"
+    },
+    {
+      "path": "repo/.github/workflows/wf-10.yml",
+      "sha256": "b7851314ddfb7846cd6d916e41ae54aa075f0d796a71e381d76fe42af14f42e7"
+    },
+    {
+      "path": "repo/.github/workflows/wf-11.yml",
+      "sha256": "b79adf899b6d0ce7e75314f4ebca7cc450ea5d34b1e06bd10d7ff01d6eccf774"
+    },
+    {
+      "path": "repo/.github/workflows/wf-12.yml",
+      "sha256": "35dd65883f556c662dccfa39f8406959279b6e5d0e631b56b407c4560571a3fd"
+    },
+    {
+      "path": "repo/.github/workflows/wf-13.yml",
+      "sha256": "6287b5eb4b4fafee07e879ff5c01fb086a5b97c08a3da214fb6ca01fc4875a90"
+    },
+    {
+      "path": "repo/.github/workflows/wf-14.yml",
+      "sha256": "6e2521b4147ef17da89b3fe771969f5194334dcf4526a7baa9288a13ac7546ae"
+    },
+    {
+      "path": "repo/.github/workflows/wf-15.yml",
+      "sha256": "5bc9c4ff17e1bc1ee6daae2445e5521416024d58660216d721a6191a95daaf65"
+    },
+    {
+      "path": "repo/.github/workflows/wf-16.yml",
+      "sha256": "6f433c849855d369d8b89e056137e61e6203b5071d84f016c620a19700675ceb"
+    },
+    {
+      "path": "repo/.github/workflows/wf-17.yml",
+      "sha256": "60c87be6b2daa49d6dcc0bb65e56e32ccd72c8dab18b49423d1c8d7cc134ebc3"
+    },
+    {
+      "path": "repo/.github/workflows/wf-18.yml",
+      "sha256": "ed2a934607b2cff8f81e39357ec2a8598b5ed0c0a63b90f312e34cc982a8d38c"
+    },
+    {
+      "path": "repo/.github/workflows/wf-19.yml",
+      "sha256": "527c47f16654c7091c88e247ac735b820d08fdda2251acd377e88da598fa9f2d"
+    },
+    {
+      "path": "repo/.github/workflows/wf-20.yml",
+      "sha256": "08e3c1082a9eabd61ef8a382249867546ad54c4471b16d2668c145f645fa972d"
+    },
+    {
+      "path": "required-checks.yml",
+      "sha256": "91d70824e584bb059d594ca41693b156419e5dc4064fcdd3ee60b2eab8be645f"
+    },
+    {
+      "path": "scenario.json",
+      "sha256": "c39966ce253d720bc792831d241021c14d0bd9daa5f2e1c218f83a12b803e479"
+    }
+  ],
+  "input_sha256": "82d175d794a47a20612731f0164df5b6d0892ee523d62d8e0cde13117906ec62"
+}

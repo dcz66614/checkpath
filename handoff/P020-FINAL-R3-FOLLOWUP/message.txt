@@ -1,0 +1,1159 @@
+P020 CheckPath 终审第 3 轮跟进——证据补包（本轮消息把证据原文直接贴入，不再只给 Drive 链接）
+
+先说明：R3 回复已收到，FINAL_VERDICT: EVIDENCE_INCOMPLETE（P0 0 / P1 0 / P2 9）。回复中说谷歌云盘插件未返回任何文件内容——Drive 文件没读到。按工厂证据规则，本轮把关键证据原文直接贴在消息里，供重新终审。另先纠正 R3 回复 §I 的一处事实认定错误，见 §0。
+
+## §0 先纠正：R2→R3 冻结产物哈希对照表（亲自从仓库 git 记录与当前 release/ 实测核对）
+
+R3 回复 §I 认定 source.zip、dist.zip、SHA256SUMS.txt 相对 R2“均未变”，并据此立了 P2-6。这个认定是错的——三项全变了。R2 值为 R2 正式冻结提交 03c2f16 的 release/ 实测值；R3 值为当前 release/ 实测 sha256sum：
+
+| 产物 | R2（冻结提交 03c2f16） | R3（当前 release/） | 是否变 |
+|---|---|---|---|
+| source.zip | 3a778b933f827b5d1fbf1d617f40de465ec9bd00590a9bc1003cac2f2409743f（1,209 文件） | 9a54081ec8d322f0f7d78c6c08a2dc8cf9370396a026a7a2d6fd0e85b4dc83cd（2,728 文件） | 变 |
+| dist.zip | da130ad2747a810c0f62488245fe7902298199faa6e8372f3975d58b573911e6（114 文件） | b8e2aa77074cd2f62a518c1c7969cfdaa7cff202c6d87239080c3dfe2c6d335c（114 文件） | 变 |
+| RELEASE_MANIFEST.json | 04a07733755c36ba5a614514859ef8698eb2c1b7d92d4c4ebd75d335cfb0a2fb（freeze_status FORMAL） | f4ba7a17bf188fbea8acf61ffbf7ee01b5011b27a8cc2f0310122c3e3a332465（freeze_status FORMAL） | 变 |
+| SHA256SUMS.txt | 3 项条目：3a778b93… / da130ad2… / 04a07733… | 3 项条目：9a54081e… / b8e2aa77… / f4ba7a17…（全文见 §2） | 变（三项条目全变） |
+
+说明：(1) R2 的 manifest 是 04a07733…、freeze_status FORMAL，不是 R3 回复中写的 1f8ef5c0… / DRAFT；(2) dist.zip 变是因为 FIX-P0-19 改了 src/（新增 hasDuplicateAliasKey），与试冻值 b8e2aa77… 逐字节一致，R19 在干净克隆上三次试冻复现了同一值；(3) source.zip 文件数 1,209→2,728，差额 = FIX-P0-19 新增 evidence/fixtures/测试 + R19 复核证据 34 文件 + T014 冻结报告等，已逐项 reconciled（见 T014 冻结报告 evidence/release/T014_FREEZE_REPORT_R3.md）。因此 P2-6 的前提（“哈希未变”）不成立，请按上表重新判定。
+
+## §1 RELEASE_MANIFEST.json 全文（R3 正式冻结清单，对应 P2-1）
+
+```json
+{
+  "artifacts": {
+    "dist.zip": {
+      "contents": "fresh build CLI bundle + vendored yaml 2.9.1 runtime (node_modules/yaml: package.json, LICENSE, dist/*.js; F-T014-01) + synthetic examples + offline HTML assets + Quick Start",
+      "file_count": 114,
+      "sha256": "b8e2aa77074cd2f62a518c1c7969cfdaa7cff202c6d87239080c3dfe2c6d335c",
+      "vendored_runtime_dependency": {
+        "files": 76,
+        "package": "yaml",
+        "reason": "F-T014-01: dist/core imports 'yaml'; without it the standalone bundle cannot run (ERR_MODULE_NOT_FOUND). Packaging-only fix; no product code changed.",
+        "version": "2.9.1"
+      }
+    },
+    "source.zip": {
+      "contents": "exact HEAD tree (git ls-files at the source commit) + the freezer script itself (scripts/deterministic-zip.py, included even when untracked — FIX-P1-02)",
+      "file_count": 2728,
+      "sha256": "9a54081ec8d322f0f7d78c6c08a2dc8cf9370396a026a7a2d6fd0e85b4dc83cd"
+    }
+  },
+  "freeze_commit": "PENDING — the commit that records these freeze artifacts (created after this freeze run); see evidence/release/T014_FREEZE_REPORT.md",
+  "freeze_history": [
+    {
+      "freeze_commit": "3e5e14556f37e78ed411369d3e2324dcad199e20",
+      "source_commit": "933dd354e109436551ba40b96d5b4a2d83b839a6",
+      "status": "FORMAL"
+    },
+    {
+      "freeze_commit": "TRIAL — not a formal T014 freeze; trial-validation artifacts only, see handoff/P020-FIX-P1-02/TASK_REPORT.md",
+      "source_commit": "36476cf19264b3a2f3d0b907bb61f92df47ec91e",
+      "status": "TRIAL"
+    },
+    {
+      "freeze_commit": "PENDING — the commit that records these freeze artifacts (created after this freeze run); see evidence/release/T014_FREEZE_REPORT.md",
+      "source_commit": "538c669e11a383aa0554d05239e298cf34aadd4d",
+      "status": "FORMAL"
+    }
+  ],
+  "freeze_status": "FORMAL",
+  "freezer": {
+    "compression": "ZIP_DEFLATED level 9",
+    "dir_mode": "0755",
+    "file_mode": "0644",
+    "fixed_timestamp": "1980-01-01T00:00:00Z",
+    "script": "scripts/deterministic-zip.py",
+    "sha256": "54cd0ed4b89d182e3f8e3362f954a229d49a4ce342a6f0da4acc04908b526228"
+  },
+  "git_commit": "3a8337151461b80e4ae50e75ab2edf417f4f9165",
+  "git_commit_short": "3a83371",
+  "inputs": {
+    "golden_suite_sha256": "62a8b519b5af1f0831e336e33d47f789ef9ad057ef796f1acdb1af47c825be28",
+    "oracle_parity_report": {
+      "false_pass_count": 0,
+      "fixture_count": 167,
+      "oracle_mismatch_count": 0,
+      "path": "evidence/tests/ORACLE_PARITY_REPORT.json",
+      "sha256": "db20127f4b135e65b52f950358fffe9e177a89c9eaaed7304208180ce2b1c8ac"
+    },
+    "s0_gate": {
+      "gate_report_sha256": "f511a84709a6ebf64af94cb788ad3e15cef85af5862b5334fca4288b6ff38386",
+      "path": "evidence/S0_GATE.json",
+      "sha256": "e651ce73524ae60d705d6f94ce50914f7696ff649bf3ca6fb870e76e08c80401",
+      "status": "PASS"
+    },
+    "s0_input_fixture_sha256": "afce74c909298f4537e9e86d95c8521476e2efca9cfbd0f417229321df2279d2",
+    "t013_review_r1": {
+      "path": "evidence/review/INDEPENDENT_REVIEW.md",
+      "sha256": "8cf3033ac3d63ca00fb55ebd587f07a67c4fafc5d0e1184cf8274c3888ed1823"
+    },
+    "t013_review_r10": {
+      "p0": 1,
+      "p1": 0,
+      "p2": 10,
+      "path": "evidence/review/INDEPENDENT_REVIEW_R10.md",
+      "sha256": "e159387e60d9a4ce327609125674683b44875ed9ad1b43672ac5cf07fb302d3c",
+      "verdict": "NOT PASS"
+    },
+    "t013_review_r11": {
+      "p0": 2,
+      "p1": 0,
+      "p2": 8,
+      "path": "evidence/review/INDEPENDENT_REVIEW_R11.md",
+      "sha256": "1cc23c974281f4c3882ada5e561b8f9d075d784ad2dc743c8cb6f87e83d5c9f1",
+      "verdict": "NOT PASS"
+    },
+    "t013_review_r12": {
+      "p0": 3,
+      "p1": 0,
+      "p2": 9,
+      "path": "evidence/review/INDEPENDENT_REVIEW_R12.md",
+      "sha256": "d28e8a349dd1bedd48249519671fefe679348674944535ee8c2294d630a2f454",
+      "verdict": "NOT PASS"
+    },
+    "t013_review_r13": {
+      "p0": 1,
+      "p1": 0,
+      "p2": 9,
+      "path": "evidence/review/INDEPENDENT_REVIEW_R13.md",
+      "sha256": "4206873e3a0ef2b061c80e22647a7b1e25dd62e62642d65342f7933b002698c3",
+      "verdict": "NOT PASS"
+    },
+    "t013_review_r14": {
+      "p0": 5,
+      "p1": 0,
+      "p2": 8,
+      "path": "evidence/review/INDEPENDENT_REVIEW_R14.md",
+      "sha256": "3814dc3e5e47b0f60b1d39910838b4597288fa552c4564715781b8c1c3dbf145",
+      "verdict": "NOT PASS"
+    },
+    "t013_review_r15": {
+      "p0": 3,
+      "p1": 0,
+      "p2": 9,
+      "path": "evidence/review/INDEPENDENT_REVIEW_R15.md",
+      "sha256": "74ef2e5ded0a3b8b8a5152c505ea7908ce09d137c394c4cea3de22c0636977cc",
+      "verdict": "NOT PASS"
+    },
+    "t013_review_r16": {
+      "p0": 2,
+      "p1": 0,
+      "p2": 9,
+      "path": "evidence/review/INDEPENDENT_REVIEW_R16.md",
+      "sha256": "8a969fbec1e2827017206a0e2cb672395349727fe02ac3388f8d0559ea3c78fa",
+      "verdict": "NOT PASS"
+    },
+    "t013_review_r17": {
+      "p0": 1,
+      "p1": 0,
+      "p2": 8,
+      "path": "evidence/review/INDEPENDENT_REVIEW_R17.md",
+      "sha256": "34d42f18ca4e46728e7bc162c8e2007b005be2c5a3148ba89eb4eda41e12f22b",
+      "verdict": "NOT PASS"
+    },
+    "t013_review_r18": {
+      "p0": 1,
+      "p1": 0,
+      "p2": 8,
+      "path": "evidence/review/INDEPENDENT_REVIEW_R18.md",
+      "sha256": "bc42eede06cfdd8f8592178dcdb068adcff1742b6fd9d18a1564a8af774a5956",
+      "verdict": "NOT PASS"
+    },
+    "t013_review_r19": {
+      "p0": 0,
+      "p1": 0,
+      "p2": 8,
+      "path": "evidence/review/INDEPENDENT_REVIEW_R19.md",
+      "sha256": "c6ec2c2415baedeab47914f34f1fe7238ca910ff1cc158e7ba417cbed2750470",
+      "verdict": "PASS"
+    },
+    "t013_review_r2": {
+      "p0": 0,
+      "p1": 0,
+      "p2": 3,
+      "path": "evidence/review/INDEPENDENT_REVIEW_R2.md",
+      "sha256": "58485c294bb77f06432510a2a2446cd29ed2f5b04535f1f31b446d2214355e99",
+      "verdict": "PASS"
+    },
+    "t013_review_r3": {
+      "p0": 0,
+      "p1": 0,
+      "p2": 3,
+      "path": "evidence/review/INDEPENDENT_REVIEW_R3.md",
+      "sha256": "1e55294d04174fab2e0a68136f23fce5038ba957027156b899018c945e8116dd",
+      "verdict": "PASS"
+    },
+    "t013_review_r4": {
+      "p0": 1,
+      "p1": 0,
+      "p2": 6,
+      "path": "evidence/review/INDEPENDENT_REVIEW_R4.md",
+      "sha256": "3be14a499e6154d5cd4d2aef0d1f8ba2e6c94a4ddd30ad373eb9bfbd7756dc48",
+      "verdict": "NOT PASS"
+    },
+    "t013_review_r5": {
+      "p0": 1,
+      "p1": 0,
+      "p2": 7,
+      "path": "evidence/review/INDEPENDENT_REVIEW_R5.md",
+      "sha256": "5e8f8f0b151bdc4993aef2af884187b899e7f26a696a36878e6d09ad79c5fd4c",
+      "verdict": "NOT PASS"
+    },
+    "t013_review_r6": {
+      "p0": 1,
+      "p1": 0,
+      "p2": 8,
+      "path": "evidence/review/INDEPENDENT_REVIEW_R6.md",
+      "sha256": "f4ced18a671ed77cb25f53a583dfc224c7ad6f7ff1319d90389dfbbf61d0c97c",
+      "verdict": "NOT PASS"
+    },
+    "t013_review_r7": {
+      "p0": 1,
+      "p1": 0,
+      "p2": 8,
+      "path": "evidence/review/INDEPENDENT_REVIEW_R7.md",
+      "sha256": "484a8cc7ea0c2aec39122e8fcf6ac20b498abede5a5834819dd2678d2c4ea29e",
+      "verdict": "NOT PASS"
+    },
+    "t013_review_r8": {
+      "p0": 1,
+      "p1": 0,
+      "p2": 8,
+      "path": "evidence/review/INDEPENDENT_REVIEW_R8.md",
+      "sha256": "fabb3aa739cb12ae4f6534978c8174a24e61607af19a28a0d4d3e232b0c8a93f",
+      "verdict": "NOT PASS"
+    },
+    "t013_review_r9": {
+      "p0": 1,
+      "p1": 0,
+      "p2": 9,
+      "path": "evidence/review/INDEPENDENT_REVIEW_R9.md",
+      "sha256": "d1f91c6dd3ed481d19ed78c899961e1a5d289d3df732816d9ea393a41b1734bf",
+      "verdict": "NOT PASS"
+    }
+  },
+  "known_limitations": [
+    "P2-R2-1: FIXED in final-review R1 FIX-P1-01 (commit 11f2fc0): expanded static network check now covers the 10 src/core files + oracle/witness.py (45 files, 0 matches).",
+    "P2-R2-2: FIXED in final-review R1 FIX-P1-01 (commit 11f2fc0): dup-name fixture added (tests/fixtures/parser-divergence/duplicate-key/dup-name.yml; trigger T6-19 / golden G-83).",
+    "P2-R2-3: README performance figures are single-run snapshots (see RELEASE_NOTES.md).",
+    "Duplicate-key YAML divergence (ADR FIX-P2/01): FIXED in final-review R1 FIX-P1-01 (commit 11f2fc0): Oracle now also rejects duplicate mapping keys (INVALID / yaml_parse_error), TS and Oracle agree; the ADR FIX-P2/01 known-limitation waiver was superseded by the R1 verdict.",
+    "P2-R3-1: residual True: vs true: divergence — TS rejects a duplicate key spelled True: / true: as INVALID, Oracle reports UNKNOWN (fail-closed, no false PASS risk; no such keys occur in real workflow YAML).",
+    "P2-R3-2: FIXED by this freezer change (T014 re-freeze): the manifest now records t013_review_r3 alongside t013_review_r2; the R3 review (PASS, P0 0 / P1 0 / P2 3) is hashed in inputs.",
+    "P2-R3-3: a literal clean-directory re-run of release:freeze without .git still fails at git rev-parse HEAD — by design (the freeze identifies the frozen tree by commit); the accepted substitute is a fresh-clone re-run, verified byte-identical for the trial freeze (see T014_FREEZE_REPORT_R2.md).",
+    "P2-R6-1: FIXED by this freezer change (T014 R3 re-freeze): the manifest now records t013_review_r4..r19 alongside r1/r2/r3 (verdict + p0/p1/p2, hashed from HEAD); the R4–R19 review rounds are no longer unrecorded.",
+    "Windows PowerShell Quick Start NOT_TESTED (no Windows machine)."
+  ],
+  "license_status": "PENDING_SAM_DECISION",
+  "project_id": "P020",
+  "source_commit": "3a8337151461b80e4ae50e75ab2edf417f4f9165",
+  "source_commit_short": "3a83371",
+  "spec_version": "1.0.0",
+  "toolchain": {
+    "node": "v24.22.1",
+    "npm": "10.9.4",
+    "python": "Python 3.12.3",
+    "pyyaml": "6.0.1",
+    "react": "19.3.1",
+    "typescript": "5.9.3",
+    "vite": "7.3.7",
+    "vitest": "5.1.0",
+    "yaml": "2.9.1"
+  },
+  "version": "0.0.0-t001-skeleton"
+}
+```
+
+## §2 SHA256SUMS.txt 全文（对应 P2-4）
+
+```
+9a54081ec8d322f0f7d78c6c08a2dc8cf9370396a026a7a2d6fd0e85b4dc83cd  source.zip
+b8e2aa77074cd2f62a518c1c7969cfdaa7cff202c6d87239080c3dfe2c6d335c  dist.zip
+f4ba7a17bf188fbea8acf61ffbf7ee01b5011b27a8cc2f0310122c3e3a332465  RELEASE_MANIFEST.json
+```
+
+## §3 INDEPENDENT_REVIEW_R19.md 全文（T013 R19 独立复核报告，对应 P2-5；R19 结论 PASS，P0 0 / P1 0 / P2 8）
+
+# T013 独立复核 R19 — FIX-P0-19（R18 的 1 个 P0 家族）复核报告
+
+- **审查对象**：代码提交 `9dac3e1`（FIX-P0-19：TS 侧新增 `hasDuplicateAliasKey`，拒绝流式映射中解析为重复标量的空值别名键；相对 `e2c418f`，56 文件，+9438/−2；其中 `src/core/workflow-parser.ts` +127/−1、`src/core/e2e.ts` +7/−2，新增 35 夹具 + 1 测试文件）。报告提交 `3991856` 只含报告文本，不在代码审查范围内。
+- **复核员**：T013 独立复核员（全新会话，与 FIX-P0-19 修复方、R18 复核员均隔离；未共享上下文）。
+- **复核环境**：干净克隆 `~/workspace/p020-r19-review`（`git clone ~/workspace/p020-checkpath` 后 `git checkout 9dac3e1`），`git status` 干净（仅复核探针 `evidence/probes/r19/` 未跟踪），`git log --oneline -2` 顶为 `9dac3e1`。全部命令均在该克隆内亲自跑；未与任何修复并行同一工作树（R4 污染教训）。本轮复核中无 VM 重启。
+- **结论：PASS — P0 0 / P1 0 / P2 8。**
+
+## §0 审查对象与无污染声明（先读）
+
+- 本轮只审查 `9dac3e1` 的代码。`3991856` 的报告文本仅作背景阅读；报告中所有数字均由本轮亲自重跑得出，未采信报告数字。
+- 复核探针全部在干净克隆内运行；探针证据（`evidence/probes/r19/`：`cases.json`、`gen-cases.py`、`r19-probe.py` 复用 `r18-probe.py` 驱动、`results.json`、`parser-probe-p19-r19.txt` / `parser-probe-p19b-r19.txt`、重跑副本 `reruns/`、README）随本报告一并提交入仓库，不只留 `/tmp`（P2-R6-2 的教训）。本报告与探针在克隆内写就，交由主控归档；本轮未向主仓库 commit 或 push。
+- R18 的 1 个 P0 家族本轮**全部独立重建并逐一确认关闭**（见 §1）；本轮自写狩猎探针 60 检查**无新分歧**（见 §2）。
+- **修复方报告数字复核**：报告 §5 的验收数字本轮全部复核一致（§8）；报告 §6 的 trial manifest 哈希本轮**复现三次**（见 §6、§9）。
+
+## §1 R18 的 1 个 P0 家族 — 已关闭（已验证）
+
+R18 定级的 1 个 P0 家族（8 形，16 检查；各套探针合计 20 处 DIFF）已关闭。本轮重跑：
+
+| 探针 | 结果 |
+|---|---|
+| R18 狩猎探针（`evidence/probes/r18/`，50 检查） | **50/50 MATCH**（原 44/50；6 处 DIFF 现为 0） |
+| R18 裁决探针（22 检查） | **22/22 MATCH**（原 12/22；10 处 DIFF 现为 0） |
+| R18 裁决 2 探针（10 检查） | **10/10 MATCH**（原 8/10；2 处 DIFF 现为 0） |
+| fix-p0-18 网格（79 检查） | **79/79 MATCH**（原 77/79；唯二 DIFF `c-flow-key-null-2nd` ×2 现为 0） |
+| fix-p0-19 网格（35 形，70 检查） | **70/70 MATCH**（A 组 16/16、B 组 18/18、C 组 36/36） |
+
+8 个家族形逐一核对（R18 §2.1 现象总表）：`{a: 1, *w:2}`、`{a: 1, *w}`、`{*w, a: 1}`、`{*w, *w}`、嵌套流 `{x: {a: 1, *w:2}}`、`{*w:2, a: 1}`、`{a: 1, *w:2:3}`、`{a: 1, *w:2} # c`——本轮在狩猎、裁决、fix-p0-19 网格 A 组三处独立重建，全部双边 INVALID / `yaml_parse_error`，与 R18 报告一致。另：R17 的 9 形家族未回归（R17 探针 141/141，见 §8）。
+
+## §2 本轮狩猎探针：无新分歧（60 检查，0 DIFF）
+
+本轮自写狩猎探针 30 形 60 检查（`evidence/probes/r19/r19-probe.py` 复用 R18 驱动：esbuild 打包 TS 探针 + Oracle 双驱动，全 JSON 深比较；trigger 模式比较完整 TriggerIR，jobs 模式比较完整 job list），**60/60 MATCH**。探针聚焦修复方未曾端到端探查的形状组合：
+
+| 组 | 形状 | 结果 |
+|---|---|---|
+| 显式 `?` 键（H1–H4） | 流式 `{? *w, a: 1}`、`{? *w: 1, a: 1}`；块式 `? *w` + `a: 1`（空值 / `: 1` 有值） | **8/8 MATCH**（全部双边 INVALID；块式显式键同样被拒收，未出现解析器层漏网） |
+| 跨映射不重复（H5、H19、H24） | 别名键单独在内层映射、同一别名键在两个映射、重复候选只在外层映射 | **6/6 MATCH**（全部双边 VALID；`hasDuplicateAliasKey` 的逐映射 `seen` 列表无跨映射误伤） |
+| 序列内双流映射（H6） | `[{a: 1, *w}, {a: 1, *w}]` | **2/2 MATCH**（双边 INVALID；每映射独立判重） |
+| 三冒号（H7–H8） | `{a: 1, *w:2:3:4}`、`{*w:2:3:4, a: 1}` | **4/4 MATCH**（双边 INVALID） |
+| 规范折叠（H9–H12、H16、H22、H26–H29） | `.inf` 重复 / `.inf` vs `-.inf`、`0` vs `false` / `false` vs `0`、quoted `'a'`、`'1'` vs `1` / `1` vs `'1'`、`True` vs `1`、`~` vs `null`、`.nan` | **20/20 MATCH**（重复形双边 INVALID；非重复形双边 VALID；与修复方 §3 的解析器层结论逐一一致） |
+| `on:` / `jobs:` 内重复（H13–H15、H25） | `on: {push: {}, *w}`、`on: {*w, pull_request: {}}`、`jobs: {check: {...}, *w}`、`on: {push: {branches: [main]}, *w}` | **8/8 MATCH**（重复形双边 INVALID；H15 覆盖 `extractJobs` 链的接线，jobs 模式 job list 双边一致为空） |
+| 锚后定义（H17） | 同一流映射内 `m: {*w, &w a: 1}` | **2/2 MATCH**（双边 INVALID；机制不同但结论一致——Oracle 报未定义别名，TS 由新规则拒收） |
+| 双锚同值（H18） | `m: {*w, *v, b: 1}`（`&w a`、`&v a`） | **2/2 MATCH**（双边 INVALID；别名-别名碰撞同样被拒） |
+| 嵌套值 / 深嵌套（H20、H21、H30） | `{a: {x: 1}, *w}`、`{n: [{a: 1, *w}]}`、step 的 `env: {a: 1, *w}` | **6/6 MATCH**（全部双边 INVALID；递归遍历到位） |
+| 流内注释（H23） | `{a: 1, *w # c\n}` | **2/2 MATCH**（双边 INVALID） |
+
+结论：新规则只在“至少一方为别名键的有效键碰撞”时触发，负向控制形（H5、H10、H11、H12、H14、H19、H22、H24、H26–H28）全部双边 VALID，无误伤；`!` 守卫修正未回归（R17 探针 H1 组 18/18 MATCH 的一部分，见 §8）。
+
+## §3 解析器层复现（修复方探针重跑，与报告 §3 逐一一致）
+
+本轮重跑修复方解析器层探针（输出存 `evidence/probes/r19/parser-probe-p19-r19.txt` / `parser-probe-p19b-r19.txt`）：
+
+| 形状组 | PyYAML `_StrictBaseLoader` | `yaml` 2.9.1 | 端到端（本轮 §1、§2） |
+|---|---|---|---|
+| F1–F8（8 家族形） | 全部 LOAD-ERROR `duplicate mapping key: 'a'` | 全部 0 错误，接受（新规则未启用时） | 全部双边 INVALID |
+| B1–B2 有值别名键 | LOAD-ERROR duplicate | parse() THROW（冒号歧义） | 双边 INVALID，未变 |
+| B3 块映射别名键 | LOAD-ERROR / SCAN-ERROR | parse() THROW | 双边 INVALID，未变 |
+| B4–B6（不同标量 / 单独 / 作值） | LOAD-OK | 0 错误 | 双边 VALID，未变 |
+| B7 纯标量重复键 | LOAD-ERROR duplicate | parse() THROW `Map keys must be unique` | 双边 INVALID，未变 |
+| B8/B10 块空值别名键 | SCAN-ERROR `while scanning a simple key` | parse() THROW | 双边 INVALID，未变 |
+| B11–B18 规范折叠 | B11/B13/B15/B16 duplicate；B12/B14/B17/B18 LOAD-OK | Alias resolve 到对应 Scalar；`1` vs `'1'`、`True` vs `1`、`!!str 1` vs `1`、`NaN` 均 `!==` | 与 §2 的 H9–H12、H16、H22、H26–H29 端到端一致 |
+| B19–B22（隔对 / 流内序列 / `on:` / 同流定义锚） | LOAD-ERROR duplicate（B21 为 `'push'`） | 对应 Alias resolve | 双边 INVALID，未变 |
+
+注：`.nan` 形在 `.mjs` 打印中显示为 `Scalar(null)`——那是 `JSON.stringify(NaN) === "null"` 的假象；修复方报告已另行实测确认两边的值都是 number NaN，本轮端到端 H22 双边 VALID 与之印证。`parser-probe-p19.mjs` 初版的 B11–B18/B21/B25 设计缺陷（锚定义写在裸行首）修复方已在报告 §3 注中披露并以修正版 `p19b` 为准，本轮重跑的即修正版。
+
+## §4 边界验证：修复方 §3/§4 控制形（本轮重验）
+
+| 形状族 | 预期 | 结果 |
+|---|---|---|
+| 有值别名键 `{*w: 1, a: 1}`、`{*w: 1, *w: 2}` | MATCH（双边 INVALID，未变） | **MATCH**（fix-p0-19 网格 B 组 + R18 裁决对照） |
+| 块映射别名键（有值/空值，`*w` / `*w:2`） | MATCH（双边 INVALID，未变） | **MATCH**（网格 B 组；本轮 H3–H4 显式键补充） |
+| D2 `on: {*a: 1}`（有值流式别名键） | MATCH（已关闭，未变） | **MATCH**（fix-p0-04 矩阵 100/100、0 flagged） |
+| 纯标量重复键 `{a: 1, a: 2}` | MATCH（双边 INVALID，未变） | **MATCH**（网格 B 组；`parse()` 的 `uniqueKeys` 拥有） |
+| 别名键后接不同标量 `{b: 2, *w}`、别名单独 `{*w}`、别名作值 `b: *w` | MATCH（双边 VALID，未变） | **MATCH**（网格 B 组；本轮 H5、H19、H24 补充跨映射负向控制） |
+| 规范折叠 8 形（int/bool/null/quoted/tagged/NaN） | MATCH | **MATCH**（网格 C 组 + 本轮 H9–H12、H16、H22、H26–H29） |
+| 别名键两次隔对、流内序列、流式 `on:`、同流定义锚、深嵌套、两锚同值、流式 `jobs:`、前向引用、别名指向集合、链式别名 | MATCH | **MATCH**（网格 C 组；本轮 H6、H13、H15、H18、H21、H30 补充） |
+| 非重复的别名键、不同锚的别名键、嵌套/显式键形（本轮新增） | MATCH | **MATCH**（§2 各组） |
+
+结论：新规则的触发边界与 Oracle 的 `_duplicate_key_canonical` 折叠一致；未发现误伤或漏判。
+
+## §5 P2 清单：终审 R2 的 6 个 + R6 的 2 个 = 8 个，全部非阻断
+
+R18 的 8 个 P2 全部仍成立，无新增、无清除：
+
+| P2 | 复核（9dac3e1） |
+|---|---|
+| P2-R3-3：无 `.git` 裸解压目录下 `release:freeze` 失败 | 仍成立。冻结脚本未动（`git diff e2c418f..9dac3e1 -- scripts/ release/` 为空），仍从 HEAD 读树，属设计限制；新鲜克隆试冻已通过（§9） |
+| P2-R2-3：README 性能数为单次快照 | 仍成立。README 仍为 "P95 768.3 ms, peak RSS 98.3 MiB"，远低于阈值（P95 ≤1000 ms） |
+| Windows PowerShell Quick Start NOT_TESTED | 仍成立。README 仍有 `NOT_TESTED` 标记，未伪称通过 |
+| USER_VALUE 无真人实验数据 | 仍成立。零真人约束下无人类数据；无任何相反声称 |
+| source.zip 含上一代冻结产物及旧版 Release Notes（一代滞后） | 仍成立（指 R2 冻结包内含物；以 01_release_R2 的正式哈希为准） |
+| manifest 的 freeze_commit 字段仍为 PENDING | 仍成立（设计使然）。试冻 manifest 的 freeze_commit 字段为 TRIAL 说明；正式冻结时 T014 报告 §9 补实际 commit（同 R2 模式） |
+| **P2-R6-1：manifest 的 `inputs` 只记录 t013 复核到 R3** | 仍成立，且范围扩大到 R19。本轮试冻 manifest 的 `inputs` 键仍为 golden_suite_sha256、oracle_parity_report、s0_gate、s0_input_fixture_sha256、t013_review_r1/r2/r3——R4–R19 十六轮复核均未记录。T014 重冻时须把 R4–R19 一并记入，非阻断 |
+| **P2-R6-2：复核探针证据未入仓库** | 部分缓解，仍成立。R7/R8 自写探针只在 `/tmp` 与报告中；R9–R18 自写探针已随报告提交入仓库（`evidence/probes/r9/`–`r18/`），本轮 R19 探针亦在克隆内（`evidence/probes/r19/`，待主控归档）。非阻断 |
+
+**已解决，不再列入未决清单：** P2-R16-1（fix-p0-15 6 标志已清；本轮矩阵重跑 fix-p0-15 260/260，0 flagged）；P2-R15-1、P2-R13-1、P2-R12-1、P2-R10-1、P2-R10-2（状态不变；本轮矩阵重跑 fix-p0-12 486/486、fix-p0-13 196/196，0 flagged）。
+
+## §6 Manifest 哈希核查（修复方数字可信，不计入定级）
+
+- 本轮实测 trial 模式 manifest 哈希 **`89ff8504cc24aeb467bc2a4a714cd5b46a39311d68f90feb2c9079e3bcffecf6`**，与修复方报告 §6 的 `89ff8504…` **完全一致**（三次试冻均为同一值，见 §9）。source.zip（`3c059bc3…`，2,693 文件）与 dist.zip（`b8e2aa77…`，114 文件，已变）三次试冻均与修复方值逐字节一致。
+- **修复方本次方法标注正确**：三次均为 `npm run release:freeze -- --trial`，manifest 的 `freeze_commit` / `freeze_status` 为 TRIAL 文案；FIX-P0-18 的 formal/trial 混淆未重现。R18 §6 的复现方法（trial 值 `5479dc8f…` 与 formal 值 `288d6156…` 仅模式文案不同）本轮同样适用，T014 正式重冻时会重新生成。
+- **dist.zip 变化是预期的**：`src/` 改动（`workflow-parser.ts` +127/−1、`e2e.ts` +7/−2）后重新打包，dist 由 `f2bcd53f…` 变为 `b8e2aa77…`；`release:verify` 的 build determinism 步骤重建 dist 并比对通过（见 §8），dist 是 `src/` 的确定性产物，不是回归。
+- **2693 vs 2597 文件数的说明**：修复方在代码提交 `9dac3e1` 上冻结得 2,693 文件；与 R18 的 2,597 文件相比 +96（`src/` 改动 + 新 evidence/fixtures/测试，属预期）。不是确定性问题；本轮在 `9dac3e1` 的干净克隆上三次复现了 `89ff8504…`，manifest 链可信。
+- 此为试冻产物的报告数字核查，不是产品缺陷：manifest 是试冻产物，T014 正式重冻时会重新生成；不计入 P0/P1/P2。
+
+## §7 违规捷径检查：无
+
+- `src/` diff（`e2c418f..9dac3e1`）= 仅 `src/core/workflow-parser.ts`（+127/−1）与 `src/core/e2e.ts`（+7/−2）；`oracle/`、`scripts/`、`release/` diff = 空。
+- 删测试 0（`git diff --diff-filter=D` 为空）；测试 diff 中无新增 `skip`/`only` 弱化——唯一命中 `tests/unit/cli/formal-pipeline-unsupported.test.ts:238` 的 `it.skip` 为既有代码（`git blame` 属 FIX-P0-09 时代提交 `d9611356`，夹具门控三元式，非本轮引入）；`npm test` 1697 通过，0 跳过。
+- 无 mismatch 忽略名单（`deepDiff` 未动——`git diff` 中 0 命中）；无输入文本手术；无解析器更换（Oracle 侧 0 改动）。
+- 修复方报告数字除 §7 的“无新分歧”声称外全部复核一致（§8、§9）；本轮狩猎探针 60/60 证实该声称在本轮探针空间内成立。
+- 试冻 manifest 的 `inputs` 仍只记录到 R3，见 P2-R6-1（T014 重冻时处理）。
+- 新增测试 36 个（35 夹具 + 1 schema 断言），与报告口径一致；新增夹具 35 件（`tests/fixtures/parser-divergence/duplicate-alias-key-p0-19/` + `expected.json`，`{schema, cases: 35}`）与报告一致；新增测试文件 1 个（`duplicate-alias-key-p0-19.test.ts`）。
+
+## §8 全量重跑（干净克隆 `~/workspace/p020-r19-review`，HEAD `9dac3e1`，全部亲自跑）
+
+| 命令 | 结果 |
+|---|---|
+| `npm run typecheck` | **PASS**（`tsc --noEmit`，exit 0） |
+| `npm test` | **1697/1697 通过**（53 test files；基线 1661 + 新增 36） |
+| `npm run test:oracle` | 167/167，0 偏差，0 false PASS；unsupported 34/34 UNKNOWN |
+| `npm run oracle:diff:trigger` | 128 夹具，0 mismatch |
+| `npm run oracle:diff:jobs` | 48 夹具，0 mismatch |
+| `npm run oracle:diff:checks` | 46 夹具，0 mismatch |
+| `npm run oracle:diff:witness` | 44 夹具，0 mismatch |
+| `npm run s0:oracle` | 0 mismatch，0 false PASS，2/2 UNKNOWN |
+| `npm run s0:gate` | **PASS**；oracle 24/24；100 次运行 1 个唯一哈希；gate hash 见下 |
+| `npm run release:verify` | **PASS**；license guard：无 LICENSE 文件，LICENSE_STATUS.md 仍 PENDING_SAM_DECISION |
+| `npx eslint src/core/workflow-parser.ts src/core/e2e.ts tests/unit/diff-boundaries/duplicate-alias-key-p0-19.test.ts` | exit 0，无告警 |
+| `python3 scripts/build-golden.py --check-only` | golden cases 167，exit 0 |
+
+**S0 gate hash 说明：** 干净克隆的 `evidence/S0_GATE.json` status 为 PASS，但 `gate_report_sha256` 为 `2f3e74d5…`，与提交版 `f511a847…` 不同。逐字段 diff 证明**唯一差异是 `environment_fingerprint`**（克隆路径不同导致；其余字段全部一致，含 `input_fixture_sha256`、`conditions` 全 true、determinism 100/1、unsupported 2/2）。这不是回归（与 R4–R18 同一现象，不同克隆路径不同指纹）。重跑后已 `git checkout -- evidence/S0_GATE.json` 等生成文件恢复，克隆工作树干净（仅 `evidence/probes/r19/` 未跟踪）。
+
+**探针矩阵重跑（干净克隆，仓库内 runner，全 JSON 深相等）：**
+
+| 矩阵 | 结果 |
+|---|---|
+| fix-p0-04 | **100/100 MATCH**（前 66 行 R5 子集 **66/66 MATCH**） |
+| fix-p0-05 | **76/76 MATCH** |
+| fix-p0-06 | **134/134 MATCH** |
+| fix-p0-07 | **86/86 MATCH** |
+| fix-p0-08 | **164/164 MATCH** |
+| fix-p0-09 | **98/98 MATCH** |
+| fix-p0-10 | **314/314 MATCH** |
+| fix-p0-11 | **248/248 MATCH**（0 flagged） |
+| fix-p0-12 | **486/486 MATCH**（0 flagged） |
+| fix-p0-13 | **196/196 MATCH**（0 flagged） |
+| fix-p0-14 | **114/114 MATCH**（0 flagged） |
+| fix-p0-15 | **260/260 MATCH**（0 flagged） |
+| R10 探针 | **88/88 MATCH** |
+| R11 探针 | **74/74 MATCH** |
+| R12 探针 | **118/118 MATCH** |
+| R13 探针 | **98/98 MATCH** |
+| R14 探针 | **78/78 MATCH**（22 处 FLAG STALE 检查 = 11 行，属预期） |
+| R15 探针 | **122/122 MATCH**（24 处 FLAG STALE，属预期） |
+| R16 探针 | **362/362 MATCH** |
+| R17 探针 | **141/141 MATCH** |
+| R18 狩猎探针 | **50/50 MATCH**（原 44/50；6 处 DIFF 现为 0） |
+| R18 裁决探针 | **22/22 MATCH**（原 12/22；10 处 DIFF 现为 0） |
+| R18 裁决 2 探针 | **10/10 MATCH**（原 8/10；2 处 DIFF 现为 0） |
+| fix-p0-16 网格 | **238/238 MATCH**（119 形） |
+| fix-p0-17 网格 | **216/216 MATCH**（108 形） |
+| fix-p0-18 网格 | **79/79 MATCH**（原 77/79；唯二 DIFF 现为 0） |
+| fix-p0-19 网格 | **70/70 MATCH**（35 形；A 组 16/16、B 组 18/18、C 组 36/36） |
+| R19 独立狩猎探针（自写，`evidence/probes/r19/r19-probe.py` 复用 R18 驱动，30 例，60 检查） | **60/60 MATCH**（0 DIFF，见 §2） |
+
+探针合计 4,102 检查（十二矩阵 2,276 + R10–R17 探针 1,081 + fix-p0-16/17 网格 454 + fix-p0-18/19 网格 149 + R18 三套探针 82 + R19 狩猎探针 60；注：各矩阵与探针有形状重叠，合计为检查次数非去重形状数），DIFF 0 处。
+
+## §9 试冻三哈希（干净克隆，`--trial`，三次）
+
+三次 `npm run release:freeze -- --trial`（HEAD `9dac3e1`）哈希完全一致，确定性成立；source/dist/manifest 与修复方试冻值逐字节一致：
+
+| 产物 | 哈希 | 说明 |
+|---|---|---|
+| source.zip | `3c059bc351b5204f90ae6ea521a4941c2a0d02c2a140b612304912af8731be91`（2,693 文件） | 与修复方值一致；与 R18 的 `1b527601…`（2,597 文件）相比已变（`src/` 改动 + 新 evidence/fixtures，属预期） |
+| dist.zip | `b8e2aa77074cd2f62a518c1c7969cfdaa7cff202c6d87239080c3dfe2c6d335c`（114 文件） | 与修复方值一致；与 FIX-P0-18 时的 `f2bcd53f…` 相比已变——`src/` 改动后重新打包，属预期（见 §6） |
+| RELEASE_MANIFEST.json | `89ff8504cc24aeb467bc2a4a714cd5b46a39311d68f90feb2c9079e3bcffecf6` | **与修复方报告值一致**（三次试冻均为同一值），见 §6 |
+
+`sha256sum -c SHA256SUMS.txt` 3/3 OK（第三次试冻产物上验证；前两次的 `sha256sum -c` 在错误的工作目录运行，未计入——本轮在 `release/` 内重跑确认）。试冻后已 `git checkout release/`，克隆内 `release/` 恢复为 HEAD 正式件（source.zip `3a778b93…`、dist.zip `da130ad2…`，已核对）。
+
+## §10 亲自跑过的命令与结果（摘要）
+
+全部在干净克隆 `~/workspace/p020-r19-review`（HEAD `9dac3e1`）内运行；`npm ci` 后执行。
+
+| # | 命令 | 结果 |
+|---|---|---|
+| 1 | `git clone ~/workspace/p020-checkpath ~/workspace/p020-r19-review && git checkout 9dac3e1` | 顶为 `9dac3e1`，工作树干净（仅 r19/ 未跟踪） |
+| 2 | `npm ci --no-audit --no-fund` | 181 packages，exit 0 |
+| 3 | `npm test` | 1697/1697（53 files） |
+| 4 | `npm run test:oracle` | 167 夹具，0 mismatch，0 false PASS，34/34 UNKNOWN |
+| 5 | `npm run oracle:diff:trigger` / `jobs` / `checks` / `witness` | 128 / 48 / 46 / 44，全部 0 mismatch |
+| 6 | `npm run typecheck` | PASS，exit 0 |
+| 7 | `npx eslint src/core/workflow-parser.ts src/core/e2e.ts tests/unit/diff-boundaries/duplicate-alias-key-p0-19.test.ts` | exit 0，无告警 |
+| 8 | `npm run s0:oracle` | 0 mismatch，0 false PASS，2/2 UNKNOWN |
+| 9 | `python3 scripts/build-golden.py --check-only` | 167 cases，exit 0 |
+| 10 | `npm run s0:gate` | PASS；24/24；gate hash 差异仅 environment_fingerprint（§8） |
+| 11 | `npm run release:verify` | PASS |
+| 12 | `python3 evidence/probes/r18/r18-probe.py evidence/probes/r18/cases.json /tmp/.../r18-hunt-r19.json` | 50/50 MATCH |
+| 13 | `python3 evidence/probes/r18/r18-probe.py evidence/probes/r18/adjudication-cases.json ...` / `adjudication2-cases.json ...` | 22/22、10/10 MATCH |
+| 14 | `python3 evidence/probes/fix-p0-18/p18-probe.py` | 79/79 MATCH（后恢复原 results.json） |
+| 15 | `python3 evidence/probes/fix-p0-19/p19-probe.py` | 70/70 MATCH（后恢复原 results.json） |
+| 16 | `python3 evidence/probes/r10/r10-probe.py` … `r17/r17-probe.py` | 88/88、74/74、118/118、98/98、78/78（22 FLAG STALE）、122/122（24 FLAG STALE）、362/362、141/141（后恢复 r17 results.json 原值） |
+| 17 | `python3 evidence/probes/fix-p0-XX/run-matrix.py` × 12 | 100/76/134/86/164/98/314/248/486/196/114/260（§8） |
+| 18 | `python3 evidence/probes/fix-p0-16/map2-p0-16.py all --results ...` | 238/238 MATCH（119 形） |
+| 19 | `python3 evidence/probes/fix-p0-17/p17-probe.py` | 216/216 MATCH（108 形） |
+| 20 | `python3 evidence/probes/r19/gen-cases.py && python3 evidence/probes/r18/r18-probe.py evidence/probes/r19/cases.json evidence/probes/r19/results.json` | 60/60 MATCH（§2） |
+| 21 | `node evidence/probes/fix-p0-19/parser-probe-p19b.mjs` + `python3 evidence/probes/fix-p0-19/parser-probe-p19.py` | 见 §3（与报告 §3 逐一一致） |
+| 22 | `npm run release:freeze -- --trial` × 3（`9dac3e1`） | 三哈希三次一致；`sha256sum -c` 3/3 OK；manifest 与报告值一致（§6、§9） |
+| 23 | `git diff e2c418f..9dac3e1 --stat` / `-- src/ oracle/ scripts/ release/` / `--diff-filter=D` / tests `skip`/`only` / `deepDiff` | src 两文件；oracle/scripts/release 空；删文件 0；新增 skip/only 0（唯一命中为 FIX-P0-09 时代既有行）；deepDiff 0 |
+| 24 | `git checkout -- evidence/S0_GATE.json evidence/tests/RELEASE_VERIFY_REPORT.json evidence/probes/r17/results.json` + `git checkout release/` | 生成文件恢复；克隆工作树干净（仅 r19/ 未跟踪） |
+
+## §11 未审查事项与报告瑕疵记录
+
+- 未审查：`3991856` 报告提交本身（只含报告文本，无代码）；报告 §2 过程记录中的逐字符测绘细节未逐项复跑——本轮以端到端探针（§8）与解析器层测绘（§3）独立验证结论。
+- 未审查：Drive 归档状态与终审对话（不在 T013 复核范围内）。
+- **修复方报告无文案订正**：§7 的“本轮探针空间内无新发现的分歧”经本轮独立狩猎探针（60 检查）证实成立；§6 的 trial 模式标注正确（三次均为 `--trial`，FIX-P0-18 的 formal/trial 混淆未重现）；§5 的验收数字本轮全部复核一致。
+- **本轮新增 P0：无。** 本轮狩猎探针 60 检查 0 DIFF；全部历史矩阵与探针重跑 0 DIFF。
+- **本轮 P2 变化：无。** 8 项全部仍成立，P2-R6-1 范围扩大到 R19（见 §5）。
+- 本报告瑕疵：十二矩阵与 R10–R17 探针的批量重跑以单条后台命令顺序执行，中途 r14/r15 以 exit 1 退出（stale-flag 行的预期行为，与 R17/R18 一致）——数字均以结果文件为准，无遗漏；前两次试冻后的 `sha256sum -c` 在错误的工作目录运行（见 §9），第三次试冻时在 `release/` 内重跑并确认 3/3 OK。
+
+## §12 给 parent 的下一步
+
+1. **T013 R19 = PASS**（P0 0 / P1 0 / P2 8）：R18 的 1 个 P0 家族已关闭，本轮狩猎探针无新分歧，全量验收通过，manifest 链可信。按流程进入 **T014 R3 正式重新冻结**（manifest `inputs` 须记入 R4–R19，见 P2-R6-1；R14/R15 探针的 stale-flag 行清理属 T014 范围）→ Drive 重新归档（新 **01_release_R3** 文件夹，保留 R2）→ **终审 R3**（同一立项对话，GPT-6 + Extra High + 完整结尾句）。
+2. 终审轮次已用 2/5；R19 仍在同一立项对话内复核，不占用终审轮次。
+
+## §4 FIX-P0-19 TASK_REPORT.md 全文（修复报告，对应 P2-8）
+
+# FIX-P0-19 任务报告（T013 R18 唯一新 P0 家族）
+
+- **修复对象**：T013 R18 的 1 个新 P0 家族——流式映射中空值别名键解析为重复标量键（8 形，16 检查；各套探针合计 20 处 DIFF）。证据提交 `e2c418f`（`evidence/review/INDEPENDENT_REVIEW_R18.md` + `evidence/probes/r18/`）。
+- **代码提交**：`9dac3e1`（`src/` + 测试 + 探针证据；树干净）。
+- **结论**：R18 家族已关闭——R18 狩猎探针 50/50、裁决探针 22/22、裁决 2 探针 10/10、fix-p0-18 网格 79/79（原 77/79）、fix-p0-19 网格 70/70；全部验收电池通过；试冻两次 manifest 一致（trial 模式，见 §6）。**本轮探针空间内无新发现的分歧（见 §7）。**
+
+## §0 任务
+
+R18 = NOT PASS（P0 1 / P1 0 / P2 8）。R17 的 1 个新 P0 家族已独立验证关闭（R17 探针 141/141）。唯一新 P0 家族（R18 §2）：流式映射中，空值别名键（`*w` / `*w:2` 后无显式值）解析出的标量与同一映射中另一键重复——Oracle 拒收（`yaml_parse_error`），TS 接受。该家族预先存在（R18 在 `50788a7` 上重跑三套探针，DIFF 集逐字相同），但按 §7.3/§8.2/§10 与 R13 §2.4(c) 先例，预先存在不降级，仍为 P0。修复在 TS 侧（R18 §2.5）；Oracle 侧的拒收符合规范，绝不放宽。
+
+## §1 根因
+
+- **分歧在重复键检查的别名解析时机**。Oracle 的 `_StrictBaseLoader.construct_mapping`（FIX-P0-02）在 compose 阶段把别名解析为所锚定的标量：`m: {a: 1, *w}` 组合后出现两个 `ScalarNode('a')` 键，拒收 `duplicate mapping key: 'a'`（解析器层实测，见 §3）。
+- TS 的 `yaml` 2.9.1 包 `uniqueKeys` 检查**不对别名键做解析**：`node_modules/yaml/dist/compose/util-map-includes.js` 的相等判定是 `a === b || (isScalar(a) && isScalar(b) && a.value === b.value)`——Alias 节点永不 `===` 于 Scalar，且 `isScalar(alias)` 为假，所以别名键对它不可见：`m: {a: 1, *w}` 解析 0 错误，静默接受（后出现的空值甚至覆盖前值，解析得 `{"a": null}`）。
+- **空值与有值的不对称是判别式**：有值别名键（`m: {*w: 1, a: 1}`）双边 INVALID——TS 侧 `yaml` 包在 `*w: 1` 处直接报解析错误（`Missing , or : between flow map items`，别名后冒号歧义），Oracle 侧同样拒收（compose 后重复键），双方以不同理由同拒。空值别名键则只在 Oracle 侧触发重复键检查，TS 侧畅通。块映射中的别名键双边 INVALID（`parse()` 本身拒收，见 §3），故残留**仅限流式**。
+- 与 R17 家族不同机制（R17 是位置规则漏了 `AliasToken`；本家族是重复键检查的别名解析时机），不同修复位置（R17 在 Oracle 解析器；本家族在 TS 侧）。
+
+## §2 修复
+
+本次改动在 TS 侧（`src/core/workflow-parser.ts` + `src/core/e2e.ts`），Oracle 侧 0 改动。
+
+**新检查 `hasDuplicateAliasKey(yamlText)`**（接在 `hasMultilineFlowKey` 之后，按既有形状检查模式）：对文档中每一个映射（流式与块式统一遍历——块式别名键已被 `parse()` 拒收，规则在那里是 no-op），取每对键的**有效键**：标量键即自身；别名键为 `Alias.resolve(doc)` 解析出的 Scalar（解析失败/解析为集合/未定义时忽略，见下）；两有效键按 `yaml` 包自身的相等判定（同一节点，或两 Scalar 且 `value === value`）碰撞、且碰撞双方至少一方的键是别名时，整文档判 `yaml_parse_error`。`NaN !== NaN` 自然成立（与 Oracle 的 `("nan", object())` 新鲜身份一致）。
+
+- **只补别名缺口，不做第二重复键检查**：纯标量键之间的重复仍是 `parse()` 的 `uniqueKeys` 的职责；本规则的契约就是填补别名缺口。
+- **相等判定与 Oracle 的 `_duplicate_key_canonical` 折叠一致**（均已逐一探针验证，见 §3）： plain `1` vs `01`、`True` vs `true`、`~` vs `null`、quoted `'a'` vs plain `a` 碰撞；`1` vs `'1'`、`True` vs `1`、`!!str 1` vs `1` 不碰撞；`.nan` vs `.nan` 永不碰撞。
+- **接线两处**：`parseWorkflowYaml` 的拒收链（trigger 模式）与 `extractJobs` 的拒收链（jobs 模式，返回 `[]`）——后者是独立的链，漏接会导致 jobs 模式 DIFF，本轮已同步（见 §5：网格两模式 70/70）。
+
+## §3 控制形验证（R18 §2.5 + 规范折叠，逐一亲自运行，全部为控制形）
+
+解析器层探针（`evidence/probes/fix-p0-19/parser-probe-p19.py` / `.mjs` / `parser-probe-p19b.mjs`，输出 `.txt` / 报告内）：
+
+| 形状 | PyYAML `_StrictBaseLoader` | `yaml` 2.9.1 | 修复后端到端 |
+|---|---|---|---|
+| 8 个家族形（F1–F8） | 全部 LOAD-ERROR `duplicate mapping key: 'a'` | 全部 0 错误，接受 | 全部双边 INVALID |
+| 有值别名键 `{*w: 1, a: 1}`、`{*w: 1, *w: 2}` | LOAD-ERROR duplicate | parse() THROW（冒号歧义） | 双边 INVALID，未变 |
+| 块映射别名键（有值/空值，`*w` / `*w:2`） | SCAN-ERROR / duplicate | parse() THROW（implicit map keys…） | 双边 INVALID，未变 |
+| `{b: 2, *w}`（别名键解析为不同标量） | LOAD-OK | 0 错误 | 双边 VALID，未变 |
+| `{*w}`（别名单独作键） | LOAD-OK | 0 错误 | 双边 VALID，未变 |
+| `b: *w`（别名作值） | LOAD-OK | 0 错误 | 双边 VALID，未变 |
+| `{a: 1, a: 2}`（纯标量重复键） | LOAD-ERROR duplicate | parse() THROW `Map keys must be unique` | 双边 INVALID，未变 |
+| int 锚 `&w 1` + `{1: y, *w}` | LOAD-ERROR duplicate `'1'` | Scalar(1) vs Alias→Scalar(1) | 双边 INVALID |
+| int 锚 + `{'1': y, *w}` | LOAD-OK（num vs str） | Scalar("1") vs Alias→Scalar(1)，`!==` | 双边 VALID，未变 |
+| bool 锚 `&w True` + `{true: y, *w}` | LOAD-ERROR duplicate `'True'` | Scalar(true) vs Alias→Scalar(true) | 双边 INVALID |
+| bool 锚 + `{1: y, *w}` | LOAD-OK | Scalar(1) vs Alias→Scalar(true) | 双边 VALID，未变 |
+| null 锚 `&w ~` + `{null: y, *w}` | LOAD-ERROR duplicate `'~'` | Scalar(null) vs Alias→Scalar(null) | 双边 INVALID |
+| quoted 锚 `&w 'a'` + `{a: y, *w}` | LOAD-ERROR duplicate `'a'` | Scalar("a") vs Alias→Scalar("a") | 双边 INVALID |
+| tagged 锚 `&w !!str 1` + `{1: y, *w}` | LOAD-OK（str vs num） | Scalar(1) vs Alias→Scalar("1")，`!==` | 双边 VALID，未变 |
+| NaN 锚 `&w .nan` + `{.nan: y, *w}` | LOAD-OK | 两边皆 number NaN，`NaN === NaN` 为 false | 双边 VALID，未变 |
+| 前向引用 `m: {*w, a: 1}`（锚在后定义） | LOAD-ERROR `found undefined alias` | parse() THROW `Unresolved alias` | 双边 INVALID，未变（规则不触发：resolve 得 undefined） |
+| 别名指向集合 `x: &a {b: c}` + `m: {a: 1, *a}` | LOAD-ERROR（unhashable key） | resolve 得 Map；N5 规则拥有 | 双边 INVALID，未变（规则不触发） |
+| 链式别名 `&b *a` + `m: {foo: 1, *b}` | LOAD-ERROR | parse() THROW（alias node must not specify properties） | 双边 INVALID，未变（resolve 得 Alias，非 Scalar） |
+
+注：`.nan` 形在 `.mjs` 探针打印中显示为 `Scalar(null)`——那是 `JSON.stringify(NaN) === "null"` 的假象；已另行实测确认两边的值都是 number NaN（`typeof number`，`Number.isNaN` 为 true），故 `===` 比较为 false，与 Oracle 的 LOAD-OK 一致。另：`parser-probe-p19.mjs` 初版的 B11–B18/B21/B25 形状有设计缺陷（锚定义写在裸行首，被解析器读作多行键）——已用 `parser-probe-p19b.mjs` 的修正形重测，本报告上表用修正版结论；初版缺陷记录在此，不作为依据。
+
+## §4 映射完整性
+
+R18 §2 的 8 形全部在网格 A 组内逐一映射（标量键在前/在后、别名键两次、嵌套流、吸入/三冒号别名、行尾注释）；R18 §2.5 的边界全部在 B 组内（有值别名键、块映射别名键、纯标量重复键、别名单独作键、别名键后接不同标量键、别名作值、块映射残留形）；C 组新探查：规范折叠 8 形（int/bool/null/quoted/tagged/NaN）、别名键两次隔对、流内序列、流式 `on:` 映射（`{*w, push: {}}`）、同一流映射内定义锚、深嵌套、两锚同值、流式 `jobs:` 映射（`{check: {...}, *w}`）、前向引用、别名指向集合、链式别名。网格共 35 形 70 检查，**70/70 MATCH**。
+
+## §5 验收（全部在代码提交 `9dac3e1` 上亲自重跑）
+
+| 命令 | 结果 |
+|---|---|
+| `npm run typecheck` | **PASS**（`tsc --noEmit`，exit 0） |
+| `npm test` | **1697/1697 通过**（53 test files；基线 1661 + 新增 36：35 夹具 + 1 schema 断言） |
+| `npm run test:oracle` | 167/167，0 偏差，0 false PASS；unsupported 34/34 UNKNOWN |
+| `npm run oracle:diff:trigger` | 128 夹具，0 mismatch |
+| `npm run oracle:diff:jobs` | 48 夹具，0 mismatch |
+| `npm run oracle:diff:checks` | 46 夹具，0 mismatch |
+| `npm run oracle:diff:witness` | 44 夹具，0 mismatch |
+| `npm run s0:oracle` | 0 mismatch，0 false PASS，2/2 UNKNOWN |
+| `python3 scripts/build-golden.py --check-only` | golden cases 167，exit 0 |
+| `npm run s0:gate` | **PASS**；oracle 24/24；100 次运行 1 个唯一哈希；gate hash `f511a847…` **不变** |
+| `npm run release:verify` | **PASS**；license guard：无 LICENSE 文件，LICENSE_STATUS.md 仍 PENDING_SAM_DECISION |
+| `npx eslint src/core/workflow-parser.ts src/core/e2e.ts tests/unit/diff-boundaries/duplicate-alias-key-p0-19.test.ts` | exit 0，无告警 |
+
+**探针重跑（代码提交 HEAD，见 `evidence/probes/fix-p0-19/acceptance-log.txt`）：**
+
+| 矩阵 / 探针 | 结果 |
+|---|---|
+| fix-p0-04 | **100/100 MATCH**（前 66 行 R5 子集 **66/66 MATCH**） |
+| fix-p0-05 | **76/76 MATCH** |
+| fix-p0-06 | **134/134 MATCH** |
+| fix-p0-07 | **86/86 MATCH** |
+| fix-p0-08 | **164/164 MATCH** |
+| fix-p0-09 | **98/98 MATCH** |
+| fix-p0-10 | **314/314 MATCH** |
+| fix-p0-11 | **248/248 MATCH**（0 flagged） |
+| fix-p0-12 | **486/486 MATCH**（0 flagged） |
+| fix-p0-13 | **196/196 MATCH**（0 flagged） |
+| fix-p0-14 | **114/114 MATCH**（0 flagged） |
+| fix-p0-15 | **260/260 MATCH**（0 flagged） |
+| R10 探针 | **88/88 MATCH** |
+| R11 探针 | **74/74 MATCH** |
+| R12 探针 | **118/118 MATCH** |
+| R13 探针 | **98/98 MATCH** |
+| R14 探针 | **78/78 MATCH**（11 个 stale 行，属预期；见下注） |
+| R15 探针 | **122/122 MATCH**（24 处 FLAG STALE，属预期；见下注） |
+| R16 探针 | **362/362 MATCH** |
+| R17 探针 | **141/141 MATCH** |
+| R18 狩猎探针 | **50/50 MATCH**（原 44/50；6 处 DIFF 现为 0） |
+| R18 裁决探针 | **22/22 MATCH**（原 12/22；10 处 DIFF 现为 0） |
+| R18 裁决 2 探针 | **10/10 MATCH**（原 8/10；2 处 DIFF 现为 0） |
+| fix-p0-16 网格 | **238/238 MATCH**（119 形） |
+| fix-p0-17 网格 | **216/216 MATCH**（108 形） |
+| fix-p0-18 网格 | **79/79 MATCH**（原 77/79；唯二 DIFF `c-flow-key-null-2nd` ×2 现为 0） |
+| fix-p0-19 网格 | **70/70 MATCH**（35 形；A 组 16/16、B 组 18/18、C 组 36/36） |
+
+注：R14/R15 探针脚本在 stale-flag 行存在时以 exit 1 退出（预期行为，与 R17/R18 复核一致：R14 11 个、R15 13 个 stale 行均为已闭合家族的残留预期行；探针本身的 MATCH 计数 78/78 与 122/122 不变）。重跑时 `evidence/probes/r17/`、`r18/`、`fix-p0-18/` 的 `results.json` 被覆写为新值——已按 FIX-P0-18 的先例恢复为提交版原值（R17 124/141、R18 44/50、fix-p0-18 77/79 的历史记录不改写）；重跑后的完整结果副本保存在 `evidence/probes/fix-p0-19/` 内（`r17-results-p19.json`、`r18-results-p19.json`、`r18-adjudication-results-p19.json`、`r18-adjudication2-results-p19.json`、`fix-p0-18-results-p19.json`、`grid-rerun-p0-16.json`）。
+
+**新增测试**：35 个夹具（28 INVALID / 7 VALID，双边逐字段锁定）+ 1 个 test 文件（`tests/unit/diff-boundaries/duplicate-alias-key-p0-19.test.ts`，trigger + jobs 双模式）；`npm test` 1661 → 1697。新增夹具目录 `tests/fixtures/parser-divergence/duplicate-alias-key-p0-19/`（35 `.yml` + `expected.json`）。
+
+## §6 Trial freeze（两次，方法与结果）
+
+两次均为 **`npm run release:freeze -- --trial`**（FIX-P0-18 的教训：修复方未加 `--trial` 却称 trial，得到的是 formal 值；本轮两次均加 `--trial`，并以本人两次冻结的 stdout 为准）。两次结果**完全一致**：
+
+| 产物 | 哈希 | 说明 |
+|---|---|---|
+| source.zip | `3c059bc351b5204f90ae6ea521a4941c2a0d02c2a140b612304912af8731be91`（2,693 文件） | 与 R18 的 `1b527601…`（2,597 文件）相比已变（`src/` 改动 + 新 evidence/fixtures，属预期） |
+| dist.zip | `b8e2aa77074cd2f62a518c1c7969cfdaa7cff202c6d87239080c3dfe2c6d335c`（114 文件） | **已变**（原 `f2bcd53f…`）——预期：`src/` 改动后重新打包，dist 是纯 TS 发行物 |
+| RELEASE_MANIFEST.json | `89ff8504cc24aeb467bc2a4a714cd5b46a39311d68f90feb2c9079e3bcffecf6` | **trial 模式**产物：`freeze_status` 为 `TRIAL — FIX-P1-02 trial-freeze validation only`，`freeze_commit` 为 TRIAL 文案；不是 formal 值 |
+
+`sha256sum -c SHA256SUMS.txt` 3/3 OK（试冻产物上验证）。试冻后已 `git checkout release/`，`release/` 恢复为 HEAD 正式件（source.zip `3a778b93…`、dist.zip `da130ad2…`，已核对）。另：`release:verify` 在验证中重建了 `dist/`（build determinism 步骤），`evidence/tests/RELEASE_VERIFY_REPORT.json` 的 dist tree sha 由 `5a4f3337…` 变为 `8f4636de…`——已在提交前 `git checkout` 恢复，改动不入代码提交；新 dist tree sha 记录在此。
+
+**模式说明（供 R19 复核）**：本轮 manifest `89ff8504…` 是 **trial** 值；若跑 formal 冻结会得到另一 manifest 值（仅 `freeze_commit` / `freeze_status` 两字段文案不同，见 R18 §6 的复现方法）。T014 正式重冻时会重新生成；manifest 的 `inputs` 仍只记录到 R3（P2-R6-1，T014 范围）。
+
+## §7 诚实披露：本轮探针空间内无新发现的分歧
+
+- fix-p0-19 网格 70/70、R18 三套探针 50/50 + 22/22 + 10/10、十二矩阵与 R10–R17 探针、fix-p0-16/17/18 网格**全部 MATCH，0 DIFF**——本轮探针空间（35 个新形 + 全部历史矩阵与探针重跑）内**无新发现的分歧**。
+- 探针初版缺陷（见 §3 注）：`parser-probe-p19.mjs` 的 B11–B18/B21/B25 形状设计有误（锚定义写在裸行首），已用修正版 `parser-probe-p19b.mjs` 重测并以修正版为准；初版文件保留在证据目录内，缺陷记录在此。
+- R14/R15 探针的 stale-flag 行（见 §5 注）是已闭合家族的残留预期行，非新分歧；清理属 T014 范围。
+- dist.zip 变化是预期的（`src/` 改动），不是回归；s0 gate 哈希不变，`src/` 改动未触及 S0 语义。
+
+## §8 P2 状态（8 项，与 R18 相同）
+
+R18 的 8 个 P2 全部仍成立，无新增、无清除；P2-R6-1 范围扩大到 R19（manifest `inputs` 仍只记录到 R3，T014 重冻时须把 R4–R19 一并记入）。
+
+## 附录：提交与文件
+
+- 代码提交：`9dac3e1` — `FIX-P0-19: reject flow-mapping alias keys resolving to duplicate scalars (R18 P0 family; R18 probe 50/50, adjudication 22/22 + 10/10)`。改动：`src/core/workflow-parser.ts`（+127/−1：新检查 `hasDuplicateAliasKey` + 拒收链）、`src/core/e2e.ts`（+7/−2：import + jobs 链）；`oracle/` 0 改动；`scripts/`、`release/` 0 改动；删测试 0；无 `skip`/`only`。
+- 本报告提交：见 `git log`（报告文本单独提交，不含代码）。
+- 证据：`evidence/probes/fix-p0-19/`（解析器层探针 ×3 + 网格 cases/results + acceptance-log + 重跑副本）；夹具：`tests/fixtures/parser-divergence/duplicate-alias-key-p0-19/`（35 `.yml` + `expected.json`）；测试：`tests/unit/diff-boundaries/duplicate-alias-key-p0-19.test.ts`。
+
+## §5 代码 diff：FIX-P0-19 的 src/ 改动（提交 9dac3e1，对应 P2-8）
+
+提交文件清单（git show --stat 9dac3e1，src/ 部分外另有 35 个新夹具 + 1 个新测试文件 + 探针证据）：
+
+```
+9dac3e1 FIX-P0-19: reject flow-mapping alias keys resolving to duplicate scalars (R18 P0 family; R18 probe 50/50, adjudication 22/22 + 10/10)
+ evidence/probes/fix-p0-19/README.md                |   47 +
+ evidence/probes/fix-p0-19/acceptance-log.txt       |  284 +++
+ evidence/probes/fix-p0-19/cases.json               |  177 ++
+ .../probes/fix-p0-19/fix-p0-18-results-p19.json    |  996 ++++++++++
+ evidence/probes/fix-p0-19/gen-cases.py             |  108 ++
+ evidence/probes/fix-p0-19/grid-rerun-p0-16.json    | 2031 ++++++++++++++++++++
+ evidence/probes/fix-p0-19/p19-probe.py             |  124 ++
+ evidence/probes/fix-p0-19/parser-probe-mjs.txt     |  282 +++
+ evidence/probes/fix-p0-19/parser-probe-p19.mjs     |   85 +
+ evidence/probes/fix-p0-19/parser-probe-p19.py      |   68 +
+ evidence/probes/fix-p0-19/parser-probe-p19b.mjs    |   47 +
+ evidence/probes/fix-p0-19/parser-probe-py.txt      |   33 +
+ evidence/probes/fix-p0-19/r17-results-p19.json     | 1738 +++++++++++++++++
+ .../fix-p0-19/r18-adjudication-results-p19.json    |  285 +++
+ .../fix-p0-19/r18-adjudication2-results-p19.json   |  133 ++
+ evidence/probes/fix-p0-19/r18-results-p19.json     |  641 ++++++
+ evidence/probes/fix-p0-19/results.json             |  889 +++++++++
+ src/core/e2e.ts                                    |    7 +-
+ src/core/workflow-parser.ts                        |  127 +-
+ .../duplicate-alias-key-p0-19/a-absorbed-first.yml |    8 +
+ .../a-alias-after-absorbed.yml                     |    8 +
+ .../a-alias-after-plain.yml                        |    8 +
+ .../duplicate-alias-key-p0-19/a-alias-first.yml    |    8 +
+ .../duplicate-alias-key-p0-19/a-alias-twice.yml    |    8 +
+ .../duplicate-alias-key-p0-19/a-nested-flow.yml    |    8 +
+ .../a-trailing-comment.yml                         |    8 +
+ .../duplicate-alias-key-p0-19/a-triple-colon.yml   |    8 +
+ .../duplicate-alias-key-p0-19/b-alias-alone.yml    |    8 +
+ .../duplicate-alias-key-p0-19/b-alias-value.yml    |    8 +
+ .../b-block-null-absorbed.yml                      |   10 +
+ .../b-block-null-after.yml                         |   10 +
+ .../duplicate-alias-key-p0-19/b-block-valued.yml   |   10 +
+ .../duplicate-alias-key-p0-19/b-diff-scalar.yml    |    8 +
+ .../duplicate-alias-key-p0-19/b-plain-dup.yml      |    7 +
+ .../duplicate-alias-key-p0-19/b-valued-first.yml   |    8 +
+ .../duplicate-alias-key-p0-19/b-valued-twice.yml   |    8 +
+ .../c-alias-twice-spread.yml                       |    8 +
+ .../duplicate-alias-key-p0-19/c-anchor-in-flow.yml |    7 +
+ .../duplicate-alias-key-p0-19/c-bool-anchor.yml    |    8 +
+ .../duplicate-alias-key-p0-19/c-bool-vs-int.yml    |    8 +
+ .../duplicate-alias-key-p0-19/c-chained-alias.yml  |    9 +
+ .../duplicate-alias-key-p0-19/c-deep-nested.yml    |    8 +
+ .../duplicate-alias-key-p0-19/c-flow-in-seq.yml    |    8 +
+ .../duplicate-alias-key-p0-19/c-forward-ref.yml    |    8 +
+ .../duplicate-alias-key-p0-19/c-int-anchor.yml     |    8 +
+ .../duplicate-alias-key-p0-19/c-int-vs-quoted.yml  |    8 +
+ .../duplicate-alias-key-p0-19/c-jobs-alias-dup.yml |    3 +
+ .../duplicate-alias-key-p0-19/c-nan-anchor.yml     |    8 +
+ .../duplicate-alias-key-p0-19/c-null-anchor.yml    |    8 +
+ .../duplicate-alias-key-p0-19/c-on-alias-dup.yml   |    7 +
+ .../duplicate-alias-key-p0-19/c-quoted-anchor.yml  |    8 +
+ .../duplicate-alias-key-p0-19/c-tagged-anchor.yml  |    8 +
+ .../duplicate-alias-key-p0-19/c-to-collection.yml  |    8 +
+ .../c-two-anchors-same.yml                         |    9 +
+ .../duplicate-alias-key-p0-19/expected.json        |  915 +++++++++
+ .../duplicate-alias-key-p0-19.test.ts              |  143 ++
+ 56 files changed, 9438 insertions(+), 2 deletions(-)
+```
+
+src/ 完整 diff（git show 9dac3e1 -- src/core/workflow-parser.ts src/core/e2e.ts）：
+
+```diff
+commit 9dac3e13d2a01a2050b1923b1279323d1a0b649c
+Author: Muse <muse@local>
+Date:   Mon Nov 9 23:27:41 2026 +0000
+
+    FIX-P0-19: reject flow-mapping alias keys resolving to duplicate scalars (R18 P0 family; R18 probe 50/50, adjudication 22/22 + 10/10)
+
+diff --git a/src/core/e2e.ts b/src/core/e2e.ts
+index 205c7d2..857e1fa 100644
+--- a/src/core/e2e.ts
++++ b/src/core/e2e.ts
+@@ -74,6 +74,7 @@ import { sha256Hex } from "./sha256.js";
+ export { canonicalJson, sha256Hex };
+ import {
+   buildTriggerIR,
++  hasDuplicateAliasKey,
+   hasMultilineFlowKey,
+   hasRejectedAnchorOrTag,
+   hasRejectedTagComma,
+@@ -276,12 +277,16 @@ export function extractJobs(yamlText: string): JobInput[] {
+   // rejects (R11 P0-A, hasRejectedAnchorOrTag).
+   // FIX-P0-13: the same holds for a tag whose suffix swallows a
+   // flow-mapping `,` (R12 P0-C1, hasRejectedTagComma).
++  // FIX-P0-19: the same holds for an alias key resolving to a
++  // scalar that duplicates another key of the same mapping (R18
++  // P0, hasDuplicateAliasKey).
+   if (
+     hasUnrepresentableKey(yamlText) ||
+     hasRejectedTab(yamlText) ||
+     hasMultilineFlowKey(yamlText) ||
+     hasRejectedAnchorOrTag(yamlText) ||
+-    hasRejectedTagComma(yamlText)
++    hasRejectedTagComma(yamlText) ||
++    hasDuplicateAliasKey(yamlText)
+   ) {
+     return [];
+   }
+diff --git a/src/core/workflow-parser.ts b/src/core/workflow-parser.ts
+index c44476a..cfdb025 100644
+--- a/src/core/workflow-parser.ts
++++ b/src/core/workflow-parser.ts
+@@ -507,6 +507,126 @@ export function hasMultilineFlowKey(yamlText: string): boolean {
+   return walk(doc.contents);
+ }
+ 
++/**
++ * FIX-P0-19 (R18 P0): detect a mapping key that is an alias resolving
++ * to a scalar which duplicates another key of the same mapping, so
++ * the TypeScript side can reject the document with the same
++ * `yaml_parse_error` the Oracle returns instead of accepting it.
++ *
++ * Root cause (probed against PyYAML 6.0.1 and the `yaml` 2.9.1 AST,
++ * see evidence/probes/fix-p0-19/parser-probe-p19.py / .mjs / -p19b):
++ * the Oracle's `_StrictBaseLoader.construct_mapping` (FIX-P0-02)
++ * composes alias keys to their anchored nodes before the duplicate
++ * check, so `m: {a: 1, *w}` (with `&w a: 1`) contains two
++ * `ScalarNode('a')` keys and is rejected with
++ * `duplicate mapping key: 'a'`. The `yaml` package's `uniqueKeys`
++ * check (`compose/util-map-includes.js`) compares keys as
++ * `a === b || (isScalar(a) && isScalar(b) && a.value === b.value)`
++ * — an Alias node is never `===` to a Scalar and `isScalar(alias)`
++ * is false, so alias keys are invisible to it: the same document
++ * parses with 0 errors and the later null value silently overwrites
++ * the earlier one (`{"a": null}`).
++ *
++ * The rule mirrors the Oracle's duplicate check exactly, using the
++ * `yaml` package's own key equality on the resolved scalars:
++ *   - an alias key's effective key is `Alias.resolve(doc)` when it
++ *     yields a Scalar (absorbed aliases such as `*w:2` resolve the
++ *     same way — the `yaml` package absorbs `:` into the anchor
++ *     name, matching FIX-P0-17's `scan_anchor`); a plain scalar
++ *     key's effective key is itself;
++ *   - two effective keys collide when they are the same node or
++ *     both Scalars with `===` values — so plain `1` vs `01`,
++ *     `True` vs `true`, `~` vs `null`, and quoted `'a'` vs plain
++ *     `a` collide exactly as the Oracle's `_duplicate_key_canonical`
++ *     folds them, while `1` vs `'1'`, `True` vs `1`, and `!!str 1`
++ *     vs `1` stay distinct, and `.nan` vs `.nan` never collides
++ *     (`NaN !== NaN`, matching the Oracle's fresh-identity
++ *     `("nan", object())`); see parser-probe-p19b.mjs B11–B18;
++ *   - the rule fires only when at least one colliding pair's key
++ *     is an alias: plain scalar-vs-scalar duplicates are already
++ *     rejected by `parse()`'s `uniqueKeys`, and this rule fills
++ *     exactly the alias gap (its contract is the gap, not a
++ *     second duplicate check).
++ *
++ * Scope (all probed, both sides agree after the fix): flow mappings
++ * in any position — a scalar key before or after the alias key, the
++ * alias key twice, nested flow mappings, flow mappings inside
++ * sequences, the `on:` mapping, an anchor defined inside the same
++ * flow mapping (`m: {&w a: 1, *w}`), absorbed / triple-colon
++ * aliases, and trailing comments. Block mappings need no new rule:
++ * a block alias key is already rejected by `parse()` itself
++ * ("Implicit map keys need to be followed by map values"), so the
++ * uniform walk over all mappings is a no-op there.
++ *
++ * Deliberately NOT fired on (all probed, both sides already agree):
++ * an alias key resolving to a collection (N5, owned by
++ * `hasUnrepresentableKey`); an unresolvable / forward-reference
++ * alias (`resolve` returns `undefined` — both sides already return
++ * `yaml_parse_error` through the plain `parse()` path); a chained
++ * alias (`*b` where `&b *a` — `resolve` returns the Alias node,
++ * both sides already reject); a valued alias key
++ * (`m: {*w: 1, a: 1}` — both sides reject, the `yaml` package at
++ * parse time); an alias key whose resolved scalar differs from
++ * every other key (`m: {b: 2, *w}`); an alias alone as a key
++ * (`m: {*w}`); an alias in a value position (`b: *w`). This is a
++ * shape check on the parsed AST only: the input text is never
++ * rewritten (PROJECT_BOOK §7.3), and the Oracle parser is untouched.
++ */
++export function hasDuplicateAliasKey(yamlText: string): boolean {
++  let doc;
++  try {
++    doc = parseDocument(yamlText);
++  } catch {
++    return false;
++  }
++  // The `yaml` package's own key equality (compose/util-map-includes.js):
++  // same node, or two Scalars with `===` values (NaN never equals itself).
++  const keyEquals = (a: unknown, b: unknown): boolean =>
++    a === b || (isScalar(a) && isScalar(b) && a.value === b.value);
++  // Effective key of a pair for duplicate purposes: a scalar key is
++  // itself; an alias key is the Scalar it resolves to, or undefined
++  // when it resolves to a collection / nothing (owned elsewhere).
++  const effectiveKey = (key: unknown): unknown => {
++    if (isAlias(key)) {
++      let resolved: unknown;
++      try {
++        resolved = key.resolve(doc);
++      } catch {
++        return undefined;
++      }
++      return isScalar(resolved) ? resolved : undefined;
++    }
++    return isScalar(key) ? key : undefined;
++  };
++  const walk = (node: unknown): boolean => {
++    if (isMap(node)) {
++      const seen: Array<{ key: unknown; isAlias: boolean }> = [];
++      for (const pair of node.items) {
++        const eff = effectiveKey(pair.key);
++        if (eff !== undefined) {
++          const aliasKey = isAlias(pair.key);
++          if (
++            seen.some(
++              (s) =>
++                (aliasKey || s.isAlias) && keyEquals(s.key, eff),
++            )
++          ) {
++            return true;
++          }
++          seen.push({ key: eff, isAlias: aliasKey });
++        }
++        if (walk(pair.value)) return true;
++      }
++    } else if (isSeq(node)) {
++      for (const item of node.items) {
++        if (walk(item)) return true;
++      }
++    }
++    return false;
++  };
++  return walk(doc.contents);
++}
++
+ /**
+  * FIX-P0-06 (H6, tab family): detect a tab character that PyYAML's
+  * scanner rejects, so the TypeScript side can reject the document
+@@ -1804,12 +1924,17 @@ export function parseWorkflowYaml(
+   // rejects (R11 P0-A, hasRejectedAnchorOrTag).
+   // FIX-P0-13: the same holds for a tag whose suffix swallows a
+   // flow-mapping `,` (R12 P0-C1, hasRejectedTagComma).
++  // FIX-P0-19: the same holds for an alias key resolving to a
++  // scalar that duplicates another key of the same mapping (R18
++  // P0, hasDuplicateAliasKey — the `yaml` package's `uniqueKeys`
++  // never resolves alias keys, so only the alias gap is filled).
+   if (
+     hasUnrepresentableKey(yamlText) ||
+     hasRejectedTab(yamlText) ||
+     hasMultilineFlowKey(yamlText) ||
+     hasRejectedAnchorOrTag(yamlText) ||
+-    hasRejectedTagComma(yamlText)
++    hasRejectedTagComma(yamlText) ||
++    hasDuplicateAliasKey(yamlText)
+   ) {
+     return base(false, "INVALID", [], ["yaml_parse_error"]);
+   }
+```
+
+## §6 验收日志（对应 P2-7、P2-9）
+
+以下均为本次组装时（2026-11-10 ~00:58–01:00 GMT）在仓库 HEAD 4c67520 上亲自重跑的输出，只贴能证明结论的关键段；每段注明命令与 exit 码。
+
+### npm test（对应 P2-7）
+命令：`npm test`，exit 0（耗时 81.55s）
+```
+Test Files  53 passed (53)
+     Tests  1697 passed (1697)
+```
+
+### test:oracle（对应 P2-7）
+命令：`npm run test:oracle`（node scripts/oracle-diff.mjs --suite tests/fixtures/golden/suite.json），exit 0
+```
+suite: tests/fixtures/golden/suite.json
+fixtures: 167, TS==expected exit=0, Oracle==expected exit=0, formal TS exit=0
+TS vs Oracle mismatches: 0
+false PASS: 0
+TS formal-pipeline false PASS: 0
+unsupported surfaced as UNKNOWN: 34/34 fixtures
+report: evidence/tests/ORACLE_PARITY_REPORT.json
+```
+
+### s0:gate（对应 P2-7）
+命令：`npm run s0:gate`，exit 0
+```
+iteration 100/100: ts_exit=0 oracle_exit=0 mismatches=0
+determinism: 100 runs, 1 unique hash(es), 0 mismatch(es)
+gate: status=PASS
+gate: oracle 24/24, mismatches=0, false PASS=0, TS formal false PASS=0
+gate: determinism 100 runs, 1 unique hash(es)
+gate: network matches=0
+gate: gate_report_sha256=f511a84709a6ebf64af94cb788ad3e15cef85af5862b5334fca4288b6ff38386
+gate: report=evidence/S0_GATE.json
+```
+
+### release:verify（对应 P2-7）
+命令：`npm run release:verify`，exit 0；5/5 步全部 PASS
+```
+[3/5] report_sha256 recomputation (shipped dist modules)
+  PASS report_sha256 recompute: pr-docs-only 9dc3af313677f795… == demo report, both recompute OK
+[4/5] offline static scan (dist + generated reports)
+  PASS offline static scan: 34 files scanned, 0 remote resource references
+[5/5] license guard
+  PASS license guard: no LICENSE file; LICENSE_STATUS.md still PENDING_SAM_DECISION
+release:verify PASS
+```
+（[1/5]、[2/5] 为构建与 CLI smoke，亦 PASS，输出较长略去；cli smoke：demo 2 / analyze docs-only 2 / analyze src-only 0 / matrix 2 / analyze U-07 2 / analyze U-08 2 / analyze T8-05 2，均符合预期 exit 码。）
+
+### R14 / R15 探针（对应 P2-9）
+命令：`python3 evidence/probes/r14/r14-probe.py`，exit 0
+```
+R14 probe: 78/78 MATCH, 0 DIFF
+```
+命令：`python3 evidence/probes/r15/r15-probe.py`，exit 0
+```
+R15 probe: 122/122 MATCH, 0 DIFF
+```
+两套探针均 exit 0、0 stale flag（T014 已清除全部 stale-flag 行，提交 a4106d8；本次重跑确认）。
+
+## §7 冻结包文件清单（对应 P2-2、P2-3）
+
+dist.zip 完整清单（unzip -l release/dist.zip；114 个文件，139 条目含目录；时间戳全为 1980-01-01 固定值，确定性打包）：
+
+```
+Archive:  release/dist.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+      117  1980-01-01 00:00   LICENSE_STATUS.md
+     1803  1980-01-01 00:00   QUICKSTART.md
+      868  1980-01-01 00:00   THIRD_PARTY_NOTICES.md
+        0  1980-01-01 00:00   assets/
+   230551  1980-01-01 00:00   assets/index-XyZd31iV.js
+      178  1980-01-01 00:00   checkpath.mjs
+        0  1980-01-01 00:00   cli/
+        0  1980-01-01 00:00   cli/commands/
+     2599  1980-01-01 00:00   cli/commands/analyze.js
+     6995  1980-01-01 00:00   cli/commands/common.js
+     4043  1980-01-01 00:00   cli/commands/demo.js
+     4938  1980-01-01 00:00   cli/commands/matrix.js
+     2545  1980-01-01 00:00   cli/index.js
+        0  1980-01-01 00:00   core/
+     1396  1980-01-01 00:00   core/canonical-json.js
+    10768  1980-01-01 00:00   core/check-resolver.js
+    15724  1980-01-01 00:00   core/e2e.js
+     9881  1980-01-01 00:00   core/event-evaluator.js
+     5271  1980-01-01 00:00   core/glob-subset.js
+    13002  1980-01-01 00:00   core/if-subset.js
+    15215  1980-01-01 00:00   core/job-dag.js
+    17699  1980-01-01 00:00   core/recommendations.js
+      780  1980-01-01 00:00   core/sha256.js
+     7096  1980-01-01 00:00   core/skip-annotation.js
+     3399  1980-01-01 00:00   core/types.js
+    40170  1980-01-01 00:00   core/validate.js
+    29164  1980-01-01 00:00   core/witness-reducer.js
+     5254  1980-01-01 00:00   core/workflow-ir.js
+    85695  1980-01-01 00:00   core/workflow-parser.js
+        0  1980-01-01 00:00   examples/
+        0  1980-01-01 00:00   examples/repo-basic/
+        0  1980-01-01 00:00   examples/repo-basic/.github/
+        0  1980-01-01 00:00   examples/repo-basic/.github/workflows/
+      354  1980-01-01 00:00   examples/repo-basic/.github/workflows/ci.yml
+      157  1980-01-01 00:00   examples/required-checks.yml
+        0  1980-01-01 00:00   examples/scenarios/
+      424  1980-01-01 00:00   examples/scenarios/merge-group.json
+      419  1980-01-01 00:00   examples/scenarios/pr-docs-only.json
+      402  1980-01-01 00:00   examples/scenarios/pr-src-only.json
+        0  1980-01-01 00:00   examples/suites/
+      167  1980-01-01 00:00   examples/suites/merge-queue.json
+      256  1980-01-01 00:00   index.html
+        0  1980-01-01 00:00   node_modules/
+        0  1980-01-01 00:00   node_modules/yaml/
+      738  1980-01-01 00:00   node_modules/yaml/LICENSE
+        0  1980-01-01 00:00   node_modules/yaml/dist/
+        0  1980-01-01 00:00   node_modules/yaml/dist/compose/
+     3613  1980-01-01 00:00   node_modules/yaml/dist/compose/compose-collection.js
+     1615  1980-01-01 00:00   node_modules/yaml/dist/compose/compose-doc.js
+     4269  1980-01-01 00:00   node_modules/yaml/dist/compose/compose-node.js
+     3446  1980-01-01 00:00   node_modules/yaml/dist/compose/compose-scalar.js
+     8692  1980-01-01 00:00   node_modules/yaml/dist/compose/composer.js
+     5071  1980-01-01 00:00   node_modules/yaml/dist/compose/resolve-block-map.js
+     7500  1980-01-01 00:00   node_modules/yaml/dist/compose/resolve-block-scalar.js
+     1812  1980-01-01 00:00   node_modules/yaml/dist/compose/resolve-block-seq.js
+     1264  1980-01-01 00:00   node_modules/yaml/dist/compose/resolve-end.js
+     8927  1980-01-01 00:00   node_modules/yaml/dist/compose/resolve-flow-collection.js
+     7417  1980-01-01 00:00   node_modules/yaml/dist/compose/resolve-flow-scalar.js
+     5579  1980-01-01 00:00   node_modules/yaml/dist/compose/resolve-props.js
+     1081  1980-01-01 00:00   node_modules/yaml/dist/compose/util-contains-newline.js
+      850  1980-01-01 00:00   node_modules/yaml/dist/compose/util-empty-scalar-position.js
+      547  1980-01-01 00:00   node_modules/yaml/dist/compose/util-flow-indent-check.js
+      471  1980-01-01 00:00   node_modules/yaml/dist/compose/util-map-includes.js
+        0  1980-01-01 00:00   node_modules/yaml/dist/doc/
+    13114  1980-01-01 00:00   node_modules/yaml/dist/doc/Document.js
+     2386  1980-01-01 00:00   node_modules/yaml/dist/doc/anchors.js
+     1950  1980-01-01 00:00   node_modules/yaml/dist/doc/applyReviver.js
+     3138  1980-01-01 00:00   node_modules/yaml/dist/doc/createNode.js
+     6237  1980-01-01 00:00   node_modules/yaml/dist/doc/directives.js
+     2118  1980-01-01 00:00   node_modules/yaml/dist/errors.js
+     1769  1980-01-01 00:00   node_modules/yaml/dist/index.js
+      459  1980-01-01 00:00   node_modules/yaml/dist/log.js
+        0  1980-01-01 00:00   node_modules/yaml/dist/nodes/
+     4042  1980-01-01 00:00   node_modules/yaml/dist/nodes/Alias.js
+     5221  1980-01-01 00:00   node_modules/yaml/dist/nodes/Collection.js
+     1382  1980-01-01 00:00   node_modules/yaml/dist/nodes/Node.js
+     1232  1980-01-01 00:00   node_modules/yaml/dist/nodes/Pair.js
+      759  1980-01-01 00:00   node_modules/yaml/dist/nodes/Scalar.js
+     5105  1980-01-01 00:00   node_modules/yaml/dist/nodes/YAMLMap.js
+     3667  1980-01-01 00:00   node_modules/yaml/dist/nodes/YAMLSeq.js
+     2338  1980-01-01 00:00   node_modules/yaml/dist/nodes/addPairToJSMap.js
+     1794  1980-01-01 00:00   node_modules/yaml/dist/nodes/identity.js
+     1292  1980-01-01 00:00   node_modules/yaml/dist/nodes/toJS.js
+        0  1980-01-01 00:00   node_modules/yaml/dist/parse/
+     9382  1980-01-01 00:00   node_modules/yaml/dist/parse/cst-scalar.js
+     1799  1980-01-01 00:00   node_modules/yaml/dist/parse/cst-stringify.js
+     3986  1980-01-01 00:00   node_modules/yaml/dist/parse/cst-visit.js
+     3242  1980-01-01 00:00   node_modules/yaml/dist/parse/cst.js
+    24149  1980-01-01 00:00   node_modules/yaml/dist/parse/lexer.js
+     1445  1980-01-01 00:00   node_modules/yaml/dist/parse/line-counter.js
+    35551  1980-01-01 00:00   node_modules/yaml/dist/parse/parser.js
+     4187  1980-01-01 00:00   node_modules/yaml/dist/public-api.js
+        0  1980-01-01 00:00   node_modules/yaml/dist/schema/
+     1547  1980-01-01 00:00   node_modules/yaml/dist/schema/Schema.js
+        0  1980-01-01 00:00   node_modules/yaml/dist/schema/common/
+      483  1980-01-01 00:00   node_modules/yaml/dist/schema/common/map.js
+      469  1980-01-01 00:00   node_modules/yaml/dist/schema/common/null.js
+      484  1980-01-01 00:00   node_modules/yaml/dist/schema/common/seq.js
+      457  1980-01-01 00:00   node_modules/yaml/dist/schema/common/string.js
+        0  1980-01-01 00:00   node_modules/yaml/dist/schema/core/
+      635  1980-01-01 00:00   node_modules/yaml/dist/schema/core/bool.js
+     1510  1980-01-01 00:00   node_modules/yaml/dist/schema/core/float.js
+     1407  1980-01-01 00:00   node_modules/yaml/dist/schema/core/int.js
+      509  1980-01-01 00:00   node_modules/yaml/dist/schema/core/schema.js
+        0  1980-01-01 00:00   node_modules/yaml/dist/schema/json/
+     1900  1980-01-01 00:00   node_modules/yaml/dist/schema/json/schema.js
+     3239  1980-01-01 00:00   node_modules/yaml/dist/schema/tags.js
+        0  1980-01-01 00:00   node_modules/yaml/dist/schema/yaml-1.1/
+     2800  1980-01-01 00:00   node_modules/yaml/dist/schema/yaml-1.1/binary.js
+      841  1980-01-01 00:00   node_modules/yaml/dist/schema/yaml-1.1/bool.js
+     1626  1980-01-01 00:00   node_modules/yaml/dist/schema/yaml-1.1/float.js
+     2232  1980-01-01 00:00   node_modules/yaml/dist/schema/yaml-1.1/int.js
+     2616  1980-01-01 00:00   node_modules/yaml/dist/schema/yaml-1.1/merge.js
+     2581  1980-01-01 00:00   node_modules/yaml/dist/schema/yaml-1.1/omap.js
+     2854  1980-01-01 00:00   node_modules/yaml/dist/schema/yaml-1.1/pairs.js
+      912  1980-01-01 00:00   node_modules/yaml/dist/schema/yaml-1.1/schema.js
+     3114  1980-01-01 00:00   node_modules/yaml/dist/schema/yaml-1.1/set.js
+     3775  1980-01-01 00:00   node_modules/yaml/dist/schema/yaml-1.1/timestamp.js
+        0  1980-01-01 00:00   node_modules/yaml/dist/stringify/
+     4885  1980-01-01 00:00   node_modules/yaml/dist/stringify/foldFlowLines.js
+     4534  1980-01-01 00:00   node_modules/yaml/dist/stringify/stringify.js
+     5718  1980-01-01 00:00   node_modules/yaml/dist/stringify/stringifyCollection.js
+      801  1980-01-01 00:00   node_modules/yaml/dist/stringify/stringifyComment.js
+     3104  1980-01-01 00:00   node_modules/yaml/dist/stringify/stringifyDocument.js
+      808  1980-01-01 00:00   node_modules/yaml/dist/stringify/stringifyNumber.js
+     5470  1980-01-01 00:00   node_modules/yaml/dist/stringify/stringifyPair.js
+    13345  1980-01-01 00:00   node_modules/yaml/dist/stringify/stringifyString.js
+     4274  1980-01-01 00:00   node_modules/yaml/dist/test-events.js
+     1008  1980-01-01 00:00   node_modules/yaml/dist/util.js
+     9253  1980-01-01 00:00   node_modules/yaml/dist/visit.js
+     3254  1980-01-01 00:00   node_modules/yaml/package.json
+        0  1980-01-01 00:00   report/
+    12126  1980-01-01 00:00   report/build.js
+    21508  1980-01-01 00:00   report/html.js
+     4863  1980-01-01 00:00   report/json.js
+     5839  1980-01-01 00:00   report/matrix.js
+        0  1980-01-01 00:00   worker/
+     1678  1980-01-01 00:00   worker/analysis.worker.js
+      534  1980-01-01 00:00   worker/protocol.js
+---------                     -------
+   860959                     139 files
+```
+
+source.zip 清单前 35 行（unzip -l release/source.zip | head -35）与尾部汇总：
+
+```
+Archive:  release/source.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+      105  1980-01-01 00:00   .gitignore
+       37  1980-01-01 00:00   .npmrc
+      117  1980-01-01 00:00   LICENSE_STATUS.md
+     9502  1980-01-01 00:00   README.md
+     6022  1980-01-01 00:00   REVIEW_INDEX.md
+      868  1980-01-01 00:00   THIRD_PARTY_NOTICES.md
+      426  1980-01-01 00:00   eslint.config.mjs
+        0  1980-01-01 00:00   evidence/
+     4469  1980-01-01 00:00   evidence/S0_GATE.json
+        0  1980-01-01 00:00   evidence/environment/
+    10229  1980-01-01 00:00   evidence/environment/ENVIRONMENT_REPORT.md
+      109  1980-01-01 00:00   evidence/environment/ENVIRONMENT_REPORT.sha256
+     3615  1980-01-01 00:00   evidence/environment/PYYAML_6_0_3_VENV_VERIFICATION.md
+        0  1980-01-01 00:00   evidence/hashes/
+        0  1980-01-01 00:00   evidence/hashes/.gitkeep
+        0  1980-01-01 00:00   evidence/probes/
+        0  1980-01-01 00:00   evidence/probes/fix-p0-04/
+     4247  1980-01-01 00:00   evidence/probes/fix-p0-04/README.md
+    17467  1980-01-01 00:00   evidence/probes/fix-p0-04/cases.json
+    18889  1980-01-01 00:00   evidence/probes/fix-p0-04/results.json
+     5612  1980-01-01 00:00   evidence/probes/fix-p0-04/run-matrix.py
+      946  1980-01-01 00:00   evidence/probes/fix-p0-04/ts-probe-entry.ts
+        0  1980-01-01 00:00   evidence/probes/fix-p0-05/
+     5596  1980-01-01 00:00   evidence/probes/fix-p0-05/README.md
+    12123  1980-01-01 00:00   evidence/probes/fix-p0-05/cases.json
+    15179  1980-01-01 00:00   evidence/probes/fix-p0-05/results.json
+     5592  1980-01-01 00:00   evidence/probes/fix-p0-05/run-matrix.py
+      946  1980-01-01 00:00   evidence/probes/fix-p0-05/ts-probe-entry.ts
+        0  1980-01-01 00:00   evidence/probes/fix-p0-06/
+     6028  1980-01-01 00:00   evidence/probes/fix-p0-06/README.md
+    16785  1980-01-01 00:00   evidence/probes/fix-p0-06/cases.json
+    21981  1980-01-01 00:00   evidence/probes/fix-p0-06/results.json
+      586  1980-01-01 00:00   vitest.config.ts
+---------                     -------
+ 22385403                     3293 files
+```
+
+source.zip 共 3,293 条目（含目录）= 2,728 个文件；文件清单与 git ls-files 在源码提交 3a83371 上逐项一致（T014 冻结报告 evidence/release/T014_FREEZE_REPORT_R3.md §4 有完整 reconciliation 记录；唯一差异是含 → 的文件名在 git 输出中被八进制转义，ZIP 内是真实 UTF-8 名，同一文件）。
+
+## 结尾：请重新终审
+
+请基于上面贴入的原文（不是只凭哈希与断言）重新做终审：核对 §0 的 R2→R3 哈希对照、§1 的 manifest 原文（含 inputs 是否完整记录 T013 R1–R19）、§3 的 R19 复核报告、§4–§5 的修复报告与代码 diff、§6 的验收日志、§7 的文件清单。给出明确的 FINAL_VERDICT: PASS 或 FAIL，以及 P0/P1/P2 计数与依据。若仍认为某项证据不足，请逐项明说缺什么，不要只写“未读到”。
+
+请使用谷歌云盘以及任何需要的插件，如果有了的话就算了。

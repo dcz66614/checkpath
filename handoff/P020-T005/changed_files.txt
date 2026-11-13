@@ -1,0 +1,11 @@
+# T005 changed files (vs base commit 2124367)
+# generated: git status --short at handoff time
+ M src/core/canonical-json.ts
+ M src/core/sha256.ts
+ M src/core/types.ts
+ M src/core/validate.ts
+?? evidence/tests/T005_REPORT.md
+?? handoff/
+?? tests/unit/schema/
+?? tests/unit/t005-fixtures.ts
+?? tests/unit/validation/

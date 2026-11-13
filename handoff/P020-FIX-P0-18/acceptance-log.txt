@@ -1,0 +1,122 @@
+=== FIX-P0-18 ACCEPTANCE 2026-11-09T21:26:12Z HEAD 55bd04a ===
+--- npm test ---
+
+[2m    Isolate [22m [33m52 workers spawned[39m[2m · ~485ms startup each (spawn + environment, per file)[22m
+[2m            [22m [2mat least ~7.92s faster with [22m[33misolate: false[39m[2m — reuses workers across files instead of one per file[22m
+
+--- test:oracle ---
+TS vs Oracle mismatches: 0
+false PASS: 0
+TS formal-pipeline false PASS: 0
+unsupported surfaced as UNKNOWN: 34/34 fixtures
+report: evidence/tests/ORACLE_PARITY_REPORT.json
+--- typecheck ---
+> checkpath@0.0.0-t001-skeleton typecheck
+> tsc --noEmit
+
+typecheck exit=0
+--- s0:oracle ---
+false PASS: 0
+TS formal-pipeline false PASS: 0
+unsupported surfaced as UNKNOWN: 2/2 fixtures
+report: evidence/s0/S0_ORACLE_REPORT.json
+--- build-golden --check-only ---
+golden cases: 167
+golden exit=0
+--- s0:gate ---
+gate: status=PASS
+gate: oracle 24/24, mismatches=0, false PASS=0, TS formal false PASS=0
+gate: determinism 100 runs, 1 unique hash(es)
+gate: network matches=0
+gate: gate_report_sha256=f511a84709a6ebf64af94cb788ad3e15cef85af5862b5334fca4288b6ff38386
+gate: report=evidence/S0_GATE.json
+--- release:verify ---
+[5/5] license guard
+  PASS license guard: no LICENSE file; LICENSE_STATUS.md still PENDING_SAM_DECISION
+release:verify PASS
+--- oracle:diff:trigger ---
+TS vs Oracle mismatches: 0
+report: evidence/tests/T006_ORACLE_TRIGGER_REPORT.json
+--- oracle:diff:jobs ---
+TS vs Oracle mismatches: 0
+report: evidence/tests/T007_ORACLE_JOBS_REPORT.json
+--- oracle:diff:checks ---
+TS vs Oracle mismatches: 0
+report: evidence/tests/T008_ORACLE_CHECKS_REPORT.json
+--- oracle:diff:witness ---
+TS vs Oracle mismatches: 0
+report: evidence/tests/T009_ORACLE_WITNESS_REPORT.json
+--- R10 probe ---
+R10 probe: 88/88 MATCH, 0 DIFF
+--- R11 probe ---
+R11 probe: 74/74 MATCH, 0 DIFF
+--- R12 probe ---
+R12 probe: 118/118 MATCH, 0 DIFF
+--- R13 probe ---
+R13 probe: 98/98 MATCH, 0 DIFF
+--- R14 probe ---
+  FLAG STALE r14-r-unglued [trigger]: expected DIFF, got MATCH
+  FLAG STALE r14-r-nested-block [trigger]: expected DIFF, got MATCH
+--- R15 probe ---
+  FLAG STALE r15-r3-on-float [jobs]: expected DIFF, got MATCH
+  FLAG STALE r15-r3-on-str [trigger]: expected DIFF, got MATCH
+--- R16 probe ---
+R16 probe: 362/362 MATCH, 0 DIFF
+--- R17 probe ---
+R17 hunt probe: 141/141 MATCH, 0 DIFF
+--- matrix fix-p0-04 ---
+CHECKS 100/100 MATCH (of which 0 checks are flagged known-divergence)
+results: /home/hatch/workspace/p020-checkpath/evidence/probes/fix-p0-04/results.json
+--- matrix fix-p0-05 ---
+CHECKS 76/76 MATCH (of which 0 checks are flagged known-divergence)
+results: /home/hatch/workspace/p020-checkpath/evidence/probes/fix-p0-05/results.json
+--- matrix fix-p0-06 ---
+CHECKS 134/134 MATCH (of which 0 checks are flagged known-divergence)
+results: /home/hatch/workspace/p020-checkpath/evidence/probes/fix-p0-06/results.json
+--- matrix fix-p0-07 ---
+CHECKS 86/86 MATCH (of which 0 checks are flagged known-divergence)
+results: /home/hatch/workspace/p020-checkpath/evidence/probes/fix-p0-07/results.json
+--- matrix fix-p0-08 ---
+CHECKS 164/164 MATCH (of which 0 checks are flagged known-divergence)
+results: /home/hatch/workspace/p020-checkpath/evidence/probes/fix-p0-08/results.json
+--- matrix fix-p0-09 ---
+CHECKS 98/98 MATCH (of which 0 checks are flagged known-divergence)
+results: /home/hatch/workspace/p020-checkpath/evidence/probes/fix-p0-09/results.json
+--- matrix fix-p0-10 ---
+CHECKS 314/314 MATCH (of which 0 checks are flagged known-divergence)
+results: /home/hatch/workspace/p020-checkpath/evidence/probes/fix-p0-10/results.json
+--- matrix fix-p0-11 ---
+CHECKS 248/248 MATCH (of which 0 checks are flagged known-divergence)
+results: /home/hatch/workspace/p020-checkpath/evidence/probes/fix-p0-11/results.json
+--- matrix fix-p0-12 ---
+CHECKS 486/486 MATCH (of which 0 checks are flagged known-divergence)
+results: /home/hatch/workspace/p020-checkpath/evidence/probes/fix-p0-12/results.json
+--- matrix fix-p0-13 ---
+CHECKS 196/196 MATCH (of which 0 checks are flagged known-divergence)
+results: /home/hatch/workspace/p020-checkpath/evidence/probes/fix-p0-13/results.json
+--- matrix fix-p0-14 ---
+CHECKS 114/114 MATCH (of which 0 checks are flagged known-divergence)
+results: /home/hatch/workspace/p020-checkpath/evidence/probes/fix-p0-14/results.json
+--- matrix fix-p0-15 ---
+CHECKS 260/260 MATCH (of which 0 checks are flagged known-divergence)
+results: /home/hatch/workspace/p020-checkpath/evidence/probes/fix-p0-15/results.json
+--- fix-p0-16 grid ---
+map2-p0-16 [all]: 238/238 MATCH
+results: /tmp/p18-grid16-results.json
+--- fix-p0-17 grid ---
+FIX-P0-17 probe: 216/216 MATCH, 0 DIFF
+--- fix-p0-18 grid ---
+fix-p0-18 grid: 77/79 MATCH, 2 DIFF
+  DIFF c-flow-key-null-2nd [trigger]: TS VALID/[] vs Oracle INVALID/['yaml_parse_error']
+  DIFF c-flow-key-null-2nd [jobs]: TS ?/? vs Oracle ?/?
+--- R17 probe (acceptance re-run) ---
+R17 hunt probe: 141/141 MATCH, 0 DIFF
+=== BATTERY DONE 2026-11-09T21:44:25Z ===
+--- R5 subset (post-battery, from fix-p0-04 results.json) ---
+R5-subset rows: 66 checks: 66 match: 66 (R4 46 + R1-R10 + R5 residual 10; other rows 17 rows/34 checks, all MATCH; total 100/100, 0 flagged)
+--- trial freeze x2 (npm run release:freeze, HEAD 55bd04a) ---
+freeze 1 = freeze 2 identical:
+source.zip: 1b527601616d2b63e0abf6e8b700449b241b5a48a338cd934c8fb157822f6deb (2597 files)
+dist.zip:   f2bcd53f360ada37da25d3d650009b4c10274594a8faf4ed1c4d7591680e8f7f (114 files, unchanged)
+RELEASE_MANIFEST.json: 288d615666d27c340a8766568359526c39c9e802a3486da3043a5cb3005f778e
+release/ restored via git checkout release/ (R2 formal artifacts intact)

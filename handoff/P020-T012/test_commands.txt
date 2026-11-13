@@ -1,0 +1,41 @@
+# P020 T012 — acceptance & regression commands (all run personally, 2026-11-08)
+
+Base commit: 11e0740. All commands run from ~/workspace/p020-checkpath.
+Exit codes are the real ones; full output in test_logs/.
+
+## Acceptance (T012 §6 — all exit 0)
+
+- npm run test:e2e — exit 0 — 8/8 Playwright tests
+- npm run test:offline — exit 0 — offline PASS (unshare -rn + strace 0 syscalls + static scan)
+- npm run test:performance — exit 0 — P95 701.2 ms, peak RSS 101.1 MiB
+- npm run build — exit 0 — vite build + dist/checkpath.mjs
+- npm run release:verify — exit 0 — release:verify PASS (dist tree f4464038…)
+
+## Regression (all exit 0)
+
+- npm run typecheck — exit 0
+- npm run lint — exit 0
+- npm test — exit 0 — 673/673 (29 files)
+- npm run test:oracle — exit 0 — golden 80/80, 0 mismatch, false PASS 0
+- npm run test:property -- --seed 20261108 --count 1000 — exit 0 — 1000/1000, 0 mismatch
+- npm run test:mutation — exit 0 — 13/13
+- npm run oracle:diff:trigger — exit 0 — 41/41, 0 mismatch
+- npm run oracle:diff:jobs — exit 0 — 48/48, 0 mismatch
+- npm run oracle:diff:checks — exit 0 — 46/46, 0 mismatch
+- npm run oracle:diff:witness — exit 0 — 44/44, 0 mismatch
+- npm run s0:oracle — exit 0 — 24/24, 0 mismatch, false PASS 0
+- npm run s0:gate — exit 0 — S0_GATE.json status PASS, gate_report_sha256 f511a847…
+
+## README verification (each command run as written)
+
+- node dist/checkpath.mjs demo — exit 2 (§4.7 gate value, report_sha256 9dc3af31…)
+- node dist/checkpath.mjs analyze --repo examples/repo-basic --scenario examples/scenarios/pr-docs-only.json --required-checks examples/required-checks.yml --out reports/pr-docs-only — exit 2
+- node dist/checkpath.mjs analyze --repo examples/repo-basic --scenario examples/scenarios/merge-group.json --required-checks examples/required-checks.yml --out /tmp/t012-readme/merge-group — exit 2, witness merge_group_missing ×2
+- node dist/checkpath.mjs matrix --repo examples/repo-basic --suite examples/suites/merge-queue.json --required-checks examples/required-checks.yml --out reports/merge-queue — exit 2 (3 scenarios 2/0/2)
+- node dist/checkpath.mjs analyze --repo /tmp/t012-perf-a/repo --scenario /tmp/t012-perf-a/scenario.json --required-checks /tmp/t012-perf-a/required-checks.yml --out /tmp/t012-perf-run2 — exit 0 (20/20 triggered, 50/50 REPORTABLE_PENDING)
+
+## Not re-run (with reason)
+
+- npm ci — NOT re-run: requires npm registry network access, forbidden by the task rules; node_modules + lockfile untouched by T012.
+- node checkpath.mjs demo (inside dist.zip) — NOT verifiable yet: dist.zip is frozen in T014.
+- PowerShell Quick Start — NOT_TESTED: no Windows machine on this Linux VM.

@@ -1,0 +1,2894 @@
+{
+  "schema": "checkpath.oracle-parity-report/v1",
+  "suite": "tests/fixtures/golden/suite.json",
+  "suite_sha256": "62a8b519b5af1f0831e336e33d47f789ef9ad057ef796f1acdb1af47c825be28",
+  "seed": 20261108,
+  "fixture_count": 167,
+  "passed": 167,
+  "failed": 0,
+  "oracle_mismatch_count": 0,
+  "mismatches": [],
+  "false_pass_count": 0,
+  "false_pass_details": [],
+  "ts_formal_false_pass_count": 0,
+  "ts_formal_false_pass_details": [],
+  "formal_pipeline_fixtures_checked": 167,
+  "adversarial_fixture_ids": [
+    "G-01",
+    "G-03",
+    "G-05",
+    "G-07",
+    "G-09",
+    "G-10",
+    "G-12",
+    "G-13",
+    "G-14",
+    "G-16",
+    "G-19",
+    "G-20",
+    "G-21",
+    "G-24",
+    "G-81",
+    "G-82",
+    "G-83",
+    "G-84",
+    "G-85",
+    "G-86",
+    "G-87",
+    "G-88",
+    "G-89",
+    "G-90",
+    "G-91",
+    "G-92",
+    "G-93",
+    "G-94",
+    "G-95",
+    "G-96",
+    "G-97",
+    "G-98",
+    "G-99",
+    "G-100",
+    "G-101",
+    "G-102",
+    "G-103",
+    "G-104",
+    "G-105",
+    "G-106",
+    "G-107",
+    "G-108",
+    "G-109",
+    "G-110",
+    "G-111",
+    "G-112",
+    "G-113",
+    "G-114",
+    "G-115",
+    "G-116",
+    "G-117",
+    "G-118",
+    "G-119",
+    "G-120",
+    "G-121",
+    "G-122",
+    "G-123",
+    "G-124",
+    "G-125",
+    "G-126",
+    "G-127",
+    "G-128",
+    "G-129",
+    "G-130",
+    "G-131",
+    "G-132",
+    "G-133",
+    "G-134",
+    "G-135",
+    "G-136",
+    "G-137",
+    "G-138",
+    "G-139",
+    "G-140",
+    "G-141",
+    "G-142",
+    "G-143",
+    "G-144",
+    "G-145",
+    "G-146",
+    "G-147",
+    "G-148",
+    "G-149",
+    "G-150",
+    "G-151",
+    "G-152",
+    "G-153",
+    "G-154",
+    "G-155",
+    "G-156",
+    "G-157",
+    "G-158",
+    "G-159",
+    "G-160",
+    "G-161",
+    "G-162",
+    "G-163",
+    "G-164",
+    "G-165",
+    "G-166",
+    "G-167",
+    "G-73",
+    "G-74",
+    "G-75",
+    "G-76",
+    "G-77",
+    "G-78",
+    "G-79",
+    "G-80"
+  ],
+  "unsupported_as_unknown_count": 34,
+  "unsupported_as_unknown_fixture_ids": [
+    "G-16",
+    "G-24",
+    "G-35",
+    "G-36",
+    "G-85",
+    "G-86",
+    "G-87",
+    "G-88",
+    "G-89",
+    "G-90",
+    "G-94",
+    "G-95",
+    "G-98",
+    "G-99",
+    "G-100",
+    "G-104",
+    "G-105",
+    "G-114",
+    "G-115",
+    "G-47",
+    "G-51",
+    "G-52",
+    "G-57",
+    "G-58",
+    "G-59",
+    "G-69",
+    "G-73",
+    "G-74",
+    "G-75",
+    "G-76",
+    "G-77",
+    "G-78",
+    "G-79",
+    "G-80"
+  ],
+  "expected_unknown_fixture_count": 34,
+  "typescript_exit_code": 0,
+  "oracle_exit_code": 0,
+  "formal_typescript_exit_code": 0,
+  "typescript_log": "evidence/tests/logs/golden-oracle-ts.log",
+  "oracle_log": "evidence/tests/logs/golden-oracle-py.log",
+  "input_fixture_sha256": "94f66c81224c42a01d5ec7fc88941570bc17994acf8da8c62c00985c6fe35957",
+  "input_file_hashes": [
+    {
+      "path": "tests/fixtures/golden/G-01-cp-a-pr-docs-only/expected.json",
+      "sha256": "dc48961d8c4c4df6329745d914d52393348403790e07453b536cc7663cc6e09a"
+    },
+    {
+      "path": "tests/fixtures/golden/G-01-cp-a-pr-docs-only/required-checks.json",
+      "sha256": "57461d69af28c8890b8827da27c07bc9e01774466ff14f0354272a538ba015ea"
+    },
+    {
+      "path": "tests/fixtures/golden/G-01-cp-a-pr-docs-only/scenario.json",
+      "sha256": "fd9d9357f927ba7e1dc3d72fbc3197b142d577399fffbd874154be9c881955b0"
+    },
+    {
+      "path": "tests/fixtures/golden/G-01-cp-a-pr-docs-only/workflow.yml",
+      "sha256": "41455bddf67fe22c504e64fd68620e4fba7c385307a3e4001b877440c04a7569"
+    },
+    {
+      "path": "tests/fixtures/golden/G-02-cp-b-merge-group-present/expected.json",
+      "sha256": "2d1706ee43a7e8fbd71e36e867e3079f0ed624de60652a37b68b1e29346f0d40"
+    },
+    {
+      "path": "tests/fixtures/golden/G-02-cp-b-merge-group-present/required-checks.json",
+      "sha256": "57461d69af28c8890b8827da27c07bc9e01774466ff14f0354272a538ba015ea"
+    },
+    {
+      "path": "tests/fixtures/golden/G-02-cp-b-merge-group-present/scenario.json",
+      "sha256": "ba4ff496667d1d721a64d06f1c2d7a4bda1765562f11b006d9fdc2bba57be19e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-02-cp-b-merge-group-present/workflow.yml",
+      "sha256": "f4a77e65d1bc5244cd7f44cebf2ec6028b4b4326bc7682ac324decdb63395fa4"
+    },
+    {
+      "path": "tests/fixtures/golden/G-03-cp-c-merge-group-missing/expected.json",
+      "sha256": "d010c9e8d047b77e1da541099c19ee1f104ba0dc7e17828e389beca2096622f5"
+    },
+    {
+      "path": "tests/fixtures/golden/G-03-cp-c-merge-group-missing/required-checks.json",
+      "sha256": "57461d69af28c8890b8827da27c07bc9e01774466ff14f0354272a538ba015ea"
+    },
+    {
+      "path": "tests/fixtures/golden/G-03-cp-c-merge-group-missing/scenario.json",
+      "sha256": "6d6edba6409f39e5531c34ac44990c21e31b5e1083941e5232f8bdb13f693cf5"
+    },
+    {
+      "path": "tests/fixtures/golden/G-03-cp-c-merge-group-missing/workflow.yml",
+      "sha256": "a2dcec257e818202d2af9e2a75c09ad8b973c87e6401e976f87bcce8f92ae340"
+    },
+    {
+      "path": "tests/fixtures/golden/G-04-push-baseline/expected.json",
+      "sha256": "4fd3ce49af53c96dd6a3a45f3141f1b70974aee650b431d26d0b44f0d980f206"
+    },
+    {
+      "path": "tests/fixtures/golden/G-04-push-baseline/required-checks.json",
+      "sha256": "57461d69af28c8890b8827da27c07bc9e01774466ff14f0354272a538ba015ea"
+    },
+    {
+      "path": "tests/fixtures/golden/G-04-push-baseline/scenario.json",
+      "sha256": "26066b8b980bc12c0e88bad2ca9153f1fb01efe17b98055dff4b35bde1b47b04"
+    },
+    {
+      "path": "tests/fixtures/golden/G-04-push-baseline/workflow.yml",
+      "sha256": "15f6dcc53cb09829944c72790a54c05462e75c9e696de6a034410a30b5e12d67"
+    },
+    {
+      "path": "tests/fixtures/golden/G-05-pr-types-mismatch/expected.json",
+      "sha256": "390ace80804cf6b7c3caaba1cbbc7565f28762ecd75daf15e3b918431f6094e5"
+    },
+    {
+      "path": "tests/fixtures/golden/G-05-pr-types-mismatch/required-checks.json",
+      "sha256": "57461d69af28c8890b8827da27c07bc9e01774466ff14f0354272a538ba015ea"
+    },
+    {
+      "path": "tests/fixtures/golden/G-05-pr-types-mismatch/scenario.json",
+      "sha256": "e3304683016782b277fbffe26015bce76701867e2fff97e7b959690354294ec5"
+    },
+    {
+      "path": "tests/fixtures/golden/G-05-pr-types-mismatch/workflow.yml",
+      "sha256": "3c98b1f3b20d072f35a4e833995f0390a5ce74013c6bd85516ea722fc119a0f2"
+    },
+    {
+      "path": "tests/fixtures/golden/G-06-pr-types-match/expected.json",
+      "sha256": "960c9608f81f65a273833389c959bcae6a627b26cab9b13c2a3e8047de2d44ef"
+    },
+    {
+      "path": "tests/fixtures/golden/G-06-pr-types-match/required-checks.json",
+      "sha256": "57461d69af28c8890b8827da27c07bc9e01774466ff14f0354272a538ba015ea"
+    },
+    {
+      "path": "tests/fixtures/golden/G-06-pr-types-match/scenario.json",
+      "sha256": "7450ce3727dce7b3f5f08488ad6c5bf3d9016a09982fb874ef1b451143a01c4b"
+    },
+    {
+      "path": "tests/fixtures/golden/G-06-pr-types-match/workflow.yml",
+      "sha256": "5502490961b64828fa67578efdaa199d0720b8b297a6472dcd21974c68799024"
+    },
+    {
+      "path": "tests/fixtures/golden/G-07-merge-group-types-mismatch/expected.json",
+      "sha256": "a3d55a02e39fcd64b6a65b6c3ffcdd278e7e938bfacfda47012d3bb7d37b1695"
+    },
+    {
+      "path": "tests/fixtures/golden/G-07-merge-group-types-mismatch/required-checks.json",
+      "sha256": "57461d69af28c8890b8827da27c07bc9e01774466ff14f0354272a538ba015ea"
+    },
+    {
+      "path": "tests/fixtures/golden/G-07-merge-group-types-mismatch/scenario.json",
+      "sha256": "b9b89b6a5526cd69dd699ecf5c6ced2349012558b594951c4cfb334c1b51599f"
+    },
+    {
+      "path": "tests/fixtures/golden/G-07-merge-group-types-mismatch/workflow.yml",
+      "sha256": "f4a77e65d1bc5244cd7f44cebf2ec6028b4b4326bc7682ac324decdb63395fa4"
+    },
+    {
+      "path": "tests/fixtures/golden/G-08-on-list-form/expected.json",
+      "sha256": "cd75351404fd1f7ba9ff264f67e3696ffc1022c2f57a6829cf0a1227218f2c99"
+    },
+    {
+      "path": "tests/fixtures/golden/G-08-on-list-form/required-checks.json",
+      "sha256": "57461d69af28c8890b8827da27c07bc9e01774466ff14f0354272a538ba015ea"
+    },
+    {
+      "path": "tests/fixtures/golden/G-08-on-list-form/scenario.json",
+      "sha256": "3367ce00fe79d3b1a7b86629bc478dec19e7355c455f9a26637af7cf16986e1d"
+    },
+    {
+      "path": "tests/fixtures/golden/G-08-on-list-form/workflow.yml",
+      "sha256": "725d34ee63c2b63cccc795548d37cb107ae5272997137c08ba07f53c5ea2740b"
+    },
+    {
+      "path": "tests/fixtures/golden/G-09-cp-f-branch-only-match/expected.json",
+      "sha256": "32e3610655bd5f419a6fea91ac42e99b014cc0c5b99f4e55a79339dfab5f2713"
+    },
+    {
+      "path": "tests/fixtures/golden/G-09-cp-f-branch-only-match/required-checks.json",
+      "sha256": "57461d69af28c8890b8827da27c07bc9e01774466ff14f0354272a538ba015ea"
+    },
+    {
+      "path": "tests/fixtures/golden/G-09-cp-f-branch-only-match/scenario.json",
+      "sha256": "96a36fc41e1e71e575d11d2ea1a80d2397acb590e68fed3db284dd54e82c52d4"
+    },
+    {
+      "path": "tests/fixtures/golden/G-09-cp-f-branch-only-match/workflow.yml",
+      "sha256": "80314196ccf9e3e1dd1b785252ac08101c6c51585af7c97f80bc457a7d243383"
+    },
+    {
+      "path": "tests/fixtures/golden/G-10-cp-f-path-only-match/expected.json",
+      "sha256": "3d8e214708b85ecf38641165ce125ff4b650b69852853039873e35029203b03d"
+    },
+    {
+      "path": "tests/fixtures/golden/G-10-cp-f-path-only-match/required-checks.json",
+      "sha256": "57461d69af28c8890b8827da27c07bc9e01774466ff14f0354272a538ba015ea"
+    },
+    {
+      "path": "tests/fixtures/golden/G-10-cp-f-path-only-match/scenario.json",
+      "sha256": "d5cad3bb4d15b689be9de5d329ed8d02b4e5c0efb14df79e3437181421e564e1"
+    },
+    {
+      "path": "tests/fixtures/golden/G-10-cp-f-path-only-match/workflow.yml",
+      "sha256": "80314196ccf9e3e1dd1b785252ac08101c6c51585af7c97f80bc457a7d243383"
+    },
+    {
+      "path": "tests/fixtures/golden/G-100-fix-p0-03-T6-36-order-num-keys/expected.json",
+      "sha256": "2dd82b3718d1b027a75beb94ebabe432638ed6848c9502ab86fc6ee9c59fd86d"
+    },
+    {
+      "path": "tests/fixtures/golden/G-100-fix-p0-03-T6-36-order-num-keys/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-100-fix-p0-03-T6-36-order-num-keys/scenario.json",
+      "sha256": "8d7685582d50939573a1f17759396d436f51ceb1effe31f61b48e55a265b31e0"
+    },
+    {
+      "path": "tests/fixtures/golden/G-100-fix-p0-03-T6-36-order-num-keys/workflow.yml",
+      "sha256": "d940cb4bd6c515906d6a20778e2feb6dc13905a869aba15b295a416583047780"
+    },
+    {
+      "path": "tests/fixtures/golden/G-101-fix-p0-03-T6-37-on-scalar-true/expected.json",
+      "sha256": "9f09970f9b633893b90dc6b2b20a44f0957d67c21aba3f5132d7146f54e5a060"
+    },
+    {
+      "path": "tests/fixtures/golden/G-101-fix-p0-03-T6-37-on-scalar-true/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-101-fix-p0-03-T6-37-on-scalar-true/scenario.json",
+      "sha256": "386fa068d5b3c7b5270de3a7440b2ef10b5fc016ed16200e2baffdf37af3ddf5"
+    },
+    {
+      "path": "tests/fixtures/golden/G-101-fix-p0-03-T6-37-on-scalar-true/workflow.yml",
+      "sha256": "97f12706a7d8aa4f423ef693d1bb8d89eefb4ee051ea90c08729ea12ee34e786"
+    },
+    {
+      "path": "tests/fixtures/golden/G-102-fix-p0-03-T6-38-branches-null/expected.json",
+      "sha256": "0d8ad51d88e065ad2054a1ed11fec455f1d586bd0b19fb0a4b44cf816a24476e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-102-fix-p0-03-T6-38-branches-null/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-102-fix-p0-03-T6-38-branches-null/scenario.json",
+      "sha256": "a27b1172fe1c60cc33e78eb652cd8080d733af38e4ad3d63b4e43007afc345eb"
+    },
+    {
+      "path": "tests/fixtures/golden/G-102-fix-p0-03-T6-38-branches-null/workflow.yml",
+      "sha256": "c4fa77a0f8c1dbfbda3113879bfcff7058edc4a794b907a2da96c00d7cbed3fe"
+    },
+    {
+      "path": "tests/fixtures/golden/G-103-fix-p0-03-T6-39-branches-empty/expected.json",
+      "sha256": "b332fca89fa405a3c0ae58fa41dd5b56fb75e57a8ca8a5c19b4508258ff96ca0"
+    },
+    {
+      "path": "tests/fixtures/golden/G-103-fix-p0-03-T6-39-branches-empty/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-103-fix-p0-03-T6-39-branches-empty/scenario.json",
+      "sha256": "8865233bee8c973a16e3077e280a17bd8693cf3d093248164d229318b2e47742"
+    },
+    {
+      "path": "tests/fixtures/golden/G-103-fix-p0-03-T6-39-branches-empty/workflow.yml",
+      "sha256": "17e57a6489faa740658cf16a6e55dd38a89455df639a9ab8047478be3decbc0f"
+    },
+    {
+      "path": "tests/fixtures/golden/G-104-fix-p0-03-T6-40-quoted-true-event/expected.json",
+      "sha256": "c64906eb71878cefa0ab0298a0e111b7d956507159c5550ce280b8ae794a627c"
+    },
+    {
+      "path": "tests/fixtures/golden/G-104-fix-p0-03-T6-40-quoted-true-event/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-104-fix-p0-03-T6-40-quoted-true-event/scenario.json",
+      "sha256": "6b1e2ed09aebd422156bd9da114b46454f4a3c0cd974bf8c3ec11067c45e4ed2"
+    },
+    {
+      "path": "tests/fixtures/golden/G-104-fix-p0-03-T6-40-quoted-true-event/workflow.yml",
+      "sha256": "42ff7f3c96d1bb461d85d142071195147380741de3a74ef37332995396fd726c"
+    },
+    {
+      "path": "tests/fixtures/golden/G-105-fix-p0-03-T6-41-dup-nan-nan/expected.json",
+      "sha256": "53e4529a6e15c196e0981eaf07f6627ec64b625db33046e6a1375b4f6f1f3b55"
+    },
+    {
+      "path": "tests/fixtures/golden/G-105-fix-p0-03-T6-41-dup-nan-nan/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-105-fix-p0-03-T6-41-dup-nan-nan/scenario.json",
+      "sha256": "5edc0eb862dce3847665b39bfae5c7df0fbc18637ff3dd3cdb87439de595ee1b"
+    },
+    {
+      "path": "tests/fixtures/golden/G-105-fix-p0-03-T6-41-dup-nan-nan/workflow.yml",
+      "sha256": "9e78e90e97a45d3f88538856009ae5f5cea5f55da2a15256b3a090022443693f"
+    },
+    {
+      "path": "tests/fixtures/golden/G-106-fix-p0-04-T6-42-bare-empty-event/expected.json",
+      "sha256": "1a6129afac6e366a9fa98a94d60732ddbaf506314fd4a4da41e4d2c3f4810d60"
+    },
+    {
+      "path": "tests/fixtures/golden/G-106-fix-p0-04-T6-42-bare-empty-event/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-106-fix-p0-04-T6-42-bare-empty-event/scenario.json",
+      "sha256": "bada2881ff92a9f03336f53f520aaf716f16e03817c8217b3e8237f75cfe0636"
+    },
+    {
+      "path": "tests/fixtures/golden/G-106-fix-p0-04-T6-42-bare-empty-event/workflow.yml",
+      "sha256": "b57b93356d6ec8e6bf891a3c72614ac414348c086e7b4ac1f79a628cc3a29d51"
+    },
+    {
+      "path": "tests/fixtures/golden/G-107-fix-p0-04-T6-43-bare-empty-filter/expected.json",
+      "sha256": "6f79a923e2feff58ef2cafa1df377f879330bbb023452d0199546d04816ec96b"
+    },
+    {
+      "path": "tests/fixtures/golden/G-107-fix-p0-04-T6-43-bare-empty-filter/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-107-fix-p0-04-T6-43-bare-empty-filter/scenario.json",
+      "sha256": "9b4415dab6bde32ca0f1e32980b1518cf04f83ce20a5eda2dbd56dec77f5c300"
+    },
+    {
+      "path": "tests/fixtures/golden/G-107-fix-p0-04-T6-43-bare-empty-filter/workflow.yml",
+      "sha256": "34578adf245e26c3e7dd0ac27225ef8c6a2f4f6a1b2514baf5ca479a58eba178"
+    },
+    {
+      "path": "tests/fixtures/golden/G-108-fix-p0-04-T6-44-bare-empty-jobs/expected.json",
+      "sha256": "23c906823d49860cf8c2ce7a13c84ec6619274492973ca8e894f9ad1613f8e09"
+    },
+    {
+      "path": "tests/fixtures/golden/G-108-fix-p0-04-T6-44-bare-empty-jobs/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-108-fix-p0-04-T6-44-bare-empty-jobs/scenario.json",
+      "sha256": "02071abbe82fc2d8496c1b64713a377c625df58240c8807cbbefe65631839569"
+    },
+    {
+      "path": "tests/fixtures/golden/G-108-fix-p0-04-T6-44-bare-empty-jobs/workflow.yml",
+      "sha256": "a6aeb1376c33ebb2834c16d754ac94ce37e08e996d4c4f263132f68c9496543c"
+    },
+    {
+      "path": "tests/fixtures/golden/G-109-fix-p0-04-T6-45-bare-empty-top/expected.json",
+      "sha256": "bab722efe504f130aa443457a76980ac81516c187554e247b35374f0117058c2"
+    },
+    {
+      "path": "tests/fixtures/golden/G-109-fix-p0-04-T6-45-bare-empty-top/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-109-fix-p0-04-T6-45-bare-empty-top/scenario.json",
+      "sha256": "c5b173b6f62f6512f60af6b0193f2d5243fbb073e1f70fa823552abba68a643d"
+    },
+    {
+      "path": "tests/fixtures/golden/G-109-fix-p0-04-T6-45-bare-empty-top/workflow.yml",
+      "sha256": "a5148d1f2833f978eb45ea8435775de02b41fe38c740072138573d7d453eea51"
+    },
+    {
+      "path": "tests/fixtures/golden/G-11-cp-g-ordered-negation/expected.json",
+      "sha256": "bebe2cbecc6a466089af4f251c69cdbbe4924d2ccf6699835ce5bd62c5bf2178"
+    },
+    {
+      "path": "tests/fixtures/golden/G-11-cp-g-ordered-negation/required-checks.json",
+      "sha256": "57461d69af28c8890b8827da27c07bc9e01774466ff14f0354272a538ba015ea"
+    },
+    {
+      "path": "tests/fixtures/golden/G-11-cp-g-ordered-negation/scenario.json",
+      "sha256": "3e2f00ece9d899563aac91ca29911edb00046f511f2c97f8ce7d08ece342b856"
+    },
+    {
+      "path": "tests/fixtures/golden/G-11-cp-g-ordered-negation/workflow.yml",
+      "sha256": "34d1c8e6df5b8cd2a13acee1f3c49a6af8f381881cc17cfd478734690a14665d"
+    },
+    {
+      "path": "tests/fixtures/golden/G-110-fix-p0-04-T6-46-bare-empty-nested-job/expected.json",
+      "sha256": "63b1481dbbf7cda0f2a4d4a988a4f2878745156402341bac9acdfa32b6bc0a30"
+    },
+    {
+      "path": "tests/fixtures/golden/G-110-fix-p0-04-T6-46-bare-empty-nested-job/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-110-fix-p0-04-T6-46-bare-empty-nested-job/scenario.json",
+      "sha256": "b6f867ccf8a56929fd137e554b3bffc932ec7821aed3de1394c6e608f7418fc6"
+    },
+    {
+      "path": "tests/fixtures/golden/G-110-fix-p0-04-T6-46-bare-empty-nested-job/workflow.yml",
+      "sha256": "6efc3fa13d1a1f818b0b701483d7a62f9f54c5f4833463c8bd8bc2514e2bfc80"
+    },
+    {
+      "path": "tests/fixtures/golden/G-111-fix-p0-04-T6-47-bare-empty-steps-item/expected.json",
+      "sha256": "cf6fb6a379568d433f5e0be3d3c6efe34c9d04d60fb41c3e353c32ee2f8a20d3"
+    },
+    {
+      "path": "tests/fixtures/golden/G-111-fix-p0-04-T6-47-bare-empty-steps-item/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-111-fix-p0-04-T6-47-bare-empty-steps-item/scenario.json",
+      "sha256": "64d77e72c6dfeff55e7c97f8b61a128d4a92be62ec4d05f295b7ef01803151d7"
+    },
+    {
+      "path": "tests/fixtures/golden/G-111-fix-p0-04-T6-47-bare-empty-steps-item/workflow.yml",
+      "sha256": "4d21425fc1e6b1aef5621422550d07f26fc35fb40847e8ceac279df9a6b3477c"
+    },
+    {
+      "path": "tests/fixtures/golden/G-112-fix-p0-04-T6-48-two-bare-keys/expected.json",
+      "sha256": "60c22c48f97e88c5bfbacb2d92feda416dba48c73a408428dbdc93e5857eb1c0"
+    },
+    {
+      "path": "tests/fixtures/golden/G-112-fix-p0-04-T6-48-two-bare-keys/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-112-fix-p0-04-T6-48-two-bare-keys/scenario.json",
+      "sha256": "ea268bef576aac8fb66d5ba6be4bee04ad81d153513e60ace29ef9fc61e577ae"
+    },
+    {
+      "path": "tests/fixtures/golden/G-112-fix-p0-04-T6-48-two-bare-keys/workflow.yml",
+      "sha256": "8fe37ddd0b33e54497c994a81ebb111c2e94955bc8d4934d9de06a2ad05129e6"
+    },
+    {
+      "path": "tests/fixtures/golden/G-113-fix-p0-04-T6-49-bare-plus-null/expected.json",
+      "sha256": "862fab12b57d761df191875d12d7b9ca7d51651796ee769e5b4d15b7892ca11f"
+    },
+    {
+      "path": "tests/fixtures/golden/G-113-fix-p0-04-T6-49-bare-plus-null/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-113-fix-p0-04-T6-49-bare-plus-null/scenario.json",
+      "sha256": "b24af3717ae922a1b6378c0fc6f97749745f07ee344b74c09bba2bfcd6e600f8"
+    },
+    {
+      "path": "tests/fixtures/golden/G-113-fix-p0-04-T6-49-bare-plus-null/workflow.yml",
+      "sha256": "419f7a55b55150bbf608cecf806c3617bd3dd7ba1631188b0f9a8582a462b924"
+    },
+    {
+      "path": "tests/fixtures/golden/G-114-fix-p0-04-T6-50-scalar-job-true/expected.json",
+      "sha256": "84c941c9290ae6b454a8d5802e4831b8f5373195f86477a31b87257528287d14"
+    },
+    {
+      "path": "tests/fixtures/golden/G-114-fix-p0-04-T6-50-scalar-job-true/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-114-fix-p0-04-T6-50-scalar-job-true/scenario.json",
+      "sha256": "f10f7b2e6a12d91b7ae63383d3bf9b90c9629f3b580ade146d87aabe32c803ab"
+    },
+    {
+      "path": "tests/fixtures/golden/G-114-fix-p0-04-T6-50-scalar-job-true/workflow.yml",
+      "sha256": "3c7b26be8d973ef5154b3a631c9b54e122ac36cab80bad92a1387653f52ba5e1"
+    },
+    {
+      "path": "tests/fixtures/golden/G-115-fix-p0-04-T6-51-scalar-job-null/expected.json",
+      "sha256": "7363bbacb3a556a29f32a59e72dde0a4b891b8087cd70ed17f3b6c7a3ff9e097"
+    },
+    {
+      "path": "tests/fixtures/golden/G-115-fix-p0-04-T6-51-scalar-job-null/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-115-fix-p0-04-T6-51-scalar-job-null/scenario.json",
+      "sha256": "7db2c72125a984c5961d522cc83eee039b6bd4efe2304228aaf40d96d2398955"
+    },
+    {
+      "path": "tests/fixtures/golden/G-115-fix-p0-04-T6-51-scalar-job-null/workflow.yml",
+      "sha256": "5e7f2cca77049904fde38d61bbdc752f96c1856c83f7a37f2ea891886dc32ff7"
+    },
+    {
+      "path": "tests/fixtures/golden/G-116-fix-p0-05-T6-52-flow-alias-key/expected.json",
+      "sha256": "351ce84614ac58fd73e85d149074553af8c55c613f17900c32652d13520a1833"
+    },
+    {
+      "path": "tests/fixtures/golden/G-116-fix-p0-05-T6-52-flow-alias-key/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-116-fix-p0-05-T6-52-flow-alias-key/scenario.json",
+      "sha256": "8622b6d30443329bd6ae9f78979b9f49c5ae08ed5b296ad1f7fb85d32a0f8261"
+    },
+    {
+      "path": "tests/fixtures/golden/G-116-fix-p0-05-T6-52-flow-alias-key/workflow.yml",
+      "sha256": "9be4f4580e1350ff51bdba1b0f91760b7d023bac9bb15a6c0421b2e865ffa5a2"
+    },
+    {
+      "path": "tests/fixtures/golden/G-117-fix-p0-05-T6-53-block-alias-no-space/expected.json",
+      "sha256": "9b08c3e03a5ec1fa53d85835dfd31481c8187f191aeba47cda913744ac6184bf"
+    },
+    {
+      "path": "tests/fixtures/golden/G-117-fix-p0-05-T6-53-block-alias-no-space/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-117-fix-p0-05-T6-53-block-alias-no-space/scenario.json",
+      "sha256": "2ec3aa78514aed0ae0a7f4777f056ee8b08cfacbef0f5fcf12b1c917cc9ba8c2"
+    },
+    {
+      "path": "tests/fixtures/golden/G-117-fix-p0-05-T6-53-block-alias-no-space/workflow.yml",
+      "sha256": "4ce61f5f29f145f265d5ee73aaa4f56e963e9d3e9302830e89a1aeb012591b6a"
+    },
+    {
+      "path": "tests/fixtures/golden/G-118-fix-p0-05-T6-54-filter-flow-alias-key/expected.json",
+      "sha256": "cf4fd68fc99712d578f7cf85800b0635ff399e08842ab6512524d735db4ad665"
+    },
+    {
+      "path": "tests/fixtures/golden/G-118-fix-p0-05-T6-54-filter-flow-alias-key/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-118-fix-p0-05-T6-54-filter-flow-alias-key/scenario.json",
+      "sha256": "11b908dd28c74b795d952000b4cbb34e1995b3d8b14de14d59eeef2e11125c6a"
+    },
+    {
+      "path": "tests/fixtures/golden/G-118-fix-p0-05-T6-54-filter-flow-alias-key/workflow.yml",
+      "sha256": "d511ce3b1783286f058650e5bcb68c7288c1e6d796fa43a940e7ec98cad48c7f"
+    },
+    {
+      "path": "tests/fixtures/golden/G-119-fix-p0-05-T6-55-jobs-flow-alias-key/expected.json",
+      "sha256": "9e8270809d206db2af24fa5c91175a037798ca9a625a8a9271e4726bac577d01"
+    },
+    {
+      "path": "tests/fixtures/golden/G-119-fix-p0-05-T6-55-jobs-flow-alias-key/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-119-fix-p0-05-T6-55-jobs-flow-alias-key/scenario.json",
+      "sha256": "89c73da4c36ceb5861da48d1f19261a21d0e4a681a116b895e93d6fd61fdb8bd"
+    },
+    {
+      "path": "tests/fixtures/golden/G-119-fix-p0-05-T6-55-jobs-flow-alias-key/workflow.yml",
+      "sha256": "fddecffa3f9650186e8383b47f57153f99f50c12385853ad28b5567ac806c544"
+    },
+    {
+      "path": "tests/fixtures/golden/G-12-cp-h-commit-skip/expected.json",
+      "sha256": "386cc3d21fa030a30bc0cdc46548325fde9ff1858a2c12cd764c40db91581e19"
+    },
+    {
+      "path": "tests/fixtures/golden/G-12-cp-h-commit-skip/required-checks.json",
+      "sha256": "57461d69af28c8890b8827da27c07bc9e01774466ff14f0354272a538ba015ea"
+    },
+    {
+      "path": "tests/fixtures/golden/G-12-cp-h-commit-skip/scenario.json",
+      "sha256": "d82da36a32cbeedfffa3f19dd9839f538e3af1f96ca611d43be15486b26b7563"
+    },
+    {
+      "path": "tests/fixtures/golden/G-12-cp-h-commit-skip/workflow.yml",
+      "sha256": "41455bddf67fe22c504e64fd68620e4fba7c385307a3e4001b877440c04a7569"
+    },
+    {
+      "path": "tests/fixtures/golden/G-120-fix-p0-06-T6-56-collection-alias-key/expected.json",
+      "sha256": "a88c28740b3e6f2815ab1b501a1d1bc5a99f87ff05369065ccf8c69bbd0a9914"
+    },
+    {
+      "path": "tests/fixtures/golden/G-120-fix-p0-06-T6-56-collection-alias-key/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-120-fix-p0-06-T6-56-collection-alias-key/scenario.json",
+      "sha256": "958d101171ac9cd760b8e2de0cd4de77dd37b1a3405e5586abdcb8ee7a5dfcf9"
+    },
+    {
+      "path": "tests/fixtures/golden/G-120-fix-p0-06-T6-56-collection-alias-key/workflow.yml",
+      "sha256": "abe3a1ada90eb677344cc70c4acb380a64bd83587b121dc7601e246be7be5386"
+    },
+    {
+      "path": "tests/fixtures/golden/G-121-fix-p0-06-T6-57-flow-collection-alias-key/expected.json",
+      "sha256": "27853efd5d87273f5576b32bdb19296293cf7ddb4cf00f366947cf931163bfad"
+    },
+    {
+      "path": "tests/fixtures/golden/G-121-fix-p0-06-T6-57-flow-collection-alias-key/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-121-fix-p0-06-T6-57-flow-collection-alias-key/scenario.json",
+      "sha256": "38837fbf0bc4b840099815f774afd1bfe98615dcb855c03bdb50e15279d0f01e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-121-fix-p0-06-T6-57-flow-collection-alias-key/workflow.yml",
+      "sha256": "52c29fc46de9a8b249c0152306d614162cb756b27a9202663d2ed60372104edd"
+    },
+    {
+      "path": "tests/fixtures/golden/G-122-fix-p0-06-T6-58-seq-collection-alias-key/expected.json",
+      "sha256": "47ff5df9b9d1f893b6b5d43620a845bd2da26799c63e5b6d5f35f62ab4ded5dd"
+    },
+    {
+      "path": "tests/fixtures/golden/G-122-fix-p0-06-T6-58-seq-collection-alias-key/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-122-fix-p0-06-T6-58-seq-collection-alias-key/scenario.json",
+      "sha256": "6d2c5ca9a60322b9b19ad4c055f5158fe41555dadda2c72bacf5b6903fe89c8a"
+    },
+    {
+      "path": "tests/fixtures/golden/G-122-fix-p0-06-T6-58-seq-collection-alias-key/workflow.yml",
+      "sha256": "4e61d0d6fe175968c64e913056616d39c069072acc984efb26485f5f83caad9a"
+    },
+    {
+      "path": "tests/fixtures/golden/G-123-fix-p0-06-T6-59-flow-alias-tab/expected.json",
+      "sha256": "df692b22fd70d9ddc930402ffee0b18ac70bf2e7e37231fededa75a760127677"
+    },
+    {
+      "path": "tests/fixtures/golden/G-123-fix-p0-06-T6-59-flow-alias-tab/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-123-fix-p0-06-T6-59-flow-alias-tab/scenario.json",
+      "sha256": "56e8dc3aff1991085a664ed9a3705215c074bdd4e22f7589227f542ba18b591f"
+    },
+    {
+      "path": "tests/fixtures/golden/G-123-fix-p0-06-T6-59-flow-alias-tab/workflow.yml",
+      "sha256": "59a655b79fe2ad35ab54eca688c0889c6e103e2531af1a32e1cd9e4a6e27312d"
+    },
+    {
+      "path": "tests/fixtures/golden/G-124-fix-p0-06-T6-60-block-alias-tab/expected.json",
+      "sha256": "01349ecd542acdedd6125c5e462618513ba0ac1adf1632bbce3e741b6b05a3c1"
+    },
+    {
+      "path": "tests/fixtures/golden/G-124-fix-p0-06-T6-60-block-alias-tab/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-124-fix-p0-06-T6-60-block-alias-tab/scenario.json",
+      "sha256": "1984f127b01fbbc642fad8aafbac2823da5bd556f0c8587ae92b44ec7e440b3f"
+    },
+    {
+      "path": "tests/fixtures/golden/G-124-fix-p0-06-T6-60-block-alias-tab/workflow.yml",
+      "sha256": "b09666f1f982ff62db0e153a37ee7e85d82455f332e2b620060c1611aa71445b"
+    },
+    {
+      "path": "tests/fixtures/golden/G-125-fix-p0-06-T6-61-flow-scalar-key-tab/expected.json",
+      "sha256": "5aa5bce7b8175145650854bb1327aee80506b07cd82ebf9416b2f2a5168cad79"
+    },
+    {
+      "path": "tests/fixtures/golden/G-125-fix-p0-06-T6-61-flow-scalar-key-tab/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-125-fix-p0-06-T6-61-flow-scalar-key-tab/scenario.json",
+      "sha256": "239bff5e819a4728f70175dd7f8285683562657d49cbcbd292f496b7e4b224de"
+    },
+    {
+      "path": "tests/fixtures/golden/G-125-fix-p0-06-T6-61-flow-scalar-key-tab/workflow.yml",
+      "sha256": "a0cdf70171cba6fa44bb70df2e097bf1188b7369e33f293389a540e6a28d52ce"
+    },
+    {
+      "path": "tests/fixtures/golden/G-126-fix-p0-07-T6-62-v1-double-quote-tab/expected.json",
+      "sha256": "0d67a2401a72b799d541994d13db1a80aecb822d3c146eb85ecdda78c5f68faa"
+    },
+    {
+      "path": "tests/fixtures/golden/G-126-fix-p0-07-T6-62-v1-double-quote-tab/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-126-fix-p0-07-T6-62-v1-double-quote-tab/scenario.json",
+      "sha256": "1fdcdde04a7faea143ad97766e1041dfab4e97c6cb763c12ed87475eb84c34ca"
+    },
+    {
+      "path": "tests/fixtures/golden/G-126-fix-p0-07-T6-62-v1-double-quote-tab/workflow.yml",
+      "sha256": "869f6e39114f359a3a80e4bf40beda00bbc1836d9a10b4ebad34582d5182c2db"
+    },
+    {
+      "path": "tests/fixtures/golden/G-127-fix-p0-07-T6-63-v2-single-quote-tab/expected.json",
+      "sha256": "db389f7cb7fec701598d53747a7e83b0ffbda5e71f2e47f4b51166f9a6f28da7"
+    },
+    {
+      "path": "tests/fixtures/golden/G-127-fix-p0-07-T6-63-v2-single-quote-tab/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-127-fix-p0-07-T6-63-v2-single-quote-tab/scenario.json",
+      "sha256": "68fdc94c9cb287a0add2bfa223a40e793fd2d83952a5ed3876aaf2600aa6a25e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-127-fix-p0-07-T6-63-v2-single-quote-tab/workflow.yml",
+      "sha256": "69d9aba24f73305c2d524e3a53f0e8d71b1d9c5bf07a45674d5dc21227a066b1"
+    },
+    {
+      "path": "tests/fixtures/golden/G-128-fix-p0-07-T6-64-v5-continuation-quote-tab/expected.json",
+      "sha256": "359e76335fa29767c069f6f6b4babe8a9117ec951a20982333ee01b2275aa805"
+    },
+    {
+      "path": "tests/fixtures/golden/G-128-fix-p0-07-T6-64-v5-continuation-quote-tab/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-128-fix-p0-07-T6-64-v5-continuation-quote-tab/scenario.json",
+      "sha256": "88ee38ebdb08c67115477f4474693a9b109b4b18f6aad8b3989a3dd686816cac"
+    },
+    {
+      "path": "tests/fixtures/golden/G-128-fix-p0-07-T6-64-v5-continuation-quote-tab/workflow.yml",
+      "sha256": "bee775a3b0108a5857a7b2c1ce0e7a2e99fa2109400cfe23581a7d5d2482dbd8"
+    },
+    {
+      "path": "tests/fixtures/golden/G-129-fix-p0-07-T6-65-v9-trailing-comment-tab/expected.json",
+      "sha256": "eacd51b62d58e4144d5422219ff97e3be0385f9ee5411fbbb414f97d579b0175"
+    },
+    {
+      "path": "tests/fixtures/golden/G-129-fix-p0-07-T6-65-v9-trailing-comment-tab/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-129-fix-p0-07-T6-65-v9-trailing-comment-tab/scenario.json",
+      "sha256": "77a05a36c90e2957b0527b59109abe4869fa84a868d7b9c993568635a3ebc03f"
+    },
+    {
+      "path": "tests/fixtures/golden/G-129-fix-p0-07-T6-65-v9-trailing-comment-tab/workflow.yml",
+      "sha256": "4ec9990f14145242efc5abe3313f7db493959dd6365a075add42094d398ecf2c"
+    },
+    {
+      "path": "tests/fixtures/golden/G-13-branches-ignore/expected.json",
+      "sha256": "715995432ab84e1d8865ac7369fa4ac8faeacd32972aca3e19ab86bd0e19abd3"
+    },
+    {
+      "path": "tests/fixtures/golden/G-13-branches-ignore/required-checks.json",
+      "sha256": "57461d69af28c8890b8827da27c07bc9e01774466ff14f0354272a538ba015ea"
+    },
+    {
+      "path": "tests/fixtures/golden/G-13-branches-ignore/scenario.json",
+      "sha256": "40450b4855d0efcb915c84ce39a3d7f88f718b193e48a9c733790fc72d5f83b2"
+    },
+    {
+      "path": "tests/fixtures/golden/G-13-branches-ignore/workflow.yml",
+      "sha256": "dbde5de7374d8e5e9debd4db24921779e9542c5910d7785b16a2cb3f3317b961"
+    },
+    {
+      "path": "tests/fixtures/golden/G-130-fix-p0-07-T6-66-v1e-value-next-line-quote-tab/expected.json",
+      "sha256": "440f4aca4d2a21ce5729455b29a808241d9a5a059328e33ba56848a8b9c842f4"
+    },
+    {
+      "path": "tests/fixtures/golden/G-130-fix-p0-07-T6-66-v1e-value-next-line-quote-tab/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-130-fix-p0-07-T6-66-v1e-value-next-line-quote-tab/scenario.json",
+      "sha256": "960f74bbf9b6d476c0a2e1293354eecddfae2990dc25b274efb44904816be73e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-130-fix-p0-07-T6-66-v1e-value-next-line-quote-tab/workflow.yml",
+      "sha256": "6e796339615fe3c40fdf7870bc240a071eb6ede268df855e7ac2326c4b36a3f3"
+    },
+    {
+      "path": "tests/fixtures/golden/G-131-fix-p0-07-T6-67-v1f-continuation-mid-quote-tab/expected.json",
+      "sha256": "b7094bfb492e689238c7f43cc4a1ad6cca2575ed97394190dce4b4d3970eeda7"
+    },
+    {
+      "path": "tests/fixtures/golden/G-131-fix-p0-07-T6-67-v1f-continuation-mid-quote-tab/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-131-fix-p0-07-T6-67-v1f-continuation-mid-quote-tab/scenario.json",
+      "sha256": "fe1c3a9fc03c9af2f1669bf235ac85d4f70744d675d7aa85c0c658e59d8ddd2a"
+    },
+    {
+      "path": "tests/fixtures/golden/G-131-fix-p0-07-T6-67-v1f-continuation-mid-quote-tab/workflow.yml",
+      "sha256": "8764f50ce5804b122655567217b1bfe662640d29be7fbdb03c18f1708e17e42b"
+    },
+    {
+      "path": "tests/fixtures/golden/G-132-fix-p0-08-T6-68-resid-dq/expected.json",
+      "sha256": "fdbcf5b91eb699bf58a6434ff4aa64efd323826c59106fbee72f5d9faa994dc8"
+    },
+    {
+      "path": "tests/fixtures/golden/G-132-fix-p0-08-T6-68-resid-dq/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-132-fix-p0-08-T6-68-resid-dq/scenario.json",
+      "sha256": "c83d8149cbc4ad279afd896852cff732aa4e0a8b647a13220defa23e6be6811e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-132-fix-p0-08-T6-68-resid-dq/workflow.yml",
+      "sha256": "724e44402fbc257498c9cc037f7fe8981f4a3cc0eb694e938f19f7a79a2c6686"
+    },
+    {
+      "path": "tests/fixtures/golden/G-133-fix-p0-08-T6-69-resid-sq/expected.json",
+      "sha256": "156d4b6110e06057fda553fd5232094eb61bade102ae67b78eec0bb01f18684d"
+    },
+    {
+      "path": "tests/fixtures/golden/G-133-fix-p0-08-T6-69-resid-sq/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-133-fix-p0-08-T6-69-resid-sq/scenario.json",
+      "sha256": "abaf51dfb545a624c98a70492e4f6ea26e32d20f94ad73f7459c11aa2f49f779"
+    },
+    {
+      "path": "tests/fixtures/golden/G-133-fix-p0-08-T6-69-resid-sq/workflow.yml",
+      "sha256": "4d7080f6278b796ea291a947ff4e8ca12013c15ddc005bb3270e07e2727e68d3"
+    },
+    {
+      "path": "tests/fixtures/golden/G-134-fix-p0-08-T6-70-resid-dq-notab/expected.json",
+      "sha256": "52eef0499320aa47c3c3fdc1195e23fafeea0d90430d76918cd1751a707fb33b"
+    },
+    {
+      "path": "tests/fixtures/golden/G-134-fix-p0-08-T6-70-resid-dq-notab/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-134-fix-p0-08-T6-70-resid-dq-notab/scenario.json",
+      "sha256": "f5821d5df1eeb5f92307b473ffabe31622d20087e4a159e50517e7445c94e16d"
+    },
+    {
+      "path": "tests/fixtures/golden/G-134-fix-p0-08-T6-70-resid-dq-notab/workflow.yml",
+      "sha256": "b824c3c874fb72cbbb5b336174dd8b28c0ed00bfb0727e9bdd8e24013ff5748b"
+    },
+    {
+      "path": "tests/fixtures/golden/G-135-fix-p0-08-T6-71-resid-dq-ind2/expected.json",
+      "sha256": "132ca8d8a25ec03d0327d2f6e5ad483c26b2841ee7b0125e6d4a14b772d439ed"
+    },
+    {
+      "path": "tests/fixtures/golden/G-135-fix-p0-08-T6-71-resid-dq-ind2/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-135-fix-p0-08-T6-71-resid-dq-ind2/scenario.json",
+      "sha256": "08e3b5b3d2188a7ff180b780929ed4f8ca038d561e3aec960c362440f0278f22"
+    },
+    {
+      "path": "tests/fixtures/golden/G-135-fix-p0-08-T6-71-resid-dq-ind2/workflow.yml",
+      "sha256": "27fbd8162d163b65571436958b4c64234e16317b86ac9297a5104b33f191ac55"
+    },
+    {
+      "path": "tests/fixtures/golden/G-136-fix-p0-08-T6-72-resid-dq-ind8/expected.json",
+      "sha256": "e0fa4ca3910326d39b3e72408dc8290882dd82bc2a4b43bb2845889a15497b8a"
+    },
+    {
+      "path": "tests/fixtures/golden/G-136-fix-p0-08-T6-72-resid-dq-ind8/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-136-fix-p0-08-T6-72-resid-dq-ind8/scenario.json",
+      "sha256": "a0f1ef4f5fc45bd08eaeefaffe4d00b19aebbc17f0029fd0e8e289bf03a899da"
+    },
+    {
+      "path": "tests/fixtures/golden/G-136-fix-p0-08-T6-72-resid-dq-ind8/workflow.yml",
+      "sha256": "d446ec7c17644e143389f8e8deb9f4ebf9295532df6ab460ba52da680fd74cb6"
+    },
+    {
+      "path": "tests/fixtures/golden/G-137-fix-p0-08-T6-73-resid-dq-ind9/expected.json",
+      "sha256": "6bb22ac362524fd64229bf19869dac884c91bda852e0b51c6d9a047d158db951"
+    },
+    {
+      "path": "tests/fixtures/golden/G-137-fix-p0-08-T6-73-resid-dq-ind9/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-137-fix-p0-08-T6-73-resid-dq-ind9/scenario.json",
+      "sha256": "da91f4361ec140699198c270b2ec5d8397f41630b5d137f1e36c2b456bd21976"
+    },
+    {
+      "path": "tests/fixtures/golden/G-137-fix-p0-08-T6-73-resid-dq-ind9/workflow.yml",
+      "sha256": "4a29be7af060f8272a4839aaa81ca7c153bda0643ffc948c4225ea3567485bda"
+    },
+    {
+      "path": "tests/fixtures/golden/G-138-fix-p0-08-T6-74-name-k0-ind0/expected.json",
+      "sha256": "a2eda1d389898062266564e8af304af704e8330490d73fdc8c311400009586dd"
+    },
+    {
+      "path": "tests/fixtures/golden/G-138-fix-p0-08-T6-74-name-k0-ind0/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-138-fix-p0-08-T6-74-name-k0-ind0/scenario.json",
+      "sha256": "9ebff2f66a433ffccbd456c7f01c1c54cacc9833198673e517871e6cc9b94233"
+    },
+    {
+      "path": "tests/fixtures/golden/G-138-fix-p0-08-T6-74-name-k0-ind0/workflow.yml",
+      "sha256": "a246ad4bf11e9b869de70efc044205ed206722e5e4a14dcde48f97d5073d556e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-139-fix-p0-08-T6-75-name-k0-ind1/expected.json",
+      "sha256": "90819011d245c67ae1eb09faf371694164c11a7b9bd375dc3281b20e7ee0775f"
+    },
+    {
+      "path": "tests/fixtures/golden/G-139-fix-p0-08-T6-75-name-k0-ind1/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-139-fix-p0-08-T6-75-name-k0-ind1/scenario.json",
+      "sha256": "854225b6e8f007ee0c460d6f684bdc56d06d862ebe086c7c398c08c8be25abaf"
+    },
+    {
+      "path": "tests/fixtures/golden/G-139-fix-p0-08-T6-75-name-k0-ind1/workflow.yml",
+      "sha256": "c64962ac1769f0a8df09a14b02c747e6cde2f3cbfa9cc1946bdc2e37d7a56e83"
+    },
+    {
+      "path": "tests/fixtures/golden/G-14-paths-ignore/expected.json",
+      "sha256": "dfa69dc596f86b9346dd08ec22af4cddeca27480f6ea1acbb5758edd23318f5f"
+    },
+    {
+      "path": "tests/fixtures/golden/G-14-paths-ignore/required-checks.json",
+      "sha256": "57461d69af28c8890b8827da27c07bc9e01774466ff14f0354272a538ba015ea"
+    },
+    {
+      "path": "tests/fixtures/golden/G-14-paths-ignore/scenario.json",
+      "sha256": "46dcc0f369302215fa7fcc4c866caaa33a5272e5d1f5c523d008b52371e60575"
+    },
+    {
+      "path": "tests/fixtures/golden/G-14-paths-ignore/workflow.yml",
+      "sha256": "78024a791922703e44f26a81791c3999ede7e4bfefbcfaf0971b455a91d8bf01"
+    },
+    {
+      "path": "tests/fixtures/golden/G-140-fix-p0-08-T6-76-flow-value-ind0/expected.json",
+      "sha256": "1758a0d24877c733b5092140ba45b328c9edaab2d9ec06fdb4a88e04496e663e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-140-fix-p0-08-T6-76-flow-value-ind0/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-140-fix-p0-08-T6-76-flow-value-ind0/scenario.json",
+      "sha256": "b69ddeecf3bcc6cc1dfbda87d38d58d36f9c9a685b47d8adb62c6de97a441062"
+    },
+    {
+      "path": "tests/fixtures/golden/G-140-fix-p0-08-T6-76-flow-value-ind0/workflow.yml",
+      "sha256": "79667646d6f98386e55c258a0b1d8ed446ffb3e4b1156f17979cb520fada2cb5"
+    },
+    {
+      "path": "tests/fixtures/golden/G-141-fix-p0-08-T6-77-flow-value-ind1/expected.json",
+      "sha256": "a4b19a30b9f20913d50d75c8c0c94622851f72a592c74416ffa487ff2b9846d3"
+    },
+    {
+      "path": "tests/fixtures/golden/G-141-fix-p0-08-T6-77-flow-value-ind1/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-141-fix-p0-08-T6-77-flow-value-ind1/scenario.json",
+      "sha256": "b0d8dfae555d0b24df1f87b439faa846a99431222cb094b706accb83009f3ea9"
+    },
+    {
+      "path": "tests/fixtures/golden/G-141-fix-p0-08-T6-77-flow-value-ind1/workflow.yml",
+      "sha256": "5b3480e6ac75e34ff9c4b20a73f46877df0b44c2178458b3b9b784476c4361aa"
+    },
+    {
+      "path": "tests/fixtures/golden/G-142-fix-p0-08-T6-78-seq-item-ind2/expected.json",
+      "sha256": "d769b01b817c6f2cb66dcaf11850b7a9c2149852dca6ba18972ab7d2981c79b9"
+    },
+    {
+      "path": "tests/fixtures/golden/G-142-fix-p0-08-T6-78-seq-item-ind2/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-142-fix-p0-08-T6-78-seq-item-ind2/scenario.json",
+      "sha256": "7021997e4a081985af545576816d0555037fb9926748ab9b46d97a3aa6ea6764"
+    },
+    {
+      "path": "tests/fixtures/golden/G-142-fix-p0-08-T6-78-seq-item-ind2/workflow.yml",
+      "sha256": "f52e01db676084fdcfeb5af0d2b9e00b4b366049190ae6766620fe54efa81fd6"
+    },
+    {
+      "path": "tests/fixtures/golden/G-143-fix-p0-08-T6-79-seq-item-ind3/expected.json",
+      "sha256": "b0bf5522bc4fa5bb4bccf0e9c11ccc8bad1027dbbec69b6ac8c91fa3fab94710"
+    },
+    {
+      "path": "tests/fixtures/golden/G-143-fix-p0-08-T6-79-seq-item-ind3/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-143-fix-p0-08-T6-79-seq-item-ind3/scenario.json",
+      "sha256": "acf7a5b0c5126450651ae865cf81243c6dc02e93a9102cda5c01933ba1da54b5"
+    },
+    {
+      "path": "tests/fixtures/golden/G-143-fix-p0-08-T6-79-seq-item-ind3/workflow.yml",
+      "sha256": "dc21b5f2ae716d9bc1e9b59ae5ab716732af89aed81d53cf38d8833b585cfbb7"
+    },
+    {
+      "path": "tests/fixtures/golden/G-144-fix-p0-09-T6-80-r3-extra-ind1/expected.json",
+      "sha256": "92be8aa5368c554676888ad8854ae0cb0235ff3cd20b116c79e9e5e1a8a5dc9d"
+    },
+    {
+      "path": "tests/fixtures/golden/G-144-fix-p0-09-T6-80-r3-extra-ind1/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-144-fix-p0-09-T6-80-r3-extra-ind1/scenario.json",
+      "sha256": "7f86e1a3ab19e640819f06176ecd59b14baef19889a13684626bf71a5530d3dc"
+    },
+    {
+      "path": "tests/fixtures/golden/G-144-fix-p0-09-T6-80-r3-extra-ind1/workflow.yml",
+      "sha256": "f7ea89782c1259ff6ca199340ba4cfb10861a2f74aacaa17b27756276d897c58"
+    },
+    {
+      "path": "tests/fixtures/golden/G-145-fix-p0-09-T6-81-r3-on-ind1/expected.json",
+      "sha256": "9f557862250446f0a63a3431eb2b1c228b9f5761ea9d5293f2be442472f2c040"
+    },
+    {
+      "path": "tests/fixtures/golden/G-145-fix-p0-09-T6-81-r3-on-ind1/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-145-fix-p0-09-T6-81-r3-on-ind1/scenario.json",
+      "sha256": "6a3dbe3f5777403fab352f2aa5dcdee1b3cb3ea1f9344bef3ab182a5bd43c1b7"
+    },
+    {
+      "path": "tests/fixtures/golden/G-145-fix-p0-09-T6-81-r3-on-ind1/workflow.yml",
+      "sha256": "f071b3436d93cb84adfd8e5b97d1a5b8a447d19418aac45796a37ce49a2f01d6"
+    },
+    {
+      "path": "tests/fixtures/golden/G-146-fix-p0-09-T6-82-r3-extra-sq/expected.json",
+      "sha256": "7bec5a70262457cb06afa52309cf4f928b51011a347c49e36ae2757e4cc0c42a"
+    },
+    {
+      "path": "tests/fixtures/golden/G-146-fix-p0-09-T6-82-r3-extra-sq/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-146-fix-p0-09-T6-82-r3-extra-sq/scenario.json",
+      "sha256": "71d874c34768045dbfe18f63696b888dbd8e45a73c7d139076190d88658ce472"
+    },
+    {
+      "path": "tests/fixtures/golden/G-146-fix-p0-09-T6-82-r3-extra-sq/workflow.yml",
+      "sha256": "0d04c32abc568aa575b7258c574ce9bd0e6d343772d222f181d3a50360236f25"
+    },
+    {
+      "path": "tests/fixtures/golden/G-147-fix-p0-09-T6-83-r3-plain-fold/expected.json",
+      "sha256": "ba851be7faf020d53de2e33aab29713b15da6ce021c00edaae653d50225e6225"
+    },
+    {
+      "path": "tests/fixtures/golden/G-147-fix-p0-09-T6-83-r3-plain-fold/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-147-fix-p0-09-T6-83-r3-plain-fold/scenario.json",
+      "sha256": "83fb84fafd04c978bdeacb699a0b0459f250b9bb755a3561cdcdb2c75c8537e7"
+    },
+    {
+      "path": "tests/fixtures/golden/G-147-fix-p0-09-T6-83-r3-plain-fold/workflow.yml",
+      "sha256": "87dc23d93d2abbcac784dce2f2f9272b2cb6da1e6d2b4e221d843bbabe10ee05"
+    },
+    {
+      "path": "tests/fixtures/golden/G-148-fix-p0-09-T6-84-r3-nested/expected.json",
+      "sha256": "7b22c8e301eeddf49826efdccb06a7e5f73f0dc663b2afdfdf609df566c8eb7f"
+    },
+    {
+      "path": "tests/fixtures/golden/G-148-fix-p0-09-T6-84-r3-nested/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-148-fix-p0-09-T6-84-r3-nested/scenario.json",
+      "sha256": "a989890a70a31db7b5bbdaa251d2d37e9c43aaf6e46457db440e1e803a097824"
+    },
+    {
+      "path": "tests/fixtures/golden/G-148-fix-p0-09-T6-84-r3-nested/workflow.yml",
+      "sha256": "8bf896e3dbef10f235b546556a79b238e176e3cd505b4a29d6da6a3f7e78ef2a"
+    },
+    {
+      "path": "tests/fixtures/golden/G-149-fix-p0-09-T6-85-r3-on-ind9/expected.json",
+      "sha256": "b6dd8ffd5703d7ff8e845f1387e0e8d55e7b1b46c401e6d7576810bbaa3512f7"
+    },
+    {
+      "path": "tests/fixtures/golden/G-149-fix-p0-09-T6-85-r3-on-ind9/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-149-fix-p0-09-T6-85-r3-on-ind9/scenario.json",
+      "sha256": "af26b7eba3c7d4f8a781dbe111e3e23c30c5ea8552be9038162391be9343be99"
+    },
+    {
+      "path": "tests/fixtures/golden/G-149-fix-p0-09-T6-85-r3-on-ind9/workflow.yml",
+      "sha256": "32e347c997eb248fea5f417bb144065894a2ca7bec0217259dcc1feada27f9be"
+    },
+    {
+      "path": "tests/fixtures/golden/G-15-cp-k-push-over-1000/expected.json",
+      "sha256": "d4d0b703f1ead47ca9af1186e2726b5ba85399be963e2d9caccc4e1104ba01f6"
+    },
+    {
+      "path": "tests/fixtures/golden/G-15-cp-k-push-over-1000/required-checks.json",
+      "sha256": "57461d69af28c8890b8827da27c07bc9e01774466ff14f0354272a538ba015ea"
+    },
+    {
+      "path": "tests/fixtures/golden/G-15-cp-k-push-over-1000/scenario.json",
+      "sha256": "d09b6e685904edfd766d093706eab879962553e95fe201c04f1539eaed0f5c64"
+    },
+    {
+      "path": "tests/fixtures/golden/G-15-cp-k-push-over-1000/workflow.yml",
+      "sha256": "7a037372802d59526180d6d8a00b0ab89a373363decb6131550e9bd0630f02a6"
+    },
+    {
+      "path": "tests/fixtures/golden/G-150-fix-p0-09-T6-86-r3-flow-value-mlq/expected.json",
+      "sha256": "2684625c9c1e0326b03cd187085531109d8ac6dab26186043d5273117f005c66"
+    },
+    {
+      "path": "tests/fixtures/golden/G-150-fix-p0-09-T6-86-r3-flow-value-mlq/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-150-fix-p0-09-T6-86-r3-flow-value-mlq/scenario.json",
+      "sha256": "4e0905b8c05b8fac369d5954c170df3066f367201dc3d09b133bb21b7efffc47"
+    },
+    {
+      "path": "tests/fixtures/golden/G-150-fix-p0-09-T6-86-r3-flow-value-mlq/workflow.yml",
+      "sha256": "8b159825e6634a979e25c28aa361e0ae1b79f5c130e2faac077a4f0281532006"
+    },
+    {
+      "path": "tests/fixtures/golden/G-151-fix-p0-09-T6-87-r3-explicit-quoted/expected.json",
+      "sha256": "61a8c6ca75fad8f6c0f4d5cf67338f310db62148d2eee0ce5a039f3f0857a64e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-151-fix-p0-09-T6-87-r3-explicit-quoted/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-151-fix-p0-09-T6-87-r3-explicit-quoted/scenario.json",
+      "sha256": "4fa7245993a44d6a12c1b554ccf4082a6904147b9ff07b7b23f0d1d6b02c51c3"
+    },
+    {
+      "path": "tests/fixtures/golden/G-151-fix-p0-09-T6-87-r3-explicit-quoted/workflow.yml",
+      "sha256": "493e91d2a023f321c63fae4f02b3635c9295f7d9c8ee7be3c08bf3c0fd3571d9"
+    },
+    {
+      "path": "tests/fixtures/golden/G-152-fix-p0-09-T6-88-r3-explicit-comment/expected.json",
+      "sha256": "942e5239ab4f98b413b4c67b55f0cac224362ee8debdd3777ca6cf440ce038cf"
+    },
+    {
+      "path": "tests/fixtures/golden/G-152-fix-p0-09-T6-88-r3-explicit-comment/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-152-fix-p0-09-T6-88-r3-explicit-comment/scenario.json",
+      "sha256": "26ce4767bc4b58d47a2251d3b00ec924ad33e2ec58b88a7266a8ac73e0409834"
+    },
+    {
+      "path": "tests/fixtures/golden/G-152-fix-p0-09-T6-88-r3-explicit-comment/workflow.yml",
+      "sha256": "9016c16c2d6194d87028bda2314e5563a3261ea62415424c941905fe95e72226"
+    },
+    {
+      "path": "tests/fixtures/golden/G-153-fix-p0-09-T6-89-s2-plain-ind1/expected.json",
+      "sha256": "494ad0ded82921db99b78df4025f91da8de9f4bbe4bf2f7267620aad9cfb84a4"
+    },
+    {
+      "path": "tests/fixtures/golden/G-153-fix-p0-09-T6-89-s2-plain-ind1/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-153-fix-p0-09-T6-89-s2-plain-ind1/scenario.json",
+      "sha256": "ad2799c0aa255e9702a580e5bc38c66b6bae80fcae84c11905fc9470ca0346a0"
+    },
+    {
+      "path": "tests/fixtures/golden/G-153-fix-p0-09-T6-89-s2-plain-ind1/workflow.yml",
+      "sha256": "e6a42475d447f14de665de10837cfdec2bcfca6dcb3ac970fa99845085445f94"
+    },
+    {
+      "path": "tests/fixtures/golden/G-154-fix-p0-09-T6-90-s2-quoted-ind1/expected.json",
+      "sha256": "d13c6ce0b9937f652e0215ee49c9e16211a1719263be9ebeb43c6a3d067be6c8"
+    },
+    {
+      "path": "tests/fixtures/golden/G-154-fix-p0-09-T6-90-s2-quoted-ind1/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-154-fix-p0-09-T6-90-s2-quoted-ind1/scenario.json",
+      "sha256": "e8f4366eb09bd0fd62379c5a691f727ef983ef8d8abc3e2f32d2dcd7d057d3c4"
+    },
+    {
+      "path": "tests/fixtures/golden/G-154-fix-p0-09-T6-90-s2-quoted-ind1/workflow.yml",
+      "sha256": "659ee01f02ac90055a1800d1a070fe31802e4864626a3c36f8430454dc0f463f"
+    },
+    {
+      "path": "tests/fixtures/golden/G-155-fix-p0-09-T6-91-s2-comment-ind1/expected.json",
+      "sha256": "19bd437143767e582ba902e5d02338fde09a6305902a6b215a8f5cdc4a4cd32e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-155-fix-p0-09-T6-91-s2-comment-ind1/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-155-fix-p0-09-T6-91-s2-comment-ind1/scenario.json",
+      "sha256": "6a807743f7eaec7f777b6233f6334dce81c35088814e9a184a0e40d0980bbaf2"
+    },
+    {
+      "path": "tests/fixtures/golden/G-155-fix-p0-09-T6-91-s2-comment-ind1/workflow.yml",
+      "sha256": "84e384d487ad9966e00e930c40374c71d5a51a986fb4696cf61cf814267e6316"
+    },
+    {
+      "path": "tests/fixtures/golden/G-156-fix-p0-10-T6-92-r4-comma-ind0/expected.json",
+      "sha256": "98e6b32ba52b4576400d3ec9228f84d8caea431f92a679971d1b27818e5bcadd"
+    },
+    {
+      "path": "tests/fixtures/golden/G-156-fix-p0-10-T6-92-r4-comma-ind0/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-156-fix-p0-10-T6-92-r4-comma-ind0/scenario.json",
+      "sha256": "04e1053008ae3cfd408e4592fe539cadbaf07637b6cb85e3d6c27c8a06f741e7"
+    },
+    {
+      "path": "tests/fixtures/golden/G-156-fix-p0-10-T6-92-r4-comma-ind0/workflow.yml",
+      "sha256": "930562953d6cb48fa7fca211dd4611e4e4c0d186f4f1358578e799ab0aa35de3"
+    },
+    {
+      "path": "tests/fixtures/golden/G-157-fix-p0-10-T6-93-r4-comma-nested/expected.json",
+      "sha256": "bdd07790a5f258de6a4c74110d8c0fd4fe19081f35b7473719ab7c890e9d5f78"
+    },
+    {
+      "path": "tests/fixtures/golden/G-157-fix-p0-10-T6-93-r4-comma-nested/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-157-fix-p0-10-T6-93-r4-comma-nested/scenario.json",
+      "sha256": "8d25125e6336ae8c23d3069c3ec27b73b477e16508e79601361de7e3501ca132"
+    },
+    {
+      "path": "tests/fixtures/golden/G-157-fix-p0-10-T6-93-r4-comma-nested/workflow.yml",
+      "sha256": "34cc313626c68034d50f64b4b8095cb1434cb9901e4a6c8b33070a9458119973"
+    },
+    {
+      "path": "tests/fixtures/golden/G-158-fix-p0-10-T6-94-r4-comma-on/expected.json",
+      "sha256": "58d3b2f4b96055ea2fc49cbb5d99d37a38a3df710a8abc2b8776aa822ad140aa"
+    },
+    {
+      "path": "tests/fixtures/golden/G-158-fix-p0-10-T6-94-r4-comma-on/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-158-fix-p0-10-T6-94-r4-comma-on/scenario.json",
+      "sha256": "0e4e9ae94618599d469676f530669b147ef14bc84dfe6bfc95198a1487295ab5"
+    },
+    {
+      "path": "tests/fixtures/golden/G-158-fix-p0-10-T6-94-r4-comma-on/workflow.yml",
+      "sha256": "ee2c6c25ef53ebdea0bd8dc31514277bf3de9afe65aab9bd53e1da0e639ea760"
+    },
+    {
+      "path": "tests/fixtures/golden/G-159-fix-p0-10-T6-95-r4-comma-jobs/expected.json",
+      "sha256": "00f34366b87958b124175a52c0a4e18930a80d3010b5e8ba9f699e724f7f20ed"
+    },
+    {
+      "path": "tests/fixtures/golden/G-159-fix-p0-10-T6-95-r4-comma-jobs/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-159-fix-p0-10-T6-95-r4-comma-jobs/scenario.json",
+      "sha256": "fdef5b7778178db50bee80766003def4f21e2fbc40261a61cd0f64e7d3cd5c3e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-159-fix-p0-10-T6-95-r4-comma-jobs/workflow.yml",
+      "sha256": "ca195b2d195d88681b8893316214a68789540cb6bd987b74f6befba952c98baa"
+    },
+    {
+      "path": "tests/fixtures/golden/G-16-cp-l-diff-unconfirmed/expected.json",
+      "sha256": "9c14326e1055e65a8108b20bd05e2589e4fdae9dd485efb3121b2af35969f2b4"
+    },
+    {
+      "path": "tests/fixtures/golden/G-16-cp-l-diff-unconfirmed/required-checks.json",
+      "sha256": "57461d69af28c8890b8827da27c07bc9e01774466ff14f0354272a538ba015ea"
+    },
+    {
+      "path": "tests/fixtures/golden/G-16-cp-l-diff-unconfirmed/scenario.json",
+      "sha256": "0f919a0ab79356655f46c766b6e6f62469368b56ccbb9e9c7647b22c9e99eb41"
+    },
+    {
+      "path": "tests/fixtures/golden/G-16-cp-l-diff-unconfirmed/workflow.yml",
+      "sha256": "80314196ccf9e3e1dd1b785252ac08101c6c51585af7c97f80bc457a7d243383"
+    },
+    {
+      "path": "tests/fixtures/golden/G-160-fix-p0-10-T6-96-r5-plain-ind0/expected.json",
+      "sha256": "57ebfbfabb8b586437c8f793b250dba87bdc50d8e4cef0e82b3f93b0a3817a95"
+    },
+    {
+      "path": "tests/fixtures/golden/G-160-fix-p0-10-T6-96-r5-plain-ind0/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-160-fix-p0-10-T6-96-r5-plain-ind0/scenario.json",
+      "sha256": "a383be504798b68ffc9b9d6577bab667c6d0b1faac69f4f9f159c56f7633572a"
+    },
+    {
+      "path": "tests/fixtures/golden/G-160-fix-p0-10-T6-96-r5-plain-ind0/workflow.yml",
+      "sha256": "79a02001b9687c04d5a1b26cdb93475caae584e2998078d7a1d133caa68aeb3a"
+    },
+    {
+      "path": "tests/fixtures/golden/G-161-fix-p0-10-T6-97-r5-quoted-ind0/expected.json",
+      "sha256": "b4cd50b289f9f3133c627279225268c2c0817827d1328060c32c055e35396dfa"
+    },
+    {
+      "path": "tests/fixtures/golden/G-161-fix-p0-10-T6-97-r5-quoted-ind0/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-161-fix-p0-10-T6-97-r5-quoted-ind0/scenario.json",
+      "sha256": "6abb52eb0be8818cafb2ecb25bd25e8367c3113e420135b4999ce5caabda3fc5"
+    },
+    {
+      "path": "tests/fixtures/golden/G-161-fix-p0-10-T6-97-r5-quoted-ind0/workflow.yml",
+      "sha256": "ffc8733701832308a61d8bc615ac6222b331930a9ba65d025e37d68c9142ede7"
+    },
+    {
+      "path": "tests/fixtures/golden/G-162-fix-p0-10-T6-98-r5-sq-ind0/expected.json",
+      "sha256": "982e3b78836324602a2c03161be01a51e43ae93b5ab0df28d88fe30969c545b4"
+    },
+    {
+      "path": "tests/fixtures/golden/G-162-fix-p0-10-T6-98-r5-sq-ind0/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-162-fix-p0-10-T6-98-r5-sq-ind0/scenario.json",
+      "sha256": "5ef6c478c054130b9eb7a8ccf1f4f1cb45b8b6e0a1d9329745ecb699d9390960"
+    },
+    {
+      "path": "tests/fixtures/golden/G-162-fix-p0-10-T6-98-r5-sq-ind0/workflow.yml",
+      "sha256": "d90c81ad0517f3ff8ebd158eef9decd0783da43dc11447706847a830a2055c79"
+    },
+    {
+      "path": "tests/fixtures/golden/G-163-fix-p0-10-T6-99-r5-nested/expected.json",
+      "sha256": "20e1e9c706936b2093714438caa66a11d6c389255de293a6a31c07ce1051401b"
+    },
+    {
+      "path": "tests/fixtures/golden/G-163-fix-p0-10-T6-99-r5-nested/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-163-fix-p0-10-T6-99-r5-nested/scenario.json",
+      "sha256": "4f95e911edb5a1d971b6c7190e04f23afbfc0fc1195ed656fd0abd872a70942c"
+    },
+    {
+      "path": "tests/fixtures/golden/G-163-fix-p0-10-T6-99-r5-nested/workflow.yml",
+      "sha256": "b853992de7bc516b9f7c8c2748abde776cfd5d1903dc87bc310fa162c4061f3d"
+    },
+    {
+      "path": "tests/fixtures/golden/G-164-fix-p0-10-T6-100-r5-on/expected.json",
+      "sha256": "9afb7855159d917dc7585c27b7849e91c6edebe5b8f421e95237f3e1edc250c9"
+    },
+    {
+      "path": "tests/fixtures/golden/G-164-fix-p0-10-T6-100-r5-on/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-164-fix-p0-10-T6-100-r5-on/scenario.json",
+      "sha256": "c24b72e2dc4715542d2bba1282fd9b2a6c628d13d3e007a7f3c239adc6c58537"
+    },
+    {
+      "path": "tests/fixtures/golden/G-164-fix-p0-10-T6-100-r5-on/workflow.yml",
+      "sha256": "47c2ea66c4da8ca4f58f370c4685a200a21dccd8029e39bf88b3890afb9f5db1"
+    },
+    {
+      "path": "tests/fixtures/golden/G-165-fix-p0-10-T6-101-r4-comma-ind1/expected.json",
+      "sha256": "47b36f5eb3b4a60585f766d3062051b2633c2b3b2b8b8545b2269639ad43ac9e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-165-fix-p0-10-T6-101-r4-comma-ind1/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-165-fix-p0-10-T6-101-r4-comma-ind1/scenario.json",
+      "sha256": "d2576bafcc6673eb1aa2ccfe19fb8efc75eb490a6bf2c25d1830cbb7e9ff89da"
+    },
+    {
+      "path": "tests/fixtures/golden/G-165-fix-p0-10-T6-101-r4-comma-ind1/workflow.yml",
+      "sha256": "012697c2004da66c1ea7ac8835ed05e15a0ee33127cb4683ab96ae22b021b898"
+    },
+    {
+      "path": "tests/fixtures/golden/G-166-fix-p0-10-T6-102-r5-colon-ind1/expected.json",
+      "sha256": "3e3ec3c95dbef7bbbf7afc64d94fa3b8ccafb4c7169d4f95b79b67e1e09087fe"
+    },
+    {
+      "path": "tests/fixtures/golden/G-166-fix-p0-10-T6-102-r5-colon-ind1/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-166-fix-p0-10-T6-102-r5-colon-ind1/scenario.json",
+      "sha256": "0f83c9de0ef4decb4776627f433531f7a181779ce128f7da512d135bcd56bc02"
+    },
+    {
+      "path": "tests/fixtures/golden/G-166-fix-p0-10-T6-102-r5-colon-ind1/workflow.yml",
+      "sha256": "d3c941c7364ca4e13fd26c42cb766b1032931e180f57910c34efcc66ae6b4fd7"
+    },
+    {
+      "path": "tests/fixtures/golden/G-167-fix-p0-10-T6-103-close-ind0/expected.json",
+      "sha256": "ca192dd76c422e46e41e8655876fa79ae2c127be85bbc7489547693f60068319"
+    },
+    {
+      "path": "tests/fixtures/golden/G-167-fix-p0-10-T6-103-close-ind0/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-167-fix-p0-10-T6-103-close-ind0/scenario.json",
+      "sha256": "cda293a7e78cb172dfc6c4a9651799a7af427a004ab7d175ce88f8579a310696"
+    },
+    {
+      "path": "tests/fixtures/golden/G-167-fix-p0-10-T6-103-close-ind0/workflow.yml",
+      "sha256": "fc0560681c9dfb64c2b13a1d0a2c8ed09c654722e6fe743a8795d166e78f4b8e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-17-cp-d-if-false/expected.json",
+      "sha256": "1da638eba5c44401e8f718e11676d8160ba9cf3e36357c614f4febe982058a04"
+    },
+    {
+      "path": "tests/fixtures/golden/G-17-cp-d-if-false/required-checks.json",
+      "sha256": "57461d69af28c8890b8827da27c07bc9e01774466ff14f0354272a538ba015ea"
+    },
+    {
+      "path": "tests/fixtures/golden/G-17-cp-d-if-false/scenario.json",
+      "sha256": "2234d0402ba1258b21067544e4e122601922c3e86d87a13e1c5eebb04b553e43"
+    },
+    {
+      "path": "tests/fixtures/golden/G-17-cp-d-if-false/workflow.yml",
+      "sha256": "3bbfff3c78a127ae71aa8cb66b579bc451930c1d7407c8697aba607bdbcf50e4"
+    },
+    {
+      "path": "tests/fixtures/golden/G-18-cp-e-always-aggregator/expected.json",
+      "sha256": "cb0921b86b7453c86ff4cb1cd39ca79c0b951ba66d7650f8c37e65ea3ea16caa"
+    },
+    {
+      "path": "tests/fixtures/golden/G-18-cp-e-always-aggregator/required-checks.json",
+      "sha256": "0cb3f029d5fa57448e4781dfc3b4891b563e47c8abfc9b4fa59bb75a52428cbd"
+    },
+    {
+      "path": "tests/fixtures/golden/G-18-cp-e-always-aggregator/scenario.json",
+      "sha256": "2229ccecb9b2a223327f89fe22ed289a3abf482d8ad8f068897bfa8a634423d7"
+    },
+    {
+      "path": "tests/fixtures/golden/G-18-cp-e-always-aggregator/workflow.yml",
+      "sha256": "1de3c3b201a58cd18bc667e1feebc80ba89d1c9fc53091353508361ed734d21b"
+    },
+    {
+      "path": "tests/fixtures/golden/G-19-cp-i-duplicate-cross-workflow/expected.json",
+      "sha256": "86cc7b1e21751bb253474aa9014a16eb1c6343a055e2b0529036d8eaab3f5bdb"
+    },
+    {
+      "path": "tests/fixtures/golden/G-19-cp-i-duplicate-cross-workflow/required-checks.json",
+      "sha256": "a410e68e03865df65f7b44c67a272e992e9ac7ef12d7d0adea42120a37a210ca"
+    },
+    {
+      "path": "tests/fixtures/golden/G-19-cp-i-duplicate-cross-workflow/scenario.json",
+      "sha256": "be5bb1cff64aa965aef9fcf371e3c83a54d6e8962929c5ae86a9a0f5297c5873"
+    },
+    {
+      "path": "tests/fixtures/golden/G-19-cp-i-duplicate-cross-workflow/workflow-a.yml",
+      "sha256": "a9a8e1b8969c14d0834e1ea0cd4fa7504b2dfc5d88ffb31739c3f6d53d7740e0"
+    },
+    {
+      "path": "tests/fixtures/golden/G-19-cp-i-duplicate-cross-workflow/workflow-b.yml",
+      "sha256": "f3508ab2e438d316db53404e44badb5c262703ebe5ebaedcf8dd523b693054e0"
+    },
+    {
+      "path": "tests/fixtures/golden/G-20-cp-j-no-provider/expected.json",
+      "sha256": "9d5ba8772a991094871312f7fcfa0b817e65b62f5616f435508464f50ac4354b"
+    },
+    {
+      "path": "tests/fixtures/golden/G-20-cp-j-no-provider/required-checks.json",
+      "sha256": "07a5cde7da986e5d67a79c42eb442af25d992505d2cb598980a83bd59d80de57"
+    },
+    {
+      "path": "tests/fixtures/golden/G-20-cp-j-no-provider/scenario.json",
+      "sha256": "5f464ae5addba9fd6c5484c16f4b00ad6cacd82f00c9aad5384dd2a9f21fc67a"
+    },
+    {
+      "path": "tests/fixtures/golden/G-20-cp-j-no-provider/workflow.yml",
+      "sha256": "a2dcec257e818202d2af9e2a75c09ad8b973c87e6401e976f87bcce8f92ae340"
+    },
+    {
+      "path": "tests/fixtures/golden/G-21-duplicate-same-workflow/expected.json",
+      "sha256": "e972d3154c06af84234973fa236d7272cafb75466909c7de44485be534300962"
+    },
+    {
+      "path": "tests/fixtures/golden/G-21-duplicate-same-workflow/required-checks.json",
+      "sha256": "a410e68e03865df65f7b44c67a272e992e9ac7ef12d7d0adea42120a37a210ca"
+    },
+    {
+      "path": "tests/fixtures/golden/G-21-duplicate-same-workflow/scenario.json",
+      "sha256": "be267fec0dc8a0242e8f74872eb0d260e702ddba513ac950a088e4ce0a0c8762"
+    },
+    {
+      "path": "tests/fixtures/golden/G-21-duplicate-same-workflow/workflow.yml",
+      "sha256": "5e20fccb8fe1ba3827a662de948361cc561b888fb4bef14e00593ba901c1a584"
+    },
+    {
+      "path": "tests/fixtures/golden/G-22-needs-skipped/expected.json",
+      "sha256": "68da836d307b4609b82fc57768c96d381ee7c3a6be848ba750af1132dad636df"
+    },
+    {
+      "path": "tests/fixtures/golden/G-22-needs-skipped/required-checks.json",
+      "sha256": "fba261dd6dadbbef90aa3338dba476314a6ec13b13df2b41f9d44dccee9e3993"
+    },
+    {
+      "path": "tests/fixtures/golden/G-22-needs-skipped/scenario.json",
+      "sha256": "85e42df66165bf0c45074e905c68293af1b863f9ab8f5efae28bdf01de16254d"
+    },
+    {
+      "path": "tests/fixtures/golden/G-22-needs-skipped/workflow.yml",
+      "sha256": "1aeb6c20648f242eec9447ea2200a598c2fe5d50bac636554a9ad07a5e1e2249"
+    },
+    {
+      "path": "tests/fixtures/golden/G-23-conditional-after-needs/expected.json",
+      "sha256": "963473c5ae4d69861db5d298a8799ab91321053083d7b07ebec696c21ecb83c7"
+    },
+    {
+      "path": "tests/fixtures/golden/G-23-conditional-after-needs/required-checks.json",
+      "sha256": "d745b301234214cde1d4b67678538f0e84b42852bb4155ba201d3020c98a0f74"
+    },
+    {
+      "path": "tests/fixtures/golden/G-23-conditional-after-needs/scenario.json",
+      "sha256": "b64dde9c8b5fe5570a503ddcb70e3e452105e6f44c74016e5f42eeb92e3aaddd"
+    },
+    {
+      "path": "tests/fixtures/golden/G-23-conditional-after-needs/workflow.yml",
+      "sha256": "239de551b319686d2271b2f980babc3c176a67cfd51dae9433d112705ab80918"
+    },
+    {
+      "path": "tests/fixtures/golden/G-24-fail-closed-bundle/expected.json",
+      "sha256": "609f84b3a594df30f370d676d21f23ef92e41b8a8dc91466346b17a854b2b56c"
+    },
+    {
+      "path": "tests/fixtures/golden/G-24-fail-closed-bundle/required-checks.json",
+      "sha256": "5be9120949cd379c8b2cc9121b21c4e481cd9f79b1e0a33071e9c136ba441dd7"
+    },
+    {
+      "path": "tests/fixtures/golden/G-24-fail-closed-bundle/scenario.json",
+      "sha256": "f7575992364fdffbe189216f45a85971d49c3ca2913ca93111cd5ddd7537044b"
+    },
+    {
+      "path": "tests/fixtures/golden/G-24-fail-closed-bundle/workflow.yml",
+      "sha256": "092e15bf5ba2ae12791bf99921e295273f507a5be56e05c3c7441205f55dec15"
+    },
+    {
+      "path": "tests/fixtures/golden/G-25-t6-T6-01-push-1000-boundary/expected.json",
+      "sha256": "6f9463c5a3ea589087e8d2ebd0dc1ed9a40e4d8b16fd8082f447f2e0c491f308"
+    },
+    {
+      "path": "tests/fixtures/golden/G-25-t6-T6-01-push-1000-boundary/required-checks.json",
+      "sha256": "57461d69af28c8890b8827da27c07bc9e01774466ff14f0354272a538ba015ea"
+    },
+    {
+      "path": "tests/fixtures/golden/G-25-t6-T6-01-push-1000-boundary/scenario.json",
+      "sha256": "7813291249a8e9c6eb948b720e48f8e5c5274d54b9e303fcab32c0d2d53ad96e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-25-t6-T6-01-push-1000-boundary/workflow.yml",
+      "sha256": "7a037372802d59526180d6d8a00b0ab89a373363decb6131550e9bd0630f02a6"
+    },
+    {
+      "path": "tests/fixtures/golden/G-26-t6-T6-02-push-1001-always-run/expected.json",
+      "sha256": "a5e4d295d8e8dcd8171d5e74c8347f8b3c5ed888ad9b7537c17f23d3f4cbee43"
+    },
+    {
+      "path": "tests/fixtures/golden/G-26-t6-T6-02-push-1001-always-run/required-checks.json",
+      "sha256": "57461d69af28c8890b8827da27c07bc9e01774466ff14f0354272a538ba015ea"
+    },
+    {
+      "path": "tests/fixtures/golden/G-26-t6-T6-02-push-1001-always-run/scenario.json",
+      "sha256": "b55e6156aa070f01f65738749ef0bf699b64d2ebcae8b01bdcb4739ab1188df2"
+    },
+    {
+      "path": "tests/fixtures/golden/G-26-t6-T6-02-push-1001-always-run/workflow.yml",
+      "sha256": "7a037372802d59526180d6d8a00b0ab89a373363decb6131550e9bd0630f02a6"
+    },
+    {
+      "path": "tests/fixtures/golden/G-27-t6-T6-03-diff-timeout-pr/expected.json",
+      "sha256": "98a3ef7170bc4a1f64a52653c6926c83fe48243c86a5e5bdb865d56214511c57"
+    },
+    {
+      "path": "tests/fixtures/golden/G-27-t6-T6-03-diff-timeout-pr/required-checks.json",
+      "sha256": "57461d69af28c8890b8827da27c07bc9e01774466ff14f0354272a538ba015ea"
+    },
+    {
+      "path": "tests/fixtures/golden/G-27-t6-T6-03-diff-timeout-pr/scenario.json",
+      "sha256": "d23e6d75901ebf25b92378cd1d456e6f3c37904d6d307388e7a62e2639ce6f94"
+    },
+    {
+      "path": "tests/fixtures/golden/G-27-t6-T6-03-diff-timeout-pr/workflow.yml",
+      "sha256": "80314196ccf9e3e1dd1b785252ac08101c6c51585af7c97f80bc457a7d243383"
+    },
+    {
+      "path": "tests/fixtures/golden/G-28-t6-T6-04-diff-timeout-paths-ignore/expected.json",
+      "sha256": "7848d647ecb9a5383a35f2a71b8e72b4e4a473d29db1c837d97432f2224e1cb9"
+    },
+    {
+      "path": "tests/fixtures/golden/G-28-t6-T6-04-diff-timeout-paths-ignore/required-checks.json",
+      "sha256": "57461d69af28c8890b8827da27c07bc9e01774466ff14f0354272a538ba015ea"
+    },
+    {
+      "path": "tests/fixtures/golden/G-28-t6-T6-04-diff-timeout-paths-ignore/scenario.json",
+      "sha256": "c3418d39d8748ddae08565464de67316fd356ad17dc7ff3dfa11d9bd070360d1"
+    },
+    {
+      "path": "tests/fixtures/golden/G-28-t6-T6-04-diff-timeout-paths-ignore/workflow.yml",
+      "sha256": "3222515c45197f7c917e03c3bb834cb7eafe13ee0679e114c6c1e411e7c8f930"
+    },
+    {
+      "path": "tests/fixtures/golden/G-29-t6-T6-05-first3000-confirmed-no-match/expected.json",
+      "sha256": "ae2a536bdc224a624f9bdbc9f8f56a1c75bb67cd2a7582329cc3609beec2c49e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-29-t6-T6-05-first3000-confirmed-no-match/required-checks.json",
+      "sha256": "57461d69af28c8890b8827da27c07bc9e01774466ff14f0354272a538ba015ea"
+    },
+    {
+      "path": "tests/fixtures/golden/G-29-t6-T6-05-first3000-confirmed-no-match/scenario.json",
+      "sha256": "db109887ad23a96073d9d7cc324f68931ffa9dd72a4c5751204b54db28c10cdf"
+    },
+    {
+      "path": "tests/fixtures/golden/G-29-t6-T6-05-first3000-confirmed-no-match/workflow.yml",
+      "sha256": "80314196ccf9e3e1dd1b785252ac08101c6c51585af7c97f80bc457a7d243383"
+    },
+    {
+      "path": "tests/fixtures/golden/G-30-t6-T6-06-first3000-confirmed-match-inside/expected.json",
+      "sha256": "8934958bd954a49175c8eeae2d33dbbe56d97a670c8f3e2bff95053da26a9251"
+    },
+    {
+      "path": "tests/fixtures/golden/G-30-t6-T6-06-first3000-confirmed-match-inside/required-checks.json",
+      "sha256": "57461d69af28c8890b8827da27c07bc9e01774466ff14f0354272a538ba015ea"
+    },
+    {
+      "path": "tests/fixtures/golden/G-30-t6-T6-06-first3000-confirmed-match-inside/scenario.json",
+      "sha256": "500c38d42a8a5153204469eee05edcacf36f6266b21ca227506946dd636d8f21"
+    },
+    {
+      "path": "tests/fixtures/golden/G-30-t6-T6-06-first3000-confirmed-match-inside/workflow.yml",
+      "sha256": "80314196ccf9e3e1dd1b785252ac08101c6c51585af7c97f80bc457a7d243383"
+    },
+    {
+      "path": "tests/fixtures/golden/G-31-t6-T6-07-commit-skip-actions/expected.json",
+      "sha256": "25e1aba8346752dec5744478fdbfea077e3ab75f5ca208c47c9762c5ab7f10aa"
+    },
+    {
+      "path": "tests/fixtures/golden/G-31-t6-T6-07-commit-skip-actions/required-checks.json",
+      "sha256": "57461d69af28c8890b8827da27c07bc9e01774466ff14f0354272a538ba015ea"
+    },
+    {
+      "path": "tests/fixtures/golden/G-31-t6-T6-07-commit-skip-actions/scenario.json",
+      "sha256": "4bd2514eb052353369d8bbb2facaf2c8c872aae065d1bb6708305ef597727900"
+    },
+    {
+      "path": "tests/fixtures/golden/G-31-t6-T6-07-commit-skip-actions/workflow.yml",
+      "sha256": "80314196ccf9e3e1dd1b785252ac08101c6c51585af7c97f80bc457a7d243383"
+    },
+    {
+      "path": "tests/fixtures/golden/G-32-t6-T6-08-commit-skip-checks-space/expected.json",
+      "sha256": "d69e78bc832530cca6a341e3b1dc5e8a5f919cd793f09c7b9435027765a13bbf"
+    },
+    {
+      "path": "tests/fixtures/golden/G-32-t6-T6-08-commit-skip-checks-space/required-checks.json",
+      "sha256": "57461d69af28c8890b8827da27c07bc9e01774466ff14f0354272a538ba015ea"
+    },
+    {
+      "path": "tests/fixtures/golden/G-32-t6-T6-08-commit-skip-checks-space/scenario.json",
+      "sha256": "ae349eb4c8e02528937d3c317fecf3cb22478e4254c4d5edae847643aa574745"
+    },
+    {
+      "path": "tests/fixtures/golden/G-32-t6-T6-08-commit-skip-checks-space/workflow.yml",
+      "sha256": "7a037372802d59526180d6d8a00b0ab89a373363decb6131550e9bd0630f02a6"
+    },
+    {
+      "path": "tests/fixtures/golden/G-33-t6-T6-09-merge-group-target-branch/expected.json",
+      "sha256": "f38d2d416883e04ada197a7715b65c4d520e9c2ecc186b6415eef9765b8530d0"
+    },
+    {
+      "path": "tests/fixtures/golden/G-33-t6-T6-09-merge-group-target-branch/required-checks.json",
+      "sha256": "57461d69af28c8890b8827da27c07bc9e01774466ff14f0354272a538ba015ea"
+    },
+    {
+      "path": "tests/fixtures/golden/G-33-t6-T6-09-merge-group-target-branch/scenario.json",
+      "sha256": "9bbab7eddd8aeafba64154d73f1e1d84f605288ad9700a92bd347816fb69c699"
+    },
+    {
+      "path": "tests/fixtures/golden/G-33-t6-T6-09-merge-group-target-branch/workflow.yml",
+      "sha256": "45b6cee825adea4a5238569ca0c2809c6d5dfd70abb7ee811f6c052e12d85e3a"
+    },
+    {
+      "path": "tests/fixtures/golden/G-34-t6-T6-10-pr-base-not-head/expected.json",
+      "sha256": "ea8d1a39f7f5384330a589b1ee03706601695dd35cc6335d3f8bafda216fb1f2"
+    },
+    {
+      "path": "tests/fixtures/golden/G-34-t6-T6-10-pr-base-not-head/required-checks.json",
+      "sha256": "57461d69af28c8890b8827da27c07bc9e01774466ff14f0354272a538ba015ea"
+    },
+    {
+      "path": "tests/fixtures/golden/G-34-t6-T6-10-pr-base-not-head/scenario.json",
+      "sha256": "9bc61f4343fab4f1a0c0f15ef74592e345258f609b5126b89c8ea19f751155b5"
+    },
+    {
+      "path": "tests/fixtures/golden/G-34-t6-T6-10-pr-base-not-head/workflow.yml",
+      "sha256": "d1709b7a2e5e16fcc337646ec6e22c19b6a608215417e0dc793c9261cfdcb932"
+    },
+    {
+      "path": "tests/fixtures/golden/G-35-t6-T6-11-types-missing-action/expected.json",
+      "sha256": "dc658c98cf2bd1a9718cc892fa61ebdffbfb255212ea1991f969124045213ba5"
+    },
+    {
+      "path": "tests/fixtures/golden/G-35-t6-T6-11-types-missing-action/required-checks.json",
+      "sha256": "57461d69af28c8890b8827da27c07bc9e01774466ff14f0354272a538ba015ea"
+    },
+    {
+      "path": "tests/fixtures/golden/G-35-t6-T6-11-types-missing-action/scenario.json",
+      "sha256": "b790c295fe84dcb01b4fb905c16e8e5e597cb657eb40d30e446b380d7492d1b5"
+    },
+    {
+      "path": "tests/fixtures/golden/G-35-t6-T6-11-types-missing-action/workflow.yml",
+      "sha256": "3c98b1f3b20d072f35a4e833995f0390a5ce74013c6bd85516ea722fc119a0f2"
+    },
+    {
+      "path": "tests/fixtures/golden/G-36-t6-T6-12-missing-base-branch/expected.json",
+      "sha256": "cdae6d8cb5e6bdc0ff1daa611b6ea12fa7b5606b6a13ed3e1f21fd01aad51952"
+    },
+    {
+      "path": "tests/fixtures/golden/G-36-t6-T6-12-missing-base-branch/required-checks.json",
+      "sha256": "57461d69af28c8890b8827da27c07bc9e01774466ff14f0354272a538ba015ea"
+    },
+    {
+      "path": "tests/fixtures/golden/G-36-t6-T6-12-missing-base-branch/scenario.json",
+      "sha256": "04e2150456dcd92ad40feebfa13675e5a219c1aa9be69842dc9d6d61f22aec6b"
+    },
+    {
+      "path": "tests/fixtures/golden/G-36-t6-T6-12-missing-base-branch/workflow.yml",
+      "sha256": "80314196ccf9e3e1dd1b785252ac08101c6c51585af7c97f80bc457a7d243383"
+    },
+    {
+      "path": "tests/fixtures/golden/G-37-t6-T6-13-total-exactly-3000/expected.json",
+      "sha256": "bf6fc04acf0e67ec9b4bdd97cd045050a3f4f980dd3c2c0468dc676da525827d"
+    },
+    {
+      "path": "tests/fixtures/golden/G-37-t6-T6-13-total-exactly-3000/required-checks.json",
+      "sha256": "57461d69af28c8890b8827da27c07bc9e01774466ff14f0354272a538ba015ea"
+    },
+    {
+      "path": "tests/fixtures/golden/G-37-t6-T6-13-total-exactly-3000/scenario.json",
+      "sha256": "b5e2ddee1187b9729c6c48dbc5070de6558eb06beb9601470380211e215f5151"
+    },
+    {
+      "path": "tests/fixtures/golden/G-37-t6-T6-13-total-exactly-3000/workflow.yml",
+      "sha256": "80314196ccf9e3e1dd1b785252ac08101c6c51585af7c97f80bc457a7d243383"
+    },
+    {
+      "path": "tests/fixtures/golden/G-38-t6-T6-14-complete-false-ignored/expected.json",
+      "sha256": "a5ee1a9ec87af05d4d68de4565acc8f95fa1fc809816d33f6c80bc2d4d25f6a8"
+    },
+    {
+      "path": "tests/fixtures/golden/G-38-t6-T6-14-complete-false-ignored/required-checks.json",
+      "sha256": "57461d69af28c8890b8827da27c07bc9e01774466ff14f0354272a538ba015ea"
+    },
+    {
+      "path": "tests/fixtures/golden/G-38-t6-T6-14-complete-false-ignored/scenario.json",
+      "sha256": "4f6444caab427828a1c2975db04e9577d52447c66adb07e0b489edf4f2aa05aa"
+    },
+    {
+      "path": "tests/fixtures/golden/G-38-t6-T6-14-complete-false-ignored/workflow.yml",
+      "sha256": "80314196ccf9e3e1dd1b785252ac08101c6c51585af7c97f80bc457a7d243383"
+    },
+    {
+      "path": "tests/fixtures/golden/G-39-t6-T6-15-returned-files-subset/expected.json",
+      "sha256": "98c42a9850d6e91d61b437a0831bfa4d99f77437ba3898c637ce6a3485ea3677"
+    },
+    {
+      "path": "tests/fixtures/golden/G-39-t6-T6-15-returned-files-subset/required-checks.json",
+      "sha256": "57461d69af28c8890b8827da27c07bc9e01774466ff14f0354272a538ba015ea"
+    },
+    {
+      "path": "tests/fixtures/golden/G-39-t6-T6-15-returned-files-subset/scenario.json",
+      "sha256": "b703b26ddfbbe8d5f2768f7f9b6d942a39e2c62cbdd350c3b523fc1e41fc7791"
+    },
+    {
+      "path": "tests/fixtures/golden/G-39-t6-T6-15-returned-files-subset/workflow.yml",
+      "sha256": "80314196ccf9e3e1dd1b785252ac08101c6c51585af7c97f80bc457a7d243383"
+    },
+    {
+      "path": "tests/fixtures/golden/G-40-t6-T6-16-empty-event-value/expected.json",
+      "sha256": "3982907f5c9478c43909f35d3158f5856db7c7912d326d45b0d89fd7caee935c"
+    },
+    {
+      "path": "tests/fixtures/golden/G-40-t6-T6-16-empty-event-value/required-checks.json",
+      "sha256": "57461d69af28c8890b8827da27c07bc9e01774466ff14f0354272a538ba015ea"
+    },
+    {
+      "path": "tests/fixtures/golden/G-40-t6-T6-16-empty-event-value/scenario.json",
+      "sha256": "f31c5abcaef79d48c85c09ecdcfb69ea6681a27b25bafc723e9c20b2e00ddfc6"
+    },
+    {
+      "path": "tests/fixtures/golden/G-40-t6-T6-16-empty-event-value/workflow.yml",
+      "sha256": "16e774c4ed3c4df630df72f1aaf0650af08d9672b282f3cc2cc1716f4c97c204"
+    },
+    {
+      "path": "tests/fixtures/golden/G-41-t7-T7-01-missing-need/expected.json",
+      "sha256": "42e68d945c444893e14e8a651b0ec6b600a050722771f499561adab61a041075"
+    },
+    {
+      "path": "tests/fixtures/golden/G-41-t7-T7-01-missing-need/required-checks.json",
+      "sha256": "fba261dd6dadbbef90aa3338dba476314a6ec13b13df2b41f9d44dccee9e3993"
+    },
+    {
+      "path": "tests/fixtures/golden/G-41-t7-T7-01-missing-need/scenario.json",
+      "sha256": "4ea17ac4524a1d8771a9aef270e3f3c2aff2f5e70c25de620b249a7f0e54026b"
+    },
+    {
+      "path": "tests/fixtures/golden/G-41-t7-T7-01-missing-need/workflow.yml",
+      "sha256": "2cd94efe7f025149d148744dd249c425243e1f727b6a0d54609b267b932ae0d7"
+    },
+    {
+      "path": "tests/fixtures/golden/G-42-t7-T7-02-needs-cycle-3/expected.json",
+      "sha256": "d3e819c781e384f1c2205a17cf3e426c7c51a9645ae90c800b7f73fc18338cdb"
+    },
+    {
+      "path": "tests/fixtures/golden/G-42-t7-T7-02-needs-cycle-3/required-checks.json",
+      "sha256": "1f7ef2e2a999737bdabcf4b3040f05b869bd29102a4a0674134c5d537c490f83"
+    },
+    {
+      "path": "tests/fixtures/golden/G-42-t7-T7-02-needs-cycle-3/scenario.json",
+      "sha256": "175dc05683becac69ce762079b820ac0163414355353ba065e3b8f2269997a32"
+    },
+    {
+      "path": "tests/fixtures/golden/G-42-t7-T7-02-needs-cycle-3/workflow.yml",
+      "sha256": "f48b6a537de724336665b9d5550100de5bbef2692b469a74ebef40be35b525a3"
+    },
+    {
+      "path": "tests/fixtures/golden/G-43-t7-T7-03-self-need/expected.json",
+      "sha256": "b7d33a090d84b30074b569623af44ddf722df1c438841c6fdd20be60892a0e8c"
+    },
+    {
+      "path": "tests/fixtures/golden/G-43-t7-T7-03-self-need/required-checks.json",
+      "sha256": "31f6032e4265c3396315301038c4326d3e73a9e95b3403831592b3a5757d9ed2"
+    },
+    {
+      "path": "tests/fixtures/golden/G-43-t7-T7-03-self-need/scenario.json",
+      "sha256": "016fad292d45798a455d7ea3b403e9a419517d0737e9029ee495a641a524bf93"
+    },
+    {
+      "path": "tests/fixtures/golden/G-43-t7-T7-03-self-need/workflow.yml",
+      "sha256": "d137e59287d2c0432b9abddd1230193427b5904e3dabc0b2201e6207a3de260a"
+    },
+    {
+      "path": "tests/fixtures/golden/G-44-t7-T7-04-diamond/expected.json",
+      "sha256": "af65f10669a4a2be9cd48f71f573bd5e6f6e7ca16a96167601ac73e9792854d5"
+    },
+    {
+      "path": "tests/fixtures/golden/G-44-t7-T7-04-diamond/required-checks.json",
+      "sha256": "d44e8d27b213d1025b352ee15cf5652c8c71e5e95523c9898e91493b90c459ff"
+    },
+    {
+      "path": "tests/fixtures/golden/G-44-t7-T7-04-diamond/scenario.json",
+      "sha256": "e75d95b587dd21b7dc064d341bc757b26a6ac958139199de1be2a084ea67fd23"
+    },
+    {
+      "path": "tests/fixtures/golden/G-44-t7-T7-04-diamond/workflow.yml",
+      "sha256": "213d8bfcb2042b1f985432ef6683d1106b6a61c3f9f9275b671bc8363b3f102e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-45-t7-T7-05-deep-skip-chain/expected.json",
+      "sha256": "0487a90caaa67096da1673cf252ede19d2f325411d76e1fd96173f5fe86daa86"
+    },
+    {
+      "path": "tests/fixtures/golden/G-45-t7-T7-05-deep-skip-chain/required-checks.json",
+      "sha256": "d44e8d27b213d1025b352ee15cf5652c8c71e5e95523c9898e91493b90c459ff"
+    },
+    {
+      "path": "tests/fixtures/golden/G-45-t7-T7-05-deep-skip-chain/scenario.json",
+      "sha256": "81eff899ded9399de3cc05a997d6109f74cf1590b872ba39659add9dbd91ceda"
+    },
+    {
+      "path": "tests/fixtures/golden/G-45-t7-T7-05-deep-skip-chain/workflow.yml",
+      "sha256": "27c613a9835ce7345d08205edb707e426f937a336c7119ef4755d4894f38917f"
+    },
+    {
+      "path": "tests/fixtures/golden/G-46-t7-T7-06-always-compound/expected.json",
+      "sha256": "a6f3a2cb019a7cb60185cf4bdee06df89d9a276cc49814ec9262b3f66087ffa5"
+    },
+    {
+      "path": "tests/fixtures/golden/G-46-t7-T7-06-always-compound/required-checks.json",
+      "sha256": "240489fe3a9550f1cd0c3c011786e8096346e0ef2c028597b9de4deeb9dcef6f"
+    },
+    {
+      "path": "tests/fixtures/golden/G-46-t7-T7-06-always-compound/scenario.json",
+      "sha256": "3bbf0a74a394ea78ce4a9367ee2a964aa63b2f115eeff3509d4ee8813365f703"
+    },
+    {
+      "path": "tests/fixtures/golden/G-46-t7-T7-06-always-compound/workflow.yml",
+      "sha256": "9602db0d2040b3efcec9fb0a28e48ffec2edf64d547dab36bf3379a17b958ea6"
+    },
+    {
+      "path": "tests/fixtures/golden/G-47-t7-T7-07-unsupported-if-variants/expected.json",
+      "sha256": "e994c8f45dc4f29254fb513ab960aa7605ff9166ed9eff69024f7e5d1cf57382"
+    },
+    {
+      "path": "tests/fixtures/golden/G-47-t7-T7-07-unsupported-if-variants/required-checks.json",
+      "sha256": "ef44a3e58e48f1ec6f3c13403a628551c797fe6fc2e2251389bac615bb9a0b26"
+    },
+    {
+      "path": "tests/fixtures/golden/G-47-t7-T7-07-unsupported-if-variants/scenario.json",
+      "sha256": "dfe82fcf8064bc09009da802006df660f33e609274874ebb4aa0367cc5b09402"
+    },
+    {
+      "path": "tests/fixtures/golden/G-47-t7-T7-07-unsupported-if-variants/workflow.yml",
+      "sha256": "6e63f78ebad595e988bcca275040fd2413900fb62aa411770cf425b45b50ab83"
+    },
+    {
+      "path": "tests/fixtures/golden/G-48-t7-T7-08-context-comparisons/expected.json",
+      "sha256": "c94636ee250c5f4d56acd69df0988d0880ca8a069bf55473f0efd4506fa855c7"
+    },
+    {
+      "path": "tests/fixtures/golden/G-48-t7-T7-08-context-comparisons/required-checks.json",
+      "sha256": "91685daea339560a769c876e2e5eda4d5c4249910aa9c965026a5179f1471809"
+    },
+    {
+      "path": "tests/fixtures/golden/G-48-t7-T7-08-context-comparisons/scenario.json",
+      "sha256": "ed7dc73bcbe0b4b05bb291d89fd0e3c22c6af25d2c599a7be08ebf7ec8221e2f"
+    },
+    {
+      "path": "tests/fixtures/golden/G-48-t7-T7-08-context-comparisons/workflow.yml",
+      "sha256": "bcb34626bec61eeffa041b4c5cdf17ba46309acde8506891f7eed01b40002e9b"
+    },
+    {
+      "path": "tests/fixtures/golden/G-49-t7-T7-09-same-job-id-two-workflows/expected.json",
+      "sha256": "56aafabf0a8c9524976766c7699a707645944b59b54c6ee0ef9483bf4a4fa622"
+    },
+    {
+      "path": "tests/fixtures/golden/G-49-t7-T7-09-same-job-id-two-workflows/required-checks.json",
+      "sha256": "a410e68e03865df65f7b44c67a272e992e9ac7ef12d7d0adea42120a37a210ca"
+    },
+    {
+      "path": "tests/fixtures/golden/G-49-t7-T7-09-same-job-id-two-workflows/scenario.json",
+      "sha256": "d12725b54aa9af8ab56cc9148abc10b9622c36eaf352b2fabe1097638c5642f6"
+    },
+    {
+      "path": "tests/fixtures/golden/G-49-t7-T7-09-same-job-id-two-workflows/workflow-a.yml",
+      "sha256": "3f3c75e90b8e4b83401122080981a2091d9bcbdee2a5a9eea451681f488293ab"
+    },
+    {
+      "path": "tests/fixtures/golden/G-49-t7-T7-09-same-job-id-two-workflows/workflow-b.yml",
+      "sha256": "01fa415c51893dee5a1b87a75b51c702775e8ab0dce68869bb2e62639826e1cc"
+    },
+    {
+      "path": "tests/fixtures/golden/G-50-t7-T7-10-invalid-propagation/expected.json",
+      "sha256": "b41515afdc541d98f37a74522fa86b0a94fbd465eca4d0bc9cf9de9c5d455a5a"
+    },
+    {
+      "path": "tests/fixtures/golden/G-50-t7-T7-10-invalid-propagation/required-checks.json",
+      "sha256": "1f7ef2e2a999737bdabcf4b3040f05b869bd29102a4a0674134c5d537c490f83"
+    },
+    {
+      "path": "tests/fixtures/golden/G-50-t7-T7-10-invalid-propagation/scenario.json",
+      "sha256": "2f6c001f94dfaebb7c465fcb3587aa191fab6da689d3daec35ed6db806cb343d"
+    },
+    {
+      "path": "tests/fixtures/golden/G-50-t7-T7-10-invalid-propagation/workflow.yml",
+      "sha256": "08b1e5df6452089f1909cd505f5365b38f92806f76337292a378a89e5d74eebf"
+    },
+    {
+      "path": "tests/fixtures/golden/G-51-t7-T7-11-unknown-propagation/expected.json",
+      "sha256": "7e0d0f8bf6c0867763dd40949e3b31bbfa44e610800a96c521fc360fa8831100"
+    },
+    {
+      "path": "tests/fixtures/golden/G-51-t7-T7-11-unknown-propagation/required-checks.json",
+      "sha256": "1f7ef2e2a999737bdabcf4b3040f05b869bd29102a4a0674134c5d537c490f83"
+    },
+    {
+      "path": "tests/fixtures/golden/G-51-t7-T7-11-unknown-propagation/scenario.json",
+      "sha256": "ab7715e14bcb81440b1d598b4a6e4b43d41bf40fc96daaee283b9e9301b96308"
+    },
+    {
+      "path": "tests/fixtures/golden/G-51-t7-T7-11-unknown-propagation/workflow.yml",
+      "sha256": "0de232dc83068fd2883680bb9e7b90428cd2f127a7357f301a6680845ba64120"
+    },
+    {
+      "path": "tests/fixtures/golden/G-52-t7-T7-12-if-precedence-vs-needs/expected.json",
+      "sha256": "a157842165be049f41f601a96277f7ea4d34fefde2a5499ef1fedfad53c9e433"
+    },
+    {
+      "path": "tests/fixtures/golden/G-52-t7-T7-12-if-precedence-vs-needs/required-checks.json",
+      "sha256": "d44e8d27b213d1025b352ee15cf5652c8c71e5e95523c9898e91493b90c459ff"
+    },
+    {
+      "path": "tests/fixtures/golden/G-52-t7-T7-12-if-precedence-vs-needs/scenario.json",
+      "sha256": "1aaa6203feae61fa4a0b3ac0700e6f67b15b7af9219801977b5178999f2799ce"
+    },
+    {
+      "path": "tests/fixtures/golden/G-52-t7-T7-12-if-precedence-vs-needs/workflow.yml",
+      "sha256": "acbe2d3ee84dda67cd5013b1f2ca2cb7a07c9ec1d14a8f0211589f17e14e3c2e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-53-t8-T8-01-name-priority/expected.json",
+      "sha256": "bcabc297523b7a73910b9a73d5a205e0599823d4cb2b687c2a8a7995dee1ec4a"
+    },
+    {
+      "path": "tests/fixtures/golden/G-53-t8-T8-01-name-priority/required-checks.json",
+      "sha256": "1b41c0c147f78895e393562684b4c50b61d344079311817e1aa8d7fbeb0f0873"
+    },
+    {
+      "path": "tests/fixtures/golden/G-53-t8-T8-01-name-priority/scenario.json",
+      "sha256": "984971ea6173e0f3aaa4808e294535f2d8968607e4b14489572528eb6b477bce"
+    },
+    {
+      "path": "tests/fixtures/golden/G-53-t8-T8-01-name-priority/workflow.yml",
+      "sha256": "57bbc471e63151f921be3848be066a0741f365a346ed88c5fc23be647953694c"
+    },
+    {
+      "path": "tests/fixtures/golden/G-54-t8-T8-02-same-job-id-distinct-names/expected.json",
+      "sha256": "1ee8ad8555a83c4207b194b34a8338f2610f71eca92e2f7d7c3f012ac6405f99"
+    },
+    {
+      "path": "tests/fixtures/golden/G-54-t8-T8-02-same-job-id-distinct-names/required-checks.json",
+      "sha256": "b44af53b51c2f344ef7332a519e47e1ea4cd6e46adf65abcd4fd59e8a139e743"
+    },
+    {
+      "path": "tests/fixtures/golden/G-54-t8-T8-02-same-job-id-distinct-names/scenario.json",
+      "sha256": "50a9a881990cce9e05860cf74d6035b2861fe52c69636823bceaa63982d90333"
+    },
+    {
+      "path": "tests/fixtures/golden/G-54-t8-T8-02-same-job-id-distinct-names/workflow-a.yml",
+      "sha256": "d1a8698619c1f55eddccac693f3e3994269b91028b8837368bf63e8e766873df"
+    },
+    {
+      "path": "tests/fixtures/golden/G-54-t8-T8-02-same-job-id-distinct-names/workflow-b.yml",
+      "sha256": "3a68fd77c0afd6cae12f3edca72b329a8cd9fab1bf70f24160801b8dfd79ecc7"
+    },
+    {
+      "path": "tests/fixtures/golden/G-55-t8-T8-03-same-job-id-same-context/expected.json",
+      "sha256": "e8bf4c9b50f3c0bb3667be55863052796376204e1ae333b22a47081506dd23b2"
+    },
+    {
+      "path": "tests/fixtures/golden/G-55-t8-T8-03-same-job-id-same-context/required-checks.json",
+      "sha256": "cd072dec0b2e723220f699d6034ae27843a93e9e95c1e0fd4b187c80a754e4f9"
+    },
+    {
+      "path": "tests/fixtures/golden/G-55-t8-T8-03-same-job-id-same-context/scenario.json",
+      "sha256": "2e5068418a97117c7a1f29233a41a18a0683b6708210681cace47f5e333ecdd9"
+    },
+    {
+      "path": "tests/fixtures/golden/G-55-t8-T8-03-same-job-id-same-context/workflow-a.yml",
+      "sha256": "3f3c75e90b8e4b83401122080981a2091d9bcbdee2a5a9eea451681f488293ab"
+    },
+    {
+      "path": "tests/fixtures/golden/G-55-t8-T8-03-same-job-id-same-context/workflow-b.yml",
+      "sha256": "01fa415c51893dee5a1b87a75b51c702775e8ab0dce68869bb2e62639826e1cc"
+    },
+    {
+      "path": "tests/fixtures/golden/G-56-t8-T8-04-workflow-skip-vs-job-skip/expected.json",
+      "sha256": "b7315f424ff5e6cea5d08e4742b318182dfbe321b96f57ef8465b58e08ef7d15"
+    },
+    {
+      "path": "tests/fixtures/golden/G-56-t8-T8-04-workflow-skip-vs-job-skip/required-checks.json",
+      "sha256": "74a30b6f2197d50f5e819248f89e511abf579222783b6bcf7407bc760dbd3265"
+    },
+    {
+      "path": "tests/fixtures/golden/G-56-t8-T8-04-workflow-skip-vs-job-skip/scenario.json",
+      "sha256": "373779b9b6796a28fecf51b22b5682e4f755d4112d50ffc2369237585fdcb2a7"
+    },
+    {
+      "path": "tests/fixtures/golden/G-56-t8-T8-04-workflow-skip-vs-job-skip/workflow-a.yml",
+      "sha256": "2c110ffe9e58e9bde2be6cb80679dc587032ff66c0db0e8f03eb99c728153340"
+    },
+    {
+      "path": "tests/fixtures/golden/G-56-t8-T8-04-workflow-skip-vs-job-skip/workflow-b.yml",
+      "sha256": "a17a907239b74104f307187a3d504730a25b8017f0d6e8719dfaabe3958c61f9"
+    },
+    {
+      "path": "tests/fixtures/golden/G-57-t8-T8-05-external-source/expected.json",
+      "sha256": "443f4ed2df0b4b009a9ecf19cee1ad4e431e6f3fb15d814002e2abcf8688aa06"
+    },
+    {
+      "path": "tests/fixtures/golden/G-57-t8-T8-05-external-source/required-checks.json",
+      "sha256": "8050847efdbe743f0733215319127223014bd2f42a4d527ec6af46dcdfba1550"
+    },
+    {
+      "path": "tests/fixtures/golden/G-57-t8-T8-05-external-source/scenario.json",
+      "sha256": "655f1958e95434f1f7a2cc7565c1aa41642f8cc0fda60249bfcc8a16b3c7fb53"
+    },
+    {
+      "path": "tests/fixtures/golden/G-57-t8-T8-05-external-source/workflow.yml",
+      "sha256": "ebf20d7e768d1b845de05bfcb8ee2d8a3880ecd48a5b2d2e3006198488013678"
+    },
+    {
+      "path": "tests/fixtures/golden/G-58-t8-T8-06-trigger-invalid-unknown/expected.json",
+      "sha256": "614dabb4b355a6bb9eb8385fc8d6fc6a1293f94455651d86da5190175d7639e8"
+    },
+    {
+      "path": "tests/fixtures/golden/G-58-t8-T8-06-trigger-invalid-unknown/required-checks.json",
+      "sha256": "f9fd90eca8d6ee71906b0a806f9c65d6f777fa6e74c8bdab59844ef13cfc3a24"
+    },
+    {
+      "path": "tests/fixtures/golden/G-58-t8-T8-06-trigger-invalid-unknown/scenario.json",
+      "sha256": "e0f2776dc66605654935a7e5f4b1282bfa4b23cd8d5c355752e02626c59af32f"
+    },
+    {
+      "path": "tests/fixtures/golden/G-58-t8-T8-06-trigger-invalid-unknown/workflow-broken-job.yml",
+      "sha256": "2f213f3340ff9afb98b97ffa7da24dce1db1333d32b58b79deb13f5120ef2a7c"
+    },
+    {
+      "path": "tests/fixtures/golden/G-58-t8-T8-06-trigger-invalid-unknown/workflow-invalid.yml",
+      "sha256": "fa3cea1898e74d69b0eb141e56c843beed98db7b1dd136ca7db0b6a3d0b59989"
+    },
+    {
+      "path": "tests/fixtures/golden/G-58-t8-T8-06-trigger-invalid-unknown/workflow-unknown.yml",
+      "sha256": "917e1c0a167564d0aa1d59ae4163f969d2ebac89317604c960f065b5222e31b7"
+    },
+    {
+      "path": "tests/fixtures/golden/G-59-t8-T8-07-provider-unknown-conditional/expected.json",
+      "sha256": "e773300238e86796ee0da7e15f8b3153181183d62609df056d0a90db175a778d"
+    },
+    {
+      "path": "tests/fixtures/golden/G-59-t8-T8-07-provider-unknown-conditional/required-checks.json",
+      "sha256": "31a33def75af3f10cc4b7b98b50d9770f48c13d56c121c49698b67252ef618e6"
+    },
+    {
+      "path": "tests/fixtures/golden/G-59-t8-T8-07-provider-unknown-conditional/scenario.json",
+      "sha256": "06f30b3a6135b9ac78027a20dc078dc796b090fe6295e51310dfeb4867ca7df7"
+    },
+    {
+      "path": "tests/fixtures/golden/G-59-t8-T8-07-provider-unknown-conditional/workflow.yml",
+      "sha256": "6853b1e31b5b4cc8808b9f6f0c75a72835fb3ec6649d47ecffa306e7fd5b3f73"
+    },
+    {
+      "path": "tests/fixtures/golden/G-60-t8-T8-08-duplicate-beats-invalid/expected.json",
+      "sha256": "65d75ae76a07a81a2873e91083b7306fb09d952cbd594b61498d0a39e62b35db"
+    },
+    {
+      "path": "tests/fixtures/golden/G-60-t8-T8-08-duplicate-beats-invalid/required-checks.json",
+      "sha256": "104e9c9710ce4fbb252263f0b93861332a5fdb3f1a769bed20d9454c99a5433f"
+    },
+    {
+      "path": "tests/fixtures/golden/G-60-t8-T8-08-duplicate-beats-invalid/scenario.json",
+      "sha256": "f2afba637c05a1e15ac5a834d853a94be177a713739c636a8f9b8a2ea868fa55"
+    },
+    {
+      "path": "tests/fixtures/golden/G-60-t8-T8-08-duplicate-beats-invalid/workflow.yml",
+      "sha256": "e50ea60503f45167171d99a3466d051d5e9a15733f56a074662d931eb1384136"
+    },
+    {
+      "path": "tests/fixtures/golden/G-61-t8-T8-09-merge-group-missing/expected.json",
+      "sha256": "612a5f65b023d29a72e56ae82d41372e7dcbdee6b6986c8970ec65493b5599ed"
+    },
+    {
+      "path": "tests/fixtures/golden/G-61-t8-T8-09-merge-group-missing/required-checks.json",
+      "sha256": "b4bfe79c7cb15a7bb7497660e1a9cbedae6389f7df5939e0f9f9557db308160e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-61-t8-T8-09-merge-group-missing/scenario.json",
+      "sha256": "f65fef6a55610eba11682ae0e0b5c767b475b3df88f3569b5a9de5722b49fec8"
+    },
+    {
+      "path": "tests/fixtures/golden/G-61-t8-T8-09-merge-group-missing/workflow.yml",
+      "sha256": "ebf20d7e768d1b845de05bfcb8ee2d8a3880ecd48a5b2d2e3006198488013678"
+    },
+    {
+      "path": "tests/fixtures/golden/G-62-t8-T8-10-duplicate-manifest-entries/expected.json",
+      "sha256": "a93a684683b3606f641464fc5778ca5ea12b771cb479306ebf8643f9f6b8e568"
+    },
+    {
+      "path": "tests/fixtures/golden/G-62-t8-T8-10-duplicate-manifest-entries/required-checks.json",
+      "sha256": "4fd095640a6682f2be0dd56caeb11f664ab99084544abdaace45304bc79e5f33"
+    },
+    {
+      "path": "tests/fixtures/golden/G-62-t8-T8-10-duplicate-manifest-entries/scenario.json",
+      "sha256": "c7f0a3fd37647048c3ba28ca716c4581a69a8d4625ae24b16b1cab6dea3dbeed"
+    },
+    {
+      "path": "tests/fixtures/golden/G-62-t8-T8-10-duplicate-manifest-entries/workflow.yml",
+      "sha256": "ebf20d7e768d1b845de05bfcb8ee2d8a3880ecd48a5b2d2e3006198488013678"
+    },
+    {
+      "path": "tests/fixtures/golden/G-63-t9-T9-01/expected.json",
+      "sha256": "6362b71fdb8207b73f1278de1b9c18de23a27444c6848c842ea9ec95f91c6a3d"
+    },
+    {
+      "path": "tests/fixtures/golden/G-63-t9-T9-01/required-checks.json",
+      "sha256": "57461d69af28c8890b8827da27c07bc9e01774466ff14f0354272a538ba015ea"
+    },
+    {
+      "path": "tests/fixtures/golden/G-63-t9-T9-01/scenario.json",
+      "sha256": "8ebce0ab384fc1d03f228fab5678756d833905445737a75827ac41b3f0701825"
+    },
+    {
+      "path": "tests/fixtures/golden/G-63-t9-T9-01/workflow-ci.yml",
+      "sha256": "d1ef7a4ce7a21a498c51814cd9d2d3063d358f2f5c73946730e4c925387f0b1d"
+    },
+    {
+      "path": "tests/fixtures/golden/G-64-t9-T9-03/expected.json",
+      "sha256": "1f5da525b9f2cd91d39f63fc602f2d58655bd2bec2f73131ac97fff2a17c882f"
+    },
+    {
+      "path": "tests/fixtures/golden/G-64-t9-T9-03/required-checks.json",
+      "sha256": "57461d69af28c8890b8827da27c07bc9e01774466ff14f0354272a538ba015ea"
+    },
+    {
+      "path": "tests/fixtures/golden/G-64-t9-T9-03/scenario.json",
+      "sha256": "ec5384f2dcfd327ae333edf1c8b61b07ed01438074fa8ee6d03ccb186a77cc94"
+    },
+    {
+      "path": "tests/fixtures/golden/G-64-t9-T9-03/workflow.yml",
+      "sha256": "d1ef7a4ce7a21a498c51814cd9d2d3063d358f2f5c73946730e4c925387f0b1d"
+    },
+    {
+      "path": "tests/fixtures/golden/G-65-t9-T9-05/expected.json",
+      "sha256": "cff4585c8c621461ee2083fd955aae38083c8e8123a34dcce21c708808a47608"
+    },
+    {
+      "path": "tests/fixtures/golden/G-65-t9-T9-05/required-checks.json",
+      "sha256": "57461d69af28c8890b8827da27c07bc9e01774466ff14f0354272a538ba015ea"
+    },
+    {
+      "path": "tests/fixtures/golden/G-65-t9-T9-05/scenario.json",
+      "sha256": "130bf911f0e3c558244e09c69a68f5247d65d7ad2155894994dd427d97badcd5"
+    },
+    {
+      "path": "tests/fixtures/golden/G-65-t9-T9-05/workflow.yml",
+      "sha256": "ddd040b424a47e52d9859ab36c9a90dcec6524714664c01c14244573f9ef3c7c"
+    },
+    {
+      "path": "tests/fixtures/golden/G-66-t9-T9-07/expected.json",
+      "sha256": "be6eda22af3d6004e468d737a059b968487c3820ae30bbdd29c47e5c8dcb0470"
+    },
+    {
+      "path": "tests/fixtures/golden/G-66-t9-T9-07/required-checks.json",
+      "sha256": "57461d69af28c8890b8827da27c07bc9e01774466ff14f0354272a538ba015ea"
+    },
+    {
+      "path": "tests/fixtures/golden/G-66-t9-T9-07/scenario.json",
+      "sha256": "d98a34fcbfd85b57c359497f9768264dfc2c7fa461ceab9b721010c5e33e32f7"
+    },
+    {
+      "path": "tests/fixtures/golden/G-66-t9-T9-07/workflow.yml",
+      "sha256": "15503211c711f1526a34f83e1a0b9fc8dbe2125223c004b0a5a81a3477580da2"
+    },
+    {
+      "path": "tests/fixtures/golden/G-67-t9-T9-09/expected.json",
+      "sha256": "b08ac9b16058ee94f42d149e01738f51a42bae916e22556dfa64d1d92e99a2fa"
+    },
+    {
+      "path": "tests/fixtures/golden/G-67-t9-T9-09/required-checks.json",
+      "sha256": "07a5cde7da986e5d67a79c42eb442af25d992505d2cb598980a83bd59d80de57"
+    },
+    {
+      "path": "tests/fixtures/golden/G-67-t9-T9-09/scenario.json",
+      "sha256": "5f61377ac9b70feeaf4423a07b3274af61500cea709a00819aada849731a37de"
+    },
+    {
+      "path": "tests/fixtures/golden/G-67-t9-T9-09/workflow.yml",
+      "sha256": "15503211c711f1526a34f83e1a0b9fc8dbe2125223c004b0a5a81a3477580da2"
+    },
+    {
+      "path": "tests/fixtures/golden/G-68-t9-T9-11/expected.json",
+      "sha256": "5c1a69549d99671683b34739311e66c5234772120526ea9139626788cb91d11d"
+    },
+    {
+      "path": "tests/fixtures/golden/G-68-t9-T9-11/required-checks.json",
+      "sha256": "a410e68e03865df65f7b44c67a272e992e9ac7ef12d7d0adea42120a37a210ca"
+    },
+    {
+      "path": "tests/fixtures/golden/G-68-t9-T9-11/scenario.json",
+      "sha256": "c2d57f9a0b54be28ae553f8b84487d826549648c1d67432f865588fabe3b8c5d"
+    },
+    {
+      "path": "tests/fixtures/golden/G-68-t9-T9-11/workflow-a.yml",
+      "sha256": "6f3d2b8519e16044fed9f8da5465e3e2d1b59512862397617050ec58c22ebc7c"
+    },
+    {
+      "path": "tests/fixtures/golden/G-68-t9-T9-11/workflow-b.yml",
+      "sha256": "6f3d2b8519e16044fed9f8da5465e3e2d1b59512862397617050ec58c22ebc7c"
+    },
+    {
+      "path": "tests/fixtures/golden/G-69-t9-T9-13/expected.json",
+      "sha256": "72f98365737c24966067ff832fd248a35600bf5edc48309e26182d91629f54a5"
+    },
+    {
+      "path": "tests/fixtures/golden/G-69-t9-T9-13/required-checks.json",
+      "sha256": "d4d83dbb7e384199391dbf8e237998dca61fe7da17bd9acc0e21edb24f30ade8"
+    },
+    {
+      "path": "tests/fixtures/golden/G-69-t9-T9-13/scenario.json",
+      "sha256": "cb70f5c11bb1ca039fbfb6eb261a6ece392afb921d0e146e9863ed0eca804827"
+    },
+    {
+      "path": "tests/fixtures/golden/G-69-t9-T9-13/workflow.yml",
+      "sha256": "15503211c711f1526a34f83e1a0b9fc8dbe2125223c004b0a5a81a3477580da2"
+    },
+    {
+      "path": "tests/fixtures/golden/G-70-t9-T9-16/expected.json",
+      "sha256": "6ae1f2ed8ba2c08cfc250ae84bb699da19f08cad3d61ff01684132375a75ce5a"
+    },
+    {
+      "path": "tests/fixtures/golden/G-70-t9-T9-16/required-checks.json",
+      "sha256": "45607704c95a2476e197aa892ee55c76d6f81e3cfc0b314d33a1b426b65a0b8f"
+    },
+    {
+      "path": "tests/fixtures/golden/G-70-t9-T9-16/scenario.json",
+      "sha256": "73670d0657570f8acaa8656af5a15fd80f81ea03f7604520e9e693f5655e56cb"
+    },
+    {
+      "path": "tests/fixtures/golden/G-70-t9-T9-16/workflow.yml",
+      "sha256": "6e1902b00f5e66c40413078b3bbf10e1fd97b360f62780e76e5c51c185e8c43a"
+    },
+    {
+      "path": "tests/fixtures/golden/G-71-t9-T9-18/expected.json",
+      "sha256": "963bcbccbcd771c97b07b5be16c6cc5b79eded780c9bde0deae99a7c3eefa259"
+    },
+    {
+      "path": "tests/fixtures/golden/G-71-t9-T9-18/required-checks.json",
+      "sha256": "57461d69af28c8890b8827da27c07bc9e01774466ff14f0354272a538ba015ea"
+    },
+    {
+      "path": "tests/fixtures/golden/G-71-t9-T9-18/scenario.json",
+      "sha256": "7e3dde330851ca90c8a3e630a0df3fea22a244f3a09907b9d5ca5441bdcabf4a"
+    },
+    {
+      "path": "tests/fixtures/golden/G-71-t9-T9-18/workflow.yml",
+      "sha256": "5e2c30180352129a6f56070d5e6d3035f9f8afe9ad39de4e8996c0093bdb9f52"
+    },
+    {
+      "path": "tests/fixtures/golden/G-72-t9-T9-19/expected.json",
+      "sha256": "6a6b2bc207260547e1b74d7d654708ec3b7217b13497a4080bd8444369c163b6"
+    },
+    {
+      "path": "tests/fixtures/golden/G-72-t9-T9-19/required-checks.json",
+      "sha256": "57461d69af28c8890b8827da27c07bc9e01774466ff14f0354272a538ba015ea"
+    },
+    {
+      "path": "tests/fixtures/golden/G-72-t9-T9-19/scenario.json",
+      "sha256": "9a69f6042e0ede776ac8ad55a27877cbff3e65cefcafb6e7a485f79dbd1fb1cf"
+    },
+    {
+      "path": "tests/fixtures/golden/G-72-t9-T9-19/workflow.yml",
+      "sha256": "9d81d7d99d700e6040e795164c0bf4e1d22418b35a1aec56a6a5fb51c4344f2e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-81-fix-p1-01-T6-17-dup-branches/expected.json",
+      "sha256": "7f0569aafc6524642403e164293e6f26e8ee976c64e8d64e7183f0c371042f10"
+    },
+    {
+      "path": "tests/fixtures/golden/G-81-fix-p1-01-T6-17-dup-branches/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-81-fix-p1-01-T6-17-dup-branches/scenario.json",
+      "sha256": "7f53fbc8eb13ae642800de18523e1eb12339963b22616693a7345ee45597e3a1"
+    },
+    {
+      "path": "tests/fixtures/golden/G-81-fix-p1-01-T6-17-dup-branches/workflow.yml",
+      "sha256": "cdaed521d6d23a894f85bd8153522019ee89a03c8ace8c4cf646dcf992579045"
+    },
+    {
+      "path": "tests/fixtures/golden/G-82-fix-p1-01-T6-18-dup-event/expected.json",
+      "sha256": "f994b01f1a4a1fb236ecb72b41255d171342c85114d7a8679e5f9a666178f6b0"
+    },
+    {
+      "path": "tests/fixtures/golden/G-82-fix-p1-01-T6-18-dup-event/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-82-fix-p1-01-T6-18-dup-event/scenario.json",
+      "sha256": "cbf7c01e3e9c62d11f613195d0211e2a28a9868c7b73cb6726692b6a35ed1146"
+    },
+    {
+      "path": "tests/fixtures/golden/G-82-fix-p1-01-T6-18-dup-event/workflow.yml",
+      "sha256": "af22a01d8e135d8dc9dc1b06db2dfa8641aca31e941244692fec99fd820b6594"
+    },
+    {
+      "path": "tests/fixtures/golden/G-83-fix-p1-01-T6-19-dup-name/expected.json",
+      "sha256": "458cae862d18b600236fb3a966ecd1006f138a120f797832634cd4b70de193d2"
+    },
+    {
+      "path": "tests/fixtures/golden/G-83-fix-p1-01-T6-19-dup-name/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-83-fix-p1-01-T6-19-dup-name/scenario.json",
+      "sha256": "5b5042355128b4dfbe384a6431780ca2848c8989e54b3dbc9455e2918be5cce5"
+    },
+    {
+      "path": "tests/fixtures/golden/G-83-fix-p1-01-T6-19-dup-name/workflow.yml",
+      "sha256": "cf73d85d9ecd192d5d32c1b2eeed6082f4c25d6286219001848557b7575e3fd0"
+    },
+    {
+      "path": "tests/fixtures/golden/G-84-fix-p0-02-T6-20-dup-bool-true/expected.json",
+      "sha256": "8d3d5c9b7dd7bc76ed11bfc7e0657b4918dcfdcddb4559c3473efd28428566bd"
+    },
+    {
+      "path": "tests/fixtures/golden/G-84-fix-p0-02-T6-20-dup-bool-true/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-84-fix-p0-02-T6-20-dup-bool-true/scenario.json",
+      "sha256": "df942222edd9ca6bdeb1b2dfe1ab2b2fbd94aab0f3e9f4d2fad7ff1d662285d3"
+    },
+    {
+      "path": "tests/fixtures/golden/G-84-fix-p0-02-T6-20-dup-bool-true/workflow.yml",
+      "sha256": "9dc28ab165a7ee275734f99d578c35bdf9bd838bc85a3a09d59585f1ae5e043b"
+    },
+    {
+      "path": "tests/fixtures/golden/G-85-fix-p0-03-T6-21-bool-true-event/expected.json",
+      "sha256": "fdc6554aa02a8ba430318ef096d5b802bcbbbcff5b3111ab21fac2389f6e00d5"
+    },
+    {
+      "path": "tests/fixtures/golden/G-85-fix-p0-03-T6-21-bool-true-event/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-85-fix-p0-03-T6-21-bool-true-event/scenario.json",
+      "sha256": "fb5f2c524411d189857301d9baffab7932ea063c5bf3aedf49305702252297ab"
+    },
+    {
+      "path": "tests/fixtures/golden/G-85-fix-p0-03-T6-21-bool-true-event/workflow.yml",
+      "sha256": "8a86a01408f2679f3537a0b93d5992fa64deb310e7761c11a4aeff75bfea1da3"
+    },
+    {
+      "path": "tests/fixtures/golden/G-86-fix-p0-03-T6-22-bool-false-event/expected.json",
+      "sha256": "de66db7132164073cd97830203b8aff51b63f198e28c7bdd56f70af493238382"
+    },
+    {
+      "path": "tests/fixtures/golden/G-86-fix-p0-03-T6-22-bool-false-event/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-86-fix-p0-03-T6-22-bool-false-event/scenario.json",
+      "sha256": "e35f79a6c64a30b4c449facf822c67cd1cec51f122fd8f3ed7367c195653f025"
+    },
+    {
+      "path": "tests/fixtures/golden/G-86-fix-p0-03-T6-22-bool-false-event/workflow.yml",
+      "sha256": "03149c4f3dda4c70cdaf9f0a30df485870df146aa8c8643d821783a49feb81e1"
+    },
+    {
+      "path": "tests/fixtures/golden/G-87-fix-p0-03-T6-23-bool-true-false-events/expected.json",
+      "sha256": "9c4b84e309d9100ccaa9eb61d73880c56e1a5bc7ce1cda526f0a046070e322dc"
+    },
+    {
+      "path": "tests/fixtures/golden/G-87-fix-p0-03-T6-23-bool-true-false-events/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-87-fix-p0-03-T6-23-bool-true-false-events/scenario.json",
+      "sha256": "33eb3d4ab32bd65adb1630dfbefdb628943e7c1324d790c0c5bd0ec3c96ad954"
+    },
+    {
+      "path": "tests/fixtures/golden/G-87-fix-p0-03-T6-23-bool-true-false-events/workflow.yml",
+      "sha256": "631cb7e300eaf6424a1fe678d1ec4265936297fd3f06dca693c77c1159dd1c4d"
+    },
+    {
+      "path": "tests/fixtures/golden/G-88-fix-p0-03-T6-24-null-event/expected.json",
+      "sha256": "0afed08687c5554a7c349ae1c7295486809c35aa95b46dd94afd18ecd244e271"
+    },
+    {
+      "path": "tests/fixtures/golden/G-88-fix-p0-03-T6-24-null-event/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-88-fix-p0-03-T6-24-null-event/scenario.json",
+      "sha256": "d546b0c604b78820f5344841966ef3da8a78df52e6785102d483b8254d0cee66"
+    },
+    {
+      "path": "tests/fixtures/golden/G-88-fix-p0-03-T6-24-null-event/workflow.yml",
+      "sha256": "a367451e0361638f9f44c1450b3879e7ba5dc3da21d15c4039c743101d3238b0"
+    },
+    {
+      "path": "tests/fixtures/golden/G-89-fix-p0-03-T6-25-tilde-event/expected.json",
+      "sha256": "dac03efe0b040bc9bc73bec8e1d6c1f7ce40eb1ebca544d41bcfdcf4a7cf5110"
+    },
+    {
+      "path": "tests/fixtures/golden/G-89-fix-p0-03-T6-25-tilde-event/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-89-fix-p0-03-T6-25-tilde-event/scenario.json",
+      "sha256": "76f19b3859ea49267d1ad0cc5943835e75b49d5f6ae984f85963270aa7b4fa3d"
+    },
+    {
+      "path": "tests/fixtures/golden/G-89-fix-p0-03-T6-25-tilde-event/workflow.yml",
+      "sha256": "df7bfd0c7d266b1c06b839b6fb6958b8901327437363f869be986c7eb2153f63"
+    },
+    {
+      "path": "tests/fixtures/golden/G-90-fix-p0-03-T6-26-filter-key-true/expected.json",
+      "sha256": "fb31f03e10693ff15cfcba7b501c6ee9579cfeb500eb462b0c223e6b0aeb7cf0"
+    },
+    {
+      "path": "tests/fixtures/golden/G-90-fix-p0-03-T6-26-filter-key-true/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-90-fix-p0-03-T6-26-filter-key-true/scenario.json",
+      "sha256": "897e674f84f1f9b5cf94aae39217249909fa0d2bb1f397c180e1935a15634100"
+    },
+    {
+      "path": "tests/fixtures/golden/G-90-fix-p0-03-T6-26-filter-key-true/workflow.yml",
+      "sha256": "9eb07d7b50bce24264b32c41f3b20dada3cc4c61faa6bad7cbdb502f599c8357"
+    },
+    {
+      "path": "tests/fixtures/golden/G-91-fix-p0-03-T6-27-on-list-true/expected.json",
+      "sha256": "a96a7674187ebeac69be5f3a3d91d3caa2eec57006bf03585bb8f62f887d0c63"
+    },
+    {
+      "path": "tests/fixtures/golden/G-91-fix-p0-03-T6-27-on-list-true/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-91-fix-p0-03-T6-27-on-list-true/scenario.json",
+      "sha256": "5d6e4c48ccc01c6a04048d15a0f86a3286cd1bfc8f10532a7f7c5e8e493f18f0"
+    },
+    {
+      "path": "tests/fixtures/golden/G-91-fix-p0-03-T6-27-on-list-true/workflow.yml",
+      "sha256": "16a84b510412a71555a7b15708de97e4ba8805107cd2dfe1acf22df30177e383"
+    },
+    {
+      "path": "tests/fixtures/golden/G-92-fix-p0-03-T6-28-branches-true/expected.json",
+      "sha256": "c9e2d5a6d1d19b31ec0758adcc31a9f7f3b7ef2f49aa05745070070c0f7e81e6"
+    },
+    {
+      "path": "tests/fixtures/golden/G-92-fix-p0-03-T6-28-branches-true/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-92-fix-p0-03-T6-28-branches-true/scenario.json",
+      "sha256": "95c23b07901a07f41bcadcec77ee777d133243e1fc9784049b51cca1c2b9bd09"
+    },
+    {
+      "path": "tests/fixtures/golden/G-92-fix-p0-03-T6-28-branches-true/workflow.yml",
+      "sha256": "b3163ef6e79ad0899564da9fd40d98858a76bd4e1f530be293abb2b97c107e9b"
+    },
+    {
+      "path": "tests/fixtures/golden/G-93-fix-p0-03-T6-29-types-true/expected.json",
+      "sha256": "c8c24c96cc0f73300f98c344eff1a7d15dbd872fcac41a7f9c12ff3d4ea97537"
+    },
+    {
+      "path": "tests/fixtures/golden/G-93-fix-p0-03-T6-29-types-true/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-93-fix-p0-03-T6-29-types-true/scenario.json",
+      "sha256": "84fdb4f85eae97210b39c2b493743b16d3354835b944f526f751a9cf9f880be1"
+    },
+    {
+      "path": "tests/fixtures/golden/G-93-fix-p0-03-T6-29-types-true/workflow.yml",
+      "sha256": "ab9c47cd7f515273f6936698485481d34e0ee20601b264fc8e5d84ba1cbadf37"
+    },
+    {
+      "path": "tests/fixtures/golden/G-94-fix-p0-03-T6-30-bool-TRUE-event/expected.json",
+      "sha256": "13536d82105fa205317ecb5120333808b4b0a3e019eb87def27b1f08b10c5f25"
+    },
+    {
+      "path": "tests/fixtures/golden/G-94-fix-p0-03-T6-30-bool-TRUE-event/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-94-fix-p0-03-T6-30-bool-TRUE-event/scenario.json",
+      "sha256": "32f24afc817a89c7563c51c2b4366abe09509d835bc01070d55a327a6dc9b757"
+    },
+    {
+      "path": "tests/fixtures/golden/G-94-fix-p0-03-T6-30-bool-TRUE-event/workflow.yml",
+      "sha256": "32088d20881c29cf07874b87347e020f978b4a64156621b35c5ff0230a17dcfd"
+    },
+    {
+      "path": "tests/fixtures/golden/G-95-fix-p0-03-T6-31-num-01-event/expected.json",
+      "sha256": "c8e33fdcf3e9e075c72f057ba2214311e61aa4a615407d8bb3d5c3cce3d8f621"
+    },
+    {
+      "path": "tests/fixtures/golden/G-95-fix-p0-03-T6-31-num-01-event/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-95-fix-p0-03-T6-31-num-01-event/scenario.json",
+      "sha256": "d08dfd96543ac28734b1263ea9c53f3ad23e93eff1444e53033fb293d4e6c14b"
+    },
+    {
+      "path": "tests/fixtures/golden/G-95-fix-p0-03-T6-31-num-01-event/workflow.yml",
+      "sha256": "2af8c360943de6d1da257c65d681fef7e81b33cc397f6f9bbc341ba53d28dd17"
+    },
+    {
+      "path": "tests/fixtures/golden/G-96-fix-p0-03-T6-32-dup-num-1-01/expected.json",
+      "sha256": "71f68d63fcf72dd36d8fbdfdb389933b98306783f69d450843e00e68e814c798"
+    },
+    {
+      "path": "tests/fixtures/golden/G-96-fix-p0-03-T6-32-dup-num-1-01/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-96-fix-p0-03-T6-32-dup-num-1-01/scenario.json",
+      "sha256": "fce6eb76cd160ddcca882dda6e5d0e44d6d80f02cd5cd42d52e96ded05b06fc9"
+    },
+    {
+      "path": "tests/fixtures/golden/G-96-fix-p0-03-T6-32-dup-num-1-01/workflow.yml",
+      "sha256": "5754ec2268a8b9ea1a2b8fc3ff89bbfd65643fd7e6b74eb844da7711495cb4a7"
+    },
+    {
+      "path": "tests/fixtures/golden/G-97-fix-p0-03-T6-33-branches-1/expected.json",
+      "sha256": "9bf6700e228da9688cafd44caa09f1f3de5d26c7d0ff7feb2382558bc33fd57a"
+    },
+    {
+      "path": "tests/fixtures/golden/G-97-fix-p0-03-T6-33-branches-1/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-97-fix-p0-03-T6-33-branches-1/scenario.json",
+      "sha256": "10f7447fb0f97268d548c2f045f17ed3222427a9c8bcd5e2b54ddfebb797ad59"
+    },
+    {
+      "path": "tests/fixtures/golden/G-97-fix-p0-03-T6-33-branches-1/workflow.yml",
+      "sha256": "90583246241d8e37de770be27b263d6cdd8103aef23918ce0bfbf0fda7eda4fc"
+    },
+    {
+      "path": "tests/fixtures/golden/G-98-fix-p0-03-T6-34-num-1e3-event/expected.json",
+      "sha256": "efe7928fd6d00fe0e97145df098b28932f625e3a1abef1bf59f404f56805cd6f"
+    },
+    {
+      "path": "tests/fixtures/golden/G-98-fix-p0-03-T6-34-num-1e3-event/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-98-fix-p0-03-T6-34-num-1e3-event/scenario.json",
+      "sha256": "a2040e65747ed69b685ea35304a56dbda72634a501fab64a598f97cb1f16aa61"
+    },
+    {
+      "path": "tests/fixtures/golden/G-98-fix-p0-03-T6-34-num-1e3-event/workflow.yml",
+      "sha256": "7036c961e1692f4500cbb4ce72261b2642371c48c149e8527c1a9c3ef2781541"
+    },
+    {
+      "path": "tests/fixtures/golden/G-99-fix-p0-03-T6-35-num-inf-event/expected.json",
+      "sha256": "61a2df8dc205eeebae5a4fb19af258a2dd737d20817ce5ad526b0e1301907ed6"
+    },
+    {
+      "path": "tests/fixtures/golden/G-99-fix-p0-03-T6-35-num-inf-event/required-checks.json",
+      "sha256": "7ee7dc910b0336562cc41159643c384f209d44d3d8e2db4d4c8c7851bf73462e"
+    },
+    {
+      "path": "tests/fixtures/golden/G-99-fix-p0-03-T6-35-num-inf-event/scenario.json",
+      "sha256": "3fdde6475339d05a1ab2f6fd3c35f1881a1fb7dd35ce7c63a94f103696a011de"
+    },
+    {
+      "path": "tests/fixtures/golden/G-99-fix-p0-03-T6-35-num-inf-event/workflow.yml",
+      "sha256": "40d6243f6283d57ecb5f2736a48cd17a0b725be7195d5f98304b5769cdf88060"
+    },
+    {
+      "path": "tests/fixtures/golden/suite.json",
+      "sha256": "62a8b519b5af1f0831e336e33d47f789ef9ad057ef796f1acdb1af47c825be28"
+    },
+    {
+      "path": "tests/fixtures/unsupported/U-01-contains-if/expected.json",
+      "sha256": "e31036317abe3e6f4e8b66e61f85597c4d6316f78f3fce97f956e69b6bafde8b"
+    },
+    {
+      "path": "tests/fixtures/unsupported/U-01-contains-if/required-checks.json",
+      "sha256": "57461d69af28c8890b8827da27c07bc9e01774466ff14f0354272a538ba015ea"
+    },
+    {
+      "path": "tests/fixtures/unsupported/U-01-contains-if/scenario.json",
+      "sha256": "260ac9816e01829492f65fe4d6cc1a5e50e4cf691485fd2d196ef22d4576a7eb"
+    },
+    {
+      "path": "tests/fixtures/unsupported/U-01-contains-if/workflow.yml",
+      "sha256": "f578c66dbf61bbcd827ca59cae98ea09b5477eef9d2e065433af148603b1b671"
+    },
+    {
+      "path": "tests/fixtures/unsupported/U-02-hashfiles-if/expected.json",
+      "sha256": "81f5fd153f26d4058c5d99812ccccb4c51268cd5cac84ffacd4841e13e429353"
+    },
+    {
+      "path": "tests/fixtures/unsupported/U-02-hashfiles-if/required-checks.json",
+      "sha256": "57461d69af28c8890b8827da27c07bc9e01774466ff14f0354272a538ba015ea"
+    },
+    {
+      "path": "tests/fixtures/unsupported/U-02-hashfiles-if/scenario.json",
+      "sha256": "bef384996a49e276f8e5d2c8892186d92014cbf244e29f8eccd0632db1e2b0f6"
+    },
+    {
+      "path": "tests/fixtures/unsupported/U-02-hashfiles-if/workflow.yml",
+      "sha256": "65919b313c04c868b8e981f76ec29163980e26a824dfe6a65cb056c0d7f71285"
+    },
+    {
+      "path": "tests/fixtures/unsupported/U-03-pull-request-target-event/expected.json",
+      "sha256": "e6db52313a2b40e87aad18afcc9b464b6dbc1852edb9524f2119fc442931aaab"
+    },
+    {
+      "path": "tests/fixtures/unsupported/U-03-pull-request-target-event/required-checks.json",
+      "sha256": "57461d69af28c8890b8827da27c07bc9e01774466ff14f0354272a538ba015ea"
+    },
+    {
+      "path": "tests/fixtures/unsupported/U-03-pull-request-target-event/scenario.json",
+      "sha256": "5d0e4f26a11aaf753e1b74ba38951a296942e6d5a26cc447e54d77071e35f79e"
+    },
+    {
+      "path": "tests/fixtures/unsupported/U-03-pull-request-target-event/workflow.yml",
+      "sha256": "25ccfc07a13cdc9e65a5c9d07e55dee92101fc670fb308b914d723e32c123958"
+    },
+    {
+      "path": "tests/fixtures/unsupported/U-04-workflow-run-event/expected.json",
+      "sha256": "6aeab1ec2d5a7002fe54b223918d25a0498d81b2ddffbb9ae5276d08113eede2"
+    },
+    {
+      "path": "tests/fixtures/unsupported/U-04-workflow-run-event/required-checks.json",
+      "sha256": "57461d69af28c8890b8827da27c07bc9e01774466ff14f0354272a538ba015ea"
+    },
+    {
+      "path": "tests/fixtures/unsupported/U-04-workflow-run-event/scenario.json",
+      "sha256": "dfb9385db2240e94e5221824b9ab83b1fd25f4a6d999a1bbc16c49741edded53"
+    },
+    {
+      "path": "tests/fixtures/unsupported/U-04-workflow-run-event/workflow.yml",
+      "sha256": "50e8cfe76ca932ff326c35c4cd7131fcbff583e9a88abf81a72746611062c753"
+    },
+    {
+      "path": "tests/fixtures/unsupported/U-05-brace-glob/expected.json",
+      "sha256": "f7ec258f41b240d1ef7c51d5f3efd697143f5e0cc83601b6f31b9aa4886491b4"
+    },
+    {
+      "path": "tests/fixtures/unsupported/U-05-brace-glob/required-checks.json",
+      "sha256": "57461d69af28c8890b8827da27c07bc9e01774466ff14f0354272a538ba015ea"
+    },
+    {
+      "path": "tests/fixtures/unsupported/U-05-brace-glob/scenario.json",
+      "sha256": "e17e6d8accf768483ad4293f3ecb25457caf24806578201fbb05e1f3c3bdcf14"
+    },
+    {
+      "path": "tests/fixtures/unsupported/U-05-brace-glob/workflow.yml",
+      "sha256": "1beee3926a033a36bc0655171b739c3d03585cbb71503f3118e2d77f4f2b926a"
+    },
+    {
+      "path": "tests/fixtures/unsupported/U-06-needs-outputs-if/expected.json",
+      "sha256": "8f76547341e0e307c49b82ab34fe2c8f51a35b7d537a214af918e493753a41f0"
+    },
+    {
+      "path": "tests/fixtures/unsupported/U-06-needs-outputs-if/required-checks.json",
+      "sha256": "57461d69af28c8890b8827da27c07bc9e01774466ff14f0354272a538ba015ea"
+    },
+    {
+      "path": "tests/fixtures/unsupported/U-06-needs-outputs-if/scenario.json",
+      "sha256": "c2857103bc574038c59706ef950d5cd723737ffa092194664d862e9320292727"
+    },
+    {
+      "path": "tests/fixtures/unsupported/U-06-needs-outputs-if/workflow.yml",
+      "sha256": "e8816eb5f9bf7304aec278c2aeb9df5974c52a278c8b481a226a040ebdcb4435"
+    },
+    {
+      "path": "tests/fixtures/unsupported/U-07-matrix-job/expected.json",
+      "sha256": "bf34b44f029e81606ad587f13df6e1fd2263f71a6f16a80cf13758859797cc14"
+    },
+    {
+      "path": "tests/fixtures/unsupported/U-07-matrix-job/required-checks.json",
+      "sha256": "57461d69af28c8890b8827da27c07bc9e01774466ff14f0354272a538ba015ea"
+    },
+    {
+      "path": "tests/fixtures/unsupported/U-07-matrix-job/scenario.json",
+      "sha256": "c824d94e5e0ba69bd10fc9c02d8277cf9b4ad4838fa90386baea24aa0ccafc89"
+    },
+    {
+      "path": "tests/fixtures/unsupported/U-07-matrix-job/workflow.yml",
+      "sha256": "01745abbd74fd6253d7977ebba89371c58f7d33d43b0f7b354500ecd950f1fb7"
+    },
+    {
+      "path": "tests/fixtures/unsupported/U-08-reusable-workflow-job/expected.json",
+      "sha256": "340cc9b5e3c5179cfe480fc7bd6e8667db88026e4dee4b7515e6425852e99257"
+    },
+    {
+      "path": "tests/fixtures/unsupported/U-08-reusable-workflow-job/required-checks.json",
+      "sha256": "57461d69af28c8890b8827da27c07bc9e01774466ff14f0354272a538ba015ea"
+    },
+    {
+      "path": "tests/fixtures/unsupported/U-08-reusable-workflow-job/scenario.json",
+      "sha256": "6ab927f16b7ff1e4dff15e826bd1203d023d9948f9500372a89b1d90320d05cc"
+    },
+    {
+      "path": "tests/fixtures/unsupported/U-08-reusable-workflow-job/workflow.yml",
+      "sha256": "cac685340bc42a2251a30c9e60e172168eee426cf481aa314ff94226f921b7d9"
+    }
+  ],
+  "environment": {
+    "node": "v24.22.1",
+    "python": "3.12.3",
+    "pyyaml": "6.0.1"
+  },
+  "notes": [
+    "TS and Oracle reports are compared field-by-field with no ignore list.",
+    "false_pass_count counts checks reported REPORTABLE_PENDING whose frozen expected is any other status.",
+    "ts_formal_false_pass_count is the same count computed from the formal-pipeline (buildReport) TS reports dumped by tests/unit/cli/formal-pipeline-unsupported.test.ts — the shipped product path (CLI + UI worker). Before FIX-P0-01 it was 2 for the golden suite (G-79/G-80) while false_pass_count (Oracle-side) was 0; the gate (c6) now requires both to be 0.",
+    "PyYAML is the system 6.0.1 (lockfile pins 6.0.3; pip install blocked by PEP 668; see T001 ENVIRONMENT_REPORT.md D2).",
+    "Golden suite (T011): 155 fixed cases — S0 24 + T6 trigger 16 + T7 jobs 12 + T8 checks 10 + T9 witness 10 + unsupported 8 + FIX-P1-01 duplicate-key 3 + FIX-P0-02 duplicate-key 1 + FIX-P0-03 scalar-rendering 21 + FIX-P0-04 bare-empty-key / scalar-job 10 + FIX-P0-05 flow-alias-key 4 + FIX-P0-06 collection-alias-key / tab 6 + FIX-P0-07 quoted-mid-plain-scalar 6 + FIX-P0-08 multiline-quoted-unindented 12 + FIX-P0-09 flow-quoted-key 12. Expected files generated once from the Oracle by scripts/build-golden.py and reviewed before freezing; see evidence/tests/T011_REPORT.md §3.",
+    "input_file_hashes is the per-file SHA-256 input hash list for this suite (sorted by repo-relative path)."
+  ]
+}

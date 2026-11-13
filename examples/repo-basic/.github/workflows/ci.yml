@@ -1,0 +1,22 @@
+name: ci
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'src/**'
+  push:
+    branches:
+      - main
+jobs:
+  unit-tests:
+    runs-on: ubuntu-latest
+    name: unit-tests
+    steps:
+      - run: echo unit tests
+  integration:
+    runs-on: ubuntu-latest
+    name: integration
+    needs: unit-tests
+    steps:
+      - run: echo integration

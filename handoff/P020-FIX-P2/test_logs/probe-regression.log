@@ -1,0 +1,55 @@
+=== U-07 exit=2 ===
+scenario: G-79
+event: pull_request/synchronize
+workflows: 1 (1 triggered)
+jobs: 1
+required checks: 1 (UNKNOWN=1)
+witnesses: 1
+report_sha256: 59fb7bf4ddea3b5391ccc46a81e2a5c29e08469cef1271c0ab31ffc7386f5016
+json: /tmp/fixp2-probe-UjzktQ/out/report.json
+html: /tmp/fixp2-probe-UjzktQ/out/report.html
+exit code: 2
+report_sha256: 59fb7bf4ddea3b5391ccc46a81e2a5c29e08469cef1271c0ab31ffc7386f5016
+job: test UNKNOWN unsupported_matrix
+check: unit-tests UNKNOWN provider_unknown
+witnesses: 1
+recomputed_sha256: 59fb7bf4ddea3b5391ccc46a81e2a5c29e08469cef1271c0ab31ffc7386f5016 match: True
+workdir: /tmp/fixp2-probe-UjzktQ
+=== U-08 exit=2 ===
+scenario: G-80
+event: pull_request/synchronize
+workflows: 1 (1 triggered)
+jobs: 1
+required checks: 1 (UNKNOWN=1)
+witnesses: 1
+report_sha256: 4b9d167b806d0d73868d3f509c808da325776229ebb2f2947bc4d2279324ec46
+json: /tmp/fixp2-probe-wE0lAi/out/report.json
+html: /tmp/fixp2-probe-wE0lAi/out/report.html
+exit code: 2
+report_sha256: 4b9d167b806d0d73868d3f509c808da325776229ebb2f2947bc4d2279324ec46
+job: call-reusable UNKNOWN unsupported_reusable_workflow
+check: unit-tests UNKNOWN provider_unknown
+witnesses: 1
+recomputed_sha256: 4b9d167b806d0d73868d3f509c808da325776229ebb2f2947bc4d2279324ec46 match: True
+workdir: /tmp/fixp2-probe-wE0lAi
+=== T8-05 exit=2 ===
+scenario: T8-05
+event: pull_request/synchronize
+workflows: 1 (1 triggered)
+jobs: 1
+required checks: 5 (PENDING_NOT_REPORTED=1 REPORTABLE_PENDING=1 UNKNOWN=3)
+witnesses: 4
+report_sha256: 781098456ca6399183a89def05646893cd085165405219b7a26e3031f9674fbb
+json: /tmp/fixp2-probe-hbrGwn/out/report.json
+html: /tmp/fixp2-probe-hbrGwn/out/report.html
+exit code: 2
+report_sha256: 781098456ca6399183a89def05646893cd085165405219b7a26e3031f9674fbb
+job: test ELIGIBLE eligible
+check: unit-tests REPORTABLE_PENDING provider_reportable
+check: unit-tests UNKNOWN external_source
+check: ghost UNKNOWN external_source
+check: lint PENDING_NOT_REPORTED no_provider
+check: unit-tests UNKNOWN external_source
+witnesses: 4
+recomputed_sha256: 781098456ca6399183a89def05646893cd085165405219b7a26e3031f9674fbb match: True
+workdir: /tmp/fixp2-probe-hbrGwn

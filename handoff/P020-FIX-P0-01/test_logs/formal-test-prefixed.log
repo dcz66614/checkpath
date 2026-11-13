@@ -1,0 +1,260 @@
+
+[1m[30m[46m RUN [49m[39m[22m [36mv5.1.0 [39m[90m/home/hatch/workspace/p020-checkpath[39m
+
+ [31m❯[39m tests/unit/cli/formal-pipeline-unsupported.test.ts [2m([22m[2m162 tests[22m[2m | [22m[31m3 failed[39m[2m | [22m[33m159 skipped[39m[2m)[22m[32m 84[2mms[22m[39m
+   [31m❯[39m FIX-P0-01 formal-pipeline differential (buildReport vs Oracle) [2m(162)[22m
+     [2m[90m↓[39m[22m G-01 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-01 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-02 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-02 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-03 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-03 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-04 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-04 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-05 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-05 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-06 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-06 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-07 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-07 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-08 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-08 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-09 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-09 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-10 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-10 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-11 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-11 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-12 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-12 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-13 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-13 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-14 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-14 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-15 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-15 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-16 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-16 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-17 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-17 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-18 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-18 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-19 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-19 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-20 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-20 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-21 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-21 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-22 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-22 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-23 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-23 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-24 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-24 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-25 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-25 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-26 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-26 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-27 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-27 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-28 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-28 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-29 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-29 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-30 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-30 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-31 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-31 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-32 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-32 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-33 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-33 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-34 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-34 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-35 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-35 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-36 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-36 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-37 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-37 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-38 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-38 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-39 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-39 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-40 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-40 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-41 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-41 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-42 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-42 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-43 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-43 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-44 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-44 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-45 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-45 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-46 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-46 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-47 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-47 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-48 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-48 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-49 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-49 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-50 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-50 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-51 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-51 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-52 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-52 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-53 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-53 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-54 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-54 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-55 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-55 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-56 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-56 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-57 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-57 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-58 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-58 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-59 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-59 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-60 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-60 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-61 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-61 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-62 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-62 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-63 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-63 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-64 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-64 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-65 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-65 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-66 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-66 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-67 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-67 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-68 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-68 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-69 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-69 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-70 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-70 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-71 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-71 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-72 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-72 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-73 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-73 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-74 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-74 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-75 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-75 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-76 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-76 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-77 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-77 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+     [2m[90m↓[39m[22m G-78 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-78 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+[31m     [31m×[31m G-79 formal pipeline matches Oracle expected (jobs + checks + exit code)[39m[32m 46[2mms[22m[39m
+[31m     [31m×[31m G-79 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)[39m[32m 18[2mms[22m[39m
+     [2m[90m↓[39m[22m G-80 formal pipeline matches Oracle expected (jobs + checks + exit code)
+     [2m[90m↓[39m[22m G-80 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+[31m     [31m×[31m G-79 matrix job is UNKNOWN in the formal pipeline (P0-1 probe case)[39m[32m 13[2mms[22m[39m
+     [2m[90m↓[39m[22m G-80 reusable-workflow job is UNKNOWN in the formal pipeline (P0-1 probe case)
+
+[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 3 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m tests/unit/cli/formal-pipeline-unsupported.test.ts[2m > [22mFIX-P0-01 formal-pipeline differential (buildReport vs Oracle)[2m > [22mG-79 formal pipeline matches Oracle expected (jobs + checks + exit code)
+[31m[1mAssertionError[22m: expected [ { workflow: 'workflow.yml', …(4) } ] to deeply equal [ { context: 'unit-tests', …(4) } ][39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[2m  [[22m
+[2m    {[22m
+[2m      "context": "unit-tests",[22m
+[2m      "job_id": "test",[22m
+[32m-     "reason": "unsupported_matrix",[39m
+[32m-     "status": "UNKNOWN",[39m
+[31m+     "reason": "eligible",[39m
+[31m+     "status": "ELIGIBLE",[39m
+[2m      "workflow": "workflow.yml",[22m
+[2m    },[22m
+[2m  ][22m
+
+[36m [2m❯[22m tests/unit/cli/formal-pipeline-unsupported.test.ts:[2m148:9[22m[39m
+    [90m146|[39m           reason[33m:[39m row[33m.[39mreason[33m,[39m
+    [90m147|[39m         }))[33m,[39m
+    [90m148|[39m       )[33m.[39m[34mtoEqual[39m(expected[33m.[39mjobs)[33m;[39m
+    [90m   |[39m         [31m^[39m
+    [90m149|[39m       [90m// Checks: expected rows carry no provider_workflow_path, so[39m
+    [90m150|[39m       [90m// compare the shared subset only.[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m tests/unit/cli/formal-pipeline-unsupported.test.ts[2m > [22mFIX-P0-01 formal-pipeline differential (buildReport vs Oracle)[2m > [22mG-79 formal pipeline agrees with evaluateE2E (two-path lock, P2-2)
+[31m[1mAssertionError[22m: expected [ { workflow: 'workflow.yml', …(4) } ] to deeply equal [ { workflow: 'workflow.yml', …(4) } ][39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[2m  [[22m
+[2m    {[22m
+[2m      "context": "unit-tests",[22m
+[2m      "job_id": "test",[22m
+[32m-     "reason": "unsupported_matrix",[39m
+[32m-     "status": "UNKNOWN",[39m
+[31m+     "reason": "eligible",[39m
+[31m+     "status": "ELIGIBLE",[39m
+[2m      "workflow": "workflow.yml",[22m
+[2m    },[22m
+[2m  ][22m
+
+[36m [2m❯[22m tests/unit/cli/formal-pipeline-unsupported.test.ts:[2m188:9[22m[39m
+    [90m186|[39m           reason[33m:[39m row[33m.[39mreason[33m,[39m
+    [90m187|[39m         }))[33m,[39m
+    [90m188|[39m       )[33m.[39m[34mtoEqual[39m(
+    [90m   |[39m         [31m^[39m
+    [90m189|[39m         e2e[33m.[39mjobs[33m.[39m[34mmap[39m((row) [33m=>[39m ({
+    [90m190|[39m           workflow[33m:[39m row[33m.[39mworkflow[33m,[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m tests/unit/cli/formal-pipeline-unsupported.test.ts[2m > [22mFIX-P0-01 formal-pipeline differential (buildReport vs Oracle)[2m > [22mG-79 matrix job is UNKNOWN in the formal pipeline (P0-1 probe case)
+[31m[1mAssertionError[22m: expected [ { …(5) } ] to deeply equal [ { …(5) } ][39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[2m  [[22m
+[2m    {[22m
+[2m      "context": "unit-tests",[22m
+[2m      "job_id": "test",[22m
+[32m-     "reason": "unsupported_matrix",[39m
+[32m-     "status": "UNKNOWN",[39m
+[31m+     "reason": "eligible",[39m
+[31m+     "status": "ELIGIBLE",[39m
+[2m      "workflow_path": "workflow.yml",[22m
+[2m    },[22m
+[2m  ][22m
+
+[36m [2m❯[22m tests/unit/cli/formal-pipeline-unsupported.test.ts:[2m227:42[22m[39m
+    [90m225|[39m       requiredChecks[33m:[39m requiredChecks[33m.[39mrequired_checks[33m,[39m
+    [90m226|[39m     })[33m;[39m
+    [90m227|[39m     [34mexpect[39m(built[33m.[39mreport[33m.[39mjob_evaluations)[33m.[39m[34mtoEqual[39m([
+    [90m   |[39m                                          [31m^[39m
+    [90m228|[39m       {
+    [90m229|[39m         workflow_path[33m:[39m [32m"workflow.yml"[39m[33m,[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯[22m[39m
+
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[31m3 failed[39m[22m[2m | [22m[33m159 skipped[39m[90m (162)[39m
+[2m   Start at [22m 16:56:17
+[2m   Duration [22m 522ms[2m (transform 36%, tests 32%, import 30%, worker 2%)[22m
+

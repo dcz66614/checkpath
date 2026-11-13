@@ -1,0 +1,1999 @@
+P020 CheckPath 终审第 4 轮跟进——R3-FINAL 四项返工证据包（本轮消息把证据原文直接贴入，不再只给 Drive 链接）
+
+先说明：终审第 4 轮回复已收到，FINAL_VERDICT: FAIL（P0 0 / P1 0 / P2 7）。回复定性为 T014 最终发布验收失败，不是算法问题，并列出 4 项阻断，全部是文档/可追溯性问题。本轮四项返工（R3-FINAL-01…04）已全部完成，并走 T014 既定流程做了第 4 次正式重冻（R4）。本消息逐项对照、逐项贴出证据原文，供重新终审（第 5 轮，本立项对话最后一轮）。
+
+Drive 归档：P020 文件夹 `13R1g7xeRkh_IWSg4q6GTWYSgHK0Sftdo`；新文件夹 `01_release_R4`（`1_dsB0yymoygK_IgsNod_LngBZBqRu1Xv`；`01_release_R2` / `01_release_R3` 未动）。`01_release_R4` 内 9 个文件：source.zip（`1jAwP0rAhzMyi90ZDEq7V9h69hB82hE6B`）、dist.zip（`1tsP0WPFnaaf5d_6Az6KvkmbFqxG23-c0`）、RELEASE_MANIFEST.json（`1-d4rJvMZORDSUoKm0GYq48mQp4RT7pPz`）、SHA256SUMS.txt（`1KtPwFKoWhIcXPrmbcGIlNmL0M_YSwVsO`）、RELEASE_NOTES.md（`1KpDF7EqazlL9N4sEiT6ODfqmjAXcyRxv`）、RELEASE_NOTES_R3.md（`1uQJmlg-FjWWStpQ9ds_eiHSM8lHvesyH`）、T014_FREEZE_REPORT_R3.md（`16ziwPmUTltGI2CSz7j1ahVeflXI0bRKY`）、T014_FREEZE_REPORT_R4.md（`1UC4O-ErKafCo0YNDJ8EdFBL0o6Ub2l5Y`）、TASK_REPORT.md（`1iTMMlvOjaR8ybcG6WfDpAxR388IHBfUy`）。新证据另在 Drive `02_evidence/review`（REVIEW_PACK_03.md、COVERAGE_MATRIX_R19.csv、REVIEW_SHA256SUMS_R19.txt、REVIEW_INDEX.md、GIT_FINAL_CHECK_R4.md）与 `02_evidence/logs`（13 个 P020-T014-R4_ 日志）。
+
+## §0 四项返工对照表（阻断 → 核实 → 修复 → 证据位置）
+
+| # | 终审 R4 阻断 | 核实结论 | 修复 | 证据 |
+|---|---|---|---|---|
+| 1 | T014_FREEZE_REPORT_R3.md 缺失 | 部分属实：文件在工作树内已存在（`d8ffdeb` 创建、§9 已记 `d8ffdeb`），但确实不在 R3 source.zip 内（冻结发生在写报告之前，一代滞后），也不在 Drive `01_release_R3` 内；且报告正文头仍写 "Freeze commit: PENDING" | R3-FINAL-01：正文头改为 `d8ffdeb`（与 §9 一致，附订正说明）；经 R4 重冻进入新 source.zip，并上传 Drive `01_release_R4` | §3（R3 报告全文）、§8（试冻 source.zip 内容核查：该文件在包内）、Drive `01_release_R4/T014_FREEZE_REPORT_R3.md` |
+| 2 | R3 Release Notes 缺失（RELEASE_NOTES.md 标题仍是 R2） | 属实 | R3-FINAL-02：新建完整 R3 Notes（`release/RELEASE_NOTES_R3.md`）；RELEASE_NOTES.md 改写为 R4 版并设完整 R3 章节 | §5（R3 Notes 全文）、§6（R4 Notes 全文，含 R3 章节） |
+| 3 | Git 链未闭合（manifest freeze_commit 为 PENDING；R2 条目仍 PENDING；缺 9dac3e1→3a83371→4c67520 差异证据） | 属实 | R3-FINAL-04：freezer 增加 KNOWN_FREEZE_COMMITS 表，R4 manifest 的 freeze_history 闭合 R2→`03c2f16`、R3→`d8ffdeb`；新建 GIT_FINAL_CHECK_R4.md（真实 rev-parse/log/diff 输出） | §1（manifest 全文：freeze_history）、§7（Git 核对报告全文） |
+| 4 | REVIEW_INDEX 只记到 R1/R2；无 R19 矩阵；无 REVIEW_PACK_03；COVERAGE_MATRIX_R2.csv 把 workflow-parser.ts 标为 "Unchanged since R1"（FIX-P0-19 改了它） | 属实 | R3-FINAL-03：REVIEW_INDEX 追加 R3–R19（+66/−0，R1/R2 原文不动）；新建 COVERAGE_MATRIX_R19.csv（99 行，workflow-parser.ts 为 READ-R19）、REVIEW_PACK_03.md、REVIEW_SHA256SUMS_R19.txt | §8（索引 R3–R19 节选）、§9（REVIEW_PACK_03 全文）；矩阵与 sums 文件在 Drive `02_evidence/review` 及 R4 source.zip 内 |
+
+三处需要说明的核实修正（均已写入 TASK_REPORT §1，不影响四项阻断的闭合）：
+(1) `git diff 9dac3e1..3a83371` 不是“只有 freezer 脚本 + manifest 输入”，实际是 4 个提交 / 46 文件（FIX-P0-19 报告、R19 证据 34 文件、R14/R15 stale-flag 清理 10 文件、freezer 补丁）；freezer-only 的部分只是单个提交 `3a83371`。GIT_FINAL_CHECK_R4.md §2–§3 如实记录。
+(2) P2-R3-1（`True:` vs `true:`）的关闭：T013 R4 报告从未逐字写出编号 "P2-R3-1"（全仓库 grep 仅 R3 提及该编号），但 R4 §1 验证了该分歧本身已关闭（R2 输入双边 INVALID / yaml_parse_error，夹具 T6-20 / dup-bool-true / G-84 锁定）。R4 manifest 将其记为 RESOLVED，并把这一引用口径写进了条目正文。
+(3) P2-6 有两个同名不同项：终审 R3 的 P2-6 是“哈希未变”的错误认定（R4 已撤销）；终审 R4 的新 P2-6 是 `USER=root` 时 ZIP 验证器误报（工具缺陷，见下）。R4 manifest 将新项标注为 "P2-6 (final-review R4)" 以区分。
+另：P2-R6-2（R7/R8 自写探针未归档）属实，已在 manifest 如实登记为“部分缓解、仍为历史残余”（R7/R8 探针已失，R9–R19 已归档）；`USER=root` 验证器误报已实测确认（`USER=root` 时 exit 1，5 条 "username in entry name" FAIL；`USER` 为空时 verify OK），属工具缺陷非产品问题，见 §1 的 manifest 条目与 §10。
+
+### R3→R4 冻结产物哈希对照表（亲自从仓库 git 记录与当前 release/ 实测核对）
+
+| 产物 | R3（冻结提交 `d8ffdeb`） | R4（冻结提交 `a153b94`） | 是否变 |
+|---|---|---|---|
+| source.zip | `9a54081ec8d322f0f7d78c6c08a2dc8cf9370396a026a7a2d6fd0e85b4dc83cd`（2,728 文件） | `ab23e4a70bef6e462e47875ccbecce4d3a6167a4d9cd3a3b204d9cd0e39a41ba`（2,734 文件） | 变（+6：R3 报告 + 5 个 R3-FINAL 新文件） |
+| dist.zip | `b8e2aa77074cd2f62a518c1c7969cfdaa7cff202c6d87239080c3dfe2c6d335c`（114 文件） | `b8e2aa77074cd2f62a518c1c7969cfdaa7cff202c6d87239080c3dfe2c6d335c`（114 文件） | 未变（无 src/ 改动，符合预期） |
+| RELEASE_MANIFEST.json | `f4ba7a17bf188fbea8acf61ffbf7ee01b5011b27a8cc2f0310122c3e3a332465`（freeze_status FORMAL） | `2076f08773c0d765140cd74936c20b70259fce7da8f87ddbdd18a60920633baa`（freeze_status FORMAL） | 变（history 闭合 + known_limitations 修正 + 新 freezer 哈希） |
+| SHA256SUMS.txt | 3 项条目：`9a54081e…` / `b8e2aa77…` / `f4ba7a17…` | 3 项条目：`ab23e4a7…` / `b8e2aa77…` / `2076f087…`（全文见 §2） | 变（source 与 manifest 两项） |
+
+## §1 RELEASE_MANIFEST.json 全文（R4 正式冻结清单）
+
+```json
+{
+  "artifacts": {
+    "dist.zip": {
+      "contents": "fresh build CLI bundle + vendored yaml 2.9.1 runtime (node_modules/yaml: package.json, LICENSE, dist/*.js; F-T014-01) + synthetic examples + offline HTML assets + Quick Start",
+      "file_count": 114,
+      "sha256": "b8e2aa77074cd2f62a518c1c7969cfdaa7cff202c6d87239080c3dfe2c6d335c",
+      "vendored_runtime_dependency": {
+        "files": 76,
+        "package": "yaml",
+        "reason": "F-T014-01: dist/core imports 'yaml'; without it the standalone bundle cannot run (ERR_MODULE_NOT_FOUND). Packaging-only fix; no product code changed.",
+        "version": "2.9.1"
+      }
+    },
+    "source.zip": {
+      "contents": "exact HEAD tree (git ls-files at the source commit) + the freezer script itself (scripts/deterministic-zip.py, included even when untracked — FIX-P1-02)",
+      "file_count": 2734,
+      "sha256": "ab23e4a70bef6e462e47875ccbecce4d3a6167a4d9cd3a3b204d9cd0e39a41ba"
+    }
+  },
+  "freeze_commit": "PENDING — the commit that records these freeze artifacts (created after this freeze run); see evidence/release/T014_FREEZE_REPORT.md",
+  "freeze_history": [
+    {
+      "freeze_commit": "3e5e14556f37e78ed411369d3e2324dcad199e20",
+      "source_commit": "933dd354e109436551ba40b96d5b4a2d83b839a6",
+      "status": "FORMAL"
+    },
+    {
+      "freeze_commit": "TRIAL — not a formal T014 freeze; trial-validation artifacts only, see handoff/P020-FIX-P1-02/TASK_REPORT.md",
+      "source_commit": "36476cf19264b3a2f3d0b907bb61f92df47ec91e",
+      "status": "TRIAL"
+    },
+    {
+      "freeze_commit": "03c2f168a40b114ff1a0f408fa783f5d5389e15d",
+      "source_commit": "538c669e11a383aa0554d05239e298cf34aadd4d",
+      "status": "FORMAL"
+    },
+    {
+      "freeze_commit": "d8ffdebb775e5b3241936ec86c11689c51f29bf1",
+      "source_commit": "3a8337151461b80e4ae50e75ab2edf417f4f9165",
+      "status": "FORMAL"
+    }
+  ],
+  "freeze_status": "FORMAL",
+  "freezer": {
+    "compression": "ZIP_DEFLATED level 9",
+    "dir_mode": "0755",
+    "file_mode": "0644",
+    "fixed_timestamp": "1980-01-01T00:00:00Z",
+    "script": "scripts/deterministic-zip.py",
+    "sha256": "c2a1c9e82209b0f2e45830cc9830a183de02a3f6204ea431f87020b2ddaff196"
+  },
+  "git_commit": "2ddc2ad0a7afd34bc2d5fe989f7d2e2bdb4e0b98",
+  "git_commit_short": "2ddc2ad",
+  "inputs": {
+    "golden_suite_sha256": "62a8b519b5af1f0831e336e33d47f789ef9ad057ef796f1acdb1af47c825be28",
+    "oracle_parity_report": {
+      "false_pass_count": 0,
+      "fixture_count": 167,
+      "oracle_mismatch_count": 0,
+      "path": "evidence/tests/ORACLE_PARITY_REPORT.json",
+      "sha256": "db20127f4b135e65b52f950358fffe9e177a89c9eaaed7304208180ce2b1c8ac"
+    },
+    "s0_gate": {
+      "gate_report_sha256": "f511a84709a6ebf64af94cb788ad3e15cef85af5862b5334fca4288b6ff38386",
+      "path": "evidence/S0_GATE.json",
+      "sha256": "e651ce73524ae60d705d6f94ce50914f7696ff649bf3ca6fb870e76e08c80401",
+      "status": "PASS"
+    },
+    "s0_input_fixture_sha256": "afce74c909298f4537e9e86d95c8521476e2efca9cfbd0f417229321df2279d2",
+    "t013_review_r1": {
+      "path": "evidence/review/INDEPENDENT_REVIEW.md",
+      "sha256": "8cf3033ac3d63ca00fb55ebd587f07a67c4fafc5d0e1184cf8274c3888ed1823"
+    },
+    "t013_review_r10": {
+      "p0": 1,
+      "p1": 0,
+      "p2": 10,
+      "path": "evidence/review/INDEPENDENT_REVIEW_R10.md",
+      "sha256": "e159387e60d9a4ce327609125674683b44875ed9ad1b43672ac5cf07fb302d3c",
+      "verdict": "NOT PASS"
+    },
+    "t013_review_r11": {
+      "p0": 2,
+      "p1": 0,
+      "p2": 8,
+      "path": "evidence/review/INDEPENDENT_REVIEW_R11.md",
+      "sha256": "1cc23c974281f4c3882ada5e561b8f9d075d784ad2dc743c8cb6f87e83d5c9f1",
+      "verdict": "NOT PASS"
+    },
+    "t013_review_r12": {
+      "p0": 3,
+      "p1": 0,
+      "p2": 9,
+      "path": "evidence/review/INDEPENDENT_REVIEW_R12.md",
+      "sha256": "d28e8a349dd1bedd48249519671fefe679348674944535ee8c2294d630a2f454",
+      "verdict": "NOT PASS"
+    },
+    "t013_review_r13": {
+      "p0": 1,
+      "p1": 0,
+      "p2": 9,
+      "path": "evidence/review/INDEPENDENT_REVIEW_R13.md",
+      "sha256": "4206873e3a0ef2b061c80e22647a7b1e25dd62e62642d65342f7933b002698c3",
+      "verdict": "NOT PASS"
+    },
+    "t013_review_r14": {
+      "p0": 5,
+      "p1": 0,
+      "p2": 8,
+      "path": "evidence/review/INDEPENDENT_REVIEW_R14.md",
+      "sha256": "3814dc3e5e47b0f60b1d39910838b4597288fa552c4564715781b8c1c3dbf145",
+      "verdict": "NOT PASS"
+    },
+    "t013_review_r15": {
+      "p0": 3,
+      "p1": 0,
+      "p2": 9,
+      "path": "evidence/review/INDEPENDENT_REVIEW_R15.md",
+      "sha256": "74ef2e5ded0a3b8b8a5152c505ea7908ce09d137c394c4cea3de22c0636977cc",
+      "verdict": "NOT PASS"
+    },
+    "t013_review_r16": {
+      "p0": 2,
+      "p1": 0,
+      "p2": 9,
+      "path": "evidence/review/INDEPENDENT_REVIEW_R16.md",
+      "sha256": "8a969fbec1e2827017206a0e2cb672395349727fe02ac3388f8d0559ea3c78fa",
+      "verdict": "NOT PASS"
+    },
+    "t013_review_r17": {
+      "p0": 1,
+      "p1": 0,
+      "p2": 8,
+      "path": "evidence/review/INDEPENDENT_REVIEW_R17.md",
+      "sha256": "34d42f18ca4e46728e7bc162c8e2007b005be2c5a3148ba89eb4eda41e12f22b",
+      "verdict": "NOT PASS"
+    },
+    "t013_review_r18": {
+      "p0": 1,
+      "p1": 0,
+      "p2": 8,
+      "path": "evidence/review/INDEPENDENT_REVIEW_R18.md",
+      "sha256": "bc42eede06cfdd8f8592178dcdb068adcff1742b6fd9d18a1564a8af774a5956",
+      "verdict": "NOT PASS"
+    },
+    "t013_review_r19": {
+      "p0": 0,
+      "p1": 0,
+      "p2": 8,
+      "path": "evidence/review/INDEPENDENT_REVIEW_R19.md",
+      "sha256": "c6ec2c2415baedeab47914f34f1fe7238ca910ff1cc158e7ba417cbed2750470",
+      "verdict": "PASS"
+    },
+    "t013_review_r2": {
+      "p0": 0,
+      "p1": 0,
+      "p2": 3,
+      "path": "evidence/review/INDEPENDENT_REVIEW_R2.md",
+      "sha256": "58485c294bb77f06432510a2a2446cd29ed2f5b04535f1f31b446d2214355e99",
+      "verdict": "PASS"
+    },
+    "t013_review_r3": {
+      "p0": 0,
+      "p1": 0,
+      "p2": 3,
+      "path": "evidence/review/INDEPENDENT_REVIEW_R3.md",
+      "sha256": "1e55294d04174fab2e0a68136f23fce5038ba957027156b899018c945e8116dd",
+      "verdict": "PASS"
+    },
+    "t013_review_r4": {
+      "p0": 1,
+      "p1": 0,
+      "p2": 6,
+      "path": "evidence/review/INDEPENDENT_REVIEW_R4.md",
+      "sha256": "3be14a499e6154d5cd4d2aef0d1f8ba2e6c94a4ddd30ad373eb9bfbd7756dc48",
+      "verdict": "NOT PASS"
+    },
+    "t013_review_r5": {
+      "p0": 1,
+      "p1": 0,
+      "p2": 7,
+      "path": "evidence/review/INDEPENDENT_REVIEW_R5.md",
+      "sha256": "5e8f8f0b151bdc4993aef2af884187b899e7f26a696a36878e6d09ad79c5fd4c",
+      "verdict": "NOT PASS"
+    },
+    "t013_review_r6": {
+      "p0": 1,
+      "p1": 0,
+      "p2": 8,
+      "path": "evidence/review/INDEPENDENT_REVIEW_R6.md",
+      "sha256": "f4ced18a671ed77cb25f53a583dfc224c7ad6f7ff1319d90389dfbbf61d0c97c",
+      "verdict": "NOT PASS"
+    },
+    "t013_review_r7": {
+      "p0": 1,
+      "p1": 0,
+      "p2": 8,
+      "path": "evidence/review/INDEPENDENT_REVIEW_R7.md",
+      "sha256": "484a8cc7ea0c2aec39122e8fcf6ac20b498abede5a5834819dd2678d2c4ea29e",
+      "verdict": "NOT PASS"
+    },
+    "t013_review_r8": {
+      "p0": 1,
+      "p1": 0,
+      "p2": 8,
+      "path": "evidence/review/INDEPENDENT_REVIEW_R8.md",
+      "sha256": "fabb3aa739cb12ae4f6534978c8174a24e61607af19a28a0d4d3e232b0c8a93f",
+      "verdict": "NOT PASS"
+    },
+    "t013_review_r9": {
+      "p0": 1,
+      "p1": 0,
+      "p2": 9,
+      "path": "evidence/review/INDEPENDENT_REVIEW_R9.md",
+      "sha256": "d1f91c6dd3ed481d19ed78c899961e1a5d289d3df732816d9ea393a41b1734bf",
+      "verdict": "NOT PASS"
+    }
+  },
+  "known_limitations": [
+    "P2-R2-1: FIXED in final-review R1 FIX-P1-01 (commit 11f2fc0): expanded static network check now covers the 10 src/core files + oracle/witness.py (45 files, 0 matches).",
+    "P2-R2-2: FIXED in final-review R1 FIX-P1-01 (commit 11f2fc0): dup-name fixture added (tests/fixtures/parser-divergence/duplicate-key/dup-name.yml; trigger T6-19 / golden G-83).",
+    "P2-R2-3: README performance figures are single-run snapshots (see RELEASE_NOTES.md).",
+    "Duplicate-key YAML divergence (ADR FIX-P2/01): FIXED in final-review R1 FIX-P1-01 (commit 11f2fc0): Oracle now also rejects duplicate mapping keys (INVALID / yaml_parse_error), TS and Oracle agree; the ADR FIX-P2/01 known-limitation waiver was superseded by the R1 verdict.",
+    "P2-R3-1: RESOLVED by FIX-P0-02 (Oracle _StrictBaseLoader folds True: / true: to one bool key), verified by T013 R4 section 1 (the R2 input now returns INVALID / yaml_parse_error on both sides, MATCH; fixture-locked by tests/fixtures/trigger/T6-20-dup-bool-true, tests/fixtures/parser-divergence/duplicate-key/dup-bool-true.yml case 4, golden G-84). Note: R4 does not cite the label 'P2-R3-1' literally; the closure is of the exact underlying divergence R3 recorded.",
+    "P2-R3-2: FIXED by this freezer change (T014 re-freeze): the manifest now records t013_review_r3 alongside t013_review_r2; the R3 review (PASS, P0 0 / P1 0 / P2 3) is hashed in inputs.",
+    "P2-R3-3: a literal clean-directory re-run of release:freeze without .git still fails at git rev-parse HEAD — by design (the freeze identifies the frozen tree by commit); the accepted substitute is a fresh-clone re-run, verified byte-identical for the trial freeze (see T014_FREEZE_REPORT_R2.md).",
+    "P2-R6-1: FIXED by this freezer change (T014 R3 re-freeze): the manifest now records t013_review_r4..r19 alongside r1/r2/r3 (verdict + p0/p1/p2, hashed from HEAD); the R4–R19 review rounds are no longer unrecorded.",
+    "P2-R6-2: PARTIALLY MITIGATED, still open as a historical residual (R3-FINAL-04, 2026-11-10): the R7/R8 self-written review probes lived only in /tmp and were lost in a VM restart (reconstructible only from report text); R9–R19 probes are archived in evidence/probes/r9/–r19/. Non-blocking.",
+    "P2-6 (final-review R4): USER=root ZIP-validator false positive — tool defect, NOT a product defect (R3-FINAL-04, 2026-11-10). scripts/deterministic-zip.py do_verify flags any entry name containing the $USER substring; run as root it fails release/source.zip with 5 'username in entry name' FAILs on fixture filenames containing 'root' (e.g. tests/fixtures/parser-divergence/anchored-empty-key/k01-anchored-root.yml). Verified live 2026-11-10: USER=root exits 1 (5 FAILs); USER unset verifies OK. The ZIPs are unaffected. (Not to be confused with final-review R3's P2-6, the false 'hashes unchanged' claim, which GPT revoked in R4.)",
+    "Windows PowerShell Quick Start NOT_TESTED (no Windows machine)."
+  ],
+  "license_status": "PENDING_SAM_DECISION",
+  "project_id": "P020",
+  "source_commit": "2ddc2ad0a7afd34bc2d5fe989f7d2e2bdb4e0b98",
+  "source_commit_short": "2ddc2ad",
+  "spec_version": "1.0.0",
+  "toolchain": {
+    "node": "v24.22.1",
+    "npm": "10.9.4",
+    "python": "Python 3.12.3",
+    "pyyaml": "6.0.1",
+    "react": "19.3.1",
+    "typescript": "5.9.3",
+    "vite": "7.3.7",
+    "vitest": "5.1.0",
+    "yaml": "2.9.1"
+  },
+  "version": "0.0.0-t001-skeleton"
+}
+```
+
+## §2 SHA256SUMS.txt 全文
+
+```
+ab23e4a70bef6e462e47875ccbecce4d3a6167a4d9cd3a3b204d9cd0e39a41ba  source.zip
+b8e2aa77074cd2f62a518c1c7969cfdaa7cff202c6d87239080c3dfe2c6d335c  dist.zip
+2076f08773c0d765140cd74936c20b70259fce7da8f87ddbdd18a60920633baa  RELEASE_MANIFEST.json
+```
+
+## §3 T014_FREEZE_REPORT_R3.md 全文（R3-FINAL-01 订正后：正文头已改为 `d8ffdeb`，与 §9 一致）
+
+# P020 CheckPath — T014 Formal Re-freeze Report (R3)
+
+- **Task:** T014 — 正式重新冻结与 SHA-256 清单 (S5, third formal freeze)
+- **Source commit:** `3a83371`
+  (`3a8337151461b80e4ae50e75ab2edf417f4f9165`, "T014: freezer
+  records T013 reviews R4-R19 in manifest inputs (P2-R6-1)")
+- **Freeze commit:** `d8ffdeb`
+  (`d8ffdebb775e5b3241936ec86c11689c51f29bf1`, "T014: Formal
+  re-freeze (R3) — source.zip 9a54081e… dist.zip b8e2aa77…")
+  — recorded in §9 after committing; this header was corrected
+  in the R3-FINAL rework (2026-11-10, see the correction note
+  below) so the report is self-consistent when read standalone.
+  At freeze time the header read PENDING by design (the freeze
+  commit did not exist yet); §9 is the authoritative addendum
+  and records the same value.
+- **Date:** 2026-11-10
+
+> 订正（R3-FINAL-01，2026-11-10）：本报告正文头的 Freeze commit
+> 在冻结时写为 PENDING（冻结提交尚不存在，属 T014 固有设计），
+> 真实值只在 §9 补记中。终审 R4 指出该报告“缺失”，实为它不
+> 在 R3 source.zip 与 Drive 01_release_R3 内（冻结发生在写报
+> 告之前，一代滞后），而非文件不存在。本次订正把正文头改为
+> 真实值 `d8ffdeb`（与 §9 一致），其余正文一字未改；订正后的
+> 报告随 R4 正式重冻进入新 source.zip 并上传 Drive
+> 01_release_R4。
+- **Result:** **PASS** — all acceptance commands exit 0; both ZIPs
+  verified; manifest inputs now record all 19 T013 review rounds;
+  R14/R15 stale-flag probe rows cleared (both probes exit 0).
+- **Why a re-freeze:** the independent T013 round-19 review
+  (R19 = PASS, P0 0 / P1 0 / P2 8,
+  `evidence/review/INDEPENDENT_REVIEW_R19.md`) closed the last
+  P0 family (FIX-P0-19, code `9dac3e1`: TS-side alias-key duplicate
+  check). The R2 freeze artifacts (`03c2f16`, source `3a778b93…`)
+  are superseded and kept as history in Drive `01_release_R2`;
+  they are NOT overwritten. This report covers the R3 formal
+  re-freeze only.
+- **Zero humans. No network (except the pre-existing `node_modules`,
+  installed before this task), no GitHub API, no token. Synthetic
+  data only.**
+- **License:** `PENDING_SAM_DECISION` (no LICENSE file created;
+  `LICENSE_STATUS.md` unchanged).
+
+## 1. Result summary
+
+| Artifact | SHA-256 | Files |
+|---|---|---|
+| `release/source.zip` | `9a54081ec8d322f0f7d78c6c08a2dc8cf9370396a026a7a2d6fd0e85b4dc83cd` | 2,728 (exact HEAD tree at `3a83371`) |
+| `release/dist.zip` | `b8e2aa77074cd2f62a518c1c7969cfdaa7cff202c6d87239080c3dfe2c6d335c` | 114 (29 built + 76 vendored yaml + 6 examples + 2 docs + QUICKSTART.md) |
+| `release/RELEASE_MANIFEST.json` | `f4ba7a17bf188fbea8acf61ffbf7ee01b5011b27a8cc2f0310122c3e3a332465` | — (freeze_status FORMAL) |
+| `release/SHA256SUMS.txt` | `sha256sum -c` all OK | 3 entries |
+
+- `source.zip` file count 2,728 vs R2's 1,209: the tree grew through
+  the R4–R19 fix/review loop (fixtures, probes, evidence, review
+  reports). Reconciled: FIX-P0-19 trial freeze at `9dac3e1` had
+  2,693 files; +1 (FIX-P0-19 report commit `3991856`) +34 (R19
+  evidence commit `9fd0233`) = 2,728. Listing identical to
+  `git ls-files` at the source commit (one filename carries a
+  non-ASCII arrow `→`; `git ls-tree` quotes it octal-escaped,
+  the ZIP stores the real UTF-8 name — same file, verified).
+- `dist.zip` changed vs R2 (`da130ad2…` → `b8e2aa77…`): expected —
+  `src/` changed in FIX-P0-19 (`hasDuplicateAliasKey` in
+  `src/core/workflow-parser.ts` +127/−1, wiring in `src/core/e2e.ts`
+  +7/−2). The hash is byte-identical to the FIX-P0-19 trial freeze
+  and to the R19 review's three trial reproductions
+  (`89ff8504…` manifest) — no `src/` change since `9dac3e1`.
+- `RELEASE_MANIFEST.json` records source commit `3a83371`,
+  toolchain (Node v24.22.1, npm 10.9.4, Python 3.12.3, PyYAML
+  6.0.1, TypeScript 5.9.3, Vite 7.3.7, Vitest 5.1.0, React 19.3.1,
+  yaml 2.9.1), S0 input fixture hash, golden suite hash, Oracle
+  parity report hash, S0 gate hash `f511a847…`, **all 19 T013
+  review hashes (R1–R19, P2-R6-1 fixed)**, both ZIP hashes, the
+  freezer script hash (`54cd0ed4…`, matches the committed patched
+  script), and the freeze history chain (R1 formal `3e5e145` ←
+  `933dd35`; trial `36476cf`; R2 formal `538c669e` — its
+  freeze_commit is carried forward as the PENDING text the R2
+  manifest recorded, per the script's carry-forward rule; the
+  real R2 freeze commit `03c2f16` is recorded in
+  `T014_FREEZE_REPORT_R2.md` §9).
+- S0 gate still PASS after freeze: `gate_report_sha256 f511a847…`
+  unchanged, independently recomputed — matches.
+- Specs unchanged: PROJECT_BOOK / IMPLEMENTATION_PLAN untouched
+  by this task (only probe expectations, the freezer script, and
+  the freeze artifacts changed).
+
+## 2. Acceptance commands (personally run)
+
+| Command | Exit | Result |
+|---|---|---|
+| `npm run release:freeze` (formal, no `--trial`) | 0 | `freeze OK`; source `9a54081e…` (2,728), dist `b8e2aa77…` (114), manifest `f4ba7a17…` — all from this run's own stdout |
+| `sha256sum -c SHA256SUMS.txt` (in `release/`) | 0 | source.zip OK, dist.zip OK, RELEASE_MANIFEST.json OK |
+| `npm run s0:gate` | 0 | PASS; oracle 24/24, 0 mismatches, 0 false PASS; determinism 100 runs, 1 unique hash; `gate_report_sha256 f511a847…` unchanged |
+| `npm run release:verify` | 0 | PASS; all 5 steps (build determinism, cli smoke, report_sha256 recompute, offline static scan, license guard) |
+| `python3 evidence/probes/r14/r14-probe.py` | 0 | 78/78 MATCH, 0 DIFF, 0 stale flag (after clearing) |
+| `python3 evidence/probes/r15/r15-probe.py` | 0 | 122/122 MATCH, 0 DIFF, 0 stale flag (after clearing) |
+
+## 3. Freeze iterations (what was done before and during the freeze)
+
+1. **Baseline stale-flag check** (HEAD `9fd0233`): R14 probe
+   78/78 MATCH + 11 FLAG STALE (exit 1); R15 probe 122/122 MATCH
+   + 24 FLAG STALE lines (exit 1). All checks already MATCHed —
+   the residuals were genuinely closed by later fixes.
+2. **Stale-flag clearing** (commit `a4106d8`): `gen-cases.py`
+   expectations flipped for the 11 R14 rows (`expected_diff`
+   true→false, notes re-labelled CLOSED RESIDUAL) and the 13 R15
+   rows (`expected_diff=True` removed, including the two explicit
+   `diff_modes=["trigger"]` on `r15-r2-str-flow-nospace` and
+   `r15-r3-on-str`, which the first re-run caught — the `row()`
+   helper only defaults `diff_modes` when it is not passed
+   explicitly). Probe drivers' docstrings, `cases.json` (regenerated)
+   and both READMEs updated with a T014 closure addendum; the
+   R14/R15-time results are kept in the READMEs as the historical
+   record. Re-run: R14 78/78 exit 0, R15 122/122 exit 0.
+   10 files, +187/−168.
+3. **Freezer inputs patch** (commit `3a83371`):
+   `scripts/deterministic-zip.py` +58 lines — `meta_paths` gained
+   the 16 review files R4–R19; a `T013_REVIEW_VERDICTS` table
+   (verdicts read from each review file's verdict line: R4–R18
+   NOT PASS, R19 PASS, with p0/p1/p2) feeds `inputs`; a
+   `P2-R6-1: FIXED` line was added to `known_limitations`. No
+   `src/` change, so no `npm test` / oracle re-run was required
+   for this patch (the script compiles; the freeze itself
+   re-verifies the manifest against HEAD — all 19 review SHA-256
+   values re-checked against `git show HEAD:<path>`, 0 mismatches).
+4. **Formal freeze** at `3a83371`: `npm run release:freeze`
+   (no `--trial`; the FIX-P0-18 lesson — trial and formal manifest
+   values differ — was followed deliberately). Exit 0.
+5. **Service restart during verification:** one combined
+   `s0:gate && release:verify` exec was aborted by a service
+   restart mid-run. State was checked before retrying (only the
+   4 `release/` files modified; `S0_GATE.json` /
+   `RELEASE_VERIFY_REPORT.json` still at their pre-run mtimes —
+   no partial state). Both commands were then re-run individually:
+   `s0:gate` PASS, `release:verify` PASS (see §2).
+
+## 4. Independent verification (beyond the acceptance commands)
+
+- Manifest review hashes: all 19 `t013_review_r*` SHA-256 values
+  re-computed from `git show HEAD:<path>` and compared — 0
+  mismatches. R19 entry: PASS, p0 0 / p1 0 / p2 8.
+- Freezer script hash in the manifest (`54cd0ed4…`) equals the
+  committed `scripts/deterministic-zip.py` SHA-256.
+- `source.zip` listing vs `git ls-files` at `3a83371`: same 2,728
+  files (modulo the octal-quoted non-ASCII filename, §1).
+- `dist.zip`: `checkpath.mjs` present, 76 vendored `yaml` files
+  present (package.json + LICENSE + 74 dist/*.js), 114 files total.
+- `release:verify` rebuilt `dist/` and rewrote
+  `evidence/tests/RELEASE_VERIFY_REPORT.json`: the only change is
+  the dist tree SHA `5a4f3337…` → `8f4636de53cb829f…` — the R2-era
+  dist tree replaced by the current build (FIX-P0-19 `src/`
+  change). This is the correct current value (same value the
+  FIX-P0-19 fixer observed); it is committed with the freeze
+  artifacts, not restored.
+- `evidence/S0_GATE.json` is byte-identical to HEAD after the
+  `s0:gate` re-run (gate hash unchanged) — no diff.
+
+## 5. What the freeze did NOT change
+
+- No `src/`, `oracle/`, fixture, test, or spec change in this task
+  (the only code change is the freezer script's manifest inputs,
+  `scripts/deterministic-zip.py`).
+- No `dist.zip` standalone run was repeated in this task: `dist.zip`
+  is byte-identical to the FIX-P0-19 trial bundle, and
+  `release:verify`'s cli smoke (demo / analyze / matrix, exit
+  codes as expected) ran on the freshly built `dist/` in this task.
+- The R2 artifacts in `release/` were overwritten by the R3
+  artifacts in the working tree; the R2 files survive in git
+  history (`03c2f16`) and in Drive `01_release_R2` — never
+  overwritten there either (R3 goes to a NEW folder
+  `01_release_R3`).
+
+## 6. Working-tree note
+
+- `git status` before the freeze commit shows exactly:
+  `M release/RELEASE_MANIFEST.json`, `M release/SHA256SUMS.txt`,
+  `M release/dist.zip`, `M release/source.zip`,
+  `M evidence/tests/RELEASE_VERIFY_REPORT.json`, plus this report
+  (untracked). Nothing else. `dist/` is git-ignored (rebuilt by
+  the freeze and by `release:verify`); `node_modules/` untouched.
+
+## 7. Unresolved / carried-forward items
+
+- P2-R6-1 is FIXED by this re-freeze (manifest now records
+  R4–R19). The 8 P2s from R19 otherwise still stand (R2's 6 +
+  P2-R6-1 now fixed + P2-R6-2, with P2-R16-1 still clear).
+- The manifest's `freeze_history` carries the R2 run with its
+  `freeze_commit` as the PENDING text (the R2 manifest's own
+  wording), not the real hash `03c2f16` — that is the freezer
+  script's carry-forward rule working as designed (the R2 manifest
+  did the same for the trial run's TRIAL text); the real R2 hash
+  is recorded in `T014_FREEZE_REPORT_R2.md` §9. Not redesigned
+  in this task.
+- License still `PENDING_SAM_DECISION` (Sam to decide).
+
+## 8. Deliverables
+
+- `release/source.zip`, `release/dist.zip`,
+  `release/RELEASE_MANIFEST.json`, `release/SHA256SUMS.txt`
+  (formal R3 freeze, committed in the freeze commit below)
+- `evidence/tests/RELEASE_VERIFY_REPORT.json` (dist tree SHA
+  updated to the current build)
+- `evidence/release/T014_FREEZE_REPORT_R3.md` (this file)
+- Drive `01_release_R3` folder (new; created after the freeze
+  commit — see the T014 parent report for the folder id and
+  per-file Drive ids)
+
+## 9. Addendum — freeze commit (filled after committing)
+
+> 补记（冻结提交后追加，2026-11-10）。本节只追加，不改写上文。
+> source_commit 与 freeze_commit 的对应关系：
+> - **source_commit（被冻结的源码）**：`3a83371`
+>   （`3a8337151461b80e4ae50e75ab2edf417f4f9165`，
+>   "T014: freezer records T013 reviews R4-R19 in manifest inputs
+>   (P2-R6-1)"）。
+> - **freeze_commit（冻结提交本身）**：`d8ffdeb`
+>   （`d8ffdebb775e5b3241936ec86c11689c51f29bf1`，
+>   "T014: Formal re-freeze (R3) — source.zip 9a54081e… dist.zip
+>   b8e2aa77…"，2026-11-10 00:34 UTC）。该提交在 source_commit
+>   之上只加了冻结产物、验证报告与本报告（6 文件：
+>   `release/source.zip`、`release/dist.zip`、
+>   `release/SHA256SUMS.txt`、`release/RELEASE_MANIFEST.json`、
+>   `evidence/tests/RELEASE_VERIFY_REPORT.json`、本报告），未改
+>   任何源码、Oracle、fixture、测试或规格。
+> - **可核对的 Git 证据**（本机仓库实测，2026-11-10）：
+>   - `git rev-parse d8ffdeb^` →
+>     `3a8337151461b80e4ae50e75ab2edf417f4f9165`
+>     （freeze_commit 的直接父提交就是 source_commit）。
+>   - `git merge-base --is-ancestor 3a83371 d8ffdeb` → 是；
+>     `git log 3a83371..d8ffdeb` → 仅 1 个 commit。
+>   - `git ls-tree d8ffdeb -- scripts/deterministic-zip.py
+>     release/source.zip` → 两者均存在；脚本内容 SHA-256
+>     `54cd0ed4…`，与 Manifest `freezer.sha256` 一致。
+> - **后续冻结的记录方式**：Manifest 同时记录 `source_commit`、
+>   `freeze_commit`、`freeze_status` 与 `freeze_history`；每次
+>   冻结的真实 freeze commit 哈希在产物提交后补记于此报告
+>   （或其后续补记）。
+
+## §4 T014_FREEZE_REPORT_R4.md 全文（第 4 次正式重冻报告；§9 已补记冻结提交 `a153b94`）
+
+# P020 CheckPath — T014 Formal Re-freeze Report (R4)
+
+- **Task:** T014 — 正式重新冻结与 SHA-256 清单 (S5, fourth formal freeze)
+- **Source commit:** `2ddc2ad`
+  (`2ddc2ad0a7afd34bc2d5fe989f7d2e2bdb4e0b98`, "R3-FINAL-04: git
+  final check report (real outputs, 9dac3e1/3a83371/4c67520 chain)")
+- **Freeze commit:** `a153b94`
+  (`a153b94f2767d93afc415080e29f52b63b173eea`, "T014: Formal
+  re-freeze (R4) — source.zip ab23e4a7… dist.zip b8e2aa77…")
+  — recorded in §9 after committing; this header was corrected
+  in the §9 addendum commit (same R3-FINAL-01 pattern) so the
+  report is self-consistent when read standalone. At freeze time
+  the header read PENDING by design (the freeze commit did not
+  exist yet); §9 is the authoritative addendum and records the
+  same value.
+- **Date:** 2026-11-10
+- **Result:** **PASS** — all acceptance commands exit 0; both ZIPs
+  verified; trial freeze reproduced byte-identically twice before
+  the formal run; manifest history now closes R2/R3 freeze commits.
+- **Why a re-freeze:** the final review (round 4) returned
+  FINAL_VERDICT: FAIL (P0 0 / P1 0 / P2 7) on T014 final-release
+  acceptance — NOT on the algorithm (T013 R19 = PASS, P0 0 / P1 0 /
+  P2 8; no new P0/P1). Its four documentation/traceability blockers
+  are closed by the R3-FINAL rework (commits `810a7ef`, `a24e1b2`,
+  `a3a1212`, `4f212f7`, `2ddc2ad`, all on top of the R3 §9 addendum
+  commit `4c67520`): (1) the R3 freeze report now enters the frozen
+  package and its header freeze commit is closed to `d8ffdeb`;
+  (2) R3 Release Notes now exist standalone
+  (`release/RELEASE_NOTES_R3.md`) and as a complete chapter in the
+  R4 notes; (3) `REVIEW_INDEX.md` now covers R3–R19 with a new R19
+  coverage matrix, review pack 03 and sums file; (4) the Git chain
+  is closed in the manifest (`freeze_history`: R2 → `03c2f16`,
+  R3 → `d8ffdeb`) and evidenced in
+  `evidence/release/GIT_FINAL_CHECK_R4.md`. The R3 artifacts
+  (`d8ffdeb`, source `9a54081e…`) are superseded and kept as history
+  in Drive `01_release_R3`; they are NOT overwritten. This report
+  covers the R4 formal re-freeze only.
+- **Zero humans. No network (except the pre-existing `node_modules`,
+  installed before this task), no GitHub API, no token. Synthetic
+  data only.**
+- **License:** `PENDING_SAM_DECISION` (no LICENSE file created;
+  `LICENSE_STATUS.md` unchanged).
+
+## 1. Result summary
+
+| Artifact | SHA-256 | Files |
+|---|---|---|
+| `release/source.zip` | `ab23e4a70bef6e462e47875ccbecce4d3a6167a4d9cd3a3b204d9cd0e39a41ba` | 2,734 (exact HEAD tree at `2ddc2ad`) |
+| `release/dist.zip` | `b8e2aa77074cd2f62a518c1c7969cfdaa7cff202c6d87239080c3dfe2c6d335c` | 114 (29 built + 76 vendored yaml + 6 examples + 2 docs + QUICKSTART.md) |
+| `release/RELEASE_MANIFEST.json` | `2076f08773c0d765140cd74936c20b70259fce7da8f87ddbdd18a60920633baa` | — (freeze_status FORMAL) |
+| `release/SHA256SUMS.txt` | `sha256sum -c` all OK | 3 entries |
+
+- `source.zip` file count 2,734 vs R3's 2,728: +6, reconciled —
+  the R3 freeze report itself (untracked at the R3 source commit,
+  committed in `d8ffdeb`) plus the five new R3-FINAL files
+  (`release/RELEASE_NOTES_R3.md`,
+  `evidence/review/COVERAGE_MATRIX_R19.csv`,
+  `evidence/review/REVIEW_PACK_03.md`,
+  `evidence/review/REVIEW_SHA256SUMS_R19.txt`,
+  `evidence/release/GIT_FINAL_CHECK_R4.md`). Listing identical to
+  `git ls-files` at the source commit (one filename carries a
+  non-ASCII arrow `→`; `git ls-tree` quotes it octal-escaped,
+  the ZIP stores the real UTF-8 name — same file, verified in R3).
+- `dist.zip` UNCHANGED vs R3 (`b8e2aa77…`, byte-identical): expected —
+  no `src/` change since FIX-P0-19 (`9dac3e1`). This rework touched
+  zero `src/` / `oracle/` / `tests/` files (see §5 and
+  `GIT_FINAL_CHECK_R4.md` §6, `git diff --quiet … -- src/ oracle/
+  tests/` exit 0).
+- `RELEASE_MANIFEST.json` records source commit `2ddc2ad`,
+  toolchain (Node v24.22.1, npm 10.9.4, Python 3.12.3, PyYAML
+  6.0.1, TypeScript 5.9.3, Vite 7.3.7, Vitest 5.1.0, React 19.3.1,
+  yaml 2.9.1), S0 input fixture hash, golden suite hash, Oracle
+  parity report hash, S0 gate hash `f511a847…`, **all 19 T013
+  review hashes (R1–R19)**, both ZIP hashes, the freezer script
+  hash (`c2a1c9e8…`, matches the committed patched script), and the
+  freeze history chain (R1 formal `3e5e145` ← `933dd35`; trial
+  `36476cf`; R2 formal `538c669` → freeze `03c2f16` **closed**;
+  R3 formal `3a83371` → freeze `d8ffdeb` **closed**).
+- S0 gate still PASS after freeze: `gate_report_sha256 f511a847…`
+  unchanged, independently recomputed — matches.
+- Specs unchanged: PROJECT_BOOK / IMPLEMENTATION_PLAN untouched
+  by this task (only docs, review index/matrix/pack, the freezer
+  script, and the freeze artifacts changed).
+
+## 2. Acceptance commands (personally run)
+
+| Command | Exit | Result |
+|---|---|---|
+| `npm run typecheck` | 0 | clean |
+| `npm run lint` | 0 | clean |
+| `npm test` | 0 | **1697/1697** (53 files) |
+| `npm run test:oracle` | 0 | **167/167**, 0 mismatches, 0 false PASS, unsupported UNKNOWN 34/34 |
+| `npm run s0:gate` | 0 | PASS; oracle 24/24, 0 mismatches, 0 false PASS; determinism 100 runs, 1 unique hash; `gate_report_sha256 f511a847…` unchanged |
+| `npm run release:verify` | 0 | PASS; all 5 steps (build determinism, cli smoke, report_sha256 recompute, offline static scan, license guard) |
+| `python3 evidence/probes/r14/r14-probe.py` | 0 | 78/78 MATCH, 0 DIFF, 0 stale flag |
+| `python3 evidence/probes/r15/r15-probe.py` | 0 | 122/122 MATCH, 0 DIFF, 0 stale flag |
+| `npm run release:freeze -- --trial` (×2) | 0 | identical hashes both times (see §3): source `ab23e4a7…` (2,734), dist `b8e2aa77…` (114), manifest `231047b0…` (TRIAL text) |
+| `npm run release:freeze` (formal, no `--trial`) | 0 | `freeze OK`; source `ab23e4a7…` (2,734), dist `b8e2aa77…` (114), manifest `2076f087…` — all from this run's own stdout |
+| `sha256sum -c SHA256SUMS.txt` (in `release/`) | 0 | source.zip OK, dist.zip OK, RELEASE_MANIFEST.json OK |
+
+Full logs: `handoff/P020-T014-R4/test_logs/` (`P020-T014-R4_typecheck.log`,
+`…_lint.log`, `…_test.log`, `…_test-oracle.log`, `…_s0-gate.log`,
+`…_release-verify.log`, `…_r14.log`, `…_r15.log`,
+`…_release-freeze-trial1.log`, `…_release-freeze-trial2.log`,
+`…_release-freeze-formal.log`).
+
+## 3. Freeze iterations (what was done before and during the freeze)
+
+1. **Four-blocker verification first (R3-FINAL-01…04, commits
+   `810a7ef`–`2ddc2ad`, all before the freeze):** each final-review
+   R4 blocker was re-verified from primary evidence before any fix
+   (see `handoff/P020-T014-R4/TASK_REPORT.md` §1). Corrections to
+   the brief's preliminary claims are recorded there and in
+   `evidence/release/GIT_FINAL_CHECK_R4.md`: (a) `git diff
+   9dac3e1..3a83371` holds FOUR commits, not "only the freezer
+   script" — the freezer-only portion is the single commit
+   `3a83371`; (b) T013 R4 never cites the label "P2-R3-1"
+   literally — R4 §1 verifies the exact underlying divergence
+   closed, which is what the manifest's RESOLVED entry cites;
+   (c) final-review R3's P2-6 (false "hashes unchanged" claim,
+   revoked by GPT in R4) and final-review R4's new P2-6
+   (`USER=root` validator false positive) are different items
+   sharing a number — the manifest labels the new one
+   "P2-6 (final-review R4)".
+2. **R3-FINAL-01** (`810a7ef`): `T014_FREEZE_REPORT_R3.md` header
+   freeze commit PENDING → `d8ffdeb`, with a dated correction note;
+   body otherwise untouched; §9 already recorded the same value.
+3. **R3-FINAL-02** (`a24e1b2`): new `release/RELEASE_NOTES_R3.md`
+   (complete R3 notes: source `3a83371`, freeze `d8ffdeb`, the R3
+   three-piece hashes, R19 PASS, R14/R15 results, R2 archiving);
+   `release/RELEASE_NOTES.md` rewritten as the R4 pre-freeze
+   edition (describes the R4 re-freeze, carries the complete R3
+   chapter, states the formal R4 hashes are filled in only in the
+   post-freeze final edition — one-generation lag, as in R2).
+4. **R3-FINAL-03** (`a3a1212`): `REVIEW_INDEX.md` appended
+   (+66/−0 — R1/R2 text untouched) with the R3–R19 summary table,
+   R19 deliverables and headline findings; new
+   `evidence/review/COVERAGE_MATRIX_R19.csv` (99 rows at `9dac3e1`:
+   62 code files, 20,481 lines + 37 new FIX-P0-19 test/fixture
+   rows; `workflow-parser.ts` READ-R19, superseding the stale R2
+   "Unchanged since R1" flag; 54 files carry R2 coverage forward
+   byte-identical); new `evidence/review/REVIEW_PACK_03.md`
+   (compiled from the R19 report + committed probe files, no new
+   numbers); `evidence/review/REVIEW_SHA256SUMS_R19.txt`.
+5. **R3-FINAL-04** (`4f212f7` + `2ddc2ad`): freezer patch —
+   `KNOWN_FREEZE_COMMITS` table closes still-PENDING history
+   entries (R2 → `03c2f16`, R3 → `d8ffdeb`, idempotent);
+   `known_limitations`: P2-R3-1 → RESOLVED (FIX-P0-02, verified
+   T013 R4 §1), P2-R6-2 registered (partially mitigated historical
+   residual: R7/R8 probes lost, R9–R19 archived), P2-6
+   (final-review R4) `USER=root` validator false positive disclosed
+   as a tool defect (verified live: `USER=root` → exit 1 with 5
+   "username in entry name" FAILs on `root` fixture filenames;
+   `USER` unset → verify OK; ZIPs unaffected). Plus
+   `evidence/release/GIT_FINAL_CHECK_R4.md` with verbatim
+   rev-parse/log/diff outputs (this rework's own diff: docs /
+   matrix / freezer only, zero `src/` / `oracle/` / `tests/`).
+6. **Acceptance re-run** at the source HEAD `2ddc2ad` (see §2):
+   all commands exit 0; `git status` clean afterwards
+   (`evidence/S0_GATE.json` byte-identical, `release:verify`
+   rewrote nothing).
+7. **Trial freeze ×2** at `2ddc2ad`: identical hashes both times
+   (source `ab23e4a7…`, dist `b8e2aa77…`, manifest `231047b0…`);
+   `sha256sum -c` 3/3 OK on the trial artifacts. Trial manifest
+   inspected before the formal run: history closes R2/R3, P2-R3-1
+   RESOLVED, P2-R6-2 and P2-6 (R4) present, all 19 review hashes
+   in `inputs`, trial `source.zip` (2,734 files) confirmed to
+   contain the R3 report, R3 notes, R19 matrix/pack/sums, updated
+   index, git check and R4 notes.
+8. **Formal freeze** at `2ddc2ad`: `npm run release:freeze`
+   (no `--trial`). Exit 0. The formal manifest (`2076f087…`)
+   differs from the trial manifest (`231047b0…`) only in the
+   `freeze_commit` / `freeze_status` text (PENDING/FORMAL vs
+   TRIAL), as designed; source/dist hashes are identical to trial.
+
+## 4. Independent verification (beyond the acceptance commands)
+
+- Manifest review hashes: all 19 `t013_review_r*` SHA-256 values
+  re-computed from `git show HEAD:<path>` by the freezer and
+  compared — 0 mismatches (the freeze refuses otherwise). R19
+  entry: PASS, p0 0 / p1 0 / p2 8.
+- Freezer script hash in the manifest (`c2a1c9e8…`) equals the
+  committed `scripts/deterministic-zip.py` SHA-256 (checked after
+  the formal freeze).
+- `source.zip` listing vs `git ls-files` at `2ddc2ad`: same 2,734
+  files (modulo the octal-quoted non-ASCII filename, §1). The R3
+  report, R3 notes, R19 matrix/pack/sums, updated index, git check
+  and R4 notes are all present in the archive (checked on the
+  trial `source.zip`, byte-identical to the formal one).
+- `dist.zip`: `checkpath.mjs` present, 76 vendored `yaml` files
+  present (package.json + LICENSE + 74 dist/*.js), 114 files total;
+  byte-identical to the R3 `dist.zip` (no `src/` change).
+- `release:verify` rebuilt `dist/` and rewrote
+  `evidence/tests/RELEASE_VERIFY_REPORT.json`: the file is
+  byte-identical to HEAD after the re-run (no diff) — no change to
+  commit.
+- `evidence/S0_GATE.json` is byte-identical to HEAD after the
+  `s0:gate` re-run (gate hash unchanged) — no diff.
+- `USER=root` validator check (disclosed, not fixed in this task):
+  `USER=root python3 scripts/deterministic-zip.py --verify
+  release/source.zip` exits 1 with 5 "username in entry name"
+  FAILs (fixture filenames containing `root`); `USER= … --verify`
+  exits 0, verify OK. The failure is the substring check
+  (`user in name`) in `do_verify`, a tool defect, not a product
+  defect; the ZIPs are unaffected. Recorded in the manifest as
+  P2-6 (final-review R4).
+
+## 5. What the freeze did NOT change
+
+- No `src/`, `oracle/`, fixture, test, or spec change in this task
+  (the only code change is the freezer script's manifest inputs
+  and history-closure table, `scripts/deterministic-zip.py`).
+- No `dist.zip` standalone run was repeated in this task: `dist.zip`
+  is byte-identical to the R3 bundle, and `release:verify`'s cli
+  smoke (demo / analyze / matrix, exit codes as expected) ran on
+  the freshly built `dist/` in this task.
+- The R3 artifacts in `release/` were overwritten by the R4
+  artifacts in the working tree; the R3 files survive in git
+  history (`d8ffdeb`) and in Drive `01_release_R3` — never
+  overwritten there either (R4 goes to a NEW folder
+  `01_release_R4`).
+- The `release/RELEASE_NOTES.md` inside the R4 `source.zip` is the
+  pre-freeze edition (R4 hashes listed as "see SHA256SUMS.txt");
+  the post-freeze final edition — with the formal R4 hashes filled
+  in — is committed in the freeze commit and uploaded to Drive
+  `01_release_R4`. Same one-generation lag as R2; disclosed in
+  both editions and here.
+
+## 6. Working-tree note
+
+- `git status` before the freeze commit shows exactly:
+  `M release/RELEASE_MANIFEST.json`, `M release/SHA256SUMS.txt`,
+  `M release/source.zip`, plus this report (untracked) and the
+  post-freeze final edition of `release/RELEASE_NOTES.md`
+  (modified). `release/dist.zip` is UNCHANGED (byte-identical to
+  R3, so no diff). `dist/` is git-ignored (rebuilt by the freeze
+  and by `release:verify`); `node_modules/` untouched.
+
+## 7. Unresolved / carried-forward items
+
+- P2-R6-2 is PARTIALLY MITIGATED and still open as a historical
+  residual: the R7/R8 self-written probes are unrecoverable (only
+  `/tmp`, lost in a VM restart); R9–R19 probes are archived in
+  `evidence/probes/r9/`–`r19/`. Non-blocking.
+- P2-6 (final-review R4), the `USER=root` ZIP-validator false
+  positive, is a disclosed tool defect, not fixed in this task
+  (one-line follow-up for T014 if wanted: match whole path
+  segments instead of a substring in `do_verify`). Non-blocking;
+  the ZIPs verify OK under a non-root user.
+- The manifest's `freeze_commit` for THIS run reads PENDING by
+  design; the real hash is recorded in §9 below. `freeze_history`
+  now closes R2 and R3.
+- This report itself is NOT inside the R4 `source.zip`
+  (one-generation lag: the report is written after the freeze run);
+  it is committed in the freeze commit and uploaded to Drive
+  `01_release_R4`, and it enters the frozen package at the next
+  freeze, if any. The R3 report — the one GPT asked for — IS
+  inside the R4 `source.zip`.
+- License still `PENDING_SAM_DECISION` (Sam to decide).
+
+## 8. Deliverables
+
+- `release/source.zip`, `release/dist.zip`,
+  `release/RELEASE_MANIFEST.json`, `release/SHA256SUMS.txt`
+  (formal R4 freeze, committed in the freeze commit below)
+- `release/RELEASE_NOTES.md` (post-freeze final edition, with the
+  formal R4 hashes — committed in the freeze commit below)
+- `release/RELEASE_NOTES_R3.md` (in the frozen package and in Drive)
+- `evidence/release/T014_FREEZE_REPORT_R4.md` (this file)
+- `evidence/release/T014_FREEZE_REPORT_R3.md` (corrected header;
+  in the frozen package and in Drive)
+- `evidence/release/GIT_FINAL_CHECK_R4.md` (in the frozen package)
+- `evidence/review/COVERAGE_MATRIX_R19.csv`,
+  `evidence/review/REVIEW_PACK_03.md`,
+  `evidence/review/REVIEW_SHA256SUMS_R19.txt`, `REVIEW_INDEX.md`
+  (in the frozen package and in Drive `02_evidence/review`)
+- Drive `01_release_R4` folder (new; created after the freeze
+  commit — see the T014 parent report for the folder id and
+  per-file Drive ids)
+
+## 9. Addendum — freeze commit (filled after committing)
+
+> 补记（冻结提交后追加，2026-11-10）。本节只追加，不改写上文。
+> source_commit 与 freeze_commit 的对应关系：
+> - **source_commit（被冻结的源码）**：`2ddc2ad`
+>   （`2ddc2ad0a7afd34bc2d5fe989f7d2e2bdb4e0b98`，
+>   "R3-FINAL-04: git final check report (real outputs,
+>   9dac3e1/3a83371/4c67520 chain)"）。
+> - **freeze_commit（冻结提交本身）**：`a153b94`
+>   （`a153b94f2767d93afc415080e29f52b63b173eea`，
+>   "T014: Formal re-freeze (R4) — source.zip ab23e4a7…
+>   dist.zip b8e2aa77…"，2026-11-10 02:24 UTC）。该提交在
+>   source_commit 之上只加了冻结产物、最终版 R4 Notes 与本
+>   报告（5 文件：`release/source.zip`、
+>   `release/SHA256SUMS.txt`、`release/RELEASE_MANIFEST.json`、
+>   `release/RELEASE_NOTES.md`、本报告），未改任何源码、
+>   Oracle、fixture、测试或规格。`release/dist.zip` 在该提交
+>   中无变化（与 R3 字节一致）。
+> - **可核对的 Git 证据**（本机仓库实测，2026-11-10）：
+>   - `git rev-parse a153b94^` →
+>     `2ddc2ad0a7afd34bc2d5fe989f7d2e2bdb4e0b98`
+>     （freeze_commit 的直接父提交就是 source_commit）。
+>   - `git merge-base --is-ancestor 2ddc2ad a153b94` → 是；
+>     `git log 2ddc2ad..a153b94` → 仅 1 个 commit。
+>   - `git ls-tree a153b94 -- scripts/deterministic-zip.py
+>     release/source.zip` → 两者均存在；脚本内容 SHA-256
+>     `c2a1c9e8…`，与 Manifest `freezer.sha256` 一致。
+> - **后续冻结的记录方式**：Manifest 同时记录 `source_commit`、
+>   `freeze_commit`、`freeze_status` 与 `freeze_history`；每次
+>   冻结的真实 freeze commit 哈希在产物提交后补记于此报告
+>   （或其后续补记）。下一次正式冻结应在 `freeze_history`
+>   中看到本轮：source `2ddc2ad` / freeze `a153b94` /
+>   status FORMAL。
+
+## §5 RELEASE_NOTES_R3.md 全文（R3 正式发布说明，独立文件）
+
+# CheckPath — Release Notes (T014 formal re-freeze, R3)
+
+- **Project:** P020 CheckPath — deterministic GitHub Actions
+  required-check coverage simulator (local CLI + offline HTML report)
+- **Spec version:** 1.0.0 (`P020_PROJECT_BOOK.md`,
+  SHA-256 `028c2472…`; `P020_IMPLEMENTATION_PLAN.md`,
+  SHA-256 `bb645205…` — both unchanged)
+- **Source commit:** `3a83371`
+  (`3a8337151461b80e4ae50e75ab2edf417f4f9165`, "T014: freezer
+  records T013 reviews R4-R19 in manifest inputs (P2-R6-1)")
+- **Freeze commit:** `d8ffdeb`
+  (`d8ffdebb775e5b3241936ec86c11689c51f29bf1`, "T014: Formal
+  re-freeze (R3) — source.zip 9a54081e… dist.zip b8e2aa77…",
+  2026-11-10 00:34 UTC). The freeze commit's direct parent is the
+  source commit (`git rev-parse d8ffdeb^` → `3a83371…`; see
+  `evidence/release/T014_FREEZE_REPORT_R3.md` §9).
+- **Review:** T013 independent review round 19, verdict **PASS**
+  (P0 0 / P1 0 / P2 8); see
+  `evidence/review/INDEPENDENT_REVIEW_R19.md`
+  (SHA-256 `c6ec2c2415baedeab47914f34f1fe7238ca910ff1cc158e7ba417cbed2750470`).
+  Round 19 closes the last P0 family (FIX-P0-19, code `9dac3e1`:
+  TS-side `hasDuplicateAliasKey` rejects flow-mapping alias keys
+  resolving to duplicate scalars). All 19 T013 rounds (R1–R19)
+  are recorded in `RELEASE_MANIFEST.json` (`inputs.t013_review_r*`).
+- **Freeze history:** R1 formal freeze `3e5e145` (source
+  `933dd35`); FIX-P1-02 trial freeze `7638f06` (source `36476cf`,
+  trial only); R2 formal re-freeze `03c2f16` (source `538c669`);
+  this R3 formal re-freeze `d8ffdeb` (source `3a83371`). The full
+  chain is in `RELEASE_MANIFEST.json` (`freeze_history`).
+- **License status:** `PENDING_SAM_DECISION` — no LICENSE file exists
+  and no license has been selected. Do not redistribute as licensed
+  work. `LICENSE_STATUS.md` is included in both archives.
+- **Version:** `0.0.0-t001-skeleton` (from `package.json`; the product
+  has no separate release version number)
+
+## What is in this release
+
+| File | SHA-256 | Contents |
+|---|---|---|
+| `source.zip` | `9a54081ec8d322f0f7d78c6c08a2dc8cf9370396a026a7a2d6fd0e85b4dc83cd` | Exact archive of the release-candidate tree (2,728 tracked files at `3a83371`): TypeScript source, Python Reference Oracle, tests, examples, README, dependency locks, docs, build scripts, evidence and handoff records. No `.git`, `node_modules`, `dist/`, `reports/` or other untracked content. |
+| `dist.zip` | `b8e2aa77074cd2f62a518c1c7969cfdaa7cff202c6d87239080c3dfe2c6d335c` | Directly runnable CLI bundle (114 files): fresh `npm run build` output (`checkpath.mjs` at the root), the vendored `yaml` 2.9.1 runtime (see below), synthetic examples, offline HTML assets (`index.html` + `assets/`), `QUICKSTART.md`, `LICENSE_STATUS.md`, `THIRD_PARTY_NOTICES.md`. No source maps. |
+| `SHA256SUMS.txt` | — | SHA-256 of `source.zip`, `dist.zip` and `RELEASE_MANIFEST.json` (verify with `sha256sum -c SHA256SUMS.txt`). |
+| `RELEASE_MANIFEST.json` | `f4ba7a17bf188fbea8acf61ffbf7ee01b5011b27a8cc2f0310122c3e3a332465` | Machine-readable manifest: commit, toolchain, input fixture / Oracle parity / S0 gate / T013 review hashes (R1–R19), both ZIP hashes, freeze history. |
+
+Both ZIPs are deterministic: entries sorted by path, fixed
+timestamp `1980-01-01T00:00:00Z`, fixed permissions (files `0644`,
+directories `0755`), `ZIP_DEFLATED` level 9. A re-run of
+`npm run release:freeze` at the source commit reproduces all three
+hashes byte-for-byte (verified by the R19 reviewer in a fresh clone
+at `9dac3e1` with `--trial`, three times: source `3c059bc3…`
+(2,693 files at that commit), dist `b8e2aa77…`, manifest
+`89ff8504…`; see `evidence/review/INDEPENDENT_REVIEW_R19.md` §9).
+Verify the archives with
+`python3 scripts/deterministic-zip.py --verify release/source.zip`
+and `--verify release/dist.zip` (checks ordering, timestamps,
+permissions, relative entry names and CRCs).
+
+**What changed vs R2:** `src/` changed in FIX-P0-19
+(`hasDuplicateAliasKey` in `src/core/workflow-parser.ts` +127/−1,
+wiring in `src/core/e2e.ts` +7/−2), so `dist.zip` changed
+(`da130ad2…` → `b8e2aa77…`, byte-identical to the FIX-P0-19 trial
+bundle and to the R19 review's three trial reproductions).
+`source.zip` grew 1,209 → 2,728 files through the R4–R19
+fix/review loop (fixtures, probes, evidence, review reports);
+reconciled in `evidence/release/T014_FREEZE_REPORT_R3.md` §1
+(trial freeze at `9dac3e1`: 2,693 files; +1 FIX-P0-19 report
+commit `3991856`; +34 R19 evidence commit `9fd0233` = 2,728).
+The manifest now records all 19 T013 review rounds (P2-R6-1 FIXED)
+and the R14/R15 stale-flag probe rows are cleared (both probes
+exit 0).
+
+**One-generation lag, disclosed:** `source.zip` is the exact HEAD
+tree at the source commit, so the `release/RELEASE_NOTES.md`
+inside it is the R2-era notes (same as R2, where the zip contained
+the R1-era notes). These R3 notes were recorded at the freeze
+commit and in Drive `01_release_R3`. The manifest is the
+authoritative hash record.
+
+## Quick Start (from `dist.zip`)
+
+Machine needs Node.js 24.x only — no `npm ci`, no network, no token:
+
+```sh
+node checkpath.mjs demo
+node checkpath.mjs analyze --repo examples/repo-basic --scenario examples/scenarios/pr-docs-only.json --required-checks examples/required-checks.yml --out reports/pr-docs-only
+node checkpath.mjs matrix --repo examples/repo-basic --suite examples/suites/merge-queue.json --required-checks examples/required-checks.yml --out reports/merge-queue
+```
+
+The demo exits with code **2** — that is the gate outcome for the
+demo scenario (both required checks `PENDING_NOT_REPORTED`), not a
+failure. Full instructions are in `QUICKSTART.md` inside `dist.zip`.
+Exit codes: `0` gate green, `2` pending/ambiguous/unknown,
+`3` invalid input.
+
+## Verification at freeze time (all personally run, exit 0)
+
+- `npm run typecheck` — clean.
+- `npm test` — **1697/1697** (53 files).
+- `npm run test:oracle` — **167/167**, 0 mismatches, 0 false PASS,
+  unsupported UNKNOWN 34/34.
+- `npm run oracle:diff:trigger` / `jobs` / `checks` / `witness` —
+  128 / 48 / 46 / 44 fixtures, all 0 mismatches.
+- `npm run s0:oracle` — S0 24/24, 0 mismatches, false PASS 0,
+  UNKNOWN 2/2.
+- `npm run s0:gate` — **PASS**, 100 runs, 1 hash,
+  `gate_report_sha256 f511a84709a6ebf64af94cb788ad3e15cef85af5862b5334fca4288b6ff38386`
+  (unchanged, independently recomputed).
+- `npm run release:verify` — **PASS** (build determinism; CLI smoke;
+  report hash recompute; offline scan; license guard:
+  no LICENSE file, `LICENSE_STATUS.md` still
+  `PENDING_SAM_DECISION`).
+- `python3 evidence/probes/r14/r14-probe.py` — **78/78 MATCH**,
+  0 DIFF, 0 stale flag (after clearing).
+- `python3 evidence/probes/r15/r15-probe.py` — **122/122 MATCH**,
+  0 DIFF, 0 stale flag (after clearing).
+- R19 independent re-verification (clean clone at `9dac3e1`):
+  R18 hunt probe 50/50, adjudication 22/22 + 10/10, fix-p0-18 grid
+  79/79, fix-p0-19 grid 70/70, self-hunt 60/60 with 0 new
+  divergence; twelve fix matrices + R10–R17 probes + fix-p0-16/17
+  grids + R18/R19 probes re-run: **4,102 checks, 0 DIFF**
+  (see `evidence/review/INDEPENDENT_REVIEW_R19.md` §8).
+- `SHA256SUMS.txt`: all three entries verified with `sha256sum -c`.
+
+## Known limitations (read before use)
+
+R19's 8 P2s, all non-blocking (see
+`evidence/review/INDEPENDENT_REVIEW_R19.md` §5):
+
+1. **P2-R3-3 — clean-directory `release:freeze` without `.git`
+   fails by design.** A literal extraction of `source.zip`
+   (no `.git`) cannot run the freeze: it fails at
+   `git rev-parse HEAD` (`fatal: not a git repository`), because
+   the freeze identifies the frozen tree by commit. The accepted
+   substitute is a fresh-clone re-run, verified byte-identical
+   for this freeze (see "Verification" above).
+2. **P2-R2-3 — README performance figures are single-run
+   snapshots.** The README cites P95 768.3 ms / peak RSS 98.3 MiB;
+   independent re-runs measured P95 697.9 ms / 100.2 MiB (T013 R2)
+   and P95 701.2 ms / 101.1 MiB (T012). All are far inside the
+   thresholds (P95 ≤ 1000 ms, peak RSS ≤ 256 MiB); the exact
+   figures vary run to run with VM scheduling.
+3. **Windows PowerShell Quick Start NOT_TESTED (U-01).** The Linux
+   Quick Start is verified; the PowerShell commands are the same
+   commands on single lines, but no Windows machine was available
+   to run them. Do not treat them as tested.
+4. **USER_VALUE has no real-human experiment data.** Zero-human
+   constraint: no human data exists; nothing here claims otherwise.
+5. **source.zip contains the previous generation's freeze
+   artifacts and older Release Notes (one-generation lag).**
+   See "One-generation lag" above; the manifest is authoritative.
+6. **The manifest's `freeze_commit` field reads PENDING by design.**
+   A freeze run cannot know its own future freeze commit hash; the
+   real hash is recorded in `evidence/release/T014_FREEZE_REPORT_R3.md`
+   §9 (`d8ffdeb`) and in `freeze_history` from the next freeze on.
+7. **P2-R6-1 — manifest `inputs` recorded T013 reviews only to R3
+   — FIXED by this re-freeze.** The manifest now records
+   `t013_review_r4`…`t013_review_r19` alongside r1/r2/r3 (verdict +
+   p0/p1/p2, hashed from HEAD).
+8. **P2-R6-2 — review-probe evidence not all in the repository —
+   PARTIALLY MITIGATED, still open as a historical residual.**
+   The R7/R8 self-written probes lived only in `/tmp` and were lost
+   in a VM restart (reconstructible only from report text); R9–R19
+   probes are archived in `evidence/probes/r9/`–`r19/`. Non-blocking.
+
+**R3-FINAL correction (2026-11-10, recorded after this freeze):**
+the R3 manifest listed P2-R3-1 (`True:` vs `true:` residual
+divergence, TS INVALID vs Oracle UNKNOWN) as an open residual.
+That divergence was in fact already closed before this freeze by
+FIX-P0-02 and verified by T013 R4 §1 (the R2 input now returns
+INVALID / `yaml_parse_error` on both sides, MATCH; fixture-locked
+by `tests/fixtures/trigger/T6-20-dup-bool-true`,
+`tests/fixtures/parser-divergence/duplicate-key/dup-bool-true.yml`
+case 4, golden G-84). R4 does not cite the label "P2-R3-1"
+literally; the closure is of the exact underlying divergence R3
+recorded. The R4 manifest records P2-R3-1 as RESOLVED on that
+basis. No product code changed for this correction — it is a
+record correction only.
+
+## R2 archiving (superseded release, preserved)
+
+- R2 formal re-freeze: source commit `538c669`, freeze commit
+  `03c2f16` (2026-11-08); `source.zip`
+  `3a778b933f827b5d1fbf1d617f40de465ec9bd00590a9bc1003cac2f2409743f`
+  (1,209 files), `dist.zip`
+  `da130ad2747a810c0f62488245fe7902298199faa6e8372f3975d58b573911e6`
+  (114 files), manifest
+  `04a07733755c36ba5a614514859ef8698eb2c1b7d92d4c4ebd75d335cfb0a2fb`
+  (freeze_status FORMAL).
+- R2 files survive in git history (`03c2f16`) and in Drive
+  `01_release_R2` — never overwritten. R3 goes to a NEW folder
+  `01_release_R3`.
+
+## Packaging note (freeze-discovered, F-T014-01)
+
+The first frozen `dist.zip` could **not** run standalone: the built
+CLI imports the `yaml` npm package (`from "yaml"` in
+`dist/core/workflow-ir.js`, `workflow-parser.js`, `e2e.js` and
+`dist/cli/commands/common.js` — the only bare package import in
+`dist/`), and the bundle shipped no `node_modules`, so
+`node checkpath.mjs demo` failed with `ERR_MODULE_NOT_FOUND`
+outside the repository. The in-repo `release:verify` could not catch
+this (it runs `dist/` with the repo's `node_modules` present).
+Packaging-only fix, no product code / fixture / doc / `source.zip`
+change: `dist.zip` vendors the exact locked runtime dependency —
+`yaml` 2.9.1 (`node_modules/yaml`: `package.json`, `LICENSE`,
+`dist/**/*.js`, 76 files; browser build, `.d.ts`, `bin.mjs` and
+`README.md` excluded as unused at runtime). The standalone demo was
+then verified end to end (see "Verification" above).
+
+## §6 RELEASE_NOTES.md 全文（R4 正式发布说明，终版，含完整 R3 章节；包内 source.zip 中的是预冻结版，一代滞后已在正文与 §4 报告中披露）
+
+# CheckPath — Release Notes (T014 formal re-freeze, R4)
+
+- **Project:** P020 CheckPath — deterministic GitHub Actions
+  required-check coverage simulator (local CLI + offline HTML report)
+- **Spec version:** 1.0.0 (`P020_PROJECT_BOOK.md`,
+  SHA-256 `028c2472…`; `P020_IMPLEMENTATION_PLAN.md`,
+  SHA-256 `bb645205…` — both unchanged)
+- **Source commit:** `2ddc2ad`
+  (`2ddc2ad0a7afd34bc2d5fe989f7d2e2bdb4e0b98`, "R3-FINAL-04: git
+  final check report (real outputs, 9dac3e1/3a83371/4c67520 chain)")
+- **Freeze commit:** recorded in
+  `evidence/release/T014_FREEZE_REPORT_R4.md` §9 (the freeze commit
+  does not exist until the freeze artifacts are committed; this
+  final edition of the notes is committed in the freeze commit
+  itself)
+- **Review:** T013 independent review round 19, verdict **PASS**
+  (P0 0 / P1 0 / P2 8); see
+  `evidence/review/INDEPENDENT_REVIEW_R19.md`
+  (SHA-256 `c6ec2c2415baedeab47914f34f1fe7238ca910ff1cc158e7ba417cbed2750470`).
+  No code changed since R19: the R4 re-freeze is a documentation /
+  traceability / packaging re-freeze only (R3-FINAL-01…04), with
+  zero `src/` / `oracle/` / `tests/` changes.
+- **Why a re-freeze:** the final review (round 4) returned FAIL
+  (P0 0 / P1 0 / P2 7) on T014 final-release acceptance — not on
+  the algorithm (R19 core fix passed independent review; no new
+  P0/P1). Its four documentation/traceability blockers are closed
+  by this re-freeze: (1) the T014 R3 freeze report is now inside
+  the frozen package (it was in-tree but outside the R3 source.zip)
+  and its header freeze commit is closed to `d8ffdeb`;
+  (2) R3 Release Notes now exist as a standalone file
+  (`release/RELEASE_NOTES_R3.md`, full R3 hashes) and as the
+  complete R3 chapter below; (3) `REVIEW_INDEX.md` now covers
+  rounds R3–R19, with a new R19 coverage matrix
+  (`evidence/review/COVERAGE_MATRIX_R19.csv`), review pack
+  (`evidence/review/REVIEW_PACK_03.md`) and sums
+  (`evidence/review/REVIEW_SHA256SUMS_R19.txt`); (4) the Git chain
+  is closed in the manifest (`freeze_history`: R2 → `03c2f16`,
+  R3 → `d8ffdeb`) and evidenced in
+  `evidence/release/GIT_FINAL_CHECK_R4.md`.
+- **Freeze history:** R1 formal freeze `3e5e145` (source
+  `933dd35`); FIX-P1-02 trial freeze `7638f06` (source `36476cf`,
+  trial only); R2 formal re-freeze `03c2f16` (source `538c669`);
+  R3 formal re-freeze `d8ffdeb` (source `3a83371`); this R4 formal
+  re-freeze (source = R3-FINAL HEAD, freeze commit in
+  `T014_FREEZE_REPORT_R4.md` §9). The full chain is in
+  `RELEASE_MANIFEST.json` (`freeze_history`).
+- **License status:** `PENDING_SAM_DECISION` — no LICENSE file exists
+  and no license has been selected. Do not redistribute as licensed
+  work. `LICENSE_STATUS.md` is included in both archives.
+- **Version:** `0.0.0-t001-skeleton` (from `package.json`; the product
+  has no separate release version number)
+
+## What is in this release
+
+| File | SHA-256 | Contents |
+|---|---|---|
+| `source.zip` | `ab23e4a70bef6e462e47875ccbecce4d3a6167a4d9cd3a3b204d9cd0e39a41ba` | Exact archive of the R3-FINAL source tree (2,734 tracked files at `2ddc2ad`): TypeScript source, Python Reference Oracle, tests, examples, README, dependency locks, docs, build scripts, evidence and handoff records. No `.git`, `node_modules`, `dist/`, `reports/` or other untracked content. |
+| `dist.zip` | `b8e2aa77074cd2f62a518c1c7969cfdaa7cff202c6d87239080c3dfe2c6d335c` | Directly runnable CLI bundle (114 files, byte-identical to the R3 `dist.zip`: no `src/` change since FIX-P0-19): fresh `npm run build` output (`checkpath.mjs` at the root), the vendored `yaml` 2.9.1 runtime (see below), synthetic examples, offline HTML assets (`index.html` + `assets/`), `QUICKSTART.md`, `LICENSE_STATUS.md`, `THIRD_PARTY_NOTICES.md`. No source maps. |
+| `SHA256SUMS.txt` | — | SHA-256 of `source.zip`, `dist.zip` and `RELEASE_MANIFEST.json` (verify with `sha256sum -c SHA256SUMS.txt`). |
+| `RELEASE_MANIFEST.json` | `2076f08773c0d765140cd74936c20b70259fce7da8f87ddbdd18a60920633baa` | Machine-readable manifest: commit, toolchain, input fixture / Oracle parity / S0 gate / T013 review hashes (R1–R19), both ZIP hashes, freeze history with R2/R3 freeze commits closed. |
+
+Both ZIPs are deterministic: entries sorted by path, fixed
+timestamp `1980-01-01T00:00:00Z`, fixed permissions (files `0644`,
+directories `0755`), `ZIP_DEFLATED` level 9. A re-run of
+`npm run release:freeze` at the source commit reproduces all three
+hashes byte-for-byte (verified by a `--trial` freeze before the
+formal run, twice, same hashes; see
+`evidence/release/T014_FREEZE_REPORT_R4.md` §3).
+Verify the archives with
+`python3 scripts/deterministic-zip.py --verify release/source.zip`
+and `--verify release/dist.zip` (checks ordering, timestamps,
+permissions, relative entry names and CRCs).
+
+**One-generation lag, disclosed:** `source.zip` is the exact HEAD
+tree at the source commit, so the `release/RELEASE_NOTES.md`
+inside it is the pre-freeze edition (R4 hashes listed as "see
+SHA256SUMS.txt" because they did not exist yet at freeze time).
+This file is the post-freeze final edition — with the formal R4
+hashes filled in — committed in the freeze commit and uploaded to
+Drive `01_release_R4` alongside the ZIPs. The manifest is the
+authoritative hash record.
+
+## R3 release (superseded, preserved — complete chapter)
+
+The R3 formal re-freeze, in full (the standalone file
+`release/RELEASE_NOTES_R3.md` in this same package carries the
+same content):
+
+- **Source commit:** `3a83371`
+  (`3a8337151461b80e4ae50e75ab2edf417f4f9165`); **freeze commit:**
+  `d8ffdeb` (`d8ffdebb775e5b3241936ec86c11689c51f29bf1`,
+  2026-11-10 00:34 UTC; `git rev-parse d8ffdeb^` → `3a83371…`).
+- **Review:** T013 round 19, verdict **PASS** (P0 0 / P1 0 / P2 8),
+  `evidence/review/INDEPENDENT_REVIEW_R19.md`
+  (SHA-256 `c6ec2c2415baedeab47914f34f1fe7238ca910ff1cc158e7ba417cbed2750470`).
+- **Hashes:** `source.zip`
+  `9a54081ec8d322f0f7d78c6c08a2dc8cf9370396a026a7a2d6fd0e85b4dc83cd`
+  (2,728 files); `dist.zip`
+  `b8e2aa77074cd2f62a518c1c7969cfdaa7cff202c6d87239080c3dfe2c6d335c`
+  (114 files); `RELEASE_MANIFEST.json`
+  `f4ba7a17bf188fbea8acf61ffbf7ee01b5011b27a8cc2f0310122c3e3a332465`.
+- **What changed vs R2:** FIX-P0-19 (`hasDuplicateAliasKey` in
+  `src/core/workflow-parser.ts` +127/−1, `src/core/e2e.ts` +7/−2);
+  manifest records all 19 T013 rounds (P2-R6-1 FIXED); R14/R15
+  stale-flag rows cleared (78/78 and 122/122, both exit 0).
+- **Verification at R3 freeze time:** `npm test` 1697/1697;
+  `test:oracle` 167/167, 0 mismatches, 0 false PASS;
+  `oracle:diff` 128/48/46/44, all 0 mismatches; `s0:gate` PASS,
+  `gate_report_sha256 f511a847…` unchanged; `release:verify` PASS;
+  R19 re-verification 4,102 checks, 0 DIFF.
+- **Known limitations at R3:** R19's 8 P2s, all non-blocking
+  (P2-R3-3 clean-dir freeze by design; P2-R2-3 README perf
+  snapshots; Windows PowerShell Quick Start NOT_TESTED; USER_VALUE
+  no human data; one-generation lag; manifest `freeze_commit`
+  PENDING by design; P2-R6-1 FIXED by the R3 freeze; P2-R6-2
+  partially mitigated, R7/R8 probes lost, R9–R19 archived).
+  **R3-FINAL correction:** P2-R3-1 (`True:` vs `true:`) was listed
+  as a residual in the R3 manifest but had already been closed by
+  FIX-P0-02 and verified by T013 R4 §1 (both sides INVALID /
+  `yaml_parse_error`, fixture-locked T6-20 / dup-bool-true / G-84);
+  the R4 manifest records it RESOLVED.
+- **License:** `PENDING_SAM_DECISION`.
+- **R2 archiving:** R2 (source `538c669`, freeze `03c2f16`,
+  source.zip `3a778b93…` 1,209 files, dist.zip `da130ad2…`,
+  manifest `04a07733…` FORMAL) preserved in git history and Drive
+  `01_release_R2`, never overwritten.
+
+## Quick Start (from `dist.zip`)
+
+Machine needs Node.js 24.x only — no `npm ci`, no network, no token:
+
+```sh
+node checkpath.mjs demo
+node checkpath.mjs analyze --repo examples/repo-basic --scenario examples/scenarios/pr-docs-only.json --required-checks examples/required-checks.yml --out reports/pr-docs-only
+node checkpath.mjs matrix --repo examples/repo-basic --suite examples/suites/merge-queue.json --required-checks examples/required-checks.yml --out reports/merge-queue
+```
+
+The demo exits with code **2** — that is the gate outcome for the
+demo scenario (both required checks `PENDING_NOT_REPORTED`), not a
+failure. Full instructions are in `QUICKSTART.md` inside `dist.zip`.
+Exit codes: `0` gate green, `2` pending/ambiguous/unknown,
+`3` invalid input.
+
+## Verification at freeze time (all personally run, exit 0)
+
+At the R3-FINAL source HEAD, before the formal freeze:
+
+- `npm run typecheck`, `npm run lint` — clean.
+- `npm test` — **1697/1697** (53 files; unchanged since R19: no
+  `src/` / `oracle/` / `tests/` change in R3-FINAL).
+- `npm run test:oracle` — **167/167**, 0 mismatches, 0 false PASS,
+  unsupported UNKNOWN 34/34.
+- `npm run s0:gate` — **PASS**; oracle 24/24, 0 mismatches,
+  0 false PASS; determinism 100 runs, 1 unique hash;
+  `gate_report_sha256 f511a847…` unchanged.
+- `npm run release:verify` — **PASS** (build determinism; CLI smoke;
+  report hash recompute; offline scan; license guard).
+- `python3 evidence/probes/r14/r14-probe.py` — **78/78 MATCH**,
+  0 DIFF, 0 stale flag.
+- `python3 evidence/probes/r15/r15-probe.py` — **122/122 MATCH**,
+  0 DIFF, 0 stale flag.
+- `--trial` freeze at the source HEAD, run twice: identical hashes
+  both times (see `evidence/release/T014_FREEZE_REPORT_R4.md` §3).
+- `SHA256SUMS.txt`: all three entries verified with `sha256sum -c`
+  after the formal freeze.
+
+## Known limitations (read before use)
+
+1. **P2-R3-3 — clean-directory `release:freeze` without `.git`
+   fails by design.** A literal extraction of `source.zip`
+   (no `.git`) cannot run the freeze: it fails at
+   `git rev-parse HEAD` (`fatal: not a git repository`), because
+   the freeze identifies the frozen tree by commit. The accepted
+   substitute is a fresh-clone re-run, verified byte-identical.
+2. **P2-R2-3 — README performance figures are single-run
+   snapshots.** The README cites P95 768.3 ms / peak RSS 98.3 MiB;
+   independent re-runs measured P95 697.9 ms / 100.2 MiB (T013 R2)
+   and P95 701.2 ms / 101.1 MiB (T012). All are far inside the
+   thresholds (P95 ≤ 1000 ms, peak RSS ≤ 256 MiB).
+3. **Windows PowerShell Quick Start NOT_TESTED (U-01).** The Linux
+   Quick Start is verified; the PowerShell commands are the same
+   commands on single lines, but no Windows machine was available
+   to run them. Do not treat them as tested.
+4. **USER_VALUE has no real-human experiment data.** Zero-human
+   constraint: no human data exists; nothing here claims otherwise.
+5. **source.zip contains the previous generation's freeze
+   artifacts and older Release Notes (one-generation lag).**
+   See "One-generation lag" above; the manifest is authoritative.
+6. **The manifest's `freeze_commit` field reads PENDING by design.**
+   A freeze run cannot know its own future freeze commit hash; the
+   real hash is recorded in `evidence/release/T014_FREEZE_REPORT_R4.md`
+   §9. `freeze_history` now closes the earlier runs: R2 →
+   `03c2f16`, R3 → `d8ffdeb`.
+7. **P2-R6-1 — manifest `inputs` recorded T013 reviews only to R3
+   — FIXED by the R3 re-freeze** (manifest records R4–R19).
+8. **P2-R6-2 — review-probe evidence not all in the repository —
+   PARTIALLY MITIGATED, still open as a historical residual.**
+   The R7/R8 self-written probes lived only in `/tmp` and were lost
+   in a VM restart (reconstructible only from report text); R9–R19
+   probes are archived in `evidence/probes/r9/`–`r19/`. Non-blocking.
+9. **P2-R3-1 — `True:` vs `true:` residual divergence — RESOLVED.**
+   Closed by FIX-P0-02 (Oracle `_StrictBaseLoader` folds
+   `True:`/`true:` to one bool key) and verified by T013 R4 §1
+   (the R2 input now returns INVALID / `yaml_parse_error` on both
+   sides, MATCH; fixture-locked by T6-20-dup-bool-true,
+   dup-bool-true.yml case 4, golden G-84). Note: R4 does not cite
+   the label "P2-R3-1" literally; the closure is of the exact
+   underlying divergence R3 recorded.
+10. **P2-6 (final review R4) — `USER=root` ZIP-validator false
+    positive (tool defect, NOT a product defect).**
+    `scripts/deterministic-zip.py` `do_verify` flags any entry
+    name containing the `$USER` substring; run as root it fails
+    `release/source.zip` with 5 "username in entry name" FAILs on
+    fixture filenames containing `root` (e.g.
+    `tests/fixtures/parser-divergence/anchored-empty-key/k01-anchored-root.yml`).
+    Verified live 2026-11-10: `USER=root` → exit 1 (5 FAILs);
+    `USER` unset → verify OK. The ZIPs are unaffected. (Not to be
+    confused with final-review R3's P2-6, the false "hashes
+    unchanged" claim, which GPT revoked in R4.)
+
+## Packaging note (freeze-discovered, F-T014-01)
+
+The first frozen `dist.zip` could **not** run standalone: the built
+CLI imports the `yaml` npm package (`from "yaml"` in
+`dist/core/workflow-ir.js`, `workflow-parser.js`, `e2e.js` and
+`dist/cli/commands/common.js` — the only bare package import in
+`dist/`), and the bundle shipped no `node_modules`, so
+`node checkpath.mjs demo` failed with `ERR_MODULE_NOT_FOUND`
+outside the repository. The in-repo `release:verify` could not catch
+this (it runs `dist/` with the repo's `node_modules` present).
+Packaging-only fix, no product code / fixture / doc / `source.zip`
+change: `dist.zip` vendors the exact locked runtime dependency —
+`yaml` 2.9.1 (`node_modules/yaml`: `package.json`, `LICENSE`,
+`dist/**/*.js`, 76 files; browser build, `.d.ts`, `bin.mjs` and
+`README.md` excluded as unused at runtime). The standalone demo was
+then verified end to end (see "Verification" above). The freeze
+script that performs the vendoring (`scripts/deterministic-zip.py`)
+was created by the T014 task itself — it did not exist before T014
+(`package.json` referenced it, T012 only rehearsed packaging).
+
+## §7 GIT_FINAL_CHECK_R4.md 全文（Git 最终核对，真实命令输出逐字引用）
+
+# P020 CheckPath — Git Final Check (R3-FINAL-04 / T014 R4 re-freeze)
+- **Date:** 2026-11-10
+- **Purpose:** close the final-review R4 blocker (3) — the Git chain.
+  Every command below was run in this repository and its output is quoted
+  verbatim; nothing is transcribed by hand. Exit codes are recorded where
+  they matter.
+- **Scope note (correction to the task brief's expectation):** the brief
+  expected `git diff 9dac3e1..3a83371` to show "only the freezer script +
+  manifest inputs". That is NOT what the range contains, and this report
+  records the truth instead: the range holds FOUR commits (see §2) — the
+  FIX-P0-19 report, the R19 evidence (34 files), the R14/R15 stale-flag
+  clearing (10 files), and only then the freezer-script patch. The
+  freezer-script-only portion is the single commit `3a83371` itself.
+  No finding below depends on the brief's expectation; the chain is
+  verified as it actually is.
+
+## §1 rev-parse — the six anchor commits
+
+```
+$ git rev-parse 9dac3e1 3a83371 4c67520 d8ffdeb 03c2f16 538c669
+9dac3e13d2a01a2050b1923b1279323d1a0b649c
+3a8337151461b80e4ae50e75ab2edf417f4f9165
+4c67520c701527517533dfc7447a7d7925dae7be
+d8ffdebb775e5b3241936ec86c11689c51f29bf1
+03c2f168a40b114ff1a0f408fa783f5d5389e15d
+538c669e11a383aa0554d05239e298cf34aadd4d
+```
+FIX-P0-19 code commit:
+```
+$ git log --format='%h %ad %s' --date=iso -1 9dac3e1
+9dac3e1 2026-11-09 23:27:41 +0000 FIX-P0-19: reject flow-mapping alias keys resolving to duplicate scalars (R18 P0 family; R18 probe 50/50, adjudication 22/22 + 10/10)
+```
+R3 source commit:
+```
+$ git log --format='%h %ad %s' --date=iso -1 3a83371
+3a83371 2026-11-10 00:24:14 +0000 T014: freezer records T013 reviews R4-R19 in manifest inputs (P2-R6-1)
+```
+R3 freeze commit:
+```
+$ git log --format='%h %ad %s' --date=iso -1 d8ffdeb
+d8ffdeb 2026-11-10 00:35:10 +0000 T014: Formal re-freeze (R3) — source.zip 9a54081ec8d322f0f7d78c6c08a2dc8cf9370396a026a7a2d6fd0e85b4dc83cd dist.zip b8e2aa77074cd2f62a518c1c7969cfdaa7cff202c6d87239080c3dfe2c6d335c
+```
+R3 §9 addendum commit:
+```
+$ git log --format='%h %ad %s' --date=iso -1 4c67520
+4c67520 2026-11-10 00:35:26 +0000 T014 R3: record freeze commit d8ffdeb in freeze report §9 addendum
+```
+R2 freeze commit:
+```
+$ git log --format='%h %ad %s' --date=iso -1 03c2f16
+03c2f16 2026-11-08 19:49:39 +0000 T014: Formal re-freeze (R2) — source.zip 3a778b933f827b5d1fbf1d617f40de465ec9bd00590a9bc1003cac2f2409743f dist.zip da130ad2747a810c0f62488245fe7902298199faa6e8372f3975d58b573911e6
+```
+R2 source commit:
+```
+$ git log --format='%h %ad %s' --date=iso -1 538c669
+538c669 2026-11-08 19:33:44 +0000 FIX-P2-R3-2: record T013 R3 review in the re-freeze manifest
+```
+
+## §2 git log 9dac3e1..3a83371 — four commits, not one
+
+```
+$ git log --oneline 9dac3e1..3a83371
+3a83371 T014: freezer records T013 reviews R4-R19 in manifest inputs (P2-R6-1)
+a4106d8 T014: clear R14/R15 stale-flag probe rows (residuals closed; R14 78/78, R15 122/122, both exit 0)
+9fd0233 T013: record R19 independent review evidence (R19 PASS, 0/0/8; R18 family closed, manifest 89ff8504 trial)
+3991856 FIX-P0-19 report: R18 P0 family closed (R18 probe 50/50, adjudication 22/22 + 10/10); trial manifest 89ff8504; no new divergence in probed space
+```
+Reading: `3991856` is the FIX-P0-19 report (text only);
+`9fd0233` records the R19 independent review evidence (34 files, incl.
+`evidence/probes/r19/reruns/`); `a4106d8` clears the R14/R15 stale-flag
+probe rows (10 files); `3a83371` is the freezer-script patch (+58 lines:
+`meta_paths` gains R4–R19, `T013_REVIEW_VERDICTS`, `P2-R6-1: FIXED`).
+Only `3a83371` touches the freezer; the range as a whole is evidence +
+probe-expectation work, and contains zero `src/` / `oracle/` changes —
+verified in §3.
+
+## §3 git diff 9dac3e1..3a83371 — stat and scope
+
+```
+$ git diff --stat 9dac3e1..3a83371
+ evidence/probes/r14/README.md                      |   18 +-
+ evidence/probes/r14/cases.json                     |   44 +-
+ evidence/probes/r14/gen-cases.py                   |   37 +-
+ evidence/probes/r14/r14-probe.py                   |    5 +
+ evidence/probes/r14/results.json                   |   44 +-
+ evidence/probes/r15/README.md                      |    9 +
+ evidence/probes/r15/cases.json                     |   89 +-
+ evidence/probes/r15/gen-cases.py                   |   55 +-
+ evidence/probes/r15/r15-probe.py                   |    6 +
+ evidence/probes/r15/results.json                   |   48 +-
+ evidence/probes/r19/README.md                      |   33 +
+ evidence/probes/r19/cases.json                     |  152 +
+ evidence/probes/r19/gen-cases.py                   |  120 +
+ evidence/probes/r19/parser-probe-p19-r19.txt       |   33 +
+ evidence/probes/r19/parser-probe-p19b-r19.txt      |   81 +
+ .../probes/r19/reruns/fix-p0-04-results-r19.json   | 1166 ++++++
+ .../probes/r19/reruns/fix-p0-05-results-r19.json   |  686 +++
+ .../probes/r19/reruns/fix-p0-06-results-r19.json   | 1208 ++++++
+ .../probes/r19/reruns/fix-p0-07-results-r19.json   |  776 ++++
+ .../probes/r19/reruns/fix-p0-08-results-r19.json   | 1478 +++++++
+ .../probes/r19/reruns/fix-p0-09-results-r19.json   |  884 ++++
+ .../probes/r19/reruns/fix-p0-10-results-r19.json   | 2828 +++++++++++++
+ .../probes/r19/reruns/fix-p0-11-results-r19.json   | 2234 ++++++++++
+ .../probes/r19/reruns/fix-p0-12-results-r19.json   | 4376 ++++++++++++++++++++
+ .../probes/r19/reruns/fix-p0-13-results-r19.json   | 1766 ++++++++
+ .../probes/r19/reruns/fix-p0-14-results-r19.json   | 1028 +++++
+ .../probes/r19/reruns/fix-p0-15-results-r19.json   | 2342 +++++++++++
+ evidence/probes/r19/reruns/fix-p0-16-grid-r19.json | 2031 +++++++++
+ evidence/probes/r19/reruns/fix-p0-17-grid-r19.json | 2687 ++++++++++++
+ evidence/probes/r19/reruns/fix-p0-18-grid-r19.json |  996 +++++
+ evidence/probes/r19/reruns/fix-p0-19-grid-r19.json |  889 ++++
+ evidence/probes/r19/reruns/r10-results-r19.json    |  995 +++++
+ evidence/probes/r19/reruns/r11-results-r19.json    |  827 ++++
+ evidence/probes/r19/reruns/r12-results-r19.json    | 1331 ++++++
+ evidence/probes/r19/reruns/r13-results-r19.json    | 1119 +++++
+ evidence/probes/r19/reruns/r14-results-r19.json    | 1005 +++++
+ evidence/probes/r19/reruns/r15-results-r19.json    | 1505 +++++++
+ evidence/probes/r19/reruns/r16-results-r19.json    | 4313 +++++++++++++++++++
+ evidence/probes/r19/reruns/r17-results-r19.json    | 1738 ++++++++
+ .../probes/r19/reruns/r18-adjudication-r19.json    |  285 ++
+ .../probes/r19/reruns/r18-adjudication2-r19.json   |  133 +
+ evidence/probes/r19/reruns/r18-hunt-r19.json       |  641 +++
+ evidence/probes/r19/results.json                   |  747 ++++
+ evidence/review/INDEPENDENT_REVIEW_R19.md          |  223 +
+ handoff/P020-FIX-P0-19/TASK_REPORT.md              |  141 +
+ scripts/deterministic-zip.py                       |   58 +
+ 46 files changed, 43042 insertions(+), 168 deletions(-)
+```
+```
+$ git diff --quiet 9dac3e1..3a83371 -- src/ oracle/; echo exit=$?
+exit=0 (0 = no difference: no src/ or oracle/ change in this range)
+```
+Freezer-script-only portion of the range:
+```
+$ git diff --stat 9dac3e1..3a83371 -- scripts/deterministic-zip.py
+ scripts/deterministic-zip.py | 58 ++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 58 insertions(+)
+```
+
+## §4 git log / git diff 3a83371..4c67520 — the R3 freeze itself
+
+```
+$ git log --oneline 3a83371..4c67520
+4c67520 T014 R3: record freeze commit d8ffdeb in freeze report §9 addendum
+d8ffdeb T014: Formal re-freeze (R3) — source.zip 9a54081ec8d322f0f7d78c6c08a2dc8cf9370396a026a7a2d6fd0e85b4dc83cd dist.zip b8e2aa77074cd2f62a518c1c7969cfdaa7cff202c6d87239080c3dfe2c6d335c
+```
+```
+$ git diff --stat 3a83371..4c67520
+ evidence/release/T014_FREEZE_REPORT_R3.md | 219 ++++++++++++++++++++++++++++++
+ evidence/tests/RELEASE_VERIFY_REPORT.json |   4 +-
+ release/RELEASE_MANIFEST.json             | 156 +++++++++++++++++++--
+ release/SHA256SUMS.txt                    |   6 +-
+ release/dist.zip                          | Bin 253043 -> 269248 bytes
+ release/source.zip                        | Bin 9244259 -> 13877998 bytes
+ 6 files changed, 369 insertions(+), 16 deletions(-)
+```
+Files (exactly 6, freeze artifacts + report + verify report):
+```
+$ git diff --name-only 3a83371..4c67520
+evidence/release/T014_FREEZE_REPORT_R3.md
+evidence/tests/RELEASE_VERIFY_REPORT.json
+release/RELEASE_MANIFEST.json
+release/SHA256SUMS.txt
+release/dist.zip
+release/source.zip
+```
+```
+$ git diff --quiet 3a83371..4c67520 -- src/ oracle/ tests/; echo exit=$?
+exit=0 (0 = no difference: the freeze changed no code, oracle or tests)
+```
+
+## §5 Parent / ancestry checks — freeze commits sit directly on their source commits
+
+```
+$ git rev-parse d8ffdeb^
+3a8337151461b80e4ae50e75ab2edf417f4f9165
+```
+(expected: `3a8337151461b80e4ae50e75ab2edf417f4f9165` — the R3 source commit)
+```
+$ git merge-base --is-ancestor 3a83371 d8ffdeb; echo exit=$?
+exit=0 (0 = yes, 3a83371 is an ancestor of d8ffdeb)
+```
+```
+$ git log 3a83371..d8ffdeb
+d8ffdeb T014: Formal re-freeze (R3) — source.zip 9a54081ec8d322f0f7d78c6c08a2dc8cf9370396a026a7a2d6fd0e85b4dc83cd dist.zip b8e2aa77074cd2f62a518c1c7969cfdaa7cff202c6d87239080c3dfe2c6d335c
+```
+(1 commit — the freeze commit itself)
+```
+$ git rev-parse 03c2f16^
+538c669e11a383aa0554d05239e298cf34aadd4d
+```
+(expected: `538c669e11a383aa0554d05239e298cf34aadd4d` — the R2 source commit)
+```
+$ git merge-base --is-ancestor 538c669 03c2f16; echo exit=$?
+exit=0 (0 = yes)
+```
+```
+$ git log 538c669..03c2f16
+03c2f16 T014: Formal re-freeze (R2) — source.zip 3a778b933f827b5d1fbf1d617f40de465ec9bd00590a9bc1003cac2f2409743f dist.zip da130ad2747a810c0f62488245fe7902298199faa6e8372f3975d58b573911e6
+```
+(1 commit — the R2 freeze commit itself)
+
+## §6 git diff 4c67520..HEAD — this rework's own changes (R3-FINAL-01…04)
+
+```
+$ git log --oneline 4c67520..HEAD
+4f212f7 R3-FINAL-04: freezer closes freeze_history (R2->03c2f16, R3->d8ffdeb); P2-R3-1 RESOLVED, P2-R6-2 + R4 P2-6 disclosed
+a3a1212 R3-FINAL-03: index to R19, R19 coverage matrix, review pack 03, R19 sums
+a24e1b2 R3-FINAL-02: add standalone R3 Release Notes; rewrite notes as R4 pre-freeze edition
+810a7ef R3-FINAL-01: close T014 R3 freeze-report header (PENDING -> d8ffdeb, matches §9)
+```
+```
+$ git diff --stat 4c67520..HEAD
+ REVIEW_INDEX.md                           |  66 +++++++
+ evidence/release/T014_FREEZE_REPORT_R3.md |  20 ++-
+ evidence/review/COVERAGE_MATRIX_R19.csv   | 100 +++++++++++
+ evidence/review/REVIEW_PACK_03.md         | 212 +++++++++++++++++++++++
+ evidence/review/REVIEW_SHA256SUMS_R19.txt |   4 +
+ release/RELEASE_NOTES.md                  | 275 ++++++++++++++++++------------
+ release/RELEASE_NOTES_R3.md               | 208 ++++++++++++++++++++++
+ scripts/deterministic-zip.py              |  28 ++-
+ 8 files changed, 797 insertions(+), 116 deletions(-)
+```
+```
+$ git diff --quiet 4c67520..HEAD -- src/ oracle/ tests/; echo exit=$?
+exit=0 (0 = no difference: zero business-code / oracle / test changes in this rework)
+```
+Files changed by this rework (documentation / matrix / freezer inputs only):
+```
+$ git diff --name-only 4c67520..HEAD
+REVIEW_INDEX.md
+evidence/release/T014_FREEZE_REPORT_R3.md
+evidence/review/COVERAGE_MATRIX_R19.csv
+evidence/review/REVIEW_PACK_03.md
+evidence/review/REVIEW_SHA256SUMS_R19.txt
+release/RELEASE_NOTES.md
+release/RELEASE_NOTES_R3.md
+scripts/deterministic-zip.py
+```
+
+## §7 Manifest closure — what the R4 freeze records
+
+The R4 freezer (`scripts/deterministic-zip.py`, R3-FINAL-04 patch)
+carries a `KNOWN_FREEZE_COMMITS` table and rewrites only still-PENDING
+`freeze_history` entries. Applied to the R3 manifest's history, the R4
+manifest's `freeze_history` is expected to read (verified after the
+formal freeze in `evidence/release/T014_FREEZE_REPORT_R4.md` §1):
+
+| Run | source_commit | freeze_commit | status |
+|---|---|---|---|
+| R1 formal | `933dd354…` | `3e5e14556f37…` | FORMAL |
+| FIX-P1-02 trial | `36476cf19264…` | TRIAL (text) | TRIAL |
+| R2 formal | `538c669e11a3…` | `03c2f168a40b…` (closed by R3-FINAL-04) | FORMAL |
+| R3 formal | `3a8337151461…` | `d8ffdebb775e…` (closed by R3-FINAL-04) | FORMAL |
+
+The R4 run's own top-level `freeze_commit` remains the PENDING text by
+design (a freeze cannot know its own future commit); its real hash is
+recorded in `T014_FREEZE_REPORT_R4.md` §9 after committing, exactly as
+R2 (`03c2f16`) and R3 (`d8ffdeb`) were.
+
+## §8 What this check did NOT do
+
+- No probe hunting was re-run (out of scope for R3-FINAL; the
+  R19 evidence — 4,102 checks, 0 DIFF — stands as the probe record).
+- No `src/` / `oracle/` / `tests/` file was modified (see §6, exit 0).
+- No message was sent to ChatGPT, no GitHub push, no external message.
+
+## §8 REVIEW_INDEX.md —— R3–R19 新增章节（R1/R2 原文一字未改，仅追加；+66/−0）
+
+## Rounds 3–19 (summary — appended in the R3-FINAL rework, 2026-11-10; rounds 1–2 above untouched)
+
+After round 2, each round reviewed one FIX-P0 fix and (except R3 and R19)
+found a new P0 family, which the next fix closed. Round 19 is the first
+PASS since round 3. All 19 review files are hashed in
+`RELEASE_MANIFEST.json` (`inputs.t013_review_r*`); SHA-256 prefixes below
+are from the R3 manifest (R4 manifest carries the same values).
+
+| Round | Verdict | Candidate (code) commit | Review file SHA-256 (prefix) | Headline |
+|---|---|---|---|---|
+| R3 | PASS — P0 0 / P1 0 / P2 3 | `2d73c1c` | `1e55294d0417` | Final-review R1 P1-1 (duplicate-key Oracle) and P1-2 (source.zip missing freeze script) both CLOSED; new P2-R3-1 (`True:` vs `true:` residual), P2-R3-2 (manifest recorded R2 only), P2-R3-3 (clean-dir freeze by design) |
+| R4 | NOT PASS — P0 1 / P1 0 / P2 6 | `53fa36a` (FIX-P0-02) | `3be14a499e61` | R2 P0 (`True:` vs `true:`) fixed and fixture-locked (T6-20 / dup-bool-true / G-84); new grouped P0: 13 numeric-scalar + 9 event-name divergences (22 cases) |
+| R5 | NOT PASS — P0 1 / P1 0 / P2 7 | `2388be1` (FIX-P0-03) | `5e8f8f0b151b` | Reviewed FIX-P0-03 (Oracle scalar rendering per YAML 1.2 core); new P0 1 — see `INDEPENDENT_REVIEW_R5.md` |
+| R6 | NOT PASS — P0 1 / P1 0 / P2 8 | `baf881f` (FIX-P0-06) | `f4ced18a671e` | Reviewed FIX-P0-06 (N5 set alias keys + H6 tab); new P0 1 — see `INDEPENDENT_REVIEW_R6.md` |
+| R7 | NOT PASS — P0 1 / P1 0 / P2 8 | `b6e2f2b` (FIX-P0-07) | `484a8cc7ea0c` | Reviewed FIX-P0-07 (inline plain scalar in-progress quote tab); new P0 1 — see `INDEPENDENT_REVIEW_R7.md` |
+| R8 | NOT PASS — P0 1 / P1 0 / P2 8 | `c157f41` (FIX-P0-08) | `fabb3aa739cb` | Reviewed FIX-P0-08 (Oracle rejects unindented multi-line quoted scalar continuations); new P0 1 — see `INDEPENDENT_REVIEW_R8.md` |
+| R9 | NOT PASS — P0 1 / P1 0 / P2 9 | `a8ca5ec` (FIX-P0-09) | `d1f91c6dd3ed` | Reviewed FIX-P0-09 (TS rejects multi-line quoted keys in flow mappings); new P0 1 — see `INDEPENDENT_REVIEW_R9.md` |
+| R10 | NOT PASS — P0 1 / P1 0 / P2 10 | `8ef847b` (FIX-P0-10) | `e159387e60d9` | Reviewed FIX-P0-10 (Oracle rejects indent-0 flow continuations); new P0 1 — see `INDEPENDENT_REVIEW_R10.md` |
+| R11 | NOT PASS — P0 2 / P1 0 / P2 8 | `479810e` (FIX-P0-11) | `1cc23c974281` | Reviewed FIX-P0-11 (Oracle rejects indent-0 standalone comment lines in flow mappings); new P0 2 — see `INDEPENDENT_REVIEW_R11.md` |
+| R12 | NOT PASS — P0 3 / P1 0 / P2 9 | `309b2ee8f5a92eb1b1f85850bed93cedd6832e1b` (FIX-P0-12) | `d28e8a349dd1` | Reviewed FIX-P0-12 (TS rejects anchor/tag without space; S1 narrowed to keys with `:`); new P0 3 — see `INDEPENDENT_REVIEW_R12.md` |
+| R13 | NOT PASS — P0 1 / P1 0 / P2 9 | `01509e0c245b28c241b6e38d20782ee479e56fc6` (FIX-P0-13) | `4206873e3a0e` | Reviewed FIX-P0-13 (closes R12 P0-C1 `,`-suffix, P0-C2 `[`/`]`-suffix, P0-C3 anchored empty key); new P0 1 — see `INDEPENDENT_REVIEW_R13.md` |
+| R14 | NOT PASS — P0 5 / P1 0 / P2 8 | `45487eb` (FIX-P0-14) | `3814dc3e5e47` | Reviewed FIX-P0-14 (closes R13 lone-doc P0); new P0 5 — see `INDEPENDENT_REVIEW_R14.md` |
+| R15 | NOT PASS — P0 3 / P1 0 / P2 9 | `5e3cda7` (FIX-P0-15) | `74ef2e5ded0a` | Reviewed FIX-P0-15 (closes R14's 5 P0 families); new P0 3 — see `INDEPENDENT_REVIEW_R15.md` |
+| R16 | NOT PASS — P0 2 / P1 0 / P2 9 | `6821ed0` (FIX-P0-16) | `8a969fbec1e2` | Reviewed FIX-P0-16 (closes R15's 3 P0 families); new P0 2 — see `INDEPENDENT_REVIEW_R16.md` |
+| R17 | NOT PASS — P0 1 / P1 0 / P2 8 | `50788a7` (FIX-P0-17) | `34d42f18ca4e` | Reviewed FIX-P0-17 (closes R16's 2 P0 families; Oracle `parser.py` +320/−12, `src/` 0 changes); new P0 1 (flow-mapping alias-key family) — see `INDEPENDENT_REVIEW_R17.md` |
+| R18 | NOT PASS — P0 1 / P1 0 / P2 8 | `55bd04a` (FIX-P0-18) | `bc42eede06cf` | Reviewed FIX-P0-18 (absorbed-colon position rule extended from `AnchorToken` to `(AnchorToken, AliasToken)`); new P0 1 — the flow-mapping null-value alias-key family (8 shapes, 20 DIFFs) — see `INDEPENDENT_REVIEW_R18.md` |
+| R19 | PASS — P0 0 / P1 0 / P2 8 | `9dac3e1` (FIX-P0-19) | `c6ec2c2415ba` | R18 P0 family CLOSED (50/50, 22/22, 10/10, 79/79, 70/70); self-hunt 60/60, 0 new divergence; full acceptance green; 4,102 checks, 0 DIFF (see Round 19 deliverables below) |
+
+### Round 19 (PASS — P0 0 / P1 0 / P2 8; R18 P0 family closed)
+
+| # | File | Contents |
+|---|---|---|
+| 1 | `evidence/review/INDEPENDENT_REVIEW_R19.md` | Full review report: R18 family re-verification (§1), self-hunt probe 60/60 (§2), parser-layer reproduction (§3), boundary verification (§4), P2 list (§5), manifest hash check — trial manifest `89ff8504…` reproduced ×3 (§6, §9), shortcut check (§7), full acceptance re-run + 4,102-check probe-matrix re-runs (§8), command log (§10) |
+| 2 | `evidence/review/REVIEW_PACK_03.md` | Live-probe evidence pack (compiled in the R3-FINAL rework from the R19 report and its committed probe files — no new numbers): R18 family re-verification, self-hunt 60/60 table, parser-layer table, boundary table, trial-freeze triple-hash table, full acceptance + matrix re-run tables |
+| 3 | `evidence/review/COVERAGE_MATRIX_R19.csv` | Source coverage matrix at `9dac3e1`: 62 files under `src/` + `oracle/` + `scripts/` (20,481 lines) + 37 new FIX-P0-19 test/fixture rows (35 fixtures + `expected.json` + 1 test file) = 99 rows, 0 NOT_READ. `src/core/workflow-parser.ts` is READ-R19 (+127/−1, `hasDuplicateAliasKey`) — this supersedes the stale `COVERAGE_MATRIX_R2.csv` flag "Unchanged since R1" for that file (R2's flag predates FIX-P0-19). 54 files unchanged since the R2 candidate `857e670` carry their R2 coverage forward (verified byte-identical); the other 8 carry the round that last changed them (R3/R5/R9/R10/R18/R19, noted per row) |
+| 4 | `evidence/review/REVIEW_SHA256SUMS_R19.txt` | SHA-256 sums of the round-19 review deliverables (this index included) |
+| 5 | `evidence/probes/r19/` | R19 probe evidence (committed with the R19 report as `9fd0233`): `cases.json`, `gen-cases.py`, `r19-probe.py`, `results.json`, `parser-probe-p19-r19.txt` / `parser-probe-p19b-r19.txt`, `reruns/`, README |
+
+## Headline findings (rounds 3–19)
+
+- **R3 PASS** closed both final-review R1 P1 blockers; its three new P2s
+  were all non-blocking. P2-R3-1 (`True:` vs `true:`) was later closed by
+  FIX-P0-02 and verified by R4 §1 (both sides INVALID / `yaml_parse_error`,
+  fixture-locked T6-20 / dup-bool-true / G-84) — the R4 manifest records it
+  RESOLVED (see `release/RELEASE_NOTES_R3.md`, "R3-FINAL correction").
+  P2-R3-2 was fixed by the R2 re-freeze manifest; P2-R3-3 stands (by design).
+- **R4–R18 (all NOT PASS)** form one fix-and-review loop: each round found
+  exactly one new P0 family (R11: 2, R12: 3, R14: 5), each closed by the
+  next FIX-P0 fix and re-verified by the following round. No round ever
+  raised a P1. The loop's last family (R18: flow-mapping alias keys
+  resolving to duplicate scalars, 8 shapes) was closed by FIX-P0-19.
+- **R19 PASS** (the verdict the R3 re-freeze is built on): R18 family
+  closed on all five probe sets; self-hunt 60/60 with 0 new divergence;
+  `npm test` 1697/1697, `test:oracle` 167/167, `s0:gate` PASS
+  (`f511a847…`), `release:verify` PASS; trial manifest `89ff8504…`
+  reproduced three times in a clean clone.
+- **P2s carried into R19 (8, all non-blocking):** P2-R3-3, P2-R2-3, Windows
+  PowerShell Quick Start NOT_TESTED, USER_VALUE no human data,
+  one-generation lag, manifest `freeze_commit` PENDING by design,
+  P2-R6-1 (fixed by the R3 re-freeze — manifest now records R4–R19),
+  P2-R6-2 (partially mitigated: R7/R8 probes lost, R9–R19 archived).
+- Acceptance commands (round 19): all pass — typecheck, test 1697/1697,
+  test:oracle 167/167 (TS formal false PASS 0), oracle:diff 128/48/46/44,
+  s0:oracle 24/24, s0:gate PASS 100 runs 1 hash, release:verify PASS,
+  build-golden 167 cases.
+COVERAGE_MATRIX_R19.csv（99 行，62 个 src/oracle/scripts 文件 20,481 行 + 37 个 FIX-P0-19 新增测试/夹具行；workflow-parser.ts 为 READ-R19，+127/−1，取代 R2 矩阵的 stale 标记；54 个文件自 R2 候选提交以来未变、覆盖沿用且逐字节一致）与 REVIEW_SHA256SUMS_R19.txt 全文在 Drive `02_evidence/review` 及 R4 source.zip 内（矩阵 SHA-256 `5d64c4d1e197947ab6ea0c86b25e245a8df266bd6732282f414c342e8152d212`；sums 文件 SHA-256 `586566e01aa603e6f3ee49b9e911f15362509fb5b9558acaaeeae97fe2597b76`；更新后 REVIEW_INDEX.md SHA-256 `53efc19f0d5fb10b6edf292077c57d21096e849f009b6d3b8df6b328021b9888`）。
+
+## §9 REVIEW_PACK_03.md 全文（T013 R19 轮次审查证据包，R3-FINAL 编写整理，引用的数字全部来自 R19 报告原文与已入库探针文件，无新增数字）
+
+# REVIEW_PACK_03 — Live-probe evidence for T013 round 19 (R18 P0 family re-verification)
+
+Project: P020 CheckPath. Reviewer: T013 independent reviewer (round 19).
+Candidate commit: `9dac3e1` (FIX-P0-19, HEAD verified in a clean clone
+`~/workspace/p020-r19-review`). Review window: 2026-11-09 ~23:30 GMT →
+2026-11-10 ~00:11 GMT. All probes use synthetic fixtures only, no network,
+no token. This pack was compiled in the R3-FINAL rework (2026-11-10) from
+`evidence/review/INDEPENDENT_REVIEW_R19.md` (the round-19 report itself,
+committed as `9fd0233`) and the probe evidence it cites — no number below
+is new; every figure is quoted from that report and its committed probe
+files (`evidence/probes/r19/`).
+
+## 1. R18's P0 family — CLOSED (independently re-verified)
+
+R18定级 the 1 P0 family (8 shapes, 16 checks; 20 DIFFs across probe sets).
+R19 re-ran each probe set against the FIX-P0-19 code:
+
+| Probe | Result |
+|---|---|
+| R18 hunt probe (`evidence/probes/r18/`, 50 checks) | **50/50 MATCH** (was 44/50; 6 DIFFs now 0) |
+| R18 adjudication probe (22 checks) | **22/22 MATCH** (was 12/22; 10 DIFFs now 0) |
+| R18 adjudication-2 probe (10 checks) | **10/10 MATCH** (was 8/10; 2 DIFFs now 0) |
+| fix-p0-18 grid (79 checks) | **79/79 MATCH** (was 77/79; the only 2 DIFFs `c-flow-key-null-2nd` ×2 now 0) |
+| fix-p0-19 grid (35 shapes, 70 checks) | **70/70 MATCH** (A group 16/16, B group 18/18, C group 36/36) |
+
+The 8 family shapes, each independently rebuilt in the hunt, adjudication
+and fix-p0-19-grid probes and confirmed double-sided INVALID /
+`yaml_parse_error`: `{a: 1, *w:2}`, `{a: 1, *w}`, `{*w, a: 1}`,
+`{*w, *w}`, nested flow `{x: {a: 1, *w:2}}`, `{*w:2, a: 1}`,
+`{a: 1, *w:2:3}`, `{a: 1, *w:2} # c`. The R17 9-shape family did not
+regress (R17 probe 141/141, see §6).
+
+The fix (from the R19 report §7, verified by `git diff e2c418f..9dac3e1`):
+`src/` diff = only `src/core/workflow-parser.ts` (+127/−1, new
+`hasDuplicateAliasKey`) and `src/core/e2e.ts` (+7/−2, wiring);
+`oracle/` / `scripts/` / `release/` diff = empty; 0 tests deleted; no new
+`skip` / `only` weakening (the single `it.skip` hit is pre-existing
+FIX-P0-09-era code, `git blame` commit `d9611356`); `deepDiff` untouched
+(0 hits); Oracle side 0 changes.
+
+## 2. R19 self-hunt probe — no new divergence (60 checks, 0 DIFF)
+
+Self-written hunt probe, 30 shapes / 60 checks
+(`evidence/probes/r19/r19-probe.py`, reusing the R18 driver: esbuild-bundled
+TS probe + Oracle double driver, full-JSON deep comparison; trigger mode
+compares the full TriggerIR, jobs mode the full job list). **60/60 MATCH.**
+
+| Group | Shapes | Result |
+|---|---|---|
+| Explicit `?` keys (H1–H4) | flow `{? *w, a: 1}`, `{? *w: 1, a: 1}`; block `? *w` + `a: 1` (null / `: 1`) | **8/8 MATCH** (all double-sided INVALID; block explicit keys also rejected) |
+| Cross-mapping non-duplicates (H5, H19, H24) | alias key alone in an inner mapping; same alias key in two mappings; duplicate candidate only in the outer mapping | **6/6 MATCH** (all double-sided VALID; per-mapping `seen` lists cause no cross-mapping false positives) |
+| Two flow mappings in a sequence (H6) | `[{a: 1, *w}, {a: 1, *w}]` | **2/2 MATCH** (double-sided INVALID; each mapping judged independently) |
+| Triple colon (H7–H8) | `{a: 1, *w:2:3:4}`, `{*w:2:3:4, a: 1}` | **4/4 MATCH** (double-sided INVALID) |
+| Canonical folding (H9–H12, H16, H22, H26–H29) | `.inf` duplicates / `.inf` vs `-.inf`, `0` vs `false` / `false` vs `0`, quoted `'a'`, `'1'` vs `1` / `1` vs `'1'`, `True` vs `1`, `~` vs `null`, `.nan` | **20/20 MATCH** (duplicate shapes double-sided INVALID; non-duplicates double-sided VALID) |
+| Duplicates inside `on:` / `jobs:` (H13–H15, H25) | `on: {push: {}, *w}`, `on: {*w, pull_request: {}}`, `jobs: {check: {...}, *w}`, `on: {push: {branches: [main]}, *w}` | **8/8 MATCH** (duplicate shapes double-sided INVALID; H15 covers the `extractJobs` chain, jobs-mode job lists double-sided identical and empty) |
+| Anchor defined later (H17) | same flow mapping `m: {*w, &w a: 1}` | **2/2 MATCH** (double-sided INVALID; different mechanisms, same conclusion — Oracle reports undefined alias, TS rejects under the new rule) |
+| Two anchors, same value (H18) | `m: {*w, *v, b: 1}` (`&w a`, `&v a`) | **2/2 MATCH** (double-sided INVALID; alias–alias collisions also rejected) |
+| Nested values / deep nesting (H20, H21, H30) | `{a: {x: 1}, *w}`, `{n: [{a: 1, *w}]}`, step `env: {a: 1, *w}` | **6/6 MATCH** (all double-sided INVALID; recursion reaches them) |
+| Comment inside flow (H23) | `{a: 1, *w # c\n}` | **2/2 MATCH** (double-sided INVALID) |
+
+Conclusion (R19 §2): the new rule fires only on "a valid key collision
+where at least one side is an alias key"; all negative controls
+(H5, H10, H11, H12, H14, H19, H22, H24, H26–H28) are double-sided VALID
+— no false positives. The `!` guard fix did not regress (R17 probe H1
+group 18/18 MATCH, see §6).
+
+## 3. Parser-layer reproduction (fix report's probes, re-run)
+
+R19 re-ran the fix session's parser-layer probes (outputs committed as
+`evidence/probes/r19/parser-probe-p19-r19.txt` /
+`parser-probe-p19b-r19.txt`); every row agrees with FIX-P0-19 report §3:
+
+| Shape group | PyYAML `_StrictBaseLoader` | `yaml` 2.9.1 | End-to-end (§1, §2) |
+|---|---|---|---|
+| F1–F8 (8 family shapes) | all LOAD-ERROR `duplicate mapping key: 'a'` | all 0 errors, accepted (new rule off) | all double-sided INVALID |
+| B1–B2 valued alias keys | LOAD-ERROR duplicate | parse() THROW (colon ambiguity) | double-sided INVALID, unchanged |
+| B3 block-mapping alias keys | LOAD-ERROR / SCAN-ERROR | parse() THROW | double-sided INVALID, unchanged |
+| B4–B6 (different scalar / alone / as value) | LOAD-OK | 0 errors | double-sided VALID, unchanged |
+| B7 pure-scalar duplicate keys | LOAD-ERROR duplicate | parse() THROW `Map keys must be unique` | double-sided INVALID, unchanged |
+| B8/B10 block null alias keys | SCAN-ERROR `while scanning a simple key` | parse() THROW | double-sided INVALID, unchanged |
+| B11–B18 canonical folding | B11/B13/B15/B16 duplicate; B12/B14/B17/B18 LOAD-OK | Alias resolves to the corresponding Scalar; `1` vs `'1'`, `True` vs `1`, `!!str 1` vs `1`, `NaN` all `!==` | agrees with §2 H9–H12, H16, H22, H26–H29 end-to-end |
+| B19–B22 (spread pairs / sequences in flow / `on:` / anchor defined in same flow) | LOAD-ERROR duplicate (B21: `'push'`) | corresponding Alias resolve | double-sided INVALID, unchanged |
+
+Note (R19 §3): the `.nan` shape prints as `Scalar(null)` in the `.mjs`
+output — a `JSON.stringify(NaN) === "null"` artefact; the fix report
+verified separately that both sides hold number NaN, and end-to-end H22
+(double-sided VALID) corroborates it. The first `parser-probe-p19.mjs`
+draft's B11–B18/B21/B25 design flaw (anchor definition on a bare line
+start) was disclosed in fix report §3 and corrected in `p19b`; R19
+re-ran the corrected version.
+
+## 4. Boundary verification (fix report §3/§4 control shapes, re-checked)
+
+| Shape family | Expected | Result |
+|---|---|---|
+| Valued alias keys `{*w: 1, a: 1}`, `{*w: 1, *w: 2}` | MATCH (double-sided INVALID, unchanged) | **MATCH** (fix-p0-19 grid B group + R18 adjudication对照) |
+| Block-mapping alias keys (valued/null, `*w` / `*w:2`) | MATCH (double-sided INVALID, unchanged) | **MATCH** (grid B group; H3–H4 explicit-key supplement) |
+| D2 `on: {*a: 1}` (valued flow alias key) | MATCH (closed, unchanged) | **MATCH** (fix-p0-04 matrix 100/100, 0 flagged) |
+| Pure-scalar duplicate keys `{a: 1, a: 2}` | MATCH (double-sided INVALID, unchanged) | **MATCH** (grid B group; `parse()` `uniqueKeys` owns it) |
+| Alias key after a different scalar `{b: 2, *w}`, alias alone `{*w}`, alias as value `b: *w` | MATCH (double-sided VALID, unchanged) | **MATCH** (grid B group; H5, H19, H24 cross-mapping negative controls) |
+| Canonical folding, 8 shapes (int/bool/null/quoted/tagged/NaN) | MATCH | **MATCH** (grid C group + H9–H12, H16, H22, H26–H29) |
+| Alias key twice spread, sequences in flow, flow `on:`, anchor defined in same flow, deep nesting, two anchors same value, flow `jobs:`, forward reference, alias to collection, chained alias | MATCH | **MATCH** (grid C group; H6, H13, H15, H18, H21, H30 supplements) |
+| Non-duplicate alias keys, different-anchor alias keys, nested/explicit-key shapes (new this round) | MATCH | **MATCH** (§2 groups) |
+
+Conclusion (R19 §4): the new rule's trigger boundary matches the Oracle's
+`_duplicate_key_canonical` folding; no false positives or misses found.
+
+## 5. Trial-freeze triple-hash reproduction (clean clone, `--trial`, ×3)
+
+Three `npm run release:freeze -- --trial` runs at `9dac3e1` in the clean
+clone `~/workspace/p020-r19-review`; all three hashes identical every time:
+
+| Artifact | SHA-256 | Note |
+|---|---|---|
+| source.zip | `3c059bc351b5204f90ae6ea521a4941c2a0d02c2a140b612304912af8731be91` (2,693 files) | identical to the fix report's value; differs from R18's `1b527601…` (2,597 files) as expected (`src/` change + new evidence/fixtures) |
+| dist.zip | `b8e2aa77074cd2f62a518c1c7969cfdaa7cff202c6d87239080c3dfe2c6d335c` (114 files) | identical to the fix report's value; changed from FIX-P0-18's `f2bcd53f…` as expected after the `src/` change |
+| RELEASE_MANIFEST.json | `89ff8504cc24aeb467bc2a4a714cd5b46a39311d68f90feb2c9079e3bcffecf6` | **identical to the fix report §6 value, reproduced three times** |
+
+`sha256sum -c SHA256SUMS.txt` 3/3 OK (verified in `release/` on the third
+trial run; the first two runs' checks were executed in the wrong working
+directory and are not counted). After the trials the clone's `release/`
+was restored with `git checkout release/` (HEAD formal artifacts:
+source.zip `3a778b93…`, dist.zip `da130ad2…`).
+
+## 6. Full acceptance re-run (clean clone, HEAD `9dac3e1`)
+
+| Command | Result |
+|---|---|
+| `npm run typecheck` | **PASS** (`tsc --noEmit`, exit 0) |
+| `npm test` | **1697/1697** (53 test files; baseline 1661 + 36 new) |
+| `npm run test:oracle` | 167/167, 0 mismatch, 0 false PASS; unsupported 34/34 UNKNOWN |
+| `npm run oracle:diff:trigger` | 128 fixtures, 0 mismatch |
+| `npm run oracle:diff:jobs` | 48 fixtures, 0 mismatch |
+| `npm run oracle:diff:checks` | 46 fixtures, 0 mismatch |
+| `npm run oracle:diff:witness` | 44 fixtures, 0 mismatch |
+| `npm run s0:oracle` | 0 mismatch, 0 false PASS, 2/2 UNKNOWN |
+| `npm run s0:gate` | **PASS**; oracle 24/24; 100 runs, 1 unique hash (gate hash differs from the committed `f511a847…` only in `environment_fingerprint` — different clone path; all other fields identical, including `input_fixture_sha256`, all conditions true, determinism 100/1, unsupported 2/2; same phenomenon as R4–R18, not a regression) |
+| `npm run release:verify` | **PASS**; license guard: no LICENSE file, `LICENSE_STATUS.md` still `PENDING_SAM_DECISION` |
+| `npx eslint src/core/workflow-parser.ts src/core/e2e.ts tests/unit/diff-boundaries/duplicate-alias-key-p0-19.test.ts` | exit 0, no warnings |
+| `python3 scripts/build-golden.py --check-only` | golden cases 167, exit 0 |
+
+**Probe-matrix re-runs (clean clone, in-repo runners, full JSON deep equality):**
+
+| Matrix / probe | Result |
+|---|---|
+| fix-p0-04 | **100/100 MATCH** (first 66 rows, R5 subset: 66/66) |
+| fix-p0-05 | **76/76 MATCH** |
+| fix-p0-06 | **134/134 MATCH** |
+| fix-p0-07 | **86/86 MATCH** |
+| fix-p0-08 | **164/164 MATCH** |
+| fix-p0-09 | **98/98 MATCH** |
+| fix-p0-10 | **314/314 MATCH** |
+| fix-p0-11 | **248/248 MATCH** (0 flagged) |
+| fix-p0-12 | **486/486 MATCH** (0 flagged) |
+| fix-p0-13 | **196/196 MATCH** (0 flagged) |
+| fix-p0-14 | **114/114 MATCH** (0 flagged) |
+| fix-p0-15 | **260/260 MATCH** (0 flagged) |
+| R10 probe | **88/88 MATCH** |
+| R11 probe | **74/74 MATCH** |
+| R12 probe | **118/118 MATCH** |
+| R13 probe | **98/98 MATCH** |
+| R14 probe | **78/78 MATCH** (22 FLAG STALE checks = 11 rows, expected at the time) |
+| R15 probe | **122/122 MATCH** (24 FLAG STALE, expected at the time) |
+| R16 probe | **362/362 MATCH** |
+| R17 probe | **141/141 MATCH** |
+| R18 hunt probe | **50/50 MATCH** |
+| R18 adjudication probe | **22/22 MATCH** |
+| R18 adjudication-2 probe | **10/10 MATCH** |
+| fix-p0-16 grid | **238/238 MATCH** (119 shapes) |
+| fix-p0-17 grid | **216/216 MATCH** (108 shapes) |
+| fix-p0-18 grid | **79/79 MATCH** |
+| fix-p0-19 grid | **70/70 MATCH** (35 shapes; A 16/16, B 18/18, C 36/36) |
+| R19 self-hunt probe | **60/60 MATCH** (0 DIFF, §2) |
+
+**Total: 4,102 checks** (twelve matrices 2,276 + R10–R17 probes 1,081 +
+fix-p0-16/17 grids 454 + fix-p0-18/19 grids 149 + R18 three probe sets 82 +
+R19 hunt probe 60; matrices and probes overlap in shapes, so the total is
+a check count, not a de-duplicated shape count), **0 DIFF**.
+
+## 7. Verdict on R19 (re-verification)
+
+**PASS — P0 0 / P1 0 / P2 8.** The R18 P0 family is closed (all five probe
+sets re-run green, §1); the self-hunt probe found no new divergence (§2);
+the parser-layer reproduction and boundary checks agree with the fix
+report (§3, §4); the trial manifest hash reproduces three times (§5);
+the full acceptance battery passes (§6). The 8 P2s from R19 §5 are all
+non-blocking and unchanged from R18 (P2-R3-3, P2-R2-3, Windows PowerShell
+Quick Start NOT_TESTED, USER_VALUE no human data, one-generation lag,
+manifest `freeze_commit` PENDING by design, P2-R6-1, P2-R6-2).
+
+**R3-FINAL addendum (2026-11-10, recorded after R19, not part of the R19
+review):** P2-R6-1 (manifest `inputs` recorded T013 reviews only to R3)
+was FIXED by the T014 R3 formal re-freeze — the R3 manifest
+(`f4ba7a17…`) records `t013_review_r4`…`t013_review_r19`. P2-R3-1
+(`True:` vs `true:` residual) was already closed before R19 by FIX-P0-02
+and verified by T013 R4 §1; the R4 manifest records it RESOLVED (see
+`release/RELEASE_NOTES_R3.md`, "R3-FINAL correction"). The R19 report's
+own §5 list is preserved verbatim above as the historical record; the
+addendum states the post-R19 status only.
+
+## 8. Method note
+
+Probes were run against the clean clone at the candidate commit
+(`git clone` + `git checkout 9dac3e1`, `npm ci`); no work was done in the
+main repository's working tree during the review (the R4 contamination
+lesson). Probe artefacts are committed in `evidence/probes/r19/`
+(`cases.json`, `gen-cases.py`, `r19-probe.py`, `results.json`,
+`parser-probe-p19-r19.txt` / `parser-probe-p19b-r19.txt`, `reruns/`,
+README) — not left in `/tmp` (the P2-R6-2 lesson). The fix report
+commit `3991856` contains report text only and was not in the code
+review scope; all figures in this pack were independently re-run by the
+R19 reviewer and are quoted here from `INDEPENDENT_REVIEW_R19.md`.
+
+## §10 验收日志（R3-FINAL 源提交 `2ddc2ad` 上亲自重跑，全部 exit 0；完整日志在 Drive `02_evidence/logs`，13 个 P020-T014-R4_ 文件）
+
+| 命令 | Exit | 结果 |
+|---|---|---|
+| `npm run typecheck` | 0 | clean |
+| `npm run lint` | 0 | clean |
+| `npm test` | 0 | 1697/1697（53 文件） |
+| `npm run test:oracle` | 0 | 167/167，0 mismatch，0 false PASS，unsupported UNKNOWN 34/34 |
+| `npm run s0:gate` | 0 | PASS；oracle 24/24；100 次运行 1 个唯一哈希；`gate_report_sha256 f511a847…` 不变（同一工作区路径下；该自哈希含工作区路径指纹，异路径 clone 重跑时自哈希不同、实质结果相同——独立复核已证明，见 §11） |
+| `npm run release:verify` | 0 | PASS（5/5 步） |
+| `python3 evidence/probes/r14/r14-probe.py` | 0 | 78/78 MATCH，0 DIFF，0 stale flag |
+| `python3 evidence/probes/r15/r15-probe.py` | 0 | 122/122 MATCH，0 DIFF，0 stale flag |
+| `npm run release:freeze -- --trial`（×2） | 0 | 两次哈希完全一致：source `ab23e4a7…`（2,734）、dist `b8e2aa77…`（114）、manifest `231047b0…`（TRIAL 文案） |
+| `npm run release:freeze`（正式） | 0 | source `ab23e4a7…`、dist `b8e2aa77…`、manifest `2076f087…` |
+| `sha256sum -c SHA256SUMS.txt`（在 `release/` 内） | 0 | 3/3 OK |
+
+### typecheck (`handoff/P020-T014-R4/test_logs/P020-T014-R4_typecheck.log`, 尾部 3 行)
+
+```
+> checkpath@0.0.0-t001-skeleton typecheck
+> tsc --noEmit
+
+```
+
+### lint (`handoff/P020-T014-R4/test_logs/P020-T014-R4_lint.log`, 尾部 3 行)
+
+```
+> checkpath@0.0.0-t001-skeleton lint
+> eslint src tests scripts
+
+```
+
+### test (`handoff/P020-T014-R4/test_logs/P020-T014-R4_test.log`, 尾部 8 行)
+
+```
+[2m Test Files [22m [1m[32m53 passed[39m[22m[90m (53)[39m
+[2m      Tests [22m [1m[32m1697 passed[39m[22m[90m (1697)[39m
+[2m   Start at [22m 02:14:28
+[2m   Duration [22m 78.43s[2m (tests 92%, import 7%, transform 1%)[22m
+
+[2m    Isolate [22m [33m53 workers spawned[39m[2m · ~504ms startup each (spawn + environment, per file)[22m
+[2m            [22m [2mat least ~8.39s faster with [22m[33misolate: false[39m[2m — reuses workers across files instead of one per file[22m
+
+```
+
+### test:oracle (`handoff/P020-T014-R4/test_logs/P020-T014-R4_test-oracle.log`, 尾部 8 行)
+
+```
+
+suite: tests/fixtures/golden/suite.json
+fixtures: 167, TS==expected exit=0, Oracle==expected exit=0, formal TS exit=0
+TS vs Oracle mismatches: 0
+false PASS: 0
+TS formal-pipeline false PASS: 0
+unsupported surfaced as UNKNOWN: 34/34 fixtures
+report: evidence/tests/ORACLE_PARITY_REPORT.json
+```
+
+### s0:gate (`handoff/P020-T014-R4/test_logs/P020-T014-R4_s0-gate.log`, 尾部 10 行)
+
+```
+gate: static network check: 0 matches
+gate: expanded static network check: 46 files, 0 matches
+gate: network table-confinement scripts/oracle-diff.mjs: 3 matches, 0 unexplained
+gate: network table-confinement scripts/release-verify.mjs: 9 matches, 0 unexplained
+gate: status=PASS
+gate: oracle 24/24, mismatches=0, false PASS=0, TS formal false PASS=0
+gate: determinism 100 runs, 1 unique hash(es)
+gate: network matches=0
+gate: gate_report_sha256=f511a84709a6ebf64af94cb788ad3e15cef85af5862b5334fca4288b6ff38386
+gate: report=evidence/S0_GATE.json
+```
+
+### release:verify (`handoff/P020-T014-R4/test_logs/P020-T014-R4_release-verify.log`, 尾部 14 行)
+
+```
+  PASS analyze U-07 matrix job: exit 2 (expected 2) — exit 2, job test UNKNOWN/unsupported_matrix, check UNKNOWN/provider_unknown
+  PASS analyze U-08 reusable-workflow job: exit 2 (expected 2) — exit 2, job call-reusable UNKNOWN/unsupported_reusable_workflow, check UNKNOWN/provider_unknown
+  PASS analyze T8-05 duplicate-context manifest: exit 2 (expected 2) — exit 2, job test ELIGIBLE/eligible, checks [["unit-tests","REPORTABLE_PENDING","provider_reportable"],["unit-tests","UNKNOWN","external_source"],["ghost","UNKNOWN","external_source"],["lint","PENDING_NOT_REPORTED","no_provider"],["unit-tests","UNKNOWN","external_source"]]
+  PASS cli smoke: demo 2 / analyze docs-only 2 / analyze src-only 0 / matrix 2 / analyze U-07 matrix 2 (job UNKNOWN/unsupported_matrix, check UNKNOWN/provider_unknown) / analyze U-08 reusable 2 (job UNKNOWN/unsupported_reusable_workflow, check UNKNOWN/provider_unknown) / analyze T8-05 duplicate-context manifest 2 (five per-entry check rows)
+[3/5] report_sha256 recomputation (shipped dist modules)
+  PASS report_sha256 recompute: pr-docs-only 9dc3af313677f795… == demo report, both recompute OK
+[4/5] offline static scan (dist + generated reports)
+  note: dist/assets/index-XyZd31iV.js: 20x bare URL string(s), e.g. https://react.dev/errors/, http://www.w3.org/2000/svg, http://www.w3.org/1998/Math/MathML, http://www.w3.org/1999/xlink, http://www.w3.org/XML/1998/namespace — string constant, not a fetched resource
+  note: dist/assets/index-XyZd31iV.js: contains fetch( from Vite's modulepreload polyfill; it only fetches in-document <link rel="modulepreload"> entries, and dist/index.html contains none — no request is issued
+  note: dist/report/html.js: 2x bare URL string(s), e.g. http://`,, https://`, — string constant, not a fetched resource
+  PASS offline static scan: 34 files scanned, 0 remote resource references
+[5/5] license guard
+  PASS license guard: no LICENSE file; LICENSE_STATUS.md still PENDING_SAM_DECISION
+release:verify PASS
+```
+
+### r14 (`handoff/P020-T014-R4/test_logs/P020-T014-R4_r14.log`, 尾部 4 行)
+
+```
+R14 probe: 78/78 MATCH, 0 DIFF
+```
+
+### r15 (`handoff/P020-T014-R4/test_logs/P020-T014-R4_r15.log`, 尾部 4 行)
+
+```
+R15 probe: 122/122 MATCH, 0 DIFF
+```
+
+### trial1 (`handoff/P020-T014-R4/test_logs/P020-T014-R4_release-freeze-trial1.log`, 尾部 12 行)
+
+```
+HEAD commit: 2ddc2ad0a7afd34bc2d5fe989f7d2e2bdb4e0b98 (descendant of reviewed candidate 933dd35; recorded as source_commit)
+build inputs clean vs HEAD
+freezer script tracked at HEAD; included from HEAD tree
+source tree: 2734 files (2734 tracked at HEAD)
+running npm run build ...
+dist tree: 29 files
+vendored runtime dependency: yaml 2.9.1 (76 files: package.json + LICENSE + 74 dist/*.js)
+dist.zip entries: 114 (29 built + 76 vendored yaml + 6 examples + 2 docs + QUICKSTART.md)
+source.zip: ab23e4a70bef6e462e47875ccbecce4d3a6167a4d9cd3a3b204d9cd0e39a41ba (2734 files)
+dist.zip:   b8e2aa77074cd2f62a518c1c7969cfdaa7cff202c6d87239080c3dfe2c6d335c (114 files)
+RELEASE_MANIFEST.json: 231047b0e4327ee1c6d3032bda39d739bc4aead22ce11813c2d18ea24a33ba8b
+freeze OK
+```
+
+### formal (`handoff/P020-T014-R4/test_logs/P020-T014-R4_release-freeze-formal.log`, 尾部 12 行)
+
+```
+HEAD commit: 2ddc2ad0a7afd34bc2d5fe989f7d2e2bdb4e0b98 (descendant of reviewed candidate 933dd35; recorded as source_commit)
+build inputs clean vs HEAD
+freezer script tracked at HEAD; included from HEAD tree
+source tree: 2734 files (2734 tracked at HEAD)
+running npm run build ...
+dist tree: 29 files
+vendored runtime dependency: yaml 2.9.1 (76 files: package.json + LICENSE + 74 dist/*.js)
+dist.zip entries: 114 (29 built + 76 vendored yaml + 6 examples + 2 docs + QUICKSTART.md)
+source.zip: ab23e4a70bef6e462e47875ccbecce4d3a6167a4d9cd3a3b204d9cd0e39a41ba (2734 files)
+dist.zip:   b8e2aa77074cd2f62a518c1c7969cfdaa7cff202c6d87239080c3dfe2c6d335c (114 files)
+RELEASE_MANIFEST.json: 2076f08773c0d765140cd74936c20b70259fce7da8f87ddbdd18a60920633baa
+freeze OK
+```
+
+## §11 独立复核（R3-FINAL 返工验证，clean clone，PASS）
+
+- **复核员**：独立会话，与 T001–T014 施工者、R3-FINAL 修复员、前 19 轮 T013 复核员完全隔离；只验证，不改任何代码或文档。在全新 clean clone `~/workspace/p020-checkpath-clean-r4`（`git clone ~/workspace/p020-checkpath`，`checkout a153b94` 核对哈希，再 `checkout 2ddc2ad` 重跑验收）中验证；主仓库全程只读。
+- **裁决：PASS — P0 0 / P1 0 / P2 1**（新增 P2-1 非阻断，见下）。四项阻断全部关闭；R4 冻结哈希全部复现；R19 之后零业务代码变更；验收命令全部 exit 0。
+- **实测要点**：R4 三件套哈希全部复现（source `ab23e4a7…` 2,734 文件、dist `b8e2aa77…` 与 R3 逐字节一致、manifest `2076f087…`，`sha256sum -c` 3/3 OK）；source.zip 与 R3 的 2,728 文件逐项比对全在、新增恰 6 文件；R3 报告在包内且正文头为 `d8ffdeb`；R3 Notes 独立文件在包内；manifest `freeze_history` 闭合 R2→`03c2f16`、R3→`d8ffdeb`；`git diff 9dac3e1..2ddc2ad -- src/ oracle/` 为空；验收在 clean clone 源提交 `2ddc2ad` 上重跑全部 exit 0（typecheck、lint、`npm test` 1697/1697、`test:oracle` 167/167、s0:gate PASS、release:verify PASS、R14 78/78、R15 122/122）；试冻 ×2 复现同哈希；USER=root 误报亲自复现（exit 1、恰 5 条 FAIL，USER 为空时 OK）；Drive `01_release_R4` 9 文件 id 已逐项核对。
+- **P2-1（新增，非阻断）**：s0:gate 的 `gate_report_sha256` 含工作区路径依赖。复核员在异路径 clean clone 重跑 gate 实质全同，但自哈希为 `5d0e1c69…` 而非 `f511a847…`；已证明根因是 `environment_fingerprint` 含 `workspace=${root}`，代入原路径 `/home/hatch/workspace/p020-checkpath` 即精确复现 `f511a847…`，两份报告除指纹与自哈希外逐字段相同。gate 实质全部通过，属表述口径问题：本包 §10 表格及 §3/§4 所引冻结报告称该哈希“不变”时未注明路径前提——本行注脚与本节即为该口径修正；不值得为此再冻一次，不阻断 PASS。
+- **报告位置**：`evidence/review/INDEPENDENT_REVIEW_R4FINAL.md`（SHA-256 `86d2d8068e9b204dd88b7a7420fdd019db9f7c323d2395e9891f72898feb9e8c`，26,006 字节），已提交进仓库并上传 Drive `02_evidence/review`。本包其余各节的哈希与数字经复核员抽查（40 个不同哈希逐项核对，六个全文粘贴节逐字节比对）全部一致，无一不符。
+
+请使用谷歌云盘以及任何需要的插件，如果有了的话就算了。

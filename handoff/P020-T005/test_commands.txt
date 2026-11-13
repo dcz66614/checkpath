@@ -1,0 +1,19 @@
+# T005 test commands (all run in ~/workspace/p020-checkpath; exit 0 unless noted)
+# Full logs: test_logs/ (each <name>.log + <name>.exit with the exit code).
+
+npm run typecheck
+npm run test:schemas
+npm run test:validation
+npm test
+npm run lint
+npm run s0:oracle
+npm run s0:gate
+
+# Results (post lint-fix re-runs):
+#   typecheck       exit 0
+#   test:schemas    exit 0 — 33/33 passed (2 files)
+#   test:validation exit 0 — 44/44 passed (4 files)
+#   test            exit 0 — 124/124 passed (S0 47/47 + T005 77)
+#   lint            exit 0
+#   s0:oracle       exit 0 — 24/24 fixtures, 0 mismatches, 0 false PASS, UNKNOWN 2/2
+#   s0:gate         exit 0 — status PASS (see test_logs/s0-gate.log)

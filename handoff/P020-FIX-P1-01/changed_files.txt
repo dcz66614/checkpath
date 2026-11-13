@@ -1,0 +1,12 @@
+README.md
+scripts/release-verify.mjs
+src/core/types.ts
+src/core/validate.ts
+tests/unit/cli/formal-pipeline-unsupported.test.ts
+tests/unit/validation/required-checks.test.ts
+handoff/P020-FIX-P1-01/TASK_REPORT.md
+handoff/P020-FIX-P1-01/changed_files.txt
+handoff/P020-FIX-P1-01/test_commands.txt
+handoff/P020-FIX-P1-01/test_logs/
+handoff/P020-FIX-P1-01/sha256.txt
+handoff/P020-FIX-P1-01/unresolved_items.md

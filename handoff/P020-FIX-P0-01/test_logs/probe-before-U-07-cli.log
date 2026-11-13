@@ -1,0 +1,10 @@
+scenario: G-79
+event: pull_request/synchronize
+workflows: 1 (1 triggered)
+jobs: 1
+required checks: 1 (REPORTABLE_PENDING=1)
+witnesses: 0
+report_sha256: 11f5523cb5e2164651da5289ee7a6e34074a451aa7d10c2589e47fad05a18cbd
+json: /tmp/fix-p0-01/probe-before/U-07-matrix-job/out/report.json
+html: /tmp/fix-p0-01/probe-before/U-07-matrix-job/out/report.html
+exit code: 0

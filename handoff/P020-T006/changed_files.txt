@@ -1,0 +1,53 @@
+ M package.json
+ M src/core/event-evaluator.ts
+ M src/core/glob-subset.ts
+ M src/core/skip-annotation.ts
+ M src/core/workflow-ir.ts
+ M src/core/workflow-parser.ts
+?? evidence/tests/T006_ORACLE_TRIGGER_REPORT.json
+?? evidence/tests/T006_REPORT.md
+?? handoff/P020-T006/TASK_REPORT.md
+?? handoff/P020-T006/changed_files.txt
+?? handoff/P020-T006/sha256.txt
+?? handoff/P020-T006/test_commands.txt
+?? handoff/P020-T006/unresolved_items.md
+?? scripts/oracle-diff-trigger.mjs
+?? scripts/oracle-trigger-dump.py
+?? tests/fixtures/trigger/T6-01-push-1000-boundary/scenario.json
+?? tests/fixtures/trigger/T6-01-push-1000-boundary/workflow.yml
+?? tests/fixtures/trigger/T6-02-push-1001-always-run/scenario.json
+?? tests/fixtures/trigger/T6-02-push-1001-always-run/workflow.yml
+?? tests/fixtures/trigger/T6-03-diff-timeout-pr/scenario.json
+?? tests/fixtures/trigger/T6-03-diff-timeout-pr/workflow.yml
+?? tests/fixtures/trigger/T6-04-diff-timeout-paths-ignore/scenario.json
+?? tests/fixtures/trigger/T6-04-diff-timeout-paths-ignore/workflow.yml
+?? tests/fixtures/trigger/T6-05-first3000-confirmed-no-match/scenario.json
+?? tests/fixtures/trigger/T6-05-first3000-confirmed-no-match/workflow.yml
+?? tests/fixtures/trigger/T6-06-first3000-confirmed-match-inside/scenario.json
+?? tests/fixtures/trigger/T6-06-first3000-confirmed-match-inside/workflow.yml
+?? tests/fixtures/trigger/T6-07-commit-skip-actions/scenario.json
+?? tests/fixtures/trigger/T6-07-commit-skip-actions/workflow.yml
+?? tests/fixtures/trigger/T6-08-commit-skip-checks-space/scenario.json
+?? tests/fixtures/trigger/T6-08-commit-skip-checks-space/workflow.yml
+?? tests/fixtures/trigger/T6-09-merge-group-target-branch/scenario.json
+?? tests/fixtures/trigger/T6-09-merge-group-target-branch/workflow.yml
+?? tests/fixtures/trigger/T6-10-pr-base-not-head/scenario.json
+?? tests/fixtures/trigger/T6-10-pr-base-not-head/workflow.yml
+?? tests/fixtures/trigger/T6-11-types-missing-action/scenario.json
+?? tests/fixtures/trigger/T6-11-types-missing-action/workflow.yml
+?? tests/fixtures/trigger/T6-12-missing-base-branch/scenario.json
+?? tests/fixtures/trigger/T6-12-missing-base-branch/workflow.yml
+?? tests/fixtures/trigger/T6-13-total-exactly-3000/scenario.json
+?? tests/fixtures/trigger/T6-13-total-exactly-3000/workflow.yml
+?? tests/fixtures/trigger/T6-14-complete-false-ignored/scenario.json
+?? tests/fixtures/trigger/T6-14-complete-false-ignored/workflow.yml
+?? tests/fixtures/trigger/T6-15-returned-files-subset/scenario.json
+?? tests/fixtures/trigger/T6-15-returned-files-subset/workflow.yml
+?? tests/fixtures/trigger/suite.json
+?? tests/unit/diff-boundaries/diff-boundaries.test.ts
+?? tests/unit/event/event.test.ts
+?? tests/unit/event/test-helpers.ts
+?? tests/unit/event/trigger-oracle-dump.test.ts
+?? tests/unit/event/trigger-suite.ts
+?? tests/unit/event/workflow-ir.test.ts
+?? tests/unit/filters/filters.test.ts

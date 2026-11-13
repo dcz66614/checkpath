@@ -1,0 +1,1 @@
+{"scenarios":["../scenarios/pr-docs-only.json","../scenarios/pr-src-only.json","../scenarios/merge-group.json"],"schema":"checkpath.suite/v1","suite_id":"merge-queue"}

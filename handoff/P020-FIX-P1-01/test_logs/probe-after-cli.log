@@ -1,0 +1,36 @@
+=== t805 ===
+scenario: T8-05
+event: pull_request/synchronize
+workflows: 1 (1 triggered)
+jobs: 1
+required checks: 5 (PENDING_NOT_REPORTED=1 REPORTABLE_PENDING=1 UNKNOWN=3)
+witnesses: 4
+report_sha256: 781098456ca6399183a89def05646893cd085165405219b7a26e3031f9674fbb
+json: /tmp/fixp1/probe/t805/out-after/report.json
+html: /tmp/fixp1/probe/t805/out-after/report.html
+exit code: 2
+exit=2
+=== u07 ===
+scenario: G-79
+event: pull_request/synchronize
+workflows: 1 (1 triggered)
+jobs: 1
+required checks: 1 (UNKNOWN=1)
+witnesses: 1
+report_sha256: 59fb7bf4ddea3b5391ccc46a81e2a5c29e08469cef1271c0ab31ffc7386f5016
+json: /tmp/fixp1/probe/u07/out-after/report.json
+html: /tmp/fixp1/probe/u07/out-after/report.html
+exit code: 2
+exit=2
+=== u08 ===
+scenario: G-80
+event: pull_request/synchronize
+workflows: 1 (1 triggered)
+jobs: 1
+required checks: 1 (UNKNOWN=1)
+witnesses: 1
+report_sha256: 4b9d167b806d0d73868d3f509c808da325776229ebb2f2947bc4d2279324ec46
+json: /tmp/fixp1/probe/u08/out-after/report.json
+html: /tmp/fixp1/probe/u08/out-after/report.html
+exit code: 2
+exit=2

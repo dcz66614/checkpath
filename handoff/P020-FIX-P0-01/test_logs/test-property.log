@@ -1,0 +1,8 @@
+
+> checkpath@0.0.0-t001-skeleton test:property
+> node scripts/make-fixtures.mjs --verify --seed 20261108 --count 1000
+
+regeneration: identical (hash 373c60b1a9cf6d68…)
+oracle dump exit=0; TS (vitest) exit=0
+cases: 1000, TS vs Oracle mismatches: 0, false PASS: 0
+report: evidence/tests/PROPERTY_REPORT.json

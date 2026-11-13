@@ -1,0 +1,11 @@
+
+> checkpath@0.0.0-t001-skeleton test:oracle
+> node scripts/oracle-diff.mjs --suite tests/fixtures/golden/suite.json
+
+suite: tests/fixtures/golden/suite.json
+fixtures: 80, TS==expected exit=0, Oracle==expected exit=0, formal TS exit=1
+TS vs Oracle mismatches: 0
+false PASS: 0
+TS formal-pipeline false PASS: 2
+unsupported surfaced as UNKNOWN: 19/19 fixtures
+report: evidence/tests/ORACLE_PARITY_REPORT.json

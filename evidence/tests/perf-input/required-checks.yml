@@ -1,0 +1,102 @@
+schema: checkpath.required-checks/v1
+required_checks:
+  - context: wf-01-job-01
+    source: github-actions
+  - context: wf-01-job-02
+    source: github-actions
+  - context: wf-01-job-03
+    source: github-actions
+  - context: wf-01-job-04
+    source: github-actions
+  - context: wf-01-job-05
+    source: github-actions
+  - context: wf-01-job-06
+    source: github-actions
+  - context: wf-01-job-07
+    source: github-actions
+  - context: wf-01-job-08
+    source: github-actions
+  - context: wf-01-job-09
+    source: github-actions
+  - context: wf-01-job-10
+    source: github-actions
+  - context: wf-02-job-01
+    source: github-actions
+  - context: wf-02-job-02
+    source: github-actions
+  - context: wf-02-job-03
+    source: github-actions
+  - context: wf-02-job-04
+    source: github-actions
+  - context: wf-02-job-05
+    source: github-actions
+  - context: wf-02-job-06
+    source: github-actions
+  - context: wf-02-job-07
+    source: github-actions
+  - context: wf-02-job-08
+    source: github-actions
+  - context: wf-02-job-09
+    source: github-actions
+  - context: wf-02-job-10
+    source: github-actions
+  - context: wf-03-job-01
+    source: github-actions
+  - context: wf-03-job-02
+    source: github-actions
+  - context: wf-03-job-03
+    source: github-actions
+  - context: wf-03-job-04
+    source: github-actions
+  - context: wf-03-job-05
+    source: github-actions
+  - context: wf-03-job-06
+    source: github-actions
+  - context: wf-03-job-07
+    source: github-actions
+  - context: wf-03-job-08
+    source: github-actions
+  - context: wf-03-job-09
+    source: github-actions
+  - context: wf-03-job-10
+    source: github-actions
+  - context: wf-04-job-01
+    source: github-actions
+  - context: wf-04-job-02
+    source: github-actions
+  - context: wf-04-job-03
+    source: github-actions
+  - context: wf-04-job-04
+    source: github-actions
+  - context: wf-04-job-05
+    source: github-actions
+  - context: wf-04-job-06
+    source: github-actions
+  - context: wf-04-job-07
+    source: github-actions
+  - context: wf-04-job-08
+    source: github-actions
+  - context: wf-04-job-09
+    source: github-actions
+  - context: wf-04-job-10
+    source: github-actions
+  - context: wf-05-job-01
+    source: github-actions
+  - context: wf-05-job-02
+    source: github-actions
+  - context: wf-05-job-03
+    source: github-actions
+  - context: wf-05-job-04
+    source: github-actions
+  - context: wf-05-job-05
+    source: github-actions
+  - context: wf-05-job-06
+    source: github-actions
+  - context: wf-05-job-07
+    source: github-actions
+  - context: wf-05-job-08
+    source: github-actions
+  - context: wf-05-job-09
+    source: github-actions
+  - context: wf-05-job-10
+    source: github-actions

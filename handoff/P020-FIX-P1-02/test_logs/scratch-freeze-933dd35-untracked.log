@@ -1,0 +1,12 @@
+HEAD commit: 933dd354e109436551ba40b96d5b4a2d83b839a6 (release candidate)
+build inputs clean vs HEAD
+freezer script untracked at HEAD; including working-tree scripts/deterministic-zip.py (31935 bytes) in source.zip
+source tree: 1145 files (1144 tracked at HEAD + freezer script)
+running npm run build ...
+dist tree: 29 files
+vendored runtime dependency: yaml 2.9.1 (76 files: package.json + LICENSE + 74 dist/*.js)
+dist.zip entries: 114 (29 built + 76 vendored yaml + 6 examples + 2 docs + QUICKSTART.md)
+source.zip: 1042a65a02b5fb4de2b20e08a084e42ea54169b9202b40f9180a518c3e14f4a2 (1145 files)
+dist.zip:   da130ad2747a810c0f62488245fe7902298199faa6e8372f3975d58b573911e6 (114 files)
+RELEASE_MANIFEST.json: 4a36adb8d6fda0758b4fc901386edbfb8355be55a5dded7f2135f0e3b5865678
+freeze OK
