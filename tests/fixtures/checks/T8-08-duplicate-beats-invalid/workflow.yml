@@ -1,0 +1,20 @@
+name: ci
+on:
+  pull_request: {}
+jobs:
+  dup-a:
+    runs-on: ubuntu-latest
+    name: shared
+    steps:
+      - run: echo hi
+  dup-b:
+    runs-on: ubuntu-latest
+    name: shared
+    needs: [ghost]
+    steps:
+      - run: echo hi
+  solo:
+    runs-on: ubuntu-latest
+    name: solo
+    steps:
+      - run: echo hi

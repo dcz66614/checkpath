@@ -1,0 +1,11 @@
+name: ci-a
+on:
+  pull_request:
+    paths:
+      - 'src/**'
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: alpha
+    steps:
+      - run: echo hi

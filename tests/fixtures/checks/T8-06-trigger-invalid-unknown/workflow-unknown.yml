@@ -1,0 +1,11 @@
+name: ci-unknown
+on:
+  pull_request:
+    branches:
+      - main
+jobs:
+  w2:
+    runs-on: ubuntu-latest
+    name: branch-check
+    steps:
+      - run: echo hi

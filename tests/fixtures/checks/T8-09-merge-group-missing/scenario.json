@@ -1,0 +1,26 @@
+{
+  "schema": "checkpath.scenario/v1",
+  "scenario_id": "T8-09",
+  "event": {
+    "name": "merge_group",
+    "action": "checks_requested",
+    "branch": null,
+    "base_branch": null,
+    "head_branch": "feature/x",
+    "target_branch": "main",
+    "ref": "refs/pull/42/merge",
+    "commit_message": "feat: change"
+  },
+  "diff": {
+    "algorithm": "three-dot",
+    "changed_files": [
+      "src/app.ts"
+    ],
+    "changed_files_total": 1,
+    "returned_files": 1,
+    "complete": true,
+    "first_3000_confirmed": true,
+    "diff_timed_out": false,
+    "push_commit_count": null
+  }
+}

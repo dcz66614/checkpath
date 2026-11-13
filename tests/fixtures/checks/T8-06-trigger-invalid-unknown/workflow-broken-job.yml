@@ -1,0 +1,10 @@
+name: ci-broken
+on:
+  pull_request: {}
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: broken-deploy
+    needs: [ghost]
+    steps:
+      - run: echo hi

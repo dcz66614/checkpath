@@ -1,0 +1,11 @@
+{
+  "schema": "checkpath.required-checks/v1",
+  "required_checks": [
+    {
+      "context": "shared"
+    },
+    {
+      "context": "solo"
+    }
+  ]
+}

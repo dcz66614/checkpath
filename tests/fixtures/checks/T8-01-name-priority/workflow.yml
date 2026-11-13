@@ -1,0 +1,19 @@
+name: ci
+on:
+  pull_request: {}
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: unit-tests
+    steps:
+      - run: echo hi
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo hi
+  deploy:
+    runs-on: ubuntu-latest
+    name: deploy-job
+    needs: [lint]
+    steps:
+      - run: echo hi

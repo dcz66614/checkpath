@@ -1,0 +1,14 @@
+{
+  "schema": "checkpath.required-checks/v1",
+  "required_checks": [
+    {
+      "context": "bad-trigger"
+    },
+    {
+      "context": "branch-check"
+    },
+    {
+      "context": "broken-deploy"
+    }
+  ]
+}

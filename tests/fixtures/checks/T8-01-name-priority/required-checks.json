@@ -1,0 +1,24 @@
+{
+  "schema": "checkpath.required-checks/v1",
+  "required_checks": [
+    {
+      "context": "unit-tests",
+      "source": "github-actions"
+    },
+    {
+      "context": "lint"
+    },
+    {
+      "context": "build"
+    },
+    {
+      "context": "deploy-job"
+    },
+    {
+      "context": "Unit-Tests"
+    },
+    {
+      "context": "missing"
+    }
+  ]
+}

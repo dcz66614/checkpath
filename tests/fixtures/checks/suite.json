@@ -1,0 +1,594 @@
+{
+  "schema": "checkpath.checks-suite/v1",
+  "suite_id": "checks",
+  "seed": 20261108,
+  "fixtures": [
+    {
+      "id": "E2E-01",
+      "dir": "../s0/E2E-01-cp-a-pr-docs-only",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "s0-expected"
+    },
+    {
+      "id": "E2E-02",
+      "dir": "../s0/E2E-02-cp-b-merge-group-present",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "s0-expected"
+    },
+    {
+      "id": "E2E-03",
+      "dir": "../s0/E2E-03-cp-c-merge-group-missing",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "s0-expected"
+    },
+    {
+      "id": "E2E-04",
+      "dir": "../s0/E2E-04-push-baseline",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "s0-expected"
+    },
+    {
+      "id": "E2E-05",
+      "dir": "../s0/E2E-05-pr-types-mismatch",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "s0-expected"
+    },
+    {
+      "id": "E2E-06",
+      "dir": "../s0/E2E-06-pr-types-match",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "s0-expected"
+    },
+    {
+      "id": "E2E-07",
+      "dir": "../s0/E2E-07-merge-group-types-mismatch",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "s0-expected"
+    },
+    {
+      "id": "E2E-08",
+      "dir": "../s0/E2E-08-on-list-form",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "s0-expected"
+    },
+    {
+      "id": "E2E-09",
+      "dir": "../s0/E2E-09-cp-f-branch-only-match",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "s0-expected"
+    },
+    {
+      "id": "E2E-10",
+      "dir": "../s0/E2E-10-cp-f-path-only-match",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "s0-expected"
+    },
+    {
+      "id": "E2E-11",
+      "dir": "../s0/E2E-11-cp-g-ordered-negation",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "s0-expected"
+    },
+    {
+      "id": "E2E-12",
+      "dir": "../s0/E2E-12-cp-h-commit-skip",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "s0-expected"
+    },
+    {
+      "id": "E2E-13",
+      "dir": "../s0/E2E-13-branches-ignore",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "s0-expected"
+    },
+    {
+      "id": "E2E-14",
+      "dir": "../s0/E2E-14-paths-ignore",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "s0-expected"
+    },
+    {
+      "id": "E2E-15",
+      "dir": "../s0/E2E-15-cp-k-push-over-1000",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "s0-expected"
+    },
+    {
+      "id": "E2E-16",
+      "dir": "../s0/E2E-16-cp-l-diff-unconfirmed",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "s0-expected"
+    },
+    {
+      "id": "E2E-17",
+      "dir": "../s0/E2E-17-cp-d-if-false",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "s0-expected"
+    },
+    {
+      "id": "E2E-18",
+      "dir": "../s0/E2E-18-cp-e-always-aggregator",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "s0-expected"
+    },
+    {
+      "id": "E2E-19",
+      "dir": "../s0/E2E-19-cp-i-duplicate-cross-workflow",
+      "workflows": [
+        "workflow-a.yml",
+        "workflow-b.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "s0-expected"
+    },
+    {
+      "id": "E2E-20",
+      "dir": "../s0/E2E-20-cp-j-no-provider",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "s0-expected"
+    },
+    {
+      "id": "E2E-21",
+      "dir": "../s0/E2E-21-duplicate-same-workflow",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "s0-expected"
+    },
+    {
+      "id": "E2E-22",
+      "dir": "../s0/E2E-22-needs-skipped",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "s0-expected"
+    },
+    {
+      "id": "E2E-23",
+      "dir": "../s0/E2E-23-conditional-after-needs",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "s0-expected"
+    },
+    {
+      "id": "E2E-24",
+      "dir": "../s0/E2E-24-fail-closed-bundle",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "s0-expected"
+    },
+    {
+      "id": "T8-01",
+      "dir": "T8-01-name-priority",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "t008",
+      "expected": [
+        {
+          "context": "unit-tests",
+          "status": "REPORTABLE_PENDING",
+          "provider_job_id": "build",
+          "provider_count": 1,
+          "reason": "provider_reportable"
+        },
+        {
+          "context": "lint",
+          "status": "REPORTABLE_PENDING",
+          "provider_job_id": "lint",
+          "provider_count": 1,
+          "reason": "provider_reportable"
+        },
+        {
+          "context": "build",
+          "status": "PENDING_NOT_REPORTED",
+          "provider_job_id": null,
+          "provider_count": 0,
+          "reason": "no_provider"
+        },
+        {
+          "context": "deploy-job",
+          "status": "REPORTABLE_PENDING",
+          "provider_job_id": "deploy",
+          "provider_count": 1,
+          "reason": "provider_reportable"
+        },
+        {
+          "context": "Unit-Tests",
+          "status": "PENDING_NOT_REPORTED",
+          "provider_job_id": null,
+          "provider_count": 0,
+          "reason": "no_provider"
+        },
+        {
+          "context": "missing",
+          "status": "PENDING_NOT_REPORTED",
+          "provider_job_id": null,
+          "provider_count": 0,
+          "reason": "no_provider"
+        }
+      ]
+    },
+    {
+      "id": "T8-02",
+      "dir": "T8-02-same-job-id-distinct-names",
+      "workflows": [
+        "workflow-a.yml",
+        "workflow-b.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "t008",
+      "expected": [
+        {
+          "context": "alpha",
+          "status": "REPORTABLE_PENDING",
+          "provider_job_id": "test",
+          "provider_count": 1,
+          "reason": "provider_reportable"
+        },
+        {
+          "context": "beta",
+          "status": "PENDING_NOT_REPORTED",
+          "provider_job_id": "test",
+          "provider_count": 1,
+          "reason": "workflow_not_triggered"
+        }
+      ]
+    },
+    {
+      "id": "T8-03",
+      "dir": "T8-03-same-job-id-same-context",
+      "workflows": [
+        "workflow-a.yml",
+        "workflow-b.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "t008",
+      "expected": [
+        {
+          "context": "tests",
+          "status": "AMBIGUOUS",
+          "provider_job_id": null,
+          "provider_count": 2,
+          "reason": "duplicate_context"
+        }
+      ]
+    },
+    {
+      "id": "T8-04",
+      "dir": "T8-04-workflow-skip-vs-job-skip",
+      "workflows": [
+        "workflow-a.yml",
+        "workflow-b.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "t008",
+      "expected": [
+        {
+          "context": "ci",
+          "status": "PENDING_NOT_REPORTED",
+          "provider_job_id": "ci",
+          "provider_count": 1,
+          "reason": "workflow_not_triggered"
+        },
+        {
+          "context": "unit",
+          "status": "SKIPPED_SUCCESS",
+          "provider_job_id": "unit",
+          "provider_count": 1,
+          "reason": "provider_skipped"
+        }
+      ]
+    },
+    {
+      "id": "T8-05",
+      "dir": "T8-05-external-source",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "t008",
+      "expected": [
+        {
+          "context": "unit-tests",
+          "status": "REPORTABLE_PENDING",
+          "provider_job_id": "test",
+          "provider_count": 1,
+          "reason": "provider_reportable"
+        },
+        {
+          "context": "unit-tests",
+          "status": "UNKNOWN",
+          "provider_job_id": null,
+          "provider_count": 0,
+          "reason": "external_source"
+        },
+        {
+          "context": "ghost",
+          "status": "UNKNOWN",
+          "provider_job_id": null,
+          "provider_count": 0,
+          "reason": "external_source"
+        },
+        {
+          "context": "lint",
+          "status": "PENDING_NOT_REPORTED",
+          "provider_job_id": null,
+          "provider_count": 0,
+          "reason": "no_provider"
+        },
+        {
+          "context": "unit-tests",
+          "status": "UNKNOWN",
+          "provider_job_id": null,
+          "provider_count": 0,
+          "reason": "external_source"
+        }
+      ]
+    },
+    {
+      "id": "T8-06",
+      "dir": "T8-06-trigger-invalid-unknown",
+      "workflows": [
+        "workflow-invalid.yml",
+        "workflow-unknown.yml",
+        "workflow-broken-job.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "t008",
+      "expected": [
+        {
+          "context": "bad-trigger",
+          "status": "INVALID",
+          "provider_job_id": "w1",
+          "provider_count": 1,
+          "reason": "provider_invalid"
+        },
+        {
+          "context": "branch-check",
+          "status": "UNKNOWN",
+          "provider_job_id": "w2",
+          "provider_count": 1,
+          "reason": "trigger_unknown"
+        },
+        {
+          "context": "broken-deploy",
+          "status": "INVALID",
+          "provider_job_id": "deploy",
+          "provider_count": 1,
+          "reason": "provider_invalid"
+        }
+      ]
+    },
+    {
+      "id": "T8-07",
+      "dir": "T8-07-provider-unknown-conditional",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "t008",
+      "expected": [
+        {
+          "context": "unsup",
+          "status": "UNKNOWN",
+          "provider_job_id": "u1",
+          "provider_count": 1,
+          "reason": "provider_unknown"
+        },
+        {
+          "context": "downstream",
+          "status": "REPORTABLE_PENDING",
+          "provider_job_id": "down",
+          "provider_count": 1,
+          "reason": "provider_reportable"
+        },
+        {
+          "context": "skipped-one",
+          "status": "SKIPPED_SUCCESS",
+          "provider_job_id": "solo",
+          "provider_count": 1,
+          "reason": "provider_skipped"
+        }
+      ]
+    },
+    {
+      "id": "T8-08",
+      "dir": "T8-08-duplicate-beats-invalid",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "t008",
+      "expected": [
+        {
+          "context": "shared",
+          "status": "AMBIGUOUS",
+          "provider_job_id": null,
+          "provider_count": 2,
+          "reason": "duplicate_context"
+        },
+        {
+          "context": "solo",
+          "status": "REPORTABLE_PENDING",
+          "provider_job_id": "solo",
+          "provider_count": 1,
+          "reason": "provider_reportable"
+        }
+      ]
+    },
+    {
+      "id": "T8-09",
+      "dir": "T8-09-merge-group-missing",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "t008",
+      "expected": [
+        {
+          "context": "unit-tests",
+          "status": "PENDING_NOT_REPORTED",
+          "provider_job_id": "test",
+          "provider_count": 1,
+          "reason": "workflow_not_triggered"
+        }
+      ]
+    },
+    {
+      "id": "T8-10",
+      "dir": "T8-10-duplicate-manifest-entries",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "t008",
+      "expected": [
+        {
+          "context": "unit-tests",
+          "status": "REPORTABLE_PENDING",
+          "provider_job_id": "test",
+          "provider_count": 1,
+          "reason": "provider_reportable"
+        },
+        {
+          "context": "unit-tests",
+          "status": "REPORTABLE_PENDING",
+          "provider_job_id": "test",
+          "provider_count": 1,
+          "reason": "provider_reportable"
+        },
+        {
+          "context": "unit-tests",
+          "status": "REPORTABLE_PENDING",
+          "provider_job_id": "test",
+          "provider_count": 1,
+          "reason": "provider_reportable"
+        }
+      ]
+    }
+  ],
+  "job_check_suite": "../s0/job-check/suite.json"
+}
