@@ -1,0 +1,10 @@
+name: ci
+on:
+  push:
+    paths:
+      - 'src/{a,b}/**'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo hi

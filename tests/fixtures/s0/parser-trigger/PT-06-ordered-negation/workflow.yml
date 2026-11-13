@@ -1,0 +1,14 @@
+name: ci
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'src/**'
+      - '!src/generated/**'
+      - 'src/generated/keep.ts'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo hi

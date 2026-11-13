@@ -1,0 +1,16 @@
+name: ci
+on:
+  pull_request:
+    branches:
+      - main
+jobs:
+  test-a:
+    runs-on: ubuntu-latest
+    name: tests
+    steps:
+      - run: echo hi
+  test-b:
+    runs-on: ubuntu-latest
+    name: tests
+    steps:
+      - run: echo hi

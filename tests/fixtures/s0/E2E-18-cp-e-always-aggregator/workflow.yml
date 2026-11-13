@@ -1,0 +1,19 @@
+name: ci
+on:
+  pull_request:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: build
+    if: false
+    steps:
+      - run: echo hi
+  aggregate:
+    runs-on: ubuntu-latest
+    name: ci-ok
+    needs: [build]
+    if: "always() && github.event_name == 'pull_request'"
+    steps:
+      - run: echo ok

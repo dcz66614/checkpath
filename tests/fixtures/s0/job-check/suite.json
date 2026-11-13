@@ -1,0 +1,484 @@
+{
+  "cases": [
+    {
+      "description": "(a) workflow-level branch filter skip: pull_request targets a branch the workflow does not cover, so the required check is never reported.",
+      "expected": {
+        "jobs": {
+          "test": "SKIPPED"
+        },
+        "required_checks": {
+          "unit-tests": "PENDING_NOT_REPORTED"
+        }
+      },
+      "id": "jc01-branch-skip",
+      "jobs": [
+        {
+          "id": "test",
+          "if": null,
+          "name": "unit-tests",
+          "needs": []
+        }
+      ],
+      "required_checks": [
+        {
+          "context": "unit-tests",
+          "source": "github-actions"
+        }
+      ],
+      "scenario": {
+        "action": "opened",
+        "base_ref": "release/2.x",
+        "event_name": "pull_request",
+        "head_ref": "feature/docs",
+        "ref": "refs/pull/42/merge"
+      },
+      "trigger_reason": "branch_filter_no_match",
+      "workflow_triggered": false
+    },
+    {
+      "description": "(a) workflow-level path filter skip: PR only touches docs, workflow paths only cover src/**, so the required check is never reported.",
+      "expected": {
+        "jobs": {
+          "test": "SKIPPED"
+        },
+        "required_checks": {
+          "unit-tests": "PENDING_NOT_REPORTED"
+        }
+      },
+      "id": "jc02-path-skip",
+      "jobs": [
+        {
+          "id": "test",
+          "if": null,
+          "name": "unit-tests",
+          "needs": []
+        }
+      ],
+      "required_checks": [
+        {
+          "context": "unit-tests",
+          "source": "github-actions"
+        }
+      ],
+      "scenario": {
+        "action": "synchronize",
+        "base_ref": "main",
+        "event_name": "pull_request",
+        "head_ref": "docs/update",
+        "ref": "refs/pull/43/merge"
+      },
+      "trigger_reason": "path_filter_no_match",
+      "workflow_triggered": false
+    },
+    {
+      "description": "(a) workflow-level commit skip: commit message contains [skip ci], workflow does not run, required check stays pending.",
+      "expected": {
+        "jobs": {
+          "test": "SKIPPED"
+        },
+        "required_checks": {
+          "unit-tests": "PENDING_NOT_REPORTED"
+        }
+      },
+      "id": "jc03-commit-skip",
+      "jobs": [
+        {
+          "id": "test",
+          "if": null,
+          "name": "unit-tests",
+          "needs": []
+        }
+      ],
+      "required_checks": [
+        {
+          "context": "unit-tests",
+          "source": "github-actions"
+        }
+      ],
+      "scenario": {
+        "action": null,
+        "base_ref": null,
+        "event_name": "push",
+        "head_ref": null,
+        "ref": "refs/heads/main"
+      },
+      "trigger_reason": "commit_skip",
+      "workflow_triggered": false
+    },
+    {
+      "description": "(b) Job if: false is statically skipped; GitHub reports a skipped job as success.",
+      "expected": {
+        "jobs": {
+          "test": "SKIPPED"
+        },
+        "required_checks": {
+          "unit-tests": "SKIPPED_SUCCESS"
+        }
+      },
+      "id": "jc04-if-false",
+      "jobs": [
+        {
+          "id": "test",
+          "if": "false",
+          "name": "unit-tests",
+          "needs": []
+        }
+      ],
+      "required_checks": [
+        {
+          "context": "unit-tests",
+          "source": "github-actions"
+        }
+      ],
+      "scenario": {
+        "action": "opened",
+        "base_ref": "main",
+        "event_name": "pull_request",
+        "head_ref": "feature/x",
+        "ref": "refs/pull/44/merge"
+      },
+      "trigger_reason": null,
+      "workflow_triggered": true
+    },
+    {
+      "description": "(c) Upstream job statically skipped; downstream job with no if inherits the default success() precondition and is skipped too.",
+      "expected": {
+        "jobs": {
+          "build": "SKIPPED",
+          "deploy": "SKIPPED"
+        },
+        "required_checks": {
+          "build": "SKIPPED_SUCCESS",
+          "deploy": "SKIPPED_SUCCESS"
+        }
+      },
+      "id": "jc05-needs-skipped-propagation",
+      "jobs": [
+        {
+          "id": "build",
+          "if": "false",
+          "name": "build",
+          "needs": []
+        },
+        {
+          "id": "deploy",
+          "if": null,
+          "name": "deploy",
+          "needs": [
+            "build"
+          ]
+        }
+      ],
+      "required_checks": [
+        {
+          "context": "build",
+          "source": "github-actions"
+        },
+        {
+          "context": "deploy",
+          "source": "github-actions"
+        }
+      ],
+      "scenario": {
+        "action": "opened",
+        "base_ref": "main",
+        "event_name": "pull_request",
+        "head_ref": "feature/y",
+        "ref": "refs/pull/45/merge"
+      },
+      "trigger_reason": null,
+      "workflow_triggered": true
+    },
+    {
+      "description": "(d) Aggregator with if: always() && github.event_name == 'pull_request' runs even though its upstream job was skipped; the aggregator check is reportable.",
+      "expected": {
+        "jobs": {
+          "aggregate": "ELIGIBLE",
+          "build": "SKIPPED"
+        },
+        "required_checks": {
+          "build": "SKIPPED_SUCCESS",
+          "ci-ok": "REPORTABLE_PENDING"
+        }
+      },
+      "id": "jc06-always-overrides-skipped-needs",
+      "jobs": [
+        {
+          "id": "build",
+          "if": "false",
+          "name": "build",
+          "needs": []
+        },
+        {
+          "id": "aggregate",
+          "if": "always() && github.event_name == 'pull_request'",
+          "name": "ci-ok",
+          "needs": [
+            "build"
+          ]
+        }
+      ],
+      "required_checks": [
+        {
+          "context": "build",
+          "source": "github-actions"
+        },
+        {
+          "context": "ci-ok",
+          "source": "github-actions"
+        }
+      ],
+      "scenario": {
+        "action": "opened",
+        "base_ref": "main",
+        "event_name": "pull_request",
+        "head_ref": "feature/z",
+        "ref": "refs/pull/46/merge"
+      },
+      "trigger_reason": null,
+      "workflow_triggered": true
+    },
+    {
+      "description": "(e) Required check has no provider job at all (no job context matches); it can never be reported.",
+      "expected": {
+        "jobs": {
+          "test": "ELIGIBLE"
+        },
+        "required_checks": {
+          "integration": "PENDING_NOT_REPORTED"
+        }
+      },
+      "id": "jc07-no-provider",
+      "jobs": [
+        {
+          "id": "test",
+          "if": null,
+          "name": "unit-tests",
+          "needs": []
+        }
+      ],
+      "required_checks": [
+        {
+          "context": "integration",
+          "source": "github-actions"
+        }
+      ],
+      "scenario": {
+        "action": "opened",
+        "base_ref": "main",
+        "event_name": "pull_request",
+        "head_ref": "feature/w",
+        "ref": "refs/pull/47/merge"
+      },
+      "trigger_reason": null,
+      "workflow_triggered": true
+    },
+    {
+      "description": "(f) Two jobs declare the same context name; the required check is ambiguous and no provider is picked by order.",
+      "expected": {
+        "jobs": {
+          "test-a": "ELIGIBLE",
+          "test-b": "ELIGIBLE"
+        },
+        "required_checks": {
+          "tests": "AMBIGUOUS"
+        }
+      },
+      "id": "jc08-duplicate-context",
+      "jobs": [
+        {
+          "id": "test-a",
+          "if": null,
+          "name": "tests",
+          "needs": []
+        },
+        {
+          "id": "test-b",
+          "if": null,
+          "name": "tests",
+          "needs": []
+        }
+      ],
+      "required_checks": [
+        {
+          "context": "tests",
+          "source": "github-actions"
+        }
+      ],
+      "scenario": {
+        "action": "opened",
+        "base_ref": "main",
+        "event_name": "pull_request",
+        "head_ref": "feature/v",
+        "ref": "refs/pull/48/merge"
+      },
+      "trigger_reason": null,
+      "workflow_triggered": true
+    },
+    {
+      "description": "(g) Job if uses contains(), outside the frozen if subset (PROJECT_BOOK section 3.3/3.4); job and check are UNKNOWN, never silently treated as true.",
+      "expected": {
+        "jobs": {
+          "test": "UNKNOWN"
+        },
+        "required_checks": {
+          "unit-tests": "UNKNOWN"
+        }
+      },
+      "id": "jc09-unsupported-if",
+      "jobs": [
+        {
+          "id": "test",
+          "if": "contains(github.event_name, 'push')",
+          "name": "unit-tests",
+          "needs": []
+        }
+      ],
+      "required_checks": [
+        {
+          "context": "unit-tests",
+          "source": "github-actions"
+        }
+      ],
+      "scenario": {
+        "action": "opened",
+        "base_ref": "main",
+        "event_name": "pull_request",
+        "head_ref": "feature/u",
+        "ref": "refs/pull/49/merge"
+      },
+      "trigger_reason": null,
+      "workflow_triggered": true
+    },
+    {
+      "description": "(h) Job needs a job id that does not exist; the job and its required check are INVALID.",
+      "expected": {
+        "jobs": {
+          "deploy": "INVALID"
+        },
+        "required_checks": {
+          "deploy": "INVALID"
+        }
+      },
+      "id": "jc10-missing-need",
+      "jobs": [
+        {
+          "id": "deploy",
+          "if": null,
+          "name": "deploy",
+          "needs": [
+            "nonexistent"
+          ]
+        }
+      ],
+      "required_checks": [
+        {
+          "context": "deploy",
+          "source": "github-actions"
+        }
+      ],
+      "scenario": {
+        "action": "opened",
+        "base_ref": "main",
+        "event_name": "pull_request",
+        "head_ref": "feature/t",
+        "ref": "refs/pull/50/merge"
+      },
+      "trigger_reason": null,
+      "workflow_triggered": true
+    },
+    {
+      "description": "(h) Two jobs need each other; both are INVALID and the required check is INVALID.",
+      "expected": {
+        "jobs": {
+          "a": "INVALID",
+          "b": "INVALID"
+        },
+        "required_checks": {
+          "job-a": "INVALID"
+        }
+      },
+      "id": "jc11-needs-cycle",
+      "jobs": [
+        {
+          "id": "a",
+          "if": null,
+          "name": "job-a",
+          "needs": [
+            "b"
+          ]
+        },
+        {
+          "id": "b",
+          "if": null,
+          "name": "job-b",
+          "needs": [
+            "a"
+          ]
+        }
+      ],
+      "required_checks": [
+        {
+          "context": "job-a",
+          "source": "github-actions"
+        }
+      ],
+      "scenario": {
+        "action": "opened",
+        "base_ref": "main",
+        "event_name": "pull_request",
+        "head_ref": "feature/s",
+        "ref": "refs/pull/51/merge"
+      },
+      "trigger_reason": null,
+      "workflow_triggered": true
+    },
+    {
+      "description": "Downstream job with no if needs an upstream job that is ELIGIBLE via a supported github.event_name comparison; its real run depends on the upstream result, so it is CONDITIONAL_AFTER_NEEDS and its check is reportable.",
+      "expected": {
+        "jobs": {
+          "build": "ELIGIBLE",
+          "test": "CONDITIONAL_AFTER_NEEDS"
+        },
+        "required_checks": {
+          "integration-tests": "REPORTABLE_PENDING"
+        }
+      },
+      "id": "jc12-conditional-after-needs",
+      "jobs": [
+        {
+          "id": "build",
+          "if": "github.event_name == 'pull_request'",
+          "name": "build",
+          "needs": []
+        },
+        {
+          "id": "test",
+          "if": null,
+          "name": "integration-tests",
+          "needs": [
+            "build"
+          ]
+        }
+      ],
+      "required_checks": [
+        {
+          "context": "integration-tests",
+          "source": "github-actions"
+        }
+      ],
+      "scenario": {
+        "action": "opened",
+        "base_ref": "main",
+        "event_name": "pull_request",
+        "head_ref": "feature/r",
+        "ref": "refs/pull/52/merge"
+      },
+      "trigger_reason": null,
+      "workflow_triggered": true
+    }
+  ],
+  "description": "T003 S0 PoC: Job/required-check semantics. 12 fixed synthetic cases. expected values are frozen; never edit them to fit an implementation.",
+  "schema": "checkpath.job-check-suite/v1",
+  "suite_id": "s0-job-check"
+}

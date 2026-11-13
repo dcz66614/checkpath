@@ -1,0 +1,10 @@
+name: ci
+on:
+  merge_group:
+    types:
+      - checks_requested
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo hi

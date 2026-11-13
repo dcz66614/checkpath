@@ -1,0 +1,344 @@
+{
+  "fixtures": [
+    {
+      "adversarial": true,
+      "cp": "CP-A",
+      "description": "CP-A: PR only touches README, workflow paths src/** -> Pending.",
+      "dir": "E2E-01-cp-a-pr-docs-only",
+      "expected": "expected.json",
+      "group": "event",
+      "id": "E2E-01",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": false,
+      "cp": "CP-B",
+      "description": "CP-B: workflow explicitly includes merge_group -> triggered.",
+      "dir": "E2E-02-cp-b-merge-group-present",
+      "expected": "expected.json",
+      "group": "event",
+      "id": "E2E-02",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": "CP-C",
+      "description": "CP-C: only pull_request in workflow, scenario is merge_group -> Pending.",
+      "dir": "E2E-03-cp-c-merge-group-missing",
+      "expected": "expected.json",
+      "group": "event",
+      "id": "E2E-03",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": false,
+      "cp": null,
+      "description": "Push baseline: on push branches main, push to main -> triggered.",
+      "dir": "E2E-04-push-baseline",
+      "expected": "expected.json",
+      "group": "event",
+      "id": "E2E-04",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "pull_request types [opened] but action synchronize -> no trigger.",
+      "dir": "E2E-05-pr-types-mismatch",
+      "expected": "expected.json",
+      "group": "event",
+      "id": "E2E-05",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": false,
+      "cp": null,
+      "description": "pull_request types [opened, synchronize], action opened -> triggered.",
+      "dir": "E2E-06-pr-types-match",
+      "expected": "expected.json",
+      "group": "event",
+      "id": "E2E-06",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "merge_group types [checks_requested] but action synchronize -> no trigger.",
+      "dir": "E2E-07-merge-group-types-mismatch",
+      "expected": "expected.json",
+      "group": "event",
+      "id": "E2E-07",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": false,
+      "cp": null,
+      "description": "List-form on: [push, pull_request], scenario pull_request -> triggered.",
+      "dir": "E2E-08-on-list-form",
+      "expected": "expected.json",
+      "group": "event",
+      "id": "E2E-08",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": "CP-F",
+      "description": "CP-F: branches+paths, only branch matches (docs-only change) -> no trigger.",
+      "dir": "E2E-09-cp-f-branch-only-match",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "E2E-09",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": "CP-F",
+      "description": "CP-F complement: branches+paths, only path matches (base release/2.x) -> no trigger.",
+      "dir": "E2E-10-cp-f-path-only-match",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "E2E-10",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": false,
+      "cp": "CP-G",
+      "description": "CP-G: ordered negation src/**, !src/generated/**, src/generated/keep.ts -> keep.ts re-included, triggered.",
+      "dir": "E2E-11-cp-g-ordered-negation",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "E2E-11",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": "CP-H",
+      "description": "CP-H: commit message contains [skip ci] -> workflow skip, Pending.",
+      "dir": "E2E-12-cp-h-commit-skip",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "E2E-12",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "branches-ignore [main], PR base is main -> branch mismatch, no trigger.",
+      "dir": "E2E-13-branches-ignore",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "E2E-13",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "paths-ignore [docs/**], only docs changed -> path mismatch, no trigger.",
+      "dir": "E2E-14-paths-ignore",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "E2E-14",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": false,
+      "cp": "CP-K",
+      "description": "CP-K: push 1500 commits > 1000 -> path filter treated as triggered.",
+      "dir": "E2E-15-cp-k-push-over-1000",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "E2E-15",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": "CP-L",
+      "description": "CP-L: diff 3500 files, first-3000 list unconfirmed -> UNKNOWN.",
+      "dir": "E2E-16-cp-l-diff-unconfirmed",
+      "expected": "expected.json",
+      "group": "filter",
+      "id": "E2E-16",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": false,
+      "cp": "CP-D",
+      "description": "CP-D: workflow triggered, required job if: false -> SKIPPED_SUCCESS.",
+      "dir": "E2E-17-cp-d-if-false",
+      "expected": "expected.json",
+      "group": "job",
+      "id": "E2E-17",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": false,
+      "cp": "CP-E",
+      "description": "CP-E: aggregator if always() with skipped upstream -> ELIGIBLE.",
+      "dir": "E2E-18-cp-e-always-aggregator",
+      "expected": "expected.json",
+      "group": "job",
+      "id": "E2E-18",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": "CP-I",
+      "description": "CP-I: two workflows declare the same job context 'tests' -> AMBIGUOUS.",
+      "dir": "E2E-19-cp-i-duplicate-cross-workflow",
+      "expected": "expected.json",
+      "group": "job",
+      "id": "E2E-19",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "workflows": [
+        "workflow-a.yml",
+        "workflow-b.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": "CP-J",
+      "description": "CP-J: required check 'integration' has no provider job -> Pending.",
+      "dir": "E2E-20-cp-j-no-provider",
+      "expected": "expected.json",
+      "group": "job",
+      "id": "E2E-20",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": "CP-I",
+      "description": "CP-I complement: two jobs in one workflow share context 'tests' -> AMBIGUOUS.",
+      "dir": "E2E-21-duplicate-same-workflow",
+      "expected": "expected.json",
+      "group": "job",
+      "id": "E2E-21",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": false,
+      "cp": null,
+      "description": "Upstream if:false skipped; downstream with no if inherits default success() gate -> SKIPPED.",
+      "dir": "E2E-22-needs-skipped",
+      "expected": "expected.json",
+      "group": "job",
+      "id": "E2E-22",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": false,
+      "cp": null,
+      "description": "Downstream of ELIGIBLE upstream with supported context if -> CONDITIONAL_AFTER_NEEDS, reportable.",
+      "dir": "E2E-23-conditional-after-needs",
+      "expected": "expected.json",
+      "group": "job",
+      "id": "E2E-23",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "workflows": [
+        "workflow.yml"
+      ]
+    },
+    {
+      "adversarial": true,
+      "cp": null,
+      "description": "Fail-closed bundle: unsupported if -> UNKNOWN, missing need -> INVALID, needs cycle -> INVALID, external source -> UNKNOWN; one healthy job stays reportable.",
+      "dir": "E2E-24-fail-closed-bundle",
+      "expected": "expected.json",
+      "group": "job",
+      "id": "E2E-24",
+      "required_checks": "required-checks.json",
+      "scenario": "scenario.json",
+      "workflows": [
+        "workflow.yml"
+      ]
+    }
+  ],
+  "schema": "checkpath.s0-e2e-suite/v1",
+  "seed": 20261108,
+  "suite_id": "s0-e2e"
+}
