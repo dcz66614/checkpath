@@ -1,0 +1,14 @@
+name: ci
+on:
+  pull_request:
+    paths:
+      - 'src/**'
+    paths-ignore:
+      - 'docs/**'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: unit-tests
+    steps:
+      - run: echo hi

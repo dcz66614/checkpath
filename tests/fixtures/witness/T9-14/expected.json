@@ -1,0 +1,44 @@
+{
+  "witnesses": [
+    {
+      "id": "witness-001",
+      "kind": "unsupported_feature",
+      "check_context": "unit-tests",
+      "first_blocking_condition": "trigger_unknown",
+      "scenario": {
+        "schema": "checkpath.scenario/v1",
+        "scenario_id": "T9-14",
+        "event": {
+          "name": "pull_request",
+          "action": "synchronize",
+          "branch": null,
+          "base_branch": "main",
+          "head_branch": "feature/x",
+          "target_branch": null,
+          "ref": "refs/pull/42/merge",
+          "commit_message": ""
+        },
+        "diff": {
+          "algorithm": "three-dot",
+          "changed_files": [],
+          "changed_files_total": 3500,
+          "returned_files": 3000,
+          "complete": true,
+          "first_3000_confirmed": false,
+          "diff_timed_out": false,
+          "push_commit_count": null
+        }
+      },
+      "note": "Workflow \"workflow.yml\" trigger cannot be decided: diff_first_3000_unconfirmed."
+    }
+  ],
+  "recommendations": [
+    {
+      "witness_id": "witness-001",
+      "rule_id": "R-UNSUP-01",
+      "kind": "unsupported_feature",
+      "check_context": "unit-tests",
+      "recommendation": "Confirm the first 3,000 changed files by setting first_3000_confirmed to true with the actual first 3,000 files in the scenario, or reduce the diff below 3,001 files, so the path filter of workflow \"workflow.yml\" can be decided."
+    }
+  ]
+}

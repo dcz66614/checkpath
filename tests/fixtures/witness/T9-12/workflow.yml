@@ -1,0 +1,15 @@
+name: ci
+on:
+  pull_request: {}
+
+jobs:
+  first:
+    runs-on: ubuntu-latest
+    name: shared
+    steps:
+      - run: echo hi
+  second:
+    runs-on: ubuntu-latest
+    name: shared
+    steps:
+      - run: echo hi

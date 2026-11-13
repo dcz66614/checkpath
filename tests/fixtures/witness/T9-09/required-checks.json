@@ -1,0 +1,13 @@
+{
+  "schema": "checkpath.required-checks/v1",
+  "required_checks": [
+    {
+      "context": "integration",
+      "source": "github-actions"
+    },
+    {
+      "context": "unit-tests",
+      "source": "github-actions"
+    }
+  ]
+}

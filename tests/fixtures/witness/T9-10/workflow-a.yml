@@ -1,0 +1,10 @@
+name: ci
+on:
+  pull_request: {}
+
+jobs:
+  a1:
+    runs-on: ubuntu-latest
+    name: alpha
+    steps:
+      - run: echo hi

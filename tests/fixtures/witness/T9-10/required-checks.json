@@ -1,0 +1,9 @@
+{
+  "schema": "checkpath.required-checks/v1",
+  "required_checks": [
+    {
+      "context": "gamma",
+      "source": "github-actions"
+    }
+  ]
+}

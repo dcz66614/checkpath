@@ -1,0 +1,25 @@
+{
+  "schema": "checkpath.scenario/v1",
+  "scenario_id": "T9-14",
+  "event": {
+    "name": "pull_request",
+    "action": "synchronize",
+    "base_branch": "main",
+    "head_branch": "feature/x",
+    "ref": "refs/pull/42/merge",
+    "commit_message": "feat: change"
+  },
+  "diff": {
+    "algorithm": "three-dot",
+    "changed_files": [
+      "src/app.ts",
+      "README.md"
+    ],
+    "changed_files_total": 3500,
+    "returned_files": 3000,
+    "complete": true,
+    "first_3000_confirmed": false,
+    "diff_timed_out": false,
+    "push_commit_count": null
+  }
+}

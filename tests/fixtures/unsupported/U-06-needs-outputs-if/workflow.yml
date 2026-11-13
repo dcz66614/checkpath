@@ -1,0 +1,16 @@
+name: ci
+on:
+  pull_request: {}
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: build
+    steps:
+      - run: echo hi
+  test:
+    runs-on: ubuntu-latest
+    name: unit-tests
+    needs: build
+    if: needs.build.outputs.result == 'ok'
+    steps:
+      - run: echo hi

@@ -1,0 +1,46 @@
+{
+  "witnesses": [
+    {
+      "id": "witness-001",
+      "kind": "path_filter",
+      "check_context": "unit-tests",
+      "first_blocking_condition": "path_mismatch",
+      "scenario": {
+        "schema": "checkpath.scenario/v1",
+        "scenario_id": "E2E-01",
+        "event": {
+          "name": "pull_request",
+          "action": "synchronize",
+          "branch": null,
+          "base_branch": "main",
+          "head_branch": "docs/update",
+          "target_branch": null,
+          "ref": "refs/pull/42/merge",
+          "commit_message": ""
+        },
+        "diff": {
+          "algorithm": "three-dot",
+          "changed_files": [
+            "README.md"
+          ],
+          "changed_files_total": 1,
+          "returned_files": 1,
+          "complete": true,
+          "first_3000_confirmed": true,
+          "diff_timed_out": false,
+          "push_commit_count": null
+        }
+      },
+      "note": "Workflow \"workflow.yml\" path filter [\"src/**\"] matches none of the changed files; first non-matching file is \"README.md\"; required check \"unit-tests\" has no triggered provider."
+    }
+  ],
+  "recommendations": [
+    {
+      "witness_id": "witness-001",
+      "rule_id": "R-PATH-01",
+      "kind": "path_filter",
+      "check_context": "unit-tests",
+      "recommendation": "Widen the paths filter [\"src/**\"] in workflow \"workflow.yml\" to include \"README.md\", or remove the paths filter from that workflow, or move job \"test\" providing \"unit-tests\" to a workflow without a path filter."
+    }
+  ]
+}

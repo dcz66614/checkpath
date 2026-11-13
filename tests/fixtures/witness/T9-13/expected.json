@@ -1,0 +1,82 @@
+{
+  "witnesses": [
+    {
+      "id": "witness-001",
+      "kind": "unsupported_feature",
+      "check_context": "unit-tests",
+      "first_blocking_condition": "external_source",
+      "scenario": {
+        "schema": "checkpath.scenario/v1",
+        "scenario_id": "T9-13",
+        "event": {
+          "name": "pull_request",
+          "action": "synchronize",
+          "branch": null,
+          "base_branch": "main",
+          "head_branch": "feature/x",
+          "target_branch": null,
+          "ref": "refs/pull/42/merge",
+          "commit_message": ""
+        },
+        "diff": {
+          "algorithm": "three-dot",
+          "changed_files": [],
+          "changed_files_total": 1,
+          "returned_files": 1,
+          "complete": true,
+          "first_3000_confirmed": true,
+          "diff_timed_out": false,
+          "push_commit_count": null
+        }
+      },
+      "note": "Required check \"unit-tests\" declares source \"external-app\", which is not github-actions; external App checks cannot be simulated."
+    },
+    {
+      "id": "witness-002",
+      "kind": "unsupported_feature",
+      "check_context": "missing-check",
+      "first_blocking_condition": "external_source",
+      "scenario": {
+        "schema": "checkpath.scenario/v1",
+        "scenario_id": "T9-13",
+        "event": {
+          "name": "pull_request",
+          "action": "synchronize",
+          "branch": null,
+          "base_branch": "main",
+          "head_branch": "feature/x",
+          "target_branch": null,
+          "ref": "refs/pull/42/merge",
+          "commit_message": ""
+        },
+        "diff": {
+          "algorithm": "three-dot",
+          "changed_files": [],
+          "changed_files_total": 1,
+          "returned_files": 1,
+          "complete": true,
+          "first_3000_confirmed": true,
+          "diff_timed_out": false,
+          "push_commit_count": null
+        }
+      },
+      "note": "Required check \"missing-check\" declares source \"other-app\", which is not github-actions; external App checks cannot be simulated."
+    }
+  ],
+  "recommendations": [
+    {
+      "witness_id": "witness-001",
+      "rule_id": "R-UNSUP-01",
+      "kind": "unsupported_feature",
+      "check_context": "unit-tests",
+      "recommendation": "Change the source of required check \"unit-tests\" to \"github-actions\" if it is reported by GitHub Actions, or remove \"unit-tests\" from the required-checks list because external App checks cannot be simulated."
+    },
+    {
+      "witness_id": "witness-002",
+      "rule_id": "R-UNSUP-01",
+      "kind": "unsupported_feature",
+      "check_context": "missing-check",
+      "recommendation": "Change the source of required check \"missing-check\" to \"github-actions\" if it is reported by GitHub Actions, or remove \"missing-check\" from the required-checks list because external App checks cannot be simulated."
+    }
+  ]
+}

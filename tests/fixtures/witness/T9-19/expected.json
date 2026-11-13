@@ -1,0 +1,44 @@
+{
+  "witnesses": [
+    {
+      "id": "witness-001",
+      "kind": "event_trigger_missing",
+      "check_context": "unit-tests",
+      "first_blocking_condition": "event_mismatch",
+      "scenario": {
+        "schema": "checkpath.scenario/v1",
+        "scenario_id": "T9-19",
+        "event": {
+          "name": "pull_request",
+          "action": "synchronize",
+          "branch": null,
+          "base_branch": "main",
+          "head_branch": "feature/x",
+          "target_branch": null,
+          "ref": "refs/pull/42/merge",
+          "commit_message": ""
+        },
+        "diff": {
+          "algorithm": "three-dot",
+          "changed_files": [],
+          "changed_files_total": 1,
+          "returned_files": 1,
+          "complete": true,
+          "first_3000_confirmed": true,
+          "diff_timed_out": false,
+          "push_commit_count": null
+        }
+      },
+      "note": "Workflow \"workflow.yml\" does not declare on.pull_request for scenario event pull_request/synchronize; required check \"unit-tests\" has no triggered provider."
+    }
+  ],
+  "recommendations": [
+    {
+      "witness_id": "witness-001",
+      "rule_id": "R-EV-01",
+      "kind": "event_trigger_missing",
+      "check_context": "unit-tests",
+      "recommendation": "Add pull_request to the on: triggers of workflow \"workflow.yml\" so it runs for pull_request events, or move job \"test\" providing \"unit-tests\" into a workflow that already handles pull_request."
+    }
+  ]
+}

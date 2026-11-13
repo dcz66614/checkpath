@@ -1,0 +1,12 @@
+name: ci
+on:
+  pull_request: {}
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: unit-tests
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    steps:
+      - run: echo hi

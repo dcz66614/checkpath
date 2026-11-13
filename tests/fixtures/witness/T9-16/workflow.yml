@@ -1,0 +1,11 @@
+name: ci
+on:
+  pull_request: {}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: deploy
+    needs: [ghost]
+    steps:
+      - run: echo hi

@@ -1,0 +1,44 @@
+{
+  "witnesses": [
+    {
+      "id": "witness-001",
+      "kind": "unsupported_feature",
+      "check_context": "unit-tests",
+      "first_blocking_condition": "provider_unknown",
+      "scenario": {
+        "schema": "checkpath.scenario/v1",
+        "scenario_id": "T9-15",
+        "event": {
+          "name": "pull_request",
+          "action": "synchronize",
+          "branch": null,
+          "base_branch": "main",
+          "head_branch": "feature/x",
+          "target_branch": null,
+          "ref": "refs/pull/42/merge",
+          "commit_message": ""
+        },
+        "diff": {
+          "algorithm": "three-dot",
+          "changed_files": [],
+          "changed_files_total": 1,
+          "returned_files": 1,
+          "complete": true,
+          "first_3000_confirmed": true,
+          "diff_timed_out": false,
+          "push_commit_count": null
+        }
+      },
+      "note": "Job \"test\" in workflow \"workflow.yml\" cannot be decided: if \"success()\" uses syntax outside the supported subset."
+    }
+  ],
+  "recommendations": [
+    {
+      "witness_id": "witness-001",
+      "rule_id": "R-UNSUP-01",
+      "kind": "unsupported_feature",
+      "check_context": "unit-tests",
+      "recommendation": "Rewrite the if expression \"success()\" of job \"test\" using only the supported subset (true, false, always(), !, &&, ||, ==, !=, parentheses, github.event_name, github.ref, github.base_ref, github.head_ref, github.event.action, string literals), or remove the if condition from job \"test\" in workflow \"workflow.yml\"."
+    }
+  ]
+}

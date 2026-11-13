@@ -1,0 +1,11 @@
+name: ci
+on:
+  pull_request: {}
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: unit-tests
+    if: "success()"
+    steps:
+      - run: echo hi

@@ -1,0 +1,44 @@
+{
+  "witnesses": [
+    {
+      "id": "witness-001",
+      "kind": "invalid_input",
+      "check_context": "deploy",
+      "first_blocking_condition": "provider_invalid",
+      "scenario": {
+        "schema": "checkpath.scenario/v1",
+        "scenario_id": "T9-16",
+        "event": {
+          "name": "pull_request",
+          "action": "synchronize",
+          "branch": null,
+          "base_branch": "main",
+          "head_branch": "feature/x",
+          "target_branch": null,
+          "ref": "refs/pull/42/merge",
+          "commit_message": ""
+        },
+        "diff": {
+          "algorithm": "three-dot",
+          "changed_files": [],
+          "changed_files_total": 1,
+          "returned_files": 1,
+          "complete": true,
+          "first_3000_confirmed": true,
+          "diff_timed_out": false,
+          "push_commit_count": null
+        }
+      },
+      "note": "Job \"deploy\" in workflow \"workflow.yml\" is invalid: missing_need:ghost."
+    }
+  ],
+  "recommendations": [
+    {
+      "witness_id": "witness-001",
+      "rule_id": "R-INV-01",
+      "kind": "invalid_input",
+      "check_context": "deploy",
+      "recommendation": "Add a job \"ghost\" to workflow \"workflow.yml\", or correct the needs entry of job \"deploy\" (currently needs \"ghost\")."
+    }
+  ]
+}

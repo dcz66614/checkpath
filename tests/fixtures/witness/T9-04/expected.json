@@ -1,0 +1,46 @@
+{
+  "witnesses": [
+    {
+      "id": "witness-001",
+      "kind": "path_filter",
+      "check_context": "unit-tests",
+      "first_blocking_condition": "path_mismatch",
+      "scenario": {
+        "schema": "checkpath.scenario/v1",
+        "scenario_id": "T9-04",
+        "event": {
+          "name": "pull_request",
+          "action": "synchronize",
+          "branch": null,
+          "base_branch": "main",
+          "head_branch": "feature/x",
+          "target_branch": null,
+          "ref": "refs/pull/42/merge",
+          "commit_message": ""
+        },
+        "diff": {
+          "algorithm": "three-dot",
+          "changed_files": [
+            "docs/a.md"
+          ],
+          "changed_files_total": 2,
+          "returned_files": 2,
+          "complete": true,
+          "first_3000_confirmed": true,
+          "diff_timed_out": false,
+          "push_commit_count": null
+        }
+      },
+      "note": "Workflow \"workflow.yml\" paths-ignore [\"docs/**\"] excludes every changed file; first excluded file is \"docs/a.md\"; required check \"unit-tests\" has no triggered provider."
+    }
+  ],
+  "recommendations": [
+    {
+      "witness_id": "witness-001",
+      "rule_id": "R-PATH-01",
+      "kind": "path_filter",
+      "check_context": "unit-tests",
+      "recommendation": "Remove \"docs/a.md\" from paths-ignore [\"docs/**\"] in workflow \"workflow.yml\" (or narrow the ignore patterns) so the changed file is not excluded, or move job \"test\" providing \"unit-tests\" to a workflow without a paths-ignore filter."
+    }
+  ]
+}

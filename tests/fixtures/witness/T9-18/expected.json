@@ -1,0 +1,44 @@
+{
+  "witnesses": [
+    {
+      "id": "witness-001",
+      "kind": "event_trigger_missing",
+      "check_context": "unit-tests",
+      "first_blocking_condition": "activity_type_mismatch",
+      "scenario": {
+        "schema": "checkpath.scenario/v1",
+        "scenario_id": "T9-18",
+        "event": {
+          "name": "pull_request",
+          "action": "synchronize",
+          "branch": null,
+          "base_branch": "main",
+          "head_branch": "feature/x",
+          "target_branch": null,
+          "ref": "refs/pull/42/merge",
+          "commit_message": ""
+        },
+        "diff": {
+          "algorithm": "three-dot",
+          "changed_files": [],
+          "changed_files_total": 1,
+          "returned_files": 1,
+          "complete": true,
+          "first_3000_confirmed": true,
+          "diff_timed_out": false,
+          "push_commit_count": null
+        }
+      },
+      "note": "Workflow \"workflow.yml\" declares on.pull_request but its types [\"opened\"] do not include action \"synchronize\"; required check \"unit-tests\" has no triggered provider."
+    }
+  ],
+  "recommendations": [
+    {
+      "witness_id": "witness-001",
+      "rule_id": "R-EV-01",
+      "kind": "event_trigger_missing",
+      "check_context": "unit-tests",
+      "recommendation": "Add action \"synchronize\" to the types list of on.pull_request in workflow \"workflow.yml\" (currently [\"opened\"]), or remove the types filter so every pull_request action triggers it."
+    }
+  ]
+}
