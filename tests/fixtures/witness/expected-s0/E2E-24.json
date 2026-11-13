@@ -1,0 +1,158 @@
+{
+  "witnesses": [
+    {
+      "id": "witness-001",
+      "kind": "unsupported_feature",
+      "check_context": "unit-tests",
+      "first_blocking_condition": "provider_unknown",
+      "scenario": {
+        "schema": "checkpath.scenario/v1",
+        "scenario_id": "E2E-24",
+        "event": {
+          "name": "pull_request",
+          "action": "synchronize",
+          "branch": null,
+          "base_branch": "main",
+          "head_branch": "feature/x",
+          "target_branch": null,
+          "ref": "refs/pull/42/merge",
+          "commit_message": ""
+        },
+        "diff": {
+          "algorithm": "three-dot",
+          "changed_files": [],
+          "changed_files_total": 1,
+          "returned_files": 1,
+          "complete": true,
+          "first_3000_confirmed": true,
+          "diff_timed_out": false,
+          "push_commit_count": null
+        }
+      },
+      "note": "Job \"test\" in workflow \"workflow.yml\" cannot be decided: if \"contains(github.event_name, 'push')\" uses syntax outside the supported subset."
+    },
+    {
+      "id": "witness-002",
+      "kind": "invalid_input",
+      "check_context": "deploy",
+      "first_blocking_condition": "provider_invalid",
+      "scenario": {
+        "schema": "checkpath.scenario/v1",
+        "scenario_id": "E2E-24",
+        "event": {
+          "name": "pull_request",
+          "action": "synchronize",
+          "branch": null,
+          "base_branch": "main",
+          "head_branch": "feature/x",
+          "target_branch": null,
+          "ref": "refs/pull/42/merge",
+          "commit_message": ""
+        },
+        "diff": {
+          "algorithm": "three-dot",
+          "changed_files": [],
+          "changed_files_total": 1,
+          "returned_files": 1,
+          "complete": true,
+          "first_3000_confirmed": true,
+          "diff_timed_out": false,
+          "push_commit_count": null
+        }
+      },
+      "note": "Job \"deploy\" in workflow \"workflow.yml\" is invalid: missing_need:nonexistent."
+    },
+    {
+      "id": "witness-003",
+      "kind": "invalid_input",
+      "check_context": "job-a",
+      "first_blocking_condition": "provider_invalid",
+      "scenario": {
+        "schema": "checkpath.scenario/v1",
+        "scenario_id": "E2E-24",
+        "event": {
+          "name": "pull_request",
+          "action": "synchronize",
+          "branch": null,
+          "base_branch": "main",
+          "head_branch": "feature/x",
+          "target_branch": null,
+          "ref": "refs/pull/42/merge",
+          "commit_message": ""
+        },
+        "diff": {
+          "algorithm": "three-dot",
+          "changed_files": [],
+          "changed_files_total": 1,
+          "returned_files": 1,
+          "complete": true,
+          "first_3000_confirmed": true,
+          "diff_timed_out": false,
+          "push_commit_count": null
+        }
+      },
+      "note": "Job \"cyc-a\" in workflow \"workflow.yml\" is invalid: needs_cycle."
+    },
+    {
+      "id": "witness-004",
+      "kind": "unsupported_feature",
+      "check_context": "external-check",
+      "first_blocking_condition": "external_source",
+      "scenario": {
+        "schema": "checkpath.scenario/v1",
+        "scenario_id": "E2E-24",
+        "event": {
+          "name": "pull_request",
+          "action": "synchronize",
+          "branch": null,
+          "base_branch": "main",
+          "head_branch": "feature/x",
+          "target_branch": null,
+          "ref": "refs/pull/42/merge",
+          "commit_message": ""
+        },
+        "diff": {
+          "algorithm": "three-dot",
+          "changed_files": [],
+          "changed_files_total": 1,
+          "returned_files": 1,
+          "complete": true,
+          "first_3000_confirmed": true,
+          "diff_timed_out": false,
+          "push_commit_count": null
+        }
+      },
+      "note": "Required check \"external-check\" declares source \"third-party-app\", which is not github-actions; external App checks cannot be simulated."
+    }
+  ],
+  "recommendations": [
+    {
+      "witness_id": "witness-001",
+      "rule_id": "R-UNSUP-01",
+      "kind": "unsupported_feature",
+      "check_context": "unit-tests",
+      "recommendation": "Rewrite the if expression \"contains(github.event_name, 'push')\" of job \"test\" using only the supported subset (true, false, always(), !, &&, ||, ==, !=, parentheses, github.event_name, github.ref, github.base_ref, github.head_ref, github.event.action, string literals), or remove the if condition from job \"test\" in workflow \"workflow.yml\"."
+    },
+    {
+      "witness_id": "witness-002",
+      "rule_id": "R-INV-01",
+      "kind": "invalid_input",
+      "check_context": "deploy",
+      "recommendation": "Add a job \"nonexistent\" to workflow \"workflow.yml\", or correct the needs entry of job \"deploy\" (currently needs \"nonexistent\")."
+    },
+    {
+      "witness_id": "witness-003",
+      "rule_id": "R-INV-01",
+      "kind": "invalid_input",
+      "check_context": "job-a",
+      "recommendation": "Break the needs cycle involving job \"cyc-a\" in workflow \"workflow.yml\" by removing one of its needs edges."
+    },
+    {
+      "witness_id": "witness-004",
+      "rule_id": "R-UNSUP-01",
+      "kind": "unsupported_feature",
+      "check_context": "external-check",
+      "recommendation": "Change the source of required check \"external-check\" to \"github-actions\" if it is reported by GitHub Actions, or remove \"external-check\" from the required-checks list because external App checks cannot be simulated."
+    }
+  ]
+}

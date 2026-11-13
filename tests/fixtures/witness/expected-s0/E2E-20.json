@@ -1,0 +1,44 @@
+{
+  "witnesses": [
+    {
+      "id": "witness-001",
+      "kind": "missing_context",
+      "check_context": "integration",
+      "first_blocking_condition": "no_provider",
+      "scenario": {
+        "schema": "checkpath.scenario/v1",
+        "scenario_id": "E2E-20",
+        "event": {
+          "name": "pull_request",
+          "action": "synchronize",
+          "branch": null,
+          "base_branch": "main",
+          "head_branch": "feature/x",
+          "target_branch": null,
+          "ref": "refs/pull/42/merge",
+          "commit_message": ""
+        },
+        "diff": {
+          "algorithm": "three-dot",
+          "changed_files": [],
+          "changed_files_total": 1,
+          "returned_files": 1,
+          "complete": true,
+          "first_3000_confirmed": true,
+          "diff_timed_out": false,
+          "push_commit_count": null
+        }
+      },
+      "note": "No job provides required check context \"integration\"; scanned job contexts are [\"unit-tests\"]."
+    }
+  ],
+  "recommendations": [
+    {
+      "witness_id": "witness-001",
+      "rule_id": "R-CTX-01",
+      "kind": "missing_context",
+      "check_context": "integration",
+      "recommendation": "Add a job named \"integration\" (or set a job's name to \"integration\") in a workflow triggered by this event, or correct the required-checks entry \"integration\" to match an existing job context from [\"unit-tests\"]."
+    }
+  ]
+}

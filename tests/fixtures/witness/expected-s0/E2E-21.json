@@ -1,0 +1,44 @@
+{
+  "witnesses": [
+    {
+      "id": "witness-001",
+      "kind": "duplicate_context",
+      "check_context": "tests",
+      "first_blocking_condition": "duplicate_context",
+      "scenario": {
+        "schema": "checkpath.scenario/v1",
+        "scenario_id": "E2E-21",
+        "event": {
+          "name": "pull_request",
+          "action": "synchronize",
+          "branch": null,
+          "base_branch": "main",
+          "head_branch": "feature/x",
+          "target_branch": null,
+          "ref": "refs/pull/42/merge",
+          "commit_message": ""
+        },
+        "diff": {
+          "algorithm": "three-dot",
+          "changed_files": [],
+          "changed_files_total": 1,
+          "returned_files": 1,
+          "complete": true,
+          "first_3000_confirmed": true,
+          "diff_timed_out": false,
+          "push_commit_count": null
+        }
+      },
+      "note": "Required check context \"tests\" is provided by 2 jobs: workflow \"workflow.yml\" job \"test-a\"; workflow \"workflow.yml\" job \"test-b\"."
+    }
+  ],
+  "recommendations": [
+    {
+      "witness_id": "witness-001",
+      "rule_id": "R-DUP-01",
+      "kind": "duplicate_context",
+      "check_context": "tests",
+      "recommendation": "Rename one of the jobs providing \"tests\" so each context has exactly one provider: workflow \"workflow.yml\" job \"test-a\"; workflow \"workflow.yml\" job \"test-b\". Update the required-checks entry if it should point at a specific one."
+    }
+  ]
+}

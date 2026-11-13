@@ -1,0 +1,44 @@
+{
+  "witnesses": [
+    {
+      "id": "witness-001",
+      "kind": "branch_filter",
+      "check_context": "unit-tests",
+      "first_blocking_condition": "branch_mismatch",
+      "scenario": {
+        "schema": "checkpath.scenario/v1",
+        "scenario_id": "E2E-13",
+        "event": {
+          "name": "pull_request",
+          "action": "synchronize",
+          "branch": null,
+          "base_branch": "main",
+          "head_branch": "feature/x",
+          "target_branch": null,
+          "ref": "refs/pull/42/merge",
+          "commit_message": ""
+        },
+        "diff": {
+          "algorithm": "three-dot",
+          "changed_files": [],
+          "changed_files_total": 1,
+          "returned_files": 1,
+          "complete": true,
+          "first_3000_confirmed": true,
+          "diff_timed_out": false,
+          "push_commit_count": null
+        }
+      },
+      "note": "Workflow \"workflow.yml\" branches-ignore [\"main\"] excludes branch \"main\" for event pull_request; required check \"unit-tests\" has no triggered provider."
+    }
+  ],
+  "recommendations": [
+    {
+      "witness_id": "witness-001",
+      "rule_id": "R-BRANCH-01",
+      "kind": "branch_filter",
+      "check_context": "unit-tests",
+      "recommendation": "Remove branch \"main\" from branches-ignore [\"main\"] in workflow \"workflow.yml\" (or narrow the ignore patterns), or change the scenario base_branch to a branch the filter does not exclude."
+    }
+  ]
+}

@@ -1,0 +1,494 @@
+{
+  "schema": "checkpath.witness-suite/v1",
+  "suite_id": "witness",
+  "seed": 20261108,
+  "fixtures": [
+    {
+      "id": "T9-01",
+      "dir": "T9-01",
+      "workflows": [
+        "workflow-ci.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "t009",
+      "expected": "T9-01/expected.json"
+    },
+    {
+      "id": "T9-02",
+      "dir": "T9-02",
+      "workflows": [
+        "workflow-mg.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "t009",
+      "expected": "T9-02/expected.json"
+    },
+    {
+      "id": "T9-03",
+      "dir": "T9-03",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "t009",
+      "expected": "T9-03/expected.json"
+    },
+    {
+      "id": "T9-04",
+      "dir": "T9-04",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "t009",
+      "expected": "T9-04/expected.json"
+    },
+    {
+      "id": "T9-05",
+      "dir": "T9-05",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "t009",
+      "expected": "T9-05/expected.json"
+    },
+    {
+      "id": "T9-06",
+      "dir": "T9-06",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "t009",
+      "expected": "T9-06/expected.json"
+    },
+    {
+      "id": "T9-07",
+      "dir": "T9-07",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "t009",
+      "expected": "T9-07/expected.json"
+    },
+    {
+      "id": "T9-08",
+      "dir": "T9-08",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "t009",
+      "expected": "T9-08/expected.json"
+    },
+    {
+      "id": "T9-09",
+      "dir": "T9-09",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "t009",
+      "expected": "T9-09/expected.json"
+    },
+    {
+      "id": "T9-10",
+      "dir": "T9-10",
+      "workflows": [
+        "workflow-a.yml",
+        "workflow-b.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "t009",
+      "expected": "T9-10/expected.json"
+    },
+    {
+      "id": "T9-11",
+      "dir": "T9-11",
+      "workflows": [
+        "workflow-a.yml",
+        "workflow-b.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "t009",
+      "expected": "T9-11/expected.json"
+    },
+    {
+      "id": "T9-12",
+      "dir": "T9-12",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "t009",
+      "expected": "T9-12/expected.json"
+    },
+    {
+      "id": "T9-13",
+      "dir": "T9-13",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "t009",
+      "expected": "T9-13/expected.json"
+    },
+    {
+      "id": "T9-14",
+      "dir": "T9-14",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "t009",
+      "expected": "T9-14/expected.json"
+    },
+    {
+      "id": "T9-15",
+      "dir": "T9-15",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "t009",
+      "expected": "T9-15/expected.json"
+    },
+    {
+      "id": "T9-16",
+      "dir": "T9-16",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "t009",
+      "expected": "T9-16/expected.json"
+    },
+    {
+      "id": "T9-17",
+      "dir": "T9-17",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "t009",
+      "expected": "T9-17/expected.json"
+    },
+    {
+      "id": "T9-18",
+      "dir": "T9-18",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "t009",
+      "expected": "T9-18/expected.json"
+    },
+    {
+      "id": "T9-19",
+      "dir": "T9-19",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "t009",
+      "expected": "T9-19/expected.json"
+    },
+    {
+      "id": "T9-20",
+      "dir": "T9-20",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "t009",
+      "expected": "T9-20/expected.json"
+    },
+    {
+      "id": "E2E-01",
+      "dir": "../s0/E2E-01-cp-a-pr-docs-only",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "expected-s0/E2E-01.json"
+    },
+    {
+      "id": "E2E-02",
+      "dir": "../s0/E2E-02-cp-b-merge-group-present",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "expected-s0/E2E-02.json"
+    },
+    {
+      "id": "E2E-03",
+      "dir": "../s0/E2E-03-cp-c-merge-group-missing",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "expected-s0/E2E-03.json"
+    },
+    {
+      "id": "E2E-04",
+      "dir": "../s0/E2E-04-push-baseline",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "expected-s0/E2E-04.json"
+    },
+    {
+      "id": "E2E-05",
+      "dir": "../s0/E2E-05-pr-types-mismatch",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "expected-s0/E2E-05.json"
+    },
+    {
+      "id": "E2E-06",
+      "dir": "../s0/E2E-06-pr-types-match",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "expected-s0/E2E-06.json"
+    },
+    {
+      "id": "E2E-07",
+      "dir": "../s0/E2E-07-merge-group-types-mismatch",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "expected-s0/E2E-07.json"
+    },
+    {
+      "id": "E2E-08",
+      "dir": "../s0/E2E-08-on-list-form",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "expected-s0/E2E-08.json"
+    },
+    {
+      "id": "E2E-09",
+      "dir": "../s0/E2E-09-cp-f-branch-only-match",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "expected-s0/E2E-09.json"
+    },
+    {
+      "id": "E2E-10",
+      "dir": "../s0/E2E-10-cp-f-path-only-match",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "expected-s0/E2E-10.json"
+    },
+    {
+      "id": "E2E-11",
+      "dir": "../s0/E2E-11-cp-g-ordered-negation",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "expected-s0/E2E-11.json"
+    },
+    {
+      "id": "E2E-12",
+      "dir": "../s0/E2E-12-cp-h-commit-skip",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "expected-s0/E2E-12.json"
+    },
+    {
+      "id": "E2E-13",
+      "dir": "../s0/E2E-13-branches-ignore",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "expected-s0/E2E-13.json"
+    },
+    {
+      "id": "E2E-14",
+      "dir": "../s0/E2E-14-paths-ignore",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "expected-s0/E2E-14.json"
+    },
+    {
+      "id": "E2E-15",
+      "dir": "../s0/E2E-15-cp-k-push-over-1000",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "expected-s0/E2E-15.json"
+    },
+    {
+      "id": "E2E-16",
+      "dir": "../s0/E2E-16-cp-l-diff-unconfirmed",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "expected-s0/E2E-16.json"
+    },
+    {
+      "id": "E2E-17",
+      "dir": "../s0/E2E-17-cp-d-if-false",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "expected-s0/E2E-17.json"
+    },
+    {
+      "id": "E2E-18",
+      "dir": "../s0/E2E-18-cp-e-always-aggregator",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "expected-s0/E2E-18.json"
+    },
+    {
+      "id": "E2E-19",
+      "dir": "../s0/E2E-19-cp-i-duplicate-cross-workflow",
+      "workflows": [
+        "workflow-a.yml",
+        "workflow-b.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "expected-s0/E2E-19.json"
+    },
+    {
+      "id": "E2E-20",
+      "dir": "../s0/E2E-20-cp-j-no-provider",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "expected-s0/E2E-20.json"
+    },
+    {
+      "id": "E2E-21",
+      "dir": "../s0/E2E-21-duplicate-same-workflow",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "expected-s0/E2E-21.json"
+    },
+    {
+      "id": "E2E-22",
+      "dir": "../s0/E2E-22-needs-skipped",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "expected-s0/E2E-22.json"
+    },
+    {
+      "id": "E2E-23",
+      "dir": "../s0/E2E-23-conditional-after-needs",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "expected-s0/E2E-23.json"
+    },
+    {
+      "id": "E2E-24",
+      "dir": "../s0/E2E-24-fail-closed-bundle",
+      "workflows": [
+        "workflow.yml"
+      ],
+      "scenario": "scenario.json",
+      "required_checks": "required-checks.json",
+      "source": "s0-e2e",
+      "expected": "expected-s0/E2E-24.json"
+    }
+  ]
+}
