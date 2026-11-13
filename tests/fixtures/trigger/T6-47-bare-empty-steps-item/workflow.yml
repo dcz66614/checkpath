@@ -1,0 +1,9 @@
+name: t6-47-bare-empty-steps-item
+on:
+  push: {}
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo hi
+        :

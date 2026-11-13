@@ -1,0 +1,9 @@
+name: t6-49-bare-plus-null
+on:
+  :
+  null:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo hi

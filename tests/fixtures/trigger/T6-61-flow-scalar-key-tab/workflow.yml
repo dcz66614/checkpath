@@ -1,0 +1,5 @@
+name: t6-61-flow-scalar-key-tab
+on: {push	: {}}
+jobs:
+  test:
+    runs-on: ubuntu-latest

@@ -1,0 +1,9 @@
+name: t6-40-quoted-true-event
+on:
+  "True":
+    branches: [main]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo hi
