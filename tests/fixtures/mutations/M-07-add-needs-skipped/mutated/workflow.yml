@@ -1,0 +1,20 @@
+name: ci
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'src/**'
+jobs:
+  up:
+    runs-on: ubuntu-latest
+    name: upstream
+    if: false
+    steps:
+      - run: echo hi
+  test:
+    needs: up
+    runs-on: ubuntu-latest
+    name: unit-tests
+    steps:
+      - run: echo hi

@@ -1,0 +1,15 @@
+{
+  "base": {
+    "checks": {
+      "unit-tests": "PENDING_NOT_REPORTED"
+    },
+    "triggered": false
+  },
+  "mutated": {
+    "checks": {
+      "unit-tests": "REPORTABLE_PENDING"
+    },
+    "triggered": true
+  },
+  "mutation": "removing paths src/** lets a docs-only PR trigger the workflow"
+}

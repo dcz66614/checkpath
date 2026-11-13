@@ -1,0 +1,7 @@
+m: {&r: }
+on: schedule
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo hi

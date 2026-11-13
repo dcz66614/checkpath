@@ -1,0 +1,15 @@
+{
+  "base": {
+    "checks": {
+      "unit-tests": "REPORTABLE_PENDING"
+    },
+    "triggered": true
+  },
+  "mutated": {
+    "checks": {
+      "unit-tests": "AMBIGUOUS"
+    },
+    "triggered": true
+  },
+  "mutation": "a second workflow declaring the same context flips to AMBIGUOUS"
+}

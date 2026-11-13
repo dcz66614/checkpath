@@ -1,0 +1,8 @@
+on: {push: &x#c
+ pull_request}
+name: probe
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo hi

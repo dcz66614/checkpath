@@ -1,0 +1,9 @@
+m: {a: &x 1, b: *x#c
+ 2}
+name: probe
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo hi

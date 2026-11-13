@@ -1,0 +1,7 @@
+&r:5!zap {a: 1}
+on: schedule
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo hi

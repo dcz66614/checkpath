@@ -1,0 +1,15 @@
+{
+  "base": {
+    "checks": {
+      "unit-tests": "PENDING_NOT_REPORTED"
+    },
+    "triggered": false
+  },
+  "mutated": {
+    "checks": {
+      "unit-tests": "REPORTABLE_PENDING"
+    },
+    "triggered": true
+  },
+  "mutation": "removing [skip ci] from the commit message un-skips the workflow"
+}

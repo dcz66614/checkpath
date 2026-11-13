@@ -1,0 +1,8 @@
+x: &s 5
+&r:!!int *s: 5
+on: schedule
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo hi
